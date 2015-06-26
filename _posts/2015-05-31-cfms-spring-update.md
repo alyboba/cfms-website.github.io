@@ -17,6 +17,7 @@ The Canadian Federation of Medical Students is the organization representing ove
 *   CFMS Education Portfolio
 *   Transition to Residency
 *   Website Bilingualism
-*   CFMS-FMEQ National Medical Student Wellness Survey> #### **Attachments:**
-> 
+*   CFMS-FMEQ National Medical Student Wellness Survey
+   
+> #### **Attachments:**
 > *   [2015 May Update.docx](/files/updates/2015%20May%20Update.docx)
