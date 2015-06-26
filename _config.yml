@@ -1,0 +1,13 @@
+root: "https://cfms-website.github.io"
+about_cfms: "The CFMS, or the Canadian Federation of Medical Students, represents over 8,000 medical students from 14 Canadian medical student societies from coast to coast. The organization represents medical students to the public, to the federal government, and to national and international medical organizations."
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: news
+paginate: 15
+paginate_path: "news/archives/:num/"
+rdiscount:
+  extensions:
+    - smart
