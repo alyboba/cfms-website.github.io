@@ -1,0 +1,134 @@
+---
+title: Resources
+---
+
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="{{ site.root }}/stylesheets/resources.css">
+</head>
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#resources" ).classList.toggle("active");
+	</script>
+
+<!-- 
+Publication
+Discount
+Funding
+Database
+Information -->
+
+	<div id="featured-resources">
+		<h1>Featured Resources</h1>
+		<div class="resources">
+			<a class="resource" href="#">
+				<div class="resource-info">
+					<div class="resource-name">Residency Matchbook</div>
+					<div class="resource-type publication"><span>Publication</span></div>
+					<div class="resource-desc">The CFMS prepares an annual review of the CaRMS match, to help educate medical students about the Match and assist with career planning.</div>
+				</div>
+				<div class="resource-pic">
+					<img src="{{ site.root }}/images/resource-logos/residency-matchbook.svg">
+				</div>
+			</a>
+			<a class="resource" href="#">
+				<div class="resource-info">
+					<div class="resource-name">CFMS Annual Review</div>
+					<div class="resource-type publication"><span>Publication</span></div>
+					<div class="resource-desc">The CFMS Annual review is a publication that includes summaries of executive members' projects as well as contributions of stories, poetry, art and photography from the general membership.</div>
+				</div>
+				<div class="resource-pic">
+					<img src="{{ site.root }}/images/resource-logos/annual-review.svg">
+				</div>
+			</a>
+			<a class="resource" href="#">
+				<div class="resource-info">
+					<div class="resource-name">Visiting Electives Status Board</div>
+					<div class="resource-type information"><span>Information</span></div>
+					<div class="resource-desc">A reference page on how to apply for visiting electives, and whether they are under a moratorium or not.</div>
+				</div>
+				<div class="resource-pic">
+					<img src="{{ site.root }}/images/resource-logos/visiting-electives-status.svg">
+				</div>
+			</a>
+			<a class="resource" href="https://mdm.ca/career-stages/student/index.asp">
+				<div class="resource-info">
+					<div class="resource-name">Resources from MD Financial Management</div>
+					<div class="resource-type information"><span>Information</span></div>
+					<div class="resource-desc">Student resources from MD Financial Management, the exclusive financial services partner of the CFMS.</div>
+				</div>
+				<div class="resource-pic">
+					<img src="{{ site.root }}/images/resource-logos/mdfm-logo.svg">
+				</div>
+			</a>
+		</div>
+	</div>
+	<div id="all-resources">
+		<h1>All Resources</h1>
+
+		<!-- Publications -->
+		<h2 class="publication"><span>Publications</span><i class="fa fa-newspaper-o"></i></h2>
+		<div class="resources">
+			<a class="resource" href="#">
+				<div class="resource-info">
+					<div class="resource-name">Residency Matchbook</div>
+					<div class="resource-type publication"><span>Publication</span></div>
+					<div class="resource-desc">The CFMS prepares an annual review of the CaRMS match, to help educate medical students about the Match and assist with career planning.</div>
+				</div>
+				<div class="resource-pic">
+					<img src="{{ site.root }}/images/resource-logos/residency-matchbook.svg">
+				</div>
+			</a>
+			<a class="resource" href="#">
+				<div class="resource-info">
+					<div class="resource-name">CFMS Annual Review</div>
+					<div class="resource-type publication"><span>Publication</span></div>
+					<div class="resource-desc">The CFMS Annual review is a publication that includes summaries of executive members' projects as well as contributions of stories, poetry, art and photography from the general membership.</div>
+				</div>
+				<div class="resource-pic">
+					<img src="{{ site.root }}/images/resource-logos/annual-review.svg">
+				</div>
+			</a>
+		</div>
+
+		<!-- Information -->
+		<h2 class="information"><span>Information</span><i class="fa fa-question-circle"></i></h2>
+		<div class="resources">
+			<a class="resource" href="#">
+				<div class="resource-info">
+					<div class="resource-name">Visiting Electives Status Board</div>
+					<div class="resource-type information"><span>Information</span></div>
+					<div class="resource-desc">A reference page on how to apply for visiting electives, and whether they are under a moratorium or not.</div>
+				</div>
+				<div class="resource-pic">
+					<img src="{{ site.root }}/images/resource-logos/visiting-electives-status.svg">
+				</div>
+			</a>
+			<a class="resource" href="#">
+				<div class="resource-info">
+					<div class="resource-name">Resources from MD Financial Management</div>
+					<div class="resource-type information"><span>Information</span></div>
+					<div class="resource-desc">Student resources from MD Financial Management, the exclusive financial services partner of the CFMS.</div>
+				</div>
+				<div class="resource-pic">
+					<img src="{{ site.root }}/images/resource-logos/mdfm-logo.svg">
+				</div>
+			</a>
+		</div>
+
+		<h2 class="database"><span>Databases</span><i class="fa fa-database"></i></h2>
+		<h2 class="discount"><span>Discounts</span><i class="fa fa-usd"></i></h2>
+
+	</div>
+	{% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,45 @@
+---
+title: What We Do
+---
+
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="{{ site.root }}/stylesheets/what-we-do.css">
+</head>
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
+	</script>
+
+	<!-- Newest Article -->
+	<div id="what-we-do-home">
+		<h1>What do we do?</h1>
+		<p>The CFMS is actively involved in a number of projects that aim to better serve our members. Visit our <a href="advocacy/index.html">Advocacy</a>, <a href="education/index.html">Education</a>, and <a href="global-health/index.html">Global Health</a> pages to learn more about the exciting initiatives that the CFMS is pursuing.</p>
+		<p>Some of the major projects that the CFMS is involved in include:</p>
+		<ul>
+			<li><a href="global-health/international-exchanges.html">International Exchanges</a>
+				<p>Canada participates in a bilateral international exchange program where medical students can undertake clinical electives or research projects in a foreign country for a period of four weeks. You can apply via the CFMS.</p>
+				<span id="global-health"><a href="global-health/index.html">Global Health</a></span>
+			</li>
+			<li><a href="{{ site.root }}/resources/carms-matchbook.html">Residency Matchbook</a>
+				<p>The CFMS prepares an annual review of the CaRMS match, to help educate medical students about the Match and assist with career planning.</p>
+				<span id="education"><a href="education/index.html">Education</a></span>
+			</li>
+			<li><a href="advocacy/lobby-day.html">Lobby Day</a>
+				<p>Lobby Day is one of the CFMS's signature annual events during which medical students from across the nation come to Parliament Hill in Ottawa to speak with policy makers on an issue of importance.</p>
+				<span id="advocacy"><a href="advocacy/index.html">Advocacy</a></span>
+			</li>
+		</ul>
+	</div>
+	<div class="dark-footer">{% include footer.html %}</div>
+</body>
+</html>

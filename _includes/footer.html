@@ -1,0 +1,65 @@
+<script type="text/javascript">
+	function getEmail(username){
+		var hostname = "cfms.org";
+		var linktext = username + "@" + hostname;
+		document.write("<a class='email' href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+	}
+</script>
+<div id="footer">
+	<div class="column">
+		<h1>Contact us <span style="opacity:0.3">:</span></h1>
+		<div class="icon"><i class="fa fa-map-marker"></i></div>
+		<li>
+			Canadian Federation of Medical Students<br>
+			267 O'Connor Street, Suite 401<br>
+			Ottawa, ON K2P 1V3
+		</li>
+		<div class="icon"><i class="fa fa-phone"></i></div>
+		<li>
+			<b>Phone</b>: 613&ndash;565&ndash;7740<br>
+			<b>Fax</b>: 613&ndash;565&ndash;7742
+		</li>
+	</div>
+	<div class="column">
+		<h1>Email us at <span style="opacity:0.3">:</span></h1>
+		<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
+		<div id="emails">
+			<li><b>General Inquiries</b>: Rosemary Conliffe<br>
+			    <script>getEmail("office")</script>
+			</li>
+			<li><b>Media</b>: Anthea Girdwood<br>
+				<script>getEmail("vpcommunications")</script>
+			</li>
+			<li><b>Information Technology</b>: Kevan Lu<br>
+				<script>getEmail("it")</script>
+			</li>
+		</div>
+	</div>
+	<div class="column">
+		<h1>
+			Find us on <span style="opacity:0.3">:</span>
+			<div id="social-media">
+				<a class="social-icon" href="https://www.facebook.com/CFMSFEMC"><i class="fa fa-facebook"></i></a>
+				/
+				<a class="social-icon" href="https://twitter.com/cfmsfemc"><i class="fa fa-twitter"></i></a>
+				/
+				<a class="social-icon" href="https://www.linkedin.com/company/canadian-federation-of-medical-students-cfms-"><i class="fa fa-linkedin"></i></a>
+			</div>
+		</h1>
+		<div class="icon"><i class="fa fa-sitemap"></i></div>
+		<li>
+			<b>Site Map:</b> <a href="{{ site.root }}/sitemap.html">cfms.org/sitemap.html</a>
+		</li>
+		<div class="icon"><i class="fa fa-copyright"></i></div>
+		<li>
+			2015 CFMS. All Rights Reserved.<br>
+			Developed by <a href="http://www.kevan.lu">Kevan Lu</a>
+		</li>		
+	</div>
+</div>
+<script type="text/javascript">
+	document.querySelector( "#nav-toggle" ).addEventListener( "click", function() {
+	  this.classList.toggle( "active" );
+	  document.querySelector("#top-nav").classList.toggle("active");
+	});
+</script>
