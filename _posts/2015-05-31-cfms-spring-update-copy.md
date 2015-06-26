@@ -18,5 +18,5 @@ The Canadian Federation of Medical Students is the organization representing ove
 *   Transition to Residency
 *   Website Bilingualism
 
-> ####*Attachments:*
+> ####**Attachments:**
 > - [2015 May Update.docx]({{ site.root }}/files/updates/2015%20May%20Update.docx)
