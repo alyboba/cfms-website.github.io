@@ -15,9 +15,7 @@ Medical students can benefit from MD&#39;s specialized network of advisors who a
 
 For more information about the MD/CFMS partnership, please email Alison Forestell at MD ([Alison.Forestell@cma.ca](mailto:Alison.Forestell@cma.ca)) or Franco Rizzuti ([vpfinance@cfms.org](mailto:vpfinance@cfms.org)) at the CFMS.
 
-Please click [here]([/files/updates/cfms and mdfm press release - may 2015.docx](/files/updates/cfms and mdfm press release - may 2015.docx)) for the full press release.
+Please click [here](&#91;/files/updates/cfms and mdfm press release - may 2015.docx&#93;&#40;/files/updates/cfms and mdfm press release - may 2015.docx)) for the full press release.
 > #### Attachments
 > 
 > [CFMS and MDFM Press Release - May 2015.docx](/files/updates/cfms and mdfm press release - may 2015.docx)
-
- 
