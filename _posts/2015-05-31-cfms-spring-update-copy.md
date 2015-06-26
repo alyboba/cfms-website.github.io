@@ -1,6 +1,6 @@
 ---
 title: CFMS Spring Update
-date: 2015-05-30T04:00:00.000Z
+date: 2015-05-30
 description: The CFMS is hard at work throughout the school year to advocate for medical student interests and to bring our membership high quality services and initiatives.
 ---
 
