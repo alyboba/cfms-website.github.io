@@ -9,16 +9,18 @@ title: "Executives &amp; Officers"
 	{% include head.html %}
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="{{ site.root }}/stylesheets/who-we-are.css" />
+	<link rel="stylesheet" href="{{ site.root }}/stylesheets/who-we-are.css">
 </head>
 <body>
 	{% include nav.html %}
-	
+	<img src="{{ site.root }}/images/execs/group-pic.jpg">
+
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
 		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
 		document.querySelector( "#who-we-are" ).classList.toggle("active");
 	</script>
+
 	<div class="content">
 		<!-- Displays the sidebar and emphasizes the active page -->
 		{% include sidebar-who-we-are.html %}
@@ -33,26 +35,26 @@ title: "Executives &amp; Officers"
 			<div id="executives">
 				<div id="president" class="executive">
 					<div class="exec-pic">
-						<img src="/uploads/versions/bryce---(0-0-608-810-627-835)---.jpg" class="editable" height="835" width="627" />
+						<img src="{{ site.root }}/images/execs/2014-2015/bryce-durafourt.jpg" class="editable">
 					</div>
 					<div class="exec-info">
 						<li class="exec-role">
 							President
 						</li>
 						<li class="exec-name">
-							<span class="editable">Dr. Bryce Durafourt</span>
+							<span class="editable">Bryce Durafourt</span>
 						</li>
 						<li class="exec-school">
-							<span class="editable">Queens University</span>
+							<span class="editable">McGill University</span>
 						</li>
 						<li class="exec-desc">
-							<span class="editable">The CFMS president chairs the Executive Group and is responsible for the general supervision and direction of the business of the CFMS. Overall goal-setting and vision fall under the President’s responsibilities. The CFMS President also serves as the spokesperson for the organization to the public, the media, government and the national medical organizations.</span>
+							<span class="editable">Bryce chairs the Executive Group and is responsible for the general supervision and direction of the business of the CFMS. Overall goal-setting and vision fall under the President’s responsibilities. Bryce also serves as the spokesperson for the organization to the public, the media, the government, and national medical organizations.</span>
 						</li>
 					</div>
 				</div>
 				<div id="past-president" class="executive">
 					<div class="exec-pic">
-						<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+						<img src="{{ site.root }}/images/execs/2014-2015/jesse-kancir.jpg" class="editable">
 					</div>
 					<div class="exec-info">
 						<li class="exec-role">
@@ -65,13 +67,13 @@ title: "Executives &amp; Officers"
 							<span class="editable">University of Toronto</span>
 						</li>
 						<li class="exec-desc">
-							<span class="editable">The Past-President advises the President and the Executive Group in addition to serving as Chief Returning Officer and Parliamentarian.</span>
+							<span class="editable">Jesse advises the President and the Executive Group in addition to serving as Chief Returning Officer and Parliamentarian.</span>
 						</li>
 					</div>
 				</div>
 				<div id="vp-education" class="executive">
 					<div class="exec-pic">
-						<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+						<img src="{{ site.root }}/images/execs/2014-2015/irfan-kherani.jpg" class="editable">
 					</div>
 					<div class="exec-info">
 						<li class="exec-role">
@@ -84,13 +86,13 @@ title: "Executives &amp; Officers"
 							<span class="editable">University of Alberta</span>
 						</li>
 						<li class="exec-desc">
-							<span class="editable">The Vice-President Education a cornerstone of the organization responsible for directing the representation, analysis and policy of the CFMS on educational issues. He or she represents the Federation at such forums where concerns of a primarily educational nature are discussed. His or her responsibility is to undertake endeavours to enhance the educational experience of members of the Federation.</span>
+							<span class="editable">Irfan is responsible for directing the representation, analysis and policy of the CFMS on educational issues. He represents the Federation at such forums where concerns of a primarily educational nature are discussed. Irfan also undertakes initiatives to enhance the educational experience of members of the Federation.</span>
 						</li>
 					</div>
 				</div>
 				<div id="vp-communications" class="executive">
 					<div class="exec-pic">
-						<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+						<img src="{{ site.root }}/images/execs/2014-2015/anthea-girdwood.jpg" class="editable">
 					</div>
 					<div class="exec-info">
 						<li class="exec-role">
@@ -103,13 +105,13 @@ title: "Executives &amp; Officers"
 							<span class="editable">University of Ottawa</span>
 						</li>
 						<li class="exec-desc">
-							<span class="editable">The Vice President Communication is responsible for internal and external communication, including communications strategy and policy, the website and the publications of the CFMS. The VP Communication actively moderates the representative email listserve and other servers. She or he is responsible for maintaining regular contact with individual representatives and medical society presidents, welcoming and orienting new representatives, and communication with external organizations when this responsibility falls outside of the duties of the President.</span>
+							<span class="editable">Anthea guides the internal and external communication of the CFMS. She is responsible for maintaining regular contact with individual representatives and medical society presidents, welcoming and orienting new representatives, and communication with external organizations when this responsibility falls outside of the duties of the President.</span>
 						</li>
 					</div>
 				</div>
 				<div id="vp-finance" class="executive">
 					<div class="exec-pic">
-						<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+						<img src="{{ site.root }}/images/execs/2014-2015/franco-rizzuti.jpg" class="editable">
 					</div>
 					<div class="exec-info">
 						<li class="exec-role">
@@ -122,13 +124,13 @@ title: "Executives &amp; Officers"
 							<span class="editable">University of Calgary</span>
 						</li>
 						<li class="exec-desc">
-							<span class="editable">The Vice President Finance has overall fiscal management responsibility for the CFMS and acts as the Chief Financial Officer. He or she is responsible for managing the CFMS bank accounts, investments, expenses, revenue, and payroll. The VP Finance is responsible for long-term strategic planning together with the President. He or she actively works to broaden the financial resource base of the CFMS by seeking alternative sources of revenue through grants, advertising, donations and sponsorship. He or she is responsible for the development of policy relating to finances (including travel, sponsorship, and long-term strategic planning).</span>
+							<span class="editable">Franco guides the overall fiscal management of the CFMS, and acts as the Chief Financial Officer. He is responsible for managing the CFMS bank accounts, investments, expenses, revenue, and payroll. He is also actively involved in broadening the financial resource base of the CFMS by seeking alternative sources of revenue through grants, advertising, donations and sponsorship.</span>
 						</li>
 					</div>
 				</div>
 				<div id="vp-government-affairs" class="executive">
 					<div class="exec-pic">
-						<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+						<img src="{{ site.root }}/images/execs/2014-2015/melanie-bechard.jpg" class="editable">
 					</div>
 					<div class="exec-info">
 						<li class="exec-role">
@@ -141,13 +143,13 @@ title: "Executives &amp; Officers"
 							<span class="editable">University of Toronto</span>
 						</li>
 						<li class="exec-desc">
-							<span class="editable">The Vice President Government Affairs (formerly the VP Advocacy) is the executive position adopted to address the organization's commitment to representation through political advocacy initiatives at a local and national level. The VP Government Affairs serves as the Government Affairs &amp; Advocacy Committee (GAAC) Chair (formerly the Political Advocacy Committee (PAC) Chair), Federal Lobby Day lead organizer, position paper coordinator, and representative for the CFMS on all issues of a political nature. This VP coordinates all ongoing lobbying efforts that are not covered by other portfolios and reports all grassroots initiative progress to the rest of the executive.</span>
+							<span class="editable">Melanie addresses the organization's commitment to representation through political advocacy initiatives at a local and national level. She serves as the chair of the Government Affairs &amp; Advocacy Committee (GAAC), organizes the CFMS Federal Lobby Day, coordinates position papers, and represents the CFMS on all issues of a political nature.</span>
 						</li>
 					</div>
 				</div>
 				<div id="vp-student-affairs" class="executive">
 					<div class="exec-pic">
-						<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+						<img src="{{ site.root }}/images/execs/2014-2015/brandon-maser.jpg" class="editable">
 					</div>
 					<div class="exec-info">
 						<li class="exec-role">
@@ -160,13 +162,13 @@ title: "Executives &amp; Officers"
 							<span class="editable">Queens University</span>
 						</li>
 						<li class="exec-desc">
-							<span class="editable">The Vice President Student Affairs takes responsibility for co-ordinating the CFMS member affairs. Major undertakings include billeting, interview and electives databases in addition to promotion of the following: travel deals, disability insurance program, and others. The VP-Student Affairs is mandated to develop and acquire new services based on membership feedback and plays an integral role in the development of web-based services.</span>
+							<span class="editable">Brandon is responsible for co-ordinating CFMS member affairs. Some of his major undertakings include maintaining the interview and electives databases, and the promotion of student resources. The VP-Student Affairs is mandated to develop and acquire new services based on membership feedback and plays an integral role in the development of web-based services.</span>
 						</li>
 					</div>
 				</div>
 				<div id="vp-global-health" class="executive">
 					<div class="exec-pic">
-						<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+						<img src="{{ site.root }}/images/execs/2014-2015/chris-charles.jpg" class="editable">
 					</div>
 					<div class="exec-info">
 						<li class="exec-role">
@@ -179,28 +181,38 @@ title: "Executives &amp; Officers"
 							<span class="editable">McMaster University</span>
 						</li>
 						<li class="exec-desc">
-							<span class="editable">The Vice President Global Health is responsible for coordinating the CFMS Global Health Program. The VP GH takes the lead in forming and maintaining dynamic partnerships with Canadian and international organizations which support the work and interests of medical students studying in Canada with respect to global health, international development, and public health. The Vice-President Global Health oversees a network of school-appointed resource people/liaison officers on global health and works with this network to support medical student initiatives, identify priorities, provide resources, and support medical students’ involvement in global health advocacy and education.</span>
+							<span class="editable">Chris is responsible for coordinating the CFMS Global Health Program. He forms and maintains dynamic partnerships with Canadian and international organizations, to support the interests of medical students studying in Canada with respect to global health, international development, and public health.</span>
 						</li>
 					</div>
 				</div>
 
 				<!-- Regional Representatives -->
 				<h1 id="regional-reps-title">Regional Representatives</h1>
-				<div id="regional-reps-desc"><span class="editable">Regional Representatives are fully functioning and voting members of the Executive and have the specialized role of ensuring that the Executive is kept abreast of up-to-the-moment developments at all of the member schools. Regional representatives serve as liaisons between the Executive and the medical society representatives and presidents. They work closely with all VPs under the direction of the President to ensure communication between the Executive and medical societies. They are also expected to take on national projects and responsibilities on behalf of the Executive which contribute to the overall priorities of the CFMS.</span></div>
+				<div id="regional-reps-desc"><span class="editable">Regional Representatives are fully functioning and voting members of the Executive and have the specialized role of ensuring that the Executive is kept abreast of up-to-the-moment developments at all of the member schools. Regional representatives serve as liaisons between the Executive and the medical society representatives and presidents. They work closely with all VPs under the direction of the President to ensure communication between the Executive and medical societies. They are also expected to take on national projects and responsibilities on behalf of the Executive.</span></div>
 				<div id="regional-reps">
-					<div id="western-regional-reps" class="executive">
+					<div id="western-regional-rep" class="executive">
 						<div class="exec-pic">
-							<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+							<img src="{{ site.root }}/images/execs/2014-2015/john-schulte.jpg" class="editable">
 						</div>
 						<div class="exec-info">
 							<li class="exec-role">
-								Western Regional Representatives
+								Western Regional Representative 1
 							</li>
 							<li class="exec-name">
 								<span class="editable">John Schulte</span>
 							</li>
 							<li class="exec-school">
 								<span class="editable">University of Saskatchewan</span>
+							</li>
+						</div>
+					</div>
+					<div id="western-regional-rep" class="executive">
+						<div class="exec-pic">
+							<img src="{{ site.root }}/images/execs/2014-2015/taneille-johnson.jpg" class="editable">
+						</div>
+						<div class="exec-info">
+							<li class="exec-role">
+								Western Regional Representative 2
 							</li>
 							<li class="exec-name">
 								<span class="editable">Taneille Johnson</span>
@@ -210,19 +222,29 @@ title: "Executives &amp; Officers"
 							</li>
 						</div>
 					</div>
-					<div id="ontario-regional-reps" class="executive">
+					<div id="ontario-regional-rep" class="executive">
 						<div class="exec-pic">
-							<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+							<img src="{{ site.root }}/images/execs/2014-2015/ali-damji.jpg" class="editable">
 						</div>
 						<div class="exec-info">
 							<li class="exec-role">
-								Ontario Regional Representatives
+								Ontario Regional Representative 1
 							</li>
 							<li class="exec-name">
 								<span class="editable">Ali Damji</span>
 							</li>
 							<li class="exec-school">
 								<span class="editable">University of Toronto</span>
+							</li>
+						</div>
+					</div>
+					<div id="ontario-regional-rep" class="executive">
+						<div class="exec-pic">
+							<img src="{{ site.root }}/images/execs/2014-2015/kendra-komsa.jpg" class="editable">
+						</div>
+						<div class="exec-info">
+							<li class="exec-role">
+								Ontario Regional Representative 2
 							</li>
 							<li class="exec-name">
 								<span class="editable">Kendra Komsa</span>
@@ -234,7 +256,7 @@ title: "Executives &amp; Officers"
 					</div>
 					<div id="quebec-regional-rep" class="executive">
 						<div class="exec-pic">
-							<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+							<img src="{{ site.root }}/images/execs/2014-2015/carl-white-ulysse.jpg" class="editable">
 						</div>
 						<div class="exec-info">
 							<li class="exec-role">
@@ -250,7 +272,7 @@ title: "Executives &amp; Officers"
 					</div>
 					<div id="atlantic-regional-rep" class="executive">
 						<div class="exec-pic">
-							<img class="editable" src="https://cfms-website.github.io/images/execs/placeholder.png" />
+							<img src="{{ site.root }}/images/execs/2014-2015/leanne-murphy.jpg" class="editable">
 						</div>
 						<div class="exec-info">
 							<li class="exec-role">
@@ -274,70 +296,70 @@ title: "Executives &amp; Officers"
 					<h1>CFMS</h1>
 					<div class="officer-info">
 						<li class="officer-role">Health Policy</li>
-						<li class="officer-name"><span class="editable">Justin Neves</span></li>
-						<li class="officer-school"><span class="editable">McMaster University</span></li>
+						<li class="officer-name editable">Justin Neves</li>
+						<li class="officer-school editable">McMaster University</li>
 					</div>
 					<div class="officer-info">
 						<li class="officer-role">Blood</li>
-						<li class="officer-name"><span class="editable">Salima Abdulla</span></li>
-						<li class="officer-school"><span class="editable">University of British Colu</span>mbia</li>
+						<li class="officer-name editable">Salima Abdulla</li>
+						<li class="officer-school editable">University of British Columbia</li>
 					</div>
 					<div class="officer-info">
 						<li class="officer-role">Information Technology (Sr)</li>
-						<li class="officer-name"><span class="editable">Franco Dattilo</span></li>
-						<li class="officer-school"><span class="editable">University of Ottawa</span></li>
+						<li class="officer-name editable">Franco Dattilo</li>
+						<li class="officer-school editable">University of Ottawa</li>
 					</div>
 					<div class="officer-info">
 						<li class="officer-role">Information Technology (Jr)</li>
-						<li class="officer-name"><span class="editable">Kevan Lu</span></li>
-						<li class="officer-school"><span class="editable">Western University</span></li>
+						<li class="officer-name editable">Kevan Lu</li>
+						<li class="officer-school editable">Western University</li>
 					</div>
 					<div class="officer-info">
 						<li class="officer-role">Wellness</li>
-						<li class="officer-name"><span class="editable">Marie-Pier Bastrash</span></li>
-						<li class="officer-school"><span class="editable">McGill University</span></li>
+						<li class="officer-name editable">Marie-Pier Bastrash</li>
+						<li class="officer-school editable">McGill University</li>
 					</div>
 					<div class="officer-info">
 						<li class="officer-role">Alumni</li>
-						<li class="officer-name"><span class="editable">Cait Champion</span></li>
-						<li class="officer-school"><span class="editable">University of Toronto</span></li>
+						<li class="officer-name editable">Cait Champion</li>
+						<li class="officer-school editable">University of Toronto</li>
 					</div>
 				</div>
 				<div id="global-health-national-officers" class="column">
 					<h1>Global Health</h1>
 					<div class="officer-info">
 						<li class="officer-role">Partnerships (NOP)</li>
-						<li class="officer-name"><span class="editable">Claire O'Brien</span></li>
-						<li class="officer-school"><span class="editable">University of Calgary</span></li>
+						<li class="officer-name editable">Claire O'Brien</li>
+						<li class="officer-school editable">University of Calgary</li>
 					</div>
 					<div class="officer-info">
 						<li class="officer-role">Exchange (NOE)</li>
-						<li class="officer-name"><span class="editable">Stephen Cashman</span></li>
-						<li class="officer-school"><span class="editable">University of Manitoba</span></li>
-						<li class="officer-name"><span class="editable">Antonio Lee</span></li>
-						<li class="officer-school"><span class="editable">University of Toronto</span></li>
+						<li class="officer-name editable">Stephen Cashman</li>
+						<li class="officer-school editable">University of Manitoba</li>
+						<li class="officer-name editable">Antonio Lee</li>
+						<li class="officer-school editable">University of Toronto</li>
 					</div>
 					<div class="officer-info">
 						<li class="officer-role">Global Health Education (NOGHE)</li>
-						<li class="officer-name"><span class="editable">Kelita Singh</span></li>
-						<li class="officer-school"><span class="editable">McGill University</span></li>
-						<li class="officer-name"><span class="editable">Stephanie Brown</span></li>
-						<li class="officer-school"><span class="editable">University of Calgary</span></li>
+						<li class="officer-name editable">Kelita Singh</li>
+						<li class="officer-school editable">McGill University</li>
+						<li class="officer-name editable">Stephanie Brown</li>
+						<li class="officer-school editable">University of Calgary</li>
 					</div>
 					<div class="officer-info">
 						<li class="officer-role">Reproductive and Sexual Health (NORSH)</li>
-						<li class="officer-name"><span class="editable">Anjali Kulkarni</span></li>
-						<li class="officer-school"><span class="editable">University of Toronto</span></li>
+						<li class="officer-name editable">Anjali Kulkarni</li>
+						<li class="officer-school editable">University of Toronto</li>
 					</div>
 					<div class="officer-info">
 						<li class="officer-role">Human Rights and Peace (NORP)</li>
-						<li class="officer-name"><span class="editable">Koray Demir</span></li>
-						<li class="officer-school"><span class="editable">McGill University</span></li>
+						<li class="officer-name editable">Koray Demir</li>
+						<li class="officer-school editable">McGill University</li>
 					</div>
 					<div class="officer-info">
 						<li class="officer-role">Aboriginal Health Liaison (AHL)</li>
-						<li class="officer-name"><span class="editable">Ryan Giroux</span></li>
-						<li class="officer-school"><span class="editable">University of Toronto</span></li>
+						<li class="officer-name editable">Ryan Giroux</li>
+						<li class="officer-school editable">University of Toronto</li>
 					</div>
 				</div>
 			</div>
@@ -345,3 +367,4 @@ title: "Executives &amp; Officers"
 	</div>
 	{% include footer.html %}
 </body>
+</html>

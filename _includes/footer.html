@@ -19,9 +19,6 @@
 			<b>Phone</b>: 613&ndash;565&ndash;7740<br>
 			<b>Fax</b>: 613&ndash;565&ndash;7742
 		</li>
-	</div>
-	<div class="column">
-		<h1>Email us at <span style="opacity:0.3">:</span></h1>
 		<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
 		<div id="emails">
 			<li><b>General Inquiries</b>: Rosemary Conliffe<br>
@@ -33,6 +30,14 @@
 			<li><b>Information Technology</b>: Kevan Lu<br>
 				<script>getEmail("it")</script>
 			</li>
+		</div>
+	</div>
+	<div class="column">
+		<h1>Latest tweets <span style="opacity:0.3">:</span>
+			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
+		</h1>
+		<div class="icon"><i class="fa fa-twitter"></i></div>
+		<div id="latest-tweets">
 		</div>
 	</div>
 	<div class="column">
@@ -57,9 +62,45 @@
 		</li>		
 	</div>
 </div>
+<script src="{{ site.root }}/js/twitterFetcher_min.js" type="text/javascript"></script>
 <script type="text/javascript">
 	document.querySelector( "#nav-toggle" ).addEventListener( "click", function() {
-	  this.classList.toggle( "active" );
-	  document.querySelector("#top-nav").classList.toggle("active");
+		this.classList.toggle( "active" );
+		document.querySelector("#top-nav").classList.toggle("active");
 	});
+
+	//Gets latest tweets
+	var tweetConfig = {
+	  "id": '616581601191833602',
+	  "domId": 'latest-tweets',
+	  "maxTweets": 3,
+	  "enableLinks": true,
+	  "showPermalinks": false,
+	  "showUser": false,
+	  "showInteraction": false,
+	  "showRetweet": false,
+	  "dateFunction": dateFormatter
+	};
+
+	//Formats the tweet dates
+	function dateFormatter(date) {
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var hour = date.getHours();
+
+		//0:00 = 12 AM
+		if (hour == 0)
+			var time = "12:" + date.getMinutes();
+		else 
+			time = (hour%12) + ":" + date.getMinutes();
+		if (hour > 0 && hour < 12)
+			time += " AM";
+		else 
+			time += " PM";
+
+		var month = months[date.getMonth()];
+		var day = date.getDate();
+		var year = date.getFullYear();
+		return time + " &ndash; " + month + " " + day + ", " + year;
+	}
+	twitterFetcher.fetch(tweetConfig);
 </script>

@@ -24,15 +24,15 @@ Gender and sexual diversity issues (including lesbian, gay, bisexual, transgende
 
 The CFMS recognizes that comprehensive sexuality education leaves young people better prepared to make positive decisions regarding their sexual and reproductive health, and empowered to enact these choices.  This is why we support the changes to the Ontario sexual education curriculum in order to give youth a solid foundation on which to build upon a lifelong learning process of self-identity, relationships and healthy development.
 
-> ####*For Media Inquiries:*
-> *Anthea Girdwood*, Vice President Communications<br>
+> ####**For Media Inquiries:**
+> **Anthea Girdwood**, Vice President Communications<br>
 > Canadian Federation of Medical Students
 >
 > - Cell: (613) 915-1141 
 > - Email: [vpcommunications@cfms.org](mailto:vpcommunications@cfms.org)
 
-> ####*For More Information:*
-> *Dr. Joshua Dias*, former CFMS National Officer of Reproductive and Sexual Health
+> ####**For More Information:**
+> **Dr. Joshua Dias**, former CFMS National Officer of Reproductive and Sexual Health
 >
 > - PGY1, Psychiatry, University of Toronto
 > - Email: [jodias@nosm.ca](mailto:jodias@nosm.ca)
