@@ -1,0 +1,75 @@
+---
+title: Bylaws &amp; Internal Policy
+---
+
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="{{ site.root }}/stylesheets/who-we-are.css">
+</head>
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#who-we-are" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-who-we-are.html %}
+		<script type="text/javascript">
+			document.querySelector( "#internal-policy-bylaws" ).classList.toggle("sidebar-active");
+		</script>
+		<div id="bylaws-policy-content">
+			<h1 id="page-title">{{ page.title }}</h1>
+			<blockquote>
+				<h3><strong>CFMS Bylaws</strong></h3>
+				<ul>
+					<li>
+						<span class="file-format">PDF</span><a href="{{ site.root }}/files/internal-policy-bylaws/CFMS%20Bylaws%20-%20April%202014.pdf">CFMS Bylaws</a>
+					</li>
+				</ul>
+			</blockquote>
+			<blockquote>
+				<h3><strong>Internal Policy</strong></h3>
+				<ul>
+					<li>
+						<span class="file-format">PDF</span><a href="{{ site.root }}/files/internal-policy-bylaws/policy-antiharassment.pdf">Anti-Harassment Policy</a>
+					</li>
+					<li>
+						<span class="file-format">PDF</span><a href="{{ site.root }}/files/internal-policy-bylaws/Green%20Charter%20-%20Best%20Practices%20for%20Medical%20Student%20Societies.pdf">Green Charter &ndash; Best Practices for Medical Student Societies</a>
+					</li>
+					<li>
+						<span class="file-format">PDF</span><a href="{{ site.root }}/files/internal-policy-bylaws/policy-PACterms.pdf">PAC &ndash; Terms of Reference</a>
+					</li>
+					<li>
+						<span class="file-format">PDF</span><a href="{{ site.root }}/files/internal-policy-bylaws/policy-privacy.pdf">Privacy Policy</a>
+					</li>
+					<li>
+						<span class="file-format">PDF</span><a href="{{ site.root }}/files/internal-policy-bylaws/policy-reimbursement.pdf">Reimbursement Policy</a>
+					</li>
+					<li>
+						<span class="file-format">DOC</span><a href="{{ site.root }}/files/internal-policy-bylaws/Expense%20Reimbursement%20Claim.doc">Expense Reimbursement Claim Form</a>
+					</li>
+					<li>
+						<span class="file-format">PDF</span><a href="{{ site.root }}/files/internal-policy-bylaws/policy-representation.pdf">Representation Policy</a>
+					</li>
+					<li>
+						<span class="file-format">PDF</span><a href="{{ site.root }}/files/internal-policy-bylaws/policy-sponsorship.pdf">Sponsorship Policy</a>
+					</li>
+					<li>
+						<span class="file-format">PDF</span><a href="{{ site.root }}/files/internal-policy-bylaws/policy-travel.pdf">Travel Policy</a>
+					</li>
+				</ul>
+			</blockquote>
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>

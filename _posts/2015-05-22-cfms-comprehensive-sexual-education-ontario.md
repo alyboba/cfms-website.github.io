@@ -1,5 +1,5 @@
 ---
-title: "PRESS RELEASE: CFMS Supports Comprehensive Sexual Education in Ontario. CFMS Supports Comprehensive Sexual Education in Ontario"
+title: "PRESS RELEASE: CFMS Supports Comprehensive Sexual Education in Ontario."
 date: 2015-05-22
 description: The Government of Ontario has released a new sexual education curriculum which will be taking effect in September 2015 that will update it to a similar level as other Canadian provinces.
 ---

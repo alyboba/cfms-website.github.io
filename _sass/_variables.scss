@@ -17,12 +17,13 @@
 	src: url("../fonts/SourceSerifPro-Bold.otf") format("opentype");
 }
 
+$header-font-stack: "Proxima Nova", Helvetica, Arial, sans-serif;
 $sans-serif-font-stack: "Proxima Nova", Helvetica, Arial, sans-serif;
 $serif-font-stack: "Source Serif Pro", Georgia, serif;
 
 $primary-color: #BB0A21;
 $primary-color-bright: #F9455D;
-$dark: #252833;
+$dark: #272A32;
 $darker: #181A21;
 $neutral: #777A89;
 $bright: #B0B4C4;
@@ -39,10 +40,13 @@ $vp-finance-color: #CCCCCC;
 $it-officer-color: #D4D6B9;
 
 $padding: 120px;
-$padding-tablet: 60px;
+$padding-large-tablet: 50px;
+$padding-tablet: 50px;
 $padding-mobile-landscape: 40px;
 $padding-mobile-portrait: 25px;
-$content-width: 725px;
+$content-width: 700px;
+$column-width: 365px;
+$mobile-header-font-size: 26px;
 
 /* #Inherited Classes
 ––––––––––––––––––––––––––––––––––––––––*/
@@ -51,6 +55,12 @@ $content-width: 725px;
 	padding-top: 50px;
 	padding-left:$padding;
 	padding-right:$padding;
+}
+@media only screen and (max-width: 1199px){
+	.content{
+		padding-left:$padding-large-tablet;
+		padding-right:$padding-large-tablet;
+	}
 }
 @media only screen and (min-width:768px) and (max-width: 959px) {
 	.content{
@@ -82,6 +92,7 @@ $content-width: 725px;
 		border:2px solid $neutral;
 		border-radius:4px;
 		padding: 4px 10px 4px 10px;
+		font-family:$sans-serif-font-stack;
 	}
 	a:after{
 		content:"→";
@@ -93,5 +104,8 @@ $content-width: 725px;
 		border:2px solid $bright;
 		color:$bright;
 	}
+}
+.flex-wrapper {
+	display:flex;
 }
 

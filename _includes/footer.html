@@ -7,6 +7,15 @@
 </script>
 <div id="footer">
 	<div class="column">
+		<h1>
+			<div id="twitter-title">Latest tweets <span style="opacity:0.3">:</span></div>
+			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
+		</h1>
+		<div class="icon"><i class="fa fa-twitter"></i></div>
+		<div id="latest-tweets">
+		</div>
+	</div>
+	<div class="column">
 		<h1>Contact us <span style="opacity:0.3">:</span></h1>
 		<div class="icon"><i class="fa fa-map-marker"></i></div>
 		<li>
@@ -33,14 +42,6 @@
 		</div>
 	</div>
 	<div class="column">
-		<h1>Latest tweets <span style="opacity:0.3">:</span>
-			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
-		</h1>
-		<div class="icon"><i class="fa fa-twitter"></i></div>
-		<div id="latest-tweets">
-		</div>
-	</div>
-	<div class="column">
 		<h1>
 			Find us on <span style="opacity:0.3">:</span>
 			<div id="social-media">
@@ -57,7 +58,8 @@
 		</li>
 		<div class="icon"><i class="fa fa-copyright"></i></div>
 		<li>
-			2015 CFMS. All Rights Reserved.<br>
+			<script>document.write((new Date()).getFullYear())</script>
+			CFMS. All Rights Reserved.<br>
 			Developed by <a href="http://www.kevan.lu">Kevan Lu</a>
 		</li>		
 	</div>
@@ -103,4 +105,20 @@
 		return time + " &ndash; " + month + " " + day + ", " + year;
 	}
 	twitterFetcher.fetch(tweetConfig);
+</script>
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="{{ site.root }}/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#scroll').scrollToFixed({ 
+    	marginTop: 20, 
+    	limit: function() {
+	        var limit = $('#footer').offset().top - $('#scroll').height() - 40;
+	        return limit;
+	    },
+	    minWidth: 960
+    });
+});
 </script>

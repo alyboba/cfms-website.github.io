@@ -27,25 +27,53 @@ title: "Canadian Federation of Medical Students"
 			<div class="button"><a href="about-us.html">Learn more</a></div>
 		</div>
 	</div>
-	<div id="hero-image" style="background: url(../images/hero-images/windsor.jpg) no-repeat center center; background-size:cover">
-		<a href="">
+	<div id="featured-links">
+		<h1><span>What's new?</span></h1>
+		<div class="flex-wrapper">
+			<a href="{{ site.link_url_1 }}">
+				<div class="featured-link" style="background: url({{ site.link_image_url_1 }}) no-repeat center center; background-size:cover">
+				</div>
+				<div class="featured-link-text">{{ site.link_text_1 }}</div>
+			</a>
+			<a href="{{ site.link_url_2 }}">
+				<div class="featured-link" style="background: url({{ site.link_image_url_2 }}) no-repeat center center; background-size:cover">
+				</div>
+				<div class="featured-link-text">{{ site.link_text_2 }}</div>
+			</a>
+			<a href="{{ site.link_url_3 }}">
+				<div class="featured-link" style="background: url({{ site.link_image_url_3 }}) no-repeat center center; background-size:cover">
+				</div>
+				<div class="featured-link-text">{{ site.link_text_3 }}</div>
+			</a>
+		</div>
+	</div>
+	<div id="hero-image" style="background: url(images/meeting-images/windsor.jpg) no-repeat center 40%; background-size:cover">
+		<a href="meetings/agm-2015-windsor.html">
 			<div id="hero-text">
 				<div id="hero-byline">Announcement</div>
 				<div id="hero-title">CFMS AGM 2015 Registration is now open!</div>
-				<div id="hero-desc">Join us in Windsor ON for the CFMS Annual General Meeting, on <b>September 18-20<sup>th</sup>, 2015</b>.</div>
+				<div id="hero-desc">Join us in Windsor ON for the CFMS Annual General Meeting, on <b>September 18-20th, 2015</b>.</div>
 			</div>	
 		</a>
 	</div>
-	<div id="recent-news">
-		<h1>Recent News</h1>
-		<div id="recent-news-list">
-			{% for post in site.posts limit:5 %}
-				<div class="news-date">{{ post.date | date: '%b %d' }}</div>
-				<li>
-					<div class="news-link"><a href="{{ site.root }}{{ post.url }}">{{ post.title }}</a></div>
-					<div class="news-desc">{{ post.description }}</div>
-				</li>
-			{% endfor %}
+	<div id="home-columns">
+		<div id="recent-news">
+			<h1>Recent News</h1>
+			<div id="recent-news-list">
+				{% for post in site.posts limit:5 %}
+					<div class="news-date">{{ post.date | date: '%b %d' }}</div>
+					<li>
+						<div class="news-link"><a href="{{ site.root }}{{ post.url }}">{{ post.title }}</a></div>
+						<div class="news-desc">{{ post.description }}</div>
+					</li>
+				{% endfor %}
+			</div>
+		</div>
+		<div id="sponsors">
+			<h1>Sponsored by <span style="opacity:0.5">:</span></h1>
+			<div id="sponsor-logo">
+				<a href="https://mdm.ca/career-stages/student/index.asp"><img src="images/MDFM.svg"></img></a>
+			</div>
 		</div>
 	</div>
 	{% include footer.html %}
