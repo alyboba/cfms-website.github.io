@@ -113,12 +113,12 @@
 <script type="text/javascript">
 $(document).ready(function() {
     $('#scroll').scrollToFixed({ 
+    	minWidth: 960,
     	marginTop: 20, 
     	limit: function() {
 	        var limit = $('#footer').offset().top - $('#scroll').height() - 40;
 	        return limit;
-	    },
-	    minWidth: 960
+	    }
     });
 });
 </script>
