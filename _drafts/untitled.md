@@ -1,7 +1,7 @@
 ---
 title: "Choosing Wisely Canada: Student Recommendations (PRIZES AVAILABLE)"
 date: 2015-07-21T00:12:00.000Z
-description: ""
+description: "You are invited to be a part of Choosing Wisely Canada, a grassroots, physician-led campaign to engage physicians and patients in conversations about unnecessary tests, treatments and procedures."
 ---
 You are invited to be a part of Choosing Wisely Canada, a grassroots, physician-led campaign to engage physicians and patients in conversations about unnecessary tests, treatments and procedures.
 
