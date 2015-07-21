@@ -11,6 +11,4 @@ This anonymous and voluntary survey will take under 5 minutes, and your input wi
 
 The link to the survey is below:
 
-http://fluidsurveys.com/s/cwc-cfms-list-survey/
-
- 
+[http://fluidsurveys.com/s/cwc-cfms-list-survey/](http://fluidsurveys.com/s/cwc-cfms-list-survey/)
