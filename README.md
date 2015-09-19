@@ -2,6 +2,10 @@
 Website for the Canadian Federation of Medical Students (CFMS)
 
 ##Changelog
+- **Thursday, September 17**
+	- Updated news sections.
+	- Added MDFM Financial Resources section.
+	- Fixed glitch with scrolling sidebar on mobile devices.
 - **Thursday July 2**
 	- The website footer now shows recent tweets from the CFMS twitter handle.
 	- Added 'Student Affairs' to the navigation menu.
@@ -29,3 +33,16 @@ Website for the Canadian Federation of Medical Students (CFMS)
 	- Filled out meeting pages for AGM 2015 and SGM 2015
 	- Added email addresses to 'who we are' page.
 	- Add MDFM Graphic to Website.
+
+##Upcoming Goals
+	- Make the meetings modifiable.
+	- Fill out meeting pages for older general meetings.
+	- Get photos for previous meetings.
+	- Add Google Analytics.
+	- Position Papers: Split into charts/columns by category.
+	- Colour coding for Position statement vs Policy Paper.
+		- Proposed categories:
+			- Health Systems
+			- Medical Education
+			- Global Health & Health Equity
+	- AGM 2016 - tentatively set for Sept. 16-18.

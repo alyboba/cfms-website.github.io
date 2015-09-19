@@ -57,7 +57,7 @@ title: "All Articles"
 					    {% if page == paginator.page %}
 						    <em id="current-page" class="page-link">{{ page }}</em>
 					    {% elsif page == 1 %}
-						    <a class="page-link" href="{{ site.root }}/archives/index.html">{{ page }}</a>
+						    <a class="page-link" href="{{ site.root }}/news/archives/index.html">{{ page }}</a>
 					    {% else %}
 						    <a class="page-link" href="{{ site.root }}{{ site.paginate_path | replace: ':num', page }}index.html">{{ page }}</a>
 					    {% endif %}
