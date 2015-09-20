@@ -21,16 +21,16 @@ rdiscount:
 #--------------------------------------------------
 
 #Featured Link 1
-link_url_1: ""
-link_text_1: "The 2015 CFMS Annual Review is now available online!"
-link_image_url_1: "images/execs/2014-2015/group-pic.jpg"
+link_url_1: "https://instagram.com/cfmsfemc/"
+link_text_1: "The CFMS is now on Instagram as @cfmsfemc!"
+link_image_url_1: "images/home-link-thumbs/selfie.jpg"
 
 #Featured Link 2
 link_url_2: ""
-link_text_2: "This is just another placeholder link"
-link_image_url_2: "images/meeting-images/windsor.jpg"
+link_text_2: "This is just a placeholder link"
+link_image_url_2: "images/home-link-thumbs/placeholder.jpg"
 
 #Featured Link 3
-link_url_3: ""
-link_text_3: "CFMS Announces Partnership with MD Financial Management"
-link_image_url_3: "images/meeting-images/gallery-thumbnails/vancouver-sgm-2015.jpg"
+link_url_3: "resources/student-finances.html"
+link_text_3: "Student Financial Advice from MD Financial Management"
+link_image_url_3: "images/home-link-thumbs/MD-CFMS.png"
