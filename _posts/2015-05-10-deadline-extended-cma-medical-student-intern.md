@@ -2,6 +2,7 @@
 title: "DEADLINE EXTENDED (May 15) Employment Opportunity: CMA Medical Student Intern"
 date: 2015-05-10
 description: Interested in professionalism in medicine?  Looking for an engaging way to spend the summer?  Consider the NEW CMA Medical Student Internship!
+lang: en
 ---
 
 **Interested in professionalism in medicine?  Looking for an engaging way to spend the summer?  Consider the NEW CMA Medical Student Internship!** 

@@ -2,6 +2,7 @@
 title: "CFMS Advocates &ndash; AFMC Student Portal Recommendations"
 date: 2015-07-10
 description: With the launch of the AFMC Student Portal, the CFMS has strived to ensure that we are providing timely feedback to the AFMC and that this service is updated to meet the needs of our membership.
+lang: en
 ---
 
 With the launch of the AFMC Student Portal, the CFMS has strived to ensure that we are providing timely feedback to the AFMC and that this service is updated to meet the needs of our membership. The CFMS has worked to implement a feedback collection system.  Students can send concerns about the electives booking process to [portalfeedback@cfms.org](mailto:portalfeedback@cfms.org).

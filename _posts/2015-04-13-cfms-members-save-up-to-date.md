@@ -2,6 +2,7 @@
 title: "CFMS members SAVE on UpToDate"
 date: 2015-04-13
 description: With the school year coming to a close, you will want to make sure you take advantage of the special UpToDate rate available to CFMS members.
+lang: en
 ---
 
 With the school year coming to a close, you will want to make sure you take advantage of the special UpToDate rate available to CFMS members.

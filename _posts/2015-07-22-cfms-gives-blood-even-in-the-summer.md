@@ -2,6 +2,7 @@
 title: "CFMS Gives Blood &ndash; Even in the Summer!"
 date: 2015-07-22
 description: "You are invited to be a part of Choosing Wisely Canada, a grassroots, physician-led campaign to engage physicians and patients in conversations about unnecessary tests, treatments and procedures."
+lang: en
 ---
 
 ###**Rallying together to save lives**

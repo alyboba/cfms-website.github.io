@@ -1,0 +1,83 @@
+#Recent News
+recent_news_en: "Recent news"
+recent_news_fr: "Nouvelles récentes"
+
+#Learn More
+learn_more_en: "Learn more"
+learn_more_fr: "Pour en savoir plus"
+
+#What's new
+whats_new_en: "What's new?"
+whats_new_fr: "Quoi de neuf?"
+
+#Sponsored By
+sponsored_by_en: "Sponsored by"
+sponsored_by_fr: "Financé par"
+
+#Top Menu
+#========
+
+nav:
+- lang: "en"
+  acronym: "CFMS"
+  title: "Canadian Federation of<br>Medical Students"
+  lang_path: ""
+  who_we_are: "Who we are"
+  what_we_do: "What we do"
+  advocacy: "Advocacy"
+  education: "Education"
+  global_health: "Global health"
+  student_affairs: "Student affairs"
+  resources: "Resources"
+  meetings: "Meetings"
+  news: "News"
+  login: "Login"
+- lang: "fr"
+  acronym: "FEMC"
+  title: "Fédération des étudiants et des<br>étudiantes en médecine du Canada"
+  lang_path: "/fr"
+  who_we_are: "Qui sommes-nous?"
+  what_we_do: "Que faisons-nous?"
+  advocacy: "Représentation"
+  education: "Éducation"
+  global_health: "Santé mondiale"
+  student_affairs: "Affaires étudiantes"
+  resources: "Ressources"
+  meetings: "Réunions"
+  news: "Nouvelles"
+  login: "Se connecter"
+
+#Footer
+#======
+
+#Latest tweets
+latest_tweets_en: "Latest tweets"
+latest_tweets_fr: "Derniers tweets"
+
+#Find us on
+find_us_on:
+- lang: "en"
+  title: "Find us on"
+  copy: "CFMS. All Rights Reserved.<br>Developed by"
+  site_map: "Site map:"
+- lang: "fr"
+  title: "Trouvez nous sur"
+  copy: "FEMC. Tous droits réservés.<br>Développé par"
+  site_map: "Carte du site:"
+
+#Contact us
+contact_us:
+- lang: "en"
+  title: "Contact us"
+  phone: "Phone"
+  fax: "Fax"
+  general_inquiries: "General Inquiries"
+  media: "Media"
+  it: "Information Technology"
+- lang: "fr"
+  title: "Pour nous joindre"
+  phone: "Téléphone"
+  fax: "Télécopieur"
+  general_inquiries: "Questions diverses"
+  media: "Médias"
+  it: "Technologies de l'information"

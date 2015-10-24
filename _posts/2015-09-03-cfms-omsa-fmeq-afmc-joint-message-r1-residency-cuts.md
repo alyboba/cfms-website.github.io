@@ -2,6 +2,7 @@
 title: "CFMS, OMSA, FMEQ, & AFMC Joint Message on R1 Residency Cuts"
 date: 2015-09-03
 description: As the 2016 CaRMS cycle will soon begin, we, the OMSA, CFMS, and AFMC Student Affairs, recognize that this is both an exciting and anxious time, for you. Given the recent reductions in R1 positions in Ontario, we are hearing increasing Match concerns.
+lang: en
 ---
 
 Dear Students,

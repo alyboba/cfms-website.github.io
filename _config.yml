@@ -1,5 +1,4 @@
 root: "http://cfms-website.github.io"
-about_cfms: "The CFMS, or the Canadian Federation of Medical Students, represents over 8,000 medical students from 14 Canadian medical student societies from coast to coast. The organization represents medical students to the public, to the federal government, and to national and international medical organizations."
 
 #Set the default layout for a post to the 'news' format
 defaults:
@@ -11,26 +10,8 @@ defaults:
       layout: "news"
 
 #Number of pages in each archive page.
-paginate: 15
+paginate: 12
 paginate_path: "news/archives/:num/"
 
 rdiscount:
   extensions: [smart]
-
-#Settings for the 'featured links' on the homepage:
-#--------------------------------------------------
-
-#Featured Link 1
-link_url_1: "https://instagram.com/cfmsfemc/"
-link_text_1: "The CFMS is now on Instagram as @cfmsfemc!"
-link_image_url_1: "images/home-link-thumbs/selfie.jpg"
-
-#Featured Link 2
-link_url_2: ""
-link_text_2: "This is just a placeholder link"
-link_image_url_2: "images/home-link-thumbs/placeholder.jpg"
-
-#Featured Link 3
-link_url_3: "resources/student-finances.html"
-link_text_3: "Student Financial Advice from MD Financial Management"
-link_image_url_3: "images/home-link-thumbs/MD-CFMS.png"
