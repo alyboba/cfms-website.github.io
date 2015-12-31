@@ -1,19 +1,19 @@
 {% for nav in site.data.translations.nav %}
 	{% if nav.lang == page.lang %}
-		<div id="top-bar" class="invert">
+		<div id="top-bar" class="invert {{page.lang}}">
 			<div id="top-icon">
-				<div id="logo-group">
+				<div id="logo-group" class="{{ page.lang }}">
 					<img id="logo-invert" src="{{ site.root }}/images/cfms-logo-invert.svg">
 					<img id="logo" src="{{ site.root }}/images/cfms-logo.svg">
 					<a href="{{ site.root }}{{ nav.lang_path }}/index.html">{{ nav.acronym }}</a>
 				</div>
-				<span id="logo-desc"><a href="{{ site.root }}{{ nav.lang_path }}/index.html">{{ nav.title }}</a></span>
+				<span id="logo-desc"><a class="{{ page.lang }}" href="{{ site.root }}{{ nav.lang_path }}/index.html">{{ nav.title }}</a></span>
 			</div>
 			<div id="top-hamburger">
 				<a id="nav-toggle" href="#"><span></span></a>
 			</div>
 			<div id="top-nav">
-				<ul>
+				<ul class="{{ page.lang }}">
 					<li id="who-we-are"><a class="top-level" href="{{ site.root }}{{ nav.lang_path }}/who-we-are/index.html">{{ nav.who_we_are }}</a></li>
 					<li id="what-we-do"><a class="top-level" href="{{ site.root }}{{ nav.lang_path }}/what-we-do/index.html">{{ nav.what_we_do }}</a>
 						<div id="sub-menu">
@@ -29,8 +29,8 @@
 					<li id="meetings"><a class="top-level" href="{{ site.root }}{{ nav.lang_path }}/meetings/index.html">{{ nav.meetings }}</a>
 						<div id="sub-menu">
 						    <ul>
+ 						    	<li><a href="{{ site.root }}{{ nav.lang_path }}/meetings/sgm-2016-montreal.html">SGM 2016 &ndash; Montreal, QC</a></li>
 						    	<li><a href="{{ site.root }}{{ nav.lang_path }}/meetings/agm-2015-windsor.html">AGM 2015 &ndash; Windsor, ON</a></li>
-						    	<li><a href="{{ site.root }}{{ nav.lang_path }}/meetings/sgm-2015-vancouver.html">SGM 2015 &ndash; Vancouver, BC</a></li>
 						    </ul>
 						</div>
 					</li>

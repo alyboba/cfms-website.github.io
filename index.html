@@ -1,6 +1,5 @@
 ---
 title: "Canadian Federation of Medical Students"
-lang: en
 ---
 
 <!DOCTYPE html>
@@ -8,6 +7,21 @@ lang: en
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
 	{% include head.html %}
+	<!-- Redirect based on chosen language -->
+	<script>
+		$(function() {
+			switch (Cookies.get('lang')){
+				case 'en':
+					if (window.location.href != '{{ site.root }}/index.html')
+						window.location.href = '{{ site.root }}/index.html';
+					break;
+				case 'fr':
+					if (window.location.href != '{{ site.root }}/fr/index.html')
+					window.location.href = '{{ site.root }}/fr/index.html';
+					break;
+			}
+		});
+	</script>
 
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="{{ site.root }}/stylesheets/home.css">
@@ -51,11 +65,13 @@ lang: en
 		<div class="flex-wrapper">
 			{% for link in site.data.home.featured_links %}
 				<a href="{{ link.url }}">
-					<div class="featured-link" style="background: url({{ site.root }}/{{ link.image_url }}) no-repeat center center; background-size:cover">
-					</div>
 					{% if page.lang == "en" %}
+						<div class="featured-link" style="background: url({{ site.root }}/{{ link.image_url_en }}) no-repeat center center; background-size:cover">
+						</div>
 						<div class="featured-link-text">{{ link.text_en }}</div>
 					{% else %}
+						<div class="featured-link" style="background: url({{ site.root }}/{{ link.image_url_fr }}) no-repeat center center; background-size:cover">
+						</div>
 						<div class="featured-link-text">{{ link.text_fr }}</div>
 					{% endif %}
 				</a>

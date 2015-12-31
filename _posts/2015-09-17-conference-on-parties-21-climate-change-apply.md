@@ -2,7 +2,6 @@
 title: "Conference of Parties 21 on Climate Change &ndash; APPLY NOW!"
 date: 2015-09-17
 description: In collaboration with the International Federation of Medical Students Associations (IFMSA), the Canadian Federation of Medical Students (CFMS) is proud to offer an opportunity to attend the COP 21.
-lang: en
 ---
 
 > ####**Important**

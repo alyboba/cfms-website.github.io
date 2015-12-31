@@ -2,7 +2,6 @@
 title: "CFMS Call for Nominations: CFMS Executive Positions"
 date: 2015-08-17
 description: Nominations are now open for the next executive team for the CFMS! This is an excellent opportunity to get involved, make a difference, and be an integral part of an effective and reputable student organization.
-lang: en
 ---
 
 ##**What is the CFMS?**

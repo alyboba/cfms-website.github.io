@@ -66,7 +66,11 @@
 				</h1>
 				<div class="icon"><i class="fa fa-sitemap"></i></div>
 				<li>
-					<b>{{ find_us_on.site_map }}</b> <a href="{{ site.root }}/sitemap.html">cfms.org/sitemap.html</a>
+					{% if page.lang == "en" %}
+						<b>{{ find_us_on.site_map }}</b> <a href="{{ site.root }}/sitemap.html">cfms.org/sitemap.html</a>
+					{% else %}
+						<b>{{ find_us_on.site_map }}</b> <a href="{{ site.root }}/fr/sitemap.html">cfms.org/sitemap.html</a>
+					{% endif %}
 				</li>
 				<div class="icon"><i class="fa fa-copyright"></i></div>
 				<li>
@@ -120,8 +124,6 @@
 	twitterFetcher.fetch(tweetConfig);
 </script>
 
-<!--JQuery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="{{ site.root }}/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -136,4 +138,16 @@ $(document).ready(function() {
 	    });
 	}
 });
+</script>
+
+<!-- Cookies for language support -->
+<script type="text/javascript">
+    $('#en').click( function() { 	    	
+		Cookies.set('lang', 'en', { expires: 7 });
+		console.log (Cookies.get());
+	} );
+    $('#fr').click( function() { 	    	
+		Cookies.set('lang', 'fr', { expires: 7 });
+		console.log (Cookies.get());
+	} );
 </script>
