@@ -2,6 +2,8 @@
 Website for the Canadian Federation of Medical Students (CFMS)
 
 ##Changelog
+- **Thursday December 31**
+	- Added Annual Review
 - **Thursday December 10**
 	+ Updated News Pages
 	+ Education Overview, Team 
