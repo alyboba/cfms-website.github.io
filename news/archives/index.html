@@ -59,7 +59,7 @@ title: "All Articles"
 					    {% elsif page == 1 %}
 						    <a class="page-link" href="{{ site.root }}/news/archives/index.html">{{ page }}</a>
 					    {% else %}
-						    <a class="page-link" href="{{ site.root }}{{ site.paginate_path | replace: ':num', page }}index.html">{{ page }}</a>
+						    <a class="page-link" href="{{ site.root }}/{{ site.paginate_path | replace: ':num', page }}index.html">{{ page }}</a>
 					    {% endif %}
 					{% endfor %}
 				</div>

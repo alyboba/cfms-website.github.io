@@ -1,0 +1,427 @@
+---
+---
+
+@import 'variables';
+
+.content {
+	display:flex;
+	padding-bottom:60px;
+	#sidebar ul {
+		list-style:none;
+		margin-left:0px;
+		padding-top:5px;
+		li {
+			margin-left:0px;
+			margin-bottom:1px;
+		}
+		li a {
+			font-family:$sans-serif-font-stack;
+			font-weight:bold;
+			font-size:18px;
+			color:$bright;
+		}
+	}
+}
+
+/* #Executives & Officers
+––––––––––––––––––––––––––––––––––––––––*/
+#executives-officers-content {
+	width:100%;
+	#page-title {margin-bottom:0;}
+}
+#executives {
+	padding-bottom:20px;
+	margin-top:-1px;
+}
+#execs-group-pic {
+	width:100%;
+	height:340px;
+}
+.executive{
+	display:flex;
+	border-top:1px solid $brighter;
+	padding-top:20px;
+	padding-bottom:15px;
+	.exec-pic {min-width:100px; width:190px;}
+	.exec-pic img {
+		width:100%;
+		height:auto;
+	}
+	.exec-info {
+		padding-left:10px;
+		max-width:600px;
+		li {list-style:none;}
+	}
+}
+.exec-name{
+	font-size:24px;
+	font-weight:bold;
+	color:$dark;
+	font-family:$header-font-stack;
+	line-height:1em;
+}
+.exec-school {
+	font-size:17px;
+	font-family:$sans-serif-font-stack;
+	padding-top:3px;
+	color:$bright;
+	font-weight:bold;
+	line-height:1.4em;
+}
+.exec-role{
+	font-size:17px;
+	padding-bottom:5px;
+	font-weight:bold;
+	text-transform: uppercase;
+	color:$primary-color;
+	font-family:$sans-serif-font-stack;
+}
+.exec-desc{
+	font-size:16px;
+	color:$neutral;
+	line-height:1.5em;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+#regional-reps {
+	display:flex;
+	flex-wrap:wrap;
+	padding-bottom:20px;
+	.executive {
+		width:50%;
+		min-width:350px;
+		li {padding-right:30px;}
+	}
+	.exec-role {
+		font-size:16px;
+	}
+	.exec-name {
+		font-size:21px;
+	}
+	.exec-school {
+		font-size:17px;
+	}
+}
+#regional-reps-title{
+	font-weight:bold;
+	padding-top:20px;
+	font-size:32px;
+}
+#regional-reps-desc {
+	font-size:17px;
+	max-width:800px;
+	padding-bottom:20px;
+}
+#officers {
+	padding-top:20px;
+	display:flex;
+	.column {
+		width:50%;
+		.officer-info {padding-right:30px;}
+	}
+	h1 {
+		font-weight:bold;
+		border-bottom:4px solid $brighter;
+		padding-right:30px;
+		font-size:19px;
+		text-transform:uppercase;
+		color:$bright;
+	}
+}
+.officer-info {
+	padding-top:15px;
+	li {
+		list-style:none;
+		margin-left:0px;
+	}
+	.officer-role {
+		@extend .exec-role;
+		font-size:16px;
+	}
+	.officer-name {
+		@extend .exec-name;
+		font-size:20px;
+	}
+	.officer-school {
+		@extend .exec-school;
+		font-size:17px;
+	}
+}
+
+@media only screen and (max-width: 1199px){
+	#regional-reps .executive {
+		min-width:100%;
+	}
+}
+@media only screen and (min-width: 960px) {
+	.top-bar-gradient #top-bar {
+		background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 75%);
+	}
+}
+@media only screen and (max-width: 959px) {
+	#execs-group-pic {
+		height:250px;
+	}
+	#regional-reps .executive {
+		min-width:325px;
+		width:50%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	#execs-group-pic {
+		height:175px;
+	}
+	#regional-reps .executive {
+		width:100%;
+		min-width:0;
+	}
+	.executive .exec-pic {
+		width:25%;
+		min-width:25%;
+	}
+	.executive .exec-info {padding-left:2px;}
+	.exec-role, #regional-reps .exec-role {font-size:14px;}
+	.exec-name, #regional-reps .exec-name {font-size:20px;}
+	.exec-school, #regional-reps .exec-school {font-size:16px;}
+	.exec-desc {font-size:15px;}
+	#officers {
+		flex-wrap:wrap;
+		.column {width:100%;}
+		#global-health-national-officers {padding-top:30px;}
+	}
+	#regional-reps-title{
+		font-size:24px;
+	}
+	#regional-reps-desc {
+		font-size:15px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.exec-desc {display:none;}
+	#regional-reps-desc {
+		display:none;
+	}
+}
+
+/* #Member Schools
+––––––––––––––––––––––––––––––––––––––––*/
+#member-schools-content {width:100%;}
+#schools {
+	display:flex;
+	flex-wrap:wrap;
+}
+.school, .school:hover {
+	transition: all 0.2s linear;
+}
+.school {
+	width:50%;
+	min-width:350px;
+	display:flex;
+	padding:10px 0px 10px 0px;
+	margin-bottom:15px;
+}
+.school-desc {
+	font-family:$sans-serif-font-stack;
+	padding-right:30px;
+	li { 
+		list-style:none; 
+		line-height:1.4em;
+	}
+	.school-name {
+		font-family:$header-font-stack;
+		font-weight:bold;
+		font-size:19px;
+		padding-top:10px;
+		padding-bottom:2px;
+		line-height:1.3em;
+		a {color:$dark; border-bottom:none;}
+		a:hover {color:$primary-color;}
+	}
+	.school-address {
+		padding-bottom:5px;
+	}
+	.school-address, .school-contact, .school-reps, .school-rep-emails {
+		font-size:16px;
+		color:#555;
+	}
+}
+.school-logo {min-width:110px;}
+.school-logo img {
+	// filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+	// filter: gray;
+	// -webkit-transform: translateZ(0); 
+	// -webkit-filter: grayscale(100%);
+	opacity:0.8;
+	width:110px;
+	padding:0px;
+	padding-bottom:0px;
+	padding-top:5px;
+	transition: all 0.15s linear;
+}
+.school:hover > .school-logo img {
+	// filter: none;
+	// -webkit-filter: grayscale(0%);
+	opacity:1;
+}
+#utoronto .school-logo img {
+	margin-top:-30px;
+	margin-bottom:-25px;
+}
+#nosm .school-desc .school-address {
+	padding-bottom:0px;
+}
+
+@media only screen and (max-width: 1199px){
+	#schools .school {width:500px;}
+}
+@media only screen and (max-width: 959px) {
+	.content {
+		flex-wrap:wrap;
+		padding-top:10px;
+	}
+	.school {
+		min-width:0px;
+		max-width:50%;
+	}
+	.school-desc {
+		padding-right:0px;
+	}
+	.school-logo img {
+		width:100px;
+		padding-left:15px;
+	}
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+	.content {padding-bottom:30px;}
+	.school {
+		margin-bottom:0px;
+		max-width:100%;
+		width:100%;
+	}
+	.school-desc {
+		padding-right:0px;
+		.school-name {font-size:18px;}
+		.school-contact, .school-address, .school-reps, .school-rep-emails {font-size:15px;}
+	}
+	.school-logo {
+		min-width:80px;
+	}
+	.school-logo img {
+		padding-top:15px;
+		padding-left:0px;
+		width:75px;
+	}
+}
+
+/* #CFMS Representatives
+––––––––––––––––––––––––––––––––––––––––*/
+#cfms-reps-content {width:100%;}
+#cfms-reps-desc {
+	max-width:$content-width;
+	padding-bottom:25px;
+}
+#cfms-reps-content #schools .school{
+	width:50%;
+	min-width:250px;
+	border-top:1px solid #EEE;
+	padding-top:12px;
+	padding-bottom:5px;
+	.school-desc {padding-right:40px;}
+	.school-logo { min-width:60px; }
+	.school-logo img{ width:60px; }
+}
+#cfms-reps-content #schools #utoronto .school-logo img {
+	margin-top:0px;
+}
+.school-rep-emails a {
+	color:$primary-color;
+	border-bottom:none;
+}
+
+@media only screen and (max-width: 767px) {
+	#cfms-reps-content #schools .school{
+		width:100%; 
+		padding-bottom:15px;
+		.school-desc {padding-right:0px;}
+	}
+}
+
+/* #Partner Organizations
+––––––––––––––––––––––––––––––––––––––––*/
+#partner-organizations-content {width:100%;}
+#bylaws-policy-content {width:100%;}
+#partner-organizations {margin-top:-20px;}
+.partner-organization {
+	display:flex;
+	padding-top:20px;
+	padding-bottom:20px;
+	border-bottom:1px solid $brighter;
+	.l-column {
+		width:450px;
+		min-width:300px;
+		padding-right:30px;
+	}
+	.partner-name {
+		font-family:$sans-serif-font-stack;
+		font-weight:bold;
+		font-size:20px;
+		line-height:1.2em;
+		color:$dark;
+	}
+}
+.partner-pic {
+	height:auto;
+	max-height:75px;
+	width:auto;
+	max-width:100%;
+	padding:0px 20px 0px 0px;
+	margin-bottom:-10px;
+
+	// filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+	// filter: gray;
+	// -webkit-transform: translateZ(0); 
+	// -webkit-filter: grayscale(100%);
+	opacity:0.8;
+	transition: all 0.15s linear;
+}
+.partner-pic:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
+	opacity:1;
+}
+.url {
+	margin-top:8px;
+	font-family:$sans-serif-font-stack;
+	font-weight:bold;
+	font-size:16px;
+	a {
+		padding:5px 8px 4px 8px;
+		border-bottom:1px solid rgba(30,30,30,0.1);
+		background-color:$brighter;
+		color:$bright;
+	}
+	a:hover {
+		color:$neutral;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#partner-organizations {margin-top:0px;}
+	.partner-organization{
+		flex-wrap:wrap;
+		.l-column {
+			min-width:0px;
+			width:auto;
+			padding-right:0px;
+		}
+		.partner-name {font-size:18px;}
+		.partner-pic {display:none;}
+	}
+	.url {
+		font-size:13px;
+		a {padding:4px 6px 2px 6px;}
+	}
+}
