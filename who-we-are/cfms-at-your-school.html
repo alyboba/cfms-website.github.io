@@ -1,0 +1,228 @@
+---
+title: The CFMS at your School
+---
+
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="{{ site.root }}/stylesheets/who-we-are.css">
+</head>
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#who-we-are" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-who-we-are.html %}
+		<script type="text/javascript">
+			document.querySelector( "#cfms-at-your-school" ).classList.toggle("sidebar-active");
+		</script>
+
+		<div id="cfms-reps-content">
+			<h1 id="page-title">{{ page.title }}</h1>
+			<div id="cfms-reps-desc">Have you ever wondered who is involved in the CFMS at your school? Click on the links below to find out who which Executives, National Officers, Committee Members, and other CFMS representatives hail from your medical school.</div>
+			<div id="schools">
+				<div id="ubc" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/ubc.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							University of British Columbia
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/UBC.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="ualberta" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/ualberta.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							University of Alberta
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/Alberta.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="ucalgary" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/ucalgary.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							University of Calgary
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/Calgary.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="usaskatchewan" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/usaskatchewan.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							University of Saskatchewan
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/Sask.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="umanitoba" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/umanitoba.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							University of Manitoba
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/Manitoba.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="nosm" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/nosm.png">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							Northern Ontario School of Medicine
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/NOSM.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="western" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/western.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							Western University
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/Western.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="mcmaster" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/mcmaster.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							McMaster University
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/McMaster.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="utoronto" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/utoronto.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							University of Toronto
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/Toronto.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="queens" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/queens.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							Queens University
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/Queens.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="uottawa" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/uottawa.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							University of Ottawa
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/Ottawa.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="mcgill" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/mcgill.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							McGill University
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/McGill.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="dalhousie" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/dalhousie.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							Dalhousie University
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/Dalhousie.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+				<div id="memorial" class="school">
+					<div class="school-logo">
+						<img src="{{ site.root }}/images/school-logos/memorial.svg">
+					</div>
+					<div class="school-desc">
+						<li class="school-name">
+							Memorial University of Newfoundland
+						</li>
+						<li class="school-url">
+							<div class="url preview"><a href="{{ site.root }}/images/local-org-charts/2015-2016/MUN.jpg">View Member List</a></div>
+						</li>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Loads a preview for each picture -->
+	<script src="{{ site.root }}/js/grid.js"></script>
+	<link rel="stylesheet" href="{{ site.root }}/stylesheets/grid.css" />
+	<script type="text/javascript">
+		grid.run('.preview', {buttons:false, animation:false});
+	</script>
+	{% include footer.html %}
+</body>
+</html>
