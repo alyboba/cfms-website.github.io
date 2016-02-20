@@ -41,15 +41,15 @@ Any CFMS member is eligible to run for a position. Descriptions of each position
 4. You are entitled to give a three (3) minute speech and a further two-three (2-3) minutes will be allowed for questions afterwards.
 5. If you cannot be present you may provide an audio, video, or power point presentation up to three (3) minutes in length to be submitted prior to the beginning of the AGM. You may also provide a speech to be read aloud by a colleague or friend who will be present. Phone/live teleconferenced speeches will not be permitted.  
 
-Please consult the [attached document]({{ site.root }}/files/updates/CFMS%20AGM%202015%20-%20Call%20for%20Nominations.pdf) for descriptions of the available positions. I sincerely encourage you to consider applying for these positions. This is an excellent opportunity to get involved, make a difference, and be an integral part of an effective and reputable student organization.
+Please consult the [attached document](/files/updates/CFMS%20AGM%202015%20-%20Call%20for%20Nominations.pdf) for descriptions of the available positions. I sincerely encourage you to consider applying for these positions. This is an excellent opportunity to get involved, make a difference, and be an integral part of an effective and reputable student organization.
 
 Yours sincerely,
 
-<img style="width:200px;" src="{{ site.root }}/images/past-president-signature.png">
+<img style="width:200px;" src="/images/past-president-signature.png">
 
 **Jesse Kancir**<br>
 2014-2015 Past-President, Canadian Federation of Medical Students<br>
 [pastpresident@cfms.org](mailto:pastpresident@cfms.org)
 
 > ####**Attachments:**
-> - [CFMS AGM 2015 - Call for Nominations.pdf]({{ site.root }}/files/updates/CFMS%20AGM%202015%20-%20Call%20for%20Nominations.pdf)
+> - [CFMS AGM 2015 - Call for Nominations.pdf](/files/updates/CFMS%20AGM%202015%20-%20Call%20for%20Nominations.pdf)

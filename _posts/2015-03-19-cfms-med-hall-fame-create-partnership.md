@@ -4,7 +4,7 @@ date: 2015-03-19
 description: It is with great excitement that the CFMS is announcing a new partnership with the Canadian Medical Hall of Fame. The Canadian Medical Hall of Fame (CMHF) is a national registered charity located in London, Ontario that recognizes and celebrates Canadian heroes, whose work has advanced health in Canada and around the world.
 ---
 
-<img class="right" src="{{ site.root }}/images/news-images/CMHF.png">
+<img class="right" src="/images/news-images/CMHF.png">
 
 It is with great excitement that the CFMS is announcing a new partnership with the Canadian Medical Hall of Fame. The Canadian Medical Hall of Fame (CMHF) is a national registered charity located in London, Ontario that recognizes and celebrates Canadian heroes, whose work has advanced health in Canada and around the world. The CMHF inspires the pursuit of careers in the health sciences through national outreach programs and the promotion of the stories of their Laureates.
 

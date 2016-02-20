@@ -8,7 +8,7 @@
 	{% include head.html %}
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="{{ site.root }}/stylesheets/news.css">
+	<link rel="stylesheet" href="/stylesheets/news.css">
 </head>
 <body>
 	{% include nav.html %}
@@ -41,7 +41,7 @@
 				{% for post in site.posts limit:5 %}
 					<div class="news-date">{{ post.date | date: '%b %d' }}</div>
 					<li>
-						<div class="news-link"><a href="{{ site.root }}{{ post.url }}">{{ post.title }}</a></div>
+						<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
 					</li>
 				{% endfor %}
 			</div>

@@ -12,19 +12,19 @@ title: "Canadian Federation of Medical Students"
 		$(function() {
 			switch (Cookies.get('lang')){
 				case 'en':
-					if (window.location.href != '{{ site.root }}/index.html')
-						window.location.href = '{{ site.root }}/index.html';
+					if (window.location.href != '/index.html')
+						window.location.href = '/index.html';
 					break;
 				case 'fr':
-					if (window.location.href != '{{ site.root }}/fr/index.html')
-					window.location.href = '{{ site.root }}/fr/index.html';
+					if (window.location.href != '/fr/index.html')
+					window.location.href = '/fr/index.html';
 					break;
 			}
 		});
 	</script>
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="{{ site.root }}/stylesheets/home.css">
+	<link rel="stylesheet" href="/stylesheets/home.css">
 </head>
 <body>
 	<div id="home-header">
@@ -66,11 +66,11 @@ title: "Canadian Federation of Medical Students"
 			{% for link in site.data.home.featured_links %}
 				<a href="{{ link.url }}">
 					{% if page.lang == "en" %}
-						<div class="featured-link" style="background: url({{ site.root }}/{{ link.image_url_en }}) no-repeat center center; background-size:cover">
+						<div class="featured-link" style="background: url(/{{ link.image_url_en }}) no-repeat center center; background-size:cover">
 						</div>
 						<div class="featured-link-text">{{ link.text_en }}</div>
 					{% else %}
-						<div class="featured-link" style="background: url({{ site.root }}/{{ link.image_url_fr }}) no-repeat center center; background-size:cover">
+						<div class="featured-link" style="background: url(/{{ link.image_url_fr }}) no-repeat center center; background-size:cover">
 						</div>
 						<div class="featured-link-text">{{ link.text_fr }}</div>
 					{% endif %}
@@ -82,7 +82,7 @@ title: "Canadian Federation of Medical Students"
 	<!-- Displays the homepage banner -->
 	{% for text in site.data.home.banner_text %}
 		{% if text.lang == page.lang %}
-			<div id="hero-image" style="background: url({{ site.root }}/{{ site.data.home.banner_image_url }}) no-repeat center 30%; background-size:cover">
+			<div id="hero-image" style="background: url(/{{ site.data.home.banner_image_url }}) no-repeat center 30%; background-size:cover">
 				<a href="{{ site.data.home.banner_url }}">
 					<div id="hero-text">
 						<div id="hero-byline">{{ text.byline }}</div>
@@ -106,7 +106,7 @@ title: "Canadian Federation of Medical Students"
 				{% for post in site.posts limit:5 %}
 					<div class="news-date">{{ post.date | date: '%b %d' }}</div>
 					<li>
-						<div class="news-link"><a href="{{ site.root }}{{ post.url }}">{{ post.title }}</a></div>
+						<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
 						<div class="news-desc">{{ post.description }}</div>
 					</li>
 				{% endfor %}
@@ -122,7 +122,7 @@ title: "Canadian Federation of Medical Students"
 				<span style="opacity:0.5">:</span>
 			</h1>
 			<div id="sponsor-logo">
-				<a href="https://mdm.ca/career-stages/student/index.asp"><img src="{{ site.root }}/images/MDFM.svg"></img></a>
+				<a href="https://mdm.ca/career-stages/student/index.asp"><img src="/images/MDFM.svg"></img></a>
 			</div>
 		</div>
 	</div>

@@ -16,4 +16,4 @@ Thank you,
 NGIG Co-Editors-in-Chief
 
 > ####**Attachments**
-> - <a href="{{ site.root }}/files/updates/Call%20for%20Submissions%20-%202016.jpg">Call for Submissions – 2016.jpg</a>
+> - <a href="/files/updates/Call%20for%20Submissions%20-%202016.jpg">Call for Submissions – 2016.jpg</a>

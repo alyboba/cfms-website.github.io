@@ -4,7 +4,7 @@ date: 2015-05-07
 description: It is with great excitement that the CFMS is announcing a new partnership with the Canadian Medical Hall of Fame. The Canadian Medical Hall of Fame (CMHF) is a national registered charity located in London, Ontario that recognizes and celebrates Canadian heroes, whose work has advanced health in Canada and around the world.
 ---
 
-<img class="right" src="{{ site.root }}/images/news-images/IFMSA-macedonia.png">
+<img class="right" src="/images/news-images/IFMSA-macedonia.png">
 
 **Are you passionate about health equity and global health? Do you want to meet and work with colleagues from around the world?**
 
@@ -22,7 +22,7 @@ Medical students with a strong commitment to global health and social justice ar
 
 More information can be found on the conference [website](http://www.am2015macedonia.com/theme/).
 
-Application details available [here]({{ site.root }}/files/updates/Call%20for%20applicants%20-%20IFMSA%20AM15%20Macedonia.pdf).
+Application details available [here](/files/updates/Call%20for%20applicants%20-%20IFMSA%20AM15%20Macedonia.pdf).
 
 **Scott Hodgson**<br>
 IFMSA-CFMS Point Person<br>
@@ -33,4 +33,4 @@ Vice President – Global Health<br>
 Canadian Federation of Medical Students (CFMS)
 
 > ####**Attachments:**
-> - [Call for applicants - IFMSA AM15 Macedonia.pdf]({{ site.root }}/files/updates/Call%20for%20applicants%20-%20IFMSA%20AM15%20Macedonia.pdf)
+> - [Call for applicants - IFMSA AM15 Macedonia.pdf](/files/updates/Call%20for%20applicants%20-%20IFMSA%20AM15%20Macedonia.pdf)

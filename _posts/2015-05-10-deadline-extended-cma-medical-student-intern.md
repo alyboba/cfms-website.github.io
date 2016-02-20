@@ -29,4 +29,4 @@ Apply in confidence to: [jobapp@cma.ca](mailto:jobapp@cma.ca)
 Learn more at [www.cma.ca](http://www.cma.ca).
 
 > ####**Attachments:**
-> - [Medical Student Intern - CFMS.docx]({{ site.root }}/files/updates/Medical%20Student%20Intern%20-%20CFMS.docx)
+> - [Medical Student Intern - CFMS.docx](/files/updates/Medical%20Student%20Intern%20-%20CFMS.docx)

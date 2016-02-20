@@ -4,7 +4,7 @@ date: 2015-05-04
 description: MD Financial Management Inc. (MD), a Canadian Medical Association (CMA)-owned financial management organization, and the Canadian Federation of Medical Students (CFMS) today announced a collaborative partnership that makes MD the exclusive financial services’ partner of the CFMS.
 ---
 
-<img class="right" src="{{ site.root }}/images/news-images/MDFM-CFMS.png">
+<img class="right" src="/images/news-images/MDFM-CFMS.png">
 
 [MD Financial Management Inc. (MD)](https://mdm.ca/), a Canadian Medical Association (CMA)-owned financial management organization, and the [Canadian Federation of Medical Students](http://www.cfms.org/) (CFMS) today announced a collaborative partnership that makes MD the exclusive financial services’ partner of the CFMS.
  
@@ -18,7 +18,7 @@ Medical students can benefit from MD's specialized network of advisors who are d
  
 For more information about the MD/CFMS partnership, please email Alison Forestell at MD ([alison.forestell@cma.ca](mailto:alison.forestell@cma.ca)) or Franco Rizzuti ([vpfinance@cfms.org](vpfinance@cfms.org)) at the CFMS.
 
-Please click [here]({{ site.root }}/files/updates/CFMS%20and%20MDFM%20Press%20Release%20-%20May%202015.docx) for the full press release.
+Please click [here](/files/updates/CFMS%20and%20MDFM%20Press%20Release%20-%20May%202015.docx) for the full press release.
 
 > ####**Attachments:**
-> - [CFMS and MDFM Press Release - May 2015.docx]({{ site.root }}/files/updates/CFMS%20and%20MDFM%20Press%20Release%20-%20May%202015.docx)
+> - [CFMS and MDFM Press Release - May 2015.docx](/files/updates/CFMS%20and%20MDFM%20Press%20Release%20-%20May%202015.docx)

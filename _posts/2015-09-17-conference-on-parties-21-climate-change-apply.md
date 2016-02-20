@@ -52,4 +52,4 @@ If you are interested, please submit the following to [cop@ifmsa.org](mailto:cop
 Accepted applicants will receive online preparation as soon as the results are released. IFMSA commits to train, brief and prepare all delegates to the meeting; and to smoothly coordinate the delegation during the meeting.
 
 > ####**Attachments:**
-> - [IFMSA COP 21 External Meeting Application Form.docx]({{ site.root }}/files/updates/IFMSA%20COP%2021%20External%20Meeting%20Application%20Form.docx)
+> - [IFMSA COP 21 External Meeting Application Form.docx](/files/updates/IFMSA%20COP%2021%20External%20Meeting%20Application%20Form.docx)
