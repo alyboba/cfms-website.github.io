@@ -21,13 +21,14 @@
 		<div id="latest-tweets">
 		</div>
 	</div>
+
 	{% for contact_us in site.data.translations.contact_us %}
 		{% if contact_us.lang == page.lang %}
 			<div class="column">
 				<h1>{{ contact_us.title }} <span style="opacity:0.3">:</span></h1>
 				<div class="icon"><i class="fa fa-map-marker"></i></div>
 				<li>
-					Canadian Federation of Medical Students<br>
+					{{ contact_us.name }}<br>
 					267 O'Connor Street, Suite 401<br>
 					Ottawa, ON K2P 1V3
 				</li>
@@ -41,7 +42,7 @@
 					<li><b>{{ contact_us.general_inquiries }}</b>: Rosemary Conliffe<br>
 					    <script>getEmail("office")</script>
 					</li>
-					<li><b>{{ contact_us.media }}</b>: Anthea Girdwood<br>
+					<li><b>{{ contact_us.media }}</b>: Carl White Ulysse<br>
 						<script>getEmail("vpcommunications")</script>
 					</li>
 					<li><b>{{ contact_us.it }}</b>: Kevan Lu<br>

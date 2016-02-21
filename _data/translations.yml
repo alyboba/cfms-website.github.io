@@ -107,12 +107,13 @@ find_us_on:
 - lang: "fr"
   title: "Trouvez nous sur"
   copy: "FEMC. Tous droits réservés.<br>Développé par"
-  site_map: "Carte du site:"
+  site_map: "Plan du site:"
 
 #Contact us
 contact_us:
 - lang: "en"
   title: "Contact us"
+  name: "Canadian Federation of Medical Students"
   phone: "Phone"
   fax: "Fax"
   general_inquiries: "General Inquiries"
@@ -120,6 +121,7 @@ contact_us:
   it: "Information Technology"
 - lang: "fr"
   title: "Pour nous joindre"
+  name: "Fédération des étudiants et des étudiantes en médecine du Canada"
   phone: "Téléphone"
   fax: "Télécopieur"
   general_inquiries: "Questions diverses"
