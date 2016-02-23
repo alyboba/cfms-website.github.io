@@ -235,6 +235,24 @@ $number-margin-mobile:40px;
 	padding-top:5px;
 	padding-bottom:5px;
 }
+.portfolio-desc{
+	padding-top:12px;
+	font-size:16px;
+	color:$dark;
+	line-height:1.5em;
+	padding-left:25px;
+}
+.portfolio-col-left{
+	width:30%;
+	padding-bottom:15px;
+	border-bottom:2px solid $brighter;
+}
+.portfolio-col-right {
+	width:70%;
+	max-width:500px;
+	padding-bottom:15px;
+	border-bottom:2px solid $brighter;
+}
 
 .url {
 	margin-top:8px;

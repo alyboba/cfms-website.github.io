@@ -52,6 +52,25 @@ title: "Canadian Federation of Medical Students"
 			{% endif %}
 		{% endfor %}
 	</div>
+
+	<!-- Option News Strip -->
+	{% if site.data.home.news_strip == true %}
+		<div id="news-strip">
+			{% if site.data.home.news_text_url != "" %}
+				<a href="{{ site.data.home.news_text_url }}">
+			{% else %}
+				<a>
+			{% endif %}
+					<i class="fa fa-exclamation-circle" style="padding-right:5px;"></i>
+					{% if page.lang == "en" %}
+						{{ site.data.home.news_text_en }}
+					{% else %}
+						{{ site.data.home.news_text_fr }}
+					{% endif %}
+				</a>
+		</div>
+	{% endif %}
+
 	<div id="featured-links">
 		<h1>
 			{% if page.lang == "en" %}

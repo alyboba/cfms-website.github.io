@@ -7,6 +7,12 @@ intro:
   title: "Fédération des étudiants et des étudiantes en médecine du Canada"
   description: "La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre."
 
+#Optional News Strip
+news_strip: true
+news_text_en: "Best of Luck to all final year medical students with their CaRMS tour!"
+news_text_fr: "Best of Luck to all final year medical students with their CaRMS tour!"
+news_text_url: ""
+
 #Home Page Banner
 banner_url: "meetings/sgm-2016-montreal.html"
 banner_image_url: "images/hero-images/sgm2016.jpg"

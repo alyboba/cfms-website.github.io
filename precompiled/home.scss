@@ -30,6 +30,18 @@
 	line-height:1.3em;
 	color:$bright;
 }
+
+#news-strip {
+	@extend .content;
+	background-color:black;
+	font-family:$sans-serif-font-stack;
+	font-size:18px;
+	font-weight:bold;
+	padding-top:17px;
+	padding-bottom:15px;
+	a {border-bottom:none; color:$brighter;}
+}
+
 $link-padding: 30px;
 #featured-links {
 	@extend .content;
@@ -294,6 +306,10 @@ $link-padding: 30px;
 	#home-subtitle {
 		padding-top:15px;
 		font-size:16px;
+	}
+	#news-strip {
+		font-size:16px;
+		padding-bottom:18px;
 	}
 	#featured-links {
 		h1 {font-size:22px;}
