@@ -51,6 +51,9 @@ $mobile-header-font-size: 26px;
 /* #Inherited Classes
 ––––––––––––––––––––––––––––––––––––––––*/
 
+.set-content-width {
+	max-width:$content-width;
+}
 .content{
 	padding-top: 50px;
 	padding-left:$padding;
