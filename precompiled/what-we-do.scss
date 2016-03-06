@@ -310,6 +310,76 @@ $number-margin-mobile:40px;
 	}
 }
 
+#schools {
+	display:flex;
+	flex-wrap:wrap;
+}
+.school, .school:hover {
+	transition: all 0.2s linear;
+}
+.school {
+	width:50%;
+	min-width:350px;
+	display:flex;
+	padding:10px 0px 10px 0px;
+	margin-bottom:15px;
+}
+.school-desc {
+	font-family:$sans-serif-font-stack;
+	padding-right:30px;
+	li { 
+		list-style:none; 
+		line-height:1.4em;
+	}
+	.school-name {
+		font-family:$header-font-stack;
+		font-weight:bold;
+		font-size:19px;
+		padding-top:10px;
+		padding-bottom:2px;
+		line-height:1.3em;
+		a {color:$dark; border-bottom:none;}
+		a:hover {color:$primary-color;}
+	}
+	.school-address {
+		padding-bottom:5px;
+	}
+	.school-address, .school-contact, .school-reps, .school-rep-emails {
+		font-size:16px;
+		color:#555;
+	}
+}
+#cfms-reps-content {width:100%;}
+#cfms-reps-desc {
+	max-width:$content-width;
+	padding-bottom:25px;
+}
+#cfms-reps-content #schools .school{
+	width:50%;
+	min-width:250px;
+	border-top:1px solid #EEE;
+	padding-top:12px;
+	padding-bottom:5px;
+	.school-desc {padding-right:40px;}
+	.school-logo { min-width:60px; }
+	.school-logo img{ width:60px; }
+}
+#cfms-reps-content #schools #utoronto .school-logo img {
+	margin-top:0px;
+}
+.school-rep-emails a {
+	color:$primary-color;
+	border-bottom:none;
+}
+
+@media only screen and (max-width: 767px) {
+	#cfms-reps-content #schools .school{
+		width:100%; 
+		padding-bottom:15px;
+		.school-desc {padding-right:0px;}
+	}
+}
+
 /* Mobile */
 @media only screen and (max-width: 767px) {
 	.executive .exec-pic {
