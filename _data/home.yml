@@ -9,9 +9,9 @@ intro:
 
 #Optional News Strip
 news_strip: true
-news_text_en: "Best of Luck to all final year medical students with their CaRMS tour!"
-news_text_fr: "Best of Luck to all final year medical students with their CaRMS tour!"
-news_text_url: ""
+news_text_en: "Worried about applying for electives? Click here for some great resources!"
+news_text_fr: "Worried about applying for electives? Click here for some great resources!"
+news_text_url: "what-we-do/education/elective-status-board.html"
 
 #Home Page Banner
 banner_url: "meetings/sgm-2016-montreal.html"
