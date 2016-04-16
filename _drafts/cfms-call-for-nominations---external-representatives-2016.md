@@ -11,13 +11,13 @@ Each fall and winter, the CFMS selects a new group of talented individuals to he
 
 The positions currently available for the 2016-2017 school year include:
 
-1. CFMS Rep on Canadian Medical Association Journal (CMAJ) Student Humanities Blog (Anglophone)
-2. CFMS Rep on Canadian Medical Association Journal (CMAJ) Student Humanities Blog (Francophone)
-3. CFMS Jr. Rep to the Committee on the Accreditation of Canadian Medical Schools (2 year position)
+1. [CFMS Rep on Canadian Medical Association Journal (CMAJ) Student Humanities Blog (Anglophone)](/files/updates/2016 application information cmaj student humanities blog english.pdf)
+2. [CFMS Rep on Canadian Medical Association Journal (CMAJ) Student Humanities Blog (Francophone)](/files/updates/2016 french application information cmaj student humanities blog (1).pdf)
+3. [CFMS Jr. Rep to the Committee on the Accreditation of Canadian Medical Schools (2 year position)](/files/updates/2016 application and terms of ref for cacms jr.pdf)
    <br>- 1st and 2nd Year Students NON-Ontario Medical Students Only (1st Year in 3-Year Programs)
-4. CFMS Rep to the Canadian Association for Medical Education (CAME)
+4. [FMS Rep to the Canadian Association for Medical Education (CAME)](/files/updates/2016 application and terms of ref for came .pdf)C
    <br>-Must be already have funding to attend CCME (April 2016)
-5. CFMS Representative to the National Electives and Interviews Databases
+5. [CFMS Representative to the National Electives and Interviews Databases](/files/updates/2016 application and terms of ref for electives and interviews .pdf)
 
 
 \*\*To apply to any of these positions, please complete the following application form. \*\*
