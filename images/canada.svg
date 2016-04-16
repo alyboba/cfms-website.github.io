@@ -714,6 +714,7 @@
 	<circle class="medschool" fill="#FFFFFF" cx="2239.939" cy="964.419" r="6"/>
 	<circle class="medschool delay" fill="#FFFFFF" cx="1848.457" cy="1181.458" r="6"/>
 	<circle class="medschool" fill="#FFFFFF" cx="1810.957" cy="1211.958" r="6"/>
+	<circle class="medschool" fill="#FFFFFF" cx="1625.957" cy="1070.958" r="6"/>
 </g>
 <style>
 	.medschool {
