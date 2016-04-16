@@ -13,5 +13,5 @@ UOJM team
 
 Attachements
 
-1. UOJM 6.1 Call for submissions.pdf
+1. [UOJM 6.1 Call for submissions.pdf](/files/updates/uojm 6.1 call for submissions.pdf)
 2. JMUO 6.1 Appel de soumissions.pdf&nbsp;
