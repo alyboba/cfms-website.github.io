@@ -1,5 +1,17 @@
 ---
 title: Call for Submissions - University of Ottawa Journal of Medicine
-date: 2015-03-19T00:00:00.000Z
-description: 'It is with great excitement that the CFMS is announcing a new partnership with the Canadian Medical Hall of Fame. The Canadian Medical Hall of Fame (CMHF) is a national registered charity located in London, Ontario that recognizes and celebrates Canadian heroes, whose work has advanced health in Canada and around the world.'
+date: 2015-12-09T00:00:00.000Z
+description: The University of Ottawa Journal of Medicine (UOJM) is now accepting submissions for our Spring 2016 issue on Preventive and Personalized Medicine.
 ---
+
+
+The University of Ottawa Journal of Medicine (UOJM) is now accepting submissions for our Spring 2016 issue on Preventive and Personalized Medicine. Submissions to our journal are free and the deadline is March 1st, 2016. &nbsp;We accept original research, reviews, commentaries, news and letters, humanities, and interviews. Please see attachment or visit http://uojm.ca for further details.
+
+Thank you,
+
+UOJM team
+
+Attachements
+
+1. UOJM 6.1 Call for submissions.pdf
+2. JMUO 6.1 Appel de soumissions.pdf&nbsp;
