@@ -9,7 +9,7 @@ The National Geriatrics Interest Group (NGIG) is currently accepting application
 
 The deadline for submissions is March 13, 2016 and the awards will be presented at the Canadian Geriatrics Society Conference occurring in Vancouver, British Columbia from April 14-16, 2016. The award descriptions and application instructions for each have been attached in both French and English. Any questions about these awards can be forwarded to&nbsp;[amandayc.chen@mail.utoronto.ca](mailto:amandayc.chen@mail.utoronto.ca)
 
-Don't forget to like the National Geriatrics Interest Group on Facebook and follow us on Twitter @NGIG1415 to hear more about awards, events and our #whygeriatricswednesday initiative!
+Don’t forget to like the National Geriatrics Interest Group on Facebook and follow us on Twitter @NGIG1415 to hear more about awards, events and our #whygeriatricswednesday initiative!
 
 > #### Attachments
 >
