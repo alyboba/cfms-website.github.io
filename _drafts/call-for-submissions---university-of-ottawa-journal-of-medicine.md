@@ -5,7 +5,7 @@ description: The University of Ottawa Journal of Medicine (UOJM) is now acceptin
 ---
 
 
-The University of Ottawa Journal of Medicine (UOJM) is now accepting submissions for our Spring 2016 issue on Preventive and Personalized Medicine. Submissions to our journal are free and the deadline is March 1st, 2016. &nbsp;We accept original research, reviews, commentaries, news and letters, humanities, and interviews. Please see attachment or visit http://uojm.ca for further details.
+The University of Ottawa Journal of Medicine (UOJM) is now accepting submissions for our Spring 2016 issue on Preventive and Personalized Medicine. Submissions to our journal are free and the deadline is March 1st, 2016. &nbsp;We accept original research, reviews, commentaries, news and letters, humanities, and interviews. Please see attachment or visit [http://uojm.ca](http://uojm.ca) for further details.
 
 Thank you,
 
@@ -14,4 +14,4 @@ UOJM team
 Attachements
 
 1. [UOJM 6.1 Call for submissions.pdf](/files/updates/uojm 6.1 call for submissions.pdf)
-2. JMUO 6.1 Appel de soumissions.pdf&nbsp;
+2. [JMUO 6.1 Appel de soumissions.pdf](/files/updates/jmuo 6.1 appel de soumissions.pdf)&nbsp;
