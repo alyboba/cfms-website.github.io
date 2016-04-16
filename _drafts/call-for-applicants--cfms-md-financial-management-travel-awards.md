@@ -13,5 +13,5 @@ For full application details please see the attached document. Applications are 
 
 Attachement
 
-1. SGM2016 Application form_ENG.doc
-2. SGM2016 Application form_FRA.docx&nbsp;
+1. [SGM2016 Application form_ENG.doc](/files/updates/sgm2016 application form_eng.doc)
+2. [SGM2016 Application form_FRA.docx&nbsp;](/files/updates/sgm2016 application form_fra.docx)
