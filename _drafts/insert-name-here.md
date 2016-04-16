@@ -11,4 +11,4 @@ Resolutions must be received by Emily Hodgson, CFMS SGM Chair, by e-mail at reso
 
 For full details, please see the attached document.
 
-1. CFMS SGM 2016 Call for Resolutions
+1. [CFMS SGM 2016 Call for Resolutions](/files/updates/sgm 2016 call for resolutions.pdf)
