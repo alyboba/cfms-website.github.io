@@ -11,7 +11,6 @@ Thank you,
 
 UOJM team
 
-Attachements
-
-1. [UOJM 6.1 Call for submissions.pdf](/files/updates/uojm 6.1 call for submissions.pdf)
-2. [JMUO 6.1 Appel de soumissions.pdf](/files/updates/jmuo 6.1 appel de soumissions.pdf)&nbsp;
+> ####**Attachments**
+> 1. [UOJM 6.1 Call for submissions.pdf](/files/updates/uojm 6.1 call for submissions.pdf)
+> 2. [JMUO 6.1 Appel de soumissions.pdf](/files/updates/jmuo 6.1 appel de soumissions.pdf)&nbsp;
