@@ -7,6 +7,12 @@ title: "Canadian Federation of Medical Students"
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
 	{% include head.html %}
+	{% for meta in site.data.home.intro %}
+		{% if meta.lang == page.lang %}
+			<meta name="description" content="{{ meta.description }}">
+		{% endif %}
+	{% endfor %}
+
 	<!-- Redirect based on chosen language -->
 	<script>
 		$(function() {
