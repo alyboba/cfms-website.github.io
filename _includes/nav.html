@@ -5,28 +5,28 @@
 				<div id="logo-group" class="{{ page.lang }}">
 					<img id="logo-invert" src="/images/cfms-logo-invert.svg">
 					<img id="logo" src="/images/cfms-logo.svg">
-					<a href="{{ nav.lang_path }}/index.html">{{ nav.acronym }}</a>
+					<a href="{{ nav.lang_path }}/">{{ nav.acronym }}</a>
 				</div>
-				<span id="logo-desc"><a class="{{ page.lang }}" href="{{ nav.lang_path }}/index.html">{{ nav.title }}</a></span>
+				<span id="logo-desc"><a class="{{ page.lang }}" href="{{ nav.lang_path }}/">{{ nav.title }}</a></span>
 			</div>
 			<div id="top-hamburger">
 				<a id="nav-toggle" href="#"><span></span></a>
 			</div>
 			<div id="top-nav">
 				<ul class="{{ page.lang }}">
-					<li id="who-we-are"><a class="top-level" href="{{ nav.lang_path }}/who-we-are/index.html">{{ nav.who_we_are }}</a></li>
-					<li id="what-we-do"><a class="top-level" href="{{ nav.lang_path }}/what-we-do/index.html">{{ nav.what_we_do }}</a>
+					<li id="who-we-are"><a class="top-level" href="{{ nav.lang_path }}/who-we-are/">{{ nav.who_we_are }}</a></li>
+					<li id="what-we-do"><a class="top-level" href="{{ nav.lang_path }}/what-we-do/">{{ nav.what_we_do }}</a>
 						<div id="sub-menu">
 						    <ul>
-						    	<li><a href="{{ nav.lang_path }}/what-we-do/advocacy/index.html">{{ nav.advocacy }}</a></li>
-						    	<li><a href="{{ nav.lang_path }}/what-we-do/education/index.html">{{ nav.education }}</a></li>
-						    	<li><a href="{{ nav.lang_path }}/what-we-do/global-health/index.html">{{ nav.global_health }}</a></li>
-						    	<li><a href="{{ nav.lang_path }}/what-we-do/student-affairs/index.html">{{ nav.student_affairs }}</a></li>
+						    	<li><a href="{{ nav.lang_path }}/what-we-do/advocacy/">{{ nav.advocacy }}</a></li>
+						    	<li><a href="{{ nav.lang_path }}/what-we-do/education/">{{ nav.education }}</a></li>
+						    	<li><a href="{{ nav.lang_path }}/what-we-do/global-health/">{{ nav.global_health }}</a></li>
+						    	<li><a href="{{ nav.lang_path }}/what-we-do/student-affairs/">{{ nav.student_affairs }}</a></li>
 						    </ul>
 						</div>
 					</li>
-					<li id="resources"><a class="top-level" href="{{ nav.lang_path }}/resources/index.html">{{ nav.resources }}</a></li>
-					<li id="meetings"><a class="top-level" href="{{ nav.lang_path }}/meetings/index.html">{{ nav.meetings }}</a>
+					<li id="resources"><a class="top-level" href="{{ nav.lang_path }}/resources/">{{ nav.resources }}</a></li>
+					<li id="meetings"><a class="top-level" href="{{ nav.lang_path }}/meetings/">{{ nav.meetings }}</a>
 						<div id="sub-menu">
 						    <ul>
  						    	<li><a href="{{ nav.lang_path }}/meetings/sgm-2016-montreal.html">SGM 2016 &ndash; Montreal, QC</a></li>
@@ -34,12 +34,12 @@
 						    </ul>
 						</div>
 					</li>
-					<li id="news"><a class="top-level" href="{{ nav.lang_path }}/news/index.html">{{ nav.news }}</a></li>
+					<li id="news"><a class="top-level" href="{{ nav.lang_path }}/news/">{{ nav.news }}</a></li>
 					<li id="login-button"><a class="redirect-modal">{{ nav.login }}</a></li>
 					{% if nav.lang == "en" %}
-						<li id="lang-toggle"><a id="en" class="current-lang" href="/index.html">EN</a> / <a id="fr" href="/fr/index.html">FR</a></li>
+						<li id="lang-toggle"><a id="en" class="current-lang" href="/">EN</a> / <a id="fr" href="/fr/">FR</a></li>
 					{% else %}
-						<li id="lang-toggle"><a id="en" href="/index.html">EN</a> / <a id="fr" class="current-lang" href="/fr/index.html">FR</a></li>
+						<li id="lang-toggle"><a id="en" href="/">EN</a> / <a id="fr" class="current-lang" href="/fr/">FR</a></li>
 					{% endif %}
 				</ul>
 			</div>

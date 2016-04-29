@@ -45,7 +45,7 @@ title: "All Articles"
 					{% if paginator.previous_page == 1 %}
 						<div id="prev-button" class="button"><a href="{{ paginator.previous_page_path }}">Previous Page</a></div>
 					{% else %}
-						<div id="prev-button" class="button"><a href="{{ paginator.previous_page_path }}index.html">Previous Page</a></div>
+						<div id="prev-button" class="button"><a href="{{ paginator.previous_page_path }}">Previous Page</a></div>
 					{% endif %}
 				{% else %}
 				    <div id="prev-button" class="button inactive"><a href="#">Previous Page</a></div>
@@ -57,16 +57,16 @@ title: "All Articles"
 					    {% if page == paginator.page %}
 						    <em id="current-page" class="page-link">{{ page }}</em>
 					    {% elsif page == 1 %}
-						    <a class="page-link" href="/news/archives/index.html">{{ page }}</a>
+						    <a class="page-link" href="/news/archives/">{{ page }}</a>
 					    {% else %}
-						    <a class="page-link" href="/{{ site.paginate_path | replace: ':num', page }}index.html">{{ page }}</a>
+						    <a class="page-link" href="/{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
 					    {% endif %}
 					{% endfor %}
 				</div>
 
 				<!-- Next Page -->
 				{% if paginator.next_page %}
-				    <div id="next-button" class="button"><a href="{{ paginator.next_page_path }}index.html">Next Page</a></div>
+				    <div id="next-button" class="button"><a href="{{ paginator.next_page_path }}">Next Page</a></div>
 			    {% else %}
 				    <div id="next-button" class="button inactive"><a href="#">Next Page</a></div>
 				{% endif %}
