@@ -11,5 +11,5 @@ After months of internal development, the CFMS is proud to announce the release 
 3. **Supports mobile devices**: The website adjusts automatically to different screen sizes, including those of tablets and mobile phones.
 4. **Improved performance**: The new CFMS website is approximately 5 times faster than the old site, and requires less data to download.
 
-A number of features are still being rolled out while the website migration takes place. Many features, including member logins, and discounts, are still only available on the old website (now available at: TEMP). If there are any concerns or suggestions, feel free to email [mailto:it@cfms.org](it@cfms.org). *We hope you enjoy using our new site!*
+A number of features are still being rolled out while the website migration takes place. Many features, including member logins, and discounts, are still only available on the old website (now available at: TEMP). If there are any concerns or suggestions, feel free to email [it@cfms.org](mailto:it@cfms.org). *We hope you enjoy using our new site!*
 
