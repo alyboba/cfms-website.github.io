@@ -14,7 +14,7 @@ news_text_fr: "Worried about applying for electives? Click here for some great r
 news_text_url: "what-we-do/education/elective-status-board.html"
 
 #Home Page Banner
-banner_url: "meetings/sgm-2016-montreal.html"
+banner_url: "/2016/04/25/cfms-new-website.html"
 banner_image_url: "images/hero-images/test.png"
 banner_text:
 - lang: "en"
@@ -44,7 +44,7 @@ featured_links:
   image_url_fr: "images/home-link-thumbs/selfie.jpg"
   text_en: "The CFMS is now on Instagram as @cfmsfemc!"
   text_fr: "La FEMC est maintenant sur Instagram @cfmsfemc!"
-- url: "#"
+- url: "meetings/sgm-2016-montreal.html"
   image_url_en: "images/home-link-thumbs/sgm-2016.jpg"
   image_url_fr: "images/home-link-thumbs/sgm-2016.jpg"
   text_en: "See what happened at the 2016 CFMS Spring General Meeting"
