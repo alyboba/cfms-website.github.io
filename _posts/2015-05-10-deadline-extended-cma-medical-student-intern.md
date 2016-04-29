@@ -16,11 +16,11 @@ In addition to engaging with leaders at the CMA and learning more about the orga
 	- Make formal presentations at the end of the term outlining a summary of their internship experience
 - Help staff develop an educational curriculum to support Canadian physicians who elect to participate in assisted dying activities.
  
-##**Education**
+## **Education**
 
 Must be currently a 1st or 2nd year medical student in Canada and a member in good standing of CFMS.
 
-##**Application Process**
+## **Application Process**
 
 Please submit a résumé and a brief description (max 500 words) indicating why you are interested in this opportunity, and indicate your level of proficiency in French.  Applications are to be submitted by **May 15th, 2015.**
 
@@ -28,5 +28,5 @@ Apply in confidence to: [jobapp@cma.ca](mailto:jobapp@cma.ca)
 
 Learn more at [www.cma.ca](http://www.cma.ca).
 
-> ####**Attachments:**
+> #### **Attachments:**
 > - [Medical Student Intern - CFMS.docx](/files/updates/Medical%20Student%20Intern%20-%20CFMS.docx)

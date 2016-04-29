@@ -16,6 +16,6 @@ For more information, please review the files below and/or email [editor.cmajhum
 
 Good luck!
 
-> ####**Attachments**
+> #### **Attachments**
 > - [Student Humanities Blog Application Form](/files/updates/CMAJ%20Student%20Humanities%20Blog%20Application%20Piece.docx)
 > - [CMAJ-CFMS Student Peer Review Team Application Instructions](/files/updates/CMAJ-CFMS%20Student%20Peer%20Review%20Team%20Application.pdf)

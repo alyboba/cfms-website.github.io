@@ -15,6 +15,6 @@ Thank you,
  
 NGIG Co-Editors-in-Chief
 
-> ####**Attachments**
+> #### **Attachments**
 >
 > - [Call for Submissions – 2016.jpg](/files/updates/Call%20for%20Submissions%20-%202016.jpg)

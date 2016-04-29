@@ -22,5 +22,5 @@ Yours sincerely,
 
 <img style="max-width:550px;" src="/images/news-images/OMSA-CFMS.png">
 
-> ####**Attachments:**
+> #### **Attachments:**
 > - <span class="file-format">PDF</span>[OMSA and CFMS Joint Message: CMG Position Reduction in Ontario]({{site.root}}/files/updates/CMG%20Position%20Reduction_logos.pdf)

@@ -14,7 +14,7 @@ Thank you for your help,
 
 **CITAC Executive Committee**
 
-> ####**Attachments:**
+> #### **Attachments:**
 > - [CITAC Open Letter.pdf](/files/updates/CITAC%20Open%20Letter.pdf)
 
 

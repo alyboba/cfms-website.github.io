@@ -14,6 +14,6 @@ In summary, resolutions must be received by Kendra Komsa, CFMS AGM Chair, by ema
 2. **Friday August 28, 2015 at 17:00 EST** &mdash; for all proposed motions that includes spending of $1000 or more 
 3. **Friday August 28, 2015 at 17:00 EST** &mdash; for all resolutions that include position papers or other supporting documents that must be reviewed.
 
-> ####**Attachments:**
+> #### **Attachments:**
 >
 > - <span class="file-format">PDF</span>[AGM 2015 Call for Resolutions](/files/updates/AGM%202015%20Call%20for%20Resolutions.pdf)

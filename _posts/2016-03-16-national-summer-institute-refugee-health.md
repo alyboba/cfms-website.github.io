@@ -10,5 +10,5 @@ The Catholic Centre for Immigrants and the University of Ottawa are proud to hos
 - Date May 31st - June 5th, 2016 
 - Application Deadline: *Monday, April 4th 2016 at 11:59pm*
 
-> ####**Attachments:**
+> #### **Attachments:**
 > - [Summer Institute Call Out.pdf](/files/updates/Summer%20Institute%20Call%20Out.pdf)

@@ -11,7 +11,7 @@ The deadline for submissions is March 13, 2016 and the awards will be presented 
 
 Don’t forget to like the National Geriatrics Interest Group on Facebook and follow us on Twitter @NGIG1415 to hear more about awards, events and our #whygeriatricswednesday initiative!
 
-> ####**Attachments**
+> #### **Attachments**
 >
 > 1. [J.L. Award 2016 – French](/files/updates/j.l. award 2016- french.pdf)
 > 2. [J.L. Awards 2016 - English](/files/updates/j.l. award 2016-english.pdf)

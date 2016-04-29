@@ -17,5 +17,5 @@ The CFMS/FMEQ list identifies the following six recommendations:
 
 For more information, please see below:
 
-> ####**Attachments:**
+> #### **Attachments:**
 > - [Choosing Wisely Canada &ndash; Medical Education List.pdf](/files/updates/2015-11-16_Choosing-Wisely-Canada-Medical-Education-List-Press-release.pdf)

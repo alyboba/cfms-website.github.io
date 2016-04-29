@@ -16,7 +16,7 @@ Please download the 2015 application form below.
 
 **If you are applying for Travel Funding, please do not register for AGM until after the decisions have been released (August 12th)**
 
-> ####**Attachments:**
+> #### **Attachments:**
 > - **EN**: [AGM 2015 Travel Funding Application Form]({{site.root}}/files/updates/AGM2015%20TravelFunding_%20Application%20form-REVMD.doc)
 > - **FR**: [AGM 2015 Travel Funding Application Form](/files/updates/AGM2015%20TravelFunding_%20Application%20form%20-%20French%20version.docx)
 

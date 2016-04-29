@@ -11,6 +11,6 @@ This initiative supports non-elected members to attend CFMS meetings with the go
 
 For full application details please see the attached document. Applications are due by February 15, 2016 and should be emailed to Emily Hodgson, Quebec Regional Representative, at&nbsp;[quebec@cfms.org](mailto: quebec@cfms.org)
 
-> ####**Attachments**
+> #### **Attachments**
 > 1. [SGM2016 Application form_ENG.doc](/files/updates/sgm2016 application form_eng.doc)
 > 2. [SGM2016 Application form_FRA.docx&nbsp;](/files/updates/sgm2016 application form_fra.docx)

@@ -4,7 +4,7 @@ date: 2015-07-22
 description: "You are invited to be a part of Choosing Wisely Canada, a grassroots, physician-led campaign to engage physicians and patients in conversations about unnecessary tests, treatments and procedures."
 ---
 
-###**Rallying together to save lives**
+### **Rallying together to save lives**
 
 <img class="right" src="{{site.root}}/images/news-images/CAN-BLOOD.jpg">
 CFMS has a long-standing history of giving blood and saving lives. As future doctors, we appreciate how critical it is that blood products are available for patients at any given time. We're pleased to do our part to help through a national partnership with Canadian Blood Services.  
@@ -18,7 +18,7 @@ To help achieve our goal, we run the annual Phlebotomy Bowl – a friendly compe
 1. **Download the GiveBlood App**, visit to find your nearest blood donor clinic and book your appointment to donate. Giving blood takes about an hour and you can donate every 56 days. 
 2. **Visit and register with your school's Partner ID number**. You need to register so your donation counts towards our annual goal and your school's ranking in the Phlebotomy Bowl. Once you register, your past and future donations will automatically count towards CFMS.
 
-####**Partner ID Numbers**
+#### **Partner ID Numbers**
 
 | Medical School | Partner ID |
 |:-|:-|
@@ -39,8 +39,8 @@ To help achieve our goal, we run the annual Phlebotomy Bowl – a friendly compe
 | Dalhousie Medicine New Brunswick | **CANA012634** |
 | Memorial University | **CANA008882** |
 
-####**Questions about eligibility to donate?**
+#### **Questions about eligibility to donate?**
 Visit [www.blood.ca/eligibility](http://www.blood.ca/eligibility) or call 1-888-2-DONATE and ask to speak with a Nurse. If you can’t donate yourself, you can still participate! Recruit another donor to give blood on your behalf (they can register per above), or consider volunteering to help spearhead our partnership with Canadian Blood Services at your campus. Some people who are ineligible to give blood are still eligible to join OneMatch and become a potential stem cell donor. 
 
-####**OneMatch**
+#### **OneMatch**
 The OneMatch Stem Cell and Marrow Network matches volunteer donors to patients who need stem cell transplants. Stem cells are used to treat more than 80 blood-related diseases and disorders – and less than 25 per cent of patients who need transplants will find a match in their family. The rest rely on those who have volunteered to donate stem cells to anyone in need. You may be eligible to join if you are between 17 and 35 years old and meet certain health criteria. There is an immediate need for ethnic males aged 17 – 35. Learn more at [www.onematch.ca](http://www.onematch.ca).

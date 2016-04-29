@@ -23,5 +23,5 @@ Students who participate in this summer intern program will acquire an understan
 
 For more information, please see the attached document.
 
-> ####**Attachments:**
+> #### **Attachments:**
 > - [Medical Student Intern.docx](/files/updates/Medical%20Student%20Intern.docx)

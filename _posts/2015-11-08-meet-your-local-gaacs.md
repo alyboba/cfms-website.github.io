@@ -6,5 +6,5 @@ description: There are medical students working hard to promote health advocacy 
 
 There are medical students working hard to promote health advocacy at all CFMS member schools across Canada! View the attachment below to see who from your school is a representative.
 
-> ####**Attachments**
+> #### **Attachments**
 > - [Local GAACs.pdf](/files/updates/Local%20GAACs.pdf)

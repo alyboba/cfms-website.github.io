@@ -15,5 +15,5 @@ This year’s challenge runs until February 29, 2016. Our goal is to contribute 
 
 For more info, please see the attached document!
 
-> ####**Attachments**
+> #### **Attachments**
 > - <a href="/files/updates/Phlebotomy%20Bowl%20Communique%201.docx">Phlebotomy Bowl Communique 1.docx</a>

@@ -4,7 +4,7 @@ date: 2015-05-22
 description: The Government of Ontario has released a new sexual education curriculum which will be taking effect in September 2015 that will update it to a similar level as other Canadian provinces.
 ---
 
-##Future Physicians Support Comprehensive Sexual Education in Ontario
+## Future Physicians Support Comprehensive Sexual Education in Ontario
 
 *Ottawa, May 22nd, 2015* – The Government of Ontario has released a new sexual education curriculum which will be taking effect in September 2015 that will update it to a similar level as other Canadian provinces. While the changes are facing some opposition, it is supported by various healthcare advocates and politicians including Mayor of Toronto John Tory, and organizations including the Ontario Association of Parents in Catholic Education, the Ontario Public Health Association, and the Canadian Federation of Medical Students (CFMS).
 
@@ -24,20 +24,20 @@ Gender and sexual diversity issues (including lesbian, gay, bisexual, transgende
 
 The CFMS recognizes that comprehensive sexuality education leaves young people better prepared to make positive decisions regarding their sexual and reproductive health, and empowered to enact these choices.  This is why we support the changes to the Ontario sexual education curriculum in order to give youth a solid foundation on which to build upon a lifelong learning process of self-identity, relationships and healthy development.
 
-> ####**For Media Inquiries:**
+> #### **For Media Inquiries:**
 > **Anthea Girdwood**, Vice President Communications<br>
 > Canadian Federation of Medical Students
 >
 > - Cell: (613) 915-1141 
 > - Email: [vpcommunications@cfms.org](mailto:vpcommunications@cfms.org)
 
-> ####**For More Information:**
+> #### **For More Information:**
 > **Dr. Joshua Dias**, former CFMS National Officer of Reproductive and Sexual Health
 >
 > - PGY1, Psychiatry, University of Toronto
 > - Email: [jodias@nosm.ca](mailto:jodias@nosm.ca)
 
-###References:
+### References:
 
 1. IPPF Framework for Comprehensive Sexuality Education. 2010. International Planned Parenthood Federation. Retrieved from [http://ippf.org/resources/publications/ippf-framework-comprehensive-sexuality-education](http://ippf.org/resources/publications/ippf-framework-comprehensive-sexuality-education)
 2. A Summary of the UN Convention of the Rights of the Child. 2012. Unicef. Retrieved from [http://www.unicef.org.uk/Documents/Publication-pdfs/betterlifeleaflet2012_press.pdf](http://www.unicef.org.uk/Documents/Publication-pdfs/betterlifeleaflet2012_press.pdf)

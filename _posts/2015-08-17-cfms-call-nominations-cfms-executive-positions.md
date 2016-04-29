@@ -4,7 +4,7 @@ date: 2015-08-17
 description: Nominations are now open for the next executive team for the CFMS! This is an excellent opportunity to get involved, make a difference, and be an integral part of an effective and reputable student organization.
 ---
 
-##**What is the CFMS?**
+## **What is the CFMS?**
 
 For thirty-eight years the Canadian Federation of Medical Students (CFMS) has been the national voice that represents over 8,000 medical students at fourteen schools across Canada.
 
@@ -33,7 +33,7 @@ Elections will take place immediately following speeches and the new executive w
 
 Any CFMS member is eligible to run for a position. Descriptions of each position are provided below. For questions please contact CFMS Past-President and Chief Returning Officer, Jesse Kancir at [pastpresident@cfms.org](mailto:pastpresident@cfms.org).
 
-##**How to Nominate Yourself**
+## **How to Nominate Yourself**
 
 1. Notify the Chief Returning Officer and Past President, Jesse Kancir, at [pastpresident@cfms.org](mailto:pastpresident@cfms.org).
 2. Nominations close at 12:00 (EDT) Saturday, September 19<sup>th</sup>, 2015.
@@ -51,5 +51,5 @@ Yours sincerely,
 2014-2015 Past-President, Canadian Federation of Medical Students<br>
 [pastpresident@cfms.org](mailto:pastpresident@cfms.org)
 
-> ####**Attachments:**
+> #### **Attachments:**
 > - [CFMS AGM 2015 - Call for Nominations.pdf](/files/updates/CFMS%20AGM%202015%20-%20Call%20for%20Nominations.pdf)
