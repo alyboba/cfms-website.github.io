@@ -27,5 +27,5 @@ The new CFMS website is approximately 5 times faster than the old site, and requ
 <img src="/images/news-images/preview4.png">
 
 ## **What's Next?**
-A number of features are still being rolled out while the website migration takes place. Many features, including member logins, and discounts, are still only available on the old website (now available at: [http://old.cfms.org](http://old.cfms.org)]). If there are any concerns or suggestions, feel free to email [it@cfms.org](mailto:it@cfms.org). *We hope you enjoy using our new site!*
+A number of features are still being rolled out while the website migration takes place. Many features, including member logins, and discounts, are still only available on the old website (now available at: [old.cfms.org](http://old.cfms.org)). If there are any concerns or suggestions, feel free to email [it@cfms.org](mailto:it@cfms.org). *We hope you enjoy using our new site!*
 
