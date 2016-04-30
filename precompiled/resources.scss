@@ -177,6 +177,8 @@ $number-margin-mobile:40px;
 }
 .finances {display:flex; max-width:100%;}
 .student-finances-content {
+	width:100%;
+	p {max-width:$content-width;}
 	h2 {
 		font-weight:bold;
 		font-size:28px;
@@ -185,9 +187,7 @@ $number-margin-mobile:40px;
 		padding-bottom:20px;
 	}
 	font-size:18px;
-	max-width:$content-width;
 	padding-bottom:30px;
-
 	ul { 
 		counter-reset: section; 
 		max-width:$content-width;
@@ -244,6 +244,7 @@ $number-margin-mobile:40px;
 	}
 }
 @media only screen and (max-width: 767px) {
+	#finances-side-image {display:none;}
 	.student-finances h1 {
 		font-size:26px;
 		padding-top:25px;

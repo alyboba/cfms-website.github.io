@@ -137,14 +137,14 @@ $link-padding: 30px;
 	padding-right:40px;
 	img {
 		max-width:220px;
-		opacity:0.4;
+		opacity:0.7;
 		transition:all 0.1s linear;
 	}
 	padding-bottom:30px;
 }
 #sponsor-logo a {border-bottom:none;}
 #sponsor-logo a:hover {
-	img {opacity:0.7}
+	img {opacity:0.9}
 }
 
 /* #Learn More
@@ -272,11 +272,11 @@ $link-padding: 30px;
 	#sponsors {
 		max-width:100%;
 		width:100%;
-		background-color:$dark;
+		background-color:$brighter;
 		padding-top:40px;
 		h1 {
-			color:white;
-			border-bottom:2px solid $neutral;
+			color:$neutral;
+			border-bottom:2px solid $bright;
 		}
 	}
 	#sponsor-logo {
