@@ -1,7 +1,7 @@
 ---
 title: Call for Applications – CFMS National Exchange Officer (NEO)
-date: 2016-04-30T00:00:00.000Z
-description: "As the NEO (Outgoing Exchanges), you will have the chance to provide opportunities for Canadian medical students to participate in clinical and research\_placements abroad via the IFMSA-CFMS International Exchange Program."
+date: 2016-04-30
+description: "As the NEO (Outgoing Exchanges), you will have the chance to provide opportunities for Canadian medical students to participate in clinical and research placements abroad via the IFMSA-CFMS International Exchange Program."
 ---
 
 

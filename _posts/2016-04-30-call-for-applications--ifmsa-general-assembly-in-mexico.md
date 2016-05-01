@@ -1,6 +1,6 @@
 ---
 title: Call for Applications – IFMSA General Assembly in Mexico
-date: 2016-04-30T11:00:00.000Z
+date: 2016-04-30
 description: The IFMSA General Assemblies are among the biggest youth-led events around the world attended by over 800 medical students from more than 100 countries.
 ---
 
