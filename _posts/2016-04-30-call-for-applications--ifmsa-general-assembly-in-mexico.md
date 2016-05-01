@@ -5,9 +5,7 @@ description: The IFMSA General Assemblies are among the biggest youth-led events
 ---
 
 
-## Represent Canada at the IFMSA General Assembly in Puebla, Mexico
-
-<br>(Aug 1-7, 2016)
+### Represent Canada at the IFMSA General Assembly in Puebla, Mexico
 
 The International Federation of Medical Students’ Associations (IFMSA) connects and engages with a network of 1.3 million medical students from 124 national members organizations in 116 countries around the globe.
 
@@ -15,12 +13,18 @@ The IFMSA General Assemblies are among the biggest youth-led events around the w
 
 If you are interested in attending as a delegate from Canada, please consider submitting an application package to me, VP Global Health at &nbsp;globalhealth@cfms.org. **Please see the complete application instructions attached (see below).**
 
-**Applications are due by May 11th, 2016 at 23:59 EST.**
+> #### **Application Information**
+> - **Where**: Puebla Mexico
+> - **When**: Aug 1-7, 2016
+> - **Application Deadline**: May 11, 2016, by 23:59 EST
+> - **Application Form**: [IFMSA General Assembly (August 2016) Application Package.pdf](/files/updates/IFMSA%20General%20Assembly%20(August%202016)%20Application%20Package.pdf)
 
 Partial funding to attend the meeting is available. In your application, please include details about potential sources (eg. school, student council, external organization etc.) of additional funding available to you.
 
-Please email me at&nbsp;[globalhealth@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(103,108,111,98,97,108,104,101,97,108,116,104,64,99,102,109,115,46,111,114,103)))&nbsp;with any questions you may have.
+Please email me at [vpglobalhealth@cfms.org](mailto:vpglobalhealth@cfms.org) with any questions you may have.
 
 Best,
 
-&nbsp;
+<img src="/images/news-images/golden_gao_signature.png" style="max-width:150px">
+
+**Golden Gao**<br>Vice-President Global Health<br>Canadian Federation of Medical Students
