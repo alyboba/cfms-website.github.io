@@ -124,6 +124,7 @@ title: "Canadian Federation of Medical Students"
 				{% else %}
 					{{ site.data.translations.recent_news_fr }}
 				{% endif %}
+				<span id="more-news-button" class="button"><a href="news/archives/">See All Articles</a></span>
 			</h1>
 			<div id="recent-news-list">
 				{% for post in site.posts limit:5 %}

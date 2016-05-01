@@ -86,6 +86,24 @@ $link-padding: 30px;
 	}
 }
 #recent-news {padding-left:$padding;}
+#more-news-button {
+	position: relative;
+	top: -3px;
+	padding-top:10px;
+	margin-left:15px;
+	a {
+		padding-top:6px;
+		color:$bright;
+		border-color:$brighter;
+		font-size:17px;
+	}
+	a:hover {
+		color:$neutral;
+		border-color:$bright;
+	}
+	font-family:$sans-serif-font-stack;
+	font-weight:bold;
+}
 #sponsors {padding-right:$padding;}
 #recent-news{
 	padding-bottom:40px;
@@ -360,6 +378,10 @@ $link-padding: 30px;
 	}
 	#recent-news {
 		padding-bottom:15px;
+	}
+	#more-news-button {
+		margin-left:8px;
+		a {font-size:16px;}
 	}
 }
 
