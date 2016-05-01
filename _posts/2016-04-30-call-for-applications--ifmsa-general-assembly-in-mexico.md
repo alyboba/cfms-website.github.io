@@ -6,6 +6,7 @@ description: The IFMSA General Assemblies are among the biggest youth-led events
 
 
 ## Represent Canada at the IFMSA General Assembly in Puebla, Mexico
+
 <br>(Aug 1-7, 2016)
 
 The International Federation of Medical Students’ Associations (IFMSA) connects and engages with a network of 1.3 million medical students from 124 national members organizations in 116 countries around the globe.
@@ -21,3 +22,5 @@ Partial funding to attend the meeting is available. In your application, please 
 Please email me at&nbsp;[globalhealth@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(103,108,111,98,97,108,104,101,97,108,116,104,64,99,102,109,115,46,111,114,103)))&nbsp;with any questions you may have.
 
 Best,
+
+&nbsp;
