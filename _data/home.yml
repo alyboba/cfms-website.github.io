@@ -8,7 +8,7 @@ intro:
   description: "La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre."
 
 #Optional News Strip
-news_strip: true
+news_strip: false
 news_text_en: "Worried about applying for electives? Click here for some great resources!"
 news_text_fr: "Worried about applying for electives? Click here for some great resources!"
 news_text_url: "what-we-do/education/elective-status-board.html"
