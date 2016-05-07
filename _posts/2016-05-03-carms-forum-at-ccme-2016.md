@@ -1,7 +1,7 @@
 ---
 title: CaRMS Forum at CCME 2016
 date: 2016-05-03T00:00:00.000Z
-description: CaRMS Forum at CCME 2016 - Link to the slides
+description: 'John Gallinger, CaRMS CEO, was present at CCME 2016 to offer us insight into the 2016 Edition of the R-1 Match.'
 ---
 
 
