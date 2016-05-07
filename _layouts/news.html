@@ -22,14 +22,14 @@
 	<div class="content">
 
 		<!-- News Article -->
-        <div id="title">{{ page.title }}</div>
-        <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
-        </info>
-    	<div id="date">{{ page.date | date: "%B %d, %Y" }}</div>
    		<div id="aside">
 			<h6>About the CFMS</h6>
 			{{ site.about_cfms_en }}
 		</div>
+        <div id="title">{{ page.title }}</div>
+        <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+        </info>
+    	<div id="date">{{ page.date | date: "%B %d, %Y" }}</div>
         <div id="body">
 	        {{ content }}
         </div>
