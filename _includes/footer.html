@@ -171,3 +171,22 @@ $('.redirect-modal').click(function(){
     });
 });
 </script>
+<script>
+//Login Modal Dialog
+$('.login-modal').click(function(){
+    vex.dialog.open({
+        message: '<h3><strong>Log in to cfms.org</strong></h3>',
+        input: "<div class='vex-custom-field-wrapper'><label for='email'>EMAIL ADDRESS</label><div class='vex-custom-input-wrapper'><input name='email' type='email' ng-model='email' placeholder='Enter your email' /></div></div><div class='vex-custom-field-wrapper'><label for='password'>PASSWORD</label><div class='vex-custom-input-wrapper'><input name='password' type='password' ng-model='password' value=''/></div><div id='new-account-link'><a href='/new-account.html'>Create a New Account</a></div><div id='forgot-password'><a href='/forgot-password.html'>Forgot your Password?</a></div></div>",
+        callback: function(data) {
+        	if (data != false){
+	        	var angularLogin = angular.element(document.body).scope();
+	        	angularLogin.login(data.email, data.password);
+	        }
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+	window.sr = ScrollReveal();
+	sr.reveal('.animate', { duration: 500, distance: '5px', scale: 1 } );
+</script>

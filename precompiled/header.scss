@@ -39,11 +39,12 @@
 	line-height:1.3em;
 }
 #logo-desc .en {
-	font-size:18px;
+	font-size:17px;
+	line-height:1.3em;
 	color:$neutral !important;
 }
 #logo-desc .fr {
-	font-size:15px;
+	font-size:14px;
 	line-height:1.2em;
 	color:$bright !important;
 }
@@ -99,30 +100,33 @@
 }
 
 //Formatting the Top Navigation Menu
-#top-nav .active .top-level:before {
-	cursor: pointer;
-	height: 3px;
-	width: 42px;
-	background: rgba(0,0,0,0.2);
-	position: absolute;
-	display: block;
-	content: '';
-	top:108px;
-	margin-left:10px;
+// #top-nav .active .top-level:before {
+// 	cursor: pointer;
+// 	height: 3px;
+// 	width: 42px;
+// 	background: rgba(0,0,0,0.2);
+// 	position: absolute;
+// 	display: block;
+// 	content: '';
+// 	top:108px;
+// 	margin-left:10px;
+// }
+#top-nav .active .top-level {
+	color:$neutral !important;
 }
 #top-nav {
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:flex-end;
 	.en li a {
-		font-size:16px;
-		padding:7px 9px 6px 9px;
-		margin-right:1px;
+		font-size:17px;
+		padding:7px 7px 6px 7px;
+		margin-right:0px;
 	}
 	.fr li a {
-		font-size:14px;
+		font-size:15px;
 		padding:7px 6px 5px 6px;
-		margin-right:-3px;
+		margin-right:0px;
 	}
 	ul {
 		margin:0;
@@ -133,7 +137,7 @@
 			a{
 				font-family: $sans-serif-font-stack;
 				font-weight:bold;
-				text-transform: uppercase;
+				text-transform: none;
 				border-bottom:none;
 				border-radius:3px;
 				color:$neutral;
@@ -168,7 +172,7 @@
 			li:hover {background:$dark;}
 			li a {
 				text-transform:none;
-				font-size:17px;
+				font-size:16px;
 				font-weight:normal;
 				color:$bright;
 			}
@@ -201,9 +205,9 @@
 	#top-nav {
 		ul {
 			li {
-				a{ color:$neutral; }
+				a{ color:$bright; }
 				a:hover{
-					background-color: rgba(0, 0, 0, 0.1);
+					background-color: rgba(0, 0, 0, 0.05);
 				}
 			}
 			#sub-menu ul {
@@ -227,7 +231,7 @@
 #lang-toggle {
 	color:$neutral;
 	font-weight:bold;
-	padding-left:15px;
+	padding-left:10px;
 }
 #en, #fr {
 	padding:0 !important;
@@ -245,7 +249,7 @@
 #login-button a{
 	background-color: $primary-color !important;
 	color:white !important;
-	margin-left:10px;
+	margin-left:7px;
 	transition: box-shadow 0.2s linear;
 }
 #login-button a:hover{

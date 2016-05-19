@@ -2,6 +2,10 @@ old_site_root: "http://www.old.cfms.org"
 about_cfms_en: "The CFMS is an organization representing over 8,000 medical students from 14 Canadian medical student societies from coast to coast. We represent medical students to the public, to the federal government, and to national and international medical organizations."
 about_cfms_fr: "La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre."
 
+#Firebase URL
+firebase_url: "https://amber-heat-9132.firebaseio.com/"
+enable_login: false
+
 #Set the default layout for a post to the 'news' format
 defaults:
   -

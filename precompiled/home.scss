@@ -258,6 +258,70 @@ $link-padding: 30px;
 	#letter #letter-intro {font-size:19px;}
 }
 
+/* #Login Page
+––––––––––––––––––––––––––––––––––––––––*/
+#new-account-top {
+	display:flex;
+}
+#new-account-left {
+	max-width:$content-width;
+}
+#new-account-right {
+	max-width:$column-width;
+}
+#new-account-pane {
+	margin-top:0px;
+	margin-left:40px;
+	margin-right:30px;
+	padding-top:20px;
+	padding-left:30px;
+	padding-right:30px;
+	h5 {
+		padding-top:15px;
+	}
+	.button {
+		padding-top:0px;
+		padding-bottom:20px;
+		a {
+			border-color:$primary-color;
+			color:$primary-color;
+			opacity:0.5;
+			font-size:16px;
+		}
+		a:hover {
+			opacity:1;
+		}
+	}
+}
+
+
+@media only screen and (max-width: 959px) {
+	#new-account-top{flex-wrap:wrap; padding-top:30px;}
+	#new-account-right {
+		max-width:100%;
+		width:100%;
+	}
+	#new-account-pane {
+		h3 {
+			border-bottom:3px solid $brighter;
+			margin-bottom:30px;
+			font-size:28px;
+		}
+		padding:0px;
+		background-color:white;
+		margin-left:0px;
+		margin-right:0px;
+		max-width:700px;
+	}
+}
+@media only screen and (max-width: 767px) {
+	#new-account-pane {
+		h3 {font-size:20px;}
+	}
+}
+@media only screen and (max-width: 480px) {
+}
+
 /* #Media specific modifications
 ––––––––––––––––––––––––––––––––––––––––*/
 @media only screen and (max-width: 1199px){

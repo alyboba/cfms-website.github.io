@@ -21,7 +21,12 @@
 
 <!--AngularJS-->
 <script src="/js/angular.min.js"></script>
-<script src="/js/js.cookie.js"></script>
+<script src="/js/angular-resource.min.js"></script>
+
+<!--Firebase-->
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+<script src="/js/login.js"></script>
 
 <!--Analytics-->
 <script>
@@ -34,3 +39,14 @@
   ga('send', 'pageview');
 
 </script>
+<script src="/js/js.cookie.js"></script>
+
+<!--Scroll Reveal-->
+<script src="/js/scrollreveal.min.js"></script>
+<script>
+      window.sr = ScrollReveal();
+</script> 
+<style>
+    /* Ensure elements load hidden before ScrollReveal runs */
+    .animate { visibility: hidden; }
+</style> 

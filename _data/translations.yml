@@ -30,6 +30,7 @@ nav:
   student_affairs: "Student Affairs"
   resources: "Resources"
   meetings: "Meetings"
+  members: "Members"
   news: "News"
   login: "Login"
 - lang: "fr"
@@ -44,6 +45,7 @@ nav:
   student_affairs: "Affaires étudiantes"
   resources: "Ressources"
   meetings: "Réunions"
+  members: "Membres"
   news: "Nouvelles"
   login: "Se connecter"
 

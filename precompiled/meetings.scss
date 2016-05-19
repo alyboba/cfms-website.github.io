@@ -8,6 +8,7 @@
 	font-family:$sans-serif-font-stack;
 	height:340px;
 	position:relative;
+	z-index:-1;
 	#top-group {
 		@extend .content;
 		width:100%;
