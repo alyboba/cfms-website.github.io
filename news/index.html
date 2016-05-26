@@ -34,6 +34,26 @@ title: "News"
 			<div class="button"><a href="{{ post.url }}">Read More</a></div>
 		{% endfor %}
 	</div>
+	<div id="student-spotlight">
+		<div id="spotlight-title">Student Spotlight</div>
+		<div id="spotlight-description">Each year, medical students across Canada engage in projects that make a difference within their schools and communities. Here, we feature some of the ideas that medical students are working on, and how they’re fostering our common goals.</div>
+		<div class="flex-wrapper">
+			{% for link in site.data.home.featured_links %}
+				<a href="{{ link.url }}">
+					{% if page.lang == "en" %}
+						<div class="featured-link" style="background: url(/{{ link.image_url_en }}) no-repeat center center; background-size:cover">
+						</div>
+						<div class="featured-link-text">{{ link.text_en }}</div>
+					{% else %}
+						<div class="featured-link" style="background: url(/{{ link.image_url_fr }}) no-repeat center center; background-size:cover">
+						</div>
+						<div class="featured-link-text">{{ link.text_fr }}</div>
+					{% endif %}
+				</a>
+			{% endfor %}
+		</div>
+		<div class="button"><a href="student-spotlight/">See all projects</a></div>
+	</div>
 	<div id="news-home-columns">
 		<div id="older-news" class="column">
 			<h1>Older Articles<i id="archive-icon" class="fa fa-folder-open-o"></i></h1>

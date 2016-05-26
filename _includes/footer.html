@@ -90,7 +90,7 @@
 	document.querySelector( "#nav-toggle" ).addEventListener( "click", function() {
 		this.classList.toggle( "active" );
 		document.querySelector("#top-nav").classList.toggle("active");
-		sr.reveal('#top-nav', {});
+		sr.reveal('#top-nav', {distance: '0px'});
 	});
 
 	//Gets latest tweets

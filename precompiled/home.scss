@@ -57,8 +57,13 @@ $link-padding: 30px;
 	a {
 		margin-right:$link-padding;
 		width:$column-width - $link-padding;
+		max-width:$column-width;
+		min-width:300px;
 		border-bottom:none;
 	}
+}
+.flex-wrapper {
+	flex-wrap:wrap;
 }
 .featured-link {
 	max-width:100%;

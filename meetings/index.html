@@ -15,13 +15,6 @@ title: "Meetings"
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 	{% include nav.html %}
-	
-	<!--Page Specific Formatting-->
-	<script type="text/javascript">
-		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#meetings" ).classList.toggle("active");
-	</script>
-
 	<!-- Upcoming Meeting -->
 	<div id="top-meeting" style="background: url(/images/meeting-images/montreal.jpg) no-repeat center 40%; background-size:cover">
 		<div id="top-group">
@@ -32,6 +25,13 @@ title: "Meetings"
 			</div>
 		</div>
 	</div>
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#meetings" ).classList.toggle("active");
+	</script>
+
 	<div id="meetings-columns">
 		<div id="cfms-meetings" class="column">
 			<h1>CFMS Meetings</h1>

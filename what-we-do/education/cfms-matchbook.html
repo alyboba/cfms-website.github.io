@@ -33,22 +33,28 @@
 			<div id="matchbook-right">
 				<blockquote id="latest-issue">
 					<h3><strong>Latest Version:</strong></h3>
-					<a id="latest-issue-pic" href="/files/matchbook/matchbook2015-2016.pdf"><img src="/files/matchbook/matchbook2015-2016.jpg"></a>
+					<a id="latest-issue-pic" ng-show="authData" href="/files/matchbook/matchbook2015-2016.pdf"><img src="/files/matchbook/matchbook2015-2016.jpg"></a>
 					<h5><strong>Matchbook 2015-2016</strong></h5>
-					<div class="button">
+					<div class="button" ng-show="authData">
 						<a href="/files/matchbook/matchbook2015-2016.pdf">
 							<strong>Download</strong>
 						</a>
 					</div>
+					<ul ng-hide="authData">
+						<li>To access these files, please log in to the old CFMS website at <a href="http://www.old.cfms.org">www.old.cfms.org</a></li>
+					</ul>
 				</blockquote>
 			</div>
 			<p>The Match Book is a joint initiative of the CFMS and CaRMS designed to educate medical students about the Match and assist with career planning. For complete information on the CaRMS Match, visit the <a href="http://www.carms.ca/">CaRMS website</a>.</p>
 			<h2><strong>What's in the Matchbook?</strong></h2>
 			<p>The Match Book, created in 2008 and currently at its 8th edition, intends to (1) provide an introduction to the Canadian residency match process, (2) present an overview of the major steps involved, and (3) aid Canadian medical students' at various stages of training in planning their strategy for matching in their preferred programs.</p>
 			<h2><strong>Old Matchbooks</strong></h2>
-			<ul>
+			<ul ng-show="authData">
 				<li><a href="/files/matchbook/matchbook2014-2015.pdf">CFMS Match Book 2014-2015</a></li>
 				<li><a href="/files/matchbook/matchbook2013-2014.pdf">CFMS Match Book 2013-2014</a></li>
+			</ul>
+			<ul ng-hide="authData">
+				<li>To access these files, please log in to the old CFMS website at <a href="http://www.old.cfms.org">www.old.cfms.org</a></li>
 			</ul>
 			<h2><strong>Specialty profiles</strong></h2>
 			<p>Having trouble deciding on a post-graduate specialty? The Canadian Medical Association has compiled useful information on each specialty, which is available on the <a href="https://www.cma.ca/En/Pages/specialty-profiles.aspx">student section of their website</a>.</p>
