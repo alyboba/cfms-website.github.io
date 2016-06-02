@@ -148,7 +148,9 @@ $link-padding: 30px;
 	.button a:hover {
 		border:2px solid $bright;
 	}
-	display:none;
+	.featured-school {
+		color:$bright;
+	}
 }
 #spotlight-title {
 	color:$brighter;
@@ -166,6 +168,8 @@ $link-padding: 30px;
 }
 #spotlight-content {
 	p, h1, h2, h3, h4, h5, h6, li, ol, ul {max-width:$content-width}
+	h4 {padding-top:10px;}
+	padding-bottom:30px;
 }
 #spotlight-columns {
 	display:flex;

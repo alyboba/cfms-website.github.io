@@ -1,0 +1,35 @@
+---
+title: "PedsCases"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/news.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#news" ).classList.toggle("active");
+	</script>
+	<div class="content editable" id="spotlight-content">
+		<h1 id="page-title">PedsCases</h1>
+		<blockquote>
+			<h4><strong>Visit PedsCases</strong></h4>
+			<ul><li>Visit us at <a href="http://www.pedscases.com">www.pedscases.com</a></li></ul>
+		</blockquote>
+		<p>PedsCases (<a href="http://www.pedscases.com">www.pedscases.com</a>) is an innovative source of pediatric knowledge dissemination which began in 2008 as a grassroots project by several medical students with faculty support at the University of Alberta to supplement the undergraduate curriculum. Pediatric curriculum is often not presented in an integrated or cohesive manner and students have found it challenging to obtain a comprehensive foundation in pediatric medicine prior to entering clerkship. PedsCases was developed to fill this gap and consists of interactive cases, podcasts, videos and links to supplement undergraduate learning.  PedsCases allows students to experience core virtual cases not seen in their clerkship experience.  The goal is that PedsCases will deliberately generate content in a variety of formats including virtual patients, to ensure core pediatric knowledge is translated to undergraduate learners in a comprehensive manner.</p>
+		<p>Over the past six years, PedsCases has fostered an innovative computer-based learning environment for teaching and evaluation of clinical reasoning.  It thus far has over <strong>55,000 unique visitors</strong> from over <strong>150 countries</strong> and over <strong>825,000 podcast downloads</strong>.  The PedsCases team has grown to include over a dozen students and Faculty across Canada and developed a guide on how to create high quality learning content. A culture of innovation and quality improvement is embedded in PedsCases, and we continue to evaluate content and learning modalities, and refine them where appropriate.  PedsCases is transitioning to align with CanUC-Paeds, the National Undergraduate Curriculum in Pediatrics which was developed through the Pediatric Undergraduate Program Directors of Canada (PUPDOC). The University of Alberta was the first to unroll the curriculum and PedsCases is well positioned to be a key educational tool to compliment the National Curriculum.</p>
+	</div>
+	<div>{% include footer.html %}</div>
+</body>
+</html>
