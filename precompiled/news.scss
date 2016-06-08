@@ -167,8 +167,9 @@ $link-padding: 30px;
 	padding-bottom:20px;
 }
 #spotlight-content {
-	p, h1, h2, h3, h4, h5, h6, li, ol, ul {max-width:$content-width}
+	p, h2, h3, h4, h5, h6, li, ol, ul {max-width:$content-width}
 	h4 {padding-top:10px;}
+	.right {max-width:300px;}
 	padding-bottom:30px;
 }
 #spotlight-columns {
@@ -592,4 +593,8 @@ $link-padding: 30px;
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 
 /* Mobile Portrait */
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+	#spotlight-content {
+		.right {display:none;}
+	}
+}

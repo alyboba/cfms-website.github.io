@@ -178,7 +178,7 @@ $number-margin-mobile:40px;
 .finances {display:flex; max-width:100%;}
 .student-finances-content {
 	width:100%;
-	p {max-width:$content-width;}
+	p, h1, h2, h3, h4 {max-width:$content-width;}
 	h2 {
 		font-weight:bold;
 		font-size:28px;
