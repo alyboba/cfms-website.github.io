@@ -5,4 +5,4 @@ description: Open Letter to Refugees From Canadian Medical Students
 ---
 
 
-#### Please see [here](/files/updates/openletterrefugeesfinal.pdf)
+#### An open letter to refugees has been written by Canadian Medical Students. &nbsp;Please click&nbsp;[here](/files/updates/openletterrefugeesfinal.pdf).
