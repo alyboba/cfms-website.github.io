@@ -21,7 +21,7 @@ Nominations are now open for the following Executive Member positions of the Can
 * Western Regional Representative (2)&nbsp;
 
 
-Interested individuals must forward their names and full contact information by email to Dr. Bryce Durafourt, CFMS Past President, at [pastpresident@cfms.org](mailto:pastpresident@cfms.org)&nbsp;by **12****:00 pm (noon) MDT on Friday September 23rd, 2016**.
+Interested individuals must forward their names and full contact information by email to Dr. Bryce Durafourt, CFMS Past President, at [pastpresident@cfms.org](mailto:pastpresident@cfms.org)&nbsp;by **12****:00 pm (noon) MDT on Friday September 23rd, 2016**.&nbsp;
 
 Nominations will close strictly at this time. Any CFMS member student may run. While previous experience with the workings of the CFMS is strongly encouraged, it is not required.
 
