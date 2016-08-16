@@ -1,11 +1,9 @@
 ---
 title: CFMS AGM 2016 - Call for Resolutions
-date: 2016-08-16T01:29:27.465Z
-description: Insert 1-2 sentence description of your post here here.
+date: 2016-08-16T01:29:00.000Z
+description: CFMS AGM 2016 - Call for Resolutions
 ---
 
-
-**CFMS AGM 2016: Call for Resolutions**
 
 Medical societies, meeting delegates and member medical students are invited to put forward resolutions for discussion and debate at the CFMS Annual General Meeting during the Members Resolutions Session. Resolutions should reflect an understanding of ongoing and past work, and resolutions must pertain to new work of the Federation. Members are encouraged to review resolutions submitted at the previous meeting, available on the CFMS website under the AGM 2016 meeting documents section.
 
