@@ -5,7 +5,7 @@ description: CFMS AGM 2016 - Call for Nominations for CFMS Executive
 ---
 
 
-**CFMS SGM 2015: Nominations for Canadian Federation of Medical Students (CFMS) Executive**
+**CFMS AGM 2016: Nominations for Canadian Federation of Medical Students (CFMS) Executive**
 
 Nominations are now open for the following Executive Member positions of the Canadian Federation of Medical Students (CFMS):
 
