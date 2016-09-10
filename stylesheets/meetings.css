@@ -329,6 +329,15 @@ blockquote .button {
     #meeting-aside h6 {
         padding-left: 0
     }
+    
+    #meeting-aside h2b {
+    color: #B0B4C4;
+    border-bottom: none;
+    font-weight: 700;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+    font-size: 40px
+}
     #meetings-columns {
         -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
