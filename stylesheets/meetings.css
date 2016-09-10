@@ -43,6 +43,15 @@
     padding-left: 120px;
     padding-right: 120px
 }
+@media only screen and (max-width: 1920px) {
+    #meetings-columns,
+    #top-meeting #top-group,
+    .content {
+        padding-left: 50px;
+        padding-right: 50px
+    }
+}
+
 @media only screen and (max-width: 1199px) {
     #meetings-columns,
     #top-meeting #top-group,
@@ -244,9 +253,8 @@ a.meeting-photo-link {
     font-weight: 700;
     padding-bottom: 0;
     margin-bottom: 15px;
-    font-size: 44px
+    font-size: 24px
 }
-
 
 
 #meeting-aside #shortcut-links li {
@@ -315,13 +323,6 @@ blockquote .button {
     #meeting-aside {
         width: 100%;
         max-width: 625px;
-        padding-bottom: 20px
-    }
-    
-    #meeting-aside h2b, /*For non-mobile */
-    #meeting-body h2b {
-        font-size: h4.font-size;
-        color: #B0B4C4;
         padding-bottom: 20px
     }
     
