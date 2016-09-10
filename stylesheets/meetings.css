@@ -238,7 +238,7 @@ a.meeting-photo-link {
 #meeting-aside #shortcut-links {
     padding-top: 10px
 }
-#meeting-aside #shortcut-links h2 h2b {
+#meeting-aside #shortcut-links h2 {
     color: #B0B4C4;
     border-bottom: none;
     font-weight: 700;
@@ -246,54 +246,14 @@ a.meeting-photo-link {
     margin-bottom: 15px;
     font-size: 24px
 }
-#meeting-aside #shortcut-links li {
-    list-style: disc;
-    margin-left: 85px;
-    padding-left: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.3em;
-    padding-bottom: 5px;
-    color: #BB0A21
-}
-#meeting-aside #shortcut-links li a {
-    color: #B0B4C4;
-    border-bottom: none
-}
-#meeting-aside #shortcut-links ul {
-    margin-left: 0
-}
-#meeting-aside .icon,
-#meeting-aside li,
-#meeting-aside p {
-    margin-left: 60px
-}
-/* #meeting-details h2b {
-    border-bottom: 2px solid #F7F7FA;
-    margin-bottom: 20px;
-    padding-bottom: 7px;
-    padding-top: 10px
-}
-#meeting-body {
-    max-width: 625px
-}
-#meeting-aside {
-    max-width: 365px
-}
-#meeting-aside #aside-title i {
-    color: #B0B4C4;
-    font-size: 22px;
-    margin-left: 10px
-}
-#meeting-aside #shortcut-links {
-    padding-top: 10px
-}
+
 #meeting-aside #shortcut-links h2b {
+    color: #B0B4C4;
     border-bottom: none;
     font-weight: 700;
     padding-bottom: 0;
     margin-bottom: 15px;
-    font-size: 24px
+    font-size: 20px
 }
 #meeting-aside #shortcut-links li {
     list-style: disc;
@@ -317,7 +277,7 @@ a.meeting-photo-link {
 #meeting-aside p {
     margin-left: 60px
 }
-*/
+
 #meeting-aside h1,
 #meeting-aside h2,
 #meeting-aside h2b,
