@@ -218,7 +218,7 @@ a.meeting-photo-link {
     -ms-flex-pack: end;
     justify-content: flex-end
 }
-#meeting-details h2 {
+#meeting-details h2 h2b {
     border-bottom: 2px solid #F7F7FA;
     margin-bottom: 20px;
     padding-bottom: 7px;
@@ -238,7 +238,7 @@ a.meeting-photo-link {
 #meeting-aside #shortcut-links {
     padding-top: 10px
 }
-#meeting-aside #shortcut-links h2 {
+#meeting-aside #shortcut-links h2 h2b {
     border-bottom: none;
     font-weight: 700;
     padding-bottom: 0;
@@ -267,7 +267,7 @@ a.meeting-photo-link {
 #meeting-aside p {
     margin-left: 60px
 }
-#meeting-details h2b {
+/* #meeting-details h2b {
     border-bottom: 2px solid #F7F7FA;
     margin-bottom: 20px;
     padding-bottom: 7px;
@@ -292,7 +292,7 @@ a.meeting-photo-link {
     font-weight: 700;
     padding-bottom: 0;
     margin-bottom: 15px;
-    font-size: 44px
+    font-size: 24px
 }
 #meeting-aside #shortcut-links li {
     list-style: disc;
@@ -316,6 +316,7 @@ a.meeting-photo-link {
 #meeting-aside p {
     margin-left: 60px
 }
+*/
 #meeting-aside h1,
 #meeting-aside h2,
 #meeting-aside h2b,
