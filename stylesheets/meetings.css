@@ -373,9 +373,10 @@ blockquote .button {
         padding-top: 10px;
         padding-right: 0
     }
-    #meeting-aside h2b,
+    #meeting-aside h2b, /*for mobile */
     #meeting-body h2b {
-        font-size: 40px;
+        font-size: 20px;
+        color: #B0B4C4;
         padding-bottom: 5px
     }
     #meetings-columns {
