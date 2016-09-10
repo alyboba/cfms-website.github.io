@@ -43,14 +43,7 @@
     padding-left: 120px;
     padding-right: 120px
 }
-@media only screen and (max-width: 1920px) {
-    #meetings-columns,
-    #top-meeting #top-group,
-    .content {
-        padding-left: 50px;
-        padding-right: 50px
-    }
-}
+
 
 @media only screen and (max-width: 1199px) {
     #meetings-columns,
