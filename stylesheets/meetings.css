@@ -238,7 +238,7 @@ a.meeting-photo-link {
 #meeting-aside #shortcut-links {
     padding-top: 10px
 }
-#meeting-aside #shortcut-links h2 {
+#meeting-aside #shortcut-links h2 h2b {
     color: #B0B4C4;
     border-bottom: none;
     font-weight: 700;
@@ -247,14 +247,6 @@ a.meeting-photo-link {
     font-size: 24px
 }
 
-#meeting-aside #shortcut-links h2b {
-    color: #B0B4C4;
-    border-bottom: none;
-    font-weight: 700;
-    padding-bottom: 0;
-    margin-bottom: 15px;
-    font-size: 80px
-}
 #meeting-aside #shortcut-links li {
     list-style: disc;
     margin-left: 85px;
@@ -303,7 +295,7 @@ a.meeting-photo-link {
     font-size: 20px
 }
 blockquote .button {
-    font-size: 18px;
+    font-size: 38px;
     padding-left: 0
 }
 @media only screen and (max-width: 959px) {
