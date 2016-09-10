@@ -247,6 +247,13 @@ a.meeting-photo-link {
     font-size: 24px
 }
 
+ #meeting-aside h2b, /*For non-mobile */
+    #meeting-body h2b {
+        font-size: h4.font-size;
+        color: #B0B4C4;
+        padding-bottom: 0px
+    }
+
 #meeting-aside #shortcut-links li {
     list-style: disc;
     margin-left: 85px;
