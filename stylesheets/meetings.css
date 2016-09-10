@@ -315,6 +315,14 @@ blockquote .button {
         max-width: 625px;
         padding-bottom: 20px
     }
+    
+    #meeting-aside h2b, /*For non-mobile */
+    #meeting-body h2b {
+        font-size: h4.font-size;
+        color: #B0B4C4;
+        padding-bottom: 20px
+    }
+    
     #meeting-aside .icon,
     #meeting-aside li,
     #meeting-aside p {
