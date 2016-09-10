@@ -292,7 +292,7 @@ a.meeting-photo-link {
     font-weight: 700;
     padding-bottom: 0;
     margin-bottom: 15px;
-    font-size: 24px
+    font-size: 44px
 }
 #meeting-aside #shortcut-links li {
     list-style: disc;
@@ -419,7 +419,7 @@ blockquote .button {
     }
     #meeting-aside h2b,
     #meeting-body h2b {
-        font-size: 40px;
+        font-size: 20px;
         padding-bottom: 5px
     }
     #meetings-columns {
