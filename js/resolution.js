@@ -8,19 +8,19 @@ if (document.images) {
 
 $(document).ready(function () {
     $('.section').hide();
-    $('h2').click(function () {
+    $('h2b').click(function () {
         $(this).toggleClass("open");
         $(this).next().toggle();
     }); //end toggle
 
     $('#expandall').click(function () {
         $('.section').show();
-        $('h2').addClass("open");
+        $('h2b').addClass("open");
     });
 
     $('#collapseall').click(function () {
         $('.section').hide();
-        $('h2').removeClass("open");
+        $('h2b').removeClass("open");
     });
 
 }); //end ready
