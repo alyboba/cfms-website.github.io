@@ -57,8 +57,6 @@
     	      text-decoration: underline;
     	}
 
-      
-}
 	
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -72,6 +70,9 @@
         	.underline-on-hover:hover {
   		text-decoration: underline;
 	}
+	  .li: hover {
+        cursor: default;
+        }
 }
 @media only screen and (max-width: 767px) {
     #meetings-columns,
