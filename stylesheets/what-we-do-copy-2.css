@@ -16,6 +16,12 @@
 .set-content-width {
     max-width: 700px
 }
+
+.underline-on-hover:hover {
+    	 text-decoration: underline;
+    	 cursor: pointer; cursor: hand;
+    }
+    
 @font-face {
     font-family: "Proxima Nova";
     src: url(../fonts/ProximaNovaRegular.otf) format("opentype")
