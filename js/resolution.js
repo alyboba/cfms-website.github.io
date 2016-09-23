@@ -22,5 +22,10 @@ $(document).ready(function () {
         $('.section').hide();
         $('h2b').removeClass("open");
     });
+    
+    function changeText()
+{
+ document.getElementById('boldStuff').innerHTML = 'Fred Flinstone';
+}
 
 }); //end ready
