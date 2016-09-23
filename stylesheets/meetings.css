@@ -39,11 +39,18 @@
 #meetings-columns,
 #top-meeting #top-group,
 .content {
-    padding-top: 50px;
+    padding-top: b50px;
     padding-left: 120px;
     padding-right: 120px
 }
 
+body {
+  font-size: 30px;
+  text-align: center;
+}
+	.underline-on-hover:hover {
+  		text-decoration: underline;
+	}
 
 @media only screen and (max-width: 1199px) {
     #meetings-columns,
