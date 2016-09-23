@@ -16,7 +16,7 @@ $(document).ready(function () {
     $('#expandall').click(function () {
         $('.section').show();
         $('h2b').addClass("open");
-        changeText();
+
     });
 
     $('#collapseall').click(function () {
@@ -24,9 +24,5 @@ $(document).ready(function () {
         $('h2b').removeClass("open");
     });
     
-    function changeText()
-{
- document.getElementById('boldStuff').innerHTML = 'Fred Flinstone';
-}
 
 }); //end ready
