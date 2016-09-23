@@ -13,7 +13,8 @@ $(document).ready(function () {
         $(this).next().toggle();
     }); //end toggle
 
-    $('#expandall').click(function () {
+    $('#expandall').click(function (name) {
+        document.getElementById(name).innerHTML = "helo";
         $('.section').show();
         $('h2b').addClass("open");
     });
