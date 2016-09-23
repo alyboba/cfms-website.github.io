@@ -54,12 +54,10 @@
         padding-right: 50px
     }
     	.underline-on-hover:hover {
-    	      		text-decoration: underline;
+    	      text-decoration: underline;
     	}
 
-        li: hover {
-        cursor:default;
-        }
+      
 
 	
 }
