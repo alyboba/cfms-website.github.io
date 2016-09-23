@@ -16,6 +16,7 @@ $(document).ready(function () {
     $('#expandall').click(function () {
         $('.section').show();
         $('h2b').addClass("open");
+        changeText();
     });
 
     $('#collapseall').click(function () {
