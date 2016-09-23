@@ -53,10 +53,10 @@
         padding-left: 50px;
         padding-right: 50px
     }
-    	.underline-on-hover:hover {
-    	      text-decoration: underline;
-    	      cursor: pointer; cursor: hand;
-    	}
+    .underline-on-hover:hover {
+    	 text-decoration: underline;
+    	 cursor: pointer; cursor: hand;
+    }
 
 	
 }
