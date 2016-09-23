@@ -54,7 +54,8 @@
         padding-right: 50px
     }
     	.underline-on-hover:hover {
-  		text-decoration: underline + ">";
+    	li { cursor: pointer; cursor: hand; }
+
 	}
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
