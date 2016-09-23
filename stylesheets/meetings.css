@@ -45,9 +45,6 @@
 }
 
 body {
-  font-size: 30px;
-  text-align: center;
-}
 	.underline-on-hover:hover {
   		text-decoration: underline;
 	}
