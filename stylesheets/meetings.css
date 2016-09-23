@@ -65,6 +65,9 @@
         padding-right: 50px;
         padding-top: 10px
     }
+        	.underline-on-hover:hover {
+  		text-decoration: underline;
+	}
 }
 @media only screen and (max-width: 767px) {
     #meetings-columns,
@@ -72,6 +75,9 @@
     .content {
         padding-top: 10px
     }
+        	.underline-on-hover:hover {
+  		text-decoration: underline;
+	}
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     #meetings-columns,
@@ -80,6 +86,9 @@
         padding-left: 40px;
         padding-right: 40px
     }
+        	.underline-on-hover:hover {
+  		text-decoration: underline;
+	}
 }
 @media only screen and (max-width: 480px) {
     #meetings-columns,
@@ -88,6 +97,9 @@
         padding-left: 25px;
         padding-right: 25px
     }
+        	.underline-on-hover:hover {
+  		text-decoration: underline;
+	}
 }
 .button {
     padding-top: 20px
@@ -403,9 +415,15 @@ blockquote .button {
     blockquote .button {
         font-size: 16px
     }
+        	.underline-on-hover:hover {
+  		text-decoration: underline;
+	}
 }
 @media only screen and (max-width: 480px) {
     .meeting-photo {
         width: 100%
     }
+        	.underline-on-hover:hover {
+  		text-decoration: underline;
+	}
 }
