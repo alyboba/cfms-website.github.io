@@ -44,6 +44,20 @@
     padding-right: 120px
 }
 
+
+
+@media only screen and (max-width: 1199px) {
+    #meetings-columns,
+    #top-meeting #top-group,
+    .content {
+        padding-left: 50px;
+        padding-right: 50px
+    }
+    .underline-on-hover:hover {
+    	 text-decoration: underline;
+    	 cursor: pointer; cursor: hand;
+    }
+
 #example {
   position: relative;
 }
@@ -59,19 +73,6 @@
   bottom: 0;
   background: white;
 }
-
-@media only screen and (max-width: 1199px) {
-    #meetings-columns,
-    #top-meeting #top-group,
-    .content {
-        padding-left: 50px;
-        padding-right: 50px
-    }
-    .underline-on-hover:hover {
-    	 text-decoration: underline;
-    	 cursor: pointer; cursor: hand;
-    }
-
 	
 }
 
