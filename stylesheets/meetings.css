@@ -69,10 +69,9 @@
     }
         	.underline-on-hover:hover {
   		text-decoration: underline;
+  		cursor: pointer; cursor: hand;
 	}
-	  .li: hover {
-        cursor: default;
-        }
+
 }
 @media only screen and (max-width: 767px) {
     #meetings-columns,
