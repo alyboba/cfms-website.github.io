@@ -8,6 +8,11 @@ font-family:"Proxima Nova",Helvetica,Arial,sans-serif;
 max-width:700px;
 }
 
+.underline-on-hover:hover {
+    	 text-decoration: underline;
+    	 cursor: pointer; cursor: hand;
+    }
+
 @font-face {
 font-family:"Source Serif Pro";
 font-weight:700;
