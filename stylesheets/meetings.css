@@ -58,22 +58,7 @@
     	 cursor: pointer; cursor: hand;
     }
 
-#example {
-  position: relative;
-}
-#example-checkbox {
-  display: none;
-}
-#example-checkbox:checked + #example:after {
-  content: "Hide";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: white;
-}
-	
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
