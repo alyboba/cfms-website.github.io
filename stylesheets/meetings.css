@@ -15,6 +15,12 @@
 .meeting-photo .meeting-photo-text {
     font-family: "Proxima Nova", Helvetica, Arial, sans-serif
 }
+
+.underline-on-hover:hover {
+    	 text-decoration: underline;
+    	 cursor: pointer; cursor: hand;
+    }
+    
 @font-face {
     font-family: "Proxima Nova";
     src: url(../fonts/ProximaNovaRegular.otf) format("opentype")
