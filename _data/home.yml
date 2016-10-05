@@ -21,11 +21,6 @@ banner_text:
     title: 'Bienvenue au nouveau site de la FEMC!'
     description: Cliquez ici pour en savoir plus sur notre changement de site Web.
 featured_links:
-  - url: 'https://instagram.com/cfmsfemc/'
-    image_url_en: images/home-link-thumbs/selfie.jpg
-    image_url_fr: images/home-link-thumbs/selfie.jpg
-    text_en: 'The CFMS is now on Instagram as @cfmsfemc!'
-    text_fr: 'La FEMC est maintenant sur Instagram @cfmsfemc!'
   - url: meetings/agm-2016-edmonton.html
     image_url_en: images/home-link-thumbs/sgm-2016.jpg
     image_url_fr: images/home-link-thumbs/sgm-2016.jpg
