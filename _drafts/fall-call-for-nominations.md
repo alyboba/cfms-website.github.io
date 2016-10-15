@@ -1,5 +1,5 @@
 ---
-title: Get Involved With The CFMS - Fall Call for Nominations
+title: 'Get Involved With The CFMS! - Fall Call for Nominations'
 date: 2016-10-15 00:00:00
 description: 'Each fall and winter, talented individuals are selected to help run various portfolios within the CFMS and to represent us to external groups. You could be one of them!'
 ---
