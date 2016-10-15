@@ -30,8 +30,8 @@ CFMS Committees:
 
 National Officer Positions:
 
-* National Officer of Indigenous Health (NOIH)
-* National Officer of Reproductive and Sexual Health (NORSH)
+* [National Officer of Indigenous Health (NOIH)](/fall-call-descriptions/global health national officer portfolios.pdf)
+* [National Officer of Reproductive and Sexual Health (NORSH)](/fall-call-descriptions/global health national officer portfolios.pdf)
 * [National Officer of Global Health Education (NOGHE)](/fall-call-descriptions/global health national officer portfolios.pdf)
 * [National Officer of Human Rights and Peace (NORP)](/fall-call-descriptions/global health national officer portfolios.pdf)
 * [National Officer of Partnerships (NOP)](/fall-call-descriptions/global health national officer portfolios.pdf)
