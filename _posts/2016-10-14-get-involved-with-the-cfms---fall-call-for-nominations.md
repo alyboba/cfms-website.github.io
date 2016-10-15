@@ -19,16 +19,16 @@ As the representative voice of Canadian medical students, the Canadian Federatio
 * [CFMS VP Information Technology (Jr)](/fall-call-descriptions/cfms national officer for it 2016.pdf)
 
 
-CFMS Committees:
+**CFMS Committees:**
 
-* Finance Committee
+* [Finance Committee](/fall-call-descriptions/cfms fincom terms of reference.doc)
 * [Social Media and Engagement Committee](/fall-call-descriptions/media engagement 2016.pdf)
 * [Education Committee](/fall-call-descriptions/cfms education committee 2016 .pdf)
 * Committee on Health Policy
 * [Health and Environment Adaptive Response Task Force (HEART)](/fall-call-descriptions/global health national officer portfolios.pdf)
 
 
-National Officer Positions:
+**National Officer Positions:**
 
 * [National Officer of Indigenous Health (NOIH)](/fall-call-descriptions/global health national officer portfolios.pdf)
 * [National Officer of Reproductive and Sexual Health (NORSH)](/fall-call-descriptions/global health national officer portfolios.pdf)
