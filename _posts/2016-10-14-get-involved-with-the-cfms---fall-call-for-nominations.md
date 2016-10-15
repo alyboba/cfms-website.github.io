@@ -37,7 +37,7 @@ National Officer Positions:
 * [National Officer of Partnerships (NOP)](/fall-call-descriptions/global health national officer portfolios.pdf)
 * [National Officer of Research (NOR)](/fall-call-descriptions/cfms national officer of research (nor) - terms of reference.pdf)
 * National Officer of Health Policy (NOHP)
-* National Wellness Officer
+* [National Wellness Officer](/fall-call-descriptions/wellness officer 2016 .pdf)
 
 
 **Deadline for all applications is October 22, 11:59 PM EST.**
