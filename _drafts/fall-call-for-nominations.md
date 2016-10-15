@@ -22,10 +22,10 @@ As the representative voice of Canadian medical students, the Canadian Federatio
 CFMS Committees:
 
 * Finance Committee
-* Social Media and Engagement Committee
-* Education Committee
+* [Social Media and Engagement Committee](/fall-call-descriptions/media engagement 2016.pdf)
+* [Education Committee](/fall-call-descriptions/cfms education committee 2016 .pdf)
 * Committee on Health Policy
-* Health and Environment Adaptive Response Task Force (HEART)
+* [Health and Environment Adaptive Response Task Force (HEART)](/fall-call-descriptions/global health national officer portfolios.pdf)
 
 
 National Officer Positions:
