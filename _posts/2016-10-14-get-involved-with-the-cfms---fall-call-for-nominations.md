@@ -45,5 +45,9 @@ As the representative voice of Canadian medical students, the Canadian Federatio
 <br>The application form for the CFMS **Education Committee** can be found at: https://goo.gl/forms/DxfNvafSDvVP4hJc2
 <br>
 <br>The application form for **all other positions** can be found at: https://goo.gl/forms/Hga6Ry2z46vJzyyc2
+
+Please contact annualreview@cfms.org for any questions about the Annual Review Editor Position.
+
+Please contact vpgovtaffairs@cfms.org for any questions about NOHP and CHP.
 <br>
 <br>Questions about the selections process can be sent to the Nominations Committee Chairs, Fatemeh Ramazani (ramazani@ualberta.ca) and Yousif Atwan (yatwan2017@meds.uwo.ca).
