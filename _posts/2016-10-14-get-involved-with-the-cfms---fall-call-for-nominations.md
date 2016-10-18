@@ -24,7 +24,7 @@ As the representative voice of Canadian medical students, the Canadian Federatio
 * [Social Media and Engagement Committee](/fall-call-descriptions/media engagement 2016.pdf)
 * [Education Committee](/fall-call-descriptions/cfms education committee 2016 .pdf)&nbsp;(EdCom)
 * [Committee on Health Policy](/fall-call-descriptions/COHP Terms of Reference - NOHP included.pdf)&nbsp;(COP)
-* [Health and Environment Adaptive Response Task Force (HEART)](/fall-call-descriptions/global health national officer portfolios.pdf)
+* [Health and Environment Adaptive Response Task Force (HEART)](/fall-call-descriptions/heart terms of reference.docx)
 
 **National Officer Positions:**
 
