@@ -12,7 +12,7 @@ As the representative voice of Canadian medical students, the Canadian Federatio
 <br>**The positions currently available for the 2016-2017 academic year include:**
 
 * [CFMS Rep on Canadian Medical Association Journal (CMAJ) Student Humanities Blog](/fall-call-descriptions/cmaj french tor 2016.pdf) (Francophone position available)
-* CFMS Annual Review Editor
+* [CFMS Annual Review Editor](/fall-call-descriptions/2013-2014 CFMS Annual Review Editor Position Description.pdf)
 * [CFMS Liaison to Choosing Wisely Canada](/fall-call-descriptions/cwc 2016.pdf)
 * [CFMS Representative to the National Electives and Interviews Databases](/fall-call-descriptions/electives &amp; interview database 2016.pdf)
 * [CFMS Student Affairs Program Developer](/fall-call-descriptions/student affairs program developer 2016 .pdf)
