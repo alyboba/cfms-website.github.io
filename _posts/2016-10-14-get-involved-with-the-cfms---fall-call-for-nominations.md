@@ -37,7 +37,7 @@ As the representative voice of Canadian medical students, the Canadian Federatio
 * [National Officer of Health Policy (NOHP)](/fall-call-descriptions/COHP Terms of Reference - NOHP included.pdf)
 * [National Wellness Officer](/fall-call-descriptions/wellness officer 2016 .pdf)
 
-**Deadline for all applications is October 22, 11:59 PM EST.**
+**Deadline for all applications has been EXTENDED to October 29, 11:59 PM EST.**
 <br>
 <br>The application form for the CFMS **Education Committee** can be found at: https://goo.gl/forms/DxfNvafSDvVP4hJc2
 <br>
