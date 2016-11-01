@@ -61,7 +61,7 @@ financial_resources:
   md_leadership_awards: "MD Leadership Awards"
   md_leadership_awards_url: "#"
   md_travel_awards: "MD Travel Awards"
-  md_travel_awards_url: "https://cfms.org/resources/md_travel_awards.html"
+  md_travel_awards_url: "/resources/md_travel_awards.html"
   managing_debt: "Managing Debt"
   managing_debt_url: "https://mdm.ca/physician-life-stages/students/managing-debt/"
   paying_med_school: "Paying for Medical School"
