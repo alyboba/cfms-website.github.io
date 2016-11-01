@@ -57,7 +57,7 @@ financial_resources:
   financial_advice: "Financial Advice for:"
   testimonials: "Testimonials"
   student_finances: "Student Finances"
-  student_finances_url: "/resources/md_student_finances.html"
+  student_finances_url: "/resources/student-finances.html"
   md_leadership_awards: "MD Leadership Awards"
   md_leadership_awards_url: "#"
   md_travel_awards: "MD Travel Awards"
