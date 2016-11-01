@@ -59,7 +59,7 @@ financial_resources:
   student_finances: "Student Finances"
   student_finances_url: "/resources/student-finances.html"
   md_leadership_awards: "MD Leadership Awards"
-  md_leadership_awards_url: "#"
+  md_leadership_awards_url: "/resources/md_leadership_awards.html"
   md_travel_awards: "MD Travel Awards"
   md_travel_awards_url: "/resources/md_travel_awards.html"
   managing_debt: "Managing Debt"
