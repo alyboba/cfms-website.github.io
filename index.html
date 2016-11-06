@@ -91,7 +91,7 @@ title: "Canadian Federation of Medical Students"
 			{% for link in site.data.home.featured_links %}
 				<a href="{{ link.url }}">
 					{% if page.lang == "en" %}
-						<div class="featured-link" style="background: url(/{{ link.image_url_en }}) no-repeat center center; background-size:cover">
+						<div class="featured-link" style="'width':'20px', 'height':'20px', background: url(/{{ link.image_url_en }}) no-repeat center center; background-size:cover">
 						</div>
 						<div class="featured-link-text">{{ link.text_en }}</div>
 					{% else %}
