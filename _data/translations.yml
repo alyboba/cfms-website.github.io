@@ -49,13 +49,6 @@ nav:
   news: "Nouvelles"
   login: "Se connecter"
 
-#Who We Are
-#===================
-who-we-are:
-- lang: "en"
-  university_of_ottawa: "University of Ottawa"
-- lang: "fr"
-  university_of_ottawa: "Uni Ottawa"
 
 #Financial Resources
 #===================
