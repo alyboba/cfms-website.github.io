@@ -1,18 +1,22 @@
+---
+---
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	--- --- <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+
+	 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 	 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+	 <head>
 	 {% include head.html %} <!--Page Specific Stylesheet-->
-	<link href="/stylesheets/what-we-do.css" rel="stylesheet">{% include nav.html %} <!--Page Specific Formatting-->
+	<link href="/stylesheets/what-we-do.css" rel="stylesheet">
+	 </head>
 	 
+	 <body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	<!--Page Specific Formatting-->
 	<script type="text/javascript">
 	          document.querySelector( "#logo-invert" ).classList.toggle("hidden");
 	          document.querySelector( "#what-we-do" ).classList.toggle("active");
 	</script>
+	
 	<div class="content">
 		<!-- Displays the sidebar and emphasizes the active page -->
 		{% include sidebar-education.html %} 
