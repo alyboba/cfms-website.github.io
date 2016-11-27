@@ -4,7 +4,6 @@ date: 2016-09-13T00:00:00.000Z
 description: University of Toronto Medical Journal - Call for Submissions
 ---
 
-
 Dear students,
 
 The University of Toronto Medical Journal (UTMJ), Canada's oldest student-run scientific publication, is looking for submissions for our upcoming issue on Paediatric Medicine.
@@ -22,4 +21,5 @@ Mark Shafarenko and Ahmad Mousa
 <br>Editors-in-Chief
 <br>University of Toronto Medical Journal
 
-[/callforsubmissionsgeneral issue 1.pdf](/callforsubmissionsgeneral issue 1.pdf)
+> ####**Attachments**
+> - [callforsubmissionsgeneral issue 1.pdf](/files/updates/callforsubmissionsgeneral issue 1.pdf)
