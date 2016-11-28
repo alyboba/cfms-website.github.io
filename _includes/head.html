@@ -19,14 +19,20 @@
 <!--JQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-<!--AngularJS-->
-<script src="/js/angular.min.js"></script>
-<script src="/js/angular-resource.min.js"></script>
-
-<!--Firebase-->
-<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
-<script src="/js/login.js"></script>
+<!--Firebase Code-->
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCRaJStQDuZ0nrn0b59kzYphlAkJ62flo8",
+    authDomain: "amber-heat-9132.firebaseapp.com",
+    databaseURL: "https://amber-heat-9132.firebaseio.com",
+    storageBucket: "amber-heat-9132.appspot.com",
+    messagingSenderId: "466232039218"
+  };
+  firebase.initializeApp(config);
+</script>
+{% include login.js %}
 
 <!--Analytics-->
 <script>

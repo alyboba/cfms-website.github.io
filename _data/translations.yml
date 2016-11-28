@@ -33,6 +33,7 @@ nav:
   members: "Members"
   news: "News"
   login: "Login"
+  logout: "Logout"
 - lang: "fr"
   acronym: "FEMC"
   title: "Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada"
@@ -48,7 +49,7 @@ nav:
   members: "Membres"
   news: "Nouvelles"
   login: "Se connecter"
-
+  logout: "Se déconnecter"
 
 #Financial Resources
 #===================

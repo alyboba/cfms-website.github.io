@@ -267,6 +267,7 @@ $link-padding: 30px;
 ––––––––––––––––––––––––––––––––––––––––*/
 #new-account-top {
 	display:flex;
+	padding-bottom:30px;
 }
 #new-account-left {
 	max-width:$content-width;
@@ -298,7 +299,18 @@ $link-padding: 30px;
 		}
 	}
 }
-
+#change-password-request-button {
+	padding-bottom:20px;
+	a {
+		border-color:$primary-color;
+		color:$primary-color;
+		opacity:0.5;
+		font-size:16px;
+	}
+	a:hover {
+		opacity:1;
+	}
+}
 
 @media only screen and (max-width: 959px) {
 	#new-account-top{flex-wrap:wrap; padding-top:30px;}

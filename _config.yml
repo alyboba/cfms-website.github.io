@@ -4,7 +4,8 @@ about_cfms_fr: "La Fédération des étudiants et des étudiantes en médecine d
 
 #Firebase URL
 firebase_url: "https://amber-heat-9132.firebaseio.com/"
-enable_login: false
+enable_login: true
+authentication_code: "CFMS_2016"
 
 #Set the default layout for a post to the 'news' format
 defaults:

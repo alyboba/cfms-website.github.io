@@ -22,8 +22,8 @@ banner_text:
     description: Cliquez ici pour en savoir plus sur notre changement de site Web.
 featured_links:
   - url: meetings/agm-2016-edmonton.html
-    image_url_en: images/home-link-thumbs/sgm-2016.jpg
-    image_url_fr: images/home-link-thumbs/sgm-2016.jpg
+    image_url_en: images/home-link-thumbs/agm-2016.jpg
+    image_url_fr: images/home-link-thumbs/agm-2016.jpg
     text_en: See what happened at the 2016 CFMS Annual General Meeting
     text_fr: Allez voir les détails de notre Assemblée générale annuelle de 2016
   - url: resources/student-finances.html

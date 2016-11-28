@@ -340,6 +340,12 @@ label {
 	font-weight:bold;
 }
 
+/* #Member and Non-member elements
+––––––––––––––––––––––––––––––––––––––––*/
+.non-members {display:block}
+.members-only {display:none}
+#members {display:none}
+
 /* #Announcement
 ––––––––––––––––––––––––––––––––––––––––*/
 #hero-image{    

@@ -11,7 +11,7 @@
 				<span id="logo-desc"><a class="{{ page.lang }}" href="{{ nav.lang_path }}/">{{ nav.title }}</a></span>
 			</div>
 			<div id="top-hamburger" class="animate">
-				<a id="nav-toggle" href=""><span></span></a>
+				<a onclick="return false;" id="nav-toggle" href=""><span></span></a>
 			</div>
 			<div id="top-nav" class="animate">
 				<ul class="{{ page.lang }}">
@@ -36,12 +36,12 @@
 						    </ul>
 						</div>
 					</li>
-					<li id="members" ng-show="authData"><a class="top-level" href="{{ nav.lang_path }}/members/">{{ nav.members }}</a></li>
+					<li id="members"><a class="top-level" href="{{ nav.lang_path }}/members/">{{ nav.members }}</a></li>
 					<li id="news"><a class="top-level" href="{{ nav.lang_path }}/news/">{{ nav.news }}</a></li>
 					{% if site.enable_login == true %}
-						<li id="login-button" ng-hide="authData"><a href='' class="login-modal">{{ nav.login }}</a></li>
+						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">{{ nav.login }}</a></li>
 					{% else %}
-						<li id="login-button" ng-hide="authData"><a href='' class="redirect-modal">{{ nav.login }}</a></li>
+						<li id="login-button-wrapper"><a href='' onclick='return false;' id="login-button" class="redirect-modal">{{ nav.login }}</a></li>
 					{% endif %}
 					{% if nav.lang == "en" %}
 						<li id="lang-toggle"><a id="en" class="current-lang" href="/">EN</a> / <a id="fr" href="/fr/">FR</a></li>

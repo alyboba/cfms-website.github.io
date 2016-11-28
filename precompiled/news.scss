@@ -255,6 +255,21 @@ $link-padding: 30px;
 	border:none;
 }
 
+/* Mobile Landscape */
+@media only screen and (max-width: 767px) {
+	.spotlight .spotlight-pic {display:none;}
+	.spotlight {
+		padding: 20px 30px 20px 30px;
+		.spotlight-name {
+			font-size:20px;
+			padding-bottom:2px;
+		}
+		.spotlight-desc {
+			font-size:14px;
+		}
+	}
+}
+
 /* #News Archive Styling
 ––––––––––––––––––––––––––––––––––––––––*/
 
