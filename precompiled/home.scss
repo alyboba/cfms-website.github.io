@@ -265,8 +265,11 @@ $link-padding: 30px;
 
 /* #Login Page
 ––––––––––––––––––––––––––––––––––––––––*/
+$number-margin:50px;
+$number-margin-mobile:40px;
 #new-account-top {
 	display:flex;
+	padding-bottom:30px;
 }
 #new-account-left {
 	max-width:$content-width;
@@ -298,7 +301,51 @@ $link-padding: 30px;
 		}
 	}
 }
-
+#change-password-request-button {
+	padding-bottom:20px;
+	a {
+		border-color:$primary-color;
+		color:$primary-color;
+		opacity:0.5;
+		font-size:16px;
+	}
+	a:hover {
+		opacity:1;
+	}
+}
+#new-account-benefits{
+	ul { 
+		counter-reset: section; 
+		max-width:$content-width;
+	}
+	ul li {
+		list-style:none;
+		font-family:$header-font-stack;
+		font-size:20px;
+		font-weight:bold;
+		padding-bottom:15px;
+		margin-left:$number-margin;
+		line-height:1.4em;
+	}
+	ul li:before {
+		font-family:$sans-serif-font-stack;
+	    counter-increment: section;
+	    content: counter(section);
+	    color:$primary-color-bright;
+	    font-size:22px;
+		border:2px solid $primary-color-bright;
+		padding:10px;
+		padding-top:8px;
+		border-radius:30px;
+		position:absolute;
+		width:25px;
+		height:25px;
+		margin-top:5px;
+		text-align:center;
+		margin-left:-$number-margin - 20;
+	}
+	ul li p {font-size:17px; line-height:1.5em;}
+}
 
 @media only screen and (max-width: 959px) {
 	#new-account-top{flex-wrap:wrap; padding-top:30px;}
@@ -322,6 +369,21 @@ $link-padding: 30px;
 @media only screen and (max-width: 767px) {
 	#new-account-pane {
 		h3 {font-size:20px;}
+	}
+	#new-account-benefits {
+		p {font-size:16px;}
+		ul li p {font-size:15px;}
+		ul li {
+			font-size:18px;
+			margin-left:$number-margin-mobile;
+		}
+		ul li:before {
+			margin-left:-$number-margin-mobile - 10;
+			width:15px;
+			height:15px;
+			font-size:15px;
+			line-height:18px;
+		}
 	}
 }
 @media only screen and (max-width: 480px) {

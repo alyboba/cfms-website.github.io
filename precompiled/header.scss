@@ -246,13 +246,13 @@
 }
 
 //Login Button Formatting
-#login-button a{
+#login-button-wrapper a{
 	background-color: $primary-color !important;
 	color:white !important;
 	margin-left:7px;
 	transition: box-shadow 0.2s linear;
 }
-#login-button a:hover{
+#login-button-wrapper a:hover{
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 	transition: box-shadow 0.2s linear;
 }
