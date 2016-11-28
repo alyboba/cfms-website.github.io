@@ -1,5 +1,4 @@
 ---
-title: MD Travel Awards
 ---
 
 <!DOCTYPE html>
@@ -11,7 +10,7 @@ title: MD Travel Awards
 	{% include head.html %}
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/resources.css">
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css" />
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 	{% include nav.html %}
@@ -19,24 +18,18 @@ title: MD Travel Awards
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
 		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#resources" ).classList.toggle("active");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
 	</script>
 
-	<div class="finances-banner-outer">
-		<div class="content finances-banner-inner" style="background-color:#69A99F;">
-			<img src="{{site.root}}/images/banners/MedEd-Counsel-Campaign-Banner-e.jpg">
-		</div>
-	</div>
-	<div class="finances content">
+	<div class="content">
 		<!-- Displays the sidebar and emphasizes the active page -->
-		{% include sidebar-financial-resources.html %}
+		{% include sidebar-student-affairs.html %}
 		<script type="text/javascript">
-			document.querySelector( "#leadership-awards" ).classList.toggle("sidebar-active");
+			document.querySelector( "#leadership-award" ).classList.toggle("sidebar-active");
 		</script>
-		<div class="student-finances-content">
+		
+		<div id="side-content" class="editable">
 			<h1 id="page-title">MD Leadership Awards</h1>
-		   
-			
             <img class="right" style="max-width:50%" src="/images/resource-logos/MDFM Leadership Awards promo.jpg">
 			<p>The CFMS and MD Financial Management want to recognize some of the passionate, dedicated and caring medical student leaders across Canada who have made innovative contributions to their schools and communities. In recognition of their achievements, one student from each of the 14 member schools of the Canadian Federation of Medical Students (CFMS) will receive a Medical Student Leadership Award. </p>
 			
@@ -45,14 +38,14 @@ title: MD Travel Awards
 				
 			<p>We apologize for the inconvenience as we complete the process of migrating to the new site.</p>
 			
-
-		<a id="finances-side2-image" href="https://mdm.ca/"><img class="center" style="max-width:25%" src="/images/MDFM.svg"></a>
+	     	<a id="finances-side2-image" href="https://mdm.ca/"><img class="center" style="max-width:25%" src="/images/MDFM.svg"></a>
 			<div class="addendum">
 				<p>MD Financial Management provides financial products and services, the MD Family of Funds and investment counselling services through the MD Group of Companies. For a detailed list of these companies, visit <a href ="http://md.cma.ca/">md.cma.ca</a></p>
 				
 			</div>
 		</div>
+		
+		
 	</div>
-	<div>{% include footer.html %}</div>
+	{% include footer.html %}
 </body>
-</html>
