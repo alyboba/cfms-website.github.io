@@ -13,7 +13,7 @@ title: Create a New Account
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="/stylesheets/home.css">
 </head>
-<body ng-app="authApp" ng-controller="AuthController">
+<body>
 	{% include nav.html %}
 	
 	<!--Page Specific Formatting-->
@@ -25,18 +25,23 @@ title: Create a New Account
 		<div id="new-account-left">
 			<h1 id="page-title">Why create a CFMS account?</h1>
 			<p>As a medical student in one of the member schools in the CFMS, you are automatically eligible to create a CFMS account. By creating an account, you get access to an extensive list of member services and resources. Benefits include:</p>
-			<h3><strong>Student Discounts</strong></h3>
-			<p>Exclusive discounts are available for Hotels, Textbooks, UpToDate&copy;, Disability Insurance, and even LASIK MD Laser Vision Correction. For a full list of discounts, click <a href="/resources/discounts.html">here</a>.</p>
-			<img src="/images/page-images/discounts.png">
-			<h3><strong>Access to CFMS Electives and Interview Databases</strong></h3>
-			<p>The CFMS maintains anonymous databases of external elective reviews and residency interview reviews. Great for planning electives or preparing for your CaRMS interviews.</p>
-			<h3><strong>Exclusive Access to Awards &amp; Grants</strong></h3>
-			<p>As a member of the CFMS, you are eligible to apply for the annual CFMS - MD Financial Management Leadership Awards. One award is given each year to a student from each member school. To find out more, click <a href="/resources/md_leadership_awards.html">here</a>.</p>
-			<p>The CFMS also issues grants to fund medical student-initiated projects around the country, with a maximum funding amount of $3000.</p>
-			<h3><strong>Access to the CFMS Match Book</strong></h3>
-			<p>The Match Book is a joint initiative of the CFMS and CaRMS designed to educate medical students about the Match and assist with career planning. Read more about it <a href="/what-we-do/education/cfms-matchbook.html">here</a>.</p>
-			<h3><strong>Connect with other CFMS Members and Alumni</strong></h3>
-			<p>Attend one of our <a href="/meetings/">bi-annual CFMS meetings</a>, and meet your colleagues from across the country!</p>
+			<div id="new-account-benefits">
+				<ul>
+					<li><strong>Student Discounts</strong>
+						<p>Exclusive discounts are available for Hotels, Textbooks, UpToDate&copy;, Disability Insurance, and even LASIK MD Laser Vision Correction. For a full list of discounts, click <a href="/what-we-do/student-affairs/discounts.html">here</a>.</p>
+					</li>
+					<li><strong>Access to CFMS Electives and Interview Databases</strong>
+						<p>The CFMS maintains anonymous databases of external elective reviews and residency interview reviews. Great for planning electives or preparing for your CaRMS interviews.</p>
+					</li>
+					<li><strong>Exclusive Access to Awards &amp; Grants</strong>
+						<p>As a member of the CFMS, you are eligible to apply for the annual CFMS - MD Financial Management Leadership Awards. One award is given each year to a student from each member school. To find out more, click <a href="/resources/md_leadership_awards.html">here</a>.</p>
+						<p>The CFMS also issues grants to fund medical student-initiated projects around the country, with a maximum funding amount of $3000.</p>
+					</li>
+					<li><strong>Access to the CFMS Match Book</strong>
+						<p>The Match Book is a joint initiative of the CFMS and CaRMS designed to educate medical students about the Match and assist with career planning. Read more about the matchbook <a href="/what-we-do/education/cfms-matchbook.html">here</a>.</p>
+					</li>
+				</ul>
+			</div>
 		</div>
 		<div id="new-account-right">
 			<blockquote id="new-account-pane">
@@ -99,7 +104,7 @@ title: Create a New Account
 					<input name='password_second' id='account-password-second' type='password' ng-model='password_second' placeholder='' />
 				</div> 
 				<div class="button" style="margin-top:10px;">
-					<a style="cursor:pointer" onclick='handleSignUp(); addExtraFields();'>
+					<a style="cursor:pointer" onclick='handleSignUp();'>
 						<strong>Create your account</strong>
 					</a>
 				</div>

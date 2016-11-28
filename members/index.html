@@ -31,21 +31,28 @@ title: "Meetings"
 			<div id="account-details" class="members-only">
 				<blockquote id="account-info">
 					<h3><strong>Your Account:</strong></h3>
-					<b>Name</b>: Kevan Lu<br>
-					<b>School</b>: Western University<br>
-					<b>Graduating Year</b>: Class of 2017<br>
-					<b>Email Address</b>: <a href="mailto:klu2017@meds.uwo.ca">klu2017@meds.uwo.ca</a>
+					<b>Name</b>: <span id="account-name"></span><br>
+					<b>School</b>: <span id="account-school"></span><br>
+					<b>Graduating Year</b>: <span id="account-grad-year"></span><br>
+					<b>Email Address</b>: <a id="account-email" href="mailto:klu2017@meds.uwo.ca">klu2017@meds.uwo.ca</a>
 				</blockquote>
 			</div>
-			
-			<p>Welcome to the members section of the CFMS Website. As a CFMS Member, you have access to a variety of resources, discounts, and exclusive awards.</p>
-
-			<div id="member-directory" class="members-only">
-				<h1><strong>Member Directory</strong></h1>
-				<hr>
+			<div class="members-only">
+				<p>Welcome to the members section of the CFMS Website. As a CFMS Member, you have access to a variety of resources, discounts, and exclusive awards. Click on some of the links to the left to access some of the exclusive resources available online.</p>
+				<h2><strong>What's new?</strong></h2>
+				<ul>
+					<li>Receive a 30% Discount on Wolters Kluwer Lippincott resources with <strong>free shipping</strong>! See our <a href="/what-we-do/student-affairs/discounts.html">discounts page</a> for more details.</li>
+					<li><strong>CaRMS WestJet Discount</strong>: Save money on flights during your CaRMS electives and interview period. See our <a href="/what-we-do/student-affairs/discounts.html">discounts page</a> for more details.</li>
+				</ul>
 			</div>
-			<h2><strong>Specialty profiles</strong></h2>
-			<p>Having trouble deciding on a post-graduate specialty? The Canadian Medical Association has compiled useful information on each specialty, which is available on the <a href="https://www.cma.ca/En/Pages/specialty-profiles.aspx">student section of their website</a>.</p>
+			<div class="non-members">
+				<blockquote>
+					<h3><strong>Please login to see this page</strong></h3>
+					<ul>
+						<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
+					</ul>
+				</blockquote>
+			</div>
 		</div>
 	</div>
 	{% include footer.html %}

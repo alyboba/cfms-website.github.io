@@ -1,4 +1,6 @@
 <script type="text/javascript">
+	var accountJustCreated = false;
+
 	function isSignedIn () {
 		return (firebase.auth().currentUser);
 	}
@@ -67,21 +69,7 @@
 			console.log(error);
 		});
 		vex.dialog.alert('<h3><strong>Account Successfully Created</strong></h3><p>Your account has successfully been created! You are now logged in. Welcome to the CFMS!</p>')
-	}
-
-	function addExtraFields() {
-		//Adds Extra Fields
-		var user = firebase.auth().currentUser;
-		var firstName = document.getElementById('account-first-name').value;
-		var lastName = document.getElementById('account-last-name').value;
-		var medicalSchool = document.getElementById('account-medical-school').value;
-		var graduationYear = document.getElementById('account-graduation-year').value;
-		firebase.database().ref('users/' + user.uid).set({
-		    firstName: firstName,
-		    lastName: lastName,
-		    medicalSchool: medicalSchool,
-		    graduationYear: graduationYear
-		})
+		accountJustCreated = true;
 	}
 
 	function sendPasswordReset() {
@@ -110,18 +98,24 @@
 	function initApp() {
 		// Listening for auth state changes.
 		firebase.auth().onAuthStateChanged(function(user) {
+			if (accountJustCreated){
+				var firstName = document.getElementById('account-first-name').value;
+				var lastName = document.getElementById('account-last-name').value;
+				var medicalSchool = document.getElementById('account-medical-school').value;
+				var graduationYear = document.getElementById('account-graduation-year').value;
+				firebase.database().ref('users/' + user.uid).set({
+				    firstName: firstName,
+				    lastName: lastName,
+				    medicalSchool: medicalSchool,
+				    graduationYear: graduationYear,
+				    isAdmin: false
+				})
+				accountJustCreated = false;
+			}
 			{% for nav in site.data.translations.nav %}
 				{% if nav.lang == page.lang %}
 					if (user) {
 						// User is signed in.
-						var displayName = user.displayName;
-						var email = user.email;
-						var emailVerified = user.emailVerified;
-						var photoURL = user.photoURL;
-						var isAnonymous = user.isAnonymous;
-						var uid = user.uid;
-						var providerData = user.providerData;
-
 						document.getElementById('login-button').textContent = '{{ nav.logout }}';
 						document.getElementById('members').style.display = 'inline';
 
@@ -150,6 +144,30 @@
 					}
 				{% endif %}
 			{% endfor %}
+
+			//Shows Member Account Information on the Members Page
+			if (window.location.pathname == '/members/'){
+				if (user) {
+					return firebase.database().ref('/users/' + user.uid).once('value').then(function(snapshot) {
+						var firstName = snapshot.val().firstName;
+						var lastName = snapshot.val().lastName;
+						document.getElementById('account-name').textContent = firstName + ' ' + lastName;
+						document.getElementById('account-school').textContent = snapshot.val().medicalSchool;
+						document.getElementById('account-grad-year').textContent = snapshot.val().graduationYear;
+						var accountEmail = document.getElementById('account-email');
+						accountEmail.textContent = user.email;
+						accountEmail.href = 'mailto:' + user.email;
+					});
+				} 
+				else {
+					document.getElementById('account-name').textContent = '';
+					document.getElementById('account-school').textContent = '';
+					document.getElementById('account-grad-year').textContent = ''
+					var accountEmail = document.getElementById('account-email');
+					accountEmail.textContent = '';
+					accountEmail.href = '';
+				}
+			}
 		});
 	}
 
