@@ -1,0 +1,66 @@
+---
+title: Bylaws &amp; Internal Policy
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	<!-- Match App Resources-->
+	<link href="view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="view/match.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+
+    <script src="https://npmcdn.com/zone.js@0.6.12"></script>
+    <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.27/system.js"></script>
+	<!--<link rel="stylesheet" type="text/css" href="https://rawgit.com/akserg/ng2-dnd/master/ng2-dnd.css"> -->  
+
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    
+    <script src='pdfmake/pdfmake.min.js'></script>
+    <script src='pdfmake/vfs_fonts.js'></script>
+    
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+
+	<!--Page Specific Stylesheet-->
+	{% include head.html %}
+	<link rel="stylesheet" href="/stylesheets/resources.css">
+</head>
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#resources" ).classList.toggle("active");
+	</script>
+
+	<div id="match-app-wrapper" class="content">
+		<h1 id="page-title">Couples Match Application</h1>
+		<match-app>Loading...</match-app>
+	</div>
+
+	<!-- Match App Footer Resources-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="view/bootstrap/assets/js/vendor/jquery.min.js"><\/script>')
+	</script>
+	<script src="view/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	{% include footer.html %}
+</body>
+</html>

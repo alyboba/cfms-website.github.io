@@ -178,7 +178,8 @@ $number-margin-mobile:40px;
 .finances {display:flex; max-width:100%;}
 .student-finances-content {
 	width:100%;
-	p, h1, h2, h3, h4 {max-width:$content-width;}
+	p, h1, h2, h3, h4, ul, ol, img {max-width:$content-width;}
+	#page-title {max-width:none;}
 	h2 {
 		font-weight:bold;
 		font-size:28px;
@@ -188,38 +189,61 @@ $number-margin-mobile:40px;
 	}
 	font-size:18px;
 	padding-bottom:30px;
-	ul { 
-		counter-reset: section; 
-		max-width:$content-width;
-	}
-	ul li {
-		list-style:none;
-		font-family:$header-font-stack;
-		font-size:22px;
-		font-weight:bold;
-		padding-bottom:15px;
-		margin-left:$number-margin;
-	}
-	ul li:before {
-		font-family:$sans-serif-font-stack;
-	    counter-increment: section;
-	    content: counter(section);
-	    color:$primary-color-bright;
-	    font-size:20px;
-		border:2px solid $primary-color-bright;
-		padding:10px;
-		border-radius:30px;
-		position:absolute;
-		width:25px;
-		height:25px;
-		margin-top:5px;
-		text-align:center;
-		margin-left:-$number-margin - 20;
-		line-height:28px;
-	}
-	ul li p {
-		font-size:17px;
-		font-family:$serif-font-stack;
+	#reasons-financial-advisor{
+		ul { 
+			counter-reset: section; 
+			max-width:$content-width;
+		}
+		ul li {
+			list-style:none;
+			font-family:$header-font-stack;
+			font-size:22px;
+			font-weight:bold;
+			padding-bottom:15px;
+			margin-left:$number-margin;
+		}
+		ul li:before {
+			font-family:$sans-serif-font-stack;
+		    counter-increment: section;
+		    content: counter(section);
+		    color:$primary-color-bright;
+		    font-size:20px;
+			border:2px solid $primary-color-bright;
+			padding:10px;
+			border-radius:30px;
+			position:absolute;
+			width:25px;
+			height:25px;
+			margin-top:5px;
+			text-align:center;
+			margin-left:-$number-margin - 20;
+			line-height:28px;
+		}
+		ul li p {
+			font-size:17px;
+			font-family:$serif-font-stack;
+		}
+		ul li ol {
+			counter-reset: section;
+			margin-left:20px;
+		}
+		ul li ol li:before {
+			font-family:$sans-serif-font-stack;
+			color:$bright;
+			font-weight:bold;
+			font-size:17px;
+			border:none;
+			content: counter(section);
+			margin-top:-10px;
+			margin-left:-45px;
+		}
+		ul li ol li {
+			font-family:$serif-font-stack;
+			font-weight:normal;
+			font-size:17px;
+			margin-left:10px;
+			padding-bottom:5px;
+		}
 	}
 }
 .finances-banner-outer {
@@ -254,19 +278,48 @@ $number-margin-mobile:40px;
 	.student-finances-content {
 		max-width:100%;
 		font-size:16px;
-		ul li {
-			font-size:18px;
-			margin-left:$number-margin-mobile;
+		#reasons-financial-advisor{
+			ul li {
+				font-size:18px;
+				margin-left:$number-margin-mobile;
+			}
+			ul li:before {
+				margin-left:-$number-margin-mobile - 15;
+				width:15px;
+				height:15px;
+				font-size:15px;
+				line-height:18px;
+			}
+			ul li p { font-size:15px; }
+			ul li ol li:before {
+				margin-top:-5px;
+			}
+			ul li ol li {
+				font-size:15px;
+				padding-bottom:0px;
+			}
 		}
-		ul li:before {
-			margin-left:-$number-margin-mobile - 15;
-			width:15px;
-			height:15px;
-			font-size:15px;
-			line-height:18px;
-		}
-		ul li p { font-size:15px; }
 	}
+}
+
+/* #MDFM Leadership Awards
+––––––––––––––––––––––––––––––––––––––––*/
+#application-instructions-button{
+	padding-bottom:20px;
+	padding-top:10px;
+	a {
+		border-color:$primary-color;
+		color:$primary-color;
+		opacity:0.5;
+		font-size:17px;
+	}
+	a:hover {
+		opacity:1;
+	}
+}
+#application-deadline {
+	color: $primary-color;
+	border-bottom:1px solid $bright;
 }
 
 /* #Annual Review
@@ -371,4 +424,16 @@ $number-margin-mobile:40px;
 }
 @media only screen and (max-width: 480px) {
 	#previous-issues .grid-img {width:50%;}
+}
+
+/* #Match App
+––––––––––––––––––––––––––––––––––––––––*/
+#match-app-wrapper {
+	padding-bottom:30px;
+}
+#match-app-left {
+	max-width:$content-width + 200px;
+}
+#match-app-right {
+	max-width:$column-width;
 }
