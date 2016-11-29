@@ -87,7 +87,7 @@
 	window.sr = ScrollReveal();
 	sr.reveal('.animate', { duration: 500, distance: '5px', scale: 1 } );
 
-	document.querySelector( "#nav-toggle" ).addEventListener( "click", function() {
+	document.querySelector( "#hamburger-toggle" ).addEventListener( "click", function() {
 		this.classList.toggle( "active" );
 		document.querySelector("#top-nav").classList.toggle("active");
 		sr.reveal('#top-nav', {distance: '0px'});

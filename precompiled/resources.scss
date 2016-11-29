@@ -430,10 +430,27 @@ $number-margin-mobile:40px;
 ––––––––––––––––––––––––––––––––––––––––*/
 #match-app-wrapper {
 	padding-bottom:30px;
+	font-family:$sans-serif-font-stack;
 }
 #match-app-left {
 	max-width:$content-width + 200px;
 }
 #match-app-right {
 	max-width:$column-width;
+}
+
+// Formatting Corrections
+.jumbotron {
+	background-color:$brighter;
+}
+.navbar-nav>.active>a, 
+.navbar-nav>.active>a:focus, 
+.navbar-nav>.active>a:hover {
+	background-color:$brighter;
+}
+.navbar-nav li a {
+	border:2px solid $bright;
+}
+.navbar-nav li a:hover {
+	border:2px solid $neutral;
 }

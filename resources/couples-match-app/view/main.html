@@ -2,37 +2,16 @@
 	<div id="match-app-left">
 		<div class="container">
 			<!-- Static navbar -->
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<div id="navbar" style='display:inline;' class="navbar-collapse collapse">
-							<ul class="nav navbar-nav">
-								<li [class.active]="page == 'items'"><a href="javascript://"
-									(click)="SetPage('items')">Items</a></li>
-								<li [class.active]="page == 'rank'"><a href="javascript://"
-									(click)="SetPage('rank')">Auto Rank</a></li>
-								<li [class.active]="page == 'manual'"><a href="javascript://"
-									(click)="SetPage('manual')">Manual Rank</a></li>
-							</ul>
-						</div>
-						<!--/.nav-collapse -->
-
-						<button type="button" class="navbar-toggle collapsed"
-							data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-							aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span> <span
-								class="icon-bar"></span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span>
-						</button>
-					</div>
-				</div>
-				<!--/.container-fluid -->
-			</nav>
-
-			<!-- test zone -->
-
-			<!-- end of test zone -->
-
+			<div id="navbar">
+				<ul class="nav navbar-nav">
+					<li [class.active]="page == 'items'"><a href="javascript://"
+						(click)="SetPage('items')">Items</a></li>
+					<li [class.active]="page == 'rank'"><a href="javascript://"
+						(click)="SetPage('rank')">Auto Rank</a></li>
+					<li [class.active]="page == 'manual'"><a href="javascript://"
+						(click)="SetPage('manual')">Manual Rank</a></li>
+				</ul>
+			</div>
 			<!-- Main component for a primary marketing message or call to action -->
 
 			<div [hidden]="page!='items'">
@@ -237,14 +216,12 @@
 						<br> The current algorithm minimizes the distance between
 						school locations (not SITE locations) and then minimizes the sum of
 						both individuals' personal lists. When the sum is equal, one
-						applicant's personal list must be prioritized.<br /> <label
-							class="radio-inline"
-							style="padding-top: 10px; padding-bottom: 10px"> <input
-							[ngModel]="optionWhoLeading" name="optionWhoLeading" type="radio"
+						applicant's personal list must be prioritized.<br /> 
+						<label class="radio-inline"> 
+						<input [ngModel]="optionWhoLeading" name="optionWhoLeading" type="radio"
 							value="A" (click)="AutoReMatch('A')"> Prioritize
 							{{nameA}}'s rankings.
-						</label> <label class="radio-inline"
-							style="padding-top: 10px; padding-bottom: 10px"> <input
+						</label> <label class="radio-inline"> <input
 							[ngModel]="optionWhoLeading" name="optionWhoLeading" type="radio"
 							value="B" (click)="AutoReMatch('B')"> Prioritize
 							{{nameB}}'s rankings.
