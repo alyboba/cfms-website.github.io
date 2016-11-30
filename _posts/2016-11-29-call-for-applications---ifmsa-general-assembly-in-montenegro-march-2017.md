@@ -1,6 +1,6 @@
 ---
 title: Call for Applications - IFMSA General Assembly in Montenegro (March 2017)
-date: 2016-11-14 00:00:00
+date: 2016-11-30 00:00:00
 description: 'Represent Canada at the IFMSA General Assembly in Budva, Montenegro (March 2-8 2017).'
 ---
 
