@@ -11,7 +11,7 @@ The IFMSA General Assemblies are among the biggest youth-led events around the w
 
 If you are interested in attending the next IFMSA general assembly as a CFMS delegate, submit an application package to globalhealth@cfms.org. Please see the complete application details and instructions attached (see below).
 
-* **Where:**Budva, Montenegro
+* **Where:** Budva, Montenegro
 * **When:** March 2-8, 2017
 * **Application Deadline:** December 16, 2016, by 23:59 EST
 * **Application Form:**[/IFMSAGeneralAssemblyMarch2017ApplicationPackage.pdf](/IFMSAGeneralAssemblyMarch2017ApplicationPackage.pdf)
