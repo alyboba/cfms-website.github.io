@@ -45,6 +45,7 @@ title: MD Travel Awards
 				<li>Subsidized travel to the awards reception at the CFMS Spring General Meeting in Winnipeg on April 28-29<sup>th</sup>, 2017</li>
 			</ol>
 			
+			{% if site.enable_leadership_awards %}
 			<div>
 				<blockquote class="editable">
 					<h4><strong>Apply to the 2017 CFMS &ndash; MD Financial Management Leadership Awards</strong></h4>
@@ -56,6 +57,16 @@ title: MD Travel Awards
 					</div>
 				</blockquote>
 			</div>
+			{% else %}
+			<div>
+				<blockquote>
+					<h4><strong>{{ site.md_awards_closed_header }}</strong></h4>
+					<ul>
+						<li>{{ site.md_awards_closed_caption }}</li>
+					</ul>
+				</blockquote>
+			</div>
+			{% endif %}
 			<div class="addendum">
 				<p>MD Financial Management provides financial products and services, the MD Family of Funds and investment counselling services through the MD Group of Companies. For a detailed list of these companies, visit <a href ="http://md.cma.ca/">md.cma.ca</a></p>
 				

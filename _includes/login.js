@@ -475,7 +475,6 @@ function initApp() {
 			}
 		}
 		
-
 		//Loads previous MD Leadership Award Files if uploaded
 		if (user && window.location.pathname == '/resources/md-leadership-awards-application.html'){
 
