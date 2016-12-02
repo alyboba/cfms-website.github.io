@@ -2,10 +2,21 @@
 	{% if sidebar.lang == page.lang %}
 		<div id="sidebar">
 			<div id="scroll">
+				<div class="admin-only">
+					<span id="sidebar-title">Selection Committee</span>
+					<ul>
+						<li><a id="review-applicants" href="md-leadership-awards-view-applications.html">View Applications</a></li>
+					</ul>
+				</div>
 				<span id="sidebar-title">{{ sidebar.student_services }}</span>
 				<ul>
 					<li><a id="finances" href="{{ sidebar.student_finances_url }}">{{ sidebar.student_finances }}</a></li>
 					<li><a id="leadership-awards" href="{{ sidebar.md_leadership_awards_url }}">{{ sidebar.md_leadership_awards }}</a></li>
+					<div class="members-only">
+						<li><a id="travel-awards-instructions" style="padding-left:15px;" href="{{ sidebar.md_leadership_awards_instructions_url }}">{{ sidebar.md_leadership_awards_instructions }}</a></li>
+						<li><a id="leadership-awards-apply-now" style="padding-left:15px;" href="{{ sidebar.md_leadership_awards_apply_url }}">{{ sidebar.md_leadership_awards_apply }}</a></li>
+					</div>
+					<li><a id="leadership-awards-prev-winners" style="padding-left:15px;" href="{{ sidebar.md_leadership_awards_prev_winners_url }}">{{ sidebar.md_leadership_awards_prev_winners }}</a></li>
 					<li><a id="travel-awards" href="{{ sidebar.md_travel_awards_url }}">{{ sidebar.md_travel_awards }}</a></li>
 				</ul>
 				<span id="sidebar-title">{{ sidebar.financial_advice }}</span>
