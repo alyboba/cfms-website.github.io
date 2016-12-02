@@ -14,8 +14,8 @@ If you are interested in attending the next IFMSA general assembly as a CFMS del
 * **Where:** Budva, Montenegro
 * **When:** March 2-8, 2017
 * **Application Deadline:** December 16, 2016, by 23:59 EST
-* **Application Form:**[/IFMSAGeneralAssemblyMarch2017ApplicationPackage.pdf](/IFMSAGeneralAssemblyMarch2017ApplicationPackage.pdf)
+* **Application Form:** [IFMSAGeneralAssemblyMarch2017ApplicationPackage.pdf](/files/updates/IFMSAGeneralAssemblyMarch2017ApplicationPackage.pdf)
 
 Partial funding to attend the meeting is available. Applicants are encouraged to seek out other sources of conference funding. Funding will only be available to candidates who can attend the full duration of the meeting.
 
-Please email Jessica Bryce at vpglobalhealth@cfms.org with any questions you may have.
+Please email Jessica Bryce at <a href="mailto:vpglobalhealth@cfms.org">vpglobalhealth@cfms.org</a> with any questions you may have.
