@@ -7,6 +7,10 @@ firebase_url: "https://amber-heat-9132.firebaseio.com/"
 enable_login: true
 authentication_code: "CFMSwebsite14"
 
+#MD Financial Management Leadership Award Years (Determines where in the database the files are stored)
+enable_leadership_awards: true
+leadership_award_years: "2016-2017" 
+
 #Set the default layout for a post to the 'news' format
 defaults:
   -

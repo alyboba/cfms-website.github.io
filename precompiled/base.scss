@@ -276,6 +276,68 @@ label {
 .select select:disabled ~ .select_arrow {
 	border-top-color: $bright;
 }
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputfile + label {
+	margin-top:2px;
+	margin-bottom:6px;
+    max-width: 80%;
+    font-size: 15px;
+    font-weight: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 6px 13px;
+    text-transform:none;
+    letter-spacing: 0em;
+    border-radius:3px;
+}
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+.inputfile + label {
+    color: $neutral;
+    border: 2px solid $bright;
+    background-color:white;
+    margin-right:15px;
+}
+.inputfile:focus + label,
+.inputfile.has-focus + label,
+.inputfile + label:hover {
+    color: $dark;
+    border: 2px solid $neutral;
+}
+.inputfile:disabled + label,
+.inputfile:disabled + label:hover {
+	color:$bright;
+	border: 2px solid $bright;
+	opacity: 0.7;
+	cursor:default !important;
+}
+.file-link {
+	font-family:$sans-serif-font-stack;
+	font-size:15px;
+	margin-top:-12px;
+	margin-bottom:6px;
+}
 
 /* #Miscellaneous
 ––––––––––––––––––––––––––––––––––––––––*/
@@ -345,6 +407,7 @@ label {
 ––––––––––––––––––––––––––––––––––––––––*/
 .non-members {display:block}
 .members-only {display:none}
+.admin-only {display:none}
 #members {display:none}
 
 /* #Announcement

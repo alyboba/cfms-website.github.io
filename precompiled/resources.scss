@@ -176,6 +176,46 @@ $number-margin-mobile:40px;
 	}
 }
 .finances {display:flex; max-width:100%;}
+.student-finances-content h2.submission-header {
+	color:$neutral;
+	padding-bottom:10px !important;
+	margin-bottom:20px;
+	border-bottom:3px solid $bright;
+}
+.submission-text-field, .review-text-field {
+	font-family:$sans-serif-font-stack;
+	font-weight:bold;
+	color:$neutral;
+	padding-bottom:5px;
+}
+.submission-body-text {
+	font-size:16px;
+	color:$neutral;
+	padding-top:5px;
+	line-height:1.5em;
+}
+.application-buttons {
+	padding-bottom:15px;
+}
+.award-application {
+	padding-bottom:20px;
+	ul {margin-left:0px;}
+}
+.left-col, .right-col {
+	width:50%;
+}
+.left-col .review-text-field,
+.left-col .review-header {
+	padding-right:40px;
+}
+.review-text-field {
+	padding-bottom:2px;
+}
+.student-finances-content h4.review-header {
+	border-bottom:2px solid $bright;
+	padding-bottom: 10px !important;
+	margin-bottom: 10px;
+}
 .student-finances-content {
 	width:100%;
 	p, h1, h2, h3, h4, ul, ol, img {max-width:$content-width;}
@@ -268,6 +308,15 @@ $number-margin-mobile:40px;
 }
 @media only screen and (max-width: 767px) {
 	#finances-side-image {display:none;}
+	.award-application {
+		flex-wrap:wrap;
+	}
+	.left-col, .right-col {
+		width:100%;
+	}
+	.right-col {
+		padding-top:20px;
+	}
 	.student-finances h1 {
 		font-size:26px;
 		padding-top:25px;
@@ -300,16 +349,21 @@ $number-margin-mobile:40px;
 			}
 		}
 	}
+	.student-finances-content h2{
+		font-size:22px;
+	}
 }
-
+@media only screen and (max-width: 480px) {
+	.award-application ul {
+		list-style:none;
+	}
+}
 /* #MDFM Leadership Awards
 ––––––––––––––––––––––––––––––––––––––––*/
-#application-instructions-button{
+#application-instructions-button, #submit-button {
 	padding-bottom:20px;
 	padding-top:10px;
 	a {
-		border-color:$primary-color;
-		color:$primary-color;
 		opacity:0.5;
 		font-size:17px;
 	}
@@ -317,9 +371,21 @@ $number-margin-mobile:40px;
 		opacity:1;
 	}
 }
+#application-instructions-button, #submit-button {
+	a {
+		border-color:$primary-color;
+		color:$primary-color;
+	}
+}
 #application-deadline {
 	color: $primary-color;
 	border-bottom:1px solid $bright;
+}
+#submit-button {
+	padding-bottom:40px;
+}
+.after-submission{
+	display:none;
 }
 
 /* #Annual Review

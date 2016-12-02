@@ -31,22 +31,33 @@ title: MD Travel Awards
 		<!-- Displays the sidebar and emphasizes the active page -->
 		{% include sidebar-financial-resources.html %}
 		<script type="text/javascript">
-			document.querySelector( "#leadership-awards-prev-winners" ).classList.toggle("sidebar-active");
+			document.querySelector( "#review-applicants" ).classList.toggle("sidebar-active");
 		</script>
 
 		<div class="student-finances-content">
-			<h1 id="page-title">MD Leadership Awards</h1>
-		   
-            <h3><strong>Coming Soon</strong></h3>
-            <a id="finances-side-image" href="https://mdm.ca/"><img class="right" style="max-width:25%" src="/images/MDFM_CFMS.jpg"></a>
-            <img src="/images/page-images/MD_LEADERSHIP_BANNER.jpg">
-
-			<div class="addendum">
-				<p>MD Financial Management provides financial products and services, the MD Family of Funds and investment counselling services through the MD Group of Companies. For a detailed list of these companies, visit <a href ="http://md.cma.ca/">md.cma.ca</a></p>
-				
+			<h1 id="page-title">View Submitted Applications ({{ site.leadership_award_years }})</h1>
+			<div class="admin-only">
+				<div id="submitted-applications-list">
+				</div>
+			</div>
+			<div id="not-authorized" class="members-only">
+				<blockquote>
+					<h3><strong>You are not authorized to view this resource</strong></h3>
+					<ul>
+						<li>You must be an administrator in order to view this page.</li>
+					</ul>
+				</blockquote>
+			</div>
+			<div class="non-members">
+				<blockquote>
+					<h3><strong>Please login to see this page</strong></h3>
+					<ul>
+						<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
+					</ul>
+				</blockquote>
 			</div>
 		</div>
 	</div>
 	<div>{% include footer.html %}</div>
-</body>
+</body>	
 </html>
