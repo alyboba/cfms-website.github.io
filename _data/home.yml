@@ -11,17 +11,17 @@ news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien �
 #news_text_en: 'Something missing on our new site? Visit our old one at www.old.cfms.org!'
 #news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien à www.old.cfms.org!"
 news_text_url: ''
-banner_url: /2016/04/25/cfms-new-website.html
-banner_image_url: images/hero-images/test.png
+banner_url: /resources/md-leadership-awards.html
+banner_image_url: images/hero-images/mdfm-leadership-banner.jpg
 banner_text:
   - lang: en
     byline: Announcement
-    title: 'Welcome to the new CFMS Website!'
-    description: Click here to learn more about our website redesign.
+    title: 'MDFM Leadership Awards &ndash; now open!'
+    description: Click here to learn how to apply.
   - lang: fr
     byline: Annonce
-    title: 'Bienvenue au nouveau site de la FEMC!'
-    description: Cliquez ici pour en savoir plus sur notre changement de site Web.
+    title: 'MDFM Leadership Awards &ndash; now open!'
+    description: Click here to learn how to apply.
 featured_links:
   - url: meetings/agm-2016-edmonton.html
     image_url_en: images/home-link-thumbs/agm-2016.jpg
