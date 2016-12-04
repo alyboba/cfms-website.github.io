@@ -7,6 +7,8 @@ firebase_url: "https://amber-heat-9132.firebaseio.com/"
 enable_login: true
 authentication_code: "CFMSwebsite14"
 
+repository: cfms-website/cfms-website.github.io
+
 #Set the default layout for a post to the 'news' format
 defaults:
   -
