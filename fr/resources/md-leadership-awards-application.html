@@ -1,0 +1,166 @@
+---
+title: MD Travel Awards
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/resources.css">
+</head>
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#resources" ).classList.toggle("active");
+	</script>
+
+	<div class="finances-banner-outer">
+		<div class="content finances-banner-inner" style="background-color:#69A99F;">
+			<img src="{{site.root}}/images/banners/MedEd-Counsel-Campaign-Banner-e.jpg">
+		</div>
+	</div>
+	<div class="finances content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-financial-resources.html %}
+		<script type="text/javascript">
+			document.querySelector( "#leadership-awards-apply-now" ).classList.toggle("sidebar-active");
+		</script>
+
+		<div class="student-finances-content">
+			<h1 id="page-title">Submit your Application</h1>
+			<a id="finances-side-image" href="https://mdm.ca/"><img class="right" style="max-width:25%" src="/images/MDFM_CFMS.jpg"></a>
+
+			<div class="members-only">
+				<p>Apply to the CFMS-MD Financial Management Leadership Awards via the form below. Questions about the application process can be directed to the CFMS VP Services, Han Yan, at <a href="mailto:vpservices@cfms.org">vpservices@cfms.org</a>.</p>
+
+				<blockquote>
+					<h2 class="submission-header"><strong>Your Application</strong></h2>
+					<label>Name</label>
+					<div class="submission-text-field"><span id="account-name"></span></div>
+					<label>Medical School</label>
+					<div class="submission-text-field"><span id="account-school"></span></div>
+					<label>Graduating Year</label>
+					<div class="submission-text-field"><span id="account-grad-year"></span></div>
+					<label>Email Address</label>
+					<div class="submission-text-field"><span id="account-email"></span></div>
+					<label>CMA Membership ID (Six Digits)</label>
+					<div class="input">
+						<input name='cma_membership' id='cma_membership' type='text' placeholder=''/>
+					</div>
+					<label>Twitter Handle (optional)</label>
+					<div class="input">
+						<input name='twitter-handle' id='twitter-handle' type='text' value='@'/>
+					</div>
+					<label>Meeting Attendance</label>
+					<p class="submission-body-text">If selected, will you be available to attend the Spring General Meeting in Winnipeg (April 28-29, 2017)?</p>
+					<div class="input">
+						<div class="select">
+							<select id='attend-cfms-meeting'>
+							  <option value="Yes I'll be able to attend">Yes I'll be able to attend</option>
+							  <option value="No I will not be able to attend">No I will not be able to attend</option>
+							</select>
+							<div class="select_arrow"></div>
+						</div>
+					</div> 
+
+					<h2 class="submission-header"><strong>Upload Files</strong></h2>
+					<p class="submission-body-text">Please make sure that you follow the instructions in the <a href="md-leadership-awards-instructions.html">How to Apply</a> section. Applications that do not meet the criteria will be <em>disqualified</em>. When you are finished, press the <strong>Submit Application</strong> button.</p>
+					<p class="submission-body-text" style="padding-top:0px">Files that you upload are <strong>saved automatically</strong>. Please submit documents in either a <strong>PDF</strong> or <strong>DOC/DOCX</strong> format.</p>
+
+					<label>Personal Statement</label>
+					<div>
+						<input type="file" name="personal-statement" id="personal-statement" class="inputfile" disabled/>
+						<label for="personal-statement"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+					</div>
+					<div id="personal-statement-link" class="file-link"></div>
+
+					<label>Resume/Curriculum Vitae</label>
+					<div>
+						<input type="file" name="curriculum-vitae" id="curriculum-vitae" class="inputfile" disabled/>
+						<label for="curriculum-vitae"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+					</div>
+					<div id="curriculum-vitae-link" class="file-link"></div>
+
+					<label>Letter of Good Standing</label>
+					<div>
+						<input type="file" name="letter-good-standing" id="letter-good-standing" class="inputfile" disabled/>
+						<label for="letter-good-standing"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+					</div>
+					<div id="letter-good-standing-link" class="file-link"></div>
+
+					<label>Reference Letter 1</label>
+					<div>
+						<input type="file" name="reference-1" id="reference-1" class="inputfile" disabled/>
+						<label for="reference-1"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+					</div>
+					<div id="reference-1-link" class="file-link"></div>
+
+					<label>Reference Letter 2</label>
+					<div>
+						<input type="file" name="reference-2" id="reference-2" class="inputfile" disabled/>
+						<label for="reference-2"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+					</div>
+					<div id="reference-2-link" class="file-link"></div>
+
+					<div class="button" id="submit-button" style="margin-top:10px;">
+						<a style="cursor:pointer" onclick='handleSignUp();'>
+							<strong>Submit Application</strong>
+						</a>
+					</div>
+				</blockquote>
+				<div class="addendum">
+					<p>MD Financial Management provides financial products and services, the MD Family of Funds and investment counselling services through the MD Group of Companies. For a detailed list of these companies, visit <a href ="http://md.cma.ca/">md.cma.ca</a></p>
+				</div>
+			</div>
+			<div class="non-members">
+				<blockquote>
+					<h3><strong>Please login to see this page</strong></h3>
+					<ul>
+						<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
+					</ul>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+	<div>{% include footer.html %}</div>
+</body>
+
+<script>
+	'use strict';
+	;( function ( document, window, index )
+	{
+		var inputs = document.querySelectorAll( '.inputfile' );
+		Array.prototype.forEach.call( inputs, function( input )
+		{
+			var label	 = input.nextElementSibling,
+				labelVal = label.innerHTML;
+
+			input.addEventListener( 'change', function( e )
+			{
+				var fileName = '';
+				if( this.files && this.files.length > 1 )
+					fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+				else
+					fileName = e.target.value.split( '\\' ).pop();
+
+				if( fileName )
+					label.querySelector( 'span' ).innerHTML = fileName;
+				else
+					label.innerHTML = labelVal;
+			});
+
+			// Firefox bug fix
+			input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
+			input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
+		});
+	}( document, window, 0 ));
+</script>
+</html>

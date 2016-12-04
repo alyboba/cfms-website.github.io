@@ -1,0 +1,172 @@
+body {
+	padding-top: 5px;
+	padding-bottom: 20px;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.navbar-default {
+	background-color: white;
+	border-color: white;
+}
+
+div.container {
+	width: 100%;
+}
+
+.jumbotron {
+	padding-top: 8px;
+	padding-bottom: 18px;
+}
+
+#leftPanel {
+	/*	border-right: 1px solid black; */
+	
+}
+
+#itemPage.jumbotron {
+	background-color: white;
+	padding-top: 0px;
+	margin-top: -20px;
+}
+
+    .selected {
+      background-color: #CFD8DC !important;
+      color: white;
+    }
+ 
+.itemList {
+	margin: 0 0 3em 0;
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+}
+
+.itemList li {
+	cursor: pointer;
+	position: relative;
+	left: 0;
+	background-color: #EEE;
+	margin: .5em;
+	padding: .3em 0em;
+	height: 1.6em;
+	border-radius: 4px;
+}
+
+.itemList li.selected:hover {
+	color: white;
+}
+
+.itemList li:hover {
+	color: #607D8B;
+	background-color: #EEE;
+	left: .1em;
+}
+
+.itemList .text {
+	position: relative;
+	top: -3px;
+}
+
+.itemList .badge {
+	display: inline-block;
+	font-size: small;
+	text-align: center;
+	color: white;
+	padding: 0.4em 0.7em 0.4em 0.7em;
+	background-color: #607D8B;
+	line-height: 1em;
+	position: relative;
+	left: -1px;
+	top: -4px;
+	height: 1.8em;
+	width: 2.5em;
+	margin-right: 0.8em;
+	border-radius: 4px 0px 0px 4px;
+}
+
+.itemList .remove {
+	display: inline-block;
+	font-size: small;
+	color: white;
+	padding: 0.4em 0.2em 0.4em 0.2em;
+	background-color: #8c8c8c;
+	line-height: 1em;
+	position: relative;
+	float: right;
+	left: -1px;
+	top: -4px;
+	height: 1.8em;
+	margin-left: .1em;
+	/*border-radius: 4px 0px 0px 4px;*/
+}
+
+     .autoRank {
+      margin: 0 0 3em 0;
+      list-style-type: none;
+      padding: 0;
+      width: 100%;
+    }
+    .autoRank li {
+      cursor: pointer;
+      position: relative;
+      left: 0;
+      background-color: #EEE;
+      margin: .5em;
+      padding: .3em 0em;
+      height: 3.6em;
+      border-radius: 4px;
+    }
+    
+     .manualRank {
+      margin: 0 0 3em 0;
+      list-style-type: none;
+      padding: 0;
+      width: 50em;
+    }
+    .manualRank li {
+      cursor: pointer;
+      position: relative;
+      left: 0;
+      background-color: #EEE;
+      margin: .5em;
+      padding: .3em 0em;
+      height: 3.6em;
+      border-radius: 4px;
+    }
+  
+     .manualRank .remove {
+        display: inline-block;
+        font-size: small;
+        color: white;
+        padding: 0.8em 0.7em 0em 0.7em;
+        background-color: #8c8c8c;
+        line-height: 1em;
+        position: relative;
+        float:right;
+        left: -1px;
+        top: -4px;
+        height: 1.8em;
+        margin-left: .8em;
+        /*border-radius: 4px 0px 0px 4px;*/
+     }
+     
+     /*
+     http://csswizardry.com/2010/02/mutiple-column-lists-using-one-ul/
+     */
+  
+  .dndContainer{
+     border: 1px solid red;
+     width: 336px;
+     height: 69px;
+  }
+  
+  .panel-body {
+    padding: 10px;
+}
+
+.panel {
+    margin-bottom: 10px;
+}
