@@ -1,0 +1,35 @@
+---
+title: "Payment - 2017 Conference"
+---
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+	</script>
+
+	<div id="new-account-top" class="content">
+		<div id="new-account-left">
+			{% include payment-policies.html %}
+		</div>
+		<div id="new-account-right" style="margin-left: 40px;">
+			<iframe src="https://www.beanstream.com/scripts/payment/payment.asp?merchant_id=300203811&hashValue=11cc5328dcaf5a0c39e7d2e10e3df1429374fe3d"
+			width="446" height="1037" style="border:none;"></iframe>
+		</div>
+	</div>
+
+	{% include footer.html %}
+</body>
+</html>
