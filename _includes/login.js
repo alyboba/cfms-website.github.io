@@ -1,4 +1,3 @@
-<script type="text/javascript">
 var storageRef = firebase.storage().ref();
 var accountJustCreated = false;
 
@@ -589,4 +588,3 @@ function initApp() {
 window.onload = function() {
 	initApp();
 };
-</script>
