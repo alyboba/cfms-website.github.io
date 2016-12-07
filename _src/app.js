@@ -1,22 +1,14 @@
-import PaymentConfirmation from './payment-confirmation';
 import Firebase from 'firebase';
 import Config from './config';
+import Router from './router';
 
 class App {
     constructor(data) {
         this.firebase = Firebase.initializeApp(Config.firebase());
         this.nav = JSON.parse(data.nav);
         this.lang = data.lang;
-        switch (window.location.pathname) {
-            case '/members/payments/confirmation.html':
-                let urlParams = new URLSearchParams(window.location.search);
-                // console.log(urlParams.get('ref1'));
-                new PaymentConfirmation(urlParams).process();
-                break;
-            default:
-                console.log('Other');
-                this.initApp();
-        }
+        this.router = new Router();
+        if (!this.router.shouldSkipInit()) this.initApp();
     }
 
     /**
@@ -27,7 +19,6 @@ class App {
     initApp() {
         // Listening for auth state changes.
         this.firebase.auth().onAuthStateChanged((user) => {
-
             if (accountJustCreated) {
                 var firstName = document.getElementById('account-first-name').value;
                 var lastName = document.getElementById('account-last-name').value;
@@ -46,6 +37,8 @@ class App {
                 if (navigation.lang != this.lang) return;
 
                 if (user) {
+                    this.router.setUser(user);
+
                     // User is signed in.
                     document.getElementById('login-button').textContent = navigation.logout;
                     document.getElementById('members').style.display = 'inline';
@@ -104,13 +97,6 @@ class App {
                 }
             });
 
-            if (new RegExp('\/members\/payments\/.+').test(window.location.pathname)) {
-                if (user) {
-                    console.log(user);
-                    var event = new CustomEvent('userUpdated', { detail: user });
-                    document.dispatchEvent(event);
-                }
-            }
 
             //Shows Member Account Information on the Members Page
             if (window.location.pathname == '/members/'
