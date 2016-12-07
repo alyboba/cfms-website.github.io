@@ -5,3 +5,6 @@ cfms-website.sublime-workspace
 Gemfile*
 .sass-cache/
 .jekyll-metadata
+node_modules/
+coverage/
+.vscode/

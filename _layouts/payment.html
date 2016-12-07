@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/home.css">
+	<style>
+		#payment-form {
+			width: 446px;
+			height: 1037px;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+        var count = 0;
+
+        document.addEventListener('userUpdated', function(e) {
+            if (count++ > 0) return console.log('Got an extra userUpdated event...');
+            console.log(e);
+			var user = e.detail;
+			var ifrm = document.createElement('iframe');
+			ifrm.setAttribute('id', 'payment-form'); // assign an id 
+			var el = document.getElementById('new-account-right'); 
+			el.parentNode.insertBefore(ifrm, el); // assign
+			ifrm.setAttribute('src', '{{ page.beanstreamURL }}&approvedPage=http://127.0.0.1:4000/members/payments/confirmation.html&ref1=' + user.uid + ''); 
+		});
+	</script>
+
+	<div id="new-account-top" class="content">
+		<div id="new-account-left">
+			{% include payment-policies.html %}
+		</div>
+		<div id="new-account-right" style="margin-left: 40px;"></div>
+	</div>
+
+	{% include footer.html %}
+</body>
+</html>
+

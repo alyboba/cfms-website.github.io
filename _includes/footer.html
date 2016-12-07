@@ -194,3 +194,12 @@ $('.login-modal').click(function(){
 	}
 });
 </script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript">
+	var nav = `{{ site.data.translations.nav | jsonify }}`;
+	var lang = `{{ page.lang }}`;
+	new App({ 
+		nav: nav,
+		lang: lang
+	});
+</script>
