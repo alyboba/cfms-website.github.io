@@ -1,17 +1,19 @@
+import Payment from './payment';
 import PaymentConfirmation from './payment-confirmation';
 
 export default class Router {
     constructor() {
         this.user;
+        this.payment;
         this.skipInit = false;
-        this.process();
+        this.beanstreamURL;
+        this.update();
     }
 
-    process() {
+    update() {
         if (this.user) {
-            if (new RegExp('\/members\/payments\/.+').test(window.location.pathname)) {
-                var event = new CustomEvent('userUpdated', { detail: this.user });
-                return document.dispatchEvent(event);
+            if (new RegExp('\/members\/payments\/.+').test(window.location.pathname) && this.beanstreamURL) {
+                return this.handlePaymentInit();
             }
         }
 
@@ -24,10 +26,19 @@ export default class Router {
         }
     }
 
+    handlePaymentInit() {
+        if (!this.payment) this.payment = new Payment(this.user, this.beanstreamURL);
+    }
+
+    setBeanstreamURL(url) {
+        this.beanstreamURL = url;
+        this.update();
+    }
+
     handlePaymentConfirmation() {
         this.skipInit = true;
         let urlParams = new URLSearchParams(window.location.search);
-        new PaymentConfirmation(urlParams).process();
+        new PaymentConfirmation(this.user, urlParams);
     }
 
     shouldSkipInit() {
@@ -36,6 +47,6 @@ export default class Router {
 
     setUser(user) {
         this.user = user;
-        this.process();
+        this.update();
     }
 }

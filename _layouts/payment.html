@@ -22,18 +22,6 @@
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
 		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-        var count = 0;
-
-        document.addEventListener('userUpdated', function(e) {
-            if (count++ > 0) return console.log('Got an extra userUpdated event...');
-            console.log(e);
-			var user = e.detail;
-			var ifrm = document.createElement('iframe');
-			ifrm.setAttribute('id', 'payment-form'); // assign an id 
-			var el = document.getElementById('new-account-right'); 
-			el.parentNode.insertBefore(ifrm, el); // assign
-			ifrm.setAttribute('src', '{{ page.beanstreamURL }}&approvedPage=http://127.0.0.1:4000/members/payments/confirmation.html&ref1=' + user.uid + ''); 
-		});
 	</script>
 
 	<div id="new-account-top" class="content">
@@ -44,6 +32,9 @@
 	</div>
 
 	{% include footer.html %}
+	<script type="text/javascript">
+		window.app.setBeanstreamURL(`{{ page.beanstreamURL }}`);
+	</script>
 </body>
 </html>
 

@@ -1,14 +1,24 @@
 import Firebase from 'firebase';
 import Config from './config';
 import Router from './router';
+import Vex from 'vex-js';
+import VexDialog from 'vex-dialog';
 
 class App {
     constructor(data) {
+        Vex.registerPlugin(VexDialog);
+        Vex.defaultOptions.className = 'vex-theme-default';
+        this.vex = Vex;
         this.firebase = Firebase.initializeApp(Config.firebase());
+        this.storageRef = this.firebase.storage().ref();
         this.nav = JSON.parse(data.nav);
         this.lang = data.lang;
         this.router = new Router();
         if (!this.router.shouldSkipInit()) this.initApp();
+    }
+
+    setBeanstreamURL(url) {
+        this.router.setBeanstreamURL(url);
     }
 
     /**

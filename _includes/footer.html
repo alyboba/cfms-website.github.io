@@ -198,7 +198,7 @@ $('.login-modal').click(function(){
 <script type="text/javascript">
 	var nav = `{{ site.data.translations.nav | jsonify }}`;
 	var lang = `{{ page.lang }}`;
-	new App({ 
+	window.app = new App({ 
 		nav: nav,
 		lang: lang
 	});

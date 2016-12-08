@@ -8,23 +8,27 @@ title: "Online Payments"
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
-	{% include head.html %}
-
-	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/resources.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/stylesheets/vex.css" />
+	<link rel="stylesheet" href="/stylesheets/vex-theme-default.css" />
+	<style>
+		i {
+			color: #34b989;
+		}
+	</style>
 </head>
-<body ng-app="authApp" ng-controller="AuthController">
-	{% include nav.html %}
-
-	<!--Page Specific Formatting-->
-	<script type="text/javascript">
-		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#resources" ).classList.toggle("active");
-	</script>
-
-	<div class="content set-content-width" style="display:block">
+<body>
+	<div style="display:block">
         <i class="fa fa-check-circle-o fa-5x" aria-hidden="true"></i>
 		<div id="description"></div>
     </div>
-	{% include footer.html %}
 </body>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript">
+	var nav = `{{ site.data.translations.nav | jsonify }}`;
+	var lang = `{{ page.lang }}`;
+	new App({ 
+		nav: nav,
+		lang: lang
+	});
+</script>
