@@ -7,7 +7,7 @@ import VexDialog from 'vex-dialog';
 class App {
     constructor(data) {
         Vex.registerPlugin(VexDialog);
-        Vex.defaultOptions.className = 'vex-theme-default';
+        Vex.defaultOptions.className = Config.vexTheme();
         this.vex = Vex;
         this.firebase = Firebase.initializeApp(Config.firebase());
         this.storageRef = this.firebase.storage().ref();

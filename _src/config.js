@@ -8,4 +8,8 @@ export default class Config {
             messagingSenderId: "466232039218"
         };
     }
+
+    static vexTheme() {
+        return 'vex-theme-default';
+    }
 }
