@@ -6,20 +6,22 @@ intro:
     title: Fédération des étudiants et des étudiantes en médecine du Canada
     description: 'La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre.'
 news_strip: true
-news_text_en: 'Something missing on our new site? Visit our old one at www.old.cfms.org!'
+news_text_en: "Best of Luck to all final year medical students with their CaRMS tour!"
 news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien à www.old.cfms.org!"
-news_text_url: 'http://www.old.cfms.org'
-banner_url: /2016/04/25/cfms-new-website.html
-banner_image_url: images/hero-images/test.png
+#news_text_en: 'Something missing on our new site? Visit our old one at www.old.cfms.org!'
+#news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien à www.old.cfms.org!"
+news_text_url: ''
+banner_url: /resources/md-leadership-awards.html
+banner_image_url: images/hero-images/mdfm-leadership-banner.jpg
 banner_text:
   - lang: en
     byline: Announcement
-    title: 'Welcome to the new CFMS Website!'
-    description: Click here to learn more about our website redesign.
+    title: 'MDFM Leadership Awards &ndash; now open!'
+    description: Click here to learn how to apply.
   - lang: fr
     byline: Annonce
-    title: 'Bienvenue au nouveau site de la FEMC!'
-    description: Cliquez ici pour en savoir plus sur notre changement de site Web.
+    title: 'MDFM Leadership Awards &ndash; now open!'
+    description: Click here to learn how to apply.
 featured_links:
   - url: meetings/agm-2016-edmonton.html
     image_url_en: images/home-link-thumbs/agm-2016.jpg
