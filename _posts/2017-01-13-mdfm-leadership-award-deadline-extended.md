@@ -5,6 +5,6 @@ description: 'The CFMS MDFM Leadership Award deadline has been extended to Jan. 
 ---
 
 
-The CFMS MDFM Leadership Award deadline has been extended to Jan. 20, 2017. Please email vpstudentaffairs@cfms.org with further questions!&nbsp;
+The CFMS MDFM Leadership Award deadline has been extended to Jan. 20, 2017. Please email vpstudentaffairs@cfms.org with further questions!
 
 Best of luck with your applications!
