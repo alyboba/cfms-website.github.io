@@ -9,7 +9,7 @@ As the representative voice of Canadian medical students, the Canadian Federatio
 <br>
 <br>Each fall and winter, the CFMS selects a new group of talented individuals to help represent medical students to these organizations and offers a chance to general CFMS members to be involved in shaping the future of medicine in Canada. Volunteering for these positions allows students to learn more about medical education, health promotion and more, all while acting as the voice of Canadian medical students.&nbsp;
 
-**Applications due January 31st, 2017 at 11:59PST.**
+**Applications are due January 31st, 2017 at 11:59PST.**
 
 **The positions currently available include:**
 
