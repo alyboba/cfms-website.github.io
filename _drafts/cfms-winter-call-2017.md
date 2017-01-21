@@ -33,4 +33,14 @@ As the representative voice of Canadian medical students, the Canadian Federatio
 
 &nbsp;
 
+To apply for the CFMS-FMEQ National Health and Wellbeing Survey - Student Research Position, please email full applications to Laura Kim & Gurmeet Kaur Sohi at [western@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(119,101,115,116,101,114,110,64,99,102,109,115,46,111,114,103)+'?subject=CFMS-FMEQ%20National%20Wellness%20%26%20Wellbeing%20Survey%20-%20Student%20Research%20Position')).
+
+Please [click this link](https://goo.gl/forms/OGNaBlFm2t0OS09x1) to apply for all other positions.
+
 &nbsp;
+
+For any questions, please email [Laura Kim & Gurmeet Kaur Sohi](javascript:void(location.href='mailto:'+String.fromCharCode(119,101,115,116,101,114,110,64,99,102,109,115,46,111,114,103)))&nbsp;(Nominations Committee co-chairs).&nbsp;
+
+For information on how CFMS selects its national officers, committee members, representatives to partner medical organizations & award winners, please see the infographic below.&nbsp;
+
+![](/uploads/versions/nom-com-infographic---x----800-2000x---.png)
