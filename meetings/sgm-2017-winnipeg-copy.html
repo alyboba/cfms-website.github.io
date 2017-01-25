@@ -40,11 +40,11 @@ title: "2017 CFMS Spring General Meeting"
 	<div id="meeting-details" class="content">
 		<div id="meeting-aside">
 
-		    {% for contact_us in site.data.translations.contact_us %}
-	    {% if contact_us.lang == page.lang %}
+		    {% for meetings in site.data.translations.meetings %}
+	    {% if meetings.lang == page.lang %}
 
 
-			<h2 id="aside-title"><strong>{{contact_us.event_title}}<i class="fa fa-star-o"></i></strong></h2>
+			<h2 id="aside-title"><strong>{{meetings.event_title}}<i class="fa fa-star-o"></i></strong></h2>
 					   {% endif%}
 	{% endfor %}
 			<div class="icon"><i class="fa fa-map-marker"></i></div>
