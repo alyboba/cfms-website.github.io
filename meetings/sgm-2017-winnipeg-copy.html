@@ -30,6 +30,8 @@ title: "2017 CFMS Spring General Meeting"
 		</div>
 	</div>
 	
+
+	
 	
 		{% for intro in site.data.home.intro %}
 			{% if intro.lang == page.lang %}
@@ -49,9 +51,11 @@ title: "2017 CFMS Spring General Meeting"
 			{% endif %}
 		{% endfor %}
 	
-	{% for meeting_SGMAGM in site.data.home.translations %}
-	    {% if meeting_SGMAGM.lang == page.lang %}
-	        <div id="meeting-details">{{meeting_SGMAGM.event_details}} </div>
+
+	
+	{% for meeting_SGM_AGM in site.data.home.translations %}
+	    {% if meeting_SGM_AGM.lang == page.lang %}
+	        <div id="meeting-details">{{meeting_SGM_AGM.event_title}} </div>
 	   {% endif%}
 	{% endfor %}
 	
