@@ -144,7 +144,7 @@ contact_us:
   media: "Médias"
   it: "Technologies de l'information"
   
-  #meetings
+  #Meetings
   meetings:
 - lang: "en"
   event_title: "Event Details"
