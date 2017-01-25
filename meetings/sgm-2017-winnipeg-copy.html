@@ -33,23 +33,6 @@ title: "2017 CFMS Spring General Meeting"
 
 	
 	
-		{% for intro in site.data.home.intro %}
-			{% if intro.lang == page.lang %}
-				<div id="home-title">{{ intro.title }}</div>
-				<div id="home-subtitle">
-					{{ intro.description }}
-					<div class="button">
-						<a href="about-us.html">
-							{% if page.lang == "en" %}
-								{{ site.data.translations.learn_more_en }}
-							{% else %}
-								{{ site.data.translations.learn_more_fr }}
-							{% endif %}
-						</a>
-					</div>
-				</div>
-			{% endif %}
-		{% endfor %}
 	
 
 	
