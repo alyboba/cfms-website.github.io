@@ -69,7 +69,7 @@ financial_resources:
   md_leadership_awards_prev_winners: "Previous Recipients"
   md_leadership_awards_prev_winners_url: "/resources/md-leadership-awards-prev-winners.html"
   md_travel_awards: "MD Travel Awards"
-  md_travel_awards_url: "md-travel_awards.html"
+  md_travel_awards_url: "/resources/md-travel-awards.html"
   managing_debt: "Managing Debt"
   managing_debt_url: "https://mdm.ca/physician-life-stages/students/managing-debt/"
   paying_med_school: "Paying for Medical School"
@@ -143,3 +143,11 @@ contact_us:
   general_inquiries: "Questions diverses"
   media: "Médias"
   it: "Technologies de l'information"
+  
+  #Meetings
+  meetings:
+- lang: "en"
+  event_title: "Event Details"
+- lang: "fr"
+  event_title: "Détails de l'évènement"
+  

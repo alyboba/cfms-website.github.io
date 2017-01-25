@@ -196,10 +196,10 @@ class App {
                             var applicationsHTML = '';
                             var noApplicants = 0;
                             snapshot.forEach(function (childSnapshot) {
-                                noApplicants++;
 
                                 //If a member has submitted an application
                                 if (childSnapshot.child('submitted').exists()) {
+                                    noApplicants++;
                                     var submission = childSnapshot;
                                     applicationsHTML += '<blockquote><div class="flex-wrapper award-application"><div class="left-col"><h4 class="review-header"><strong>Applicant</strong></h4>';
                                     applicationsHTML += '<label>Name</label><div class="review-text-field">';

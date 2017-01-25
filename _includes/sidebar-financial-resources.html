@@ -2,14 +2,12 @@
 	{% if sidebar.lang == page.lang %}
 		<div id="sidebar">
 			<div id="scroll">
-				{% if site.enable_leadership_awards %}
-					<div class="admin-only">
-						<span id="sidebar-title">Selection Committee</span>
-						<ul>
-							<li><a id="review-applicants" href="md-leadership-awards-view-applications.html">View Applications</a></li>
-						</ul>
-					</div>
-				{% endif %}
+				<div class="admin-only">
+					<span id="sidebar-title">Selection Committee</span>
+					<ul>
+						<li><a id="review-applicants" href="md-leadership-awards-view-applications.html">View Applications</a></li>
+					</ul>
+				</div>
 				<span id="sidebar-title">{{ sidebar.student_services }}</span>
 				<ul>
 					<li><a id="finances" href="{{ sidebar.student_finances_url }}">{{ sidebar.student_finances }}</a></li>
