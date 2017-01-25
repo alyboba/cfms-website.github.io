@@ -39,9 +39,11 @@ title: "2017 CFMS Spring General Meeting"
 	
 	<div id="meeting-details" class="content">
 		<div id="meeting-aside">
-		    {% for meeting_SGM_AGM in site.data.translations.meeting_SGM_AGM %}
-	    {% if meeting_SGM_AGM.lang == page.lang %}
-			<h2 id="aside-title"><strong>{{meeting_SGM_AGM.event_title}}<i class="fa fa-star-o"></i></strong></h2>
+
+	    	{% for contact_us in site.data.translations.contact_us %}
+		{% if contact_us.lang == page.lang %}
+	    
+			<h2 id="aside-title"><strong>{{contact_us.title}}<i class="fa fa-star-o"></i></strong></h2>
 					   {% endif%}
 	{% endfor %}
 			<div class="icon"><i class="fa fa-map-marker"></i></div>
