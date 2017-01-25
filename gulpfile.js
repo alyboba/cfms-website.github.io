@@ -12,24 +12,55 @@ var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var Server = require('karma').Server;
+var child = require('child_process');
+var browserSync = require('browser-sync').create();
+var watch = require('gulp-watch');
 
-gulp.task('autoprefixer', function () {
-    return gulp.src('./_site/precompiled/*.css')
-        .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
-        .pipe(gulp.dest('./stylesheets/'));
+var siteRoot = '_site';
+
+var jekyllLogger = (buffer) => {
+    buffer.toString()
+        .split(/\n/)
+        .forEach((message) => gutil.log('Jekyll: ' + message));
+};
+
+gulp.task('jekyll', () => {
+  var jekyll = child.exec('jekyll build --watch --incremental --drafts');
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
 });
 
-gulp.task('minify-css', function () {
-    gulp.task('minify-css', function () {
-        return gulp.src('./_site/precompiled/*.css')
-            .pipe(minifyCss({ compatibility: 'ie8' }))
-            .pipe(gulp.dest('./stylesheets/'));
-    });
+
+gulp.task('buildJekyll', ['buildSass', 'buildVendor', 'buildJs'], () => {
+  return jekyllLogger(child.execSync('jekyll build'));
 });
 
-gulp.task('sass', function () {
+
+gulp.task('serve', () => {
+  browserSync.init({
+    files: [siteRoot + '/**'],
+    port: 4000,
+    server: {
+      baseDir: siteRoot
+    }
+  });
+
+  watch('./_css/*.scss')
+      .pipe(sourcemaps.init())
+      .pipe(sass({
+          errLogToConsole: true,
+          outputStyle: 'expanded'
+      }).on('error', sass.logError))
+      .pipe(sourcemaps.write())
+      .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
+      .pipe(minifyCss({ compatibility: 'ie8' }))
+      .pipe(gulp.dest('./stylesheets/'));
+});
+
+gulp.task('buildSass', function () {
     return gulp
-        .src('./precompiled/*.scss')
+        .src('./_css/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
@@ -37,16 +68,27 @@ gulp.task('sass', function () {
         }).on('error', sass.logError))
         .pipe(sourcemaps.write())
         .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
-        .pipe(gulp.dest('./compiled_css/'));
+        .pipe(minifyCss({ compatibility: 'ie8' }))
+        .pipe(gulp.dest('./stylesheets/'));
 });
 
-gulp.task('default', function () {
-    return gulp.src('./_site/precompiled/*.css')
+gulp.task('buildVendor', function() {
+    return gulp.src('./_css/vendor/*.css')
+        .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
+        .pipe(minifyCss({ compatibility: 'ie8' }))
+        .pipe(gulp.dest('./stylesheets'));
+});
+
+gulp.task('css', function () {
+    return gulp.src('./_css/compiled/*.css')
         .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
         .pipe(gulp.dest('./stylesheets/'))
         .pipe(minifyCss({ compatibility: 'ie8' }))
         .pipe(gulp.dest('./stylesheets/'));
 });
+
+gulp.task('default', ['buildSass', 'buildVendor', 'buildJs', 'jekyll', 'serve']);
+gulp.task('build', ['buildJekyll']);
 
 /**
  * Run test once and exit
@@ -58,6 +100,8 @@ gulp.task('test', function (done) {
     }, done).start();
 });
 
+gulp.task('buildJs', bundle); // so you can run `gulp js` to build the file
+
 // add custom browserify options here
 var customOpts = {
     entries: ['./_src/app.js'],
@@ -66,14 +110,14 @@ var customOpts = {
 var opts = assign({}, watchify.args, customOpts);
 var b = watchify(browserify(opts)).transform(babelify, { presets: ['es2015'] });
 
-// add transformations here
-// i.e. b.transform(coffeeify);
-
-gulp.task('js', bundle); // so you can run `gulp js` to build the file
-b.on('update', bundle); // on any dep update, runs the bundler
-b.on('log', gutil.log); // output build logs to terminal
+gulp.task('js', () => {
+    b.on('update', bundle); // on any dep update, runs the bundler
+    b.on('log', gutil.log); // output build logs to terminal
+    bundle();
+});
 
 function bundle() {
+    if (!b) return console.log('Sorry, something went wrong');
     return b.bundle()
         // log errors if they happen
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
