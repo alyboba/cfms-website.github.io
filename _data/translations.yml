@@ -145,7 +145,7 @@ contact_us:
   it: "Technologies de l'information"
   
   #meetings
-  meeting_SGM_AGM:
+  meetings:
 - lang: "en"
   event_title: "Event Details"
 - lang: "fr"
