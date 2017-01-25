@@ -40,6 +40,9 @@ title: "2017 CFMS Spring General Meeting"
 	<div id="meeting-details" class="content">
 		<div id="meeting-aside">
 
+		    {% for meeting_SGM_AGM in site.data.translations.meeting_SGM_AGM %}
+	    {% if meeting_SGM_AGM.lang == page.lang %}
+
 	    	{% for contact_us in site.data.translations.contact_us %}
 		{% if contact_us.lang == page.lang %}
 	    
