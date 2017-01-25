@@ -143,3 +143,11 @@ contact_us:
   general_inquiries: "Questions diverses"
   media: "Médias"
   it: "Technologies de l'information"
+  
+  #meetings
+  meeting_SGM_AGM:
+- lang: "en"
+  event_title: "Event Details"
+- lang: "fr"
+  event_title: "Détails de l'évènement"
+  
