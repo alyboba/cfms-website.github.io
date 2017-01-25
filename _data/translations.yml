@@ -129,6 +129,7 @@ find_us_on:
 contact_us:
 - lang: "en"
   title: "Contact us"
+  event_title: "Event Details"
   name: "Canadian Federation of Medical Students"
   phone: "Phone"
   fax: "Fax"
