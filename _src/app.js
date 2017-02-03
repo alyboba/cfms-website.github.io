@@ -3,6 +3,9 @@ import Config from './config';
 import Router from './router';
 import Vex from 'vex-js';
 import VexDialog from 'vex-dialog';
+import Auth0 from 'auth0-js';
+import Auth0Lock from 'auth0-lock';
+import page from 'page';
 
 class App {
     constructor(data) {
@@ -14,12 +17,45 @@ class App {
         this.nav = JSON.parse(data.nav);
         this.lang = data.lang;
         this.router = new Router();
+        page('/', this.index);
+        page(this.debug);
+        page.start();
+        this.auth0 = new Auth0.Authentication({
+            domain: "cfms.auth0.com",
+            clientID: "DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ"
+        });
+        this.lock = new Auth0Lock('DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ', 'cfms.auth0.com', {
+            additionalSignUpFields: [{
+                name: "code",
+                placeholder: "CFMS membership authentication code"
+            }]
+        });
+        document.getElementById('login-button').addEventListener('click', this.toggleSignIn, false);
         if (!this.router.shouldSkipInit()) this.initApp();
+    }
+
+    debug(ctx, next) {
+        console.log("[page-debug]");
+        console.log(ctx);
+        next();
+    }
+
+    index(ctx, next) {
+        console.log('works!!!');
+        next();
     }
 
     setBeanstreamURL(url) {
         this.router.setBeanstreamURL(url);
     }
+
+    toggleSignIn(evt) {
+        evt.preventDefault();
+        if (!localStorage.getItem('profile')) return window.app.lock.show();
+        window.app.firebase.auth().signOut();
+        localStorage.removeItem('profile');
+        window.app.router.setUser(null);
+    } 
 
     /**
      * initApp handles setting up UI event listeners and registering Firebase auth listeners:
@@ -27,22 +63,58 @@ class App {
      *    out, and that is where we update the UI.
      */
     initApp() {
+        // listen to when the user gets authenticated and then save the profile
+        this.lock.on("authenticated", (authResult) => {
+            this.lock.getProfile(authResult.idToken, (error, profile) => {
+
+                if (error) {
+                    // handle error
+                    return;
+                }
+
+                localStorage.setItem('profile', JSON.stringify(profile));
+
+                //get a delegation token
+                var options = {
+                    id_token: authResult.idToken, // The id_token you have now
+                    api: 'firebase', // This defaults to the first active addon if any or you can specify this
+                    scope: "openid profile", // default: openid
+                    grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+                };
+
+                this.auth0.delegation(options, function (err, delegationResult) {
+                    console.log(err);
+                    console.log(delegationResult);
+                    if (err) return console.log(err);
+                    // Exchange the delegate token for a Firebase auth token
+                    window.app.firebase.auth().signInWithCustomToken(delegationResult.idToken).catch((error) => {
+                        console.log(error);
+                    });
+                });
+            });
+        });
         // Listening for auth state changes.
         this.firebase.auth().onAuthStateChanged((user) => {
-            if (accountJustCreated) {
-                var firstName = document.getElementById('account-first-name').value;
-                var lastName = document.getElementById('account-last-name').value;
-                var medicalSchool = document.getElementById('account-medical-school').value;
-                var graduationYear = document.getElementById('account-graduation-year').value;
-                this.firebase.database().ref('users/' + user.uid).set({
-                    firstName: firstName,
-                    lastName: lastName,
-                    medicalSchool: medicalSchool,
-                    graduationYear: graduationYear,
-                    isAdmin: false
-                })
-                accountJustCreated = false;
-            }
+            let profile = JSON.parse(localStorage.getItem('profile'));
+            let provider = profile.identities.find((val) => {
+                return val.provider == 'auth0';
+            });
+            let uid = provider.user_id;
+            // console.log(uid);
+            // if (accountJustCreated) {
+            //     var firstName = document.getElementById('account-first-name').value;
+            //     var lastName = document.getElementById('account-last-name').value;
+            //     var medicalSchool = document.getElementById('account-medical-school').value;
+            //     var graduationYear = document.getElementById('account-graduation-year').value;
+            //     this.firebase.database().ref('users/' + uid).set({
+            //         firstName: firstName,
+            //         lastName: lastName,
+            //         medicalSchool: medicalSchool,
+            //         graduationYear: graduationYear,
+            //         isAdmin: false
+            //     })
+            //     accountJustCreated = false;
+            // }
             this.nav.forEach((navigation) => {
                 if (navigation.lang != this.lang) return;
 
@@ -66,7 +138,7 @@ class App {
                     for (var i = 0; i < fileUploaders.length; i++)
                         fileUploaders[i].disabled = false;
                     //Show admin elements if is admin
-                    this.firebase.database().ref('/users/' + user.uid).once('value').then(function (snapshot) {
+                    this.firebase.database().ref('/users/' + uid).once('value').then(function (snapshot) {
                         if (snapshot.val().isAdmin === true) {
                             var adminElements = document.getElementsByClassName('admin-only'), i;
                             for (var i = 0; i < adminElements.length; i++)
@@ -112,15 +184,15 @@ class App {
             if (window.location.pathname == '/members/'
                 || window.location.pathname == '/resources/md-leadership-awards-application.html') {
                 if (user) {
-                    this.firebase.database().ref('/users/' + user.uid).once('value').then(function (snapshot) {
+                    this.firebase.database().ref('/users/' + uid).once('value').then(function (snapshot) {
                         var firstName = snapshot.val().firstName;
                         var lastName = snapshot.val().lastName;
                         document.getElementById('account-name').textContent = firstName + ' ' + lastName;
                         document.getElementById('account-school').textContent = snapshot.val().medicalSchool;
                         document.getElementById('account-grad-year').textContent = snapshot.val().graduationYear;
                         var accountEmail = document.getElementById('account-email');
-                        accountEmail.textContent = user.email;
-                        accountEmail.href = 'mailto:' + user.email;
+                        accountEmail.textContent = profile.email;
+                        accountEmail.href = 'mailto:' + profile.email;
                     });
                 }
                 else {
@@ -140,15 +212,15 @@ class App {
                 var refPath = 'leadership-award/' + '{{ site.leadership_award_years }}';
                 this.firebase.database().ref(refPath).once('value').then(function (snapshot) {
                     //If they have, load information.
-                    if (snapshot.child(user.uid).exists()) {
-                        var application = snapshot.child(user.uid);
+                    if (snapshot.child(uid).exists()) {
+                        var application = snapshot.child(uid);
                         //Loads the submitted application if one exists
                         if (application.child('submitted').exists()) {
                             loadSubmission();
                         }
                         //Otherwise displays saved files
                         else {
-                            refPath = refPath + '/' + user.uid;
+                            refPath = refPath + '/' + uid;
                             if (application.child('personalStatement').exists())
                                 loadPrevFile(refPath, 'personal-statement', application.val().personalStatement);
                             if (application.child('curriculumVitae').exists())
@@ -183,7 +255,7 @@ class App {
             if (user && window.location.pathname == '/resources/md-leadership-awards-view-applications.html') {
 
                 //Confirm that present user is an admin.
-                this.firebase.database().ref('/users/' + user.uid).once('value').then(function (snapshot) {
+                this.firebase.database().ref('/users/' + uid).once('value').then(function (snapshot) {
                     if (snapshot.val().isAdmin === true) {
 
                         //Hide the not-authorized sign.
