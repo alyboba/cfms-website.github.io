@@ -95,7 +95,7 @@ financial_resources:
   md_leadership_awards_prev_winners: "Previous Recipients"
   md_leadership_awards_prev_winners_url: "/fr/resources/md-leadership-awards-prev-winners.html"
   md_travel_awards: "Bourses de voyage MD"
-  md_travel_awards_url: "#"
+  md_travel_awards_url: "/fr/resources/md-travel-awards.html"
   managing_debt: "Gérer vos dettes"
   managing_debt_url: "https://mdm.ca/fr/%c3%a9tapes-de-carri%c3%a8re/etudiants-en-medecine/gerer-vos-dettes"
   paying_med_school: "Payer vos études en médecine"
@@ -143,9 +143,9 @@ contact_us:
   general_inquiries: "Questions diverses"
   media: "Médias"
   it: "Technologies de l'information"
-  
-  #Meetings
-  meetings:
+
+#Meetings
+meetings:
 - lang: "en"
   event_title: "Event Details"
 - lang: "fr"
