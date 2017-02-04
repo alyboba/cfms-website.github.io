@@ -1,0 +1,79 @@
+---
+title: "Meetings"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/meetings.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	<!-- Upcoming Meeting -->
+	<div id="top-meeting" style="background: url(/images/meeting-images/winnipeg.jpg) no-repeat center 75%; background-size:cover">
+		<div id="top-group">
+			<div class="content">
+				<div id="top-desc">Upcoming Meeting</div>
+				<div id="top-meeting-name"><a href="sgm-2017-winnipeg.html">2016 CFMS Spring General Meeting</a></div>
+				<div id="top-meeting-info">Winnipeg, Manitoba / April 28&ndash;29, 2017</div>
+			</div>
+		</div>
+	</div>
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#meetings" ).classList.toggle("active");
+	</script>
+
+	<div id="meetings-columns">
+		<div id="cfms-meetings" class="column">
+			<h1>CFMS Meetings</h1>
+			<p>Every year, the CFMS hosts 2 different member meetings: the Annual General Meeting (AGM), and the Spring General Meeting (SGM).</p>
+			<p>These meetings serve as an opportunity for Canadian medical students from across the country to get together and discuss important issues regarding medical education, advocacy, global health, wellness, and more.</p>
+		</div>
+		<div id="previous-meetings" class="column">
+			<h1>Previous Meetings<i id="meeting-icon" class="fa fa-plane"></i></h1>
+			<ul>
+				<li><a href="agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>
+				<li><a href="sgm-2016-montreal.html">SGM 2016 &ndash; Montreal, QC</a></li>
+				<li><a href="agm-2015-windsor.html">AGM 2015 &ndash; Windsor, ON</a></li>
+				<li><a href="sgm-2015-vancouver.html">SGM 2015 &ndash; Vancouver, BC</a></li>
+				<li><a href="agm-2014-kingston.html">AGM 2014 &ndash; Kingston, ON</a></li>
+				<li><a href="sgm-2014-ottawa.html">SGM 2014 &ndash; Ottawa, ON</a></li>
+				<!-- <li><a href="agm-2013-vancouver.html">AGM 2013 &ndash; Vancouver, BC</a></li> -->
+				<!-- <li><a href="sgm-2013-quebec-city.html">SGM 2013 &ndash; Quebec City, QC</a></li> -->
+			</ul>
+		</div>
+		<div id="meeting-photos" class="column">
+			<h1>Meeting Photos<i id="meeting-icon" class="fa fa-camera"></i></h1>			
+			<a class="meeting-photo-link" href="https://goo.gl/photos/SRUHkZ4r7ZHifmgw8" target="_blank">
+				<div class="meeting-photo" style="background: url(/images/meeting-images/gallery-thumbnails/edmonton-agm-2016.jpg) no-repeat center 40%; background-size:cover">
+					<div class="meeting-photo-text"><span>AGM 2016 &ndash; Edmonton, AB</span></div>
+				</div>
+			</a>
+			<a class="meeting-photo-link" href="https://goo.gl/photos/ZwoYKMR3Af3Xogy56" target="_blank">
+				<div class="meeting-photo" style="background: url(/images/meeting-images/gallery-thumbnails/montreal-sgm-2016.jpg) no-repeat center 40%; background-size:cover">
+					<div class="meeting-photo-text"><span>SGM 2016 &ndash; Montreal, QC</span></div>
+				</div>
+			</a>
+			<a class="meeting-photo-link" href="https://goo.gl/photos/nrD5ANjXXGSe1cZb7" target="_blank">
+				<div class="meeting-photo" style="background: url(/images/meeting-images/gallery-thumbnails/windsor-agm-2015.jpg) no-repeat center 40%; background-size:cover">
+					<div class="meeting-photo-text"><span>AGM 2015 &ndash; Windsor, ON</span></div>
+				</div>
+			</a>
+			<a class="meeting-photo-link" href="https://goo.gl/photos/hbxMsju3yQwocZbWA" target="_blank">
+				<div class="meeting-photo" style="background: url(/images/meeting-images/gallery-thumbnails/vancouver-sgm-2015.jpg) no-repeat center 40%; background-size:cover">
+					<div class="meeting-photo-text"><span>SGM 2015 &ndash; Vancouver, BC</span></div>
+				</div>
+			</a>
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>

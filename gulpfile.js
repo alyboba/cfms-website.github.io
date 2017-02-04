@@ -16,7 +16,11 @@ var child = require('child_process');
 var browserSync = require('browser-sync').create();
 var watch = require('gulp-watch');
 
-var siteRoot = '_site';
+var sourceRoot = 'src';
+var sitePath = sourceRoot + '/site';
+var jsPath = sourceRoot + '/js';
+var sassPath = sourceRoot + '/sass';
+var servePath = 'serve';
 
 var jekyllLogger = (buffer) => {
     buffer.toString()
@@ -25,28 +29,30 @@ var jekyllLogger = (buffer) => {
 };
 
 gulp.task('jekyll', () => {
-  var jekyll = child.exec('jekyll build --watch --incremental --drafts');
+  var jekyll = child.exec('jekyll build --watch --incremental --drafts --source ' + sitePath + ' --destination ' + servePath);
 
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
 });
 
 
-gulp.task('buildJekyll', ['buildSass', 'buildVendor', 'buildJs'], () => {
+gulp.task('buildJekyll', ['buildSass', 'buildJs'], () => {
   return jekyllLogger(child.execSync('jekyll build'));
 });
 
 
 gulp.task('serve', () => {
   browserSync.init({
-    files: [siteRoot + '/**'],
+    files: [servePath + '/**'],
     port: 4000,
     server: {
-      baseDir: siteRoot
-    }
+      baseDir: servePath
+    },
+    reloadDelay: 2000,
+    reloadDebounce: 2000
   });
 
-  watch('./_css/*.scss')
+  watch(sassPath + '/*.scss')
       .pipe(sourcemaps.init())
       .pipe(sass({
           errLogToConsole: true,
@@ -55,12 +61,12 @@ gulp.task('serve', () => {
       .pipe(sourcemaps.write())
       .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
       .pipe(minifyCss({ compatibility: 'ie8' }))
-      .pipe(gulp.dest('./stylesheets/'));
+      .pipe(gulp.dest(sitePath + '/stylesheets'));
 });
 
 gulp.task('buildSass', function () {
     return gulp
-        .src('./_css/*.scss')
+        .src(sassPath + '/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
@@ -69,25 +75,25 @@ gulp.task('buildSass', function () {
         .pipe(sourcemaps.write())
         .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
         .pipe(minifyCss({ compatibility: 'ie8' }))
-        .pipe(gulp.dest('./stylesheets/'));
+        .pipe(gulp.dest(sitePath + '/stylesheets'));
 });
 
-gulp.task('buildVendor', function() {
-    return gulp.src('./_css/vendor/*.css')
-        .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
-        .pipe(minifyCss({ compatibility: 'ie8' }))
-        .pipe(gulp.dest('./stylesheets'));
-});
+// gulp.task('buildVendor', function() {
+//     return gulp.src('./_css/vendor/*.css')
+//         .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
+//         .pipe(minifyCss({ compatibility: 'ie8' }))
+//         .pipe(gulp.dest('./stylesheets'));
+// });
 
-gulp.task('css', function () {
-    return gulp.src('./_css/compiled/*.css')
-        .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
-        .pipe(gulp.dest('./stylesheets/'))
-        .pipe(minifyCss({ compatibility: 'ie8' }))
-        .pipe(gulp.dest('./stylesheets/'));
-});
+// gulp.task('css', function () {
+//     return gulp.src('./_css/compiled/*.css')
+//         .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
+//         .pipe(gulp.dest('./stylesheets/'))
+//         .pipe(minifyCss({ compatibility: 'ie8' }))
+//         .pipe(gulp.dest('./stylesheets/'));
+// });
 
-gulp.task('default', ['buildSass', 'buildVendor', 'buildJs', 'jekyll', 'serve']);
+gulp.task('default', ['buildSass', 'buildJs', 'jekyll', 'serve']);
 gulp.task('build', ['buildJekyll']);
 
 /**
@@ -104,7 +110,7 @@ gulp.task('buildJs', bundle); // so you can run `gulp js` to build the file
 
 // add custom browserify options here
 var customOpts = {
-    entries: ['./_src/app.js'],
+    entries: [jsPath + '/app.js'],
     debug: true
 };
 var opts = assign({}, watchify.args, customOpts);
@@ -127,5 +133,5 @@ function bundle() {
         // optional, remove if you dont want sourcemaps
         .pipe(sourcemaps.init({ loadMaps: true })) // loads map from browserify file
         .pipe(sourcemaps.write('./')) // writes .map file
-        .pipe(gulp.dest('./js'));
+        .pipe(gulp.dest(sitePath + '/js'));
 }

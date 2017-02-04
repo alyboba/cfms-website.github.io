@@ -1,0 +1,60 @@
+---
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-education.html %}
+		<script type="text/javascript">
+			document.querySelector( "#matchbook" ).classList.toggle("sidebar-active");
+		</script>
+
+		<div id="side-content" class="editable">
+			<h1 id="page-title">The Matchbook</h1>
+			<div id="matchbook-right">
+				<blockquote id="latest-issue">
+					<h3><strong>Latest Version:</strong></h3>
+					<a id="latest-issue-pic" href="/files/matchbook/matchbook2016-2017.pdf"><img src="/files/matchbook/matchbook2016-2017.jpg"></a>
+					<h5><strong>Matchbook 2016-2017</strong></h5>
+					<div class="button">
+						<a href="/files/matchbook/matchbook2016-2017.pdf">
+							<strong>Download</strong>
+						</a>
+					</div>
+				</blockquote>
+			</div>
+			<p>The Match Book is a joint initiative of the CFMS and CaRMS designed to educate medical students about the Match and assist with career planning. For complete information on the CaRMS Match, visit the <a href="http://www.carms.ca/">CaRMS website</a>.</p>
+			<h2><strong>What's in the Matchbook?</strong></h2>
+			<p>The Match Book, created in 2008 and currently at its 8th edition, intends to (1) provide an introduction to the Canadian residency match process, (2) present an overview of the major steps involved, and (3) aid Canadian medical students' at various stages of training in planning their strategy for matching in their preferred programs.</p>
+			<h2><strong>Old Matchbooks</strong></h2>
+			<ul>
+			    <li><a href="/files/matchbook/matchbook2015-2016.pdf">CFMS Match Book 2015-2016</a></li>
+				<li><a href="/files/matchbook/matchbook2014-2015.pdf">CFMS Match Book 2014-2015</a></li>
+				<li><a href="/files/matchbook/matchbook2013-2014.pdf">CFMS Match Book 2013-2014</a></li>
+			</ul>
+			<h2><strong>Specialty profiles</strong></h2>
+			<p>Having trouble deciding on a post-graduate specialty? The Canadian Medical Association has compiled useful information on each specialty, which is available on the <a href="https://www.cma.ca/En/Pages/specialty-profiles.aspx">student section of their website</a>.</p>
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>

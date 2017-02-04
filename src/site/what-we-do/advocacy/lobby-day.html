@@ -1,0 +1,33 @@
+---
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-advocacy.html %}
+		<script type="text/javascript">
+			document.querySelector( "#lobby-day" ).classList.toggle("sidebar-active");
+		</script>
+		<div id="side-content" class="editable"><h1 id="page-title">Lobby Day</h1><p>Each year, medical students from across Canada travel to Ottawa to meet with Parliamentarians and propose a positive health systems change. This event includes extensive advocacy training in advance of the meetings. It is an excellent opportunity for medical students interested in national health care advocacy.</p><p>Representatives from each of our member institutions are selected at the local level. Please contact your respective Government Affairs and Advocacy Committee representative if you are interested in being a part of Lobby Day.</p><p>Our next Lobby Day will take place on <strong>February 13, 2017</strong>.</p><h4><strong>Lobby Day 2017: The National Opioid Crisis</strong></h4><p>More information coming soon.</p><blockquote><h4><strong>For More Information:</strong></h4><p><strong>Sarah Silverberg</strong>, Vice President Government Affairs<br />Canadian Federation of Medical Students<br /><a href="mailto:vpgovtaffairs@cfms.org">vpgovtaffairs@cfms.org</a></p><p><b>Emily Hodgson</b>, Vice President Communications<br />Canadian Federation of Medical Students<br /><a href="mailto:vpcommunications@cfms.org">vpcommunications@cfms.org</a></p></blockquote></div>
+	</div>
+	{% include footer.html %}
+</body>

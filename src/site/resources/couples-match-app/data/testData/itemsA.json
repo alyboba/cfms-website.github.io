@@ -1,0 +1,27 @@
+[
+  {
+    "order": 0,
+    "location": "Dalhousie University",
+    "category": "Anatomical Pathology",
+    "note": "aaaa"
+  },
+  {
+    "order": 1,
+    "location": "McGill University",
+    "category": "Anesthesiology",
+    "note": ""
+  },
+  {
+    "order": 2,
+    "location": "Memorial University of Newfoundland",
+    "category": "Dermatology",
+    "note": "ccccccccc"
+  },
+   {
+    "order": 3,
+    "location": "Memorial University of Newfoundland",
+    "category": "Anesthesiology",
+    "note": "ccccccccc"
+  }
+  
+]

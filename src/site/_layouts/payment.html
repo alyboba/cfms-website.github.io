@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/home.css">
+	<style>
+		#payment-form {
+			width: 446px;
+			height: 1037px;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+	</script>
+
+	<div id="new-account-top" class="content">
+		<div id="new-account-left">
+			{% include payment-policies.html %}
+		</div>
+		<div id="new-account-right" style="margin-left: 40px;"></div>
+	</div>
+
+	{% include footer.html %}
+	<script type="text/javascript">
+		window.app.setBeanstreamURL(`{{ page.beanstreamURL }}`);
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+---
+title: "2016 CFMS Spring General Meeting"
+---
+
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/meetings.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#meetings" ).classList.toggle("active");
+	</script>
+
+	<!-- Header -->
+	<div id="top-meeting" style="background: url(/images/meeting-images/montreal.jpg) no-repeat center 25%; background-size:cover">
+		<div id="top-group">
+			<div class="content">
+				<div id="top-meeting-name">{{ page.title }}</div>
+				<div id="top-meeting-info">Montreal, Quebec / April 15&ndash;16, 2015</div>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+
+	</div>
+	{% include footer.html %}
+</body>
+</html>

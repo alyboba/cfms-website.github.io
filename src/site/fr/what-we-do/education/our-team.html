@@ -1,0 +1,165 @@
+---
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-education.html %}
+		<script type="text/javascript">
+			document.querySelector( "#our-team" ).classList.toggle("sidebar-active");
+		</script>
+		<div id="side-content" class="editable">
+			<h1 id="page-title">Our Team</h1>
+
+			<h1><strong>VP Education</strong></h1>
+			<hr>
+			<div id="vp-government-affairs" class="executive">
+				<div class="exec-pic">
+					<img src="/images/execs/2015-2016/nebras-warsi.jpg" class="editable">
+				</div>
+				<div class="exec-info">
+					<li class="exec-name">
+						<span class="editable">Nebras Warsi</span>
+					</li>
+					<li class="exec-school">
+						<span class="editable">McGill University</span>
+					</li>
+					<li class="exec-desc">
+						<span class="editable">Nebras is responsible for directing the representation, analysis and policy of the CFMS on educational issues. He represents the Federation at such forums where concerns of a primarily educational nature are discussed. Nebras also undertakes initiatives to enhance the educational experience of members of the Federation.</span>
+					</li>
+					<li class="url"><a href="mailto:vpeducation@cfms.org">vpeducation@cfms.org</a></li>
+				</div>
+			</div>
+
+			<h1><strong>Government Affairs &amp; Advocacy Committee</strong></h1>
+			<hr>
+			<div class="members">
+				<div class="column">
+					<div class="member-info">
+						<li class="member-school editable">Memorial University</li>
+						<li class="member-name editable"><a href="mailto:mkh805@mun.ca">Mark Hewitt</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school">Dalhousie University &ndash; Halifax</li>
+						<li class="member-name editable"><a href="mailto:catherine.mj.cox@dal.ca">Catherine Cox</a></li>
+						<li class="member-name editable"><a href="mailto:lucy.soudek@dal.ca">Lucy Soudek</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school">Dalhousie University &ndash; New Brunswick</li>
+						<li class="member-name editable"><a href="mailto:m.mcgrattan@dal.ca">Meghan McGratten</a></li>
+						<li class="member-name editable"><a href="mailto:christy.stephenson@dal.ca">Christy Stephenson</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school editable">McGill University</li>
+						<li class="member-name editable"><a href="mailto:david.benrimoh@mail.mcgill.ca">David Benrimoh</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school editable">University of Ottawa</li>
+						<li class="member-name editable"><a href="mailto:cmcfe063@uottawa.ca">Chantal McFetridge</a></li>
+						<li class="member-name editable"><a href="mailto:olee023@uottawa.ca">Olivia Lee</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school editable">Queen's University</li>
+						<li class="member-name editable"><a href="mailto:mchurch@qmed.ca">Matthew Church</a></li>
+						<li class="member-name editable"><a href="mailto:mkroeker@qmed.ca">Michael Kroeker</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school editable">University of Toronto</li>
+						<li class="member-name editable"><a href="mailto:patrick.steadman@mail.utoronto.ca">Patrick Steadman</a></li>
+						<li class="member-name editable"><a href="mailto:sarah.silverberg@mail.utoronto.ca">Sarah Silverberg</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school editable">McMaster University</li>
+						<li class="member-name editable"><a href="mailto:erika.donald@medportal.ca">Erika Donald</a></li>
+						<li class="member-name editable"><a href="mailto:vivian.tam@medportal.ca">Vivian Tam</a></li>
+					</div>
+				</div>
+				<div class="column">
+					<div class="member-info">
+						<li class="member-school editable">Western University</li>
+						<li class="member-name editable"><a href="mailto:odost2017@meds.uwo.ca">Omer Dost</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school">Northern Ontario School of Medicine</li>
+						<li class="member-name editable"><a href="mailto:awebb@nosm.ca">Allison Webb</a></li>
+						<li class="member-name editable"><a href="mailto:keuler@nosm.ca">Ken Euler</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school">University of Manitoba</li>
+						<li class="member-name editable"><a href="mailto:fineblis@myumanitoba.ca">Sam Fineblit</a></li>
+						<li class="member-name editable"><a href="mailto:matyas@cc.umanitoba.ca">Sara Matyas</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school editable">University of Saskatchewan</li>
+						<li class="member-name editable"><a href="mailto:smss.gaac@gmail.com">Jessica Harris</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school editable">University of Alberta</li>
+						<li class="member-name editable"><a href="mailto:jkhunkhu@ualberta.ca">Justin Khunkhun</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school">University of Calgary</li>
+						<li class="member-name editable"><a href="mailto:michael.arget@gmail.com">Michael Arget</a></li>
+						<li class="member-name editable"><a href="mailto:john.vantuyl@ucalgary.ca">John VanTuyl</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school">University of British Columbia</li>
+						<li class="member-name editable"><a href="mailto:davidcklassen@gmail.com">David Klassen</a></li>
+						<li class="member-name editable"><a href="mailto:schilc09@gmail.com">Claire Schiller</a></li>
+					</div>
+				</div>
+			</div>
+			<h1><strong>Committee on Health Policy</strong></h1>
+			<hr>
+			<div class="members">
+				<div class="column">
+					<div class="member-info">
+						<li class="member-school">National Officer of Health Policy</li>
+						<li class="member-name editable"><a href="mailto:justin.neves@medportal.ca">Justin Neves</a></li>
+					</div>
+					<div class="member-info">
+						<li class="member-school">Committee Members</li>
+						<li class="member-name editable"><a href="mailto:liza.abraham@mail.utoronto.ca ">Liza Abraham</a></li>
+						<li class="member-name editable"><a href="mailto:arnav.agarwal@mail.utoronto.ca ">Arnav Agarwal</a></li>
+						<li class="member-name editable"><a href="mailto:mdesc034@uottawa.ca">Max Deschner</a></li>
+						<li class="member-name editable"><a href="mailto:n.dogra@mail.utoronto.ca">Nupur Dogra</a></li>
+						<li class="member-name editable"><a href="mailto:rmorrison@nosm.ca">Reed Morrison</a></li>
+					</div>
+				</div>
+				<div class="column">
+					<div class="member-info">
+						<li class="member-school">Committee Members (cont.)</li>
+						<li class="member-name editable"><a href="mailto:stephanie.kwolek@medportal.ca">Stephanie Kwolek</a></li>
+						<li class="member-name editable"><a href="mailto:jacquie.lu@queensu.ca">Jacquie Lu</a></li>
+						<li class="member-name editable"><a href="mailto:emily.reynen@mail.mcgill.ca">Emily Reynen</a></li>
+						<li class="member-name editable"><a href="mailto:manu.saraswat@dal.ca">Manu Saraswat</a></li>
+						<li class="member-name editable"><a href="mailto:rafael.sumalinog@mail.utoronto.ca">Rafael Sumalinog</a></li>
+						<li class="member-name editable"><a href="mailto:alishazacharias@gmail.com">Alisha Zacharias</a></li>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>

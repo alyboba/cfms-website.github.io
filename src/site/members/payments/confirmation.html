@@ -1,0 +1,34 @@
+---
+title: "Online Payments"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/stylesheets/vex.css" />
+	<link rel="stylesheet" href="/stylesheets/vex-theme-default.css" />
+	<style>
+		i {
+			color: #34b989;
+		}
+	</style>
+</head>
+<body>
+	<div style="display:block">
+        <i class="fa fa-check-circle-o fa-5x" aria-hidden="true"></i>
+		<div id="description"></div>
+    </div>
+</body>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript">
+	var nav = `{{ site.data.translations.nav | jsonify }}`;
+	var lang = `{{ page.lang }}`;
+	new App({ 
+		nav: nav,
+		lang: lang
+	});
+</script>

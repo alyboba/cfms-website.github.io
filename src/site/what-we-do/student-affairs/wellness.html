@@ -1,0 +1,215 @@
+---
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-student-affairs.html %}
+		<script type="text/javascript">
+			document.querySelector( "#wellness" ).classList.toggle("sidebar-active");
+		</script>
+		<div id="side-content" class="editable">
+			<h1 id="page-title">Wellness</h1>
+			<p>The CFMS Wellness Committee has created a new website with resources and information on wellness resources at <em>your</em> schools! See the link for the new website below:</p>
+			<blockquote>
+				<h4><strong>Visit our NEW Wellness Site!</strong></h4>
+				<ul>
+					<li>Visit our newly developed <a href="http://cfmswellness.squarespace.com/">CFMS Wellness Site</a> for nation-wide wellness tips for each medical school!
+				</ul>
+			</blockquote>
+			<h2><strong>School Specific Wellness Resources</strong></h2>
+			<div id="cfms-reps-content">
+				<div id="schools">
+					<div id="ubc" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/ubc.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">University of British Columbia</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a href="/files/wellness-resources/UBC.pdf">Download Resource</a></p></div>
+							</li>
+						</div>
+					</div>
+					<div id="ualberta" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/ualberta.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">University of Alberta
+							</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
+								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Alberta.pdf">Download Resource&nbsp;</a></p></div> -->
+							</li>
+						</div>
+					</div>
+					<div id="ucalgary" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/ucalgary.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">University of Calgary
+							</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a href="/files/wellness-resources/Calgary.pdf">Download Resource</a></p></div>
+							</li>
+						</div>
+					</div>
+					<div id="usaskatchewan" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/usaskatchewan.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">University of Saskatchewan
+							</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a href="/files/wellness-resources/Saskatchewan.pdf">Download Resource</a></p></div>
+							</li>
+						</div>
+					</div>
+					<div id="umanitoba" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/umanitoba.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">University of Manitoba
+							</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
+								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Manitoba.pdf">Download Resource</a></p></div> -->
+							</li>
+						</div>
+					</div>
+					<div id="nosm" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/nosm.png" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">Northern Ontario School of Medicine</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
+								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/NOSM.pdf">Download Resource</a></p></div> -->
+							</li>
+						</div>
+					</div>
+					<div id="western" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/western.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">Western University</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a href="/files/wellness-resources/Western.pdf">Download Resource</a></p></div>
+							</li>
+						</div>
+					</div>
+					<div id="mcmaster" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/mcmaster.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">McMaster University</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a href="/files/wellness-resources/McMaster.pdf">Download Resource</a>​</p></div>
+							</li>
+						</div>
+					</div>
+					<div id="utoronto" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/utoronto.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">University of Toronto
+							</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
+								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Toronto.pdf">Download Resource</a></p></div> -->
+							</li>
+						</div>
+					</div>
+					<div id="queens" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/queens.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">Queen's University</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a href="/files/wellness-resources/Queens.pdf">Download Resource</a></p></div>
+							</li>
+						</div>
+					</div>
+					<div id="uottawa" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/uottawa.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">University of Ottawa
+							</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
+								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Ottawa.pdf">Download Resource</a></p></div> -->
+							</li>
+						</div>
+					</div>
+					<div id="mcgill" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/mcgill.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">McGill University</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
+								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/McGill.pdf">Download Resource</a></p></div> -->
+							</li>
+						</div>
+					</div>
+					<div id="dalhousie" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/dalhousie.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">Dalhousie University</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
+								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Dalhousie.pdf">Download Resource</a></p></div> -->
+							</li>
+						</div>
+					</div>
+					<div id="memorial" class="school">
+						<div class="school-logo">
+							<img src="/images/school-logos/memorial.svg" />
+						</div>
+						<div class="school-desc">
+							<li class="school-name editable">Memorial University of Newfoundland</li>
+							<li class="school-url">
+								<div class="url preview editable"><p><a href="/files/wellness-resources/MUN.pdf">Download Resource</a></p></div>
+							</li>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>

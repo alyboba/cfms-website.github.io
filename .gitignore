@@ -8,3 +8,4 @@ Gemfile*
 node_modules/
 coverage/
 .vscode/
+serve/
