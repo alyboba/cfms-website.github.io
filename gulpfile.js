@@ -48,7 +48,6 @@ gulp.task('serve', () => {
     server: {
       baseDir: servePath
     },
-    reloadDelay: 2000,
     reloadDebounce: 2000
   });
 
@@ -61,7 +60,7 @@ gulp.task('serve', () => {
       .pipe(sourcemaps.write())
       .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
       .pipe(minifyCss({ compatibility: 'ie8' }))
-      .pipe(gulp.dest(sitePath + '/stylesheets'));
+      .pipe(gulp.dest(servePath + '/stylesheets'));
 });
 
 gulp.task('buildSass', function () {
@@ -75,7 +74,7 @@ gulp.task('buildSass', function () {
         .pipe(sourcemaps.write())
         .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
         .pipe(minifyCss({ compatibility: 'ie8' }))
-        .pipe(gulp.dest(sitePath + '/stylesheets'));
+        .pipe(gulp.dest(servePath + '/stylesheets'));
 });
 
 // gulp.task('buildVendor', function() {
@@ -93,7 +92,7 @@ gulp.task('buildSass', function () {
 //         .pipe(gulp.dest('./stylesheets/'));
 // });
 
-gulp.task('default', ['buildSass', 'buildJs', 'jekyll', 'serve']);
+gulp.task('default', ['buildSass', 'js', 'jekyll', 'serve']);
 gulp.task('build', ['buildJekyll']);
 
 /**
@@ -133,5 +132,5 @@ function bundle() {
         // optional, remove if you dont want sourcemaps
         .pipe(sourcemaps.init({ loadMaps: true })) // loads map from browserify file
         .pipe(sourcemaps.write('./')) // writes .map file
-        .pipe(gulp.dest(sitePath + '/js'));
+        .pipe(gulp.dest(servePath + '/js'));
 }

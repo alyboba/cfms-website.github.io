@@ -15,7 +15,7 @@ md_awards_closed_caption: "Keep an eye out for when applications will open!"
 
 repository: cfms-website/cfms-website.github.io
 
-keep_files: ['/stylesheets', '/js']
+keep_files: ['stylesheets/', 'js/', 'files/', 'images/']
 
 #Set the default layout for a post to the 'news' format
 defaults:
