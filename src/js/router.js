@@ -2,10 +2,11 @@ import Payment from './payment';
 import PaymentConfirmation from './payment-confirmation';
 import Home from './routes/home';
 import Members from './routes/members';
+import { LeadershipAwardUser, LeadershipAwardAdmin } from './routes/md-leadership-awards';
 import page from 'page';
 
 export default class Router {
-    constructor(firebase, user, uid) {
+    constructor(firebase, user, uid, leadership_award_year) {
         // this.user;
         // this.payment;
         // this.skipInit = false;
@@ -14,9 +15,11 @@ export default class Router {
         this.firebase = firebase;
         this.user = user;
         this.uid = uid;
+        this.leadership_award_year = leadership_award_year;
         page('/', Home.bind(this));
         page('/members', Members.bind(this));
-        page('/resources/md-leadership-awards-application.html', Members.bind(this));
+        page('/resources/md-leadership-awards-application.html', LeadershipAwardUser.bind(this));
+        page('/resources/md-leadership-awards-view-applications.html', LeadershipAwardAdmin.bind(this));
         page.start();
     }
 

@@ -179,8 +179,10 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript">
 	var nav = `{{ site.data.translations.nav | jsonify }}`;
 	var lang = `{{ page.lang }}`;
+	var year = `{{ site.leadership_award_years }}`;
 	window.app = new App({ 
 		nav: nav,
-		lang: lang
+		lang: lang,
+		leadership_award_year: year
 	});
 </script>
