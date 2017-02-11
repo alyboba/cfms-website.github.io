@@ -3,7 +3,7 @@ node_js:
   - node
 
 before_script:
-  - npm install -g gulp
+  - npm install -g gulp jekyll
 script: bash ./deploy.sh
 env:
   global:
