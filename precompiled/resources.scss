@@ -175,7 +175,7 @@ $number-margin-mobile:40px;
 		color:$bright;
 	}
 }
-.finances {display:flex; max-width:100%;}
+.finances, .discounts {display:flex; max-width:100%;}
 .student-finances-content h2.submission-header {
 	color:$neutral;
 	padding-bottom:10px !important;
@@ -211,12 +211,14 @@ $number-margin-mobile:40px;
 .review-text-field {
 	padding-bottom:2px;
 }
-.student-finances-content h4.review-header {
+.student-finances-content h4.review-header,
+.student-discounts-content h4.review-header,
+ {
 	border-bottom:2px solid $bright;
 	padding-bottom: 10px !important;
 	margin-bottom: 10px;
 }
-.student-finances-content {
+.student-finances-content, .student-discounts-content {
 	width:100%;
 	p, h1, h2, h3, h4, ul, ol, img {max-width:$content-width;}
 	#page-title {max-width:none;}
@@ -299,7 +301,7 @@ $number-margin-mobile:40px;
 	clear:both;
 }
 @media only screen and (max-width: 959px) {
-	.finances {
+	.finances, .discounts {
 		flex-wrap:wrap;
 	}
 	.student-finances h1 {
@@ -324,7 +326,7 @@ $number-margin-mobile:40px;
 	.student-finances h2 {
 		font-size:24px;
 	}
-	.student-finances-content {
+	.student-finances-content, .student-discounts-content {
 		max-width:100%;
 		font-size:16px;
 		#reasons-financial-advisor{
@@ -349,7 +351,8 @@ $number-margin-mobile:40px;
 			}
 		}
 	}
-	.student-finances-content h2{
+	.student-finances-content h2, 
+	.student-discounts-content h2 {
 		font-size:22px;
 	}
 }
@@ -357,6 +360,7 @@ $number-margin-mobile:40px;
 	.award-application ul {
 		list-style:none;
 	}
+	.pic-right {display:none;}
 }
 /* #MDFM Leadership Awards
 ––––––––––––––––––––––––––––––––––––––––*/
