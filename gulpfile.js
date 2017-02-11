@@ -37,7 +37,8 @@ gulp.task('jekyll', () => {
 
 
 gulp.task('buildJekyll', ['buildSass', 'buildJs'], () => {
-  return jekyllLogger(child.execSync('jekyll build'));
+  jekyllLogger(child.execSync('jekyll build --source ' + sitePath + ' --destination ' + servePath));
+  return process.exit(0);
 });
 
 
@@ -105,8 +106,6 @@ gulp.task('test', function (done) {
     }, done).start();
 });
 
-gulp.task('buildJs', bundle); // so you can run `gulp js` to build the file
-
 // add custom browserify options here
 var customOpts = {
     entries: [jsPath + '/app.js'],
@@ -114,6 +113,8 @@ var customOpts = {
 };
 var opts = assign({}, watchify.args, customOpts);
 var b = watchify(browserify(opts)).transform(babelify, { presets: ['es2015'] });
+
+gulp.task('buildJs', bundle); // so you can run `gulp js` to build the file
 
 gulp.task('js', () => {
     b.on('update', bundle); // on any dep update, runs the bundler
@@ -124,7 +125,7 @@ gulp.task('js', () => {
 function bundle() {
     if (!b) return console.log('Sorry, something went wrong');
     return b.bundle()
-        // log errors if they happen
+        // log errors if they happe
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(source('bundle.js'))
         // optional, remove if you don't need to buffer file contents
