@@ -48,9 +48,9 @@ export class MatchService {
   }
 
   private extractData(res: Response) {
-    //console.log(res);
+    console.log(res);
     let body = res.json();
-    //console.log(body);
+    console.log(body);
     return body || { };
   }
 

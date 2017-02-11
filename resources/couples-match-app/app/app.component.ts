@@ -309,25 +309,47 @@ checkInput(location, discipline){
 	    this.itemsB[i].order=i;
 	  }
 	  
-	  
-	  for (let i = 0; i < this.itemsB.length; i++) {
-		  let bItem = this.itemsB[i];
-		  for (let j = 0; j < this.itemsA.length; j++) {
-	    	  let aItem = this.itemsA[j];
+      
+      if (this.optionWhoLeading=='B'){
+       for (let i = 0; i < this.itemsB.length; i++) {
+          let bItem = this.itemsB[i];
+          for (let j = 0; j < this.itemsA.length; j++) {
+              let aItem = this.itemsA[j];
+              let newAutoItem={'distance':0, 'order':0,'b':0,'a':0, 'p':'b','B':{"order":1,"location":"","category":"","note":""},"A":{"order":1,"location":"","category":"","note":""}};
+              newAutoItem.B = bItem;
+              newAutoItem.A=aItem;
+              
+              newAutoItem.distance = this.GetDistances(bItem.location, aItem.location);
+              
+              let z=i + j + 2;
+              newAutoItem.order = z;
+              newAutoItem.b = i+1;
+              newAutoItem.a = j+1;
+              newAutoItem.p = (this.optionWhoLeading=='A')?'a':'b';
+              this.autoItems.push(newAutoItem);
+          }
+      }
+	  }
+      else {
+	  for (let i = 0; i < this.itemsA.length; i++) {
+		  let aItem = this.itemsA[i];
+		  for (let j = 0; j < this.itemsB.length; j++) {
+	    	  let bItem = this.itemsB[j];
 	    	  let newAutoItem={'distance':0, 'order':0,'b':0,'a':0, 'p':'b','B':{"order":1,"location":"","category":"","note":""},"A":{"order":1,"location":"","category":"","note":""}};
-	    	  newAutoItem.B = bItem;
-	    	  newAutoItem.A=aItem;
+	    	  newAutoItem.A = aItem;
+	    	  newAutoItem.B=bItem;
 	    	  
-	    	  newAutoItem.distance = this.GetDistances(bItem.location, aItem.location);
+	    	  newAutoItem.distance = this.GetDistances(aItem.location, bItem.location);
 	    	  
 	    	  let z=i + j + 2;
 	    	  newAutoItem.order = z;
-	    	  newAutoItem.b = i+1;
-	    	  newAutoItem.a = j+1;
+	    	  newAutoItem.a = i+1;
+	    	  newAutoItem.b = j+1;
 	    	  newAutoItem.p = (this.optionWhoLeading=='A')?'a':'b';
 	    	  this.autoItems.push(newAutoItem);
 		  }
 	  }
+          }
 	  	  	  
 	  console.log(this.optionWhoLeading);
 	  
@@ -366,22 +388,30 @@ checkInput(location, discipline){
 
 	  if (itemA.order==itemB.order){
 		  
-		  let minA = Math.min(itemA.h, itemA.k);
-		  let minB = Math.min(itemB.h, itemB.k);
+		  let minA = Math.min(itemA.a, itemA.b);
+		  let minB = Math.min(itemB.a, itemB.b);
+          
+          if (itemA.p=='b'){
+            minA = itemA.b; minB=itemB.b;
+          }
+          else{
+            minA = itemA.a; minB=itemB.a;
+          }
 		  
 		  if (minA<minB)
 			  return -1;
 		  else
-			  if (minA>minB)
-				  return 1;
-			  else{ // equal with order and the min. now check the who is the leading person
-				  console.log(itemA.p + " itemA.k = " + itemA.k + " itemA.h = " + itemA.h);
-				  if (itemA.p=='b' && itemA.b < itemA.a)
-					  return -1;
-				  else
-					  return 1;
-				  
-			  };
+              return 1;
+//			  if (minA>minB)
+//				  return 1;
+//			  else{ // equal with order and the min. now check the who is the leading person
+//				  console.log(itemA.p + " itemA.b = " + itemA.b + " itemA.a = " + itemA.a);
+//				  if (itemA.p=='b' && itemA.b < itemA.a)
+//					  return -1;
+//				  else
+//					  return 1;
+//				  
+//			  };
 	  }
 	  
 	  

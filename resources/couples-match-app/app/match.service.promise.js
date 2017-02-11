@@ -45,9 +45,9 @@ var MatchService = (function () {
             .catch(this.handleError);
     };
     MatchService.prototype.extractData = function (res) {
-        //console.log(res);
+        console.log(res);
         var body = res.json();
-        //console.log(body);
+        console.log(body);
         return body || {};
     };
     MatchService.prototype.handleError = function (error) {
