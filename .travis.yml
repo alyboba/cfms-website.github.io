@@ -1,13 +1,16 @@
 language: ruby
-node_js:
-  - node
 rvm:
   - 2.2
+env:
+  - TRAVIS_NODE_VERSION="node"
 before_script:
   - npm install -g gulp
 before_install:
-  - nvm use node && npm install -g npm@latest
-install: gem install jekyll && npm install
+  - npm install -g npm@latest
+install:
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  - gem install jekyll
+  - npm install
 script: bash ./deploy.sh
 env:
   global:
