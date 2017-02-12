@@ -14,5 +14,5 @@ install:
 script: bash ./deploy.sh
 env:
   global:
-  - ENCRYPTION_LABEL: "9b2a6011a808"
+  - ENCRYPTION_LABEL: "6315171ce8db"
   - COMMIT_AUTHOR_EMAIL: "it@cfms.org"
