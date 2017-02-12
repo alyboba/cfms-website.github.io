@@ -115,7 +115,6 @@ class App {
      *    out, and that is where we update the UI.
      */
     initApp() {
-        console.log("Initializing application...");
         // listen to when the user gets authenticated and then save the profile
         this.lock.on("authenticated", (authResult) => {
             this.lock.getProfile(authResult.idToken, (error, profile) => {
