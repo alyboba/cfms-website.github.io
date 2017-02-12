@@ -4,7 +4,9 @@ node_js:
 rvm:
   - 2.2
 before_script:
-  - npm install -g npm@latest gulp
+  - npm install -g gulp
+before_install:
+  - npm install -g npm@latest
 install: gem install jekyll && npm install
 script: bash ./deploy.sh
 env:
