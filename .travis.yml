@@ -6,7 +6,7 @@ before_script:
 before_install:
   - npm install -g npm@latest
 install:
-  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install node
   - gem install jekyll
   - npm install
 script: bash ./deploy.sh
@@ -14,4 +14,3 @@ env:
   global:
   - ENCRYPTION_LABEL: "15f5b6818add"
   - COMMIT_AUTHOR_EMAIL: "it@cfms.org"
-  - TRAVIS_NODE_VERSION: "node"
