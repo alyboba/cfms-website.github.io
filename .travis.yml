@@ -1,10 +1,10 @@
 language: ruby
 node_js:
-  - node
+  - 6
 rvm:
   - 2.2
 before_script:
-  - npm install -g gulp
+  - npm install -g npm@latest gulp
 install: gem install jekyll && npm install
 script: bash ./deploy.sh
 env:
