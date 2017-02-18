@@ -180,9 +180,11 @@ $('.redirect-modal').click(function(){
 	var nav = `{{ site.data.translations.nav | jsonify }}`;
 	var lang = `{{ page.lang }}`;
 	var year = `{{ site.leadership_award_years }}`;
+	var env = `{{ jekyll.environment }}`;
 	window.app = new App({ 
 		nav: nav,
 		lang: lang,
-		leadership_award_year: year
+		leadership_award_year: year,
+		env: env
 	});
 </script>

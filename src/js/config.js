@@ -8,6 +8,24 @@ export const firebase = {
 
 export const vex = 'vex-theme-default';
 
+export const auth0 = {
+    domain: "cfms.auth0.com",
+    clientID: "DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ",
+    scope: "openid",
+    audience: "https://cfms.auth0.com/api/v2/",
+    _disableDeprecationWarnings: true
+};
+
+export const logout = {
+    returnTo: 'http://cfms.org',
+    client_id: 'DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ'
+};
+
+export const dev_logout = {
+    returnTo: '',
+    client_id: 'DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ'
+};
+
 export const lock = {
     auth: {
         redirectUrl: 'http://localhost:4000/members',
@@ -19,9 +37,5 @@ export const lock = {
     languageDictionary: {
         title: 'CFMS'
     },
-    allowSignUp: false,
-    additionalSignUpFields: [{
-        name: "code",
-        placeholder: "CFMS membership authentication code"
-    }]
+    signUpLink: '/new-account.html'
 };

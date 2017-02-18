@@ -15,14 +15,16 @@ class App {
         this.storageRef = this.firebase.storage().ref();
         this.nav = JSON.parse(data.nav);
         this.lang = data.lang;
-        this.router = new Router(this.firebase, this.user, this.uid, data.leadership_award_year);
-        this.auth0 = new Auth0.Authentication({
-            domain: "cfms.auth0.com",
-            clientID: "DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ"
-        });
+        this.debug = (data.env == "development");
+        this.leadership_award_year = data.leadership_award_year;
+        this.router = new Router(this);
+        this.auth0 = {};
+        this.auth0.authentication = new Auth0.Authentication(Config.auth0);
+        this.auth0.webAuth = new Auth0.WebAuth(Config.auth0);
         this.lock = new Auth0Lock('DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ', 'cfms.auth0.com', Config.lock);
-        document.getElementById('login-button').addEventListener('click', this.toggleSignIn, false);
-        this.initApp();
+        document.getElementById('login-button').addEventListener('click', this.toggleSignIn.bind(this), false);
+        this.lock.on("authenticated", this.handleAuthenticatedUser);
+        this.handleNav();
     }
 
     get user() {
@@ -40,9 +42,9 @@ class App {
     toggleSignIn(evt) {
         evt.preventDefault();
         if (!localStorage.getItem('profile')) return window.app.lock.show();
-        window.app.firebase.auth().signOut();
+        this.firebase.auth().signOut();
         localStorage.removeItem('profile');
-        this.user = null;
+        this.auth0.webAuth.logout((this.debug) ? Config.dev_logout : Config.logout);
     } 
 
     handleNav() {
@@ -109,39 +111,40 @@ class App {
         });
     }
 
+    handleAuthenticatedUser(authResult) {
+        this.lock.getProfile(authResult.idToken, (error, profile) => {
+            if (error) throw error; // TODO: handle error
+
+            localStorage.setItem('profile', JSON.stringify(profile));
+            this.handleNav();
+
+            //get a delegation token
+            var options = {
+                id_token: authResult.idToken, // The id_token you have now
+                api: 'firebase', // This defaults to the first active addon if any or you can specify this
+                scope: "openid profile", // default: openid
+                grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+            };
+
+            this.auth0.authentication.delegation(options, function (err, delegationResult) {
+                if (err) return console.log(err);
+                // Exchange the delegate token for a Firebase auth token
+                window.app.firebase.auth().signInWithCustomToken(delegationResult.idToken).catch((error) => {
+                    console.log(error);
+                });
+            });
+        });
+    }
+
     /**
      * initApp handles setting up UI event listeners and registering Firebase auth listeners:
      *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
      *    out, and that is where we update the UI.
      */
     initApp() {
-        console.log("Initializing app...");
         // listen to when the user gets authenticated and then save the profile
-        this.lock.on("authenticated", (authResult) => {
-            this.lock.getProfile(authResult.idToken, (error, profile) => {
-                if (error) throw error;
-
-                localStorage.setItem('profile', JSON.stringify(profile));
-
-                //get a delegation token
-                var options = {
-                    id_token: authResult.idToken, // The id_token you have now
-                    api: 'firebase', // This defaults to the first active addon if any or you can specify this
-                    scope: "openid profile", // default: openid
-                    grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer'
-                };
-
-                this.auth0.delegation(options, function (err, delegationResult) {
-                    if (err) return console.log(err);
-                    // Exchange the delegate token for a Firebase auth token
-                    window.app.firebase.auth().signInWithCustomToken(delegationResult.idToken).catch((error) => {
-                        console.log(error);
-                    });
-                });
-            });
-        });
         // Listening for auth state changes.
-        this.firebase.auth().onAuthStateChanged((user) => {
+        // this.firebase.auth().onAuthStateChanged((user) => {
             // if (accountJustCreated) {
             //     var firstName = document.getElementById('account-first-name').value;
             //     var lastName = document.getElementById('account-last-name').value;
@@ -156,9 +159,7 @@ class App {
             //     })
             //     accountJustCreated = false;
             // }
-
-            this.handleNav();
-        });
+        // });
     }
 };
 

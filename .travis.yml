@@ -12,7 +12,12 @@ install:
   - gem install github-pages -v 120
   - npm install
 script: bash ./deploy.sh
+branches:
+  only:
+  - testing     # only run on the testing branch
 env:
   global:
   - ENCRYPTION_LABEL: "6315171ce8db"
   - COMMIT_AUTHOR_EMAIL: "it@cfms.org"
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+  - JEKYLL_ENV: "production"
