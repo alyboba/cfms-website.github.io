@@ -1,29 +1,31 @@
 import Firebase from 'firebase';
 import * as Config from './config';
 import Router from './router';
-import Vex from 'vex-js';
-import VexDialog from 'vex-dialog';
 import Auth0 from 'auth0-js';
 import Auth0Lock from 'auth0-lock';
+import Utils from './utils';
+import Api from './api';
 
 class App {
     constructor(data) {
-        Vex.registerPlugin(VexDialog);
-        Vex.defaultOptions.className = Config.vex;
-        this.vex = Vex;
+        this.api = new Api();
         this.firebase = Firebase.initializeApp(Config.firebase);
         this.storageRef = this.firebase.storage().ref();
         this.nav = JSON.parse(data.nav);
         this.lang = data.lang;
         this.debug = (data.env == "development");
         this.leadership_award_year = data.leadership_award_year;
-        this.router = new Router(this);
         this.auth0 = {};
         this.auth0.authentication = new Auth0.Authentication(Config.auth0);
         this.auth0.webAuth = new Auth0.WebAuth(Config.auth0);
-        this.lock = new Auth0Lock('DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ', 'cfms.auth0.com', Config.lock);
+        this.utils = new Utils();
         document.getElementById('login-button').addEventListener('click', this.toggleSignIn.bind(this), false);
-        this.lock.on("authenticated", this.handleAuthenticatedUser);
+        // this.lock = new Auth0Lock('DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ', 'cfms.auth0.com', Config.lock);
+        // this.lock.on("authenticated", this.handleAuthenticatedUser.bind(this));
+        // this.lock.on("hash_parsed", (error) => {
+        //     console.log(error);
+        // });
+        this.router = new Router(this);
         this.handleNav();
     }
 
@@ -34,18 +36,37 @@ class App {
     get uid() {
         if (!this.user) return null;
         let provider = this.user.identities.find((val) => {
-            return val.provider == 'auth0';
+            return val.provider === 'auth0' && val.connection === 'cfms-firebase';
         });
         return provider.user_id;
     }
 
+    isAdmin() {
+        if (!this.user || !this.user.roles) return null;
+        return this.user.roles.some((role) => {
+            return role === "admin";
+        });
+    }
+
     toggleSignIn(evt) {
         evt.preventDefault();
-        if (!localStorage.getItem('profile')) return window.app.lock.show();
+        if (!localStorage.getItem('profile')) return this.utils.showSigninModal(this.login.bind(this));
         this.firebase.auth().signOut();
         localStorage.removeItem('profile');
         this.auth0.webAuth.logout((this.debug) ? Config.dev_logout : Config.logout);
-    } 
+    }
+
+    login(email, password) {
+        this.auth0.authentication.login({
+            realm: "cfms-firebase",
+            username: email,
+            password: password
+        }, (err, res) => {
+            if (err) return console.log(err);
+            console.log(res);
+            this.handleAuthenticatedUser(res);
+        });
+    }
 
     handleNav() {
         this.nav.forEach((navigation) => {
@@ -69,13 +90,11 @@ class App {
                 for (var i = 0; i < fileUploaders.length; i++)
                     fileUploaders[i].disabled = false;
                 //Show admin elements if is admin
-                this.firebase.database().ref('/users/' + this.uid).once('value').then(function (snapshot) {
-                    if (snapshot.val().isAdmin === true) {
-                        var adminElements = document.getElementsByClassName('admin-only'), i;
-                        for (var i = 0; i < adminElements.length; i++)
-                            adminElements[i].style.display = 'block';
-                    }
-                });
+                if (this.isAdmin()) {
+                    var adminElements = document.getElementsByClassName('admin-only'), i;
+                    for (var i = 0; i < adminElements.length; i++)
+                        adminElements[i].style.display = 'block';
+                }
                 //File upload support
                 var fileUploaders = document.getElementsByClassName('inputfile'), i;
                 for (var i = 0; i < fileUploaders.length; i++) {
@@ -111,55 +130,34 @@ class App {
         });
     }
 
-    handleAuthenticatedUser(authResult) {
-        this.lock.getProfile(authResult.idToken, (error, profile) => {
-            if (error) throw error; // TODO: handle error
-
-            localStorage.setItem('profile', JSON.stringify(profile));
+    _delegateFirebase() {
+        this.firebase.auth().signInWithCustomToken(this.user.app_metadata.firebase_token).then((user) => {
+            console.log(user);
             this.handleNav();
-
-            //get a delegation token
-            var options = {
-                id_token: authResult.idToken, // The id_token you have now
-                api: 'firebase', // This defaults to the first active addon if any or you can specify this
-                scope: "openid profile", // default: openid
-                grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer'
-            };
-
-            this.auth0.authentication.delegation(options, function (err, delegationResult) {
-                if (err) return console.log(err);
-                // Exchange the delegate token for a Firebase auth token
-                window.app.firebase.auth().signInWithCustomToken(delegationResult.idToken).catch((error) => {
-                    console.log(error);
-                });
-            });
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode === 'auth/invalid-custom-token') {
+                console.log('The token you provided is not valid.');
+            } else {
+                console.error(error);
+            }
         });
     }
 
-    /**
-     * initApp handles setting up UI event listeners and registering Firebase auth listeners:
-     *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
-     *    out, and that is where we update the UI.
-     */
-    initApp() {
-        // listen to when the user gets authenticated and then save the profile
-        // Listening for auth state changes.
-        // this.firebase.auth().onAuthStateChanged((user) => {
-            // if (accountJustCreated) {
-            //     var firstName = document.getElementById('account-first-name').value;
-            //     var lastName = document.getElementById('account-last-name').value;
-            //     var medicalSchool = document.getElementById('account-medical-school').value;
-            //     var graduationYear = document.getElementById('account-graduation-year').value;
-            //     this.firebase.database().ref('users/' + uid).set({
-            //         firstName: firstName,
-            //         lastName: lastName,
-            //         medicalSchool: medicalSchool,
-            //         graduationYear: graduationYear,
-            //         isAdmin: false
-            //     })
-            //     accountJustCreated = false;
-            // }
-        // });
+    handleAuthenticatedUser(authResult) {
+        this.auth0.authentication.userInfo(authResult.accessToken, (err, user) => {
+            if (err) throw err;
+            this.api.getProfile(authResult.accessToken, user.sub, (error, profile) => {
+                if (error) throw error; // TODO: handle error
+                console.log(profile);
+
+                localStorage.setItem('profile', JSON.stringify(profile));
+
+                this._delegateFirebase();
+            });
+        });
     }
 };
 

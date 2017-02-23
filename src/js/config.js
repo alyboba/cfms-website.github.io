@@ -11,9 +11,9 @@ export const vex = 'vex-theme-default';
 export const auth0 = {
     domain: "cfms.auth0.com",
     clientID: "DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ",
-    scope: "openid",
-    audience: "https://cfms.auth0.com/api/v2/",
-    _disableDeprecationWarnings: true
+    responseType: 'token',
+    scope: 'openid',
+    audience: "https://cfms.auth0.com/api/v2/"
 };
 
 export const logout = {
@@ -26,16 +26,24 @@ export const dev_logout = {
     client_id: 'DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ'
 };
 
-export const lock = {
-    auth: {
-        redirectUrl: 'http://localhost:4000/members',
-        responseType: 'token'
-    },
-    theme: {
-        logo: '/images/cfms-logo.svg'
-    },
-    languageDictionary: {
-        title: 'CFMS'
-    },
-    signUpLink: '/new-account.html'
-};
+// export const lock = {
+//     defaultDatabaseConnection: 'cfms-firebase',
+//     auth: {
+//         sso: true,
+//         redirectUrl: "http://localhost:4000/members",
+//         responseType: 'id_token token',
+//         audience: "https://cfms.auth0.com/api/v2/",
+//         realm: 'cfms-firebase',
+//         params: {
+//             realm: 'cfms-firebase',
+//             scope: 'openid'
+//         }
+//     },
+//     theme: {
+//         logo: '/images/cfms-logo.svg'
+//     },
+//     languageDictionary: {
+//         title: 'CFMS'
+//     },
+//     signUpLink: '/new-account.html'
+// };

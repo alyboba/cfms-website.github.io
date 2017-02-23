@@ -1,3 +1,5 @@
+import Utils from '../utils';
+
 /**
  * Handles the sign up button press.
  */
@@ -7,36 +9,29 @@ export default function Registration(ctx, next) {
 }
 
 function _register() {
+    let utils = new Utils();
     var email = document.getElementById('account-email').value;
     var password = document.getElementById('account-password-first').value;
     var passwordAgain = document.getElementById('account-password-second').value;
     var authenticationCode = document.getElementById('account-authentication-code').value;
-    if (password !== passwordAgain) {
-        this.vex.dialog.alert({unsafeMessage: '<h3><strong>Passwords do not Match</strong></h3><p>Please try again.</p>'});
-        return;
-    }
-    if (email.length < 4) {
-        this.vex.dialog.alert({unsafeMessage: '<h3><strong>Enter an Email Address</strong></h3><p>Please enter an email address.</p>'});
-        return;
-    }
-    if (password.length < 7) {
-        this.vex.dialog.alert({unsafeMessage: '<h3><strong>Weak Password</strong></h3><p>Please ensure that your password is at least 7 characters.</p>'})
-        return;
-    }
+    if (password !== passwordAgain) return utils.showAlert("Passwords do not match", "Please try again.");
+    if (email.length < 4) return utils.showAlert("Enter an Email Address", "Please enter an email address.");
+    if (password.length < 7) return utils.showAlert("Weak Password", "Please ensure that your password is at least 7 characters.");
 
     this.auth0.webAuth.signup({
         connection: "cfms-firebase",
         email: email,
         password: password,
         user_metadata: {
-            auth_code: authenticationCode
+            auth_code: authenticationCode,
+            firstName: document.getElementById('account-first-name').value,
+            lastName: document.getElementById('account-last-name').value,
+            medicalSchool: document.getElementById('account-medical-school').value,
+            graduationYear: document.getElementById('account-graduation-year').value
         }
     }, (err) => {
-        console.log(err);
-        if (err) return this.vex.dialog.alert({
-            unsafeMessage: '<h3><strong>Something went wrong</strong></h3><p>' +
-            ((err.description) ? err.description : "Please check your authentication code.") + '</p>'
-        });
+        let desc = err.description || "Please check your authentication code.";
+        utils.showAlert("Something went wrong", desc);
         this.auth0.authentication.login({
             realm: "cfms-firebase",
             username: email,
@@ -46,6 +41,6 @@ function _register() {
             console.log(res);
             this.handleAuthenticatedUser(res);
         })
-        this.vex.dialog.alert({ unsafeMessage: '<h3><strong>Account Successfully Created</strong></h3><p>Your account has successfully been created! You are now logged in. Welcome to the CFMS!</p>' });
+        utils.showAlert("Account Successfully Created", "Your account has successfully been created! Click OK to be logged in and redirected to the members area. Welcome to the CFMS!");
     });
 }
