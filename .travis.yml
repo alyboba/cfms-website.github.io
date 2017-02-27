@@ -14,7 +14,7 @@ install:
 script: bash ./deploy.sh
 branches:
   only:
-  - testing     # only run on the testing branch
+  - staging
 env:
   global:
   - ENCRYPTION_LABEL: "6315171ce8db"
