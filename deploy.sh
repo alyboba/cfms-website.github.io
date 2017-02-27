@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 
-SOURCE_BRANCH="refactor"
-TARGET_BRANCH="testing"
+SOURCE_BRANCH="staging"
+TARGET_BRANCH="master"
 
 function doCompile {
   gulp build
