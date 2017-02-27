@@ -1,0 +1,12 @@
+h2 {
+    cursor: pointer;
+    color: #696;
+    font-weight:bold;
+    background-image:url('http://idratherbewriting.com/wp-content/uploads/2013/03/plus3.jpg');
+    background-repeat:no-repeat;
+    text-indent:23px;
+    background-position:4px 8px;
+}
+.open {
+    background-image:url('http://idratherbewriting.com/wp-content/uploads/2013/03/minusb.jpg');
+}

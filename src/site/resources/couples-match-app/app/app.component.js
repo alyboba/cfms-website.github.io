@@ -238,20 +238,40 @@ var AppComponent = (function () {
         for (var i = 0; i < this.itemsB.length; i++) {
             this.itemsB[i].order = i;
         }
-        for (var i = 0; i < this.itemsB.length; i++) {
-            var bItem = this.itemsB[i];
-            for (var j = 0; j < this.itemsA.length; j++) {
-                var aItem = this.itemsA[j];
-                var newAutoItem = { 'distance': 0, 'order': 0, 'b': 0, 'a': 0, 'p': 'b', 'B': { "order": 1, "location": "", "category": "", "note": "" }, "A": { "order": 1, "location": "", "category": "", "note": "" } };
-                newAutoItem.B = bItem;
-                newAutoItem.A = aItem;
-                newAutoItem.distance = this.GetDistances(bItem.location, aItem.location);
-                var z = i + j + 2;
-                newAutoItem.order = z;
-                newAutoItem.b = i + 1;
-                newAutoItem.a = j + 1;
-                newAutoItem.p = (this.optionWhoLeading == 'A') ? 'a' : 'b';
-                this.autoItems.push(newAutoItem);
+        if (this.optionWhoLeading == 'B') {
+            for (var i = 0; i < this.itemsB.length; i++) {
+                var bItem = this.itemsB[i];
+                for (var j = 0; j < this.itemsA.length; j++) {
+                    var aItem = this.itemsA[j];
+                    var newAutoItem = { 'distance': 0, 'order': 0, 'b': 0, 'a': 0, 'p': 'b', 'B': { "order": 1, "location": "", "category": "", "note": "" }, "A": { "order": 1, "location": "", "category": "", "note": "" } };
+                    newAutoItem.B = bItem;
+                    newAutoItem.A = aItem;
+                    newAutoItem.distance = this.GetDistances(bItem.location, aItem.location);
+                    var z = i + j + 2;
+                    newAutoItem.order = z;
+                    newAutoItem.b = i + 1;
+                    newAutoItem.a = j + 1;
+                    newAutoItem.p = (this.optionWhoLeading == 'A') ? 'a' : 'b';
+                    this.autoItems.push(newAutoItem);
+                }
+            }
+        }
+        else {
+            for (var i = 0; i < this.itemsA.length; i++) {
+                var aItem = this.itemsA[i];
+                for (var j = 0; j < this.itemsB.length; j++) {
+                    var bItem = this.itemsB[j];
+                    var newAutoItem = { 'distance': 0, 'order': 0, 'b': 0, 'a': 0, 'p': 'b', 'B': { "order": 1, "location": "", "category": "", "note": "" }, "A": { "order": 1, "location": "", "category": "", "note": "" } };
+                    newAutoItem.A = aItem;
+                    newAutoItem.B = bItem;
+                    newAutoItem.distance = this.GetDistances(aItem.location, bItem.location);
+                    var z = i + j + 2;
+                    newAutoItem.order = z;
+                    newAutoItem.a = i + 1;
+                    newAutoItem.b = j + 1;
+                    newAutoItem.p = (this.optionWhoLeading == 'A') ? 'a' : 'b';
+                    this.autoItems.push(newAutoItem);
+                }
             }
         }
         console.log(this.optionWhoLeading);
@@ -275,20 +295,20 @@ var AppComponent = (function () {
         if (itemA.order > itemB.order)
             return 1;
         if (itemA.order == itemB.order) {
-            var minA = Math.min(itemA.h, itemA.k);
-            var minB = Math.min(itemB.h, itemB.k);
+            var minA = Math.min(itemA.a, itemA.b);
+            var minB = Math.min(itemB.a, itemB.b);
+            if (itemA.p == 'b') {
+                minA = itemA.b;
+                minB = itemB.b;
+            }
+            else {
+                minA = itemA.a;
+                minB = itemB.a;
+            }
             if (minA < minB)
                 return -1;
-            else if (minA > minB)
+            else
                 return 1;
-            else {
-                console.log(itemA.p + " itemA.k = " + itemA.k + " itemA.h = " + itemA.h);
-                if (itemA.p == 'b' && itemA.b < itemA.a)
-                    return -1;
-                else
-                    return 1;
-            }
-            ;
         }
     };
     AppComponent.prototype.GetDistances = function (locA, locB) {

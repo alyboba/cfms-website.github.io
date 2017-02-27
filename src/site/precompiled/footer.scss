@@ -1,0 +1,161 @@
+---
+---
+
+@import 'variables';
+
+/* #Footer
+––––––––––––––––––––––––––––––––––––––––*/
+
+#footer{
+	margin-top:0px;
+	padding-top:40px;
+	padding-bottom:30px;
+	padding-left:$padding;
+	background-color:$dark;
+	font-family:$sans-serif-font-stack;
+	color:#DDD;
+	font-size:16px;
+	display:flex;
+
+	.column {
+		width:$column-width;
+		max-width:$column-width;
+	}
+	b {color:white}
+	h1{
+		font-size:24px;
+		font-weight:bold;
+		color:white;
+		padding-bottom:15px;
+	}
+	li{
+		list-style:none;
+		margin-left:35px;
+		padding-right:40px;
+		line-height:1.5em;
+		padding-bottom:10px;
+	}
+	a {
+		border-bottom:none;
+		color:$primary-color-bright;
+	}
+	.icon{
+		float:left;
+		color:white;
+		font-size:22px;
+		.mail {font-size:20px;}
+	}
+	#social-media {display:inline-block;}
+	.social-icon {
+		color:#999;
+		font-size:24px;
+		padding-left:5px;
+	}
+	#emails li {
+		padding-bottom:5px;
+	}
+	$twitter-handle-padding:8px;
+	#latest-tweets {
+		margin-top:-$twitter-handle-padding;
+		ul {
+			margin-left:35px;
+			padding-bottom:0;
+		}
+		li {
+			margin-left:0;
+			margin-bottom:0;
+			padding-bottom:0;
+		}
+		p {line-height:1.5em;}
+		.timePosted {
+			color:$neutral;
+			font-size:14px;
+			padding-bottom:8px;
+		}
+		.timePosted:before{
+			border-radius: 1px;
+			height: 1px;
+			width: 25px;
+			background: rgba(255, 255, 255, 0.15);
+			display: block;
+			content: '';
+			margin-bottom:8px;
+		}
+	}
+	#twitter-title, #twitter-handle {
+		display:inline-block;
+	}
+	#twitter-title {
+		padding-bottom:$twitter-handle-padding;
+	}
+	#twitter-handle {
+		display:inline-block;
+		padding-right:20px;
+	}
+	#twitter-handle a {
+		font-size:16px;
+		margin-left:0px;
+		vertical-align: top;
+		opacity:0.3;
+		border:2px solid $neutral;
+		padding:6px 8px 4px 8px;
+		border-radius:4px;
+		color:white;
+	}
+	#twitter-handle a:hover {
+		opacity:0.6;
+	}
+	#twitter-handle a, #twitter-handle a:hover {
+		transition: all 0.2s linear;
+	}
+}
+
+@media only screen and (max-width: 1199px){
+	#footer{
+		padding-left:$padding-large-tablet;
+		padding-right:$padding-large-tablet;
+	}
+}
+
+/* iPad portrait browsing*/
+@media only screen and (min-width:768px) and (max-width: 959px) {
+	#footer .column {width:100%; padding-top:10px;}
+	#footer {
+		flex-wrap:wrap;
+		padding-left:$padding-tablet;
+		padding-right:$padding-tablet;
+	}
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+	#footer .column {
+		width:100%;
+		padding-top:10px;
+		padding-right:0px;
+	}
+	#footer {
+		flex-wrap:wrap;
+		padding-left:$padding-mobile-landscape;
+		padding-right:$padding-mobile-landscape;
+		padding-top:20px;
+		font-size:14px;
+		#latest-tweets .timePosted {font-size:13px;}
+		#twitter-handle a {font-size:14px;}
+		li {padding-right:0px;}
+	}
+	#footer h1 {
+		font-size:20px;
+	}
+	.icon {
+		font-size:20px;
+	}
+}
+
+/* Mobile Portrait */
+@media only screen and (max-width: 480px) {
+	#footer {
+		padding-left:$padding-mobile-portrait;
+		padding-right:$padding-mobile-portrait;
+	}
+}
