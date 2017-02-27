@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/stylesheets/vex.css" />
+	<link rel="stylesheet" href="/stylesheets/vex-theme-default.css" />
+	<style>
+		i {
+			color: #34b989;
+		}
+	</style>
+</head>
+<body>
+	<div style="display:block">
+        <i class="fa fa-check-circle-o fa-5x" aria-hidden="true"></i>
+		<div id="description"></div>
+    </div>
+</body>
+<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript">
+	var nav = `[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":"","who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","login":"Se connecter","logout":"Se déconnecter"}]`;
+	var lang = `en`;
+	new App({ 
+		nav: nav,
+		lang: lang
+	});
+</script>

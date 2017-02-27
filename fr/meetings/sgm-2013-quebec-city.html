@@ -1,21 +1,426 @@
----
-title: "2013 CFMS Spring General Meeting"
----
-
-
 <!DOCTYPE html>
 
 
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
-	{% include head.html %}
+	<!--Metadata-->
+<meta charset="utf-8">
+<title>Canadian Federation of Medical Students</title>
+<meta name="description" content="Canadian Federation of Medical Students">
+<meta name="keywords" content="CFMS, Medicine, Canada, Advocacy, Medical School, Association">
+<meta name="author" content="Kevan Lu">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+<!--Stylesheets-->
+<link rel="stylesheet" href="/stylesheets/base.css">
+<link rel="stylesheet" href="/stylesheets/header.css">
+<link rel="stylesheet" href="/stylesheets/footer.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!--Firebase Code-->
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCRaJStQDuZ0nrn0b59kzYphlAkJ62flo8",
+    authDomain: "amber-heat-9132.firebaseapp.com",
+    databaseURL: "https://amber-heat-9132.firebaseio.com",
+    storageBucket: "amber-heat-9132.appspot.com",
+    messagingSenderId: "466232039218"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript">
+  var storageRef = firebase.storage().ref();
+var accountJustCreated = false;
+
+function isSignedIn () {
+	return (firebase.auth().currentUser);
+}
+
+// function sendPasswordReset() {
+// 	var email = document.getElementById('reset-email-address').value;
+// 	firebase.auth().sendPasswordResetEmail(email).then(function() {
+// 		// Password Reset Email Sent!
+// 		vex.dialog.alert('<h3><strong>Password Reset Email Sent</strong></h3><p>Your Password Reset Email has been sent. Please check your inbox.</p>')
+// 	}).catch(function(error) {
+// 		// Handle Errors here.
+// 		var errorCode = error.code;
+// 		var errorMessage = error.message;
+
+// 		if (errorCode == 'auth/invalid-email')
+// 			vex.dialog.alert('<h3><strong>Invalid Email</strong></h3><p>The email address that you entered is invalid.</p>')
+// 		else if (errorCode == 'auth/user-not-found')
+// 			vex.dialog.alert('<h3><strong>User Not Found</strong></h3><p>The email address that you entered does not match a user on our system.</p>')
+// 	});
+// }
+
+/** 
+* Deletes files with a given path
+*/
+function deleteFile (filePath){
+	storageRef.child(filePath).delete().then(function() {
+		//File deleted successfully
+	}).catch(function(error){
+		console.log("DELETE " + error);
+		return error;
+	});
+}
+
+/** 
+* Sets the file link from the target id to the correct url
+*/
+function setFileLink (id, url){
+	document.getElementById(id+'-link').innerHTML = '<a href="' +  url + '" target="_blank">View File</a>';
+}
+
+function loadPrevFile (refPath, id, fileName){
+	//Set the button to show the file name
+	input = document.getElementById (id);
+	label = input.nextElementSibling;
+	label.querySelector( 'span' ).innerHTML = fileName;
+
+	//Set the URL to display by the button
+	storageRef.child(refPath + '/' + id + '/' + fileName).getDownloadURL().then(function(url) {
+		setFileLink (id, url);
+	}).catch(function(error) {
+	  // File doesn't exist
+	});
+}
+
+/**
+* Updates files uploaded for the Leadership Awards
+*/
+function handleFileSelect(evt) {
+	evt.stopPropagation();
+	evt.preventDefault();
+	var file = evt.target.files[0];
+	var metadata = {
+		'contentType': file.type
+	};
+
+	//Deletes the previous version of file, if it exists
+	//--------------------------------------------
+	var refPath = 'leadership-award/' + '2016-2017/' + firebase.auth().currentUser.uid;
+	firebase.database().ref(refPath).once('value').then(function(snapshot) {
+		var deletePath = refPath + '/' + evt.target.id + '/';
+		switch(evt.target.id) {
+		    case 'personal-statement':
+		    	if (snapshot.child('personalStatement').exists())
+			    	deleteFile (deletePath + snapshot.val().personalStatement);
+		    	break;
+		    case 'curriculum-vitae':
+		    	if (snapshot.child('curriculumVitae').exists())
+			    	deleteFile (deletePath + snapshot.val().curriculumVitae);
+		    	break;
+		    case 'letter-good-standing':
+		    	if (snapshot.child('letterGoodStanding').exists())
+			    	deleteFile (deletePath + snapshot.val().letterGoodStanding);
+		    	break;
+		    case 'reference-1':
+		    	if (snapshot.child('reference1').exists())
+			    	deleteFile (deletePath + snapshot.val().reference1);
+		    	break;
+		    case 'reference-2':
+		    	if (snapshot.child('reference2').exists())
+			    	deleteFile (deletePath + snapshot.val().reference2);
+			    break;
+		}
+
+	//Add the new version of the file
+	//--------------------------------------------
+	}).then (function() {
+		// Push to child path.
+		// [START oncomplete]
+		refPath = 'leadership-award/' + '2016-2017/' + firebase.auth().currentUser.uid + '/' + evt.target.id;
+		storageRef.child(refPath + '/' + file.name).put(file, metadata).then(function(snapshot) {
+			var url = snapshot.metadata.downloadURLs[0];
+			setFileLink (evt.target.id, url);
+		}).catch(function(error) {
+			// [START onfailure]
+			vex.dialog.alert('<h3><strong>Upload failed</strong></h3><p>' + error + '</p>');
+			// [END onfailure]
+		});
+		// [END oncomplete]
+
+	//Copies filenames of uploaded files onto database
+	//--------------------------------------------
+	}).then (function(){
+		refPath = 'leadership-award/' + '2016-2017/' + firebase.auth().currentUser.uid;
+		switch(evt.target.id) {
+		    case 'personal-statement':
+				firebase.database().ref(refPath).update({
+					personalStatement:file.name
+				})
+				break;
+		    case 'curriculum-vitae':
+		    	firebase.database().ref(refPath).update({
+			    	curriculumVitae:file.name
+			    })
+		        break;
+		    case 'letter-good-standing':
+		    	firebase.database().ref(refPath).update({
+			    	letterGoodStanding:file.name
+			    })
+		    	break;
+		    case 'reference-1':
+		    	firebase.database().ref(refPath).update({
+			    	reference1:file.name
+			    })
+		    	break;
+		    case 'reference-2':
+		    	firebase.database().ref(refPath).update({
+			    	reference2:file.name
+			    })
+			    break;
+		}
+	});
+}
+
+function isInt (cmaMembershipID){
+	for (var i = 0; i < cmaMembershipID.length; i++){
+		var currentChar = cmaMembershipID.charAt(i);
+		if (currentChar < '0' || currentChar > '9')
+			return false;
+	}
+	return true;
+}
+
+function getTimeEST(){
+    //EST
+    offset = -5.0;
+    clientDate = new Date();
+    utc = clientDate.getTime() + (clientDate.getTimezoneOffset() * 60000);
+    serverDate = new Date(utc + (3600000*offset));
+    return (serverDate.toLocaleString());
+}
+
+/**
+ * Displays the submitted application for the currentUser
+ */
+function loadSubmission (){
+
+	//Loads user-associated data
+	var refPath = '/users/' + firebase.auth().currentUser.uid;
+	firebase.database().ref(refPath).once('value').then(function(snapshot) {
+		var firstName = snapshot.val().firstName;
+		var lastName = snapshot.val().lastName;
+		document.getElementById('submitted-name').textContent = firstName + ' ' + lastName;
+		document.getElementById('submitted-school').textContent = snapshot.val().medicalSchool;
+		document.getElementById('submitted-grad-year').textContent = snapshot.val().graduationYear;
+	});
+
+	//Loads other submitted data
+	refPath = 'leadership-award/' + '2016-2017/' + firebase.auth().currentUser.uid;
+	firebase.database().ref(refPath).once('value').then(function(snapshot) {
+		if (!snapshot.child('submitted').exists())
+			return;
+		document.getElementById('submitted-email').textContent = snapshot.val().emailAddress;
+		document.getElementById('submitted-cma-id').textContent = snapshot.val().cmaMembershipID;
+		var twitterHandle = snapshot.val().twitterHandle;
+		if (twitterHandle === '')
+			document.getElementById('submitted-twitter-handle').textContent = 'Not given';
+		else
+			document.getElementById('submitted-twitter-handle').innerHTML = '<a href="https://twitter.com/' + twitterHandle.substring(1) + '" target="_blank">' + twitterHandle + '</a>';
+		document.getElementById('submitted-attending-sgm').textContent = snapshot.val().meetingAttendance;
+		document.getElementById('submitted-date-time').textContent = snapshot.val().dateSubmitted;
+
+		//Loads submitted files
+		storageRef.child(refPath + '/personal-statement/' + snapshot.val().personalStatement).getDownloadURL().then(function(url) {
+			document.getElementById('submitted-personal-statement').href = url;
+		}).catch(function(error) {
+		  // File doesn't exist
+		});
+		storageRef.child(refPath + '/curriculum-vitae/' + snapshot.val().curriculumVitae).getDownloadURL().then(function(url) {
+			document.getElementById('submitted-curriculum-vitae').href = url;
+		}).catch(function(error) {
+		  // File doesn't exist
+		});
+		storageRef.child(refPath + '/letter-good-standing/' + snapshot.val().letterGoodStanding).getDownloadURL().then(function(url) {
+			document.getElementById('submitted-letter-good-standing').href = url;
+		}).catch(function(error) {
+		  // File doesn't exist
+		});
+		storageRef.child(refPath + '/reference-1/' + snapshot.val().reference1).getDownloadURL().then(function(url) {
+			document.getElementById('submitted-reference-1').href = url;
+		}).catch(function(error) {
+		  // File doesn't exist
+		});
+		storageRef.child(refPath + '/reference-2/' + snapshot.val().reference2).getDownloadURL().then(function(url) {
+			document.getElementById('submitted-reference-2').href = url;
+		}).catch(function(error) {
+		  // File doesn't exist
+		});
+	});
+
+	//Hides the submission form and displays the application
+	var beforeSubmissionElements = document.getElementsByClassName('before-submission'), i;
+	for (var i = 0; i < beforeSubmissionElements.length; i ++)
+		beforeSubmissionElements[i].style.display = 'none';
+	var afterSubmissionElements = document.getElementsByClassName('after-submission'), i;
+	for (var i = 0; i < afterSubmissionElements.length; i ++)
+		afterSubmissionElements[i].style.display = 'block';
+}
+
+/**
+ * Handles the submit application button press
+ */
+function submitApplication() {
+	//Email Verification
+	var emailAddress = document.getElementById('email-address').value;
+	if (emailAddress.length < 4) {
+    	vex.dialog.alert('<h3><strong>Enter an Email Address</strong></h3><p>Please enter an email address.</p>');
+        return;
+    }
+
+	//CMA Membership verification
+	var cmaMembershipID = document.getElementById('cma-membership').value;
+	if (cmaMembershipID.length !== 6 || !isInt(cmaMembershipID)){
+		vex.dialog.alert('<h3><strong>Invalid CMA Membership ID</strong></h3><p>Your CMA Membership ID should be a 6 digit number.</p>');
+		return;
+	}
+
+	//Ensures that every necessary file is present
+	var refPath = 'leadership-award/' + '2016-2017/' + firebase.auth().currentUser.uid;
+	firebase.database().ref(refPath).once('value').then(function(snapshot) {
+    	if (!snapshot.child('personalStatement').exists()
+			|| !snapshot.child('curriculumVitae').exists()
+			|| !snapshot.child('letterGoodStanding').exists()
+			|| !snapshot.child('reference1').exists()
+    		|| !snapshot.child('reference2').exists()){
+			vex.dialog.alert('<h3><strong>Missing Supporting Document</strong></h3><p>You are missing a supporting document.</p>');
+			return;
+	    }
+
+	    //Twitter Handle sanitization
+		var twitterHandle = document.getElementById('twitter-handle').value;
+		if (twitterHandle.charAt(0) !== '@')
+			twitterHandle = '@' + twitterHandle;
+		if (twitterHandle.length === 1 && twitterHandle.charAt(0) === '@')
+			twitterHandle = '';		
+
+		//Meeting Attendance conversion to yes/no.
+		var meetingAttendance = document.getElementById('attend-cfms-meeting').value;
+		if (meetingAttendance.charAt(0) === 'Y')
+			meetingAttendance = "Yes";
+		else
+			meetingAttendance = "No";
+
+		//Saves the submission data into the database
+		firebase.database().ref(refPath).update({
+			submitted:true,
+			name:document.getElementById('account-name').textContent,
+			medicalSchool:document.getElementById('account-school').textContent,
+			graduationYear:document.getElementById('account-grad-year').textContent,
+			emailAddress:emailAddress,
+			cmaMembershipID:cmaMembershipID,
+			twitterHandle:twitterHandle,
+			meetingAttendance:meetingAttendance,
+			dateSubmitted:getTimeEST(),
+			linkPersonalStatement:document.getElementById('personal-statement-link').childNodes[0].href,
+			linkCurriculumVitae:document.getElementById('curriculum-vitae-link').childNodes[0].href,
+			linkLetterGoodStanding:document.getElementById('letter-good-standing-link').childNodes[0].href,
+			linkReference1:document.getElementById('reference-1-link').childNodes[0].href,
+			linkReference2:document.getElementById('reference-2-link').childNodes[0].href,
+		});
+
+		//Displays success dialog
+		vex.dialog.alert('<h3><strong>Application Submitted</strong></h3><p>Congratulations! You have successfully submitted your application.</p>');
+
+		//Loads the submission fields
+		loadSubmission ();
+	});
+}
+</script>
+
+<!--Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77140171-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script src="/js/js.cookie.js"></script>
+
+<!--Scroll Reveal-->
+<script src="/js/scrollreveal.min.js"></script>
+<script>
+      window.sr = ScrollReveal();
+</script> 
+<style>
+    /* Ensure elements load hidden before ScrollReveal runs */
+    .animate { visibility: hidden; }
+</style> 
 
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="/stylesheets/meetings.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-	{% include nav.html %}
+	
+	
+
+	
+		<div id="top-padding"></div>
+		<div id="top-bar" class="invert fr">
+			<div id="top-icon" class="animate">
+				<div id="logo-group" class="fr">
+					<img id="logo-invert" src="/images/cfms-logo-invert.svg">
+					<img id="logo" src="/images/cfms-logo.svg">
+					<a href="/fr/">FEMC</a>
+				</div>
+				<span id="logo-desc"><a class="fr" href="/fr/">Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada</a></span>
+			</div>
+			<div id="top-hamburger" class="animate">
+				<a onclick="return false;" id="hamburger-toggle" href=""><span></span></a>
+			</div>
+			<div id="top-nav" class="animate">
+				<ul class="fr">
+					<li id="who-we-are"><a class="top-level" href="/fr/who-we-are/">Qui sommes-nous?</a></li>
+					<li id="what-we-do"><a class="top-level" href="/fr/what-we-do/">Que faisons-nous?</a>
+						<div id="sub-menu">
+						    <ul>
+						    	<li><a href="/fr/what-we-do/advocacy/">Représentation</a></li>
+						    	<li><a href="/fr/what-we-do/education/">Éducation</a></li>
+						    	<li><a href="/fr/what-we-do/global-health/">Santé mondiale</a></li>
+						    	<li><a href="/fr/what-we-do/student-affairs/">Affaires étudiantes</a></li>
+						    </ul>
+						</div>
+					</li>
+					<li id="resources"><a class="top-level" href="/fr/resources/">Ressources</a></li>
+					<li id="meetings"><a class="top-level" href="/fr/meetings/">Réunions</a>
+						<div id="sub-menu">
+						    <ul>
+						        <li><a href="/fr/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>
+						        <li><a href="/fr/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>
+ 						    	<li><a href="/fr/meetings/sgm-2016-montreal.html">SGM 2016 &ndash; Montreal, QC</a></li>
+						    </ul>
+						</div>
+					</li>
+					<li id="members"><a class="top-level" href="/fr/members/">Membres</a></li>
+					<li id="news"><a class="top-level" href="/fr/news/">Nouvelles</a></li>
+					
+						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Se connecter</a></li>
+					
+					
+						<li id="lang-toggle"><a id="en" href="/">EN</a> / <a id="fr" class="current-lang" href="/fr/">FR</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	
+
 	
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
@@ -25,7 +430,7 @@ title: "2013 CFMS Spring General Meeting"
 	<div id="top-meeting" style="background: url(../images/meeting-images/quebec-city.jpg) no-repeat center center; background-size:cover">
 		<div id="top-group">
 			<div class="content">
-				<div id="top-meeting-name">{{ page.title }}</div>
+				<div id="top-meeting-name">2013 CFMS Spring General Meeting</div>
 				<div id="top-meeting-info">Quebec City, Quebec / April 19&ndash;21, 2013</div>
 			</div>
 		</div>
@@ -33,6 +438,191 @@ title: "2013 CFMS Spring General Meeting"
 	<div class="content">
 
 	</div>
-	{% include footer.html %}
+	<script type="text/javascript">
+	function getEmail(username){
+		var hostname = "cfms.org";
+		var linktext = username + "@" + hostname;
+		document.write("<a class='email' href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+	}
+</script>
+<div id="footer">
+	<div class="column">
+		<h1>
+			<div id="twitter-title">
+				
+					Derniers tweets
+				
+				<span style="opacity:0.3">:</span></div>
+			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
+		</h1>
+		<div class="icon"><i class="fa fa-twitter"></i></div>
+		<div id="latest-tweets">
+		</div>
+	</div>
+
+	
+		
+	
+		
+			<div class="column">
+				<h1>Pour nous joindre <span style="opacity:0.3">:</span></h1>
+				<div class="icon"><i class="fa fa-map-marker"></i></div>
+				<li>
+					Fédération des étudiants et des étudiantes en médecine du Canada<br>
+					267 O'Connor Street, Suite 401<br>
+					Ottawa, ON K2P 1V3
+				</li>
+				<div class="icon"><i class="fa fa-phone"></i></div>
+				<li>
+					<b>Téléphone</b>: 613&ndash;565&ndash;7740<br>
+					<b>Télécopieur</b>: 613&ndash;565&ndash;7742
+				</li>
+				<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
+				<div id="emails">
+					<li><b>Questions diverses</b>: Rosemary Conliffe<br>
+					    <script>getEmail("office")</script>
+					</li>
+					<li><b>Médias</b>: Emily Hodgson<br>
+						<script>getEmail("vpcommunications")</script>
+					</li>
+					<li><b>Technologies de l'information</b>: Kevan Lu<br>
+						<script>getEmail("it")</script>
+					</li>
+				</div>
+			</div>
+		
+	
+	
+		
+	
+		
+			<div class="column">
+				<h1>
+					Trouvez nous sur <span style="opacity:0.3">:</span>
+					<div id="social-media">
+						<a class="social-icon" href="https://www.facebook.com/CFMSFEMC"><i class="fa fa-facebook"></i></a>
+						/
+						<a class="social-icon" href="https://twitter.com/cfmsfemc"><i class="fa fa-twitter"></i></a>
+						/
+						<a class="social-icon" href="https://www.linkedin.com/company/canadian-federation-of-medical-students-cfms-"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</h1>
+				<div class="icon"><i class="fa fa-sitemap"></i></div>
+				<li>
+					
+						<b>Plan du site:</b> <a href="/fr/sitemap.html">cfms.org/sitemap.html</a>
+					
+				</li>
+				<div class="icon"><i class="fa fa-copyright"></i></div>
+				<li>
+					<script>document.write((new Date()).getFullYear())</script>
+					FEMC. Tous droits réservés.<br>Développé par <a href="http://www.kevan.lu">Kevan Lu</a>
+				</li>		
+			</div>
+		
+	
+</div>
+<script src="/js/twitterFetcher_min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	window.sr = ScrollReveal();
+	sr.reveal('.animate', { duration: 500, distance: '5px', scale: 1 } );
+
+	document.querySelector( "#hamburger-toggle" ).addEventListener( "click", function() {
+		this.classList.toggle( "active" );
+		document.querySelector("#top-nav").classList.toggle("active");
+		sr.reveal('#top-nav', {distance: '0px'});
+	});
+
+	//Gets latest tweets
+	var tweetConfig = {
+	  "id": '616581601191833602',
+	  "domId": 'latest-tweets',
+	  "maxTweets": 3,
+	  "enableLinks": true,
+	  "showPermalinks": false,
+	  "showUser": false,
+	  "showInteraction": false,
+	  "dateFunction": dateFormatter
+	};
+
+	//Formats the tweet dates
+	function dateFormatter(date) {
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var hour = date.getHours();
+
+		//0:00 = 12 AM
+		if (hour == 0)
+			var time = "12:" + date.getMinutes();
+		else 
+			time = (hour%12) + ":" + date.getMinutes();
+		if (hour > 0 && hour < 12)
+			time += " AM";
+		else 
+			time += " PM";
+
+		var month = months[date.getMonth()];
+		var day = date.getDate();
+		var year = date.getFullYear();
+		return time + " &ndash; " + month + " " + day + ", " + year;
+	}
+	twitterFetcher.fetch(tweetConfig);
+</script>
+
+<script src="/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if($(window).width() >= 960){
+	    $('#scroll').scrollToFixed({ 
+	    	minWidth: 960,
+	    	marginTop: 20, 
+	    	limit: function() {
+		        var limit = $('#footer').offset().top - $('#scroll').height() - 40;
+		        return limit;
+		    }
+	    });
+	}
+});
+</script>
+
+<!-- Cookies for language support -->
+<script type="text/javascript">
+    $('#en').click( function() { 	    	
+		Cookies.set('lang', 'en', { expires: 7 });
+		console.log (Cookies.get());
+	} );
+    $('#fr').click( function() { 	    	
+		Cookies.set('lang', 'fr', { expires: 7 });
+		console.log (Cookies.get());
+	} );
+</script>
+
+<!-- Modal Dialogs -->
+<script src="/js/vex.combined.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-default';</script>
+<link rel="stylesheet" href="/stylesheets/vex.css" />
+<link rel="stylesheet" href="/stylesheets/vex-theme-default.css" />
+<script>
+$('.redirect-modal').click(function(){
+    vex.dialog.confirm({
+        message: '<h3><strong>Oh no!</strong></h3><p>Unfortunately, this feature or resource is not yet available on the new CFMS website. To access it, please visit the old CFMS website.</p>',
+        buttons: [
+                $.extend({}, vex.dialog.buttons.YES, { text: 'Go to old website' }),
+                $.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })
+            ],
+        callback: function(value) {
+            if (value) {window.location.href = "http://www.old.cfms.org";}
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+	window.config = {
+		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":"","who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","login":"Se connecter","logout":"Se déconnecter"}]`),
+		lang: `fr`,
+		leadership_award_year: `2016-2017`,
+		env: `production`
+	}
+</script>
+<script type="text/javascript" src="/js/bundle.js"></script>
 </body>
 </html>
