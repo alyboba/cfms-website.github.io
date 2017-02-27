@@ -5,7 +5,6 @@ about_cfms_fr: "La Fédération des étudiants et des étudiantes en médecine d
 #Firebase URL
 firebase_url: "https://amber-heat-9132.firebaseio.com/"
 enable_login: true
-authentication_code: "CFMSwebsite14"
 
 #MD Financial Management Leadership Award Years (Determines where in the database the files are stored)
 enable_leadership_awards: false

@@ -175,16 +175,12 @@ $('.redirect-modal').click(function(){
     });
 });
 </script>
-<script type="text/javascript" src="/js/bundle.js"></script>
 <script type="text/javascript">
-	var nav = `{{ site.data.translations.nav | jsonify }}`;
-	var lang = `{{ page.lang }}`;
-	var year = `{{ site.leadership_award_years }}`;
-	var env = `{{ jekyll.environment }}`;
-	window.app = new App({ 
-		nav: nav,
-		lang: lang,
-		leadership_award_year: year,
-		env: env
-	});
+	window.config = {
+		nav: JSON.parse(`{{ site.data.translations.nav | jsonify }}`),
+		lang: `{{ page.lang }}`,
+		leadership_award_year: `{{ site.leadership_award_years }}`,
+		env: `{{ jekyll.environment }}`
+	}
 </script>
+<script type="text/javascript" src="/js/bundle.js"></script>

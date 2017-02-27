@@ -1,7 +1,7 @@
 import request from 'request-promise';
 
-export default class Api {
-    getProfile(accessToken, uid, cb) {
+export default class ApiProvider {
+    static getUserProfile(accessToken, uid, cb) {
         var options = {
             uri: `https://cfms.us.webtask.io/api/users/${uid}`,
             headers: {
@@ -11,11 +11,17 @@ export default class Api {
         };
 
         request(options)
-            .then(function (data) {
-                cb(null, data.user);
+            .then((data) => {
+                localStorage.setItem('profile', JSON.stringify(data.user));
+
+                cb(null, data.user.app_metadata.firebase_token);
             })
             .catch(function (err) {
-                // API call failed...
+                cb(err);
             });
+    }
+
+    static logout() {
+        localStorage.removeItem('profile');
     }
 }
