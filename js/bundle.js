@@ -97262,6 +97262,7 @@ var PaymentsController = function () {
         value: function checkRegistration() {
             var _this2 = this;
 
+            if (!this.auth.user) return;
             this.service.checkRegistration(this.auth.user.uid, this.eventId, function (registered) {
                 if (registered) _this2.handleRegisteredUser();
             });
