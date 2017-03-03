@@ -37,6 +37,7 @@ export default class PaymentsController {
     }
 
     checkRegistration() {
+        if (!this.auth.user) return;
         this.service.checkRegistration(this.auth.user.uid, this.eventId, (registered) => {
             if (registered) this.handleRegisteredUser();
         });
