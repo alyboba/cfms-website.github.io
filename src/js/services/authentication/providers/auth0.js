@@ -15,6 +15,7 @@ export default class Auth0Provider {
             password: password
         }, (err, authResult) => {
             if (err) return cb(err);
+            localStorage.setItem('accessToken', authResult.accessToken);
             this.auth0.authentication.userInfo(authResult.accessToken, (err, user) => {
                 if (err) return cb(err);
                 cb(null, authResult.accessToken, user.sub);

@@ -42,6 +42,11 @@ export default class AuthenticationService {
         return (user) ? new UserModel(user) : null;
     }
 
+    get accessToken() {
+        let accessToken = localStorage.getItem('accessToken');
+        return (accessToken) ? accessToken : null;
+    }
+
     dispatchUser() {
         window.dispatchEvent(new CustomEvent('user_updated', { detail: this.user }));
     }
