@@ -1,4 +1,4 @@
-# cfms-website.github.io
+# cfms-website.github.io [![Build Status](https://travis-ci.org/cfms-website/cfms-website.github.io.svg?branch=staging)](https://travis-ci.org/cfms-website/cfms-website.github.io)
 Website for the Canadian Federation of Medical Students (CFMS)
 
 ##Changelog
