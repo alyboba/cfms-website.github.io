@@ -1,7 +1,7 @@
 ---
 title: New Student-Run Clinic Toolkit
 date: 2017-03-04 12:00:00
-description: 'Apply to work with the CMA as their Medical Student Intern for Summer 2017! Work with elected physician leaders to address the most pressing issues facing the profession.'
+description: "The CFMS and Ontario Medical Students Association (OMSA) are excited to announce an update to the Student-Run Clinic (SRC) toolkit. In collaboration with the College of Physicians and Surgeons of Ontario (CPSO), we have added a section on regulatory and legal frameworks for SRC's."
 ---
 
 
