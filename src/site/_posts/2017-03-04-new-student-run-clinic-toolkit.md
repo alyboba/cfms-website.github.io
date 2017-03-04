@@ -1,7 +1,7 @@
 ---
 title: New Student-Run Clinic Toolkit
 date: 2017-03-04 12:00:00
-description: "The CFMS and Ontario Medical Students Association (OMSA) are excited to announce an update to the Student-Run Clinic (SRC) toolkit. In collaboration with the College of Physicians and Surgeons of Ontario (CPSO), we have added a section on regulatory and legal frameworks for SRC's."
+description: The CFMS and Ontario Medical Students Association (OMSA) are excited to announce an update to the Student-Run Clinic (SRC) toolkit.
 ---
 
 
