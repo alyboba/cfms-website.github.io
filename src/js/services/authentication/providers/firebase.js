@@ -8,7 +8,6 @@ export default class FirebaseProvider extends FirebaseConnection {
 
     authenticate(token, cb) {
         this.firebase.auth().signInWithCustomToken(token).then((user) => {
-            console.log(user);
             cb(null);
         }).catch(function (error) {
             // Handle Errors here.

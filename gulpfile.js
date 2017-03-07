@@ -49,7 +49,7 @@ gulp.task('serve', () => {
     server: {
       baseDir: servePath
     },
-    reloadDebounce: 2000
+    // reloadDebounce: 2000
   });
 
   watch(sassPath + '/*.scss')
@@ -77,21 +77,6 @@ gulp.task('buildSass', function () {
         .pipe(minifyCss({ compatibility: 'ie8' }))
         .pipe(gulp.dest(servePath + '/stylesheets'));
 });
-
-// gulp.task('buildVendor', function() {
-//     return gulp.src('./_css/vendor/*.css')
-//         .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
-//         .pipe(minifyCss({ compatibility: 'ie8' }))
-//         .pipe(gulp.dest('./stylesheets'));
-// });
-
-// gulp.task('css', function () {
-//     return gulp.src('./_css/compiled/*.css')
-//         .pipe(postcss([autoprefixer({ browsers: ['last 2 version'] })]))
-//         .pipe(gulp.dest('./stylesheets/'))
-//         .pipe(minifyCss({ compatibility: 'ie8' }))
-//         .pipe(gulp.dest('./stylesheets/'));
-// });
 
 gulp.task('default', ['buildSass', 'js', 'jekyll', 'serve']);
 gulp.task('build', ['buildJekyll']);

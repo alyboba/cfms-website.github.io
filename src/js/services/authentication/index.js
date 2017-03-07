@@ -24,8 +24,8 @@ export default class AuthenticationService {
                 if (err) return console.log(err);
                 this.dispatchUser();
                 this.firebase.authenticate(profile, (err) => {
-                    if (err) return console.log(err)
-                    if (cb && _.isFunction(cb)) cb(profile);
+                    if (err) return console.log(err);
+                    if (cb && _.isFunction(cb)) cb(this.user);
                 });
             });
         });

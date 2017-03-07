@@ -415,3 +415,7 @@
   top: -1.1em;
   bottom: auto;
 }
+
+.error-field {
+    box-shadow: inset 0 0 0 2px $primary-color-bright !important;
+}
