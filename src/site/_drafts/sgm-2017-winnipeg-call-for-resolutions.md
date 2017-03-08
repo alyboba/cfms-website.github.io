@@ -1,5 +1,5 @@
 ---
-title: 'CFMS SGM 2017: Call for Resolutions'
+title: CFMS SGM 2017 - Call for Resolutions
 date: 2017-03-07 12:00:00
 description: 'Medical societies, meeting delegates and member medical students are invited to put forward resolutions for discussion and debate at the CFMS Spring General Meeting during the Members Resolutions Session'
 ---
@@ -9,4 +9,4 @@ Medical societies, meeting delegates and member medical students are invited to 
 
 Resolutions must be received by Dr Carl White Ulysse, CFMS SGM Chair, by e-mail at [resolutions@cfms.org](mailto:resolutions@cfms.org).
 
-Submission details, including associated guidelines, can be found here.
+[Submission details, including associated guidelines, can be found here.](/Call for Resolutions - Detailed Document.pdf)
