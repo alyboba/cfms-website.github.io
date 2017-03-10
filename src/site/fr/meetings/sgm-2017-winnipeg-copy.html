@@ -1,0 +1,104 @@
+---
+title: "2017 FEMC Assemblée générale du printemps"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/meetings.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#meetings" ).classList.toggle("active");
+	</script>
+	<div id="top-meeting" style="background: url(../../images/meeting-images/winnipeg.jpg) no-repeat center 75%; background-size:cover">
+		<div id="top-group">
+			<div class="content">
+				<div id="top-meeting-name">{{ page.title }}</div>
+				<div id="top-meeting-info">Winnipeg, Manitoba / 28&ndash;29, Avril, 2017</div>
+			</div>
+		</div>
+	</div>
+	<div id="meeting-details" class="content">
+		<div id="meeting-aside">
+			<h2 id="aside-title"><strong>Détails de l'évènement<i class="fa fa-star-o"></i></strong></h2>
+			<div class="icon"><i class="fa fa-map-marker"></i></div>
+			<li>
+				<b>EMPLACEMENT</b><br>
+				Winnipeg, Manitoba<br>
+				Emplacement spécifique à venir 
+			</li>
+			<div class="icon"><i class="fa fa-clock-o"></i></div>
+			<li>
+				<b>DATE</b><br>
+				du 28 au 29 avril, 2017<br>
+			</li>
+			<div class="icon"><i class="fa fa-briefcase what-to-bring"></i></div>
+			<li>
+				<b>CE QU'IL FAUT APPORTER</b><br>
+				Code vestimentaire: Tenue d'affaires
+
+			</li>
+			<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
+			<div id="emails">
+				<li><b>Des questions?</b><br>
+				Envoyez un courriel à <a style="border-bottom:1px solid #EAEAEA" href="mailto:office@cfms.org">office@cfms.org</a><br>
+				</li>
+			</div>
+			<div id="shortcut-links">
+				<div id="scroll">
+					<h2>Sauter à<span style="opacity:0.5">:</span></h2>
+					<ul>
+						<li><a href="#introduction">Introduction</a></li>
+						<li><a href="#registration-info">Information d'inscription</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="meeting-body">
+			<h2 id="introduction"><strong>Qu’est-ce que l’Assemblée générale du printemps?</strong></h2>
+			<p>L’Assemblée générale du printemps (AG) est
+une occasion pour les étudiants et étudiantes en médecine du Canada de se rassembler pour discuter des sujets importants concernant l’éducation médicale, la promotion de la santé, la santé mondiale, le bien-être, et plus. Joignez-vous à la conversation, venez
+participer &mdash; nous voulons vous entendre!</p>
+
+			<h2 id="registration-info"><strong>Information d'inscription</strong></h2>
+			<blockquote>
+				<h4><strong>Comment s’inscrire?</strong></h4>
+				<ul>
+					<li>L’enregistrement n’est <strong>pas encore ouvert.</strong></li>
+				</ul>
+			</blockquote>
+			
+			<h2 id="travel-funding"><strong>Financement de voyage</strong></h2>
+			<p>Vous n’avez jamais assisté à une rencontre du FEMC? Vous voulez vous impliquer? Obtenez un remboursement pour vos frais d'enregistrement et de voyage de la part de la FEMC en appliquant pour le <strong>Financement de voyage!</strong> Chaque année la FEMC distribue des fonds pour amener des étudiants en médecine à no réunions annuelles. C’est une excellente  occasion pour apprendre davantage à propos de la FEMC, de s’impliquer, et de rencontrer d’autres étudiants et étudiantes en médecine à travers le Canada.</p>
+			<p>
+			    <strong>Nouveauté de cette année: </strong>les financements de voyage seront distribués par région afin de garantir une représentation plus égale des étudiants(es) à travers le pays. 8 financements de voyage seront alloués pour chaque assemblé générale: 2 pour la région de l'Ouest, 1 pour la région de l'Atlantique, 3 pour les régions du Québec + de l'Ontario et 2 seront sans régions assignées.
+			</p>
+			<blockquote>
+				<h4><strong>Appliquer pour le Financement de voyage</strong></h4>
+				<ul>
+					<li>Applications pour le Financement de voyage sont <strong>MAINTENANT OUVERTES</strong>.</li>
+				
+						<!-- Uncomment to open up registration information link --> 
+					<li>Date d'échéance: <strong>le 20 février 2017 à 23:59.</strong>.</li>
+					
+					<div class="button"><strong><a href="http://www.cfms.org/files/meetings/sgm-2017/cfms-travel-awards/SGM2017 Application form_ENG.doc">Application Form (ENG)</a></strong></div>
+					<div class="button"><strong><a href="http://www.cfms.org/files/meetings/sgm-2017/cfms-travel-awards/SGM2017 Application form_FRA.docx">Application Form (FRA)</a></strong></div>
+				</ul>
+			</blockquote>
+			
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>
