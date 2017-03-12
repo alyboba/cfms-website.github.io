@@ -97298,6 +97298,7 @@ var PaymentsController = function () {
             };
 
             (0, _requestPromise2.default)(options).then(function (data) {
+                if (data.message === "Declined") return _this.utils.showAlert("Declined", "Please check your payment information.");
                 _this.utils.showAlert("Success", "We look forward to seeing you at the event!");
                 _this.handleRegisteredUser();
             }).catch(function (err) {
