@@ -17,7 +17,7 @@ export default class PaymentsController {
             data.id = this.eventId;
             var options = {
                 method: 'POST',
-                uri: `https://cfms.us.webtask.io/devapi/payments/`,
+                uri: `https://cfms.us.webtask.io/api/payments/`, // TODO: devapi when in debug mode
                 headers: {
                     'Authorization': `Bearer ${this.auth.accessToken}`,
                     'Content-Type': 'application/json'
