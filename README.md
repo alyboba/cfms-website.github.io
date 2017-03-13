@@ -2,5 +2,7 @@
 This is the staging branch of the Canadian Federation of Medical Students' (CFMS) website which gets built by Travis-CI into the master (GitHub pages) branch.
 
 ##Changelog
+- **March 12, 2017**
+	- [x] Opened online payment system for SGM 2017
 - **March 6, 2017**
 	- [x] Made the login process more user friendly
