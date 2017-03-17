@@ -75773,14 +75773,6 @@ function done(stream, er, data) {
 
 module.exports = Writable;
 
-// It seems a linked list but it is not
-// there will be only 2 of these for each stream
-function CorkedRequest(state) {
-  this.next = null;
-  this.entry = null;
-  this.finish = onCorkedFinish.bind(undefined, this, state);
-}
-
 /*<replacement>*/
 var processNextTick = require('process-nextick-args');
 /*</replacement>*/
@@ -76324,7 +76316,6 @@ function CorkedRequest(state) {
     }
   };
 }
-
 }).call(this,require('_process'))
 
 },{"./_stream_duplex":282,"_process":264,"buffer":93,"buffer-shims":91,"core-util-is":100,"events":141,"inherits":197,"process-nextick-args":263,"util-deprecate":374}],287:[function(require,module,exports){
