@@ -13,6 +13,7 @@ export default class Router extends Middleware {
 
     _bindRoutes() {
         page('/members', Members);
+        page('/fr/members',Members);
         page('/resources/md-leadership-awards-application.html', LeadershipAwardUser);
         page('/resources/md-leadership-awards-view-applications.html', LeadershipAwardAdmin);
         page('/new-account.html', Registration);
