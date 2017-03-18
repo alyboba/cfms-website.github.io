@@ -98480,6 +98480,7 @@ var Router = function (_Middleware) {
         key: '_bindRoutes',
         value: function _bindRoutes() {
             (0, _page2.default)('/members', _members2.default);
+            (0, _page2.default)('/fr/members', _members2.default);
             (0, _page2.default)('/resources/md-leadership-awards-application.html', _mdLeadershipAwards.LeadershipAwardUser);
             (0, _page2.default)('/resources/md-leadership-awards-view-applications.html', _mdLeadershipAwards.LeadershipAwardAdmin);
             (0, _page2.default)('/new-account.html', _registration2.default);
