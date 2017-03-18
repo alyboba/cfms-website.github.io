@@ -2,24 +2,26 @@ import Middleware from '../middlewares';
 import Members from './members';
 import { LeadershipAwardUser, LeadershipAwardAdmin } from './md-leadership-awards';
 import Registration from './registration';
-import page from 'page';
+import MeetingRegistrations from './meeting-registrations';
+import route from 'page';
 
 export default class Router extends Middleware {
     constructor() {
-        super(page);
+        super(route);
         this._bindRoutes();
-        page.start({ click: false });
+        route.start({ click: false });
     }
 
     _bindRoutes() {
-        page('/members', Members);
-        page('/fr/members',Members);
-        page('/resources/md-leadership-awards-application.html', LeadershipAwardUser);
-        page('/resources/md-leadership-awards-view-applications.html', LeadershipAwardAdmin);
-        page('/new-account.html', Registration);
+        route('/members', Members);
+        route('/fr/members', Members);
+        route('/resources/md-leadership-awards-application.html', LeadershipAwardUser);
+        route('/resources/md-leadership-awards-view-applications.html', LeadershipAwardAdmin);
+        route('/new-account.html', Registration);
+        route('/meetings/view-registrations.html', MeetingRegistrations);
     }
 
     refresh() {
-        page(window.location.pathname);
+        route(window.location.pathname);
     }
 }

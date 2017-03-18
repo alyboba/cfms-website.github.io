@@ -1,8 +1,8 @@
 import Auth0Provider from './providers/auth0';
-import ApiProvider from './providers/api';
 import FirebaseProvider from './providers/firebase';
 import UserModel from '../../models/user';
 import Utils from '../../utils';
+import UserRepository from '../../repositories/api/user';
 import _ from 'lodash';
 
 let instance = null;
@@ -13,6 +13,7 @@ export default class AuthenticationService {
         this.auth0 = new Auth0Provider();
         this.firebase = new FirebaseProvider();
         this.utils = new Utils();
+        this.UserRepository = new UserRepository(UserModel);
         this.dispatchUser();
         instance = this;
     }
@@ -20,20 +21,22 @@ export default class AuthenticationService {
     login(email, password, cb) {
         this.auth0.getAccessToken(email, password, (err, accessToken, uid) => {
             if (err) return console.log(err);
-            ApiProvider.getUserProfile(accessToken, uid, (err, profile) => {
-                if (err) return console.log(err);
-                this.dispatchUser();
-                this.firebase.authenticate(profile, (err) => {
-                    if (err) return console.log(err);
-                    if (cb && _.isFunction(cb)) cb(this.user);
-                });
-            });
+            this.UserRepository.get(uid)
+                .then(user => {
+                    localStorage.setItem('profile', JSON.stringify(user.toSparseRow()));
+                    this.dispatchUser();
+                    this.firebase.authenticate(user.app_metadata.firebase_token, err => {
+                        if (err) return console.log(err);
+                        if (cb && _.isFunction(cb)) cb(this.user);
+                    });
+                })
+                .catch(err => console.log(err));
         });
     }
 
     logout() {
         this.firebase.logout();
-        ApiProvider.logout();
+        localStorage.removeItem('profile');
         this.auth0.logout();
     }
 
