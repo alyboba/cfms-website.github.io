@@ -1,4 +1,4 @@
-import FirebaseRepository from './firebase-repository';
+import FirebaseRepository from './repository';
 
 export default class MeetingRegistrationRepository extends FirebaseRepository {
     constructor(Model, UserRepository) {

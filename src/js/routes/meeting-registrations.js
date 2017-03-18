@@ -1,6 +1,6 @@
 import MeetingRegistrationsController from '../controllers/meeting-registrations';
 import AuthenticationService from '../services/authentication';
-import MeetingRegistrationRepository from '../repositories/meeting-registration';
+import MeetingRegistrationRepository from '../repositories/firebase/meeting-registration';
 import MeetingRegistrationModel from '../models/meeting-registration';
 import UserRepository from '../repositories/api/user';
 import UserModel from '../models/user';

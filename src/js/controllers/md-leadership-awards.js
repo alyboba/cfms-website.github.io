@@ -1,4 +1,4 @@
-import { FirebaseConnection } from '../repositories/utils';
+import { FirebaseConnection } from '../repositories/firebase/utils';
 
 class LeadershipAwardUserController extends FirebaseConnection {
     constructor(authenticationService) {

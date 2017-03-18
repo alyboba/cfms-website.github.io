@@ -1,5 +1,5 @@
 import Firebase from 'firebase';
-import * as Config from '../config';
+import * as Config from '../../config';
 
 
 // Firebase.database.enableLogging(function (message) {

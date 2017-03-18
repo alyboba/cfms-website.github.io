@@ -6,7 +6,7 @@ export default class UserRepository extends ApiRepository {
     }
 
     get(uid = '') {
-        if (uid && !uid.includes('auth0|')) uid = `auth0|${uid}`;
+        if (uid && uid.indexOf('auth0|') !== 0) uid = `auth0|${uid}`;
         return super.get(uid);
     }
 }
