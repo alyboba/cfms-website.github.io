@@ -1,0 +1,23 @@
+path /leadership-award {
+  // Anyone can read a User's information.
+  read() { auth != null }
+
+  // Only an authenticated user can write their information.
+  write() { auth != null }
+}
+
+path /users {
+  // Anyone can read a User's information.
+  read() { auth != null }
+
+  // Only an authenticated user can write their information.
+  write() { auth != null }
+}
+
+path /meeting_registrations {
+  // Anyone can read a User's information.
+  read() { auth != null }
+
+  // Only an authenticated user can write their information.
+  write() { auth != null }
+}
