@@ -1,23 +1,22 @@
-path /leadership-award {
-  // Anyone can read a User's information.
-  read() { auth != null }
-
-  // Only an authenticated user can write their information.
-  write() { auth != null }
+path /leadership-award/{year}/{user_id} {
+  read() { isUser(user_id) }
+  write() { isUser(user_id) }
 }
 
-path /users {
-  // Anyone can read a User's information.
-  read() { auth != null }
-
-  // Only an authenticated user can write their information.
-  write() { auth != null }
+path /users/{user_id} {
+  read() { isUser(user_id) }
+  write() { isUser(user_id) }
 }
 
-path /meeting_registrations {
-  // Anyone can read a User's information.
-  read() { auth != null }
+path / {
+  read() { isAdmin() }
+  write() { isAdmin() }
+}
 
-  // Only an authenticated user can write their information.
-  write() { auth != null }
+function isAdmin() {
+  auth.token.isAdmin === true
+}
+
+function isUser(uid) {
+ auth.uid === uid 
 }
