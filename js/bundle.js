@@ -88509,7 +88509,9 @@ Request.prototype._end = function() {
   // set header fields
   for (var field in this.header) {
     if (null == this.header[field]) continue;
-    xhr.setRequestHeader(field, this.header[field]);
+
+    if (this.header.hasOwnProperty(field))
+      xhr.setRequestHeader(field, this.header[field]);
   }
 
   if (this._responseType) {
@@ -89435,8 +89437,10 @@ module.exports = function shouldRetry(err, res) {
   if (res && res.status && res.status >= 500) return true;
   // Superagent timeout
   if (err && 'timeout' in err && err.code == 'ECONNABORTED') return true;
+  if (err && 'crossDomain' in err) return true;
   return false;
 };
+
 },{}],360:[function(require,module,exports){
 
 /**
@@ -97590,7 +97594,7 @@ var App = function App() {
 ;
 new App();
 
-},{"./routes":399}],385:[function(require,module,exports){
+},{"./routes":405}],385:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -97693,7 +97697,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{"../utils":408}],387:[function(require,module,exports){
+},{"../utils":414}],387:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -97703,7 +97707,7 @@ exports.LeadershipAwardAdminController = exports.LeadershipAwardUserController =
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _utils = require('../repositories/utils');
+var _utils = require('../repositories/firebase/utils');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -97792,58 +97796,53 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
     _createClass(LeadershipAwardAdminController, [{
         key: 'process',
         value: function process() {
-            var _this4 = this;
-
             //Confirm that present user is an admin.
             if (!this.auth.user.isAdmin) return console.log("Error: Must be an admin to view this resource.");
-            this.firebase.database().ref('/users/' + this.auth.user.uid).once('value').then(function (snapshot) {
+            //Hide the not-authorized sign.
+            document.getElementById('not-authorized').style.display = 'none';
 
-                //Hide the not-authorized sign.
-                document.getElementById('not-authorized').style.display = 'none';
-
-                //Iterates through each submitted application
-                var query = _this4.firebase.database().ref('leadership-award/' + window.config.leadership_award_year).orderByKey();
-                //[!- START QUERY]
-                query.once("value").then(function (snapshot) {
-                    var applicationsHTML = '';
-                    var noApplicants = 0;
-                    snapshot.forEach(function (childSnapshot) {
-                        //If a member has submitted an application
-                        if (childSnapshot.child('submitted').exists()) {
-                            noApplicants++;
-                            var submission = childSnapshot;
-                            applicationsHTML += '<blockquote><div class="flex-wrapper award-application"><div class="left-col"><h4 class="review-header"><strong>Applicant</strong></h4>';
-                            applicationsHTML += '<label>Name</label><div class="review-text-field">';
-                            applicationsHTML += submission.val().name + '</div>';
-                            applicationsHTML += '<label>Medical School</label><div class="review-text-field">';
-                            applicationsHTML += submission.val().medicalSchool + '</div>';
-                            applicationsHTML += '<label>Graduating Year</label><div class="review-text-field">';
-                            applicationsHTML += submission.val().graduationYear + '</div>';
-                            applicationsHTML += '<label>Email Address</label><div class="review-text-field">';
-                            applicationsHTML += submission.val().emailAddress + '</div>';
-                            applicationsHTML += '<label>CMA Membership ID</label><div class="review-text-field">';
-                            applicationsHTML += submission.val().cmaMembershipID + '</div>';
-                            applicationsHTML += '<label>Twitter Handle</label><div class="review-text-field">';
-                            var twitterHandle = submission.val().twitterHandle;
-                            if (twitterHandle === '') applicationsHTML += 'Not given</div>';else applicationsHTML += '<a href="https://twitter.com/' + twitterHandle.substring(1) + '" target="_blank">' + twitterHandle + '</a></div>';
-                            applicationsHTML += '<label>Attending the CFMS SGM?</label><div class="review-text-field">';
-                            applicationsHTML += submission.val().meetingAttendance + '</div>';
-                            applicationsHTML += '</div><div class="right-col"><h4 class="review-header"><strong>Attached Files</strong></h4><ul>';
-                            applicationsHTML += '<li><a href="' + submission.val().linkPersonalStatement + '" target="_blank">Personal Statement</a></li>';
-                            applicationsHTML += '<li><a href="' + submission.val().linkCurriculumVitae + '" target="_blank">Resume/Curriculum Vitae</a></li>';
-                            applicationsHTML += '<li><a href="' + submission.val().linkLetterGoodStanding + '" target="_blank">Proof of Good Standing</a></li>';
-                            applicationsHTML += '<li><a href="' + submission.val().linkReference1 + '" target="_blank">Reference Letter #1</a></li>';
-                            applicationsHTML += '<li><a href="' + submission.val().linkReference2 + '" target="_blank">Reference Letter #2</a></li>';
-                            applicationsHTML += '</ul><h4><strong>Date Submitted</strong></h4>';
-                            applicationsHTML += '<div class="review-text-field" style="font-weight:normal">' + submission.val().dateSubmitted + '</div>';
-                            applicationsHTML += '</ul></div></div></blockquote>';
-                        }
-                    });
-                    //Write the HTML for the submissions
-                    if (noApplicants !== 0) document.getElementById('submitted-applications-list').innerHTML = applicationsHTML;else document.getElementById('submitted-applications-list').innerHTML = '<blockquote><h3><strong>No Submitted Applications Yet</strong></h3><ul><li>It\'s only a matter of time!</li></ul></blockquote>';
+            //Iterates through each submitted application
+            var query = this.firebase.database().ref('leadership-award/' + window.config.leadership_award_year).orderByKey();
+            //[!- START QUERY]
+            query.once("value").then(function (snapshot) {
+                var applicationsHTML = '';
+                var noApplicants = 0;
+                snapshot.forEach(function (childSnapshot) {
+                    //If a member has submitted an application
+                    if (childSnapshot.child('submitted').exists()) {
+                        noApplicants++;
+                        var submission = childSnapshot;
+                        applicationsHTML += '<blockquote><div class="flex-wrapper award-application"><div class="left-col"><h4 class="review-header"><strong>Applicant</strong></h4>';
+                        applicationsHTML += '<label>Name</label><div class="review-text-field">';
+                        applicationsHTML += submission.val().name + '</div>';
+                        applicationsHTML += '<label>Medical School</label><div class="review-text-field">';
+                        applicationsHTML += submission.val().medicalSchool + '</div>';
+                        applicationsHTML += '<label>Graduating Year</label><div class="review-text-field">';
+                        applicationsHTML += submission.val().graduationYear + '</div>';
+                        applicationsHTML += '<label>Email Address</label><div class="review-text-field">';
+                        applicationsHTML += submission.val().emailAddress + '</div>';
+                        applicationsHTML += '<label>CMA Membership ID</label><div class="review-text-field">';
+                        applicationsHTML += submission.val().cmaMembershipID + '</div>';
+                        applicationsHTML += '<label>Twitter Handle</label><div class="review-text-field">';
+                        var twitterHandle = submission.val().twitterHandle;
+                        if (twitterHandle === '') applicationsHTML += 'Not given</div>';else applicationsHTML += '<a href="https://twitter.com/' + twitterHandle.substring(1) + '" target="_blank">' + twitterHandle + '</a></div>';
+                        applicationsHTML += '<label>Attending the CFMS SGM?</label><div class="review-text-field">';
+                        applicationsHTML += submission.val().meetingAttendance + '</div>';
+                        applicationsHTML += '</div><div class="right-col"><h4 class="review-header"><strong>Attached Files</strong></h4><ul>';
+                        applicationsHTML += '<li><a href="' + submission.val().linkPersonalStatement + '" target="_blank">Personal Statement</a></li>';
+                        applicationsHTML += '<li><a href="' + submission.val().linkCurriculumVitae + '" target="_blank">Resume/Curriculum Vitae</a></li>';
+                        applicationsHTML += '<li><a href="' + submission.val().linkLetterGoodStanding + '" target="_blank">Proof of Good Standing</a></li>';
+                        applicationsHTML += '<li><a href="' + submission.val().linkReference1 + '" target="_blank">Reference Letter #1</a></li>';
+                        applicationsHTML += '<li><a href="' + submission.val().linkReference2 + '" target="_blank">Reference Letter #2</a></li>';
+                        applicationsHTML += '</ul><h4><strong>Date Submitted</strong></h4>';
+                        applicationsHTML += '<div class="review-text-field" style="font-weight:normal">' + submission.val().dateSubmitted + '</div>';
+                        applicationsHTML += '</ul></div></div></blockquote>';
+                    }
                 });
-                //[!- END QUERY]
+                //Write the HTML for the submissions
+                if (noApplicants !== 0) document.getElementById('submitted-applications-list').innerHTML = applicationsHTML;else document.getElementById('submitted-applications-list').innerHTML = '<blockquote><h3><strong>No Submitted Applications Yet</strong></h3><ul><li>It\'s only a matter of time!</li></ul></blockquote>';
             });
+            //[!- END QUERY]
         }
     }]);
 
@@ -97853,7 +97852,46 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
 exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
-},{"../repositories/utils":398}],388:[function(require,module,exports){
+},{"../repositories/firebase/utils":404}],388:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var MeetingRegistrationsController = function () {
+    function MeetingRegistrationsController(authenticationService, meetingRegistrationRepository) {
+        _classCallCheck(this, MeetingRegistrationsController);
+
+        this.auth = authenticationService;
+        this.meetingRegistrationRepository = meetingRegistrationRepository;
+        this.process();
+    }
+
+    _createClass(MeetingRegistrationsController, [{
+        key: "process",
+        value: function process() {
+            if (this.auth.user) {
+                var profile = this.auth.user;
+                var firstName = profile.given_name;
+                var lastName = profile.family_name;
+                this.meetingRegistrationRepository.get("/DEMO/-Kf2ZSXYkqlWeAGpPjyN").then(function (val) {
+                    return console.log(val);
+                });
+            } else {}
+        }
+    }]);
+
+    return MeetingRegistrationsController;
+}();
+
+exports.default = MeetingRegistrationsController;
+
+},{}],389:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -97901,7 +97939,7 @@ var MembersController = function () {
 
 exports.default = MembersController;
 
-},{}],389:[function(require,module,exports){
+},{}],390:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98002,7 +98040,7 @@ var NavigationController = function () {
 
 exports.default = NavigationController;
 
-},{}],390:[function(require,module,exports){
+},{}],391:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98087,7 +98125,7 @@ var PaymentsController = function () {
 
 exports.default = PaymentsController;
 
-},{"../utils":408,"request-promise":295}],391:[function(require,module,exports){
+},{"../utils":414,"request-promise":295}],392:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98152,7 +98190,7 @@ var RegistrationController = function () {
 
 exports.default = RegistrationController;
 
-},{"../utils":408}],392:[function(require,module,exports){
+},{"../utils":414}],393:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98175,7 +98213,7 @@ var _authentication4 = _interopRequireDefault(_authentication3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/authentication":386,"../services/authentication":403}],393:[function(require,module,exports){
+},{"../controllers/authentication":386,"../services/authentication":410}],394:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98208,7 +98246,7 @@ var Middleware = function Middleware(page) {
 
 exports.default = Middleware;
 
-},{"./authentication":392,"./navigation":394,"./payments":395}],394:[function(require,module,exports){
+},{"./authentication":393,"./navigation":395,"./payments":396}],395:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98227,7 +98265,7 @@ var _navigation2 = _interopRequireDefault(_navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/navigation":389}],395:[function(require,module,exports){
+},{"../controllers/navigation":390}],396:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98254,7 +98292,63 @@ var _authentication2 = _interopRequireDefault(_authentication);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/payments":390,"../services/authentication":403,"../services/payments":407}],396:[function(require,module,exports){
+},{"../controllers/payments":391,"../services/authentication":410,"../services/payments":413}],397:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _model = require('./model');
+
+var _model2 = _interopRequireDefault(_model);
+
+var _user = require('./user');
+
+var _user2 = _interopRequireDefault(_user);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MeetingRegistrationModel = function (_Model) {
+    _inherits(MeetingRegistrationModel, _Model);
+
+    function MeetingRegistrationModel(registration) {
+        _classCallCheck(this, MeetingRegistrationModel);
+
+        var _this = _possibleConstructorReturn(this, (MeetingRegistrationModel.__proto__ || Object.getPrototypeOf(MeetingRegistrationModel)).call(this));
+
+        Object.assign(_this, registration);
+        return _this;
+    }
+
+    _createClass(MeetingRegistrationModel, null, [{
+        key: 'fromRow',
+        value: function fromRow(row) {
+            return new MeetingRegistrationModel(row);
+        }
+    }, {
+        key: 'fromRows',
+        value: function fromRows(rows) {
+            return rows.map(function (row) {
+                return new MeetingRegistrationModel(row);
+            });
+        }
+    }]);
+
+    return MeetingRegistrationModel;
+}(_model2.default);
+
+exports.default = MeetingRegistrationModel;
+
+},{"./model":398,"./user":399}],398:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98297,7 +98391,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"lodash":229}],397:[function(require,module,exports){
+},{"lodash":229}],399:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98366,7 +98460,203 @@ var UserModel = function (_Model) {
 
 exports.default = UserModel;
 
-},{"./model":396}],398:[function(require,module,exports){
+},{"./model":398}],400:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _requestPromise = require('request-promise');
+
+var _requestPromise2 = _interopRequireDefault(_requestPromise);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ApiRepository = function () {
+    function ApiRepository(Model, endpoint) {
+        _classCallCheck(this, ApiRepository);
+
+        this.Model = Model;
+        this.endpoint = endpoint;
+    }
+
+    _createClass(ApiRepository, [{
+        key: 'get',
+        value: function get() {
+            var _this = this;
+
+            var uid = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+            var accessToken = localStorage.getItem('accessToken');
+            if (!accessToken) return console.log('Error: no access token found.');
+            var options = {
+                uri: 'https://cfms.us.webtask.io/devapi/' + this.endpoint + '/' + uid,
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken
+                }
+            };
+
+            return (0, _requestPromise2.default)(options).then(function (data) {
+                return new _this.Model(data);
+            });
+        }
+    }, {
+        key: 'getAll',
+        value: function getAll() {}
+    }]);
+
+    return ApiRepository;
+}();
+
+exports.default = ApiRepository;
+
+},{"request-promise":295}],401:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _repository = require('./repository');
+
+var _repository2 = _interopRequireDefault(_repository);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UserRepository = function (_ApiRepository) {
+    _inherits(UserRepository, _ApiRepository);
+
+    function UserRepository(Model) {
+        _classCallCheck(this, UserRepository);
+
+        return _possibleConstructorReturn(this, (UserRepository.__proto__ || Object.getPrototypeOf(UserRepository)).call(this, Model, 'users'));
+    }
+
+    _createClass(UserRepository, [{
+        key: 'get',
+        value: function get() {
+            var uid = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+            if (uid && uid.indexOf('auth0|') !== 0) uid = 'auth0|' + uid;
+            return _get(UserRepository.prototype.__proto__ || Object.getPrototypeOf(UserRepository.prototype), 'get', this).call(this, uid);
+        }
+    }]);
+
+    return UserRepository;
+}(_repository2.default);
+
+exports.default = UserRepository;
+
+},{"./repository":400}],402:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _repository = require('./repository');
+
+var _repository2 = _interopRequireDefault(_repository);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MeetingRegistrationRepository = function (_FirebaseRepository) {
+    _inherits(MeetingRegistrationRepository, _FirebaseRepository);
+
+    function MeetingRegistrationRepository(Model, UserRepository) {
+        _classCallCheck(this, MeetingRegistrationRepository);
+
+        var _this = _possibleConstructorReturn(this, (MeetingRegistrationRepository.__proto__ || Object.getPrototypeOf(MeetingRegistrationRepository)).call(this, Model, 'meeting_registrations'));
+
+        _this.UserRepository = UserRepository;
+        return _this;
+    }
+
+    _createClass(MeetingRegistrationRepository, [{
+        key: 'get',
+        value: function get(id) {
+            var _this2 = this;
+
+            return _get(MeetingRegistrationRepository.prototype.__proto__ || Object.getPrototypeOf(MeetingRegistrationRepository.prototype), 'get', this).call(this, id).then(function (registration) {
+                return _this2.UserRepository.get(registration.uid).then(function (user) {
+                    delete registration.uid;
+                    registration.user = user;
+                    return registration;
+                });
+            }).catch(function (err) {
+                return console.log('Error: ' + err);
+            });
+        }
+    }]);
+
+    return MeetingRegistrationRepository;
+}(_repository2.default);
+
+exports.default = MeetingRegistrationRepository;
+
+},{"./repository":403}],403:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _utils = require('./utils');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Repository = function () {
+    function Repository(Model, refName) {
+        _classCallCheck(this, Repository);
+
+        this.Model = Model;
+        this.ref = new _utils.FirebaseRef(refName).ref;
+    }
+
+    _createClass(Repository, [{
+        key: 'get',
+        value: function get(id) {
+            var _this = this;
+
+            return this.ref.child(id).once('value').then(function (snapshot) {
+                return new _this.Model(snapshot.val());
+            });
+        }
+    }]);
+
+    return Repository;
+}();
+
+exports.default = Repository;
+
+},{"./utils":404}],404:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98380,7 +98670,7 @@ var _firebase = require('firebase');
 
 var _firebase2 = _interopRequireDefault(_firebase);
 
-var _config = require('../config');
+var _config = require('../../config');
 
 var Config = _interopRequireWildcard(_config);
 
@@ -98394,6 +98684,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+// Firebase.database.enableLogging(function (message) {
+//   console.log("[FIREBASE]", message);
+// });
 var firebase = _firebase2.default.initializeApp(Config.firebase);
 
 var FirebaseConnection = function FirebaseConnection() {
@@ -98418,7 +98711,7 @@ var FirebaseRef = function (_FirebaseConnection) {
     key: 'ref',
     get: function get() {
       // TODO: check if user is logged in
-      return firebase.database().ref(this.context);
+      return this.firebase.database().ref(this.context);
     }
   }]);
 
@@ -98428,7 +98721,7 @@ var FirebaseRef = function (_FirebaseConnection) {
 exports.FirebaseRef = FirebaseRef;
 exports.FirebaseConnection = FirebaseConnection;
 
-},{"../config":385,"firebase":148}],399:[function(require,module,exports){
+},{"../../config":385,"firebase":148}],405:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98450,6 +98743,10 @@ var _mdLeadershipAwards = require('./md-leadership-awards');
 var _registration = require('./registration');
 
 var _registration2 = _interopRequireDefault(_registration);
+
+var _meetingRegistrations = require('./meeting-registrations');
+
+var _meetingRegistrations2 = _interopRequireDefault(_meetingRegistrations);
 
 var _page = require('page');
 
@@ -98484,6 +98781,7 @@ var Router = function (_Middleware) {
             (0, _page2.default)('/resources/md-leadership-awards-application.html', _mdLeadershipAwards.LeadershipAwardUser);
             (0, _page2.default)('/resources/md-leadership-awards-view-applications.html', _mdLeadershipAwards.LeadershipAwardAdmin);
             (0, _page2.default)('/new-account.html', _registration2.default);
+            (0, _page2.default)('/meetings/view-registrations.html', _meetingRegistrations2.default);
         }
     }, {
         key: 'refresh',
@@ -98497,7 +98795,7 @@ var Router = function (_Middleware) {
 
 exports.default = Router;
 
-},{"../middlewares":393,"./md-leadership-awards":400,"./members":401,"./registration":402,"page":239}],400:[function(require,module,exports){
+},{"../middlewares":394,"./md-leadership-awards":406,"./meeting-registrations":407,"./members":408,"./registration":409,"page":239}],406:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98528,7 +98826,48 @@ function LeadershipAwardAdmin(ctx, next) {
     next();
 }
 
-},{"../controllers/md-leadership-awards":387,"../services/authentication":403}],401:[function(require,module,exports){
+},{"../controllers/md-leadership-awards":387,"../services/authentication":410}],407:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = members;
+
+var _meetingRegistrations = require('../controllers/meeting-registrations');
+
+var _meetingRegistrations2 = _interopRequireDefault(_meetingRegistrations);
+
+var _authentication = require('../services/authentication');
+
+var _authentication2 = _interopRequireDefault(_authentication);
+
+var _meetingRegistration = require('../repositories/firebase/meeting-registration');
+
+var _meetingRegistration2 = _interopRequireDefault(_meetingRegistration);
+
+var _meetingRegistration3 = require('../models/meeting-registration');
+
+var _meetingRegistration4 = _interopRequireDefault(_meetingRegistration3);
+
+var _user = require('../repositories/api/user');
+
+var _user2 = _interopRequireDefault(_user);
+
+var _user3 = require('../models/user');
+
+var _user4 = _interopRequireDefault(_user3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//Shows Member Account Information on the Members Page
+function members(ctx, next) {
+    new _meetingRegistrations2.default(new _authentication2.default(), new _meetingRegistration2.default(_meetingRegistration4.default, new _user2.default(_user4.default)));
+
+    next();
+}
+
+},{"../controllers/meeting-registrations":388,"../models/meeting-registration":397,"../models/user":399,"../repositories/api/user":401,"../repositories/firebase/meeting-registration":402,"../services/authentication":410}],408:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98553,7 +98892,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/members":388,"../services/authentication":403}],402:[function(require,module,exports){
+},{"../controllers/members":389,"../services/authentication":410}],409:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98584,7 +98923,7 @@ function Registration(ctx, next) {
   next();
 }
 
-},{"../controllers/registration":391,"../models/user":397,"../services/authentication":403}],403:[function(require,module,exports){
+},{"../controllers/registration":392,"../models/user":399,"../services/authentication":410}],410:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98597,10 +98936,6 @@ var _auth = require('./providers/auth0');
 
 var _auth2 = _interopRequireDefault(_auth);
 
-var _api = require('./providers/api');
-
-var _api2 = _interopRequireDefault(_api);
-
 var _firebase = require('./providers/firebase');
 
 var _firebase2 = _interopRequireDefault(_firebase);
@@ -98612,6 +98947,10 @@ var _user2 = _interopRequireDefault(_user);
 var _utils = require('../../utils');
 
 var _utils2 = _interopRequireDefault(_utils);
+
+var _user3 = require('../../repositories/api/user');
+
+var _user4 = _interopRequireDefault(_user3);
 
 var _lodash = require('lodash');
 
@@ -98631,6 +98970,7 @@ var AuthenticationService = function () {
         this.auth0 = new _auth2.default();
         this.firebase = new _firebase2.default();
         this.utils = new _utils2.default();
+        this.UserRepository = new _user4.default(_user2.default);
         this.dispatchUser();
         instance = this;
     }
@@ -98642,13 +98982,15 @@ var AuthenticationService = function () {
 
             this.auth0.getAccessToken(email, password, function (err, accessToken, uid) {
                 if (err) return console.log(err);
-                _api2.default.getUserProfile(accessToken, uid, function (err, profile) {
-                    if (err) return console.log(err);
+                _this.UserRepository.get(uid).then(function (user) {
+                    localStorage.setItem('profile', JSON.stringify(user.toSparseRow()));
                     _this.dispatchUser();
-                    _this.firebase.authenticate(profile, function (err) {
+                    _this.firebase.authenticate(user.app_metadata.firebase_token, function (err) {
                         if (err) return console.log(err);
                         if (cb && _lodash2.default.isFunction(cb)) cb(_this.user);
                     });
+                }).catch(function (err) {
+                    return console.log(err);
                 });
             });
         }
@@ -98656,7 +98998,7 @@ var AuthenticationService = function () {
         key: 'logout',
         value: function logout() {
             this.firebase.logout();
-            _api2.default.logout();
+            localStorage.removeItem('profile');
             this.auth0.logout();
         }
     }, {
@@ -98701,60 +99043,7 @@ var AuthenticationService = function () {
 
 exports.default = AuthenticationService;
 
-},{"../../models/user":397,"../../utils":408,"./providers/api":404,"./providers/auth0":405,"./providers/firebase":406,"lodash":229}],404:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _requestPromise = require('request-promise');
-
-var _requestPromise2 = _interopRequireDefault(_requestPromise);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var ApiProvider = function () {
-    function ApiProvider() {
-        _classCallCheck(this, ApiProvider);
-    }
-
-    _createClass(ApiProvider, null, [{
-        key: 'getUserProfile',
-        value: function getUserProfile(accessToken, uid, cb) {
-            var options = {
-                uri: 'https://cfms.us.webtask.io/api/users/' + uid,
-                headers: {
-                    'Authorization': 'Bearer ' + accessToken
-                },
-                json: true // Automatically parses the JSON string in the response
-            };
-
-            (0, _requestPromise2.default)(options).then(function (data) {
-                localStorage.setItem('profile', JSON.stringify(data.user));
-
-                cb(null, data.user.app_metadata.firebase_token);
-            }).catch(function (err) {
-                cb(err);
-            });
-        }
-    }, {
-        key: 'logout',
-        value: function logout() {
-            localStorage.removeItem('profile');
-        }
-    }]);
-
-    return ApiProvider;
-}();
-
-exports.default = ApiProvider;
-
-},{"request-promise":295}],405:[function(require,module,exports){
+},{"../../models/user":399,"../../repositories/api/user":401,"../../utils":414,"./providers/auth0":411,"./providers/firebase":412,"lodash":229}],411:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98822,7 +99111,7 @@ var Auth0Provider = function () {
 
 exports.default = Auth0Provider;
 
-},{"../../../config":385,"auth0-js":46}],406:[function(require,module,exports){
+},{"../../../config":385,"auth0-js":46}],412:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -98831,7 +99120,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _utils = require('../../../repositories/utils');
+var _utils = require('../../../repositories/firebase/utils');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -98879,7 +99168,7 @@ var FirebaseProvider = function (_FirebaseConnection) {
 
 exports.default = FirebaseProvider;
 
-},{"../../../repositories/utils":398}],407:[function(require,module,exports){
+},{"../../../repositories/firebase/utils":404}],413:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -98888,7 +99177,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _utils = require("../repositories/utils");
+var _utils = require("../repositories/firebase/utils");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -98922,7 +99211,7 @@ var PaymentsService = function (_FirebaseConnection) {
 
 exports.default = PaymentsService;
 
-},{"../repositories/utils":398}],408:[function(require,module,exports){
+},{"../repositories/firebase/utils":404}],414:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
