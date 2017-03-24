@@ -4,10 +4,14 @@ import MeetingRegistrationRepository from '../repositories/firebase/meeting-regi
 import MeetingRegistrationModel from '../models/meeting-registration';
 import UserRepository from '../repositories/api/user';
 import UserModel from '../models/user';
+import PaymentsController from '../controllers/payments';
+import PaymentsService from '../services/payments';
 
-//Shows Member Account Information on the Members Page
-export default function members(ctx, next) {
-    new MeetingRegistrationsController(new AuthenticationService(), new MeetingRegistrationRepository(MeetingRegistrationModel, new UserRepository(UserModel)));
+export default function MeetingRegistration(ctx, next) {
+    if (ctx.params.meeting == 'view-registrations.html')
+        new MeetingRegistrationsController(new AuthenticationService(), new MeetingRegistrationRepository(MeetingRegistrationModel, new UserRepository(UserModel)));
+    else
+        new PaymentsController({ authenticationService: new AuthenticationService(), paymentsService: new PaymentsService() });
 
     next();
 }

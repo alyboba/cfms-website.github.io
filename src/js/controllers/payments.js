@@ -6,9 +6,12 @@ export default class PaymentsController {
         this.service = paymentsService;
         this.auth = authenticationService;
         this.utils = new Utils();
-        this.eventId = document.getElementById("payment-form").getAttribute("payment-id");
         document.addEventListener('beanstream_payform_complete', this.processPayform.bind(this), false);
         this.checkRegistration();
+    }
+
+    get eventId() {
+        return document.getElementById("payment-form").getAttribute("payment-id");
     }
 
     processPayform(e) {

@@ -4,6 +4,7 @@ import UserModel from '../../models/user';
 import Utils from '../../utils';
 import UserRepository from '../../repositories/api/user';
 import _ from 'lodash';
+import jwtLib from 'jsonwebtoken';
 
 let instance = null;
 
@@ -42,12 +43,21 @@ export default class AuthenticationService {
 
     get user() {
         let user = localStorage.getItem('profile');
-        return (user) ? new UserModel(user) : null;
+        return (user && this.accessToken) ? new UserModel(user) : null;
     }
 
     get accessToken() {
         let accessToken = localStorage.getItem('accessToken');
-        return (accessToken) ? accessToken : null;
+        return AuthenticationService.isTokenExpired(accessToken) ? null : accessToken;
+    }
+
+    static isTokenExpired(token) {
+        const jwt = jwtLib.decode(token);
+        if (jwt.exp < Date.now() / 1000) {
+            console.log('Old shitty token');
+            return true;
+        }
+        return false;
     }
 
     dispatchUser() {

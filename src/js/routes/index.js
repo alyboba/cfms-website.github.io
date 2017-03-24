@@ -18,7 +18,7 @@ export default class Router extends Middleware {
         route('/resources/md-leadership-awards-application.html', LeadershipAwardUser);
         route('/resources/md-leadership-awards-view-applications.html', LeadershipAwardAdmin);
         route('/new-account.html', Registration);
-        route('/meetings/view-registrations.html', MeetingRegistrations);
+        route('/meetings/:meeting', MeetingRegistrations);
     }
 
     refresh() {
