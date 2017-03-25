@@ -21,3 +21,7 @@ env:
   - COMMIT_AUTHOR_EMAIL: "it@cfms.org"
   - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
   - JEKYLL_ENV: "production"
+cache:
+  bundler: true
+  directories:
+    - node_modules
