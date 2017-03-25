@@ -17,7 +17,7 @@ export const auth0 = {
 };
 
 export const logout = {
-    returnTo: 'http://cfms.org',
+    returnTo: 'https://www.cfms.org',
     client_id: 'DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ'
 };
 
@@ -25,25 +25,3 @@ export const dev_logout = {
     returnTo: '',
     client_id: 'DATrpA9uYr5A8nTH3BHAu3eVOvPoZbuJ'
 };
-
-// export const lock = {
-//     defaultDatabaseConnection: 'cfms-firebase',
-//     auth: {
-//         sso: true,
-//         redirectUrl: "http://localhost:4000/members",
-//         responseType: 'id_token token',
-//         audience: "https://cfms.auth0.com/api/v2/",
-//         realm: 'cfms-firebase',
-//         params: {
-//             realm: 'cfms-firebase',
-//             scope: 'openid'
-//         }
-//     },
-//     theme: {
-//         logo: '/images/cfms-logo.svg'
-//     },
-//     languageDictionary: {
-//         title: 'CFMS'
-//     },
-//     signUpLink: '/new-account.html'
-// };
