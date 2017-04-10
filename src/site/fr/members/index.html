@@ -1,5 +1,5 @@
 ---
-title: "Meetings"
+title: Meetings
 ---
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ title: "Meetings"
 	{% include head.html %}
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/members.css">
+	<link rel="stylesheet" href="/stylesheets/members.css" />
 </head>
 <body>
 	{% include nav.html %}
@@ -25,36 +25,7 @@ title: "Meetings"
 			document.querySelector( "#members" ).classList.toggle("active");
 		</script>
 
-		<div id="side-content" class="editable">
-			<h1 id="page-title">CFMS Members</h1>
-
-			<div id="account-details" class="members-only">
-				<blockquote id="account-info">
-					<h3><strong>Your Account:</strong></h3>
-					<b>Name</b>: <span id="account-name"></span><br>
-					<b>School</b>: <span id="account-school"></span><br>
-					<b>Graduating Year</b>: <span id="account-grad-year"></span><br>
-					<b>Email Address</b>: <a id="account-email" href=""></a>
-				</blockquote>
-			</div>
-			<div class="members-only">
-				<p>Welcome to the members section of the CFMS Website. As a CFMS Member, you have access to a variety of resources, discounts, and exclusive awards. Click on some of the links to the left to access some of the exclusive resources available online.</p>
-				<h2><strong>What's new?</strong></h2>
-				<ul>
-					<li>Receive a 30% Discount on Wolters Kluwer Lippincott resources with <strong>free shipping</strong>! See our <a href="/what-we-do/student-affairs/discounts.html">discounts page</a> for more details.</li>
-					<li><strong>CaRMS WestJet Discount</strong>: Save money on flights during your CaRMS electives and interview period. See our <a href="/what-we-do/student-affairs/discounts.html">discounts page</a> for more details.</li>
-				</ul>
-			</div>
-			<div class="non-members">
-				<blockquote>
-					<h3><strong>Please login to see this page</strong></h3>
-					<ul>
-						<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
-					</ul>
-				</blockquote>
-			</div>
-		</div>
+		<div id="side-content" class="editable"><div><h1><strong>Membres de la FEMC</strong></h1></div><div id="account-details" class="members-only"><blockquote id="account-info"><h3><strong><strong>Votre compte</strong>:</strong></h3><b>Nom:</b>&nbsp;<span id="account-name"></span><br /><b>Institution acad&eacute;mique:</b>&nbsp;<span id="account-school"></span><br /><b>Ann&eacute;e de fin d'&eacute;tudes:</b>&nbsp;<span id="account-grad-year"></span><br /><b>Adresse courriel:</b></blockquote></div><div class="members-only"><p>Bienvenue dans la section des membres du site Web de la FEMC. En tant que membre de la FEMC, vous avez acc&egrave;s &agrave; une vari&eacute;t&eacute; de ressources, de r&eacute;ductions et de r&eacute;compenses exclusives. Cliquez sur certains des liens sur la gauche pour acc&eacute;der &agrave; des ressources exclusives disponibles en ligne.</p><h2><strong><strong>Quoi de neuf?</strong></strong></h2><ul><li>Recevez une r&eacute;duction de 30% sur les ressources Wolters Kluwer Lippincott avec la <strong>livraison gratuite</strong>! Consultez notre <a href="/fr/what-we-do/student-affairs/discounts.html">page de rabais</a> pour plus de d&eacute;tails.</li><li><strong>Rabais CaRMS WestJe</strong><strong>t</strong>: &eacute;conomisez de l'argent sur les vols pendant vos stages &agrave; options et la p&eacute;riode d'entrevue de CaRMS. Consultez notre <a href="/fr/what-we-do/student-affairs/discounts.html">page de rabais</a> pour plus de d&eacute;tails.</li></ul></div><div class="non-members"><blockquote><h3><strong>Please login to see this page</strong></h3><ul><li><a class="login-modal cc-active" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li></ul></blockquote></div></div>
 	</div>
 	{% include footer.html %}
 </body>
-</html>
