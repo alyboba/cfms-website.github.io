@@ -151,6 +151,8 @@ meetings:
 - lang: "fr"
   event_title: "Détails de l'évènement"
   
+#Sidebar Global Health
+#=====================
 #Sidebar global health
 sidebar-global-health:
 - lang: "en"
