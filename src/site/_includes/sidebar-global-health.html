@@ -1,27 +1,30 @@
 <div id="sidebar">
 	<div id="scroll">
-		<span id="sidebar-title"><a href="">Global Health</a></span>
+	    {% for gh in site.data.translations.sidebar-global-health %}
+		{% if gh.lang == page.lang %}
+		<span id="sidebar-title"><a href="">{{gh.sidebar-title1}}</a></span>
 		<ul>
-		    {% for gh in site.data.translations.sidebar-global-health %}
-		    {% if gh.lang == page.lang %}
+
 			<li><a id="overview" href=".">{{gh.overview}}</a></li>
-			<li><a id="our-team" href="our-team.html">Our Team</a></li>
-			{% endif %}
-			{% endfor %}
+			<li><a id="our-team" href="our-team.html">{{gh.our-team}}</a></li>
+
 		</ul>
-		<span id="sidebar-title">Resources</span>
+		
+		<span id="sidebar-title">{{gh.sidebar-title2}}</span>
 		<ul>
-			<li><a id="international-exchanges" href="international-exchanges.html">International Exchanges</a></li>
-			<li><a id="global-health-blog" href="global-health-blog.html">Global Health Blog</a></li>
-			<li><a id="ifmsa" href="ifmsa.html">IFMSA</a></li>
-			<li><a id="global-health-education" href="global-health-education.html">Global Health Education</a></li>
-			<li><a id="partnerships" href="partnerships.html">Partnerships</a></li>
-			<li><a id="reproductive-sexual-health" href="reproductive-sexual-health.html">Reproductive &amp; Sexual Health</a></li>
-			<li><a id="human-rights-peace" href="human-rights-peace.html">Human Rights &amp; Peace</a></li>
+			<li><a id="international-exchanges" href="international-exchanges.html">{{gh.international-exchanges}}</a></li>
+			<li><a id="global-health-blog" href="global-health-blog.html">{{gh.global-health-blog}}</a></li>
+			<li><a id="ifmsa" href="ifmsa.html">{{gh.ifmsa}}</a></li>
+			<li><a id="global-health-education" href="global-health-education.html">{{gh.global-health-education}}</a></li>
+			<li><a id="partnerships" href="partnerships.html">{{gh.partnerships}}</a></li>
+			<li><a id="reproductive-sexual-health" href="reproductive-sexual-health.html">{{gh.reproductive-sexual-health}}</a></li>
+			<li><a id="human-rights-peace" href="human-rights-peace.html">{{gh.human-rights-peace}}</a></li>
 			<div>
-				<li><a id="human-rights-peace-pocket-cards" style="padding-left:15px;" href="human-rights-peace-pocket-cards.html">Pocket Card Series</a></li>
+				<li><a id="human-rights-peace-pocket-cards" style="padding-left:15px;" href="human-rights-peace-pocket-cards.html">{{gh.human-rights-peace-pocket-cards}}</a></a></li>
 			</div>
-			<li><a id="aboriginal-health" href="aboriginal-health.html">Aboriginal Health</a></li>
+			<li><a id="aboriginal-health" href="aboriginal-health.html">{{gh.aboriginal-health}}</a></li>
 		</ul>
+		{% endif %}
+		{% endfor %}
 	</div>
 </div>
