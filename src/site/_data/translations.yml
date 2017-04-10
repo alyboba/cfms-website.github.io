@@ -151,3 +151,13 @@ meetings:
 - lang: "fr"
   event_title: "Détails de l'évènement"
   
+#Sidebar global health
+sidebar-global-health:
+- lang: "en"
+  overview: "Overview"
+  our-team: "Our Team"
+- lang: "fr"
+  overview: "Aperçu"
+  our-team: "Notre conseil"
+
+  
