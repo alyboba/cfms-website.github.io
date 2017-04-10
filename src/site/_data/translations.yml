@@ -151,7 +151,7 @@ meetings:
 - lang: "fr"
   event_title: "Détails de l'évènement"
   
-#Sidebar Global Health
+#Sidebar 
 #=====================
 #Sidebar global health
 sidebar-global-health:
@@ -170,7 +170,7 @@ sidebar-global-health:
   human-rights-peace-pocket-cards: "Pocket Card Series"
   aboriginal-health: "Aboriginal Health"
 - lang: "fr"
-  sidebar-title_1: "Global Health"
+  sidebar-title_1: "Santé globale"
   overview: "Aperçu"
   our-team: "Notre conseil"
   sidebar-title_2: "Ressources"
