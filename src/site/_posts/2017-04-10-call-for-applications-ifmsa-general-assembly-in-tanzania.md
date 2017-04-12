@@ -13,7 +13,7 @@ The IFMSA General Assemblies are among the biggest youth-led events around the w
 
 **Meeting:** August 1-7th in Arusha, Tanzania
 
-**Application Deadline:** April 28th, 2017 at midnight EST
+**Application Deadline:** April 30th, 2017 at midnight EST
 
 **[Click here for more information](https://docs.google.com/document/d/1KaaH7tv0nsJIY2qPqmKKpP8A8mTCqA-yEUB9f5DrsJ8/edit?usp=sharing)**
 
