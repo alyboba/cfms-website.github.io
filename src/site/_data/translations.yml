@@ -182,7 +182,7 @@ sidebar-global-health:
   human-rights-peace-pocket-cards: "Séries pocket card"
   aboriginal-health: "Santé autochtone"
   
-  #Sidebar 
+#Sidebar 
 #=====================
 #Sidebar who we are
 sidebar-who-we-are:
@@ -196,7 +196,7 @@ sidebar-who-we-are:
   sidebar-title_2: "Our Organization"
   governance-structure: "Governance Structure"
   internal-policy-bylaws: "Bylaws &amp; Internal Policy"
- - lang: "fr"
+- lang: "fr"
   sidebar-title_1: "Qui sommes-nous?"
   executives-officers: "Conseil exécutif et directeurs"
   member-schools: "Écoles membres"
