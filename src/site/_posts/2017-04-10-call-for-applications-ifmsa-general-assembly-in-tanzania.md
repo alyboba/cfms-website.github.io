@@ -15,6 +15,6 @@ The IFMSA General Assemblies are among the biggest youth-led events around the w
 
 **Application Deadline:** April 28th, 2017 at midnight EST
 
-**Click here for more information:**&nbsp;https://docs.google.com/document/d/1KaaH7tv0nsJIY2qPqmKKpP8A8mTCqA-yEUB9f5DrsJ8/edit?usp=sharing
+**[Click here for more information](https://docs.google.com/document/d/1KaaH7tv0nsJIY2qPqmKKpP8A8mTCqA-yEUB9f5DrsJ8/edit?usp=sharing)**
 
 Please email Jessica Bryce at vpglobalhealth@cfms.org with any questions.
