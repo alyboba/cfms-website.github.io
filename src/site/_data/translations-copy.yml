@@ -1,0 +1,208 @@
+#Recent News
+recent_news_en: "Recent news"
+recent_news_fr: "Nouvelles récentes"
+
+#Learn More
+learn_more_en: "Learn more"
+learn_more_fr: "Pour en savoir plus"
+
+#What's new
+whats_new_en: "What's new?"
+whats_new_fr: "Quoi de neuf?"
+
+#Sponsored By
+sponsored_by_en: "Sponsored by"
+sponsored_by_fr: "Financé par"
+
+#Top Menu
+#========
+
+nav:
+- lang: "en"
+  acronym: "CFMS"
+  title: "Canadian Federation of<br>Medical Students"
+  lang_path: ""
+  who_we_are: "Who we are"
+  what_we_do: "What we do"
+  advocacy: "Advocacy"
+  education: "Education"
+  global_health: "Global Health"
+  student_affairs: "Student Affairs"
+  resources: "Resources"
+  meetings: "Meetings"
+  members: "Members"
+  news: "News"
+  login: "Login"
+  logout: "Logout"
+- lang: "fr"
+  acronym: "FEMC"
+  title: "Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada"
+  lang_path: "/fr"
+  who_we_are: "Qui sommes-nous?"
+  what_we_do: "Que faisons-nous?"
+  advocacy: "Représentation"
+  education: "Éducation"
+  global_health: "Santé mondiale"
+  student_affairs: "Affaires étudiantes"
+  resources: "Ressources"
+  meetings: "Réunions"
+  members: "Membres"
+  news: "Nouvelles"
+  login: "Se connecter"
+  logout: "Se déconnecter"
+
+#Financial Resources
+#===================
+financial_resources:
+- lang: "en"
+  student_services: "Services for Students"
+  financial_advice: "Financial Advice for:"
+  testimonials: "Testimonials"
+  student_finances: "Student Finances"
+  student_finances_url: "student-finances.html"
+  md_leadership_awards: "MD Leadership Awards"
+  md_leadership_awards_url: "/resources/md-leadership-awards.html"
+  md_leadership_awards_instructions: "How to Apply"
+  md_leadership_awards_instructions_url: "/resources/md-leadership-awards-instructions.html"
+  md_leadership_awards_apply: "Submit Application"
+  md_leadership_awards_apply_url: "/resources/md-leadership-awards-application.html"
+  md_leadership_awards_prev_winners: "Previous Recipients"
+  md_leadership_awards_prev_winners_url: "/resources/md-leadership-awards-prev-winners.html"
+  md_travel_awards: "MD Travel Awards"
+  md_travel_awards_url: "/resources/md-travel-awards.html"
+  managing_debt: "Managing Debt"
+  managing_debt_url: "https://mdm.ca/physician-life-stages/students/managing-debt/"
+  paying_med_school: "Paying for Medical School"
+  paying_med_school_url: "https://mdm.ca/physician-life-stages/students/paying-for-medical-school/"
+  preparing_residency: "Preparing for Residency"
+  preparing_residency_url: "https://mdm.ca/physician-life-stages/students/preparing-for-residency/"
+  studying_abroad: "Studying Abroad"
+  studying_abroad_url: "https://mdm.ca/physician-life-stages/students/resources-for-studying-abroad/"
+  client_testimonials: "Client Testimonials"
+  client_testimonials_url: "https://mdm.ca/about-md/testimonials/" 
+- lang: "fr"
+  student_services: "Services aux étudiants"
+  financial_advice: "Conseils financiers:"
+  testimonials: "Témoignages"
+  student_finances: "Les finances des étudiants"
+  student_finances_url: "student-finances.html"
+  md_leadership_awards: "Prix de leadership MD"
+  md_leadership_awards_url: "/fr/resources/md-leadership-awards.html"
+  md_leadership_awards_instructions: "How to Apply"
+  md_leadership_awards_instructions_url: "/fr/resources/md-leadership-awards-instructions.html"
+  md_leadership_awards_apply: "Submit Application"
+  md_leadership_awards_apply_url: "/fr/resources/md-leadership-awards-application.html"
+  md_leadership_awards_prev_winners: "Previous Recipients"
+  md_leadership_awards_prev_winners_url: "/fr/resources/md-leadership-awards-prev-winners.html"
+  md_travel_awards: "Bourses de voyage MD"
+  md_travel_awards_url: "/fr/resources/md-travel-awards.html"
+  managing_debt: "Gérer vos dettes"
+  managing_debt_url: "https://mdm.ca/fr/%c3%a9tapes-de-carri%c3%a8re/etudiants-en-medecine/gerer-vos-dettes"
+  paying_med_school: "Payer vos études en médecine"
+  paying_med_school_url: "https://mdm.ca/fr/%C3%A9tapes-de-carri%C3%A8re/etudiants-en-medecine/payer-vos-etudes-en-medecine"
+  preparing_residency: "Vous préparer à la résidence"
+  preparing_residency_url: "https://mdm.ca/fr/%c3%a9tapes-de-carri%c3%a8re/etudiants-en-medecine/vous-preparer-a-la-residence"
+  studying_abroad: "Étudier à l’étranger"
+  studying_abroad_url: "https://mdm.ca/fr/%C3%A9tapes-de-carri%C3%A8re/etudiants-en-medecine/des-ressources-pour-etudier-a-l-etranger"
+  client_testimonials: "Témoignages de vos collègues"
+  client_testimonials_url: "https://mdm.ca/fr/au-sujet-de-md/temoignages"
+
+#Footer
+#======
+
+#Latest tweets
+latest_tweets_en: "Latest tweets"
+latest_tweets_fr: "Derniers tweets"
+
+#Find us on
+find_us_on:
+- lang: "en"
+  title: "Find us on"
+  copy: "CFMS. All Rights Reserved.<br>Developed by"
+  site_map: "Site map:"
+- lang: "fr"
+  title: "Trouvez nous sur"
+  copy: "FEMC. Tous droits réservés.<br>Développé par"
+  site_map: "Plan du site:"
+
+#Contact us
+contact_us:
+- lang: "en"
+  title: "Contact us"
+  name: "Canadian Federation of Medical Students"
+  phone: "Phone"
+  fax: "Fax"
+  general_inquiries: "General Inquiries"
+  media: "Media"
+  it: "Information Technology"
+- lang: "fr"
+  title: "Pour nous joindre"
+  name: "Fédération des étudiants et des étudiantes en médecine du Canada"
+  phone: "Téléphone"
+  fax: "Télécopieur"
+  general_inquiries: "Questions diverses"
+  media: "Médias"
+  it: "Technologies de l'information"
+
+#Meetings
+meetings:
+- lang: "en"
+  event_title: "Event Details"
+- lang: "fr"
+  event_title: "Détails de l'évènement"
+  
+#Sidebar 
+#=====================
+#Sidebar global health
+sidebar-global-health:
+- lang: "en"
+  sidebar-title_1: "Global Health"
+  overview: "Overview"
+  our-team: "Our Team"
+  sidebar-title_2: "Resources"
+  international-exchanges: "International Exchanges"
+  ifmsa: "IFMSA"
+  global-health-education: "Global Health Education"
+  partnerships: "Partnerships"
+  reproductive-sexual-health: "Reproductive &amp; Sexual Health"
+  human-rights-peace: "Human Rights &amp; Peace"
+  human-rights-peace-pocket-cards: "Pocket Card Series"
+  aboriginal-health: "Aboriginal Health"
+- lang: "fr"
+  sidebar-title_1: "Santé globale"
+  overview: "Aperçu"
+  our-team: "Notre conseil"
+  sidebar-title_2: "Ressources"
+  international-exchanges: "Échanges internationaux"
+  ifmsa: "IFMSA"
+  global-health-education: "Éducation en matière de santé globale"
+  partnerships: "Partenaires"
+  reproductive-sexual-health: "Reproduction &amp; santé sexuelle"
+  human-rights-peace: "Droits humains &amp; paix"
+  human-rights-peace-pocket-cards: "Séries pocket card"
+  aboriginal-health: "Santé autochtone"
+  
+#=====================
+#Sidebar who we are
+sidebar-who-we-are:
+- lang: "en"
+  sidebar-title_1: "Who We Are"
+  executives-officers: "Executives &amp; Officers"
+  member-schools: "Member Schools"
+  cfms-representatives: "CFMS Representatives"
+  cfms-at-your-school: "CFMS at your School"
+  partner-organizations: "Partner Organizations"
+  sidebar-title_2: "Our Organization"
+  governance-structure: "Governance Structure"
+  internal-policy-bylaws: "Bylaws &amp; Internal Policy"
+- lang: "fr"
+  sidebar-title_1: "Qui sommes-nous?"
+  executives-officers: "Conseil exécutif et directeurs"
+  member-schools: "Écoles membres"
+  cfms-representatives: "Représentants de la FEMC"
+  cfms-at-your-school:  "La FEMC à votre école"
+  partner-organizations: "Organisations partenaires"
+  sidebar-title_2: "Notre organisation"
+  governance-structure: "Structure de gouvernance"
+  internal-policy-bylaws: "Règlements administratifs et politique intérieure"
+  
