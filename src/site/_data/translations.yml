@@ -182,27 +182,3 @@ sidebar-global-health:
   human-rights-peace-pocket-cards: "Séries pocket card"
   aboriginal-health: "Santé autochtone"
   
-#=====================
-#Sidebar who we are
-sidebar-who-we-are:
-- lang: "en"
-  sidebar-title_1: "Who We Are"
-  executives-officers: "Executives &amp; Officers"
-  member-schools: "Member Schools"
-  cfms-representatives: "CFMS Representatives"
-  cfms-at-your-school: "CFMS at your School"
-  partner-organizations: "Partner Organizations"
-  sidebar-title_2: "Our Organization"
-  governance-structure: "Governance Structure"
-  internal-policy-bylaws: "Bylaws &amp; Internal Policy"
-- lang: "fr"
-  sidebar-title_1: "Qui sommes-nous?"
-  executives-officers: "Conseil exécutif et directeurs"
-  member-schools: "Écoles membres"
-  cfms-representatives: "Représentants de la FEMC"
-  cfms-at-your-school:  "La FEMC à votre école"
-  partner-organizations: "Organisations partenaires"
-  sidebar-title_2: "Notre organisation"
-  governance-structure: "Structure de gouvernance"
-  internal-policy-bylaws: "Règlements administratifs et politique intérieure"
-  
