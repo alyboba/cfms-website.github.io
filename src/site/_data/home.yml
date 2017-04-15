@@ -11,17 +11,17 @@ news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien �
 #news_text_en: 'Something missing on our new site? Visit our old one at www.old.cfms.org!'
 #news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien à www.old.cfms.org!"
 news_text_url: ''
-banner_url: /resources/md-leadership-awards.html
-banner_image_url: images/hero-images/mdfm-leadership-banner.jpg
-banner_text:
-  - lang: en
-    byline: Announcement
-    title: 'MDFM Leadership Awards &ndash; now open!'
-    description: Click here to learn how to apply. The application deadline is January 20th, 2017.
-  - lang: fr
-    byline: Annonce
-    title: 'MDFM Leadership Awards &ndash; now open!'
-    description: Click here to learn how to apply. The application deadline is January 20th, 2017.
+# banner_url: /resources/md-leadership-awards.html
+# banner_image_url: images/hero-images/mdfm-leadership-banner.jpg
+# banner_text:
+#   - lang: en
+#     byline: Announcement
+#     title: 'MDFM Leadership Awards &ndash; now open!'
+#     description: Click here to learn how to apply. The application deadline is January 20th, 2017.
+#   - lang: fr
+#     byline: Annonce
+#     title: 'MDFM Leadership Awards &ndash; now open!'
+#     description: Click here to learn how to apply. The application deadline is January 20th, 2017.
 featured_links:
   - url: meetings/agm-2016-edmonton.html
     image_url_en: images/home-link-thumbs/agm-2016.jpg
