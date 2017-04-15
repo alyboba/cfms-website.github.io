@@ -6,22 +6,21 @@ intro:
     title: Fédération des étudiants et des étudiantes en médecine du Canada
     description: 'La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre.'
 news_strip: true
-news_text_en: "Best of Luck to all final year medical students with their CaRMS tour!"
+# news_text_en: "Best of Luck to all final year medical students with their CaRMS tour!"
+news_text_en: 'Something missing on our new site? Visit our old one at www.old.cfms.org!'
 news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien à www.old.cfms.org!"
-#news_text_en: 'Something missing on our new site? Visit our old one at www.old.cfms.org!'
-#news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien à www.old.cfms.org!"
 news_text_url: ''
-# banner_url: /resources/md-leadership-awards.html
-# banner_image_url: images/hero-images/mdfm-leadership-banner.jpg
+# banner_url: ''
+# banner_image_url: images/hero-images/40celebration.png
 # banner_text:
 #   - lang: en
-#     byline: Announcement
-#     title: 'MDFM Leadership Awards &ndash; now open!'
-#     description: Click here to learn how to apply. The application deadline is January 20th, 2017.
+#     byline: 1977-2017
+#     title: 'The CFMS is celebrating its 40th anniversary!'
+#     description: More details to come.
 #   - lang: fr
-#     byline: Annonce
-#     title: 'MDFM Leadership Awards &ndash; now open!'
-#     description: Click here to learn how to apply. The application deadline is January 20th, 2017.
+#     byline: 1977-2017
+#     title: 'The CFMS is celebrating its 40th anniversary!'
+#     description: More details to come.
 featured_links:
   - url: meetings/agm-2016-edmonton.html
     image_url_en: images/home-link-thumbs/agm-2016.jpg
@@ -38,3 +37,8 @@ featured_links:
     image_url_fr: images/home-link-thumbs/exec-2016-2017.jpg
     text_en: Meet your 2016-17 Executive team
     text_fr: Découvrez votre conseil exécutif de 2016-17
+  - url: ''
+    image_url_en: images/home-link-thumbs/40th-celebration.png
+    image_url_fr: images/home-link-thumbs/40th-celebration.png
+    text_en: 40th anniversary celebration details to come
+    text_fr: 40th anniversary celebration details to come
