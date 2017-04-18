@@ -368,7 +368,7 @@ function submitApplication() {
 </style> 
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/meetings.css">
+	<link rel="stylesheet" href="/stylesheets/meetings.css" />
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 	
@@ -443,25 +443,25 @@ function submitApplication() {
 			<h2 id="aside-title"><strong>Event details<i class="fa fa-star-o"></i></strong></h2>
 			<div class="icon"><i class="fa fa-map-marker"></i></div>
 			<li>
-				<b>LOCATION</b><br>
-				RBC Convention Centre, Winnipeg<br>
-				375 York Ave. <br>
-				Winnipeg, MB, R3C 3J3<br>
+				<b>LOCATION</b><br />
+				RBC Convention Centre, Winnipeg<br />
+				375 York Ave. <br />
+				Winnipeg, MB, R3C 3J3<br />
 			</li>
 			<div class="icon"><i class="fa fa-clock-o"></i></div>
 			<li>
-				<b>DATE</b><br>
-				April 28&ndash;29, 2017<br>
+				<b>DATE</b><br />
+				April 28&ndash;29, 2017<br />
 			</li>
 			<div class="icon"><i class="fa fa-briefcase what-to-bring"></i></div>
 			<li>
-				<b>WHAT TO BRING</b><br>
+				<b>WHAT TO BRING</b><br />
 				Dress Code: Business attire for meetings, fancy casual for social events.
 			</li>
 			<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
 			<div id="emails">
-				<li><b>QUESTIONS?</b><br>
-				Email <a style="border-bottom:1px solid #EAEAEA" href="mailto:office@cfms.org">office@cfms.org</a><br>
+				<li><b>QUESTIONS?</b><br />
+				Email <a style="border-bottom:1px solid #EAEAEA" href="mailto:office@cfms.org">office@cfms.org</a><br />
 				</li>
 			</div>
 			<div id="shortcut-links">
@@ -498,8 +498,7 @@ function submitApplication() {
 				<h5><strong>Pay your fees online</strong></h5>
 				<div class="members-only">
 					<form id="payment-form" payment-id="SGM2017" action="/#" method="POST">
-						<script src="https://payform.beanstream.com/payform/beanstream_payform.js" data-image="https://cfms.org/images/cfms-logo.svg"
-							data-name="CFMS" data-description="2017 CFMS Spring General Meeting - Registration" data-amount="135" data-currency="cad" data-billingAddress="false" data-submitForm="false" data-primaryColor="#BB0A21">
+						<script src="https://payform.beanstream.com/payform/beanstream_payform.js" data-image="https://cfms.org/images/cfms-logo.svg" data-name="CFMS" data-description="2017 CFMS Spring General Meeting - Registration" data-amount="135" data-currency="cad" data-billingaddress="false" data-submitform="false" data-primarycolor="#BB0A21">
 							</script>
 					</form>
 					<p>
@@ -535,30 +534,7 @@ function submitApplication() {
 				<h4><strong>Meeting Information</strong></h4>
 				<ul>
 				    <!-- make this portion editable -->
-				    <div id="important-documents_edit" class="editable">
-    			        <li>
-    						<span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/cfms sgm 2017 agenda.pdf"><strong>SGM 2017 Draft Agenda</strong></a> 
-    					</li>
-    
-    					 <li>
-    						<span class="file-format">PDF</span>SGM 2017 Global Health Program Draft Agenda (Coming Soon)
-    					</li>
-    					 <li>
-    						<span class="file-format">PDF</span>SGM 2017 Presidents' Roundtable Agenda (Coming Soon)
-    					</li>
-    					 <li>
-    						<span class="file-format">PDF</span>SGM 2017 CFMS Representatives Agenda (Coming Soon)
-    					</li>
-    		             <li>
-    						<span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/sgm 2017 call for nominations.pdf">SGM 2017 Call for Nomination - CFMS President-Elect</a>
-    					</li>
-    					 <li>
-    						<span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/sgm 2017 call for resolutions.pdf">SGM 2017 Call for Resolutions</a>
-    					</li>
-    					<li>
-    						<span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/agm 2016 minutes.pdf">AGM 2016 Minutes</a>
-    					</li>
-					</div>
+				    <div class="content editable"><ul><li><span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/cfms sgm 2017 agenda.pdf"><strong>SGM 2017 Draft Agenda</strong></a></li><li><span class="file-format">PDF</span>SGM 2017 Global Health Program Draft Agenda (Coming Soon2)</li><li><span class="file-format">PDF</span>SGM 2017 Presidents' Roundtable Agenda (Coming Soon)</li><li><span class="file-format">PDF</span>SGM 2017 CFMS Representatives Agenda (Coming Soon)</li><li><span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/sgm 2017 call for nominations.pdf">SGM 2017 Call for Nomination - CFMS President-Elect</a></li><li><span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/sgm 2017 call for resolutions.pdf">SGM 2017 Call for Resolutions</a></li><li><span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/agm 2016 minutes.pdf">AGM 2016 Minutes</a></li></ul></div>
 				</ul>
 				
 			</blockquote>
@@ -568,7 +544,7 @@ function submitApplication() {
 				<h4><strong>Executive &amp; Officer Reports (Coming Soon)</strong></h4>
 				<ul>
 				    <!-- make this portion editable -->
-                    <id="executive-officer-reports_edit" class="editable">
+                    <div class="content editable">
     				    <li>
     						<span class="file-format">PDF</span>President
     					</li>
@@ -603,7 +579,7 @@ function submitApplication() {
     					<li>
     						<span class="file-format">PDF</span>Atlantic Regional Representatives
     					</li>
-					</id>
+					</div>
 					<!--
 						<li>
 						<span class="file-format">PDF</span><a href="temp/files/meetings/agm-2016/exec-reports/agm 2016 - atlantic regional reps.pdf">Atlantic Regional Representatives</a>
@@ -805,4 +781,3 @@ $('.redirect-modal').click(function(){
 </script>
 <script type="text/javascript" src="/js/bundle.js"></script>
 </body>
-</html>
