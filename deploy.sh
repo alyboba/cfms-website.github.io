@@ -19,13 +19,13 @@ fi
 REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
-MASTER_SHA=`git log -n 1 --pretty=format:"%B" origin/master | cut -d':' -f2 | cut -c2-`
 
 # Clone the existing gh-pages for this repo into out/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
 git clone $REPO serve
 cd serve
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+MASTER_SHA=`git log -n 1 --pretty=format:"%B" | cut -d':' -f2 | cut -c2-`
 cd ..
 echo "The following files have changed between $SHA and $MASTER_SHA:"
 git --no-pager diff --name-only $SHA $MASTER_SHA
@@ -65,6 +65,5 @@ chmod 600 deploy_key
 eval `ssh-agent -s`
 ssh-add deploy_key
 
-git fetch
 # Now that we're all set up, we can push.
-git push --force-with-lease $SSH_REPO $TARGET_BRANCH
+git push $SSH_REPO $TARGET_BRANCH
