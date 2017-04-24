@@ -19,9 +19,7 @@ fi
 REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
-
-echo "The following files have changed since the last build:"
-git --no-pager diff --name-only $SHA $TRAVIS_COMMIT
+MASTER_SHA=`git log -n 1 --pretty=format:"%B" origin/master | cut -d':' -f2 | cut -c2-`
 
 # Clone the existing gh-pages for this repo into out/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
@@ -29,7 +27,9 @@ git clone $REPO serve
 cd serve
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
-ls
+echo "The following files have changed between $SHA and $MASTER_SHA:"
+git --no-pager diff --name-only $SHA $MASTER_SHA
+
 
 # Clean out existing contents
 rm -rf serve/* || exit 0
