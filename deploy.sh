@@ -9,11 +9,13 @@ function doCompile {
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-    echo "Skipping deploy; just doing a build."
-    doCompile
-    exit 0
-fi
+# Note: This is now a feature on Travis-CI so leave it commented out here
+
+# if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
+#     echo "Skipping deploy; just doing a build."
+#     doCompile
+#     exit 0
+# fi
 
 # Save some useful information
 REPO=`git config remote.origin.url`
@@ -27,9 +29,12 @@ cd serve
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 MASTER_SHA=`git log -n 1 --pretty=format:"%B" | cut -d':' -f2 | cut -c2-`
 cd ..
-echo "The following files have changed between $SHA and $MASTER_SHA:"
-git --no-pager diff --name-only $SHA $MASTER_SHA
 
+# Check if there are changes to website source or tests otherwise bail.
+if ! git --no-pager diff --name-only $SHA $MASTER_SHA | grep -qP "^src\/|^test\/"; then
+  echo "No changes to website source in this commit. Skipping build & push."
+  exit 0
+fi
 
 # Clean out existing contents
 rm -rf serve/* || exit 0
