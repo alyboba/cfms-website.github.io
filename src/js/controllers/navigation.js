@@ -28,6 +28,8 @@ export default class NavigationController {
                         fileUploaders[i].disabled = false;
                     //Show admin elements if is admin
                     if (user.isAdmin) {
+                        //Hide the not-authorized sign.
+                        document.getElementById('not-authorized').style.display = 'none';
                         var adminElements = document.getElementsByClassName('admin-only'), i;
                         for (var i = 0; i < adminElements.length; i++)
                             adminElements[i].style.display = 'block';

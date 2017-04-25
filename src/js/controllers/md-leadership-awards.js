@@ -62,8 +62,6 @@ class LeadershipAwardAdminController extends FirebaseConnection {
     process() {
         //Confirm that present user is an admin.
         if (!this.auth.user.isAdmin) return console.log("Error: Must be an admin to view this resource.");
-        //Hide the not-authorized sign.
-        document.getElementById('not-authorized').style.display = 'none';
 
         //Iterates through each submitted application
         var query = this.firebase.database().ref('leadership-award/' + window.config.leadership_award_year).orderByKey();

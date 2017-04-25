@@ -6,6 +6,7 @@ import * as Config from '../../config';
 //   console.log("[FIREBASE]", message);
 // });
 const firebase = Firebase.initializeApp(Config.firebase);
+console.log(firebase); // TODO: Remove
 
 class FirebaseConnection {
     constructor() {

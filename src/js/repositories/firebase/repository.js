@@ -9,4 +9,8 @@ export default class Repository {
     get(id) {
         return this.ref.child(id).once('value').then(snapshot => new this.Model(snapshot.val()));
     }
+
+    getAll() {
+        return this.ref.orderByKey().once('value');
+    }
 }
