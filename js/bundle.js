@@ -111621,8 +111621,6 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
         value: function process() {
             //Confirm that present user is an admin.
             if (!this.auth.user.isAdmin) return console.log("Error: Must be an admin to view this resource.");
-            //Hide the not-authorized sign.
-            document.getElementById('not-authorized').style.display = 'none';
 
             //Iterates through each submitted application
             var query = this.firebase.database().ref('leadership-award/' + window.config.leadership_award_year).orderByKey();
@@ -111676,7 +111674,7 @@ exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
 },{"../repositories/firebase/utils":452}],437:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -111692,20 +111690,53 @@ var MeetingRegistrationsController = function () {
 
         this.auth = authenticationService;
         this.meetingRegistrationRepository = meetingRegistrationRepository;
+        this.t = null;
         this.process();
     }
 
     _createClass(MeetingRegistrationsController, [{
-        key: "process",
+        key: 'process',
         value: function process() {
-            if (this.auth.user) {
-                var profile = this.auth.user;
-                var firstName = profile.given_name;
-                var lastName = profile.family_name;
-                this.meetingRegistrationRepository.get("/DEMO/-Kf2ZSXYkqlWeAGpPjyN").then(function (val) {
-                    return console.log(val);
+            var _this = this;
+
+            if (!this.auth.user || !this.auth.user.isAdmin) return console.log('Access denied.');
+            var profile = this.auth.user;
+
+            this.t = $('#example').DataTable();
+
+            this.meetingRegistrationRepository.getAll().then(function (val) {
+                var meetingBox = $('#selected-meeting');
+                var meetings = {};
+                val.forEach(function (meeting) {
+                    meetings[meeting.key] = meeting;
+                    meetingBox.append($('<option>', {
+                        value: meeting.key,
+                        text: meeting.key
+                    }));
                 });
-            } else {}
+                meetingBox.change(function () {
+                    var id = meetingBox.val();
+                    _this.t.clear();
+                    _this._populateTable(id, meetings[id].val());
+                });
+            });
+        }
+    }, {
+        key: '_populateTable',
+        value: function _populateTable(id, meeting) {
+            var _this2 = this;
+
+            var _loop = function _loop(meetingId) {
+                _this2.meetingRegistrationRepository.get(id + '/' + meetingId).then(function (val) {
+                    var user = val.user;
+                    var row = [meetingId, user.email, user.given_name, user.family_name, val.amount, val.approved];
+                    _this2.t.row.add(row).draw(false);
+                });
+            };
+
+            for (var meetingId in meeting) {
+                _loop(meetingId);
+            }
         }
     }]);
 
@@ -111810,6 +111841,8 @@ var NavigationController = function () {
                             fileUploaders[i].disabled = false;
                         } //Show admin elements if is admin
                         if (user.isAdmin) {
+                            //Hide the not-authorized sign.
+                            document.getElementById('not-authorized').style.display = 'none';
                             var adminElements = document.getElementsByClassName('admin-only'),
                                 i;
                             for (var i = 0; i < adminElements.length; i++) {
@@ -112444,6 +112477,11 @@ var Repository = function () {
                 return new _this.Model(snapshot.val());
             });
         }
+    }, {
+        key: 'getAll',
+        value: function getAll() {
+            return this.ref.orderByKey().once('value');
+        }
     }]);
 
     return Repository;
@@ -112483,6 +112521,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 //   console.log("[FIREBASE]", message);
 // });
 var firebase = _firebase2.default.initializeApp(Config.firebase);
+console.log(firebase); // TODO: Remove
 
 var FirebaseConnection = function FirebaseConnection() {
   _classCallCheck(this, FirebaseConnection);
