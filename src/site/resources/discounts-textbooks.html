@@ -1,0 +1,68 @@
+---
+title: "Textbook Discounts"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/resources.css">
+</head>
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#resources" ).classList.toggle("active");
+	</script>
+
+	<div class="discounts content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-discounts.html %}
+		<script type="text/javascript">
+			document.querySelector( "#textbook-discounts" ).classList.toggle("sidebar-active");
+		</script>
+		<div class="student-discounts-content" class="editable">
+			<h1 id="page-title">Textbook Discounts</h1>
+			<h1><strong>Wolters Kluwer/Lippincott Resources</strong></h1>
+			<hr>
+			<img class="pic-right" src="/images/discount-images/wolters-kluwer.png">
+			<p><strong>Receive a 30% Discount on Wolters Kluwer/Lippincott Resources</strong></p>
+			<p>Members of CFMS save 30% and receive FREE shipping on the full selection of resources from Wolters Kluwer/Lippincott. Choose from a variety of textbooks, review manuals loaded with Q&amp;A, flash cards, and more.</p>
+			<blockquote>
+				<h3><strong>Featuring:</strong></h3>
+				<div>
+					<ul>
+						<li><a href="http://www.lww.com/Product/9781451186888">Essentials for the Canadian Medical Licensing Exam, 2nd. Ed</a></li>
+						<li>Prepare for success on the MCCQE Part I!  This concise resource provides an efficient and effective review of exactly what you need to know to perform at your best on the exam.</li>
+						<li>Written by students, residents, and faculty, it contains only the essential information required to meet the Medical Council of Canada’s Objectives for the Qualifying Examination, saving you valuable time and helping you focus your study.</li>
+						<li>Each chapter covers common clinical presentations, including detailed differential diagnoses, relevant physical examination characteristics and diagnostic tests, treatment and patient consultation techniques, and epidemiological information, as well as fundamental scientific principles.</li>
+					</ul>
+				</div>
+			</blockquote>
+			<p>Be sure to login to the member's section to see the discount code below. Visit <a href="http://www.lww.com">www.lww.com</a>, select ANY product and use the discount code to save 30%!</p>
+			<blockquote>
+				<h3><strong>Discount Details</strong></h3>
+				<div class="non-members">
+				<ul>
+					<li>Please login in order to access this discount.</li>
+				</ul>
+				</div>
+				<div class="members-only">
+					<ul>
+						<li>Visit <a href="http://www.lww.com">www.lww.com</a>, select ANY product and use the discount code: <span id="application-deadline">WZP22CFT</span> to save 30%! Valid until Feb 28, 2017.</li>
+					</ul>
+				</div>
+			</blockquote>
+			<br>
+		</div>
+	</div>
+	<div>{% include footer.html %}</div>
+</body>
+</html>
