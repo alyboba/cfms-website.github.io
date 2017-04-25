@@ -7,9 +7,20 @@ intro:
     description: 'La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre.'
 news_strip: true
 # news_text_en: "Best of Luck to all final year medical students with their CaRMS tour!"
-news_text_en: 'Something missing on our new site? Visit our old one at www.old.cfms.org!'
-news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien à www.old.cfms.org!"
+news_text_en: "Something missing on our new site? Visit our old one at <a href='http://www.old.cfms.org'>www.old.cfms.org</a>!"
+news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien à <a href='http://www.old.cfms.org'>www.old.cfms.org</a>!"
 news_text_url: ''
+banner_url: 'meetings/sgm-2017-winnipeg.html'
+banner_image_url: images/hero-images/sgm2017.jpg
+banner_text:
+- lang: "en"
+  byline: "Announcement"
+  title: "CFMS SGM 2017 is Coming Soon!"
+  description: "Look forward to the CFMS Spring General Meeting, on <b>April 28-29th, 2017</b>, in Winnipeg."
+- lang: "fr"
+  byline: "Annonce"
+  title: "CFMS SGM 2017 is Coming Soon!"
+  description: "Look forward to the CFMS Spring General Meeting, on <b>April 28-29th, 2017</b>, in Winnipeg."
 # banner_url: ''
 # banner_image_url: images/hero-images/40celebration.png
 # banner_text:
@@ -40,5 +51,5 @@ featured_links:
   - url: ''
     image_url_en: images/home-link-thumbs/40th-celebration.png
     image_url_fr: images/home-link-thumbs/40th-celebration.png
-    text_en: 40th anniversary celebration details to come
-    text_fr: 40th anniversary celebration details to come
+    text_en: Celebrating our 40<sup>th</sup> Anniversary!<br>Details to come
+    text_fr: Celebrating our 40<sup>th</sup> Anniversary!<br>Details to come

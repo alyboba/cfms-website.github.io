@@ -355,6 +355,16 @@ $number-margin-mobile:40px;
 		list-style:none;
 	}
 }
+/* #Student Discounts
+––––––––––––––––––––––––––––––––––––––––*/
+.discounts {display:flex;}
+.student-discounts-content {
+	width:100%;
+	padding-bottom:30px;
+	h1 {display:block; width:100%;}
+	p, ul, li {max-width:$content-width;}
+}
+
 /* #MDFM Leadership Awards
 ––––––––––––––––––––––––––––––––––––––––*/
 #application-instructions-button, #submit-button {
