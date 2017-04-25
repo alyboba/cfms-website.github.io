@@ -368,9 +368,9 @@ function submitApplication() {
 </style> 
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+	<link rel="stylesheet" href="/stylesheets/resources.css">
 </head>
-<body ng-app="authApp" ng-controller="AuthController">
+<body>
 	
 	
 		<div id="top-padding"></div>
@@ -428,212 +428,68 @@ function submitApplication() {
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
 		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#what-we-do" ).classList.toggle("active");
+		document.querySelector( "#resources" ).classList.toggle("active");
 	</script>
 
-	<div class="content">
+	<div class="discounts content">
 		<!-- Displays the sidebar and emphasizes the active page -->
 		<div id="sidebar">
 	<div id="scroll">
-		<span id="sidebar-title">Student Affairs</span>
+		<span id="sidebar-title">Discounts</span>
 		<ul>
-			<li><a id="overview" href=".">Overview</a></li>
-			<li><a id="our-team" href="our-team.html">Our Team</a></li>
-		</ul>
-		<span id="sidebar-title">Resources</span>
-		<ul>
-			<li><a id="wellness" href="wellness.html">Wellness</a></li>
-			<li><a id="discounts" href="../../resources/discounts.html">Student Discounts</a></li>
+			<li><a id="travel-discounts" href="discounts-travel.html">Travel and Accommodations</a></li>
+			<li><a id="textbook-discounts" href="discounts-textbooks.html">Textbooks</a></li>
+			<li><a id="online-discounts" href="discounts-online.html">Online Resources</a></li>
+			<!--<li><a id="textbook-discounts" href="textbook-discounts.html">UpToDate Discount</a></li>
+			<li><a id="textbook-discounts" href="textbook-discounts.html">LASIK MD Vision Correction</a></li>
+			<li><a id="textbook-discounts" href="textbook-discounts.html">Disability Insurance</a></li> -->
 		</ul>
 	</div>
 </div>
 		<script type="text/javascript">
-			document.querySelector( "#wellness" ).classList.toggle("sidebar-active");
+			document.querySelector( "#online-discounts" ).classList.toggle("sidebar-active");
 		</script>
-		<div id="side-content" class="editable">
-			<h1 id="page-title">Wellness</h1>
-			<p>The CFMS Wellness Committee has created a new website with resources and information on wellness resources at <em>your</em> schools! See the link for the new website below:</p>
+		<div class="student-discounts-content" class="editable">
+			<h1 id="page-title">Online Resource Discounts</h1>
+			<h1><strong>UpToDate</strong></h1>
+			<hr>
+			<img class="pic-right" src="/images/discount-images/uptodate.png">
+			<h3><strong>Save up to 54% on UpToDate!</strong></h3>
+			<p>UpToDate is the evidence-based, physician-authored resource medical students and physicians trust for reliable clinical answers. UpToDate incorporates the latest medical findings, the best available evidence, and practical recommendations for patient care — so whatever your clinical question, you can be sure to find the answer in UpToDate.</p>
+			<p>With an individual subscription to UpToDate, you can:</p>
+			<ul>
+				<li>Get a broad overview of a condition or drill down to specific treatment recommendations</li>
+				<li>Review the epidemiology of a disease, along with how to diagnose and treat it</li>
+				<li>Increase your knowledge with access to more than 10,000 clinical topics covering 22 medical specialties</li>
+				<li>Answer clinical questions quickly from anywhere with our highly rated Mobile Apps</li>
+				<li>Be confident that your decisions are based on the best available evidence</li>
+			</ul>
 			<blockquote>
-				<h4><strong>Visit our NEW Wellness Site!</strong></h4>
+				<h3><strong>Special Rates for CFMS Members</strong></h3>
+				<p>As a CFMS member, you can subscribe to UpToDate at these special rates!</p>
 				<ul>
-					<li>Visit our newly developed <a href="http://cfmswellness.squarespace.com/">CFMS Wellness Site</a> for nation-wide wellness tips for each medical school!
+					<li>Get a one-year subscription for only $99 — that’s a 50% savings off the regular student rate.</li>
+					<li>Or, save even more and get a two-year subscription for only $169 — a savings of over $200 off the regular price of $369.*</li>
 				</ul>
+				<p><sup>*Applicable Taxes Apply</sup></p>
 			</blockquote>
-			<h2><strong>School Specific Wellness Resources</strong></h2>
-			<div id="cfms-reps-content">
-				<div id="schools">
-					<div id="ubc" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/ubc.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of British Columbia</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/UBC.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
-					<div id="ualberta" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/ualberta.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Alberta
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Alberta.pdf">Download Resource&nbsp;</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="ucalgary" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/ucalgary.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Calgary
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/Calgary.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
-					<div id="usaskatchewan" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/usaskatchewan.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Saskatchewan
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/Saskatchewan.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
-					<div id="umanitoba" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/umanitoba.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Manitoba
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Manitoba.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="nosm" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/nosm.png" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">Northern Ontario School of Medicine</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/NOSM.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="western" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/western.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">Western University</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/Western.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
-					<div id="mcmaster" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/mcmaster.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">McMaster University</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/McMaster.pdf">Download Resource</a>​</p></div>
-							</li>
-						</div>
-					</div>
-					<div id="utoronto" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/utoronto.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Toronto
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Toronto.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="queens" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/queens.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">Queen's University</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/Queens.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
-					<div id="uottawa" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/uottawa.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Ottawa
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Ottawa.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="mcgill" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/mcgill.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">McGill University</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/McGill.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="dalhousie" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/dalhousie.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">Dalhousie University</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Dalhousie.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="memorial" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/memorial.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">Memorial University of Newfoundland</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/MUN.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
+			<blockquote>
+				<h3><strong>Discount Details</strong></h3>
+				<div class="non-members">
+				<ul>
+					<li>Please login in order to access this discount.</li>
+				</ul>
 				</div>
-			</div>
+				<div class="members-only">
+					<ul>
+						<li>Click <a href="https://store.uptodate.com/society/index/authenticate?s=society_cfms&t=1492525956&h=4cfd63776c26d3d515cd33775c56bc12d8a4cd4a78cda7b85d1b7a38ae2155e9"><span id="application-deadline">here</span></a> to take advantage of this special offer</li>
+					</ul>
+					<img style='width:300px' src="/images/discount-images/wkl.png">
+				</div>
+			</blockquote>
 		</div>
 	</div>
-	<script type="text/javascript">
+	<div><script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;
@@ -818,6 +674,6 @@ $('.redirect-modal').click(function(){
 		env: `production`
 	}
 </script>
-<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script></div>
 </body>
 </html>

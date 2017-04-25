@@ -368,9 +368,9 @@ function submitApplication() {
 </style> 
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+	<link rel="stylesheet" href="/stylesheets/resources.css">
 </head>
-<body ng-app="authApp" ng-controller="AuthController">
+<body>
 	
 	
 		<div id="top-padding"></div>
@@ -428,212 +428,63 @@ function submitApplication() {
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
 		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#what-we-do" ).classList.toggle("active");
+		document.querySelector( "#resources" ).classList.toggle("active");
 	</script>
 
-	<div class="content">
+	<div class="discounts content">
 		<!-- Displays the sidebar and emphasizes the active page -->
 		<div id="sidebar">
 	<div id="scroll">
-		<span id="sidebar-title">Student Affairs</span>
+		<span id="sidebar-title">Discounts</span>
 		<ul>
-			<li><a id="overview" href=".">Overview</a></li>
-			<li><a id="our-team" href="our-team.html">Our Team</a></li>
-		</ul>
-		<span id="sidebar-title">Resources</span>
-		<ul>
-			<li><a id="wellness" href="wellness.html">Wellness</a></li>
-			<li><a id="discounts" href="../../resources/discounts.html">Student Discounts</a></li>
+			<li><a id="travel-discounts" href="discounts-travel.html">Travel and Accommodations</a></li>
+			<li><a id="textbook-discounts" href="discounts-textbooks.html">Textbooks</a></li>
+			<li><a id="online-discounts" href="discounts-online.html">Online Resources</a></li>
+			<!--<li><a id="textbook-discounts" href="textbook-discounts.html">UpToDate Discount</a></li>
+			<li><a id="textbook-discounts" href="textbook-discounts.html">LASIK MD Vision Correction</a></li>
+			<li><a id="textbook-discounts" href="textbook-discounts.html">Disability Insurance</a></li> -->
 		</ul>
 	</div>
 </div>
 		<script type="text/javascript">
-			document.querySelector( "#wellness" ).classList.toggle("sidebar-active");
+			document.querySelector( "#textbook-discounts" ).classList.toggle("sidebar-active");
 		</script>
-		<div id="side-content" class="editable">
-			<h1 id="page-title">Wellness</h1>
-			<p>The CFMS Wellness Committee has created a new website with resources and information on wellness resources at <em>your</em> schools! See the link for the new website below:</p>
+		<div class="student-discounts-content" class="editable">
+			<h1 id="page-title">Textbook Discounts</h1>
+			<h1><strong>Wolters Kluwer/Lippincott Resources</strong></h1>
+			<hr>
+			<img class="pic-right" src="/images/discount-images/wolters-kluwer.png">
+			<p><strong>Receive a 30% Discount on Wolters Kluwer/Lippincott Resources</strong></p>
+			<p>Members of CFMS save 30% and receive FREE shipping on the full selection of resources from Wolters Kluwer/Lippincott. Choose from a variety of textbooks, review manuals loaded with Q&amp;A, flash cards, and more.</p>
 			<blockquote>
-				<h4><strong>Visit our NEW Wellness Site!</strong></h4>
-				<ul>
-					<li>Visit our newly developed <a href="http://cfmswellness.squarespace.com/">CFMS Wellness Site</a> for nation-wide wellness tips for each medical school!
-				</ul>
-			</blockquote>
-			<h2><strong>School Specific Wellness Resources</strong></h2>
-			<div id="cfms-reps-content">
-				<div id="schools">
-					<div id="ubc" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/ubc.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of British Columbia</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/UBC.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
-					<div id="ualberta" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/ualberta.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Alberta
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Alberta.pdf">Download Resource&nbsp;</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="ucalgary" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/ucalgary.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Calgary
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/Calgary.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
-					<div id="usaskatchewan" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/usaskatchewan.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Saskatchewan
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/Saskatchewan.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
-					<div id="umanitoba" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/umanitoba.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Manitoba
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Manitoba.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="nosm" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/nosm.png" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">Northern Ontario School of Medicine</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/NOSM.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="western" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/western.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">Western University</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/Western.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
-					<div id="mcmaster" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/mcmaster.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">McMaster University</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/McMaster.pdf">Download Resource</a>​</p></div>
-							</li>
-						</div>
-					</div>
-					<div id="utoronto" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/utoronto.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Toronto
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Toronto.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="queens" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/queens.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">Queen's University</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/Queens.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
-					<div id="uottawa" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/uottawa.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">University of Ottawa
-							</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Ottawa.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="mcgill" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/mcgill.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">McGill University</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/McGill.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="dalhousie" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/dalhousie.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">Dalhousie University</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a>Not Available Yet</a></p></div>
-								<!-- <div class="url preview editable"><p><a href="/files/wellness-resources/Dalhousie.pdf">Download Resource</a></p></div> -->
-							</li>
-						</div>
-					</div>
-					<div id="memorial" class="school">
-						<div class="school-logo">
-							<img src="/images/school-logos/memorial.svg" />
-						</div>
-						<div class="school-desc">
-							<li class="school-name editable">Memorial University of Newfoundland</li>
-							<li class="school-url">
-								<div class="url preview editable"><p><a href="/files/wellness-resources/MUN.pdf">Download Resource</a></p></div>
-							</li>
-						</div>
-					</div>
+				<h3><strong>Featuring:</strong></h3>
+				<div>
+					<ul>
+						<li><a href="http://www.lww.com/Product/9781451186888">Essentials for the Canadian Medical Licensing Exam, 2nd. Ed</a></li>
+						<li>Prepare for success on the MCCQE Part I!  This concise resource provides an efficient and effective review of exactly what you need to know to perform at your best on the exam.</li>
+						<li>Written by students, residents, and faculty, it contains only the essential information required to meet the Medical Council of Canada’s Objectives for the Qualifying Examination, saving you valuable time and helping you focus your study.</li>
+						<li>Each chapter covers common clinical presentations, including detailed differential diagnoses, relevant physical examination characteristics and diagnostic tests, treatment and patient consultation techniques, and epidemiological information, as well as fundamental scientific principles.</li>
+					</ul>
 				</div>
-			</div>
+			</blockquote>
+			<p>Be sure to login to the member's section to see the discount code below. Visit <a href="http://www.lww.com">www.lww.com</a>, select ANY product and use the discount code to save 30%!</p>
+			<blockquote>
+				<h3><strong>Discount Details</strong></h3>
+				<div class="non-members">
+				<ul>
+					<li>Please login in order to access this discount.</li>
+				</ul>
+				</div>
+				<div class="members-only">
+					<ul>
+						<li>Visit <a href="http://www.lww.com">www.lww.com</a>, select ANY product and use the discount code: <span id="application-deadline">WZP22CFT</span> to save 30%! Valid until Feb 28, 2017.</li>
+					</ul>
+				</div>
+			</blockquote>
+			<br>
 		</div>
 	</div>
-	<script type="text/javascript">
+	<div><script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;
@@ -818,6 +669,6 @@ $('.redirect-modal').click(function(){
 		env: `production`
 	}
 </script>
-<script type="text/javascript" src="/js/bundle.js"></script>
+<script type="text/javascript" src="/js/bundle.js"></script></div>
 </body>
 </html>
