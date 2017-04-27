@@ -111439,7 +111439,7 @@ var App = function App() {
 ;
 new App();
 
-},{"./routes":453}],434:[function(require,module,exports){
+},{"./routes":454}],434:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -111520,7 +111520,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{"../utils":462}],436:[function(require,module,exports){
+},{"../utils":464}],436:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111673,7 +111673,7 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
 exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
-},{"../repositories/firebase/utils":452}],437:[function(require,module,exports){
+},{"../repositories/firebase/utils":453}],437:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111985,7 +111985,78 @@ var PaymentsController = function () {
 
 exports.default = PaymentsController;
 
-},{"../utils":462,"request-promise":342}],441:[function(require,module,exports){
+},{"../utils":464,"request-promise":342}],441:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _requestPromise = require('request-promise');
+
+var _requestPromise2 = _interopRequireDefault(_requestPromise);
+
+var _utils = require('../utils');
+
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var PurchasesController = function () {
+    function PurchasesController(_ref) {
+        var authenticationService = _ref.authenticationService,
+            paymentsService = _ref.paymentsService;
+
+        _classCallCheck(this, PurchasesController);
+
+        this.service = paymentsService;
+        this.auth = authenticationService;
+        this.utils = new _utils2.default();
+        document.addEventListener('beanstream_payform_complete', this.processPayform.bind(this), false);
+    }
+
+    _createClass(PurchasesController, [{
+        key: 'processPayform',
+        value: function processPayform(e) {
+            var _this = this;
+
+            var data = e.eventDetail;
+            data.id = this.purchaseId;
+            var options = {
+                method: 'POST',
+                uri: 'https://cfms.us.webtask.io/api/payments/', // TODO: devapi when in debug mode
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: data,
+                json: true // Automatically parses the JSON string in the response
+            };
+
+            (0, _requestPromise2.default)(options).then(function (data) {
+                if (data.message === "Declined") return _this.utils.showAlert("Declined", "Please check your payment information.");
+                _this.utils.showAlert("Success", "Thank you and enjoy your purchase!");
+                _this.handleRegisteredUser();
+            }).catch(function (err) {
+                this.utils.showAlert("Something went wrong", "Please try again later.");
+            });
+        }
+    }, {
+        key: 'purchaseId',
+        get: function get() {
+            return document.getElementById("payment-form").getAttribute("payment-id");
+        }
+    }]);
+
+    return PurchasesController;
+}();
+
+exports.default = PurchasesController;
+
+},{"../utils":464,"request-promise":342}],442:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112050,7 +112121,7 @@ var RegistrationController = function () {
 
 exports.default = RegistrationController;
 
-},{"../utils":462}],442:[function(require,module,exports){
+},{"../utils":464}],443:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112073,7 +112144,7 @@ var _authentication4 = _interopRequireDefault(_authentication3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/authentication":435,"../services/authentication":458}],443:[function(require,module,exports){
+},{"../controllers/authentication":435,"../services/authentication":460}],444:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112101,7 +112172,7 @@ var Middleware = function Middleware(page) {
 
 exports.default = Middleware;
 
-},{"./authentication":442,"./navigation":444}],444:[function(require,module,exports){
+},{"./authentication":443,"./navigation":445}],445:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112120,7 +112191,7 @@ var _navigation2 = _interopRequireDefault(_navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/navigation":439}],445:[function(require,module,exports){
+},{"../controllers/navigation":439}],446:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112176,7 +112247,7 @@ var MeetingRegistrationModel = function (_Model) {
 
 exports.default = MeetingRegistrationModel;
 
-},{"./model":446,"./user":447}],446:[function(require,module,exports){
+},{"./model":447,"./user":448}],447:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112219,7 +112290,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"lodash":273}],447:[function(require,module,exports){
+},{"lodash":273}],448:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112288,7 +112359,7 @@ var UserModel = function (_Model) {
 
 exports.default = UserModel;
 
-},{"./model":446}],448:[function(require,module,exports){
+},{"./model":447}],449:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112343,7 +112414,7 @@ var ApiRepository = function () {
 
 exports.default = ApiRepository;
 
-},{"request-promise":342}],449:[function(require,module,exports){
+},{"request-promise":342}],450:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112390,7 +112461,7 @@ var UserRepository = function (_ApiRepository) {
 
 exports.default = UserRepository;
 
-},{"./repository":448}],450:[function(require,module,exports){
+},{"./repository":449}],451:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112447,7 +112518,7 @@ var MeetingRegistrationRepository = function (_FirebaseRepository) {
 
 exports.default = MeetingRegistrationRepository;
 
-},{"./repository":451}],451:[function(require,module,exports){
+},{"./repository":452}],452:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112489,7 +112560,7 @@ var Repository = function () {
 
 exports.default = Repository;
 
-},{"./utils":452}],452:[function(require,module,exports){
+},{"./utils":453}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112555,7 +112626,7 @@ var FirebaseRef = function (_FirebaseConnection) {
 exports.FirebaseRef = FirebaseRef;
 exports.FirebaseConnection = FirebaseConnection;
 
-},{"../../config":434,"firebase":156}],453:[function(require,module,exports){
+},{"../../config":434,"firebase":156}],454:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112581,6 +112652,10 @@ var _registration2 = _interopRequireDefault(_registration);
 var _meetingRegistrations = require('./meeting-registrations');
 
 var _meetingRegistrations2 = _interopRequireDefault(_meetingRegistrations);
+
+var _purchases = require('./purchases');
+
+var _purchases2 = _interopRequireDefault(_purchases);
 
 var _page = require('page');
 
@@ -112616,6 +112691,7 @@ var Router = function (_Middleware) {
             (0, _page2.default)('/resources/md-leadership-awards-view-applications.html', _mdLeadershipAwards.LeadershipAwardAdmin);
             (0, _page2.default)('/new-account.html', _registration2.default);
             (0, _page2.default)('/meetings/:meeting', _meetingRegistrations2.default);
+            (0, _page2.default)('/purchases/:purchase', _purchases2.default);
         }
     }, {
         key: 'refresh',
@@ -112629,7 +112705,7 @@ var Router = function (_Middleware) {
 
 exports.default = Router;
 
-},{"../middlewares":443,"./md-leadership-awards":454,"./meeting-registrations":455,"./members":456,"./registration":457,"page":285}],454:[function(require,module,exports){
+},{"../middlewares":444,"./md-leadership-awards":455,"./meeting-registrations":456,"./members":457,"./purchases":458,"./registration":459,"page":285}],455:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112660,7 +112736,7 @@ function LeadershipAwardAdmin(ctx, next) {
     next();
 }
 
-},{"../controllers/md-leadership-awards":436,"../services/authentication":458}],455:[function(require,module,exports){
+},{"../controllers/md-leadership-awards":436,"../services/authentication":460}],456:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112708,7 +112784,7 @@ function MeetingRegistration(ctx, next) {
     next();
 }
 
-},{"../controllers/meeting-registrations":437,"../controllers/payments":440,"../models/meeting-registration":445,"../models/user":447,"../repositories/api/user":449,"../repositories/firebase/meeting-registration":450,"../services/authentication":458,"../services/payments":461}],456:[function(require,module,exports){
+},{"../controllers/meeting-registrations":437,"../controllers/payments":440,"../models/meeting-registration":446,"../models/user":448,"../repositories/api/user":450,"../repositories/firebase/meeting-registration":451,"../services/authentication":460,"../services/payments":463}],457:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112733,7 +112809,34 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/members":438,"../services/authentication":458}],457:[function(require,module,exports){
+},{"../controllers/members":438,"../services/authentication":460}],458:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = Purchases;
+
+var _purchases = require('../controllers/purchases');
+
+var _purchases2 = _interopRequireDefault(_purchases);
+
+var _authentication = require('../services/authentication');
+
+var _authentication2 = _interopRequireDefault(_authentication);
+
+var _payments = require('../services/payments');
+
+var _payments2 = _interopRequireDefault(_payments);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Purchases(ctx, next) {
+    new _purchases2.default({ authenticationService: new _authentication2.default(), paymentsService: new _payments2.default() });
+    next();
+}
+
+},{"../controllers/purchases":441,"../services/authentication":460,"../services/payments":463}],459:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112764,7 +112867,7 @@ function Registration(ctx, next) {
   next();
 }
 
-},{"../controllers/registration":441,"../models/user":447,"../services/authentication":458}],458:[function(require,module,exports){
+},{"../controllers/registration":442,"../models/user":448,"../services/authentication":460}],460:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112898,7 +113001,7 @@ var AuthenticationService = function () {
 
 exports.default = AuthenticationService;
 
-},{"../../models/user":447,"../../repositories/api/user":449,"../../utils":462,"./providers/auth0":459,"./providers/firebase":460,"jsonwebtoken":245,"lodash":273}],459:[function(require,module,exports){
+},{"../../models/user":448,"../../repositories/api/user":450,"../../utils":464,"./providers/auth0":461,"./providers/firebase":462,"jsonwebtoken":245,"lodash":273}],461:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112966,7 +113069,7 @@ var Auth0Provider = function () {
 
 exports.default = Auth0Provider;
 
-},{"../../../config":434,"auth0-js":46}],460:[function(require,module,exports){
+},{"../../../config":434,"auth0-js":46}],462:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -113023,7 +113126,7 @@ var FirebaseProvider = function (_FirebaseConnection) {
 
 exports.default = FirebaseProvider;
 
-},{"../../../repositories/firebase/utils":452}],461:[function(require,module,exports){
+},{"../../../repositories/firebase/utils":453}],463:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -113066,7 +113169,7 @@ var PaymentsService = function (_FirebaseConnection) {
 
 exports.default = PaymentsService;
 
-},{"../repositories/firebase/utils":452}],462:[function(require,module,exports){
+},{"../repositories/firebase/utils":453}],464:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
