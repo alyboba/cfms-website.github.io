@@ -3,6 +3,7 @@ import Members from './members';
 import { LeadershipAwardUser, LeadershipAwardAdmin } from './md-leadership-awards';
 import Registration from './registration';
 import MeetingRegistrations from './meeting-registrations';
+import Purchases from './purchases';
 import route from 'page';
 
 export default class Router extends Middleware {
@@ -19,6 +20,7 @@ export default class Router extends Middleware {
         route('/resources/md-leadership-awards-view-applications.html', LeadershipAwardAdmin);
         route('/new-account.html', Registration);
         route('/meetings/:meeting', MeetingRegistrations);
+        route('/purchases/:purchase', Purchases);
     }
 
     refresh() {
