@@ -3,6 +3,7 @@
 
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+
 <head>
 	<!--Metadata-->
 <meta charset="utf-8">
@@ -375,7 +376,9 @@ function submitApplication() {
 
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+	<link rel="stylesheet" href="/stylesheets/cards.css">
 </head>
+
 <body ng-app="authApp" ng-controller="AuthController">
 	
 	
@@ -430,7 +433,7 @@ function submitApplication() {
 
 	
 
-	
+
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
 		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
@@ -461,6 +464,7 @@ function submitApplication() {
 			<li><a id="human-rights-peace" href="human-rights-peace.html">Human Rights &amp; Peace</a></li>
 			<div>
 				<li><a id="human-rights-peace-pocket-cards" style="padding-left:15px;" href="human-rights-peace-pocket-cards.html">Pocket Card Series</a></li>
+				<li><a id="climate-change-and-health" style="padding-left:15px;" href="climate-change-and-health.html">Climate Change &amp; Health</a></li>
 			</div>
 			<li><a id="aboriginal-health" href="aboriginal-health.html">Aboriginal Health</a></li>
 		</ul>
@@ -471,13 +475,25 @@ function submitApplication() {
 	</div>
 </div>
 		<script type="text/javascript">
-			document.querySelector( "#human-rights-peace" ).classList.toggle("sidebar-active");
+			document.querySelector( "#climate-change-and-health" ).classList.toggle("sidebar-active");
 		</script>
 		<div id="side-content" class="editable">
-			<h1 id="page-title">Human Rights &amp; Peace - Draft</h1>
-			<p>The CFMS Global Health Advocacy Program is proud to launch the Health and Human Rights Pocket Card Series. These cards are intended to serve as a resource for medical students who wish to take on a more holistic approach to the patient encounter. If you are interested in learning more about this initiative, please contact the CFMS National Officer of Human Rights and Peace, Henry Annan, at <a href="mailto:norp@cfms.org">norp@cfms.org</a>. Stay tuned for more cards in the future!
+			<h1 id="page-title">Climate Change and Health</h1>
+			<p>In 2009, the Lancet journal named Climate Change as the biggest global-health of the 21st century. In 2017, the same is arguably still true. The CFMS Global Advocates are excited to raise awareness about the health effects of climate change. Below you will find the work the advocates are doing on this topic. Feel free to contact Henry Annan, National Officer of Human Rights and Peace at <a href="mailto:norp@cfms.org">norp@cfms.org</a>. Stay tuned for more cards in the future!
 			</p>
-			</p>Special thanks to Hayley Chato, Graphic Designer and Illustrator (<a href="mailto:hayleychato@gmail.com">hayleychato@gmail.com</a>).</p>				
+			<h3>Climate Change and Health Podcast Series</h3>
+			<p>
+				The Global Health Advocates are excited to launch an 8-part podcast series featuring local experts discussing various facets of the interactions between climate change and health. Please visit our <a href="https://soundcloud.com/cfmsglobalhealth">Soundcloud account</a> to listen to each episode.
+			</p>
+			<p>**Please, note that the Canadian Federation of Medical Students and its affiliates do not necessarily endorse the views expressed in these interviews.</p>
+			<h3>Climate Change and Health Network</h3>
+			<p>
+				In collaboration with the Health and Environment Adaptive Response Task Force, the advocates are working to create local champions of medical sustainability in healthcare on medical school campuses across the country. We are pleased to announce successful positions have been created at the following schools:
+				<ul>
+					<li>University of Alberta</li>
+					<li>University of Calgary</li>
+					<li>University of Ottawa</li>
+				</ul>
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -667,4 +683,5 @@ $('.redirect-modal').click(function(){
 </script>
 <script type="text/javascript" src="/js/bundle.js"></script>
 </body>
+
 </html>
