@@ -1,0 +1,56 @@
+---
+title: "Climate Change and Health"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+	<link rel="stylesheet" href="/stylesheets/cards.css">
+</head>
+
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-global-health.html %}
+		<script type="text/javascript">
+			document.querySelector( "#climate-change-and-health" ).classList.toggle("sidebar-active");
+		</script>
+		<div id="side-content" class="editable">
+			<h1 id="page-title">{{ page.title }}</h1>
+			<p>In 2009, the Lancet journal named Climate Change as the biggest global-health of the 21st century. In 2017, the same is arguably still true. The CFMS Global Advocates are excited to raise awareness about the health effects of climate change. Below you will find the work the advocates are doing on this topic. Feel free to contact Henry Annan, National Officer of Human Rights and Peace at <a href="mailto:norp@cfms.org">norp@cfms.org</a>. Stay tuned for more cards in the future!
+			</p>
+			<h3>Climate Change and Health Podcast Series</h3>
+			<p>
+				The Global Health Advocates are excited to launch an 8-part podcast series featuring local experts discussing various facets of the interactions between climate change and health. Please visit our <a href="https://soundcloud.com/cfmsglobalhealth">Soundcloud account</a> to listen to each episode.
+			</p>
+			<p>**Please, note that the Canadian Federation of Medical Students and its affiliates do not necessarily endorse the views expressed in these interviews.</p>
+			<h3>Climate Change and Health Network</h3>
+			<p>
+				In collaboration with the Health and Environment Adaptive Response Task Force, the advocates are working to create local champions of medical sustainability in healthcare on medical school campuses across the country. We are pleased to announce successful positions have been created at the following schools:
+				<ul>
+					<li>University of Alberta</li>
+					<li>University of Calgary</li>
+					<li>University of Ottawa</li>
+				</ul>
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+
+</html>

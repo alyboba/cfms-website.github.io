@@ -10,28 +10,17 @@ news_strip: true
 news_text_en: "Something missing on our new site? Visit our old one at <a href='http://www.old.cfms.org'>www.old.cfms.org</a>!"
 news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien à <a href='http://www.old.cfms.org'>www.old.cfms.org</a>!"
 news_text_url: ''
-banner_url: 'meetings/sgm-2017-winnipeg.html'
-banner_image_url: images/hero-images/sgm2017.jpg
-banner_text:
-- lang: "en"
-  byline: "Announcement"
-  title: "CFMS SGM 2017 is Coming Soon!"
-  description: "Look forward to the CFMS Spring General Meeting, on <b>April 28-29th, 2017</b>, in Winnipeg."
-- lang: "fr"
-  byline: "Annonce"
-  title: "CFMS SGM 2017 is Coming Soon!"
-  description: "Look forward to the CFMS Spring General Meeting, on <b>April 28-29th, 2017</b>, in Winnipeg."
-# banner_url: ''
-# banner_image_url: images/hero-images/40celebration.png
+# banner_url: 'meetings/sgm-2017-winnipeg.html'
+# banner_image_url: images/hero-images/sgm2017.jpg
 # banner_text:
-#   - lang: en
-#     byline: 1977-2017
-#     title: 'The CFMS is celebrating its 40th anniversary!'
-#     description: More details to come.
-#   - lang: fr
-#     byline: 1977-2017
-#     title: 'The CFMS is celebrating its 40th anniversary!'
-#     description: More details to come.
+# - lang: "en"
+#   byline: "Announcement"
+#   title: "CFMS SGM 2017 is Coming Soon!"
+#   description: "Look forward to the CFMS Spring General Meeting, on <b>April 28-29th, 2017</b>, in Winnipeg."
+# - lang: "fr"
+#   byline: "Annonce"
+#   title: "CFMS SGM 2017 is Coming Soon!"
+#   description: "Look forward to the CFMS Spring General Meeting, on <b>April 28-29th, 2017</b>, in Winnipeg."
 featured_links:
   - url: meetings/agm-2016-edmonton.html
     image_url_en: images/home-link-thumbs/agm-2016.jpg
