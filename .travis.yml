@@ -22,6 +22,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
   - JEKYLL_ENV: "production"
   - SSL_CERT_FILE: "/usr/local/etc/openssl/cert.pem"
+  - NVM_NODEJS_ORG_MIRROR: "http://nodejs.org/dist"
 cache:
   bundler: true
   directories:
