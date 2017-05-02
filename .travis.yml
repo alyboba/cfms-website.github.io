@@ -5,7 +5,6 @@ rvm:
 before_script:
   - npm install -g gulp
 before_install:
-  - sudo apt-get install ca-certificates
   - npm install -g npm@latest
 install:
   - nvm install node
