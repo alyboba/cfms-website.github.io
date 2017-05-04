@@ -257,7 +257,7 @@ sidebar-advocacy:
   lobby-day: "Lobby Day"
   position-papers: "Position Papers"
   toolkit: "Advocacy Toolkit"
--lang: "fr"
+- lang: "fr"
   sidebar-title_1: "Plaidoirie"
   overview: "Aperçu"
   our-team: "Notre conseil"
