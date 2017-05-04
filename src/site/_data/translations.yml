@@ -229,3 +229,20 @@ sidebar-education:
   residency-matchbook: "Guide pour le jumelage en résidence"
   student-run-clinics-toolkit: "Trousse-à-outils pour cliniques dirigées par étudiants"
   lmcc-prep-link: "Ressources préparatoires pour LCMC"
+
+  #Sidebar student affairs
+  sidebar-student-affairs:
+  - lang: "en"
+    sidebar-title_1: "Student Affairs"
+    overview: "Overview"
+    our-team: "Our Team"
+    sidebar-title_2: "Resources"
+    wellness: "Wellness"
+    discounts: "Student Discounts"
+  - lang: "fr"
+    sidebar-title_1: "Affaires étudiantes"
+    overview: "Aperçu"
+    our-team: "Notre conseil"
+    sidebar-title_2: "Ressources"
+    wellness: "Bien-être"
+    discounts: "Rabais étudiants"
