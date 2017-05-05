@@ -1,9 +1,13 @@
+import cookies from 'js-cookie';
+
 export default class NavigationController {
     constructor() {
         this.bindListeners();
     }
 
     bindListeners() {
+        document.getElementById('en').addEventListener("click", e => this.changeLang('en'));
+        document.getElementById('fr').addEventListener("click", e => this.changeLang('fr'));
         window.addEventListener('user_updated', (e) => {
             let user = e.detail;
             window.config.nav.forEach((navigation) => {
@@ -69,5 +73,15 @@ export default class NavigationController {
             });
 
         });
+    }
+
+    changeLang(lang) {
+        const oldLang = cookies.get('lang');
+        if (oldLang == lang) return;
+        cookies.set('lang', lang, { expires: 7 });
+        if (lang == 'en' && window.location.pathname.includes('/fr/'))
+            window.location.href = window.location.href.replace('/fr/', '/');
+        else if (lang == 'fr' && !window.location.pathname.includes('/fr/'))
+            window.location.href = `/fr${window.location.pathname}`;
     }
 }

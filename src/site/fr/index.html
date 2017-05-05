@@ -15,20 +15,6 @@ title: "Canadian Federation of Medical Students"
 		{% endif %}
 	{% endfor %}
 
-	<!-- Redirect based on chosen language -->
-	<script>
-		$(function() {
-			switch (Cookies.get('lang')){
-				case 'en':
-					if (window.location.href != '/')
-						window.location.href = '/';
-					break;
-				case 'fr':
-					break;
-			}
-		});
-	</script>
-
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="/stylesheets/home.css">
 </head>
