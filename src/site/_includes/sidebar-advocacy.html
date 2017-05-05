@@ -1,13 +1,13 @@
 <div id="sidebar">
 	<div id="scroll">
-		{% for sidebar in site.data.translations.sidebar-education %}
+		{% for sidebar in site.data.translations.sidebar-advocacy %}
 		{% if sidebar.lang == page.lang %}
-		<span id="sidebar-title">Advocacy</span>
+		<span id="sidebar-title">{{ sidebar.sidebar-title_1 }}</span>
 		<ul>
 			<li><a id="overview" href=".">{{ sidebar.overview }}</a></li>
 			<li><a id="our-team" href="our-team.html">{{ sidebar.our-team }}</a></li>
 		</ul>
-		<span id="sidebar-title">{{ sidebar.resources }}</span>
+		<span id="sidebar-title">{{ sidebar.sidebar-title_2 }}</span>
 		<ul>
 			<li><a id="lobby-day" href="lobby-day.html">{{ sidebar.lobby-day }}</a></li>
 			<li><a id="position-papers" href="position-papers.html">{{ sidebar.position-papers }}</a></li>
