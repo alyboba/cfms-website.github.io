@@ -361,7 +361,6 @@ function submitApplication() {
   ga('send', 'pageview');
 
 </script>
-<script src="/js/js.cookie.js"></script>
 
 <!--Scroll Reveal-->
 <script src="/js/scrollreveal.min.js"></script>
@@ -379,20 +378,6 @@ function submitApplication() {
 			<meta name="description" content="La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre.">
 		
 	
-
-	<!-- Redirect based on chosen language -->
-	<script>
-		$(function() {
-			switch (Cookies.get('lang')){
-				case 'en':
-					if (window.location.href != '/')
-						window.location.href = '/';
-					break;
-				case 'fr':
-					break;
-			}
-		});
-	</script>
 
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="/stylesheets/home.css">
@@ -445,7 +430,7 @@ function submitApplication() {
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Se connecter</a></li>
 					
 					
-						<li id="lang-toggle"><a id="en" href="/">EN</a> / <a id="fr" class="current-lang" href="/fr/">FR</a></li>
+						<li id="lang-toggle"><a id="en" href="#">EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
 					
 				</ul>
 			</div>
@@ -734,18 +719,6 @@ $(document).ready(function() {
 	    });
 	}
 });
-</script>
-
-<!-- Cookies for language support -->
-<script type="text/javascript">
-    $('#en').click( function() { 	    	
-		Cookies.set('lang', 'en', { expires: 7 });
-		console.log (Cookies.get());
-	} );
-    $('#fr').click( function() { 	    	
-		Cookies.set('lang', 'fr', { expires: 7 });
-		console.log (Cookies.get());
-	} );
 </script>
 
 <!-- Modal Dialogs -->

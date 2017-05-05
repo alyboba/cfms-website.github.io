@@ -361,7 +361,6 @@ function submitApplication() {
   ga('send', 'pageview');
 
 </script>
-<script src="/js/js.cookie.js"></script>
 
 <!--Scroll Reveal-->
 <script src="/js/scrollreveal.min.js"></script>
@@ -421,7 +420,7 @@ function submitApplication() {
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
-						<li id="lang-toggle"><a id="en" class="current-lang" href="/">EN</a> / <a id="fr" href="/fr/">FR</a></li>
+						<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="#">FR</a></li>
 					
 				</ul>
 			</div>
@@ -891,18 +890,6 @@ $(document).ready(function() {
 	    });
 	}
 });
-</script>
-
-<!-- Cookies for language support -->
-<script type="text/javascript">
-    $('#en').click( function() { 	    	
-		Cookies.set('lang', 'en', { expires: 7 });
-		console.log (Cookies.get());
-	} );
-    $('#fr').click( function() { 	    	
-		Cookies.set('lang', 'fr', { expires: 7 });
-		console.log (Cookies.get());
-	} );
 </script>
 
 <!-- Modal Dialogs -->
