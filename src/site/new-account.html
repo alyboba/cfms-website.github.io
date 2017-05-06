@@ -11,7 +11,7 @@ title: Create a New Account
 	{% include head.html %}
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/home.css">
+	<link rel="stylesheet" href="/stylesheets/home.css" />
 </head>
 <body>
 	{% include nav.html %}
@@ -53,77 +53,9 @@ title: Create a New Account
 			</div>
 			</div>
 		</div>
-		<div class="editable" id="new-account-right">
-			<blockquote id="new-account-pane">
-				<h3><strong>Create an account</strong>:</h3>
-				<label>Medical School</label>
-				<div class="select">
-					<select id='account-medical-school'>
-					  <option value="University of British Columbia">University of British Columbia</option>
-					  <option value="University of Alberta">University of Alberta</option>
-					  <option value="University of Calgary">University of Calgary</option>
-					  <option value="University of Saskatchewan">University of Saskatchewan</option>
-					  <option value="University of Manitoba">University of Manitoba</option>
-					  <option value="Northern Ontario School of Medicine">Northern Ontario School of Medicine</option>
-					  <option value="Western University">Western University</option>
-					  <option value="McMaster University">McMaster University</option>
-					  <option value="University of Toronto">University of Toronto</option>
-					  <option value="Queen's University">Queen's University</option>
-					  <option value="University of Ottawa">University of Ottawa</option>
-					  <option value="McGill University">McGill University</option>
-					  <option value="Dalhousie University">Dalhousie University</option>
-  					  <option value="Université de Moncton Campus">Université de Moncton Campus</option>
-					  <option value="Memorial University of Newfoundland">Memorial University of Newfoundland</option>
-					  <option value="Université Laval">Université Laval</option>
-					</select>
-					<div class="select_arrow"></div>
-				</div>
-				<label>Year of Graduation</label>
-				<div class="select">
-					<!-- Add up to 7 years for those poor MD/PhDs -->
-					<select id='account-graduation-year'>
-						{% capture year %}{{ site.time | date: '%Y' }}{% endcapture %}
-						{% assign start_year = year | plus: 0 %}
-						{% assign end_year = year | plus: 7 %}
-						{% for x in (start_year..end_year) %}
-							<option value="{{ x }}">{{ x }}</option>
-						{% endfor %}
-					</select>
-					<div class="select_arrow"></div>
-				</div>
-				<label>School Email Address</label>
-				<div class="input">
-					<input name='email' id='account-email' type='email' placeholder='Enter your email' />
-				</div>
-				<label>First Name</label>
-				<div class="input">
-					<input name='first_name' id='account-first-name' type='text' placeholder='' />
-				</div>
-				<label>Last Name</label>
-				<div class="input">
-					<input name='last_name' id='account-last-name' type='text' placeholder='' />
-				</div>
-				<label>Authentication Code <span><a href="" onclick='return false;' id="authentication-info-modal" style="font-size:1.2em; border-bottom:none; opacity:0.7"><i class="fa fa-question-circle" aria-hidden="true"></i></a></span></label>
-				<div class="input">
-					<input name='code' type='text' id='account-authentication-code' placeholder='' />
-				</div>
-				<label>Enter your Password</label>
-				<div class="input">
-					<input name='password_first' id='account-password-first' type='password' ng-model='password_first' placeholder='' />
-				</div>
-				<label>Confirm your Password</label>
-				<div class="input">
-					<input name='password_second' id='account-password-second' type='password' ng-model='password_second' placeholder='' />
-				</div> 
-				<div class="button" style="margin-top:10px;">
-					<a id="signup-button" style="cursor:pointer">
-						<strong>Create your account</strong>
-					</a>
-				</div>
-			</blockquote>
+		<div class="editable" id="new-account-right"><blockquote id="new-account-pane"><h3><strong>Create an account</strong>:</h3><label>Medical School</label><div class="select"><select id="account-medical-school"><option value="University of British Columbia">University of British Columbia</option><option value="University of Alberta">University of Alberta</option><option value="University of Calgary">University of Calgary</option><option value="University of Saskatchewan">University of Saskatchewan</option><option value="University of Manitoba">University of Manitoba</option><option value="Northern Ontario School of Medicine">Northern Ontario School of Medicine</option><option value="Western University">Western University</option><option value="McMaster University">McMaster University</option><option value="University of Toronto">University of Toronto</option><option value="Queen's University">Queen's University</option><option value="University of Ottawa">University of Ottawa</option><option value="McGill University">McGill University</option><option value="Dalhousie University">Dalhousie University</option><option value="Université de Moncton Campus">Universit&eacute; de Moncton Campus</option><option value="Memorial University of Newfoundland">Memorial University of Newfoundland</option><option value="Université Laval">Universit&eacute; Laval</option> </select><div class="select_arrow">&nbsp;</div></div> <label>Year of Graduation</label><div class="select"><!-- Add up to 7 years for those poor MD/PhDs --><select id="account-graduation-year"><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option> </select><div class="select_arrow">&nbsp;</div></div> <label>School Email Address</label><div class="input"><input id="account-email" type="email" placeholder="Enter your email" name="email" /></div> <label>First Name</label><div class="input"><input id="account-first-name" type="text" placeholder="" name="first_name" /></div> <label>Last Name</label><div class="input"><input id="account-last-name" type="text" placeholder="" name="last_name" /></div> <label>Authentication Code <span><a id="authentication-info-modal" style="font-size:1.2em; border-bottom:none; opacity:0.7" class="cc-active" href="" onclick="return false;"><i class="fa fa-question-circle" aria-hidden="true"></i></a></span></label><div class="input"><input type="text" id="account-authentication-code" placeholder="" name="code" /></div> <label>Enter your Password</label><div class="input"><input id="account-password-first" type="password" ng-model="password_first" placeholder="" name="password_first" /></div> <label>Confirm your Password</label><div class="input"><input id="account-password-second" type="password" ng-model="password_second" placeholder="" name="password_second" /></div><div class="button" style="margin-top:10px;"><a id="signup-button" style="cursor:pointer"> <strong>Create your account</strong> </a></div></blockquote></div>
 		</div>
-		</div>
-	</div>
+	
 
 	{% include footer.html %}
 </body>
@@ -134,4 +66,3 @@ $('#authentication-info-modal').click(function(){
 
 });
 </script>
-</html>
