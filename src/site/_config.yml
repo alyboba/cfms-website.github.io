@@ -24,7 +24,6 @@ defaults:
       type: "posts"
     values:
       layout: "news"
-      lang: "en"
   -
     scope:
       path: ""
