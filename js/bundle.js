@@ -112006,10 +112006,10 @@ var NavigationController = function () {
 
             document.getElementById('en').addEventListener("click", function (e) {
                 return _this.changeLang('en');
-            });
+            }, true);
             document.getElementById('fr').addEventListener("click", function (e) {
                 return _this.changeLang('fr');
-            });
+            }, true);
             window.addEventListener('user_updated', function (e) {
                 var user = e.detail;
                 window.config.nav.forEach(function (navigation) {
@@ -112088,10 +112088,13 @@ var NavigationController = function () {
     }, {
         key: 'changeLang',
         value: function changeLang(lang) {
-            var oldLang = _jsCookie2.default.get('lang');
-            if (oldLang == lang) return;
+            // const oldLang = cookies.get('lang');
+            // if (oldLang == lang) return;
             _jsCookie2.default.set('lang', lang, { expires: 7 });
-            if (lang == 'en' && window.location.pathname.includes('/fr/')) window.location.href = window.location.href.replace('/fr/', '/');else if (lang == 'fr' && !window.location.pathname.includes('/fr/')) window.location.href = '/fr' + window.location.pathname;
+            // if (lang == 'en' && window.location.pathname.includes('/fr/'))
+            //     window.location.href = window.location.href.replace('/fr/', '/');
+            // else if (lang == 'fr' && !window.location.pathname.includes('/fr/'))
+            //     window.location.href = `/fr${window.location.pathname}`;
         }
     }]);
 
