@@ -116,11 +116,13 @@ title: "Canadian Federation of Medical Students"
 			</h1>
 			<div id="recent-news-list">
 				{% for post in site.posts limit:5 %}
+				{% unless post.categories contains "fr" %}
 					<div class="news-date">{{ post.date | date: '%b %d' }}</div>
 					<li>
 						<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
 						<div class="news-desc">{{ post.description }}</div>
 					</li>
+				{% endunless %}
 				{% endfor %}
 			</div>
 		</div>

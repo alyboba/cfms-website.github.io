@@ -40,12 +40,24 @@
         <div id="other-news">
 			<h1>Other News</h1>
 			<div id="other-news-list">
+				{% if page.lang == "en" %}
 				{% for post in site.posts limit:5 %}
-					<div class="news-date">{{ post.date | date: '%b %d' }}</div>
-					<li>
-						<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
-					</li>
+					{% unless post.categories contains "fr" %}
+						<div class="news-date">{{ post.date | date: '%b %d' }}</div>
+						<li>
+							<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
+						</li>
+					{% endunless %}
 				{% endfor %}
+				{% else %}
+					{% assign posts=site.posts | where:"categories", page.lang %}
+					{% for post in posts limit:5 %}
+						<div class="news-date">{{ post.date | date: '%b %d' }}</div>
+						<li>
+							<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
+						</li>
+					{% endfor %}
+				{% endif %}
 			</div>
 		</div>
 	{% include footer.html %}
