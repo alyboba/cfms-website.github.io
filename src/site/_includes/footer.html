@@ -147,8 +147,13 @@ $(document).ready(function() {
 <!-- Modal Dialogs -->
 <script src="/js/vex.combined.min.js"></script>
 <script>vex.defaultOptions.className = 'vex-theme-default';</script>
+{% if jekyll.environment == "production" %}
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex.css" />
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex-theme-default.css" />
+{% else %}
 <link rel="stylesheet" href="/stylesheets/vex.css" />
 <link rel="stylesheet" href="/stylesheets/vex-theme-default.css" />
+{% endif %}
 <script>
 $('.redirect-modal').click(function(){
     vex.dialog.confirm({
