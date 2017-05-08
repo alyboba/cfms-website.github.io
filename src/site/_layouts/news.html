@@ -10,7 +10,11 @@
 	{% include head.html %}
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/news.css">
+	{% if jekyll.environment == "production" %}
+		<link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
+	{% else %}
+		<link rel="stylesheet" href="/stylesheets/news.css">
+	{% endif %}
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 	{% include nav.html %}
