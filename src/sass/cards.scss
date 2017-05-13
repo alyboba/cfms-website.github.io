@@ -32,6 +32,12 @@ img {
   }
 }
 
+.offset__card {
+  @media(min-width: 40rem) {
+    margin-left: 25%;
+  }
+}
+
 .card {
   background-color: white;
   border-radius: 0.25rem;
