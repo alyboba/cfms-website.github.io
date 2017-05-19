@@ -1,6 +1,6 @@
 ---
 title: Call for CFMS National Exchange Officer
-date:
+date: 2017-05-18 22:15:16
 description: Please fill in description here.
 categories:
 lang: en
