@@ -6,8 +6,8 @@ intro:
     title: Fédération des étudiants et des étudiantes en médecine du Canada
     description: 'La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre.'
 news_strip: true
-# news_text_en: "Best of Luck to all final year medical students with their CaRMS tour!"
-news_text_en: "Something missing on our new site? Visit our old one at <a href='http://www.old.cfms.org'>www.old.cfms.org</a>!"
+news_text_en: "Found something wrong with the website? Please see our <a href='https://github.com/cfms-website/cfms-website.github.io/issues'>guide on submitting a ticket</a>."
+# news_text_en: "Something missing on our new site? Visit our old one at <a href='http://www.old.cfms.org'>www.old.cfms.org</a>!"
 news_text_fr: "Il manque quelque chose à notre nouveau site? Visitez l'ancien à <a href='http://www.old.cfms.org'>www.old.cfms.org</a>!"
 news_text_url: ''
 # banner_url: 'meetings/sgm-2017-winnipeg.html'
