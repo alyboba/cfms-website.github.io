@@ -94,6 +94,7 @@ gulp.task('test', function (done) {
 // add custom browserify options here
 var customOpts = {
     entries: [jsPath + '/app.js'],
+    reloadDebounce: 2000,
     debug: true
 };
 var opts = assign({}, watchify.args, customOpts);
