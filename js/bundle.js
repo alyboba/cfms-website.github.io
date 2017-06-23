@@ -110938,6 +110938,7 @@ var _class = function (_FirebaseConnection) {
 
             var editor = document.getElementById('edit-members-only');
             if (editor && this.auth.user.isAdmin) return this.injectEditor(editor);
+            console.log("Fetching members only content from firebase...");
             var refPath = 'members_only_content' + this.UrlToRef(); // TODO: DRY this crap up
             var ref = this.firebase.database().ref(refPath);
             var valRef = ref.child('/value');
