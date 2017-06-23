@@ -1,0 +1,63 @@
+# Our Member Schools
+
+member-schools-information:
+- lang: "en"
+  school-name: "University of British Columbia"
+  school-link: "http://mus.med.ubc.ca/"
+  school-img: "ubc.svg"
+  school-address: "2329 West Mall<br>Vancouver BC V6T 1Z2"
+  school-phone: "604&ndash;822&ndash;2211"
+  school-fax: "604&ndash;822&ndash;3134"
+  school-description: "The University of British Columbia's Faculty of Medicine has a 50-year tradition of providing outstanding student-centered classroom and clinical training. Our students benefit from innovative, evidence-based teaching and learning in an environment that fosters excellence in research and healthcare.
+                       
+                       							Beginning in the fall of 2004, more students will have the opportunity to pursue a career in medicine—and more BC students will be able to study closer to their own communities. In recognition of the urgent need for more doctors in the province, particularly in the Island and Northern communities, the Government of British Columbia announced the expansion of BC’s medical school with a mandate to double enrolment of first-year students from 128 to 256 by 2010. Enrolment in 2004 will increase by 72 students, to 200."
+- lang: "en"
+  school-name: "University of Alberta"
+  school-link: "http://www.msa.ualberta.ca/"
+  school-img: "ualberta.svg"
+  school-address: "1A University Campus North West<br>Edmonton, Alberta T6G 2E1"
+  school-phone: "780&ndash;492&ndash;3111"
+  school-fax: ""
+  school-description: "The University of Alberta, one of Canada’s premier research universities, has more than 400 research laboratories, Canada’s most powerful laser, expertise in biotechnology and a major agricultural research station. The University of Alberta also boasts one of North America’s top libraries with more than 9 million books and resources. Areas of established and emerging research excellence on a national or international scale include medicine, chemistry, engineering, social policy and English literature. 
+                       
+                       The University of Alberta has more than 3,300 faculty members and more than 30,000 undergraduate and graduate students. Fifty-eight members of the Royal Society of Canada are among a faculty that leads the country in 3M Awards for Teaching Excellence -- Canada’s highest undergraduate teaching honour. The University of Alberta’s Industry Liaison Office has spurred development of 38 active spin-off companies and has put the University of Alberta in the number one position in Canada for licensing revenues. The main campus has more than 90 buildings on 89 hectares of land in the heart of Edmonton, Alberta’s capital city, which has a population in the metro area of roughly 930,000. One in five students at the University of Alberta comes from outside the province and 99 countries of origin are represented in the student body. The university provides extensive support for international students."
+- lang: "en"
+  school-name: "University of Calgary"
+  school-link: "http://cmsa.ucalgary.ca/"
+  school-img: "ucalgary.svg"
+  school-address: "2500 University Drive North West<br>Calgary, Alberta T2N 1N4"
+  school-phone: "403&ndash;220&ndash;5110"
+  school-fax: "403&ndash;282&ndash;7298"
+  school-description: "The University of Calgary is a dynamic research and teaching university of growing national and international stature, with 16 faculties and 53 academic departments and major program areas. U of C offers programs leading to undergraduate, graduate, doctoral and professional degrees in a number of traditional and interdisciplinary fields. 
+                       
+                       Every year more than 26,000 full-time equivalent students are attracted to U of C from every province and territory and from 87 countries around the world. The university offers significant support to undergraduate students: more than 5,900 awards and scholarships totalling $6.9 million each year. 
+                       
+                       With external research funding of $172 million, the University of Calgary is recognized worldwide as a leading research university. The U of C houses many research institutes, centres and groups investigating a wide variety of topics such as human behaviour, institutions and cultures, energy and the environment, technologies and information and health and wellness. Virtually all faculty members engage in research, scholarship and creative activity. 
+                       
+                       The 213-hectare university campus is designed for pedestrians, with extensive lawns, flower beds and walkways. Parking lots have been restricted to the periphery and visually shielded as much as possible. The main campus features more than 20 academic buildings - all interconnected by enclosed walkways - as well as a modern students' union building, a museum and art gallery, two performance theatres and a performing arts centre, a child care centre, and residences for single students and students with families. 
+                       
+                       The University of Calgary's athletics facilities include one of only two covered speed skating ovals in North America, two hockey rinks, tennis courts, a triple gymnasium, the city's largest racquet centre, an Olympic-size swimming pool, weight rooms, jogging tracks and a massive indoor climbing wall."
+- lang: "en"
+  school-name: "University of Saskatchewan"
+  school-link: "http://www.saskmedstudents.com/"
+  school-img: "usaskatchewan.svg"
+  school-address: "105 Administration Place<br>Saskatoon, Saskatchewan S7N 5A2"
+  school-phone: "306&ndash;966&ndash;4343"
+  school-fax: "306&ndash;975&ndash;1026"
+  school-description: "Since it was founded in 1907, the University of Saskatchewan has conferred more than 110,000 degrees. Alumni can be found on every continent, making contributions to business, science, education, government and the arts. With more than 900 faculty in its 13 colleges, the university offers more than 70 specializations for undergraduate and graduate students, one of the broadest program arrays of any university in Canada. Programs include agriculture, arts, humanities, social sciences, commerce, education, kinesiology, fine arts, physical sciences, engineering, health sciences, medicine, dentistry, physical therapy, pharmacy, nutrition, nursing, and veterinary medicine. 
+                       
+                       The university is a focus for athletics and cultural activities in Saskatoon, a city of 200,000 located along the banks of the South Saskatchewan River. U of S \"Huskies\" compete in 15 sports, providing an exciting opportunity to watch Canada's best amateur athletes in action. University faculty, staff and students are active in Saskatoon events like \"Shakespeare on the Saskatchewan\" and the Fringe. 
+                       
+                       With more than half of all first and second-year classes enrolling 25 or fewer students, class size is one of the University of Saskatchewan's most important features. The university is also a Canadian leader in providing support and enhancement programs for Aboriginal students in education, law, commerce, arts and sciences, and engineering. 
+                       
+                       Annual research revenues for University of Saskatchewan faculty recently topped more than $100 million. The university is also the centre of an active community of federal and provincial research agencies and private research companies. 
+                       
+                       The Canadian Light Source, Canada's only synchrotron radiation facility, will begin operation in 2004. The CLS will attract more than 2,000 researchers annually from around Canada and the world, and will be a magnet for top students in a variety of disciplines, including agriculture, biochemistry, chemistry, electronics, geology, materials, medicine, pharmacology and physics. The Chemical Engineering addition, to be completed in May 2002, will include a pilot plant that allows simulation of processes used in industry. New space is also being constructed for the Saskatchewan Structural Science Centre. Construction of a new kinesiology building is also under way with features including a triple gym with seating for 2,500, an elevated walking and jogging track, a 1,300 square metre fitness centre and a rock-climbing wall in the main foyer. At the Western College of Veterinary Medicine, completion of an addition to house a Magnetic Resonance Imaging unit and cobalt radiation therapy equipment is expected shortly, making it the only veterinary teaching hospital in Canada with an MRI dedicated to pets and the only facility in western Canada able to provide radiation therapy for animal cancer patients."
+                       
+ 
+                       
+
+  
+  
+  
+  

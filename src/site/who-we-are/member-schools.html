@@ -29,287 +29,69 @@ title: "Member Schools"
 			document.querySelector( "#member-schools" ).classList.toggle("sidebar-active");
 		</script>
 		<div id="member-schools-content">
-			<h1 id="page-title" class="editable">Member Schools</h1>
+			<h1 id="page-title">{{ page.title }}</h1>
 			<div id="schools">
-				<div id="ubc" class="school">
+				<!--Grabbing information from member-schools.yml -->
+				{% for school in site.data.member-schools.member-schools-information %}
+				{% if school.lang == page.lang %}
+				<div class="school">
 					<div class="school-logo">
-						<img src="/images/school-logos/ubc.svg">
+						<img src="/images/school-logos/{{ school.school-img }}">
 					</div>
 					<div class="school-desc">
 						<li class="school-name">
-							<a href="http://mus.med.ubc.ca/" class="editable">
-								University of British Columbia
+							<a href="{{ school.school-link }}" class="editable">
+								{{ school.school-name }}
 							</a>
 						</li>
 						<li class="school-address editable">
-							2329 West Mall<br>
-							Vancouver BC V6T 1Z2
+							{{ school.school-address }}
 						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 604&ndash;822&ndash;2211<br>
-							<b>Fax</b>: 604&ndash;822&ndash;3134	
+						<li class="school-contact editable"> 
+							<b>Phone</b>: {{ school.school-phone }}<br>
+							{% if school.school-fax != "" %}
+								<b>Fax</b>: {{ school.school-fax }}
+							{% endif %}
 						</li>
+						
+						<li id="school-1" style="display:none;">
+							{{ school.school-description }}
+						</li>
+						<li><button class="clickMe">Read More</button></li>
+						
+						
 					</div>
 				</div>
-				<div id="ualberta" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/ualberta.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://www.msa.ualberta.ca/" class="editable">
-								University of Alberta
-							</a>
-						</li>
-						<li class="school-address editable">
-							1A University Campus North West<br>
-							Edmonton, Alberta T6G 2E1
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 780&ndash;492&ndash;3111<br>
-						</li>
-					</div>
-				</div>
-				<div id="ucalgary" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/ucalgary.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://cmsa.ucalgary.ca/" class="editable">
-								University of Calgary
-							</a>
-						</li>
-						<li class="school-address editable">
-							2500 University Drive North West<br>
-							Calgary, Alberta T2N 1N4
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 403&ndash;220&ndash;5110<br>
-							<b>Fax</b>: 403&ndash;282&ndash;7298
-						</li>
-					</div>
-				</div>
-				<div id="usaskatchewan" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/usaskatchewan.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://www.saskmedstudents.com/" class="editable">
-								University of Saskatchewan
-							</a>
-						</li>
-						<li class="school-address editable">
-							105 Administration Place<br>
-							Saskatoon, Saskatchewan S7N 5A2
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 306&ndash;966&ndash;4343<br>
-							<b>Fax</b>: 306&ndash;975&ndash;1026
-						</li>
-					</div>
-				</div>
-				<div id="umanitoba" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/umanitoba.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://www.umanitoba.ca/student/groups/MMSA/" class="editable">
-								University of Manitoba
-							</a>
-						</li>
-						<li class="school-address editable">
-							260-727 McDermot Avenue<br>
-							Winnipeg, Manitoba R3E 3P5
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 204&ndash;474&ndash;8880<br>
-							<b>Fax</b>: 204&ndash;474&ndash;7536
-						</li>
-					</div>
-				</div>
-				<div id="nosm" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/nosm.png">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://www.nosm.ca/nosmss/" class="editable">
-								Northern Ontario School of Medicine
-							</a>
-						</li>
-						<li class="school-address editable">
-							<b>Laurentian</b>: 935 Ramsey Lake Road<br>
-							Sudbury, Ontario P3E 2C6<br>
-							<b>Lakehead</b>: 955 Oliver Road<br>
-							Thunder Bay, Ontario P7B 5E1
-						</li>
-					</div>
-				</div>
-				<div id="western" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/western.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://www.uwomeds.com/" class="editable">
-								Western University
-							</a>
-						</li>
-						<li class="school-address editable">
-							1151 Richmond Street<br>
-							London, Ontario N6A 5B8
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 519&ndash;661&ndash;2211<br>
-							<b>Fax</b>: 519&ndash;661&ndash;3388
-						</li>
-					</div>
-				</div>
-				<div id="mcmaster" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/mcmaster.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://fhs.mcmaster.ca/mdprog/" class="editable">
-								McMaster University
-							</a>
-						</li>
-						<li class="school-address editable">
-							1280 Main Street West<br>
-							Hamilton, Ontario L8S 4L8
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 905&ndash;525&ndash;9140<br>
-							<b>Fax</b>: 905&ndash;546&ndash;0349
-						</li>
-					</div>
-				</div>
-				<div id="utoronto" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/utoronto.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://www.uoftmeds.com/" class="editable">
-								University of Toronto
-							</a>
-						</li>
-						<li class="school-address editable">
-							27 King's College Circle<br>
-							Toronto, Ontario M5S 1A1
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 416&ndash;978&ndash;2011<br>
-							<b>Fax</b>: 416&ndash;978&ndash;6089	
-						</li>
-					</div>
-				</div>
-				<div id="queens" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/queens.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://meds.queensu.ca/" class="editable">
-								Queens University
-							</a>
-						</li>
-						<li class="school-address editable">
-							99 University Avenue<br>
-							Kingston, Ontario K7L 3N6
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 613&ndash;533&ndash;2000<br>
-							<b>Fax</b>: 613&ndash;533&ndash;6300	
-						</li>
-					</div>
-				</div>
-				<div id="uottawa" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/uottawa.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://medstudents.ca/" class="editable">
-								University of Ottawa
-							</a>
-						</li>
-						<li class="school-address editable">
-							431 Smyth Road<br>
-							Ottawa, Ontario K1H 8M5
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 613&ndash;562&ndash;5800<br>
-							<b>Fax</b>: 613&ndash;562&ndash;5457	
-						</li>
-					</div>
-				</div>
-				<div id="mcgill" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/mcgill.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://students.med.mcgill.ca/MSS" class="editable">
-								McGill University
-							</a>
-						</li>
-						<li class="school-address editable">
-							845 Sherbrooke Street West<br>
-							Montreal, Quebec H3A 2T5
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 514&ndash;398&ndash;4455<br>
-							<b>Fax</b>: 514&ndash;398&ndash;3594
-						</li>
-					</div>
-				</div>
-				<div id="dalhousie" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/dalhousie.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://dmss.ca/" class="editable">
-								Dalhousie University
-							</a>
-						</li>
-						<li class="school-address editable">
-							1236 Henry Street<br>
-							Halifax, Nova Scotia B3H 3J5
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 902&ndash;494&ndash;2450<br>
-							<b>Fax</b>: 902&ndash;494&ndash;1630
-						</li>
-					</div>
-				</div>
-				<div id="memorial" class="school">
-					<div class="school-logo">
-						<img src="/images/school-logos/memorial.svg">
-					</div>
-					<div class="school-desc">
-						<li class="school-name">
-							<a href="http://www.med.mun.ca/mss/" class="editable">
-								Memorial University of Newfoundland
-							</a>
-						</li>
-						<li class="school-address editable">
-							PO Box 4200, Station C<br>
-							St. John's, Newfoundland A1C 5S7
-						</li>
-						<li class="school-contact editable">
-							<b>Phone</b>: 709&ndash;737&ndash;8000<br>
-						</li>
-					</div>
-				</div>
+				{% endif %}
+				{% endfor %}
 			</div>	
 		</div>
 	</div>
 	{% include footer.html %}
 </body>
+
+<script type="text/javascript">
+//	var $ = function(selector){
+//		return document.querySelector(selector);
+//	};
+	function dynamicEvent(){
+		if(this.parentElement.previousElementSibling.style.display ==="none"){
+			this.parentElement.previousElementSibling.style.display = "block";
+			this.innerHTML = "Close";
+		}
+		else{
+			this.parentElement.previousElementSibling.style.display = "none";
+			this.innerHTML = "Read More";
+		}
+	}
+	
+	var buttons = document.querySelector("#schools").getElementsByTagName('button');
+	
+	for(var i=0; i< buttons.length; i++){
+		var button = buttons[i];
+		button.onclick = dynamicEvent;
+	}
+	
+	
+</script>
 </html>
