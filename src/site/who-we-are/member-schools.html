@@ -40,17 +40,19 @@ title: "Member Schools"
 					</div>
 					<div class="school-desc">
 						<li class="school-name">
-							<a href="{{ school.school-link }}" class="editable">
+							<a href="{{ school.school-link }}">
 								{{ school.school-name }}
 							</a>
 						</li>
-						<li class="school-address editable">
+						<li class="school-address">
 							{{ school.school-address }}
 						</li>
-						<li class="school-contact editable"> 
-							<b>Phone</b>: {{ school.school-phone }}<br>
+						<li class="school-contact"> 
+							{% if school.school-phone != "" %}
+								<strong class="editable">Phone</strong>: {{ school.school-phone }}<br>
+							{% endif %}
 							{% if school.school-fax != "" %}
-								<b>Fax</b>: {{ school.school-fax }}
+								<strong class="editable">Fax</strong>: {{ school.school-fax }}
 							{% endif %}
 						</li>
 						
@@ -71,27 +73,24 @@ title: "Member Schools"
 </body>
 
 <script type="text/javascript">
-//	var $ = function(selector){
-//		return document.querySelector(selector);
-//	};
-	function dynamicEvent(){
-		if(this.parentElement.previousElementSibling.style.display ==="none"){
-			this.parentElement.previousElementSibling.style.display = "block";
-			this.innerHTML = "Close";
+	(function(){
+		function dynamicEvent(){
+			if(this.parentElement.previousElementSibling.style.display ==="none"){
+				this.parentElement.previousElementSibling.style.display = "block";
+				this.innerHTML = "Close";
+			}
+			else{
+				this.parentElement.previousElementSibling.style.display = "none";
+				this.innerHTML = "Read More";
+			}
 		}
-		else{
-			this.parentElement.previousElementSibling.style.display = "none";
-			this.innerHTML = "Read More";
+
+		var buttons = document.querySelector("#schools").getElementsByTagName('button');
+
+		for(var i=0; i< buttons.length; i++){
+			var button = buttons[i];
+			button.onclick = dynamicEvent;
 		}
-	}
-	
-	var buttons = document.querySelector("#schools").getElementsByTagName('button');
-	
-	for(var i=0; i< buttons.length; i++){
-		var button = buttons[i];
-		button.onclick = dynamicEvent;
-	}
-	
-	
+	})();
 </script>
 </html>
