@@ -12,6 +12,13 @@ title: "Online Resource Discounts"
 
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="/stylesheets/resources.css">
+	<!-- CodeMirror -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
+
+	<!-- Firepad -->
+	<link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+	<script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
 </head>
 <body>
 	{% include nav.html %}
@@ -60,10 +67,7 @@ title: "Online Resource Discounts"
 				</ul>
 				</div>
 				<div class="members-only">
-					<ul>
-						<li>Click <a href="https://store.uptodate.com/society_cfms/sso/index/login/"><span id="application-deadline">here</span></a> to take advantage of this special offer</li>
-					</ul>
-					<img style='width:300px' src="/images/discount-images/wkl.png">
+					{% include members-only-editor.html %}
 				</div>
 			</blockquote>
 		</div>

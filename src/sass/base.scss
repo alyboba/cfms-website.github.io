@@ -405,6 +405,11 @@ label {
 .non-members {display:block}
 .members-only {display:none}
 .admin-only {display:none}
+#edit-members-only {
+	display:none;
+	min-height:500px;
+	.firepad .CodeMirror {min-height:20em}
+}
 #members {display:none}
 
 /* #Announcement
