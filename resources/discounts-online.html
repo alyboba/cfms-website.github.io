@@ -374,6 +374,13 @@ function submitApplication() {
 
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="/stylesheets/resources.css">
+	<!-- CodeMirror -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
+
+	<!-- Firepad -->
+	<link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+	<script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
 </head>
 <body>
 	
@@ -487,10 +494,9 @@ function submitApplication() {
 				</ul>
 				</div>
 				<div class="members-only">
-					<ul>
-						<li>Click <a href="https://store.uptodate.com/society_cfms/sso/index/login/"><span id="application-deadline">here</span></a> to take advantage of this special offer</li>
-					</ul>
-					<img style='width:300px' src="/images/discount-images/wkl.png">
+					<div id="edit-members-only">
+    <div id="preview"></div>
+</div>
 				</div>
 			</blockquote>
 		</div>
@@ -669,6 +675,12 @@ $('.redirect-modal').click(function(){
         }
     });
 });
+</script>
+<script type="text/javascript">
+    if (["app.cloudcannon.com", "localhost:4000"].includes(window.location.host)) {
+        console.log("in development");
+        document.getElementById('edit-members-only').style.display = 'block';
+    }
 </script>
 <script type="text/javascript">
 	window.config = {

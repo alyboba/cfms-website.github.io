@@ -110594,7 +110594,7 @@ var App = function App() {
 ;
 new App();
 
-},{"./routes":455}],435:[function(require,module,exports){
+},{"./routes":457}],435:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -110675,7 +110675,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{"../utils":465}],437:[function(require,module,exports){
+},{"../utils":467}],437:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -110828,7 +110828,7 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
 exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
-},{"../repositories/firebase/utils":454}],438:[function(require,module,exports){
+},{"../repositories/firebase/utils":456}],438:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -110909,6 +110909,81 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _utils = require('../repositories/firebase/utils');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _class = function (_FirebaseConnection) {
+    _inherits(_class, _FirebaseConnection);
+
+    function _class(authenticationService) {
+        _classCallCheck(this, _class);
+
+        var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this));
+
+        _this.auth = authenticationService;
+        _this.membersOnly = document.getElementsByClassName('members-only');
+        if (_this.membersOnly.length !== 0) _this.process();
+        return _this;
+    }
+
+    _createClass(_class, [{
+        key: 'process',
+        value: function process() {
+            var _this2 = this;
+
+            var editor = document.getElementById('edit-members-only');
+            if (editor && this.auth.user.isAdmin) return this.injectEditor(editor);
+            var refPath = 'members_only_content' + this.UrlToRef(); // TODO: DRY this crap up
+            var ref = this.firebase.database().ref(refPath);
+            var valRef = ref.child('/value');
+            valRef.once('value', function (snapshot) {
+                if (snapshot.val()) _this2.membersOnly[0].innerHTML = snapshot.val();
+            });
+        }
+    }, {
+        key: 'injectEditor',
+        value: function injectEditor(editor) {
+            var refPath = 'members_only_content' + this.UrlToRef();
+            var codeMirror = new CodeMirror(editor, { lineWrapping: true, lineNumbers: true, mode: 'htmlmixed' });
+            var ref = this.firebase.database().ref(refPath);
+            var valRef = ref.child('/value');
+
+            var firepad = Firepad.fromCodeMirror(ref, codeMirror);
+
+            firepad.on('synced', function (isSynced) {
+                if (isSynced) valRef.set(firepad.getText());
+            });
+
+            valRef.on('value', function (snapshot) {
+                return document.getElementById('preview').innerHTML = snapshot.val();
+            });
+        }
+    }, {
+        key: 'UrlToRef',
+        value: function UrlToRef() {
+            return window.location.pathname.split(".")[0];
+        }
+    }]);
+
+    return _class;
+}(_utils.FirebaseConnection);
+
+exports.default = _class;
+
+},{"../repositories/firebase/utils":456}],440:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var MembersController = function () {
@@ -110948,7 +111023,7 @@ var MembersController = function () {
 
 exports.default = MembersController;
 
-},{}],440:[function(require,module,exports){
+},{}],441:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111076,7 +111151,7 @@ var NavigationController = function () {
 
 exports.default = NavigationController;
 
-},{"js-cookie":235}],441:[function(require,module,exports){
+},{"js-cookie":235}],442:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111165,7 +111240,7 @@ var PaymentsController = function () {
 
 exports.default = PaymentsController;
 
-},{"../utils":465,"request-promise":342}],442:[function(require,module,exports){
+},{"../utils":467,"request-promise":342}],443:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111236,7 +111311,7 @@ var PurchasesController = function () {
 
 exports.default = PurchasesController;
 
-},{"../utils":465,"request-promise":342}],443:[function(require,module,exports){
+},{"../utils":467,"request-promise":342}],444:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111301,7 +111376,7 @@ var RegistrationController = function () {
 
 exports.default = RegistrationController;
 
-},{"../utils":465}],444:[function(require,module,exports){
+},{"../utils":467}],445:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111324,7 +111399,7 @@ var _authentication4 = _interopRequireDefault(_authentication3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/authentication":436,"../services/authentication":461}],445:[function(require,module,exports){
+},{"../controllers/authentication":436,"../services/authentication":463}],446:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111339,6 +111414,10 @@ var _authentication = require('./authentication');
 
 var _authentication2 = _interopRequireDefault(_authentication);
 
+var _membersContent = require('./members-content');
+
+var _membersContent2 = _interopRequireDefault(_membersContent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -111348,11 +111427,35 @@ var Middleware = function Middleware(page) {
 
     page('*', _navigation2.default);
     page('*', _authentication2.default);
+    page('*', _membersContent2.default);
 };
 
 exports.default = Middleware;
 
-},{"./authentication":444,"./navigation":446}],446:[function(require,module,exports){
+},{"./authentication":445,"./members-content":447,"./navigation":448}],447:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function (ctx, next) {
+    new _membersContent2.default(new _authentication2.default());
+
+    next();
+};
+
+var _membersContent = require('../controllers/members-content');
+
+var _membersContent2 = _interopRequireDefault(_membersContent);
+
+var _authentication = require('../services/authentication');
+
+var _authentication2 = _interopRequireDefault(_authentication);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+},{"../controllers/members-content":439,"../services/authentication":463}],448:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111371,7 +111474,7 @@ var _navigation2 = _interopRequireDefault(_navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/navigation":440}],447:[function(require,module,exports){
+},{"../controllers/navigation":441}],449:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111427,7 +111530,7 @@ var MeetingRegistrationModel = function (_Model) {
 
 exports.default = MeetingRegistrationModel;
 
-},{"./model":448,"./user":449}],448:[function(require,module,exports){
+},{"./model":450,"./user":451}],450:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111470,7 +111573,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"lodash":269}],449:[function(require,module,exports){
+},{"lodash":269}],451:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111539,7 +111642,7 @@ var UserModel = function (_Model) {
 
 exports.default = UserModel;
 
-},{"./model":448}],450:[function(require,module,exports){
+},{"./model":450}],452:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111594,7 +111697,7 @@ var ApiRepository = function () {
 
 exports.default = ApiRepository;
 
-},{"request-promise":342}],451:[function(require,module,exports){
+},{"request-promise":342}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111641,7 +111744,7 @@ var UserRepository = function (_ApiRepository) {
 
 exports.default = UserRepository;
 
-},{"./repository":450}],452:[function(require,module,exports){
+},{"./repository":452}],454:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111698,7 +111801,7 @@ var MeetingRegistrationRepository = function (_FirebaseRepository) {
 
 exports.default = MeetingRegistrationRepository;
 
-},{"./repository":453}],453:[function(require,module,exports){
+},{"./repository":455}],455:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111740,7 +111843,7 @@ var Repository = function () {
 
 exports.default = Repository;
 
-},{"./utils":454}],454:[function(require,module,exports){
+},{"./utils":456}],456:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111805,7 +111908,7 @@ var FirebaseRef = function (_FirebaseConnection) {
 exports.FirebaseRef = FirebaseRef;
 exports.FirebaseConnection = FirebaseConnection;
 
-},{"../../config":435,"firebase":157}],455:[function(require,module,exports){
+},{"../../config":435,"firebase":157}],457:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111884,7 +111987,7 @@ var Router = function (_Middleware) {
 
 exports.default = Router;
 
-},{"../middlewares":445,"./md-leadership-awards":456,"./meeting-registrations":457,"./members":458,"./purchases":459,"./registration":460,"page":281}],456:[function(require,module,exports){
+},{"../middlewares":446,"./md-leadership-awards":458,"./meeting-registrations":459,"./members":460,"./purchases":461,"./registration":462,"page":281}],458:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111915,7 +112018,7 @@ function LeadershipAwardAdmin(ctx, next) {
     next();
 }
 
-},{"../controllers/md-leadership-awards":437,"../services/authentication":461}],457:[function(require,module,exports){
+},{"../controllers/md-leadership-awards":437,"../services/authentication":463}],459:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111963,7 +112066,7 @@ function MeetingRegistration(ctx, next) {
     next();
 }
 
-},{"../controllers/meeting-registrations":438,"../controllers/payments":441,"../models/meeting-registration":447,"../models/user":449,"../repositories/api/user":451,"../repositories/firebase/meeting-registration":452,"../services/authentication":461,"../services/payments":464}],458:[function(require,module,exports){
+},{"../controllers/meeting-registrations":438,"../controllers/payments":442,"../models/meeting-registration":449,"../models/user":451,"../repositories/api/user":453,"../repositories/firebase/meeting-registration":454,"../services/authentication":463,"../services/payments":466}],460:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111988,7 +112091,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/members":439,"../services/authentication":461}],459:[function(require,module,exports){
+},{"../controllers/members":440,"../services/authentication":463}],461:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112015,7 +112118,7 @@ function Purchases(ctx, next) {
     next();
 }
 
-},{"../controllers/purchases":442,"../services/authentication":461,"../services/payments":464}],460:[function(require,module,exports){
+},{"../controllers/purchases":443,"../services/authentication":463,"../services/payments":466}],462:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112046,7 +112149,7 @@ function Registration(ctx, next) {
   next();
 }
 
-},{"../controllers/registration":443,"../models/user":449,"../services/authentication":461}],461:[function(require,module,exports){
+},{"../controllers/registration":444,"../models/user":451,"../services/authentication":463}],463:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112180,7 +112283,7 @@ var AuthenticationService = function () {
 
 exports.default = AuthenticationService;
 
-},{"../../models/user":449,"../../repositories/api/user":451,"../../utils":465,"./providers/auth0":462,"./providers/firebase":463,"jsonwebtoken":241,"lodash":269}],462:[function(require,module,exports){
+},{"../../models/user":451,"../../repositories/api/user":453,"../../utils":467,"./providers/auth0":464,"./providers/firebase":465,"jsonwebtoken":241,"lodash":269}],464:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112248,7 +112351,7 @@ var Auth0Provider = function () {
 
 exports.default = Auth0Provider;
 
-},{"../../../config":435,"auth0-js":46}],463:[function(require,module,exports){
+},{"../../../config":435,"auth0-js":46}],465:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112305,7 +112408,7 @@ var FirebaseProvider = function (_FirebaseConnection) {
 
 exports.default = FirebaseProvider;
 
-},{"../../../repositories/firebase/utils":454}],464:[function(require,module,exports){
+},{"../../../repositories/firebase/utils":456}],466:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -112348,7 +112451,7 @@ var PaymentsService = function (_FirebaseConnection) {
 
 exports.default = PaymentsService;
 
-},{"../repositories/firebase/utils":454}],465:[function(require,module,exports){
+},{"../repositories/firebase/utils":456}],467:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
