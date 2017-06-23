@@ -110937,9 +110937,9 @@ var _class = function (_FirebaseConnection) {
             var _this2 = this;
 
             var editor = document.getElementById('edit-members-only');
-            if (editor && this.auth.user.isAdmin) return this.injectEditor(editor);
+            if (editor && this.auth.user.isAdmin && this.checkDomain()) return this.injectEditor(editor);
             console.log("Fetching members only content from firebase...");
-            var refPath = 'members_only_content' + this.UrlToRef(); // TODO: DRY this crap up
+            var refPath = 'members_only_content' + this.urlToRef(); // TODO: DRY this crap up
             var ref = this.firebase.database().ref(refPath);
             var valRef = ref.child('/value');
             valRef.once('value', function (snapshot) {
@@ -110949,7 +110949,7 @@ var _class = function (_FirebaseConnection) {
     }, {
         key: 'injectEditor',
         value: function injectEditor(editor) {
-            var refPath = 'members_only_content' + this.UrlToRef();
+            var refPath = 'members_only_content' + this.urlToRef();
             var codeMirror = new CodeMirror(editor, { lineWrapping: true, lineNumbers: true, mode: 'htmlmixed' });
             var ref = this.firebase.database().ref(refPath);
             var valRef = ref.child('/value');
@@ -110965,9 +110965,14 @@ var _class = function (_FirebaseConnection) {
             });
         }
     }, {
-        key: 'UrlToRef',
-        value: function UrlToRef() {
+        key: 'urlToRef',
+        value: function urlToRef() {
             return window.location.pathname.split(".")[0];
+        }
+    }, {
+        key: 'checkDomain',
+        value: function checkDomain() {
+            return ["app.cloudcannon.com", "localhost:4000"].includes(window.location.host);
         }
     }]);
 
