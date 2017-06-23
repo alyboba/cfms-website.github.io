@@ -205,7 +205,15 @@
 
 /* #About Us
 ––––––––––––––––––––––––––––––––––––––––*/
-#about-us-content {width:100%;}
+#about-us-content {
+	width:100%;
+	#page-title {margin-bottom:0;}
+}
+
+#about-us {
+	padding-bottom:20px;
+	margin-top:-1px;
+}
 
 .bold-red{
 	font-size:24px;
@@ -215,7 +223,16 @@
 	color:$primary-color;
 	font-family:$sans-serif-font-stack;
 }
-
+.about {
+	display: flex;
+	border-top: 1px solid $brighter;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	.about-info {
+		padding-left: 10px;
+		max-width: 600px;
+	}
+}
 
 /* #Member Schools
 ––––––––––––––––––––––––––––––––––––––––*/
