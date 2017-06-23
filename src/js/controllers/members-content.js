@@ -10,9 +10,9 @@ export default class extends FirebaseConnection {
 
     process() {
         let editor = document.getElementById('edit-members-only');
-        if (editor && this.auth.user.isAdmin) return this.injectEditor(editor);
+        if (editor && this.auth.user.isAdmin && this.checkDomain()) return this.injectEditor(editor);
         console.log("Fetching members only content from firebase...");
-        const refPath = 'members_only_content' + this.UrlToRef(); // TODO: DRY this crap up
+        const refPath = 'members_only_content' + this.urlToRef(); // TODO: DRY this crap up
         const ref = this.firebase.database().ref(refPath);
         const valRef = ref.child('/value');
         valRef.once('value', snapshot => {
@@ -21,7 +21,7 @@ export default class extends FirebaseConnection {
     }
 
     injectEditor(editor) {
-        const refPath = 'members_only_content' + this.UrlToRef();
+        const refPath = 'members_only_content' + this.urlToRef();
         const codeMirror = new CodeMirror(editor, { lineWrapping: true, lineNumbers: true, mode: 'htmlmixed' });
         const ref = this.firebase.database().ref(refPath);
         const valRef = ref.child('/value');
@@ -35,7 +35,11 @@ export default class extends FirebaseConnection {
         valRef.on('value', snapshot => document.getElementById('preview').innerHTML = snapshot.val());
     }
 
-    UrlToRef() {
+    urlToRef() {
         return window.location.pathname.split(".")[0];
+    }
+
+    checkDomain() {
+        return ["app.cloudcannon.com", "localhost:4000"].includes(window.location.host);
     }
 }
