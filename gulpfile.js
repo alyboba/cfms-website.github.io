@@ -44,12 +44,13 @@ gulp.task('buildJekyll', ['buildSass', 'buildJs'], () => {
 
 gulp.task('serve', () => {
   browserSync.init({
-    files: [servePath + '/**'],
-    port: 4000,
-    server: {
-      baseDir: servePath
-    },
-    // reloadDebounce: 2000
+      files: [servePath + '/**'],
+      port: 4000,
+      server: {
+          baseDir: servePath
+      },
+      reloadDebounce: 2000,
+      reloadDelay: 1000
   });
 
   watch(sassPath + '/*.scss')
@@ -94,7 +95,6 @@ gulp.task('test', function (done) {
 // add custom browserify options here
 var customOpts = {
     entries: [jsPath + '/app.js'],
-    reloadDebounce: 2000,
     debug: true
 };
 var opts = assign({}, watchify.args, customOpts);
