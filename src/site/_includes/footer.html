@@ -177,6 +177,12 @@ $('.redirect-modal').click(function(){
 });
 </script>
 <script type="text/javascript">
+    if (["app.cloudcannon.com", "localhost:4000"].includes(window.location.host)) {
+        console.log("in development");
+        document.getElementById('edit-members-only').style.display = 'block';
+    }
+</script>
+<script type="text/javascript">
 	window.config = {
 		nav: JSON.parse(`{{ site.data.translations.nav | jsonify }}`),
 		lang: `{{ page.lang }}`,
