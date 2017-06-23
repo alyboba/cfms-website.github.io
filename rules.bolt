@@ -8,15 +8,18 @@ path /users/{user_id} {
   write() { isUser(user_id) }
 }
 
+path /members_only_content {
+  read() { isSignedIn() }
+  write() { isAdmin() }
+}
+
 path / {
   read() { isAdmin() }
   write() { isAdmin() }
 }
 
-function isAdmin() {
-  auth.token.isAdmin === true
-}
+function isAdmin() { auth.token.isAdmin === true }
 
-function isUser(uid) {
- auth.uid === uid 
-}
+function isUser(uid) { auth.uid === uid }
+
+isSignedIn() { auth != null }
