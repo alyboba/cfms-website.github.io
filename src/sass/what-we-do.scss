@@ -20,6 +20,9 @@
 		}
 	}
 }
+.red-color{
+	color:$primary-color-bright;
+}
 @media only screen and (max-width: 959px) {
 	.content {
 		flex-wrap:wrap;
