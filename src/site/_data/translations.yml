@@ -193,10 +193,14 @@ sidebar-who-we-are:
   cfms-representatives: "CFMS Representatives"
   cfms-at-your-school: "CFMS at your School"
   partner-organizations: "Partner Organizations"
+  about-us: "About Us"
   sidebar-title_2: "Our Organization"
   governance-structure: "Governance Structure"
   internal-policy-bylaws: "Bylaws &amp; Internal Policy"
-  about-us: "About Us"
+  sidebar-title_3: "More Information"
+  history: "History"
+  organizational-timeline: "Organizational Timeline"
+  
 - lang: "fr"
   sidebar-title_1: "Qui sommes-nous?"
   executives-officers: "Conseil exécutif et directeurs"
@@ -204,10 +208,14 @@ sidebar-who-we-are:
   cfms-representatives: "Représentants de la FEMC"
   cfms-at-your-school:  "La FEMC à votre école"
   partner-organizations: "Organisations partenaires"
+  about-us: "About Us"
   sidebar-title_2: "Notre organisation"
   governance-structure: "Structure de gouvernance"
   internal-policy-bylaws: "Règlements administratifs et politique intérieure"
-  about-us: "About Us"
+  sidebar-title_3: "More Information"
+  history: "History"
+  organizational-timeline: "Organizational Timeline"
+  
   
 #Sidebar education
 sidebar-education:
