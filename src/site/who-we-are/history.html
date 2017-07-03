@@ -39,10 +39,19 @@ title: "CFMS History"
             {% endfor %}
             
             
-            {% for president in site.data.history.past-presidents %}
-            <ul>
-                <li>How many times?</li>
-            </ul>
+            
+            {% for presidentInformation in site.data.history.past-presidents %}
+                <h3>{{ presidentInformation.year }}</h3>
+                {% for presInfo in presidentInformation.presidents %}
+                    <ul>
+                        <li>{{ presInfo.president-year }}</li>
+                        <li>{{ presInfo.president-name }}</li>
+                        <li>{{ presInfo.president-location }}</li>
+                    </ul>
+                {% endfor %}
+            
+            
+            
             
             {% endfor %}
             
