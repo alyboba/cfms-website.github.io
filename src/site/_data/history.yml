@@ -19,6 +19,7 @@ history:
 
 past-presidents:
 - year: "1970"
+  card-img: "year-1970-1980.jpg"
   presidents:
   - president-year: "1977-1978"
     president-name: "Leo Plouffe"
@@ -30,6 +31,7 @@ past-presidents:
     president-name: "Robert Conn"
     president-location: "Vancouver, BC"
 - year: "1980"
+  card-img: "year-1980-1990.jpg"
   presidents:
   - president-year: "1980-1981"
     president-name: "Michael Strong"

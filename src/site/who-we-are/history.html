@@ -12,6 +12,8 @@ title: "CFMS History"
 
     <!--Page Specific Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/who-we-are.css">
+    <link rel="stylesheet" href="/stylesheets/cards.css">
+    <link rel="stylesheet" href="/stylesheets/modal.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 {% include nav.html %}
@@ -30,40 +32,68 @@ title: "CFMS History"
     </script>
     <div id="member-schools-content">
         <h1 id="page-title">{{ page.title }}</h1>
-        <div id="schools">
+        <div>
             
             {% for historyInformation in site.data.history.history %}
             {% if historyInformation.lang == page.lang %}
                 {{ historyInformation.description }}
             {% endif %}
             {% endfor %}
-            
-            
+
+            <ul class="cards">
             
             {% for presidentInformation in site.data.history.past-presidents %}
-                <h3>{{ presidentInformation.year }}</h3>
-                {% for presInfo in presidentInformation.presidents %}
-                    <ul>
-                        <li>{{ presInfo.president-year }}</li>
-                        <li>{{ presInfo.president-name }}</li>
-                        <li>{{ presInfo.president-location }}</li>
-                    </ul>
+            
+                <li class="cards__item">
+                    <div class="modal hidden">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="closeModal">&times;</span>
+                                <h2>Modal Header</h2>
+                            </div>
+                            <hr>
+                            <div class="modal-body">
+                                <p>Some text in the Modal Body</p>
+                                <p>Some other text...</p>
+                            </div>
+                            <hr>
+                            <div class="modal-footer">
+                                <button class="closeModal">Close</button>
+                                <h3>Modal Footer</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <button class="clickMe">
+                            <img title="Past Presidents of the year {{ presidentInformation.year }}" alt="Click to view information of presidents of year {{ presidentInformation.year }}"
+                                 class="card__image" src="../../images/page-images/pocket-cards/{{ presidentInformation.card-img }}"/>
+                        </button>
+                    </div>
+                    
+                </li>
+            
+                
+            
+            
+            
+            {% for presInfo in presidentInformation.presidents %}
+                    <!--<ul>-->
+                        <!--<li>{{ presInfo.president-year }}</li>-->
+                        <!--<li>{{ presInfo.president-name }}</li>-->
+                        <!--<li>{{ presInfo.president-location }}</li>-->
+                    <!--</ul>-->
                 {% endfor %}
             
             
             
             
             {% endfor %}
+
+            </ul>
             
-            <!--<ul class="cards">-->
-                <!--<li class="cards__item">-->
-                    <!--<div class="card">-->
-                        <!--<button>-->
-                            <!--<img title="Download domestic and child abuse pocket card" alt="Download domestic and child abuse pocket card" class="card__image" src="../../images/page-images/pocket-cards/Domestic-and-Child-Abuse-Thumbnail.png"/>-->
-                        <!--</button>-->
-                    <!--</div>-->
-                <!--</li>-->
-            <!--</ul>-->
+            
             
         </div>
     </div>
@@ -73,22 +103,42 @@ title: "CFMS History"
 
 <script type="text/javascript">
     (function(){
+        var currentModal;
         function dynamicEvent(){
-            if(this.parentElement.previousElementSibling.style.display ==="none"){
-                this.parentElement.previousElementSibling.style.display = "block";
-                this.innerHTML = "Close";
-            }
-            else{
-                this.parentElement.previousElementSibling.style.display = "none";
-                this.innerHTML = "Read More";
-            }
+            console.log("getting in the function?!?!");
+            console.log(this.parentElement.previousElementSibling);
+            currentModal = this.parentElement.previousElementSibling;
+            this.parentElement.previousElementSibling.classList.remove("fadeOut");
+            this.parentElement.previousElementSibling.classList.remove("hidden");
+            this.parentElement.previousElementSibling.classList.add("fadeIn");
+            this.parentElement.previousElementSibling.classList.add("show");
+            
         }
-
-        var buttons = document.querySelector("#schools").getElementsByTagName('button');
+        var modal = document.getElementsByClassName("modal");
+        console.log(modal); 
+        var buttons = document.getElementsByTagName('button');
 
         for(var i=0; i< buttons.length; i++){
             var button = buttons[i];
             button.onclick = dynamicEvent;
+        }
+        
+        window.onclick = function(event){
+            //console.log("Hitting the window onclick");
+            for(var i=0; i<modal.length; i++) {
+                if(event.target == modal[i]){
+                    //console.log("Getting into the if?");
+                    modal[i].classList.remove("fadeIn");
+                    modal[i].classList.add("fadeOut");
+                    modal[i].classList.remove("show");
+                    modal[i].classList.add("hidden");
+                }
+            }
+            
+            
+            
+            
+            
         }
     })();
 </script>
