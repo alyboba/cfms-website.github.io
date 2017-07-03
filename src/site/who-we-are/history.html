@@ -43,7 +43,7 @@ title: "CFMS History"
             <ul class="cards">
             
             {% for presidentInformation in site.data.history.past-presidents %}
-            
+                {% if presidentInformation.year != "" %}
                 <li class="cards__item">
                     <div class="modal hidden">
 
@@ -60,11 +60,13 @@ title: "CFMS History"
                                         <th>Location</th>
                                     </tr>
                                     {% for presInfo in presidentInformation.presidents %}
+                                    {% if presInfo.president-year != "" %}
                                     <tr>
                                         <td>{{ presInfo.president-year }}</td>
                                         <td>{{ presInfo.president-name }}</td>
                                         <td>{{ presInfo.president-location }}</td>
                                     </tr>
+                                    {% endif %}
                                     {% endfor %}
                                 </table>
                             </div>
@@ -82,30 +84,10 @@ title: "CFMS History"
                                  class="card__image" src="../../images/page-images/pocket-cards/{{ presidentInformation.card-img }}"/>
                         </button>
                     </div>
-                    
                 </li>
-            
-                
-            
-            
-            
-            <!--{% for presInfo in presidentInformation.presidents %}-->
-                    <!--&lt;!&ndash;<ul>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li>{{ presInfo.president-year }}</li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li>{{ presInfo.president-name }}</li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li>{{ presInfo.president-location }}</li>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-                <!--{% endfor %}-->
-            
-            
-            
-            
+                {% endif %}
             {% endfor %}
-
             </ul>
-            
-            
-            
         </div>
     </div>
 </div>
