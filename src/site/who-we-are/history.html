@@ -49,7 +49,6 @@ title: "CFMS History"
 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <span class="closeModal">&times;</span>
                                 <h2>Modal Header</h2>
                             </div>
                             <hr>
@@ -59,7 +58,7 @@ title: "CFMS History"
                             </div>
                             <hr>
                             <div class="modal-footer">
-                                <button class="closeModal">Close</button>
+                                <button class="btn btn-default modalCloseButton">Close</button>
                                 <h3>Modal Footer</h3>
                             </div>
                         </div>
@@ -112,17 +111,16 @@ title: "CFMS History"
             this.parentElement.previousElementSibling.classList.remove("hidden");
             this.parentElement.previousElementSibling.classList.add("fadeIn");
             this.parentElement.previousElementSibling.classList.add("show");
-            
+
         }
         var modal = document.getElementsByClassName("modal");
-        console.log(modal); 
+        console.log(modal);
         var buttons = document.getElementsByTagName('button');
-
         for(var i=0; i< buttons.length; i++){
             var button = buttons[i];
             button.onclick = dynamicEvent;
         }
-        
+
         window.onclick = function(event){
             //console.log("Hitting the window onclick");
             for(var i=0; i<modal.length; i++) {
@@ -134,11 +132,6 @@ title: "CFMS History"
                     modal[i].classList.add("hidden");
                 }
             }
-            
-            
-            
-            
-            
         }
     })();
 </script>
