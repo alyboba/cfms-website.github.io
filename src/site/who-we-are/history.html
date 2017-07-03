@@ -49,17 +49,29 @@ title: "CFMS History"
 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2>Modal Header</h2>
+                                <h2>Presidents During the year of {{ presidentInformation.year }}</h2>
                             </div>
                             <hr>
                             <div class="modal-body">
-                                <p>Some text in the Modal Body</p>
-                                <p>Some other text...</p>
+                                <table>
+                                    <tr>
+                                        <th>Year</th>
+                                        <th>Name</th>
+                                        <th>Location</th>
+                                    </tr>
+                                    {% for presInfo in presidentInformation.presidents %}
+                                    <tr>
+                                        <td>{{ presInfo.president-year }}</td>
+                                        <td>{{ presInfo.president-name }}</td>
+                                        <td>{{ presInfo.president-location }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
                             </div>
                             <hr>
                             <div class="modal-footer">
                                 <button class="btn btn-default modalCloseButton">Close</button>
-                                <h3>Modal Footer</h3>
+                                <h3><br></h3>
                             </div>
                         </div>
 
@@ -77,13 +89,13 @@ title: "CFMS History"
             
             
             
-            {% for presInfo in presidentInformation.presidents %}
-                    <!--<ul>-->
-                        <!--<li>{{ presInfo.president-year }}</li>-->
-                        <!--<li>{{ presInfo.president-name }}</li>-->
-                        <!--<li>{{ presInfo.president-location }}</li>-->
-                    <!--</ul>-->
-                {% endfor %}
+            <!--{% for presInfo in presidentInformation.presidents %}-->
+                    <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li>{{ presInfo.president-year }}</li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li>{{ presInfo.president-name }}</li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li>{{ presInfo.president-location }}</li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                <!--{% endfor %}-->
             
             
             
