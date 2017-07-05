@@ -2,6 +2,7 @@ organizational-timeline:
 - lang: "en"
   president-information:
   - year: "1970"
+    card-img: "year-1970-1980.jpg"
     presidents:
     - president-years: "1977/78, 78/79"
       president-name: "Leo Plouffe"
@@ -32,6 +33,7 @@ organizational-timeline:
         major-issue: "Discussion surrounding the elimination of the rotating internship year is an important issue for medical students; the CFMS/FEMC is concerned that it would force early career decision making and would eliminate the opportunity for new graduates to work as a general practitioner for several years before deciding to pursue specialist practice."
         major-issue: "The CFMS/FEMC leads a coordinated effort of medical students across Canada in advocating for final year clerkship stipends from provincial governments."
   - year: "1980"
+    card-img: "year-1980-1990.jpg"
     presidents:
     - president-years: "1980/81"
       president-name: "Michael Strong"

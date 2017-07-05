@@ -14,6 +14,7 @@ title: "Organizational Timeline"
     <link rel="stylesheet" href="/stylesheets/who-we-are.css">
     <link rel="stylesheet" href="/stylesheets/cards.css">
     <link rel="stylesheet" href="/stylesheets/modal.css">
+    <link rel="stylesheet" href="/stylesheets/pagination.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 {% include nav.html %}
@@ -34,60 +35,56 @@ title: "Organizational Timeline"
         <h1 id="page-title">{{ page.title }}</h1>
         <div>
 
-            {% for historyInformation in site.data.history.history %}
-            {% if historyInformation.lang == page.lang %}
-            {{ historyInformation.description }}
+            {% for organizationalTimeline in site.data.organizational-timeline.organizational-timeline %}
+            {% if organizationalTimeline.lang == page.lang %}
+                <nav aria-label="Page Navigation" class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        {% for president in organizationalTimeline.president-information %}
+                            <li><a href="" id="{{ president.year }}" class="paginationLink">{{ president.year }}</a></li>
+                        {% endfor %}
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            
+            <hr>
+            {% for president in organizationalTimeline.president-information %}
+                <div id="page{{president.year}}" class="{% if forloop.first %} show {% endif %} {% unless forloop.first %} hide {% endunless %}  paginationPages">
+                    <h2>On Page {{ president.year }}</h2>
+                </div>
+            
+            {% endfor %}
+            
+                
+
             {% endif %}
             {% endfor %}
+           
+           
+           
 
-            <ul class="cards">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+           
 
-                {% for presidentInformation in site.data.history.past-presidents %}
-                {% if presidentInformation.year != "" %}
-                <li class="cards__item">
-                    <div class="modal hidden">
 
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h2>Presidents Between the Years of {{ presidentInformation.year }}</h2>
-                            </div>
-                            <hr>
-                            <div class="modal-body">
-                                <table>
-                                    <tr>
-                                        <th>Year</th>
-                                        <th>Name</th>
-                                        <th>Location</th>
-                                    </tr>
-                                    {% for presInfo in presidentInformation.presidents %}
-                                    {% if presInfo.president-year != "" %}
-                                    <tr>
-                                        <td>{{ presInfo.president-year }}</td>
-                                        <td>{{ presInfo.president-name }}</td>
-                                        <td>{{ presInfo.president-location }}</td>
-                                    </tr>
-                                    {% endif %}
-                                    {% endfor %}
-                                </table>
-                            </div>
-                            <hr>
-                            <div class="modal-footer">
-                                <button class="btn btn-default modalCloseButton">Close</button>
-                                <h3><br></h3>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card">
-                        <button class="clickMe">
-                            <img title="Past Presidents of the year {{ presidentInformation.year }}" alt="Click to view information of presidents of year {{ presidentInformation.year }}"
-                                 class="card__image" src="../../images/page-images/pocket-cards/{{ presidentInformation.card-img }}"/>
-                        </button>
-                    </div>
-                </li>
-                {% endif %}
-                {% endfor %}
-            </ul>
         </div>
     </div>
 </div>
@@ -96,46 +93,28 @@ title: "Organizational Timeline"
 
 <script type="text/javascript">
     (function(){
-        var currentModal;
-        function dynamicEvent(){
-            console.log("getting in the function?!?!");
-            console.log(this.parentElement.previousElementSibling);
-            currentModal = this.parentElement.previousElementSibling;
-            this.parentElement.previousElementSibling.classList.remove("fadeOut");
-            this.parentElement.previousElementSibling.classList.remove("hidden");
-            this.parentElement.previousElementSibling.classList.add("fadeIn");
-            this.parentElement.previousElementSibling.classList.add("show");
+        var paginationLinks = document.getElementsByClassName('paginationLink');
+        var paginationPages = document.getElementsByClassName('paginationPages');
+        for(var i=0; i<paginationLinks.length; i++){
+            var button = paginationLinks[i];
+            button.onclick = showPage;
         }
-        function closeModal(){
-            currentModal = this.parentElement.parentElement.parentElement;
-            closeTheModal(currentModal);
-        }
-        function closeTheModal(element){
-            element.classList.remove("fadeIn");
-            element.classList.add("fadeOut");
-            element.classList.remove("show");
-            element.classList.add("hidden");
-        }
-        var modal = document.getElementsByClassName("modal");
-        console.log(modal);
-        var buttons = document.getElementsByClassName('clickMe');
-        for(var i=0; i< buttons.length; i++){
-            var button = buttons[i];
-            button.onclick = dynamicEvent;
-        }
-        var closeModalButtons = document.getElementsByClassName("modalCloseButton");
-        for(var i=0; i< closeModalButtons.length; i++){
-            var closeButton = closeModalButtons[i];
-            closeButton.onclick = closeModal;
-        }
-
-        window.onclick = function(event){
-            //console.log("Hitting the window onclick");
-            if(event.target == currentModal){
-                //console.log("Getting into the if?");
-                closeTheModal(currentModal);
+        function showPage(){
+            event.preventDefault();
+            var id = 'page'+this.id;
+            for(var i=0; i<paginationPages.length; i++){
+                if(paginationPages[i].id == id){
+                    paginationPages[i].classList.add('show');
+                    paginationPages[i].classList.remove('hide');
+                }
+                else {
+                    paginationPages[i].classList.add('hide');
+                    paginationPages[i].classList.remove('show');
+                }
             }
         }
+        
+        
     })();
 </script>
 </html>
