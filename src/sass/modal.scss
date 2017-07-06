@@ -163,12 +163,12 @@ tr:nth-child(even){
 /* Add Animation */
 @-webkit-keyframes animatetop {
   from {top: -300px; opacity: 0;}
-  to {top: 0; opacity: 1;}
+  to {top: 30px; opacity: 1;}
 }
 
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
+  to {top: 30px; opacity: 1}
 }
 @-webkit-keyframes animateout {
   from {top: 0; opacity: 1}

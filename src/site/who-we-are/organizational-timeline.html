@@ -171,6 +171,7 @@ title: "Organizational Timeline"
         }
         var currentModal;
         function dynamicEvent(){
+            event.preventDefault();
             console.log("getting in the function?!?!");
             console.log(this.parentElement.previousElementSibling);
             currentModal = this.parentElement.previousElementSibling;
