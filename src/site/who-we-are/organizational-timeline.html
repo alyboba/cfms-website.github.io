@@ -106,69 +106,69 @@ title: "Organizational Timeline"
 {% include footer.html %}
 </body>
 
-<script type="text/javascript">
-    (function(){
-        var currentPage = 1970;
-        var paginationLinks = document.getElementsByClassName('paginationLink');
-        var paginationPages = document.getElementsByClassName('paginationPages');
-        for(var i=0; i<paginationLinks.length; i++){
-            var button = paginationLinks[i];
-            button.onclick = showPage;
-        }
-        function showPage(){
-            event.preventDefault(); //prevents links from working normally
-            var id = 'page'+this.id;
-            currentPage = this.id;
-            for(var i=0; i<paginationPages.length; i++){
-                if(paginationPages[i].id == id){
-                    paginationPages[i].classList.add('show');
-                    paginationPages[i].classList.remove('hide');
-                }
-                else {
-                    paginationPages[i].classList.add('hide');
-                    paginationPages[i].classList.remove('show');
-                }
-            }
-        }
-        var currentModal;
-        function dynamicEvent(){
-            event.preventDefault();
-            currentModal = this.parentElement.previousElementSibling;
-            this.parentElement.previousElementSibling.classList.remove("fadeOut");
-            this.parentElement.previousElementSibling.classList.remove("hidden");
-            this.parentElement.previousElementSibling.classList.add("fadeIn");
-            this.parentElement.previousElementSibling.classList.add("show");
-        }
-        function closeModal(){
-            currentModal = this.parentElement.parentElement.parentElement;
-            closeTheModal(currentModal);
-        }
-        function closeTheModal(element){
-            element.classList.remove("fadeIn");
-            element.classList.remove("show");
-            element.classList.add("fadeOut");
-            element.classList.add("hidden");
-        }
-        var modal = document.getElementsByClassName("modal");
-        //console.log(modal);
-        var buttons = document.getElementsByClassName('clickMe');
-        for(var i=0; i< buttons.length; i++){
-            var button = buttons[i];
-            button.onclick = dynamicEvent;
-        }
-        var closeModalButtons = document.getElementsByClassName("modalCloseButton");
-        for(var i=0; i< closeModalButtons.length; i++){
-            var closeButton = closeModalButtons[i];
-            closeButton.onclick = closeModal;
-        }
+<!--<script type="text/javascript">-->
+    <!--(function(){-->
+        <!--var currentPage = 1970;-->
+        <!--var paginationLinks = document.getElementsByClassName('paginationLink');-->
+        <!--var paginationPages = document.getElementsByClassName('paginationPages');-->
+        <!--for(var i=0; i<paginationLinks.length; i++){-->
+            <!--var button = paginationLinks[i];-->
+            <!--button.onclick = showPage;-->
+        <!--}-->
+        <!--function showPage(){-->
+            <!--event.preventDefault(); //prevents links from working normally-->
+            <!--var id = 'page'+this.id;-->
+            <!--currentPage = this.id;-->
+            <!--for(var i=0; i<paginationPages.length; i++){-->
+                <!--if(paginationPages[i].id == id){-->
+                    <!--paginationPages[i].classList.add('show');-->
+                    <!--paginationPages[i].classList.remove('hide');-->
+                <!--}-->
+                <!--else {-->
+                    <!--paginationPages[i].classList.add('hide');-->
+                    <!--paginationPages[i].classList.remove('show');-->
+                <!--}-->
+            <!--}-->
+        <!--}-->
+        <!--var currentModal;-->
+        <!--function dynamicEvent(){-->
+            <!--event.preventDefault();-->
+            <!--currentModal = this.parentElement.previousElementSibling;-->
+            <!--this.parentElement.previousElementSibling.classList.remove("fadeOut");-->
+            <!--this.parentElement.previousElementSibling.classList.remove("hidden");-->
+            <!--this.parentElement.previousElementSibling.classList.add("fadeIn");-->
+            <!--this.parentElement.previousElementSibling.classList.add("show");-->
+        <!--}-->
+        <!--function closeModal(){-->
+            <!--currentModal = this.parentElement.parentElement.parentElement;-->
+            <!--closeTheModal(currentModal);-->
+        <!--}-->
+        <!--function closeTheModal(element){-->
+            <!--element.classList.remove("fadeIn");-->
+            <!--element.classList.remove("show");-->
+            <!--element.classList.add("fadeOut");-->
+            <!--element.classList.add("hidden");-->
+        <!--}-->
+        <!--var modal = document.getElementsByClassName("modal");-->
+        <!--//console.log(modal);-->
+        <!--var buttons = document.getElementsByClassName('clickMe');-->
+        <!--for(var i=0; i< buttons.length; i++){-->
+            <!--var button = buttons[i];-->
+            <!--button.onclick = dynamicEvent;-->
+        <!--}-->
+        <!--var closeModalButtons = document.getElementsByClassName("modalCloseButton");-->
+        <!--for(var i=0; i< closeModalButtons.length; i++){-->
+            <!--var closeButton = closeModalButtons[i];-->
+            <!--closeButton.onclick = closeModal;-->
+        <!--}-->
 
-        window.onclick = function(event){
-            //console.log("Hitting the window onclick");
-            if(event.target == currentModal){
-                //console.log("Getting into the if?");
-                closeTheModal(currentModal);
-            }
-        }
-    })();
-</script>
+        <!--window.onclick = function(event){-->
+            <!--//console.log("Hitting the window onclick");-->
+            <!--if(event.target == currentModal){-->
+                <!--//console.log("Getting into the if?");-->
+                <!--closeTheModal(currentModal);-->
+            <!--}-->
+        <!--}-->
+    <!--})();-->
+<!--</script>-->
 </html>

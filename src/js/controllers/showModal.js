@@ -43,6 +43,7 @@ export default class ModalController {
 	} //end bind listeners method
 	
 	clickTheModal() {
+		event.preventDefault();
 		ModalController.setCurrentModal(this.parentElement.previousElementSibling);
 		this.parentElement.previousElementSibling.classList.remove("fadeOut");
 		this.parentElement.previousElementSibling.classList.remove("hidden");
@@ -55,10 +56,10 @@ export default class ModalController {
 		ModalController.closeTheModal(ModalController.getCurrentModal());
 	} //end close Modal
 	
-	static closeTheModal(element){
-		element.classList.remove("fadeIn");
-		element.classList.add("fadeOut");
-		element.classList.remove("show");
-		element.classList.add("hidden");
+	static closeTheModal(currentModal){
+		currentModal.classList.remove("fadeIn");
+		currentModal.classList.add("fadeOut");
+		currentModal.classList.remove("show");
+		currentModal.classList.add("hidden");
 	}
 }
