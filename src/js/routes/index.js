@@ -5,6 +5,7 @@ import Registration from './registration';
 import MeetingRegistrations from './meeting-registrations';
 import Purchases from './purchases';
 import route from 'page';
+import Modal from './modal';
 
 export default class Router extends Middleware {
     constructor() {
@@ -21,6 +22,7 @@ export default class Router extends Middleware {
         route('/new-account.html', Registration);
         route('/meetings/:meeting', MeetingRegistrations);
         route('/purchases/:purchase', Purchases);
+        route('/who-we-are/history.html', Modal);
     }
 
     refresh() {
