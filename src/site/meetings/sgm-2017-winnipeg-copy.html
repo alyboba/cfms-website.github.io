@@ -1,0 +1,351 @@
+---
+title: 2017 CFMS Spring General Meeting
+cost: 135
+id: SGM2017
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/meetings.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#meetings" ).classList.toggle("active");
+	</script>
+	<div id="top-meeting" style="background: url(../images/meeting-images/winnipeg.jpg) no-repeat center 75%; background-size:cover">
+		<div id="top-group">
+			<div class="content">
+				<div id="top-meeting-name">{{ page.title }}</div>
+				<div id="top-meeting-info">Winnipeg, Manitoba / April 28&ndash;29, 2017</div>
+			</div>
+		</div>
+	</div>
+	<div id="meeting-details" class="content">
+		<div id="meeting-aside">
+			<h2 id="aside-title"><strong>Event details<i class="fa fa-star-o"></i></strong></h2>
+			<div class="icon"><i class="fa fa-map-marker"></i></div>
+			<li>
+				<b>LOCATION</b><br />
+				RBC Convention Centre, Winnipeg<br />
+				375 York Ave. <br />
+				Winnipeg, MB, R3C 3J3<br />
+			</li>
+			<div class="icon"><i class="fa fa-clock-o"></i></div>
+			<li>
+				<b>DATE</b><br />
+				April 28&ndash;29, 2017<br />
+			</li>
+			<div class="icon"><i class="fa fa-briefcase what-to-bring"></i></div>
+			<li>
+				<b>WHAT TO BRING</b><br />
+				Dress Code: Business attire for meetings, fancy casual for social events.
+			</li>
+			<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
+			<div id="emails">
+				<li><b>QUESTIONS?</b><br />
+				Email <a style="border-bottom:1px solid #EAEAEA" href="mailto:office@cfms.org">office@cfms.org</a><br />
+				</li>
+			</div>
+			<div id="shortcut-links">
+				<div id="scroll">
+					<h2>Jump to<span style="opacity:0.5">:</span></h2>
+				<ul>
+						<li><a href="#introduction">Introduction</a></li>
+						<li><a href="#registration-info">Registration Information</a></li>
+						<li><a href="#travel-funding">Travel Funding</a></li>
+						<li><a href="#important-documents">Important Documents</a></li>
+						<li><a href="#executive-officer-reports">Executive Officer Reports</a></li>
+						<li><a href="#resolutions">Resolutions</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="meeting-body">
+			<h2 id="introduction"><strong>What is the Spring General Meeting?</strong></h2>
+			<p>The Spring General Meeting (GM) is an opportunity for Canadian medical students to get together and discuss important issues pertaining to medical education, advocacy, global health, wellness, and more. Join the conversation, get involved &mdash; we want to hear from you!</p>
+
+			<h2 id="registration-info"><strong>Registration information</strong></h2>
+			<p></p>
+					<p>All students attending the meeting MUST register. Please direct any registration inquiries to <a href="mailto:office@cfms.org">office@cfms.org</a></p>
+					<p>The CFMS SGM registration fee is $135 per delegate and this cost includes lunch and dinner Friday April 28th, and lunch Saturday April 29th. This fee is payable by cash or cheque to CFMS at the meeting or through our online payment system by clicking the "Pay with Card" below to pay your fee online. This fee DOES NOT include travel or hotel accommodations, students must arrange their own travel and accommodations (unless funded to attend the SGM through the CFMS). There will be both general and global health meetings on Friday and Saturday. Sunday April 30th will not include CFMS meetings, but does give delegates an opportunity to participate at the Canadian Conference on Medical Education (CCME), held concurrently in Winnipeg.</p>
+					<p>NOTE: All SGM 2017 attendees MUST register for CCME and will be required to pay an additional $50 student fee.</p>
+					<p>The CFMS General Assembly meetings will take place at the RBC Convention Centre, Winnipeg on Friday and Saturday. Meetings of the CFMS Presidents, Representatives, and Global Health Teams will also take place on Thursday evening</p>
+			<blockquote>
+			   
+				<h4><strong>How can I register? (Deadline: April 5th, 2017. 11:59pm EST)</strong></h4>
+				<ul>
+					<li>Registration is <strong>CLOSED.</strong></li>
+					<!-- Change this to automated boolean flag for next AGM code
+					<li>Please click <a href="https://www.surveymonkey.com/r/SW3YKWM" target="_blank">here</a> to register</li>
+					-->
+				</ul>
+				<h5><strong>Pay your fees online</strong></h5>
+				<div class="members-only">
+					<form id="payment-form" payment-id="{{ page.id }}" action="/#" method="POST">
+						<script src="https://payform.beanstream.com/payform/beanstream_payform.js" data-image="https://cfms.org/images/cfms-logo.svg" data-name="CFMS" data-description="{{ page.title }} - Registration" data-amount="{{ page.cost }}" data-currency="cad" data-billingaddress="false" data-submitform="false" data-primarycolor="#BB0A21">
+							</script>
+					</form>
+					<p>
+						By clicking this button you are agreeing to our <strong><a href="/payment-policies.html" target="_blank">payment policies</a></strong>.
+					</p>
+				</div>
+				<div class="non-members">
+					<p>Registration is only available to members. Please login to proceed.</p>
+				</div>
+			</blockquote>
+			
+			<h2 id="travel-funding"><strong>Travel Funding</strong></h2>
+			<p>Never been to a CFMS meeting? Interested in getting involved? Get your registration and travel costs covered by the CFMS by applying for <strong>Travel Funding!</strong> Each year the CFMS and MD Financial Management allocates funds to bring medical students to our annual meetings. It's a great way to learn more about what the CFMS does, get involved, and meet other medical students from across the country.</p>
+			<p>
+			    <strong>New from this year: </strong>Travel Awards will be distributed by region to ensure a more equal student representation across the country. There are 8 awards for each meeting, 2 for the Western region, 1 for the Atlantic region, 3 for the Quebec + Ontario regions, and 2 Wildcard awards.
+			</p>
+			<blockquote>
+				<h4><strong>Apply for Travel Funding</strong></h4>
+				<ul>
+					<li>Applications for Travel Funding are <strong>NOW CLOSED</strong>.</li>
+				
+						<!-- Uncomment to open up registration information link  
+					<li>Applications are due by <strong>11:59pm February 20th, 2017.</strong>.</li> 
+					
+					<div class="button"><strong><a href="http://www.cfms.org/files/meetings/sgm-2017/cfms-travel-awards/SGM2017 Application form_ENG.doc">Application Form (ENG)</a></strong></div>
+					<div class="button"><strong><a href="http://www.cfms.org/files/meetings/sgm-2017/cfms-travel-awards/SGM2017 Application form_FRA.docx">Application Form (FRA)</a></strong></div>
+					    -->
+				</ul>
+			</blockquote>
+			
+				<h2 id="important-documents"><strong>Important Documents</strong></h2>
+			<blockquote>
+				<h4 class="editable"><strong>Meeting Information</strong></h4>
+				<ul>
+			        <li>
+            			<div class="editable"><p><span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/CFMS_SGM2017_Minutes.pdf">SGM 2017 Meeting Minutes (Final)</a></p></div>
+            		</li>
+            		<li>
+            			<div class="editable"><p><span class="file-format">PDF</span><strong><a href="/files/meetings/sgm-2017/important-doc/cfms%20sgm%202017%20agenda.pdf">SGM 2017 Agenda</a>&nbsp;<em>UPDATED</em></strong></p><p><span class="file-format">PDF</span><a href="/SGM 2017 map.pdf">SGM 2017 Room Map</a></p></div>
+            		</li>
+            		<li>
+            		    <div class="editable"><p><span class="file-format">GDOC</span><strong><a href="https://docs.google.com/document/d/1QX5LlBDywx83jelVkVHJDewFJCzBupHmyqq57R-bPWM/edit?usp=sharing">SGM 2017 Global Health Program Draft Agenda</a></strong></p></div>
+            		</li>
+            		<li>
+            		    <div class="editable"><span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/SGMPRTApril27-28-Agenda.pdf">SGM 2017 Presidents' Roundtable Agenda</a></div>
+            		</li>
+            		<li>
+            		    <div class="editable"><p><span class="file-format">GDOC</span><strong><a href="https://docs.google.com/document/d/1Dig_5oCFoB3nJz4EY81LtdZb9IeY_jgZZLQK5bx8f7Q/edit?usp=sharing">SGM 2017 CFMS Representatives Agenda</a>&nbsp;<em>NEW</em></strong></p></div>
+            		</li>
+            		<li>
+            			<div class="editable"><p><span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/sgm%202017%20call%20for%20nominations.pdf">SGM 2017 Call for Nomination - CFMS President-Elect</a></p><p><span class="file-format">PDF</span><a href="https://www.cfms.org/2017/04/10/cfms-sgm-2017-call-for-nominations-for-vp-communications.html">SGM 2017 By-election Call for Nomination- VP Communications</a></p></div>
+            		</li>
+            		<li>
+            			<div class="editable"><p><span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/sgm%202017%20call%20for%20resolutions.pdf">SGM 2017 Call for Resolutions</a></p></div>
+            		</li>
+            		<li>
+            			<div class="editable"><p><span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/important-doc/agm%202016%20minutes.pdf">AGM 2016 Minutes</a></p><p>&nbsp;</p><p><span class="file-format">GDOC</span><a href="https://docs.google.com/document/d/1EOKb12HUKPL8UWmgoK3XDJrmJkRF2xQsDes9BsamTS0/edit?usp=sharing">Parallel External Meetings</a>&nbsp;</p><p>&nbsp;</p><p><strong>External Stakeholder Reports</strong></p><p><a href="/CFPC Report_CFMS_April2017.pdf">CFPC</a></p></div>
+            		</li>
+            
+            	</ul>
+				
+			</blockquote>
+			
+			<h2 id="executive-officer-reports"><strong>Executive &amp; Officer Reports</strong></h2>
+			<blockquote>
+				<h4 class="editable"><strong>Executive &amp; Officer Reports</strong></h4>
+				<ul>
+    				    <li>
+    						<div class="editable"><p><a href="/President SGM 2017 Update.pdf"><span class="file-format">PDF</span>President</a></p></div>
+    					</li>
+    					<li>
+    						<div class="editable"><p><span class="file-format">PDF</span><a href="/CFMS Ed Portfolio SGM Report 2.2-signed.pdf">Vice-President Education</a></p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="/CFMS National Survey Platform Prospectus Full Package Draft 1.1.pdf">National Annual Survey Prospectus</a> &nbsp;</p>
+							<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="/files/meetings/sgm-2017/exec-reports/AFMC Student Portal User Interface Feedback from Clerks.pdf">AFMC Student Portal User Interface Feedback from Clerks</a> &nbsp;</p>
+							</div>
+    					</li>
+    					<li>
+    						<div class="editable"><p><span class="file-format">PDF</span>Vice-President Communications (N/A)</p></div>
+    					</li>
+    					<li>
+    						<div class="editable"><p><span class="file-format">PDF</span><a href="/SGM Report - VP Finance.pdf">Vice-President Finance&nbsp;</a></p></div>
+    					</li>
+    					<li>
+    						<div class="editable"><p><span class="file-format">PDF</span><a href="/SGM 2017 Report - VP Government Affairs.pdf">Vice-President Government Affairs</a></p></div>
+    					</li>
+    					<li>
+    						<div class="editable"><p><span class="file-format">PDF</span><a href="/SGM 2017 Report - VP Student Affairs.pdf">Vice-President Student Affairs</a></p></div>
+    					</li>
+    					<li>
+    						<div class="editable"><p><span class="file-format">GDOC</span><a href="https://docs.google.com/document/d/1mIucPaecqDRGHF0g9xRtTTXhEaKdVWdmqmvTyFz4UbA/edit">V</a><a href="https://docs.google.com/document/d/1mIucPaecqDRGHF0g9xRtTTXhEaKdVWdmqmvTyFz4UbA/edit">ice-President Global Health &amp; National Officers</a></p><p><a href="https://docs.google.com/document/d/1IVHJz8QszVoYq2JTxkOsSUZUP2ie81U6cFz3lxm6gQ8/edit">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IFMSA General Assembly CFMS Report</a></p></div>
+    					</li>
+    				
+    					<li>
+    						<div class="editable"><p><span class="file-format">PDF</span><a href="/SGM Exec Report - Western Reps.pdf">Western Regional Representatives</a></p></div>
+    					</li>
+    					<li>
+    						<div class="editable"><p><span class="file-format">PDF</span><a href="/ONReps Exec Report SGM2017 2.pdf">Ontario Regional Representatives</a></p></div>
+    					</li>
+    					<li>
+    						<div class="editable"><p><span class="file-format">PDF</span><a href="/QRR SGM 2017 Report.pdf">Quebec Regional Representative</a></p></div>
+    					</li>
+    					<li>
+    						<div class="editable"><p><span class="file-format">PDF</span>Atlantic Regional Representative</p></div>
+    					</li>
+					<!--
+						<li>
+						<span class="file-format">PDF</span><a href="temp/files/meetings/agm-2016/exec-reports/agm 2016 - atlantic regional reps.pdf">Atlantic Regional Representatives</a>
+					</li>-->
+				</ul>
+			</blockquote>
+
+				<h2 id="resolutions"><strong>Resolutions</strong></h2>
+	<p>Interested in getting your voices heard at the CFMS SGM? Consider submitting a motion to be discussed at the SGM Resolutions Session! Click <a href="/files/meetings/sgm-2017/important-doc/sgm 2017 call for resolutions.pdf">here</a> for more information on how to submit your resolution and deadlines surrounding submission.</p>
+	<p> <strong>Update:</strong> Please note that the deadline for submitting motions and position papers for SGM2017 has now passed.</p>
+
+
+	<p>Find out more about CFMS position papers, including a list of previously passed papers, <a href="http://www.cfms.org/what-we-do/advocacy/position-papers.html">here</a>.</p>
+	
+        	<blockquote>
+				<h4><strong>Resolution 1</strong></h4>
+				<ul>
+					<li>
+						<a href="/files/meetings/sgm-2017/resolutions/Resolution_Mental Health and Suicide in Indigenous Communities in Canada_ CFMS SGM 2017.docx"><strong>Resolution: </strong>Suicide in indigenous communities</a>
+					</li>
+				</ul>
+                &#9656;<h2b><strong><span class="underline-on-hover">Supporting Documents</span></strong></h2b>
+                <div class="section">
+                    <ul>
+    		            <li>
+    				        <a href="/files/meetings/sgm-2017/resolutions/Mental Health and Suicide in Indigenous Communities in Canada_SGM 2017.docx">Mental health and suicide in indigenous communities in Canada</a>
+    					</li>
+					</ul>
+                </div>
+			
+			</blockquote>
+			
+			<blockquote>
+				<h4><strong>Resolution 2</strong></h4>
+				<ul>
+					<li>
+						<a href="https://docs.google.com/document/d/1scvyXe-zInIByVFM5fZw__CrtSpKLHi4y8pEZhs2wx4/edit"><strong>Resolution: </strong>Adoption of updated Terms of Reference for the CFMS Nominations Committee</a>
+					</li>
+				</ul>
+                &#9656;<h2b><strong><span class="underline-on-hover">Supporting Documents</span></strong></h2b>
+                <div class="section">
+                    <ul>
+					<li>
+						<div class="editable"><p><span class="file-format">PDF</span><a href="/files/meetings/sgm-2017/resolutions/Nominations Committee ToR - Update April 2017.pdf">Nominations Committee ToR (April 2017)</a></p></div>
+					</li>
+					</ul>
+                </div>
+			</blockquote>
+            
+			<blockquote>
+				<h4><strong>Resolution 3</strong></h4>
+				<ul>
+					<li>
+						<a href="/files/meetings/sgm-2017/resolutions/Motion for SGM Harm Reduction Position Paper.docx"><strong>Resolution: </strong>Harm reduction strategies surrounding alcohol dependence with a focus on Managed Alcohol Programs</a>
+					</li>
+				</ul>
+			</blockquote>
+
+			<blockquote>
+				<h4><strong>Resolution 4</strong></h4>
+				<ul>
+					<li>
+						<a href="/files/meetings/sgm-2017/resolutions/resolution 1 - nemo_contradicente_voting.docx"><strong>Resolution: </strong>Nemo Contradicente Voting Rules for 2017 Spring General Meeting Resolution</a>
+					</li>
+				</ul>
+			</blockquote>
+
+			<blockquote>
+				<h4><strong>Resolution 5</strong></h4>
+				<ul>
+					<li>
+						<a href="/files/meetings/sgm-2017/resolutions/CFMS Bilingualism Committee – Resolution.docx"><strong>Resolution: </strong>Approval of Terms of Reference of the CFMS Bilingualism Committee</a>
+					</li>
+				</ul>
+                &#9656;<h2b><strong><span class="underline-on-hover">Supporting Documents</span></strong></h2b>
+                <div class="section">
+                    <ul>
+					<li>
+						<div class="editable"><p><span class="file-format">DOCX</span><a href="/files/meetings/sgm-2017/resolutions/CFMS Bilingualism Committee – Terms of Reference.docx">Bilingualism Committee ToR</a></p></div>
+					</li>
+					</ul>
+                </div>
+			</blockquote>
+
+			<blockquote>
+				<h4><strong>Resolution 6</strong></h4>
+				<ul>
+					<li>
+						<a href="/files/meetings/sgm-2017/resolutions/Seniors-Care-Resolution-Final.docx"><strong>Resolution: </strong>Promotion of a National Senior’s Care Strategy</a>
+					</li>
+				</ul>
+			</blockquote>
+
+			<blockquote>
+				<h4><strong>Resolution 7</strong></h4>
+				<ul>
+					<li>
+						<a href="/files/meetings/sgm-2017/resolutions/Marijuana Task Force Resolution.docx"><strong>Resolution: </strong>Establishment of a Position on National Marijuana Legislation</a>
+					</li>
+				</ul>
+			</blockquote>
+
+			<blockquote>
+				<h4><strong>Resolution 8</strong></h4>
+				<ul>
+					<li>
+						<a href="/files/meetings/sgm-2017/resolutions/Resolution-Trauma-Informed-Pelvic-Examinations-and-Gynecological-Practice-in-Canadian-Medical-Education-Curricula_EA.docx"><strong>Resolution: </strong>Adoption of the Policy Paper on Trauma Informed Pelvic Examinations and Gynecological Practice in Canadian Medical Education Curricula</a>
+					</li>
+				</ul>
+                &#9656;<h2b><strong><span class="underline-on-hover">Supporting Documents</span></strong></h2b>
+                <div class="section">
+                    <ul>
+					<li>
+						<div class="editable"><p><span class="file-format">DOCX</span><a href="/files/meetings/sgm-2017/resolutions/FINAL-Trauma-Informed-Pelvic-Examinations-and-Gynecological-Practice-in-Canadian-Medical-Education-Curricula_EA.docx">Trauma Informed Pelvic Examinations and Gynecological Practice in Canadian Medical Education Curricula - A Policy Paper</a></p></div>
+					</li>
+					</ul>
+                </div>
+			</blockquote>
+
+			<blockquote>
+				<h4><strong>Resolution 9</strong></h4>
+				<ul>
+					<li>
+						<a href="/files/meetings/sgm-2017/resolutions/FOAMed Resolution.docx"><strong>Resolution: </strong>Adoption of the principle of Free Open Access Medical Education (FOAMed) in CFMS/FEMC activities</a>
+					</li>
+				</ul>
+			</blockquote>
+
+
+			<blockquote>
+				<h4><strong>Resolution 10</strong></h4>
+				<ul>
+					<li>
+						<a href="/files/meetings/sgm-2017/resolutions/HEARTContinuityResolution(Final2).docx"><strong>Resolution: </strong>Renewal of the HEART Mandate through the Creation of a Permanent CFMS Task force on the Environment and Health</a>
+					</li>
+				</ul>
+			</blockquote>
+
+			<blockquote>
+				<h4><strong>Resolution 11</strong></h4>
+				<ul>
+					<li>
+						<a href="/files/meetings/sgm-2017/resolutions/CFMS Motion - Improving Service Learning Curricula.docx"><strong>Resolution: </strong>Improving Service Learning Curricula in Medical Education</a>
+					</li>
+				</ul>
+			</blockquote>
+			
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+
