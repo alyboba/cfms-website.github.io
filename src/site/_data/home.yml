@@ -22,7 +22,7 @@ news_text_url: ''
 #   title: "CFMS SGM 2017 is Coming Soon!"
 #   description: "Look forward to the CFMS Spring General Meeting, on <b>April 28-29th, 2017</b>, in Winnipeg."
 featured_links:
-  - url: ''
+  - url: meetings/agm-2017-ottawa.html
     image_url_en: images/home-link-thumbs/40th-celebration.png
     image_url_fr: images/home-link-thumbs/40th-celebration.png
     text_en: Celebrating our 40<sup>th</sup> Anniversary!<br>Details to come
