@@ -1,7 +1,7 @@
 ---
 title: 'Call for Feedback: CFMS Strategic Plan'
 date: 2017-07-17 00:00:00
-description: 'As you may know, the Canadian Federation of Medical Students is in the process of creating a new Strategic Operations Plan for 2017 – 2020. This plan will not change the current CFMS Mission, Vision, and Values, rather, its focus is to build upon these and outline operational, governance and human resource growth plans and changes to enable the organization to continue to represent, support &amp; connect members for the next three years.'
+description: 'As you may know, the Canadian Federation of Medical Students is in the process of creating a new Strategic Operations Plan for 2017 – 2020. This plan will not change the current CFMS Mission, Vision, and Values, rather, its focus is to build upon these and outline operational, governance and human resource growth plans and changes to enable the organization to continue to represent, support & connect members for the next three years.'
 categories:
 lang: en
 ---
