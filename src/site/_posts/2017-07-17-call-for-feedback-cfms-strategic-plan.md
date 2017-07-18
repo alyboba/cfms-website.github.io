@@ -9,9 +9,9 @@ lang: en
 
 Dear colleagues,
 
-As you may know, the Canadian Federation of Medical Students is in the process of creating a new Strategic Operations Plan for 2017 – 2020. This plan will not change the current CFMS Mission, Vision, and Values, rather, its focus is to build upon these and outline operational, governance and human resource growth plans and changes to enable the organization to continue to represent, support & connect members for the next three years.&nbsp;
+As you may know, the Canadian Federation of Medical Students is in the process of creating a new Strategic Operations Plan for 2017 – 2020. This plan will not change the current CFMS Mission, Vision, and Values, rather, its focus is to build upon these and outline operational, governance and human resource growth plans and changes to enable the organization to continue to represent, support & connect members for the next three years.
 
-Lead by CFMS Past-President, Dr. Anthea Lafreniere, the 2017-2022 Strategic Operations planning process represents the most comprehensive and consultative process undertaken by the CFMS. We would like to take this time to briefly outline the process thus far.&nbsp;
+Lead by CFMS Past-President, Dr. Anthea Lafreniere, the 2017-2022 Strategic Operations planning process represents the most comprehensive and consultative process undertaken by the CFMS. We would like to take this time to briefly outline the process thus far.
 
 It began in 2015-2016 with broad internal, external and membership midpoint evaluation of the current strategic plan. It continued with an internal needs assessment in 2016, as well as a pan- Medical Education space analysis in collaboration with the Canadian Medical Association (CMA). Additionally, an RFP process was undertaken and an Ottawa based Human Resources & Strategy firm, Tap Strategies, was brought in as a consultant to assess the organization. A comprehensive report with suggestions was compiled in Spring 2017. This report was used as the foundation for iterative feedback by the CFMS 2016-17 Executive, PRT, Reps forum, and 2017 SGM.
 
