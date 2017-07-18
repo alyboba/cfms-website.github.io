@@ -30,7 +30,7 @@ We also invite you to participate in feedback of the penultimate plan, in one of
 
 We will be delighted to receive your feedback on the CFMS Strategic Operations Plan. Please take the opportunity to fill out a feedback survey [here](https://www.surveymonkey.com/r/CFMSStrategicPlan2017) on or before **August 13th , 2017** so that they may be aggregated into our penultimate draft.
 
-Please check out the Draft Strategic Operations attached in this e-mail. We kindly ask that you send your feedback/comments to [strategicplan@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(115,116,114,97,116,101,103,105,99,112,108,97,110,64,99,102,109,115,46,111,114,103)))
+Please check out the Draft Strategic Operations [here](/CFMS Strategic Plan 2017-2022 - DRAFT - July 16 2017.pdf). We kindly ask that you send your feedback/comments to [strategicplan@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(115,116,114,97,116,101,103,105,99,112,108,97,110,64,99,102,109,115,46,111,114,103)))
 
 On behalf of the CFMS, we would like to personally thank you for taking the time to add your prospective to our CFMS Strategic Operations and Human Resources Plan.
 
