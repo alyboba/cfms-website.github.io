@@ -255,15 +255,15 @@ member-schools-information:
     school-name: Centre de Formation Medical du Nouveau-Brunswick
     school-link:
     school-img: moncton.png
-    school-address:
-    school-phone:
-    school-fax:
+    school-address: 'Pavillon J.-Raymond-Frenette, 100 Des Aboiteaux St, Moncton, NB E1A 7R1'
+    school-phone: 506-863-2250
+    school-fax: 506-863-2284
     school-description: Coming soon.
   - lang: fr
     school-name: Centre de Formation Medical du Nouveau-Brunswick
     school-link:
     school-img: moncton.png
-    school-address:
-    school-phone:
-    school-fax:
+    school-address: 'Pavillon J.-Raymond-Frenette, 100 Des Aboiteaux St, Moncton, NB E1A 7R1'
+    school-phone: 506-863-2250
+    school-fax: 506-863-2284
     school-description: Coming soon.
