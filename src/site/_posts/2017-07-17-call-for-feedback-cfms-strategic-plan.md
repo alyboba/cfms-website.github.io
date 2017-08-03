@@ -26,7 +26,7 @@ Since SGM, a small writing team comprised of CFMS Executive Committee members, a
 * Would you change anything in this Strategic Operations Plan?
 * Do you have any other comments, suggestions or recommendations regarding the CFMS Strategic Operations Plan 2017 – 2020?
 
-We also invite you to participate in feedback of the penultimate plan, in one of five (5) 2-hour webconference sessions on Saturday August 12 th , 2017. Please sign up [here](https://doodle.com/poll/hvukpi3i5mnpc9ia) by Monday July 10th,2017.
+We also invite you to participate in feedback of the penultimate plan, in one of five (5) 2-hour webconference sessions on Saturday August 12 th , 2017. Please sign up [here](https://doodle.com/poll/hvukpi3i5mnpc9ia) by Thursday August 10th,2017.
 
 We will be delighted to receive your feedback on the CFMS Strategic Operations Plan. Please take the opportunity to fill out a feedback survey [here](https://www.surveymonkey.com/r/CFMSStrategicPlan2017) on or before **August 13th , 2017** so that they may be aggregated into our penultimate draft.
 
