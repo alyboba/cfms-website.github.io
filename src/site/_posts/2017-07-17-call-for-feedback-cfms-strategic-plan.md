@@ -1,7 +1,13 @@
 ---
 title: 'Call for Feedback: CFMS Strategic Plan'
 date: 2017-07-17 00:00:00
-description: 'As you may know, the Canadian Federation of Medical Students is in the process of creating a new Strategic Operations Plan for 2017 – 2020. This plan will not change the current CFMS Mission, Vision, and Values, rather, its focus is to build upon these and outline operational, governance and human resource growth plans and changes to enable the organization to continue to represent, support & connect members for the next three years.'
+description: >-
+  As you may know, the Canadian Federation of Medical Students is in the process
+  of creating a new Strategic Operations Plan for 2017 – 2020. This plan will
+  not change the current CFMS Mission, Vision, and Values, rather, its focus is
+  to build upon these and outline operational, governance and human resource
+  growth plans and changes to enable the organization to continue to represent,
+  support & connect members for the next three years.
 categories:
 lang: en
 ---
@@ -26,9 +32,7 @@ Since SGM, a small writing team comprised of CFMS Executive Committee members, a
 * Would you change anything in this Strategic Operations Plan?
 * Do you have any other comments, suggestions or recommendations regarding the CFMS Strategic Operations Plan 2017 – 2020?
 
-We also invite you to participate in feedback of the penultimate plan, in one of five (5) 2-hour webconference sessions on Saturday August 12 th , 2017. Please sign up [here](https://doodle.com/poll/hvukpi3i5mnpc9ia) by Thursday August 10th,2017.
-
-We will be delighted to receive your feedback on the CFMS Strategic Operations Plan. Please take the opportunity to fill out a feedback survey [here](https://www.surveymonkey.com/r/CFMSStrategicPlan2017) on or before **August 13th , 2017** so that they may be aggregated into our penultimate draft.
+We also invite you to participate in feedback of the penultimate plan, via WebEx teleconference at **10AM EST** on **August 12th, 2017**. You can log-in to WebEx&nbsp;[here](https://meetings.webex.com/collabs/#/meetings/detail?uuid=M0U0YSSIBR5KR40HNLB7ILFRN3-12DI9&amp;ucs=email)&nbsp;and participate in the conference using meeting code 195 953 270. No password is required. Please allow yourself 10-15 minutes prior to the call to set-up WebEx on your home computer.
 
 Please check out the Draft Strategic Operations [here](/CFMS Strategic Plan 2017-2022 - DRAFT - July 16 2017.pdf). We kindly ask that you send your feedback/comments to [strategicplan@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(115,116,114,97,116,101,103,105,99,112,108,97,110,64,99,102,109,115,46,111,114,103)))
 
