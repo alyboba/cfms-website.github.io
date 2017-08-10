@@ -1,6 +1,6 @@
 ---
 title: CFMS AGM 2017 - Call for Nominations
-date:
+date: 2017-08-10 00:00:00
 description: Please fill in description here.
 categories:
 lang: en
