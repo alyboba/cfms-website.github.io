@@ -197,6 +197,7 @@ sidebar-who-we-are:
   governance-structure: "Governance Structure"
   internal-policy-bylaws: "Bylaws &amp; Internal Policy"
   about-us: "About Us"
+  alumni: "Alumni"
 - lang: "fr"
   sidebar-title_1: "Qui sommes-nous?"
   executives-officers: "Conseil exécutif et directeurs"
@@ -208,6 +209,7 @@ sidebar-who-we-are:
   governance-structure: "Structure de gouvernance"
   internal-policy-bylaws: "Règlements administratifs et politique intérieure"
   about-us: "About Us"
+  alumni: "Anciens"
   
 #Sidebar education
 sidebar-education:
