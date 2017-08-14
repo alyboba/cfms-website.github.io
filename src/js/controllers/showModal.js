@@ -5,17 +5,17 @@
 import Utils from '../utils';
 
 export default class ModalController {
+
+	constructor() {
+		this.currentModal;
+		this.bindListeners();
+	}
 	
 	static setCurrentModal(currentModal){
 		this.currentModal = currentModal;
 	}
 	static getCurrentModal(){
 		return this.currentModal;
-	}
-	constructor() {
-		this.currentModal;
-		this.utils = new Utils();
-		this.bindListeners();
 	}
 	
 	bindListeners() {

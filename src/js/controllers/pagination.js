@@ -3,7 +3,6 @@
  */
 
 export default class PaginationController {
-
 	constructor() {
 		this.paginationPages;
 		this.paginationLinks;
