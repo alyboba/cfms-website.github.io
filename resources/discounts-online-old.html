@@ -1,12 +1,10 @@
-
-
 <!DOCTYPE html>
 
 
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
-    <!--Metadata-->
+	<!--Metadata-->
 <meta charset="utf-8">
 <title>Canadian Federation of Medical Students</title>
 <meta name="description" content="Canadian Federation of Medical Students">
@@ -374,11 +372,18 @@ function submitApplication() {
     .animate { visibility: hidden; }
 </style> 
 
-    <!--Page Specific Stylesheet-->
-    <link rel="stylesheet" href="/stylesheets/resources.css">
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/resources.css">
+	<!-- CodeMirror -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
+
+	<!-- Firepad -->
+	<link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+	<script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
 </head>
 <body>
-    
+	
 	
 		<div id="top-padding"></div>
 		<div id="top-bar" class="invert en">
@@ -423,7 +428,7 @@ function submitApplication() {
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
-						<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/resources/discounts-disability.html">FR</a></li>
+						<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/resources/discounts-online-old.html">FR</a></li>
 					
 				</ul>
 			</div>
@@ -432,15 +437,16 @@ function submitApplication() {
 
 	
 
-    
-    <!--Page Specific Formatting-->
-    <script type="text/javascript">
-        document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-        document.querySelector( "#resources" ).classList.toggle("active");
-    </script>
-    
-    <div class="discounts content">
-        <div id="sidebar">
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#resources" ).classList.toggle("active");
+	</script>
+
+	<div class="discounts content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		<div id="sidebar">
 	<div id="scroll">
 		
 		
@@ -460,56 +466,49 @@ function submitApplication() {
 		
 	</div>
 </div>
-        <script type="text/javascript">
-            document.querySelector( "#disability-discounts" ).classList.toggle("sidebar-active");
-        </script>
-        <div class="student-discounts-content">
-            <h1 id="page-title">Disability Insurance</h1>
-            
-
-
-
-<h1><strong>Kirkham &amp; Jack</strong></h1>
-<hr>
-
-<img class="pic-right" src="/images/discount-images/kirkham-jack-logo.gif">
-
-
-<p><strong>Your Disability Insurance Specialists</strong></p>
-
-<p>Working with the CFMS since 2002 to find the best disability insurance product for each student. Please contact us so we can help you find the best product for you.</p> <p><a href="tel:877.278.3837" target="_blank" style="color: #1155cc;">877.278.3837</a> CFMS@Kirkhamandjack.ca</p>
-<blockquote>
-    <h3>
-        <strong>
-            
-            Discount Details
-            
-        </strong>
-    </h3>
-    <div class="non-members">
-        <ul>
-            
-            <li>Please login in order to access this discount.</li>
-            
-        </ul>
-    </div>
-    <div class="members-only">
-        
-        <ul> <li>If you would like to speak to someone about this program in a bit more detail, Kirkham &amp; Jack will be happy to provide a consultation at no cost to you. They can be reached toll free at 877-278-3837 or electronically at <a href="mailto:cfms@kirkhmanadjack.ca">cfms@kirkhmanadjack.ca</a></li> <li>You can also contact Han Yan, CFMS VP Student Affairs, at <a href="mailto:vpservices@cfms.org">vpstudentaffairs@cfms.org</a> if you require any assistance.</li> </ul>
-        
-    </div>
-
-
-
-</blockquote>
-<br>
-
-
-
-
-        </div>
-    </div>
-    <div><script type="text/javascript">
+		<script type="text/javascript">
+			document.querySelector( "#online-discounts" ).classList.toggle("sidebar-active");
+		</script>
+		<div class="student-discounts-content" class="editable">
+			<h1 id="page-title">Online Resource Discounts</h1>
+			<h1><strong>UpToDate</strong></h1>
+			<hr>
+			<img class="pic-right" src="/images/discount-images/uptodate.png">
+			<h3><strong>Save up to 54% on UpToDate!</strong></h3>
+			<p>UpToDate is the evidence-based, physician-authored resource medical students and physicians trust for reliable clinical answers. UpToDate incorporates the latest medical findings, the best available evidence, and practical recommendations for patient care — so whatever your clinical question, you can be sure to find the answer in UpToDate.</p>
+			<p>With an individual subscription to UpToDate, you can:</p>
+			<ul>
+				<li>Get a broad overview of a condition or drill down to specific treatment recommendations</li>
+				<li>Review the epidemiology of a disease, along with how to diagnose and treat it</li>
+				<li>Increase your knowledge with access to more than 10,000 clinical topics covering 22 medical specialties</li>
+				<li>Answer clinical questions quickly from anywhere with our highly rated Mobile Apps</li>
+				<li>Be confident that your decisions are based on the best available evidence</li>
+			</ul>
+			<blockquote>
+				<h3><strong>Special Rates for CFMS Members</strong></h3>
+				<p>As a CFMS member, you can subscribe to UpToDate at these special rates!</p>
+				<ul>
+					<li>Get a one-year subscription for only $99 — that’s a 50% savings off the regular student rate.</li>
+					<li>Or, save even more and get a two-year subscription for only $169 — a savings of over $200 off the regular price of $369.*</li>
+				</ul>
+				<p><sup>*Applicable Taxes Apply</sup></p>
+			</blockquote>
+			<blockquote>
+				<h3><strong>Discount Details</strong></h3>
+				<div class="non-members">
+				<ul>
+					<li>Please login in order to access this discount.</li>
+				</ul>
+				</div>
+				<div class="members-only">
+					<div id="edit-members-only">
+    <div id="preview"></div>
+</div>
+				</div>
+			</blockquote>
+		</div>
+	</div>
+	<div><script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;
