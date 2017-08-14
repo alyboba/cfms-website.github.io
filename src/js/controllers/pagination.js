@@ -34,6 +34,10 @@ export default class PaginationController {
 	bindListeners() {
 		console.log("In the pagination Controller");
 		
+		
+		//Use eventListener
+		//pass the id into the function
+		
 		for(let i =0; i<PaginationController.getPaginationPageLength(); i++){
 			let button = PaginationController.getPaginationLink(i);
 			console.log(button);

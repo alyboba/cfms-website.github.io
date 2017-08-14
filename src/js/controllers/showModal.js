@@ -32,6 +32,8 @@ export default class ModalController {
 			closeButton.onclick = this.closeModal;
 		}
 		
+		
+		
 		window.onclick = (event) => {
 			//console.log("Hitting the window onclick");
 			if(event.target == ModalController.getCurrentModal()){
