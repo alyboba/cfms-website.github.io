@@ -1,25 +1,31 @@
 /**
  * Created by Justin on 7/8/2017.
  */
-
-import Utils from '../utils';
-
+let instance = null;
 export default class ModalController {
-
 	constructor() {
+		if(instance){ //Singleton pattern
+			return instance;
+		}
 		this.currentModal;
 		this.bindListeners();
+		this.instance = this;
 	}
-	
 	static setCurrentModal(currentModal){
 		this.currentModal = currentModal;
 	}
 	static getCurrentModal(){
 		return this.currentModal;
 	}
+	static closeTheModal(currentModal){
+		currentModal.classList.remove("fadeIn");
+		currentModal.classList.add("fadeOut");
+		currentModal.classList.remove("show");
+		currentModal.classList.add("hidden");
+	}
 	
+	//Starting method of class, Other methods below are for events.
 	bindListeners() {
-		console.log("Hit the modalController");
 		let buttons = document.getElementsByClassName('clickMe');
 		for(let i=0; i< buttons.length; i++){
 			let button = buttons[i];
@@ -29,15 +35,12 @@ export default class ModalController {
 		let closeModalButtons = document.getElementsByClassName("modalCloseButton");
 		for(let i=0; i< closeModalButtons.length; i++){
 			let closeButton = closeModalButtons[i];
-			closeButton.onclick = this.closeModal;
+			closeButton.onclick = this.closeModal; 
 		}
 		
-		
-		
+		//This event used to close modal when user clicks outside of modal anywhere on webpage
 		window.onclick = (event) => {
-			//console.log("Hitting the window onclick");
 			if(event.target == ModalController.getCurrentModal()){
-				//console.log("Getting into the if?");
 				ModalController.closeTheModal(ModalController.getCurrentModal());
 			}
 		}
@@ -51,17 +54,12 @@ export default class ModalController {
 		this.parentElement.previousElementSibling.classList.remove("hidden");
 		this.parentElement.previousElementSibling.classList.add("fadeIn");
 		this.parentElement.previousElementSibling.classList.add("show");
-	}//end clickTheModal
+	} //end clickTheModal
 	
 	closeModal(){
 		ModalController.setCurrentModal(this.parentElement.parentElement.parentElement);
 		ModalController.closeTheModal(ModalController.getCurrentModal());
 	} //end close Modal
 	
-	static closeTheModal(currentModal){
-		currentModal.classList.remove("fadeIn");
-		currentModal.classList.add("fadeOut");
-		currentModal.classList.remove("show");
-		currentModal.classList.add("hidden");
-	}
+
 }
