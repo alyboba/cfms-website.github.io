@@ -3,6 +3,7 @@
  */
 
 export default class PaginationController {
+	
 	constructor() {
 		this.paginationPages;
 		this.paginationLinks;
@@ -37,24 +38,23 @@ export default class PaginationController {
 		for(let i =0; i<this.getPaginationPageLength(); i++){
 			let button = this.getPaginationLink(i);
 			//console.log(button);
-			button.onclick = this.showPage;
+			button.onclick = this.showPage.bind(this); //binds the context into the sub methods of the events.
 		}
 	}
 	showPage() {
 		event.preventDefault();
-		let paginationController = new PaginationController(); //Create an object so we can access the methods above.
-		let id = 'page'+this.id;
-		let pageId = this.id;
-		//console.log(id);
-		paginationController.setCurrentPage(pageId);
-		for(let i=0; i<paginationController.getPaginationPageLength(); i++){
-			if(paginationController.getPaginationPage(i).id == id){
-				paginationController.getPaginationPage(i).classList.add('show');
-				paginationController.getPaginationPage(i).classList.remove('hide');
+		//let paginationController = new PaginationController(); //Create an object so we can access the methods above.
+		let id = 'page'+event.target.id;
+		let pageId = event.target.id;
+		this.setCurrentPage(pageId);
+		for(let i=0; i<this.getPaginationPageLength(); i++){
+			if(this.getPaginationPage(i).id == id){
+				this.getPaginationPage(i).classList.add('show');
+				this.getPaginationPage(i).classList.remove('hide');
 			}
 			else {
-				paginationController.getPaginationPage(i).classList.add('hide');
-				paginationController.getPaginationPage(i).classList.remove('show');
+				this.getPaginationPage(i).classList.add('hide');
+				this.getPaginationPage(i).classList.remove('show');
 			}
 		}
 	}
