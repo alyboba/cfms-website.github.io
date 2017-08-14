@@ -4,7 +4,10 @@ import { LeadershipAwardUser, LeadershipAwardAdmin } from './md-leadership-award
 import Registration from './registration';
 import MeetingRegistrations from './meeting-registrations';
 import Purchases from './purchases';
+import Modal from './modal';
+import Pagination from './pagination';
 import route from 'page';
+
 
 export default class Router extends Middleware {
     constructor() {
@@ -21,6 +24,10 @@ export default class Router extends Middleware {
         route('/new-account.html', Registration);
         route('/meetings/:meeting', MeetingRegistrations);
         route('/purchases/:purchase', Purchases);
+        route('/who-we-are/history.html', Modal);
+        route('/who-we-are/organizational-timeline.html', Modal, Pagination);
+        route('/fr/who-we-are/history.html', Modal);
+        route('/fr/who-we-are/organizational-timeline.html', Modal, Pagination);
     }
 
     refresh() {
