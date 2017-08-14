@@ -197,6 +197,7 @@ sidebar-who-we-are:
   governance-structure: "Governance Structure"
   internal-policy-bylaws: "Bylaws &amp; Internal Policy"
   about-us: "About Us"
+  alumni: "Alumni"
 - lang: "fr"
   sidebar-title_1: "Qui sommes-nous?"
   executives-officers: "Conseil exécutif et directeurs"
@@ -208,6 +209,7 @@ sidebar-who-we-are:
   governance-structure: "Structure de gouvernance"
   internal-policy-bylaws: "Règlements administratifs et politique intérieure"
   about-us: "About Us"
+  alumni: "Anciens"
   
 #Sidebar education
 sidebar-education:
@@ -238,6 +240,7 @@ sidebar-student-affairs:
   sidebar-title_1: "Student Affairs"
   overview: "Overview"
   our-team: "Our Team"
+  medical-students-with-disabilities: "Medical Students with Disabilities"
   sidebar-title_2: "Resources"
   wellness: "Wellness"
   discounts: "Student Discounts"
@@ -245,6 +248,7 @@ sidebar-student-affairs:
   sidebar-title_1: "Affaires étudiantes"
   overview: "Aperçu"
   our-team: "Notre conseil"
+  medical-students-with-disabilities: "Étudiants en Médecine Handicapés"
   sidebar-title_2: "Ressources"
   wellness: "Bien-être"
   discounts: "Rabais étudiants"

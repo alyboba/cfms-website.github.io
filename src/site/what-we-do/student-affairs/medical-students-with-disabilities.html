@@ -1,0 +1,81 @@
+---
+title: "Medical Students with Disabilities"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-student-affairs.html %}
+    <script type="text/javascript">
+        document.querySelector( "#medical-students-with-disabilities" ).classList.toggle("sidebar-active");
+    </script>
+    
+    <div id="side-content">
+        <h1 id="page-title">{{ page.title }}</h1>
+        <div class="editable">
+            <h2><strong>CFMS Statement</strong></h2>
+            <p>The CFMS has recognized that we are in a new era in medicine, an exciting time where medical students with disabilities are challenging norms and breaking barriers. Therefore in 2008 the CFMS made it a priority to provide support, services and advocacy for medical students with disabilities. The CFMS hopes to encourage others to do the same and create a more inviting, comfortable and accommodating atmosphere for students with all abilities.</p>
+            <br>
+            <h2>
+                <strong>Resources</strong>
+            </h2>
+            <ul>
+                <li><a href="http://www.cmaj.ca/content/160/1/160.full.pdf" target="_blank">Dr. Earl Wynards, blind anaesthetist</a></li>
+                <li><a href="http://www.kazantoday.com/WeeklyArticles/wk120.html" target="_blank">Dr. Jim Post, quadriplegic internist</a></li>
+                <li><a href="http://www.jhu.edu/~jhumag/0499web/ortho.html" target="_blank">Dr. Michael Ain, orthopaedic surgeon and little person</a></li>
+                <li><a href="http://www.nlm.nih.gov/changingthefaceofmedicine/physicians/biography_316.html" target="_blank">Dr. Helen Brooke Taussig, deaf pediatric cardiologist and first woman to become president of the American Heart Association</a></li>
+            </ul>
+            <br>
+            <h2>
+                <strong>Learning Disability Resources</strong>
+            </h2>
+            <ul>
+                <li><a href="http://jama.ama-assn.org/content/279/1/81.full" target="_blank">Coping with a learning disability in medical school</a></li>
+                <li><a href="http://www.ama-assn.org/amednews/2009/03/02/prsb0302.htm" target="_blank">Students with learning disabilities denied extra time for MCAT in California</a></li>
+                <li><a href="http://www.physicianswithdisabilities.org/2011/05/medical-students-with-learning.html" target="_blank">Medical students with learning disabilities</a></li>
+                <li><a href="http://www.ncbi.nlm.nih.gov/pubmed/19763855" target="_blank">Are multiple choice tests fair to students with specific learning disabiltiies?</a></li>
+            </ul>
+            <br>
+            <h2>
+                <strong>Student Bios</strong>
+            </h2>
+            <p>Ashley is a student with CP from the College of Medicine, University of Saskatchewan, Class of 2012. Prior to medical school she completed an undergraduate Bachelor of Arts degree in Psychology. At this point Ashley is interested in completing a Pediatrics residency, however, it seems to change everyday!
+    
+                Megan is a deaf student from the Faculty of Medicine, University of Manitoba, Class of 2013. She received her undergraduate degree at the University of Manitoba-B.Sc (Major) Biology. Right now she is planning on pursuing family medicine as a her career.
+            </p>
+            <br>
+            <h2>
+                <strong>Q &amp; A from Canadian Medical Students with Disabilities</strong>
+            </h2>
+            <ul>
+                <li><strong class="red-color">When should I disclose my disability?</strong> Generally, it’s better to be upfront with the Faculty. I was worried my application would be rejected if I mentioned it, so I waited until I got my interview letter to disclose my disability. The important thing is that when you do let them know about your disability, you emphasize your abilities and your coping mechanisms (not the disabilities).</li>
+                <li><strong class="red-color">How do I get the accommodations that I need?</strong> Contact Disability Services (or whatever other names they’re referred to) at the university and they should be able to help you get started. They provide a wide range of services and should be able to meet your needs academically. In terms of accommodations specifically for medicine, it’s a good idea to meet with the Faculty of Medicine and have them involved in making sure all your accommodations are met. They are a pretty good resource for information and can be really supportive once they understand your abilities.</li>
+                <li><strong class="red-color">Financial help.</strong> Canada Study Grant for Students with a Permanent Disability is a grant to help pay for accommodations such as specialized equipment, tutors, interpreters, etc. You can apply for it annually through your provincial student loan program and you don’t have to pay it back. Vocational rehabilitation programs can also help fund your tuition, books, and even accommodations if necessary. (For Manitoba, it’s through Society of Manitobans with Disabilities).</li>
+                <li><strong class="red-color">Specific tips for Deaf/HOH students.</strong> Let your classmates know your preferences in terms of communication right away. Have Disability Services or the Faculty set up ASL classes for those interested. Do your research on stethoscopes. Your audiologist may be able to help you find stethoscopes that will work for you and Association of Medical Professionals with a Hearing Loss (AMPHL) has information regarding specialized stethoscopes that work for those with a hearing loss. I deferred my admission one year to allow Disability Services and the Faculty to have sufficient time to hire good interpreters that are committed to the entire four years and be able to prepare for my arrival. As a result, things went much more smoothly than if I had started the same year I’d been accepted.</li>
+                <li><strong class="red-color">Educating classmates.</strong> Once again, it’s really important to be upfront with your classmates. If you have a disability that’s easy to hide and you want to keep it that way, that’s fine. For those with disabilities that are somewhat obvious, it’s best to be open about your disability and educate your classmates from the start.</li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>
