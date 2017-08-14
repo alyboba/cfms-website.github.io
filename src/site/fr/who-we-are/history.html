@@ -1,5 +1,5 @@
 ---
-title: "CFMS History"
+title: "Historique FEMC"
 ---
 
 <!DOCTYPE html>
@@ -33,31 +33,31 @@ title: "CFMS History"
     <div id="member-schools-content">
         <h1 id="page-title">{{ page.title }}</h1>
         <div>
-            
+
             {% for historyInformation in site.data.history.history %}
             {% if historyInformation.lang == page.lang %}
-                {{ historyInformation.description }}
+            {{ historyInformation.description }}
             {% endif %}
             {% endfor %}
 
             <ul class="cards">
-            
-            {% for presidentInformation in site.data.history.past-presidents %}
+
+                {% for presidentInformation in site.data.history.past-presidents %}
                 {% if presidentInformation.year != "" %}
                 <li class="cards__item">
                     <div class="modal hidden">
 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h2>Presidents Between the Years of {{ presidentInformation.year }}</h2>
+                                <h2>Présidents entre les années de {{ presidentInformation.year }}</h2>
                             </div>
                             <hr>
                             <div class="modal-body">
                                 <table>
                                     <tr>
-                                        <th>Year</th>
-                                        <th>Name</th>
-                                        <th>Location</th>
+                                        <th>An</th>
+                                        <th>Prénom</th>
+                                        <th>Emplacement</th>
                                     </tr>
                                     {% for presInfo in presidentInformation.presidents %}
                                     {% if presInfo.president-year != "" %}
@@ -86,7 +86,7 @@ title: "CFMS History"
                     </div>
                 </li>
                 {% endif %}
-            {% endfor %}
+                {% endfor %}
             </ul>
         </div>
     </div>

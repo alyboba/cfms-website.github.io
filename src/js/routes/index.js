@@ -26,6 +26,8 @@ export default class Router extends Middleware {
         route('/purchases/:purchase', Purchases);
         route('/who-we-are/history.html', Modal);
         route('/who-we-are/organizational-timeline.html', Modal, Pagination);
+        route('/fr/who-we-are/history.html', Modal);
+        route('/fr/who-we-are/organizational-timeline.html', Modal, Pagination);
     }
 
     refresh() {
