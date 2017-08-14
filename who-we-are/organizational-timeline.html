@@ -1,0 +1,2396 @@
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    <!--Metadata-->
+<meta charset="utf-8">
+<title>Canadian Federation of Medical Students</title>
+<meta name="description" content="Canadian Federation of Medical Students">
+<meta name="keywords" content="CFMS, Medicine, Canada, Advocacy, Medical School, Association">
+<meta name="author" content="Kevan Lu">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+<!--Stylesheets-->
+
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/base.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/header.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/footer.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/loading.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!--DataTables-->
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+
+
+<!--Firebase Code-->
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCRaJStQDuZ0nrn0b59kzYphlAkJ62flo8",
+    authDomain: "amber-heat-9132.firebaseapp.com",
+    databaseURL: "https://amber-heat-9132.firebaseio.com",
+    storageBucket: "amber-heat-9132.appspot.com",
+    messagingSenderId: "466232039218"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript">
+  var storageRef = firebase.storage().ref();
+var accountJustCreated = false;
+
+function isSignedIn () {
+	return (firebase.auth().currentUser);
+}
+
+// function sendPasswordReset() {
+// 	var email = document.getElementById('reset-email-address').value;
+// 	firebase.auth().sendPasswordResetEmail(email).then(function() {
+// 		// Password Reset Email Sent!
+// 		vex.dialog.alert('<h3><strong>Password Reset Email Sent</strong></h3><p>Your Password Reset Email has been sent. Please check your inbox.</p>')
+// 	}).catch(function(error) {
+// 		// Handle Errors here.
+// 		var errorCode = error.code;
+// 		var errorMessage = error.message;
+
+// 		if (errorCode == 'auth/invalid-email')
+// 			vex.dialog.alert('<h3><strong>Invalid Email</strong></h3><p>The email address that you entered is invalid.</p>')
+// 		else if (errorCode == 'auth/user-not-found')
+// 			vex.dialog.alert('<h3><strong>User Not Found</strong></h3><p>The email address that you entered does not match a user on our system.</p>')
+// 	});
+// }
+
+/** 
+* Deletes files with a given path
+*/
+function deleteFile (filePath){
+	storageRef.child(filePath).delete().then(function() {
+		//File deleted successfully
+	}).catch(function(error){
+		console.log("DELETE " + error);
+		return error;
+	});
+}
+
+/** 
+* Sets the file link from the target id to the correct url
+*/
+function setFileLink (id, url){
+	document.getElementById(id+'-link').innerHTML = '<a href="' +  url + '" target="_blank">View File</a>';
+}
+
+function loadPrevFile (refPath, id, fileName){
+	//Set the button to show the file name
+	input = document.getElementById (id);
+	label = input.nextElementSibling;
+	label.querySelector( 'span' ).innerHTML = fileName;
+
+	//Set the URL to display by the button
+	storageRef.child(refPath + '/' + id + '/' + fileName).getDownloadURL().then(function(url) {
+		setFileLink (id, url);
+	}).catch(function(error) {
+	  // File doesn't exist
+	});
+}
+
+/**
+* Updates files uploaded for the Leadership Awards
+*/
+function handleFileSelect(evt) {
+	evt.stopPropagation();
+	evt.preventDefault();
+	var file = evt.target.files[0];
+	var metadata = {
+		'contentType': file.type
+	};
+
+	//Deletes the previous version of file, if it exists
+	//--------------------------------------------
+	var refPath = 'leadership-award/' + '2016-2017/' + firebase.auth().currentUser.uid;
+	firebase.database().ref(refPath).once('value').then(function(snapshot) {
+		var deletePath = refPath + '/' + evt.target.id + '/';
+		switch(evt.target.id) {
+		    case 'personal-statement':
+		    	if (snapshot.child('personalStatement').exists())
+			    	deleteFile (deletePath + snapshot.val().personalStatement);
+		    	break;
+		    case 'curriculum-vitae':
+		    	if (snapshot.child('curriculumVitae').exists())
+			    	deleteFile (deletePath + snapshot.val().curriculumVitae);
+		    	break;
+		    case 'letter-good-standing':
+		    	if (snapshot.child('letterGoodStanding').exists())
+			    	deleteFile (deletePath + snapshot.val().letterGoodStanding);
+		    	break;
+		    case 'reference-1':
+		    	if (snapshot.child('reference1').exists())
+			    	deleteFile (deletePath + snapshot.val().reference1);
+		    	break;
+		    case 'reference-2':
+		    	if (snapshot.child('reference2').exists())
+			    	deleteFile (deletePath + snapshot.val().reference2);
+			    break;
+		}
+
+	//Add the new version of the file
+	//--------------------------------------------
+	}).then (function() {
+		// Push to child path.
+		// [START oncomplete]
+		refPath = 'leadership-award/' + '2016-2017/' + firebase.auth().currentUser.uid + '/' + evt.target.id;
+		storageRef.child(refPath + '/' + file.name).put(file, metadata).then(function(snapshot) {
+			var url = snapshot.metadata.downloadURLs[0];
+			setFileLink (evt.target.id, url);
+		}).catch(function(error) {
+			// [START onfailure]
+			vex.dialog.alert('<h3><strong>Upload failed</strong></h3><p>' + error + '</p>');
+			// [END onfailure]
+		});
+		// [END oncomplete]
+
+	//Copies filenames of uploaded files onto database
+	//--------------------------------------------
+	}).then (function(){
+		refPath = 'leadership-award/' + '2016-2017/' + firebase.auth().currentUser.uid;
+		switch(evt.target.id) {
+		    case 'personal-statement':
+				firebase.database().ref(refPath).update({
+					personalStatement:file.name
+				})
+				break;
+		    case 'curriculum-vitae':
+		    	firebase.database().ref(refPath).update({
+			    	curriculumVitae:file.name
+			    })
+		        break;
+		    case 'letter-good-standing':
+		    	firebase.database().ref(refPath).update({
+			    	letterGoodStanding:file.name
+			    })
+		    	break;
+		    case 'reference-1':
+		    	firebase.database().ref(refPath).update({
+			    	reference1:file.name
+			    })
+		    	break;
+		    case 'reference-2':
+		    	firebase.database().ref(refPath).update({
+			    	reference2:file.name
+			    })
+			    break;
+		}
+	});
+}
+
+function isInt (cmaMembershipID){
+	for (var i = 0; i < cmaMembershipID.length; i++){
+		var currentChar = cmaMembershipID.charAt(i);
+		if (currentChar < '0' || currentChar > '9')
+			return false;
+	}
+	return true;
+}
+
+function getTimeEST(){
+    //EST
+    offset = -5.0;
+    clientDate = new Date();
+    utc = clientDate.getTime() + (clientDate.getTimezoneOffset() * 60000);
+    serverDate = new Date(utc + (3600000*offset));
+    return (serverDate.toLocaleString());
+}
+
+/**
+ * Displays the submitted application for the currentUser
+ */
+function loadSubmission (){
+
+	//Loads user-associated data
+	var refPath = '/users/' + firebase.auth().currentUser.uid;
+	firebase.database().ref(refPath).once('value').then(function(snapshot) {
+		var firstName = snapshot.val().firstName;
+		var lastName = snapshot.val().lastName;
+		document.getElementById('submitted-name').textContent = firstName + ' ' + lastName;
+		document.getElementById('submitted-school').textContent = snapshot.val().medicalSchool;
+		document.getElementById('submitted-grad-year').textContent = snapshot.val().graduationYear;
+	});
+
+	//Loads other submitted data
+	refPath = 'leadership-award/' + '2016-2017/' + firebase.auth().currentUser.uid;
+	firebase.database().ref(refPath).once('value').then(function(snapshot) {
+		if (!snapshot.child('submitted').exists())
+			return;
+		document.getElementById('submitted-email').textContent = snapshot.val().emailAddress;
+		document.getElementById('submitted-cma-id').textContent = snapshot.val().cmaMembershipID;
+		var twitterHandle = snapshot.val().twitterHandle;
+		if (twitterHandle === '')
+			document.getElementById('submitted-twitter-handle').textContent = 'Not given';
+		else
+			document.getElementById('submitted-twitter-handle').innerHTML = '<a href="https://twitter.com/' + twitterHandle.substring(1) + '" target="_blank">' + twitterHandle + '</a>';
+		document.getElementById('submitted-attending-sgm').textContent = snapshot.val().meetingAttendance;
+		document.getElementById('submitted-date-time').textContent = snapshot.val().dateSubmitted;
+
+		//Loads submitted files
+		storageRef.child(refPath + '/personal-statement/' + snapshot.val().personalStatement).getDownloadURL().then(function(url) {
+			document.getElementById('submitted-personal-statement').href = url;
+		}).catch(function(error) {
+		  // File doesn't exist
+		});
+		storageRef.child(refPath + '/curriculum-vitae/' + snapshot.val().curriculumVitae).getDownloadURL().then(function(url) {
+			document.getElementById('submitted-curriculum-vitae').href = url;
+		}).catch(function(error) {
+		  // File doesn't exist
+		});
+		storageRef.child(refPath + '/letter-good-standing/' + snapshot.val().letterGoodStanding).getDownloadURL().then(function(url) {
+			document.getElementById('submitted-letter-good-standing').href = url;
+		}).catch(function(error) {
+		  // File doesn't exist
+		});
+		storageRef.child(refPath + '/reference-1/' + snapshot.val().reference1).getDownloadURL().then(function(url) {
+			document.getElementById('submitted-reference-1').href = url;
+		}).catch(function(error) {
+		  // File doesn't exist
+		});
+		storageRef.child(refPath + '/reference-2/' + snapshot.val().reference2).getDownloadURL().then(function(url) {
+			document.getElementById('submitted-reference-2').href = url;
+		}).catch(function(error) {
+		  // File doesn't exist
+		});
+	});
+
+	//Hides the submission form and displays the application
+	var beforeSubmissionElements = document.getElementsByClassName('before-submission'), i;
+	for (var i = 0; i < beforeSubmissionElements.length; i ++)
+		beforeSubmissionElements[i].style.display = 'none';
+	var afterSubmissionElements = document.getElementsByClassName('after-submission'), i;
+	for (var i = 0; i < afterSubmissionElements.length; i ++)
+		afterSubmissionElements[i].style.display = 'block';
+}
+
+/**
+ * Handles the submit application button press
+ */
+function submitApplication() {
+	//Email Verification
+	var emailAddress = document.getElementById('email-address').value;
+	if (emailAddress.length < 4) {
+    	vex.dialog.alert('<h3><strong>Enter an Email Address</strong></h3><p>Please enter an email address.</p>');
+        return;
+    }
+
+	//CMA Membership verification
+	var cmaMembershipID = document.getElementById('cma-membership').value;
+	if (cmaMembershipID.length !== 6 || !isInt(cmaMembershipID)){
+		vex.dialog.alert('<h3><strong>Invalid CMA Membership ID</strong></h3><p>Your CMA Membership ID should be a 6 digit number.</p>');
+		return;
+	}
+
+	//Ensures that every necessary file is present
+	var refPath = 'leadership-award/' + '2016-2017/' + firebase.auth().currentUser.uid;
+	firebase.database().ref(refPath).once('value').then(function(snapshot) {
+    	if (!snapshot.child('personalStatement').exists()
+			|| !snapshot.child('curriculumVitae').exists()
+			|| !snapshot.child('letterGoodStanding').exists()
+			|| !snapshot.child('reference1').exists()
+    		|| !snapshot.child('reference2').exists()){
+			vex.dialog.alert('<h3><strong>Missing Supporting Document</strong></h3><p>You are missing a supporting document.</p>');
+			return;
+	    }
+
+	    //Twitter Handle sanitization
+		var twitterHandle = document.getElementById('twitter-handle').value;
+		if (twitterHandle.charAt(0) !== '@')
+			twitterHandle = '@' + twitterHandle;
+		if (twitterHandle.length === 1 && twitterHandle.charAt(0) === '@')
+			twitterHandle = '';		
+
+		//Meeting Attendance conversion to yes/no.
+		var meetingAttendance = document.getElementById('attend-cfms-meeting').value;
+		if (meetingAttendance.charAt(0) === 'Y')
+			meetingAttendance = "Yes";
+		else
+			meetingAttendance = "No";
+
+		//Saves the submission data into the database
+		firebase.database().ref(refPath).update({
+			submitted:true,
+			name:document.getElementById('account-name').textContent,
+			medicalSchool:document.getElementById('account-school').textContent,
+			graduationYear:document.getElementById('account-grad-year').textContent,
+			emailAddress:emailAddress,
+			cmaMembershipID:cmaMembershipID,
+			twitterHandle:twitterHandle,
+			meetingAttendance:meetingAttendance,
+			dateSubmitted:getTimeEST(),
+			linkPersonalStatement:document.getElementById('personal-statement-link').childNodes[0].href,
+			linkCurriculumVitae:document.getElementById('curriculum-vitae-link').childNodes[0].href,
+			linkLetterGoodStanding:document.getElementById('letter-good-standing-link').childNodes[0].href,
+			linkReference1:document.getElementById('reference-1-link').childNodes[0].href,
+			linkReference2:document.getElementById('reference-2-link').childNodes[0].href,
+		});
+
+		//Displays success dialog
+		vex.dialog.alert('<h3><strong>Application Submitted</strong></h3><p>Congratulations! You have successfully submitted your application.</p>');
+
+		//Loads the submission fields
+		loadSubmission ();
+	});
+}
+</script>
+
+<!--Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77140171-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--Scroll Reveal-->
+<script src="/js/scrollreveal.min.js"></script>
+<script>
+      window.sr = ScrollReveal();
+</script> 
+<style>
+    /* Ensure elements load hidden before ScrollReveal runs */
+    .animate { visibility: hidden; }
+</style> 
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/who-we-are.css">
+    <link rel="stylesheet" href="/stylesheets/cards.css">
+    <link rel="stylesheet" href="/stylesheets/modal.css">
+    <link rel="stylesheet" href="/stylesheets/pagination.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+
+	
+		<div id="top-padding"></div>
+		<div id="top-bar" class="invert en">
+			<div id="top-icon" class="animate">
+				<div id="logo-group" class="en">
+					<img id="logo-invert" src="/images/cfms-logo-invert.svg">
+					<img id="logo" src="/images/cfms-logo.svg">
+					<a href="/">CFMS</a>
+				</div>
+				<span id="logo-desc"><a class="en" href="/">Canadian Federation of<br>Medical Students</a></span>
+			</div>
+			<div id="top-hamburger" class="animate">
+				<a onclick="return false;" id="hamburger-toggle" href=""><span></span></a>
+			</div>
+			<div id="top-nav" class="animate">
+				<ul class="en">
+					<li id="who-we-are"><a class="top-level" href="/who-we-are/">Who we are</a></li>
+					<li id="what-we-do"><a class="top-level" href="/what-we-do/">What we do</a>
+						<div id="sub-menu">
+						    <ul>
+						    	<li><a href="/what-we-do/advocacy/">Advocacy</a></li>
+						    	<li><a href="/what-we-do/education/">Education</a></li>
+						    	<li><a href="/what-we-do/global-health/">Global Health</a></li>
+						    	<li><a href="/what-we-do/student-affairs/">Student Affairs</a></li>
+						    </ul>
+						</div>
+					</li>
+					<li id="resources"><a class="top-level" href="/resources/">Resources</a></li>
+					<li id="meetings"><a class="top-level" href="/meetings/">Meetings</a>
+						<div id="sub-menu">
+						    <ul>
+						        <li><a href="/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
+						        <li><a href="/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>
+						        <li><a href="/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>
+ 						    	<li><a href="/meetings/sgm-2016-montreal.html">SGM 2016 &ndash; Montreal, QC</a></li>
+						    </ul>
+						</div>
+					</li>
+					<li id="members"><a class="top-level" href="/members/">Members</a></li>
+					<li id="news"><a class="top-level" href="/news/">News</a></li>
+					
+						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
+					
+					
+						<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/who-we-are/organizational-timeline.html">FR</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	
+
+	
+
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#who-we-are" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    <div id="sidebar">
+	<div id="scroll">
+	    
+		
+		<span id="sidebar-title">Who We Are</span>
+		<ul>
+			<li><a id="executives-officers" href=".">Executives &amp; Officers</a></li>
+			<li><a id="member-schools" href="member-schools.html">Member Schools</a></li>
+			<li><a id="cfms-representatives" href="cfms-representatives.html">CFMS Representatives</a></li>
+			<li><a id="cfms-at-your-school" href="cfms-at-your-school.html">CFMS at your School</a></li>
+			<li><a id="partner-organizations" href="partner-organizations.html">Partner Organizations</a></li>
+			<li><a id="alumni" href="alumni.html">Alumni</a></li>
+			<li><a id="about-us" href="about-us.html">About Us</a></li>
+		</ul>
+		<span id="sidebar-title">Our Organization</span>
+		<ul>
+			<li><a id="governance-structure" href="governance-structure.html">Governance Structure</a></li>
+			<li><a id="internal-policy-bylaws" href="bylaws-internal-policy.html">Bylaws &amp; Internal Policy</a></li>
+		</ul>
+		<span id="sidebar-title">More Information</span>
+		<ul>
+			<li><a id="history" href="history.html">History</a></li>
+			<li><a id="organizational-timeline" href="organizational-timeline.html">Organizational Timeline</a></li>
+		</ul>
+		
+		
+		
+		
+	</div>
+</div>
+    <script type="text/javascript">
+        document.querySelector( "#organizational-timeline" ).classList.toggle("sidebar-active");
+    </script>
+    <div id="member-schools-content">
+        <h1 id="page-title">Organizational Timeline</h1>
+        <div>
+
+            
+            
+                <nav aria-label="Page Navigation" class="text-center">
+                    <ul class="pagination">
+                        
+                            <li><a href="" id="1970" class="paginationLink">1970s</a></li>
+                        
+                            <li><a href="" id="1980" class="paginationLink">1980s</a></li>
+                        
+                            <li><a href="" id="1990" class="paginationLink">1990s</a></li>
+                        
+                            <li><a href="" id="2000" class="paginationLink">2000s</a></li>
+                        
+                            <li><a href="" id="2010" class="paginationLink">2010s</a></li>
+                        
+                    </ul>
+                </nav>
+            <hr>
+            
+                <div id="page1970" class=" show    paginationPages">
+                    <h2 class="text-center">1970s</h2>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Leo Plouffe</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>Western Vice President: Marcia M Johnson</li>
+                                        
+                                            <li>Ontario Vice President: John Rowan</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Student delegates at the Annual Meeting of the Association of Canadian Medical Colleges recognize the need for a national representative body for medical students and form the Canadian Federation of Medical Student Societies.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1977/78, 78/79 - Leo Plouffe (McGill) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Robert Conn</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>Western Director: Lorne Bellan (U of Manitoba)</li>
+                                        
+                                            <li>Ontario Director: Jim Watson (UWO)</li>
+                                        
+                                            <li>Quebec Director: Pierre Tremblay (U de M)</li>
+                                        
+                                            <li>Maritime Director: Kevin Keating (MUN)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>After much debate, the Canadian Federation of Medical Student Societies becomes the Canadian Federation of Medical Students (CFMS)/La Federation des Etudiants en Medecine du Canada (FEMC) to better represent the interests of all Canadian medical students and establishes its Constitution; all 16 Canadian medical schools are represented.</li>
+                                        
+                                             <li>The CFMS/FEMC questions proposed billing restrictions for new graduates to obtain billing numbers and work; this issue would eventually be taken to the Supreme Court of Canada by CFMS alumni as CAIR representatives.</li>
+                                        
+                                             <li>Mediscan, a quarterly newsletter to update medical students on initiatives from across the country, is created.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC advocates for a computerized intern match by the Canadian Intern Matching Service (CIMS).</li>
+                                        
+                                             <li>Discussion surrounding the elimination of the rotating internship year is an important issue for medical students; the CFMS/FEMC is concerned that it would force early career decision making and would eliminate the opportunity for new graduates to work as a general practitioner for several years before deciding to pursue specialist practice.</li>
+                                        
+                                             <li>The CFMS/FEMC leads a coordinated effort of medical students across Canada in advocating for final year clerkship stipends from provincial governments.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1979/80 - Robert Conn (UBC) </a>
+                        </div>
+                    <br>
+                    
+                </div>
+            
+                <div id="page1980" class="  hide   paginationPages">
+                    <h2 class="text-center">1980s</h2>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Michael Strong</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Mediscan, the CFMS/FEMC’s official publication, is adapted to become a biannual journal for Canadian medical students, expanding from its previous role of providing updates to students to being a forum for discussion and the exchange of ideas.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1980/81 - Michael Strong (Queen's) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Frank Kriger</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>Western Director: Kent Sargeant (U of C)</li>
+                                        
+                                            <li>Ontario Director/Secretary-Treasurer: Murray Asch (UWO)</li>
+                                        
+                                            <li>Quebec Director: Sylvie Lafrenaye (Sherbrooke)</li>
+                                        
+                                            <li>Maritime Director: Vicki Tremblay (MUN)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Students at McGill lead an initiative to increase translation of all CFMS/FEMC documentation into both official languages</li>
+                                        
+                                             <li>The University of Saskatchewan leads the creation of a sports weekend for all Western medical students</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC explores the possibility of national distribution of medical equipment to decrease the costs to medical students across the country</li>
+                                        
+                                             <li>Reductions in post-graduate training positions and their impact on Canadian medical students is identified as a critical issue for investigation by the CFMS/FEMC with a potential resulting policy statement</li>
+                                        
+                                             <li>Canadian Student Loan policy changes require loan repayment to begin 6 months after graduation, decreased from 9 months previously.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1981/82 - Frank Kriger (U of Manitoba) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Henry Solow</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>Western Regional Director: Joy Dobson</li>
+                                        
+                                            <li>Ontario Representative: Chris Buller</li>
+                                        
+                                            <li>Quebec Representative: Frederic Hould</li>
+                                        
+                                            <li>Eastern Canada Representative: Ian Campbell</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC bans smoking during Annual General Meetings</li>
+                                        
+                                             <li>National visibility of the CFMS/FEMC is challenge; the organization creates an annual information booklet for distribution to all incoming medical students to inform them of national representation initiatives and issues.</li>
+                                        
+                                             <li>The CFMS/FEMC resolves to continue the work of representing medical students to the Canadian Intern Matching Service (CIMS).</li>
+                                        
+                                             <li>Liaison roles with other national organizations such as the Canadian Medical Association (CMA) and the Canadian Association of Interns and Residents (CAIR) is expanded to the ACMC through participation in their Postgraduate Education Committee.</li>
+                                        
+                                             <li>The CFMS/FEMC advocates for Canadian graduates who have gone unmatched in the internship match; these students are offered funded internship positions.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>McGill’s work to increase translation of CFMS/FEMC documents proves challenging due to lack of funds and difficulty in engaging fluently bilingual students in translation projects.</li>
+                                        
+                                             <li>Mediscan, the CFMS/FEMC’s national medical student publication, experiences difficulties in collecting appropriate content and meeting appropriate publishing deadlines.</li>
+                                        
+                                             <li>The inclusion of Graduates of Foreign Medical Schools (GOFMs) into Canadian postgraduate training programs is a major concern for the CFMS/FEMC with ongoing decreases in postgraduate training positions. At this time students graduating from ACMC recognized US and UK medical schools are exempted from additional postgraduate training in Canada.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1982/83 - Henry Solow (McMaster) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Marc-Andre Bergeron</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1983/84 - Marc-Andre Bergeron (U of C) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Stephen Wheeler</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC works with CAIR and PARIBC to challenge restriction in billing numbers by the BC government.</li>
+                                        
+                                             <li>The matching service board endorses a computerized, standardized matching service, largely due to CFMS/FEMC involvement and advocacy; students are no longer faced with the conflicts of receiving different residency offers at different times.</li>
+                                        
+                                             <li>The RED binder, a compilation of residency program information from across the country, is created by the CFMS/FEMC reps to distribute hard to find residency program information to all medical students.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Implementation of a 2 year licensing requirement for family practice; the CFMS/FEMC is concerned it would reduce students’ ability to change training programs.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1984/85 - Stephen Wheeler (UBC) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Jean Perron</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>Western Regional Director: E Hildes</li>
+                                        
+                                            <li>Ontario Regional Director: M Kovacs</li>
+                                        
+                                            <li>Quebec Regional Director: P Harris</li>
+                                        
+                                            <li>Treasurer: P Woolfey</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1985/86 - Jean Perron (Laval) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Frank Bugeja</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>Western Regional Representative: Kristel Van Ineveld (U of Manitoba)</li>
+                                        
+                                            <li>Quebec Director: Yves Andre Bureau (McGill)</li>
+                                        
+                                            <li>VP Finance: Brendan Carr</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1986/87 - Frank Bugeja (U of A) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Michael MacDonald</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC creates a National Student Organ Donor Awareness program.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1987/88 - Michael MacDonald (Queen’s) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Brad Dibble</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Education: James F Pradko (U of A)</li>
+                                        
+                                            <li>VP Finance: Anil (Monty) Kapoor (Dal)</li>
+                                        
+                                            <li>VP Communications: May Burgess (U of S)</li>
+                                        
+                                            <li>Western Regional Director: Betsy Perrin</li>
+                                        
+                                            <li>Ontario Regional Director: Jimmy Hewak (UWO)</li>
+                                        
+                                            <li>Quebec Regional Director: Gilles Pinault</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>MEDISCAN, a national publication for medical students, is resurrected as a forum for dialogue on issues important to students.</li>
+                                        
+                                             <li>The CFMS/FEMC adopts an official logo via a nation-wide competition.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The third stream of licensure (intern year + MCCQE exams) is eliminated in favour of a two stream system through the Royal College of Physicians and Surgeons and the College of Family Physicians of Canada; the CFMS/FEMC questions the requirement of students to sit both MCCQE I and II exams when they will no longer determine licensure.</li>
+                                        
+                                             <li>Connections between industry and the medical community are a major concern for students, particularly with regards to sponsorship; the CFMS/FEMC chooses not to engage with pharmaceutical companies in sponsorship of any kind.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1988/89 - Brad Dibble (UWO) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Anil (Monty) Kapoor</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Communications: Stewart McCallum</li>
+                                        
+                                            <li>VP Finance: Jeff Kronson</li>
+                                        
+                                            <li>VP Services: Giles Pinault</li>
+                                        
+                                            <li>VP Education: Keya Hosseinzadeh</li>
+                                        
+                                            <li>Western Regional Representative: Cindy Beck (U of C)</li>
+                                        
+                                            <li>Ontario Regional Representative: Amol Deshpande</li>
+                                        
+                                            <li>Quebec Regional Representative: Sarah Bouchard (McGill)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1989/90 - Anil (Monty) Kapoor (Dal) </a>
+                        </div>
+                    <br>
+                    
+                </div>
+            
+                <div id="page1990" class="  hide   paginationPages">
+                    <h2 class="text-center">1990s</h2>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Jeffery Kronson</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Communications - Greg Zeschuk</li>
+                                        
+                                            <li>VP Services: Maryann Robb</li>
+                                        
+                                            <li>VP Educations: Jim Kim</li>
+                                        
+                                            <li>VP Finance: Stacey Smith</li>
+                                        
+                                            <li>Western Regional Representative: Mona Hegdekar</li>
+                                        
+                                            <li>Ontario Regional Representative: Hansa Bhargava</li>
+                                        
+                                            <li>Quebec Regional Representative: Goutham Rao</li>
+                                        
+                                            <li>Eastern Regional Representative: Simon Kirby</li>
+                                        
+                                            <li>International Relations: Anne Dipchand</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1990/91 - Jeffery Kronson (U of Manitoba) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Simon Kirby</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1991/92 - Simon Kirby (MUN) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Natasha Leighl</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1992/93 - Natasha Leighl (U of T) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Stephen Brown</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Communications: David Keegan (MUN)</li>
+                                        
+                                            <li>Western Regional Representative: Susan Bannister</li>
+                                        
+                                            <li>Atlantic Regional Representative: Nick Withers (MUN)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC participates in the International Federation of Medical Students Associations (IFMSA) IFMSA for the first time in Denmark.  This leads to the development of the Elective Exchange Program, building the foundation for what is now the Global Health Program (GHP).</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1993/94 - Stephen Brown (McMaster) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>David Keegan</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Communications: Susan Bannister</li>
+                                        
+                                            <li>VP Education: Nick Withers (MUN)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1994/95 - David Keegan (MUN) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Nick Withers</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC establishes links with the IFMSA and together the organizations begin to develop elective exchange opportunities for Canadian Medical Students</li>
+                                        
+                                             <li>The CFMS/FEMC’s first website is created.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Adequate post-residency training positions are a major concern for students, and the CFMS/FEMC’s lobbying efforts are focused on ensuring there is a residency position available for each Canadian graduate.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1995/96 - Nick Withers (MUN) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Kevin Busche</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Communications: Joshua Teppar (McMaster)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1996/97 - Kevin Busche (UWO) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Joshua Teppar</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Communications: Marc Zerey</li>
+                                        
+                                            <li>VP Education: Maria Theordureau</li>
+                                        
+                                            <li>VP Services: Nick Szeket</li>
+                                        
+                                            <li>VP Finance: Stephen French</li>
+                                        
+                                            <li>Western Regional Representative: Bevan Hughes</li>
+                                        
+                                            <li>Ontario Regional Representatives: Alan Chaput & Darlene Fenech</li>
+                                        
+                                            <li>Quebec Regional Representative: Kendal Noel</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1997/98 - Joshua Teppar (McMaster) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Marc Zerey</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Communications: Liam Hickey</li>
+                                        
+                                            <li>VP Services: Kendal Noel</li>
+                                        
+                                            <li>VP Finance: Stephen French</li>
+                                        
+                                            <li>Western Regional Representative: Raheem Kherani</li>
+                                        
+                                            <li>Ontario Regional Representative: Tara Mastracci (U of O)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Regina DuToit</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1998/99 - Marc Zerey (McGill) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Tara Mastracci</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC’s Rural Outreach Program (CROP) is created to encourage rural high school students to consider a career in medicine by linking medical students from rural areas and those on rural electives with local high school students.</li>
+                                        
+                                             <li>Position papers on early career decision making, mental health, and deregulation of tuition are developed.</li>
+                                        
+                                             <li>The CFMS/FEMC becomes more involved with the IFMSA.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Concerns around International Medical Graduates are a key issue for Canadian Medical Students.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >1999/2000 - Tara Mastracci (McMaster) </a>
+                        </div>
+                    <br>
+                    
+                </div>
+            
+                <div id="page2000" class="  hide   paginationPages">
+                    <h2 class="text-center">2000s</h2>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Jason Kur</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Education: James Clarke (Dal)</li>
+                                        
+                                            <li>VP Services: Alim Mitha (U of A)</li>
+                                        
+                                            <li>VP Communications: Adam Natsheh (MUN)</li>
+                                        
+                                            <li>VP Finance: Herbert Brill (Queen’s)</li>
+                                        
+                                            <li>International Health Officer: Neilson McLean (UBC)</li>
+                                        
+                                            <li>Western Regional Representative: Kathy Pouteau (U of C)</li>
+                                        
+                                            <li>Ontario Regional Representatives: Danielle Martin (UWO) & George Zogopoulos (U of T)</li>
+                                        
+                                            <li>Quebec Regional Representative: Matthew Erskine (McGill)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Kanin Osei-Tutu (Dal)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC moves into official office space in Ottawa and hires Rosemary Conliffe as Office Manager, establishing a greater presence for representing medical student within the broader medical community.</li>
+                                        
+                                             <li>The Senior Medical Student Charter is written and adopted, becoming the first document to outline the “rights and responsibilities” of medical students from a student perspective.</li>
+                                        
+                                             <li>Tuition deregulation is a major concern across Canada, particularly in Ontario; the CFMS/FEMC conducts a national medical student survey comparing student perspectives on the cost of medical education and student debt across deregulated and regulated jurisdictions.</li>
+                                        
+                                             <li>The CFMS/FEMC engages a new group of Canadian medical student leaders by increasing our role within the IFMSA beyond the coordination of international student exchanges.</li>
+                                        
+                                             <li>A second Western Regional Representative is added to the organization’s executive structure to support a growing body of medical students in Western Canada.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC works hard to advocate for medical students in the transition of CaRMS from a paper-based to a web-based application process.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2000/01 - Jason Kur (U of A) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Matthew Erskine</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Education: Irfan Dhalla (U of T)</li>
+                                        
+                                            <li>VP Services: Lance Anderson (UBC)</li>
+                                        
+                                            <li>VP Communications: Danielle Martin (UWO)</li>
+                                        
+                                            <li>VP Finance: George Zogopoulos (U of T)</li>
+                                        
+                                            <li>International Health Officer: Neilson McLean (UBC)</li>
+                                        
+                                            <li>Western Regional Representatives: Kathy Pouteau (U of C) & Aneez Mohamed (UBC)</li>
+                                        
+                                            <li>Ontario Regional Representatives: Sataj Brar (UWO) & Wadih Matar (U of O)</li>
+                                        
+                                            <li>Quebec Regional Representative: Jimmy Ghostine (McGill)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Kanin Osei-Tutu (Dal)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Affordable medical student disability insurance is made available to all CFMS/FEMC members in partnership with Kirkham and Jack.</li>
+                                        
+                                             <li>The CFMS/FEMC works with other CaRMS stakeholders to design and implement the E-CaRMS system; Quebec schools enter the CaRMS match for the first time.</li>
+                                        
+                                             <li>The national profile of medical student debt issues is increased through publishing the results of the national tuition survey, conducted in 2000/01, in the CMAJ.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The cost of tuition and level of student debt is on the rise; the CFMS/FEMC is concerned about the decreasing accessibility of medical education.</li>
+                                        
+                                             <li>The CFMS/FEMC is concerned about insufficient residency spots leading to decreased career flexibility, and insufficient space for IMG training.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2001/02 - Matthew Erskine (McGill) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Danielle Martin</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Finance: Ray Firszt (McGill)</li>
+                                        
+                                            <li>VP Education: Ben Hoyt (Dal)</li>
+                                        
+                                            <li>VP Communications: Danielle Stothart (U of O)</li>
+                                        
+                                            <li>VP Services: Jamie Tibbo (MUN)</li>
+                                        
+                                            <li>International Health Officer: Andre Bernard</li>
+                                        
+                                            <li>Western Regional Representatives: Ryan Chowdry (U of A) & Vishal Avinashi (U of S)</li>
+                                        
+                                            <li>Ontario Regional Representatives: Nicky Marwaha (U of O) & Joshua Wiesenthal (McMaster)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>A new logo and website are created to increase the communication capabilities of the CFMS/FEMC</li>
+                                        
+                                             <li>The Senior Medical Student Charter is expanded</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Rising tuition fees are a major concern for students; in response, the CETA - CFMS/FEMC Education Taskforce on Accessibility is established.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2002/03 - Danielle Martin (UWO) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Sayeh Minosepher</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Education: Hughie Fraser (U of C)</li>
+                                        
+                                            <li>VP Communications: Ellen Silver (U of T)</li>
+                                        
+                                            <li>VP Services: Vince Chan (Queen’s)</li>
+                                        
+                                            <li>VP Finance: Ray Firszt (McMaster)</li>
+                                        
+                                            <li>VP International Programs and Partnerships: Troy Grennan (McMaster)</li>
+                                        
+                                            <li>Western Regional Representatives: Kaleigh James (U of Manitoba) & Lanette Prediger (U of C)</li>
+                                        
+                                            <li>Ontario Regional Representatives: Shane English (U of O) & Greg Athaide (McMaster)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>In response to increasing tuition fees and the decreasing accessibility of medical school, the CFMS/FEMC holds its first Lobby Day on Parliament Hill to advocate student concerns to MPs.</li>
+                                        
+                                             <li>Widespread presence of the CFMS/FEMC in the national media increases the profile of medical student issues and the CFMS/FEMC as their representative body</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Ensuring adequate residency positions for new graduates is an ongoing concern for the CFMS/FEMC</li>
+                                        
+                                             <li>Professionalism becomes a major focus of medical students and the CFMS/FEMC develops a Professionalism Initiative in response</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2003/04 - Sayeh Minosepher (U of O) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Ashely Waddington</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Education: Lanette Prediger (U of C)</li>
+                                        
+                                            <li>VP Communications: Meghan Newcombe (U of C)</li>
+                                        
+                                            <li>VP Services: Jeeshan Chowdhury (U of A)</li>
+                                        
+                                            <li>VP Finance: Andre Bernard (Dal)</li>
+                                        
+                                            <li>VP International Programs and Partnerships: Jen Toye</li>
+                                        
+                                            <li>Western Regional Representatives: Vishal Anand (U of A) & Tommy Gerschman (UBC)</li>
+                                        
+                                            <li>Ontario Regional Representatives: Melise Keays (U of O) & Sabrina Akhta (UWO)</li>
+                                        
+                                            <li>Quebec Regional Representative: Maya Haasz (McGill)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Massi Abedi (MUN)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2004/05 - Ashely Waddington (McMaster) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Andre Bernard</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Finance: Chris Pollock (U of O)</li>
+                                        
+                                            <li>VP Education: Warren Luksun (UBC)</li>
+                                        
+                                            <li>VP Services: Jeeshan Chowdhury (U of A)</li>
+                                        
+                                            <li>VP Communications: Allie Meiwald (MUN)</li>
+                                        
+                                            <li>VP International Programs and Partnerships: Claudia Kraft (Queen’s)</li>
+                                        
+                                            <li>Western Regional Representatives: Shaheed Merani (U of A) & Philip Brost (U of S)</li>
+                                        
+                                            <li>Ontario Regional Representatives: Sonia Abdulla (U of O) & Andrew Vellathottham (UWO)</li>
+                                        
+                                            <li>Quebec Regional Representative: Paul Gross (McGill)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Thalia Field (Dal)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2005/06 - Andre Bernard (Dal) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Philip Brost</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Finance: Chris Pollock (U of O)</li>
+                                        
+                                            <li>VP Education: Sonia Abdullah (U of O)</li>
+                                        
+                                            <li>VP Services: Dan McIsaac (Dal)</li>
+                                        
+                                            <li>VP Communications: Allie Meiwald (MUN)</li>
+                                        
+                                            <li>VP International Programs and Partnerships: Celine Kim (U of T)</li>
+                                        
+                                            <li>Western Regional Representatives: Shaheed Merani (U of A) & Gabriel Fabreau (U of C)</li>
+                                        
+                                            <li>Ontario Regional Representatives: Danyaal Raza (UWO) & Brock McKinney (McMaster)</li>
+                                        
+                                            <li>Quebec Regional Representative: Catherine Patocka (McGill)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Jill Hudson (Dal)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The Northern Ontario School of Medicine becomes the CFMS/FEMC’s newest member school, increasing the number of member schools to 14.</li>
+                                        
+                                             <li>The CFMS/FEMC carries out a national Student Survey</li>
+                                        
+                                             <li>An increase in the Public vs Private Healthcare debate results in an in-depth exploration of the topic and resulting discussion paper</li>
+                                        
+                                             <li>The CFMS/FEMC becomes the first national medical organization to develop a document on Disaster and Emergency Preparedness.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Nationwide Student Loan Interest and Repayment Deferral is an ongoing lobbying issue for the CFMS/FEMC.</li>
+                                        
+                                             <li>Collaboration with National Allied Health Student Organizations becomes a priority.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2006/07 - Philip Brost (U of S) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Shaheed Merani</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Education: Jonathan DellaVedova (NOSM)</li>
+                                        
+                                            <li>VP Finance: Russell Murphy (U of S)</li>
+                                        
+                                            <li>VP Communications: Sammy Khalili (MUN)</li>
+                                        
+                                            <li>VP International Programs and Partnerships: Jessie Breton (U of A)</li>
+                                        
+                                            <li>VP Services: Dan McIsaac (Dal)</li>
+                                        
+                                            <li>Western Regional Representatives: Meira Louis (U of C) & Eric Fung (U of A)</li>
+                                        
+                                            <li>Ontario Regional Representatives: Phil Doiron (McMaster) & Geeta Yadav (NOSM)</li>
+                                        
+                                            <li>Quebec Regional Representative: Richard Dallala (McGill)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Michael Organ (MUN)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The Accreditation Information Database is created as a resource for member medical schools undergoing the accreditation process.</li>
+                                        
+                                             <li>The CFMS/FEMC Blood Drive is established as an ongoing national initiative.</li>
+                                        
+                                             <li>Services to members expand with a partnership with Lasik MD and the development of a new website.</li>
+                                        
+                                             <li>Interprofessional Education becomes a major focus of the CFMS/FEMC in regards to medical education; a national initiative on medical students’ perspectives of IPE is undertaken and a set of IPE principles are adopted.</li>
+                                        
+                                             <li>The CFMS/FEMC International Health Program is renamed as the Global Health Program.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Advocacy and lobbying continues to develop as a major focus of the CFMS/FEMC’s activities; the Political Advocacy Committee (PAC) is created and a Terms of Reference officially adopted.</li>
+                                        
+                                             <li>Debt deferral for residents remains the major federal lobbying topic.</li>
+                                        
+                                             <li>Residency spots for CMGs and IMGs continue to be a concern for medical students; a position paper on the issue is developed and adopted.</li>
+                                        
+                                             <li>Disaster and Emergency Preparedness is a major concern for medical students; the CFMS/FEMC develops a position paper and creates the Disaster and Emergency Preparedness (DEP) Taskforce to pursue the issue nationally.</li>
+                                        
+                                             <li>Differences between applications for clerkship electives at different schools are frustrating to medical students; a committee to explore a common elective application is created.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2007/08 - Shaheed Merani (U of A) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Jonathan Dellavedova</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Education: Tyler Johnston (McMaster)</li>
+                                        
+                                            <li>VP Finance: Gillian Shiau (UBC)</li>
+                                        
+                                            <li>VP Services: Aaron Knox (U of A)</li>
+                                        
+                                            <li>VP Communications: Mary Jamieson (Dal)</li>
+                                        
+                                            <li>VP Global Health: Brianne Hudson (U of A)</li>
+                                        
+                                            <li>Western Regional Representatives: Ashley Oleniuk (U of S) & Nawaaz Nathoo (U of A)</li>
+                                        
+                                            <li>Ontario Regional Representatives: John Snegrove (UWO) & Shawn Mondoux (U of O)</li>
+                                        
+                                            <li>Quebec Regional Representative: Cindy Wang (McGill)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Kelly Hynes (MUN)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>The CFMS/FEMC works to streamline communication within and beyond the organization with a new website as the centrepiece, along with the implementation of member communiques, the elimination of print binders, online registration and meeting documents, the introduction of the media rapid response team, and a major proliferation of our presence in the media</li>
+                                        
+                                             <li>The Global Health Program, in collaboration with IFMSA-Quebec, leads and wins the bid for IFMSA 2010 to be hosted in Canada for the first time</li>
+                                        
+                                             <li>New avenues for advocacy are built, including hosting an all-candidates debate, a highly successful lobby day, plus new representatives to CAME, AFMC Future of Medical Education Project, and CISN</li>
+                                        
+                                             <li>Financial practices are streamlined through hiring an accountant and the use of accounting software</li>
+                                        
+                                             <li>The CFMS/FEMC commits to increasing operations in French by introducing the Translation Support Program</li>
+                                        
+                                             <li>Progress is made on the Electives Application Standardization Initiative</li>
+                                        
+                                             <li>The CFMS/FEMC conducts a Canada-wide focus group project to understand perspectives of students and student experiences around expanding Distributed Medical Education (DME) and adopts a set of student-centred DME principles.</li>
+                                        
+                                             <li>The CFMS/FEMC makes a commitment to environmental sustainability by adopting the Green Charter</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Engaging a growing membership of Canadian medical students is a challenge for the organization</li>
+                                        
+                                             <li>Finding avenues for participation and utilizing medical students enthusiasm and skill appropriately at various levels of the organization</li>
+                                        
+                                             <li>As the CFMS/FEMC continues to grow as an organization continuity and succession planning are an important concern</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2008/09 - Jonathan Dellavedova (NOSM) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Tyler Johnston</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Education: Shawn Mondoux (U of O)</li>
+                                        
+                                            <li>VP Finance: Arianne St-Jacques (NOSM)</li>
+                                        
+                                            <li>VP Services: Danielle Rodin (U of T)</li>
+                                        
+                                            <li>VP Communications: Ijab Khanafer (U of O)</li>
+                                        
+                                            <li>VP Global Health: Beverly Wudel (U of S)</li>
+                                        
+                                            <li>Western Regional Representatives: Janet Ferguson (U of S) & Harbir Gill (U of A)</li>
+                                        
+                                            <li>Ontario Regional Representatives: John Snegrove (UWO) & Cait Champion (U of T)</li>
+                                        
+                                            <li>Quebec Regional Representative: Noura Hassan (McGill)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Mathew Sheppard (MUN)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>CFMS representatives presented to the Federal government’s Standing Committee on Finance and met with various federal officials throughout the year to advocate for forgiveness of student loans during the residency training period.</li>
+                                        
+                                             <li>After three years of advocacy, the CFMS and AFMC formed a formal partnership to ameliorate difficulties around obtaining visiting-student clinical electives including standardizing processes and a common national electronic application portal.</li>
+                                        
+                                             <li>Research has been undertaken to examine clerkship working hours and policies across the country in an effort to ensure that all medical students have reasonable policies regarding work hours and workplace protections.</li>
+                                        
+                                             <li>A CFMS policy on professionalism was created to help guide students in interactions with their faculties regarding professionalism</li>
+                                        
+                                             <li>Successfully co-hosted the world with the FMEQ for the 2010 International Federation of Medical Students August Meeting in Montreal Quebec.</li>
+                                        
+                                             <li>Initiated a successful national lobbying campaign and federal lobby day raising national awareness about underrepresented groups (e.g. low SES, rural) in medicine.</li>
+                                        
+                                             <li>The CFMS instituted its first ever awards ceremony as part of its Spring General Meetings, intended to highlight the contributions of medical students to their schools and communities and to recognize exceptional teachers in medical education.</li>
+                                        
+                                             <li>Completed an extensive policy and position paper review that examined and updated every CFMS policy paper on record.</li>
+                                        
+                                             <li>Instituted a significant financial review of the organization including instituting a CFMS Finance Committee to ensure greater financial accountability for the organization and manage organizational risk.</li>
+                                        
+                                             <li>Implemented the Corporate Memory Project including digitization of CFMS records from the past 30 years and the acquisition of an accessible electronic repository for all.</li>
+                                        
+                                             <li>Developed first-ever CFMS organizational history by contacting alumni from the past 30 years and initiated an alumni engagement program.</li>
+                                        
+                                             <li>AGM delegates approved initiation of CFMS’s first-ever Strategic Plan to provide guidance to the executive over a 3-5 year period, to increase continuity of activities and ensure accountability to members.</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        
+                                             <li>Debt forgiveness</li>
+                                        
+                                             <li>Distributed Medical Education</li>
+                                        
+                                             <li>Capacity in Medical Education</li>
+                                        
+                                             <li>CFMS Financial Reform</li>
+                                        
+                                             <li>Strategic Planning</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2009/10 - Tyler Johnston (McMaster) </a>
+                        </div>
+                    <br>
+                    
+                </div>
+            
+                <div id="page2010" class="  hide   paginationPages">
+                    <h2 class="text-center">2010s</h2>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Mathew Sheppard</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Education: Noura Hassan (McGill)</li>
+                                        
+                                            <li>VP Finance: Jesse Kancir (U of T)</li>
+                                        
+                                            <li>VP Services: Steve Hawrylyshyn (McMaster)</li>
+                                        
+                                            <li>VP Communications: Robin Clouston (MUN)</li>
+                                        
+                                            <li>VP Advocacy: Ashley Miller (U of O)</li>
+                                        
+                                            <li>VP Global Health: Sarah Fung (U of A)</li>
+                                        
+                                            <li>Western Regional Representatives: Serena Siow (UBC) & Shawna Pandya (U of A)</li>
+                                        
+                                            <li>Ontario Regional Representatives: Bourne Auguste (McMaster) & Taylor Lougheed (Queens)</li>
+                                        
+                                            <li>Quebec Regional Representative: Phil Vourtzoumis (McGill)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Timothy Holland (Dal)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2010/11 - Mathew Sheppard (MUN) </a>
+                        </div>
+                    <br>
+                    
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>Noura Hassan</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        
+                                            <li>VP Education: Renee Pang (Queens)</li>
+                                        
+                                            <li>VP Finance: Jesse Kancir (U of T)</li>
+                                        
+                                            <li>VP Services: Robin Clouston (MUN)</li>
+                                        
+                                            <li>VP Communications: Matthew Tenenbaum (McMaster)</li>
+                                        
+                                            <li>VP Advocacy: Chloe Ward (U of O)</li>
+                                        
+                                            <li>VP Global Health: Paxton Bach (Queens)</li>
+                                        
+                                            <li>Western Regional Representatives: Alyssa Cruz (U of A) & Chris Skappak (U of A)</li>
+                                        
+                                            <li>Ontario Regional Representatives: Ian Brasg (U of T) & Melanie Rodrigues (Queens)</li>
+                                        
+                                            <li>Quebec Regional Representative: Phil Vourtzoumis (McGill)</li>
+                                        
+                                            <li>Atlantic Regional Representative: Will Stymiest (Dal)</li>
+                                        
+                                    </ul>
+                                    <hr>
+                                    
+                                    
+                                    
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >2011/12 - Noura Hassan (McGill) </a>
+                        </div>
+                    <br>
+                    
+                </div>
+            
+            
+            
+            
+            
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+	function getEmail(username){
+		var hostname = "cfms.org";
+		var linktext = username + "@" + hostname;
+		document.write("<a class='email' href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+	}
+</script>
+<div id="footer">
+	<div class="column">
+		<h1>
+			<div id="twitter-title">
+				
+					Latest tweets
+				
+				<span style="opacity:0.3">:</span></div>
+			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
+		</h1>
+		<div class="icon"><i class="fa fa-twitter"></i></div>
+		<div id="latest-tweets">
+		</div>
+	</div>
+
+	
+		
+			<div class="column">
+				<h1>Contact us <span style="opacity:0.3">:</span></h1>
+				<div class="icon"><i class="fa fa-map-marker"></i></div>
+				<li>
+					Canadian Federation of Medical Students<br>
+					267 O'Connor Street, Suite 401<br>
+					Ottawa, ON K2P 1V3
+				</li>
+				<div class="icon"><i class="fa fa-phone"></i></div>
+				<li>
+					<b>Phone</b>: 613&ndash;565&ndash;7740<br>
+					<b>Fax</b>: 613&ndash;565&ndash;7742
+				</li>
+				<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
+				<div id="emails">
+					<li><b>General Inquiries</b>: Rosemary Conliffe<br>
+					    <script>getEmail("office")</script>
+					</li>
+					<li><b>Media</b>: Usman Khan<br>
+						<script>getEmail("vpcommunications")</script>
+					</li>
+					<li><b>Information Technology</b>: Pavel Yarmak<br>
+						<script>getEmail("it")</script>
+					</li>
+				</div>
+			</div>
+		
+	
+		
+	
+	
+		
+			<div class="column">
+				<h1>
+					Find us on <span style="opacity:0.3">:</span>
+					<div id="social-media">
+						<a class="social-icon" href="https://www.facebook.com/CFMSFEMC"><i class="fa fa-facebook"></i></a>
+						/
+						<a class="social-icon" href="https://twitter.com/cfmsfemc"><i class="fa fa-twitter"></i></a>
+						/
+						<a class="social-icon" href="https://www.linkedin.com/company/canadian-federation-of-medical-students-cfms-"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</h1>
+				<div class="icon"><i class="fa fa-sitemap"></i></div>
+				<li>
+					
+						<b>Site map:</b> <a href="/sitemap.html">cfms.org/sitemap.html</a>
+					
+				</li>
+				<div class="icon"><i class="fa fa-question-circle"></i></div>
+				<li>
+					<b>Issue Tracker: </b><a href="/uploads/issue-tracker-guide.pdf">How To Guide</a>
+				</li>
+				<div class="icon"><i class="fa fa-github"></i></div>
+				<li>
+					<b>Issue Tracker: </b><a href="https://github.com/cfms-website/cfms-website.github.io/issues">Submit a Ticket </a>
+				</li>
+				<div class="icon"><i class="fa fa-copyright"></i></div>
+				<li>
+					<script>document.write((new Date()).getFullYear())</script>
+					CFMS. All Rights Reserved.<br>Developed by <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
+				</li>		
+			</div>
+		
+	
+		
+	
+</div>
+<script src="/js/twitterFetcher_min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	window.sr = ScrollReveal();
+	sr.reveal('.animate', { duration: 500, distance: '5px', scale: 1 } );
+
+	document.querySelector( "#hamburger-toggle" ).addEventListener( "click", function() {
+		this.classList.toggle( "active" );
+		document.querySelector("#top-nav").classList.toggle("active");
+		sr.reveal('#top-nav', {distance: '0px'});
+	});
+
+	//Gets latest tweets
+	var tweetConfig = {
+	  "id": '616581601191833602',
+	  "domId": 'latest-tweets',
+	  "maxTweets": 3,
+	  "enableLinks": true,
+	  "showPermalinks": false,
+	  "showUser": false,
+	  "showInteraction": false,
+	  "dateFunction": dateFormatter
+	};
+
+	//Formats the tweet dates
+	function dateFormatter(date) {
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var hour = date.getHours();
+
+		//0:00 = 12 AM
+		if (hour == 0)
+			var time = "12:" + date.getMinutes();
+		else 
+			time = (hour%12) + ":" + date.getMinutes();
+		if (hour > 0 && hour < 12)
+			time += " AM";
+		else 
+			time += " PM";
+
+		var month = months[date.getMonth()];
+		var day = date.getDate();
+		var year = date.getFullYear();
+		return time + " &ndash; " + month + " " + day + ", " + year;
+	}
+	twitterFetcher.fetch(tweetConfig);
+</script>
+
+<script src="/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if($(window).width() >= 960){
+	    $('#scroll').scrollToFixed({ 
+	    	minWidth: 960,
+	    	marginTop: 20, 
+	    	limit: function() {
+		        var limit = $('#footer').offset().top - $('#scroll').height() - 40;
+		        return limit;
+		    }
+	    });
+	}
+});
+</script>
+
+<!-- Modal Dialogs -->
+<script src="/js/vex.combined.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-default';</script>
+
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex.css" />
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex-theme-default.css" />
+
+<script>
+$('.redirect-modal').click(function(){
+    vex.dialog.confirm({
+        message: '<h3><strong>Oh no!</strong></h3><p>Unfortunately, this feature or resource is not yet available on the new CFMS website. To access it, please visit the old CFMS website.</p>',
+        buttons: [
+                $.extend({}, vex.dialog.buttons.YES, { text: 'Go to old website' }),
+                $.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })
+            ],
+        callback: function(value) {
+            if (value) {window.location.href = "http://www.old.cfms.org";}
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+	window.config = {
+		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":"","who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","login":"Se connecter","logout":"Se déconnecter"}]`),
+		lang: `en`,
+		leadership_award_year: `2016-2017`,
+		env: `production`
+	}
+</script>
+<script type="text/javascript" src="/js/bundle.js"></script>
+</body>
+</html>

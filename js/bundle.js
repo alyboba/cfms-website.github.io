@@ -111541,7 +111541,7 @@ var App = function App() {
 ;
 new App();
 
-},{"./routes":463}],441:[function(require,module,exports){
+},{"./routes":465}],441:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -111622,7 +111622,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{"../utils":473}],443:[function(require,module,exports){
+},{"../utils":477}],443:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111775,7 +111775,7 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
 exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
-},{"../repositories/firebase/utils":462}],444:[function(require,module,exports){
+},{"../repositories/firebase/utils":464}],444:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -111928,7 +111928,7 @@ var _class = function (_FirebaseConnection) {
 
 exports.default = _class;
 
-},{"../repositories/firebase/utils":462}],446:[function(require,module,exports){
+},{"../repositories/firebase/utils":464}],446:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112108,6 +112108,103 @@ exports.default = NavigationController;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Created by Justin on 7/8/2017.
+ */
+
+var PaginationController = function () {
+	function PaginationController() {
+		_classCallCheck(this, PaginationController);
+
+		this.paginationPages;
+		this.paginationLinks;
+		this.currentPage;
+		this.bindListeners();
+	}
+
+	_createClass(PaginationController, [{
+		key: 'getPaginationPage',
+		value: function getPaginationPage(index) {
+			return this.paginationPages[index];
+		}
+	}, {
+		key: 'getPaginationLink',
+		value: function getPaginationLink(index) {
+			return this.paginationLinks[index];
+		}
+	}, {
+		key: 'getPaginationPageLength',
+		value: function getPaginationPageLength() {
+			return this.paginationPages.length;
+		}
+	}, {
+		key: 'setPaginationPages',
+		value: function setPaginationPages(input) {
+			this.paginationPages = input;
+		}
+	}, {
+		key: 'setPaginationLinks',
+		value: function setPaginationLinks(input) {
+			this.paginationLinks = input;
+		}
+	}, {
+		key: 'setCurrentPage',
+		value: function setCurrentPage(input) {
+			this.currentPage = input;
+		}
+	}, {
+		key: 'getCurrentPage',
+		value: function getCurrentPage() {
+			return this.currentPage;
+		}
+	}, {
+		key: 'bindListeners',
+		value: function bindListeners() {
+			this.setPaginationPages(document.getElementsByClassName('paginationPages'));
+			this.setPaginationLinks(document.getElementsByClassName('paginationLink'));
+			console.log("In the pagination Controller");
+			for (var i = 0; i < this.getPaginationPageLength(); i++) {
+				var button = this.getPaginationLink(i);
+				//console.log(button);
+				button.onclick = this.showPage.bind(this); //binds the context into the sub methods of the events.
+			}
+		}
+	}, {
+		key: 'showPage',
+		value: function showPage() {
+			event.preventDefault();
+			//let paginationController = new PaginationController(); //Create an object so we can access the methods above.
+			var id = 'page' + event.target.id;
+			var pageId = event.target.id;
+			this.setCurrentPage(pageId);
+			for (var i = 0; i < this.getPaginationPageLength(); i++) {
+				if (this.getPaginationPage(i).id == id) {
+					this.getPaginationPage(i).classList.add('show');
+					this.getPaginationPage(i).classList.remove('hide');
+				} else {
+					this.getPaginationPage(i).classList.add('hide');
+					this.getPaginationPage(i).classList.remove('show');
+				}
+			}
+		}
+	}]);
+
+	return PaginationController;
+}();
+
+exports.default = PaginationController;
+
+},{}],449:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
@@ -112193,7 +112290,7 @@ var PaymentsController = function () {
 
 exports.default = PaymentsController;
 
-},{"../utils":473,"request-promise":348}],449:[function(require,module,exports){
+},{"../utils":477,"request-promise":348}],450:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112264,7 +112361,7 @@ var PurchasesController = function () {
 
 exports.default = PurchasesController;
 
-},{"../utils":473,"request-promise":348}],450:[function(require,module,exports){
+},{"../utils":477,"request-promise":348}],451:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112329,7 +112426,106 @@ var RegistrationController = function () {
 
 exports.default = RegistrationController;
 
-},{"../utils":473}],451:[function(require,module,exports){
+},{"../utils":477}],452:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Created by Justin on 7/8/2017.
+ */
+var instance = null;
+
+var ModalController = function () {
+	function ModalController() {
+		_classCallCheck(this, ModalController);
+
+		if (instance) {
+			//Singleton pattern
+			return instance;
+		}
+		this.currentModal;
+		this.bindListeners();
+		this.instance = this;
+	}
+
+	_createClass(ModalController, [{
+		key: "bindListeners",
+
+
+		//Starting method of class, Other methods below are for events.
+		value: function bindListeners() {
+			var buttons = document.getElementsByClassName('clickMe');
+			for (var i = 0; i < buttons.length; i++) {
+				var button = buttons[i];
+				button.onclick = this.clickTheModal;
+			}
+
+			var closeModalButtons = document.getElementsByClassName("modalCloseButton");
+			for (var _i = 0; _i < closeModalButtons.length; _i++) {
+				var closeButton = closeModalButtons[_i];
+				closeButton.onclick = this.closeModal;
+			}
+
+			//This event used to close modal when user clicks outside of modal anywhere on webpage
+			window.onclick = function (event) {
+				if (event.target == ModalController.getCurrentModal()) {
+					ModalController.closeTheModal(ModalController.getCurrentModal());
+				}
+			};
+		} //end bind listeners method
+
+	}, {
+		key: "clickTheModal",
+		value: function clickTheModal() {
+			event.preventDefault();
+			ModalController.setCurrentModal(this.parentElement.previousElementSibling);
+			this.parentElement.previousElementSibling.classList.remove("fadeOut");
+			this.parentElement.previousElementSibling.classList.remove("hidden");
+			this.parentElement.previousElementSibling.classList.add("fadeIn");
+			this.parentElement.previousElementSibling.classList.add("show");
+		} //end clickTheModal
+
+	}, {
+		key: "closeModal",
+		value: function closeModal() {
+			ModalController.setCurrentModal(this.parentElement.parentElement.parentElement);
+			ModalController.closeTheModal(ModalController.getCurrentModal());
+		} //end close Modal
+
+
+	}], [{
+		key: "setCurrentModal",
+		value: function setCurrentModal(currentModal) {
+			this.currentModal = currentModal;
+		}
+	}, {
+		key: "getCurrentModal",
+		value: function getCurrentModal() {
+			return this.currentModal;
+		}
+	}, {
+		key: "closeTheModal",
+		value: function closeTheModal(currentModal) {
+			currentModal.classList.remove("fadeIn");
+			currentModal.classList.add("fadeOut");
+			currentModal.classList.remove("show");
+			currentModal.classList.add("hidden");
+		}
+	}]);
+
+	return ModalController;
+}();
+
+exports.default = ModalController;
+
+},{}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112352,7 +112548,7 @@ var _authentication4 = _interopRequireDefault(_authentication3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/authentication":442,"../services/authentication":469}],452:[function(require,module,exports){
+},{"../controllers/authentication":442,"../services/authentication":473}],454:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112385,7 +112581,7 @@ var Middleware = function Middleware(page) {
 
 exports.default = Middleware;
 
-},{"./authentication":451,"./members-content":453,"./navigation":454}],453:[function(require,module,exports){
+},{"./authentication":453,"./members-content":455,"./navigation":456}],455:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112408,7 +112604,7 @@ var _authentication2 = _interopRequireDefault(_authentication);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/members-content":445,"../services/authentication":469}],454:[function(require,module,exports){
+},{"../controllers/members-content":445,"../services/authentication":473}],456:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112427,7 +112623,7 @@ var _navigation2 = _interopRequireDefault(_navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/navigation":447}],455:[function(require,module,exports){
+},{"../controllers/navigation":447}],457:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112483,7 +112679,7 @@ var MeetingRegistrationModel = function (_Model) {
 
 exports.default = MeetingRegistrationModel;
 
-},{"./model":456,"./user":457}],456:[function(require,module,exports){
+},{"./model":458,"./user":459}],458:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112526,7 +112722,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"lodash":275}],457:[function(require,module,exports){
+},{"lodash":275}],459:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112595,7 +112791,7 @@ var UserModel = function (_Model) {
 
 exports.default = UserModel;
 
-},{"./model":456}],458:[function(require,module,exports){
+},{"./model":458}],460:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112650,7 +112846,7 @@ var ApiRepository = function () {
 
 exports.default = ApiRepository;
 
-},{"request-promise":348}],459:[function(require,module,exports){
+},{"request-promise":348}],461:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112697,7 +112893,7 @@ var UserRepository = function (_ApiRepository) {
 
 exports.default = UserRepository;
 
-},{"./repository":458}],460:[function(require,module,exports){
+},{"./repository":460}],462:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112754,7 +112950,7 @@ var MeetingRegistrationRepository = function (_FirebaseRepository) {
 
 exports.default = MeetingRegistrationRepository;
 
-},{"./repository":461}],461:[function(require,module,exports){
+},{"./repository":463}],463:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112796,7 +112992,7 @@ var Repository = function () {
 
 exports.default = Repository;
 
-},{"./utils":462}],462:[function(require,module,exports){
+},{"./utils":464}],464:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112861,7 +113057,7 @@ var FirebaseRef = function (_FirebaseConnection) {
 exports.FirebaseRef = FirebaseRef;
 exports.FirebaseConnection = FirebaseConnection;
 
-},{"../../config":441,"firebase":157}],463:[function(require,module,exports){
+},{"../../config":441,"firebase":157}],465:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112891,6 +113087,14 @@ var _meetingRegistrations2 = _interopRequireDefault(_meetingRegistrations);
 var _purchases = require('./purchases');
 
 var _purchases2 = _interopRequireDefault(_purchases);
+
+var _modal = require('./modal');
+
+var _modal2 = _interopRequireDefault(_modal);
+
+var _pagination = require('./pagination');
+
+var _pagination2 = _interopRequireDefault(_pagination);
 
 var _page = require('page');
 
@@ -112927,6 +113131,10 @@ var Router = function (_Middleware) {
             (0, _page2.default)('/new-account.html', _registration2.default);
             (0, _page2.default)('/meetings/:meeting', _meetingRegistrations2.default);
             (0, _page2.default)('/purchases/:purchase', _purchases2.default);
+            (0, _page2.default)('/who-we-are/history.html', _modal2.default);
+            (0, _page2.default)('/who-we-are/organizational-timeline.html', _modal2.default, _pagination2.default);
+            (0, _page2.default)('/fr/who-we-are/history.html', _modal2.default);
+            (0, _page2.default)('/fr/who-we-are/organizational-timeline.html', _modal2.default, _pagination2.default);
         }
     }, {
         key: 'refresh',
@@ -112940,7 +113148,7 @@ var Router = function (_Middleware) {
 
 exports.default = Router;
 
-},{"../middlewares":452,"./md-leadership-awards":464,"./meeting-registrations":465,"./members":466,"./purchases":467,"./registration":468,"page":287}],464:[function(require,module,exports){
+},{"../middlewares":454,"./md-leadership-awards":466,"./meeting-registrations":467,"./members":468,"./modal":469,"./pagination":470,"./purchases":471,"./registration":472,"page":287}],466:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -112971,7 +113179,7 @@ function LeadershipAwardAdmin(ctx, next) {
     next();
 }
 
-},{"../controllers/md-leadership-awards":443,"../services/authentication":469}],465:[function(require,module,exports){
+},{"../controllers/md-leadership-awards":443,"../services/authentication":473}],467:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -113019,7 +113227,7 @@ function MeetingRegistration(ctx, next) {
     next();
 }
 
-},{"../controllers/meeting-registrations":444,"../controllers/payments":448,"../models/meeting-registration":455,"../models/user":457,"../repositories/api/user":459,"../repositories/firebase/meeting-registration":460,"../services/authentication":469,"../services/payments":472}],466:[function(require,module,exports){
+},{"../controllers/meeting-registrations":444,"../controllers/payments":449,"../models/meeting-registration":457,"../models/user":459,"../repositories/api/user":461,"../repositories/firebase/meeting-registration":462,"../services/authentication":473,"../services/payments":476}],468:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -113044,7 +113252,53 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/members":446,"../services/authentication":469}],467:[function(require,module,exports){
+},{"../controllers/members":446,"../services/authentication":473}],469:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = modal;
+
+var _showModal = require('../controllers/showModal');
+
+var _showModal2 = _interopRequireDefault(_showModal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//Shows Member Account Information on the Members Page
+function modal(ctx, next) {
+	new _showModal2.default();
+
+	next();
+} /**
+   * Created by Justin on 7/8/2017.
+   */
+
+},{"../controllers/showModal":452}],470:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = modal;
+
+var _pagination = require('../controllers/pagination');
+
+var _pagination2 = _interopRequireDefault(_pagination);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//Shows Member Account Information on the Members Page
+function modal(ctx, next) {
+	new _pagination2.default();
+
+	next();
+} /**
+   * Created by Justin on 7/8/2017.
+   */
+
+},{"../controllers/pagination":448}],471:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -113071,7 +113325,7 @@ function Purchases(ctx, next) {
     next();
 }
 
-},{"../controllers/purchases":449,"../services/authentication":469,"../services/payments":472}],468:[function(require,module,exports){
+},{"../controllers/purchases":450,"../services/authentication":473,"../services/payments":476}],472:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -113102,7 +113356,7 @@ function Registration(ctx, next) {
   next();
 }
 
-},{"../controllers/registration":450,"../models/user":457,"../services/authentication":469}],469:[function(require,module,exports){
+},{"../controllers/registration":451,"../models/user":459,"../services/authentication":473}],473:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -113236,7 +113490,7 @@ var AuthenticationService = function () {
 
 exports.default = AuthenticationService;
 
-},{"../../models/user":457,"../../repositories/api/user":459,"../../utils":473,"./providers/auth0":470,"./providers/firebase":471,"jsonwebtoken":247,"lodash":275}],470:[function(require,module,exports){
+},{"../../models/user":459,"../../repositories/api/user":461,"../../utils":477,"./providers/auth0":474,"./providers/firebase":475,"jsonwebtoken":247,"lodash":275}],474:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -113304,7 +113558,7 @@ var Auth0Provider = function () {
 
 exports.default = Auth0Provider;
 
-},{"../../../config":441,"auth0-js":46}],471:[function(require,module,exports){
+},{"../../../config":441,"auth0-js":46}],475:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -113361,7 +113615,7 @@ var FirebaseProvider = function (_FirebaseConnection) {
 
 exports.default = FirebaseProvider;
 
-},{"../../../repositories/firebase/utils":462}],472:[function(require,module,exports){
+},{"../../../repositories/firebase/utils":464}],476:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -113404,7 +113658,7 @@ var PaymentsService = function (_FirebaseConnection) {
 
 exports.default = PaymentsService;
 
-},{"../repositories/firebase/utils":462}],473:[function(require,module,exports){
+},{"../repositories/firebase/utils":464}],477:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
