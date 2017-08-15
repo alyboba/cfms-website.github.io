@@ -1,6 +1,6 @@
 external-committees:
 - lang: "en"
-  current-representatives:
+  organizations:
   - organization-name: "Canadian Medical Association Board of Directors"
     CFMS-representative: "Bryce Durafourt (CFMS President)"
   - organization-name: "CMA Committee on Education and Development"
