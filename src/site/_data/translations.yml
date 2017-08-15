@@ -201,6 +201,7 @@ sidebar-who-we-are:
   sidebar-title_3: "More Information"
   history: "History"
   organizational-timeline: "Organizational Timeline"
+  external-committees: "External Commmittees"
   
 - lang: "fr"
   sidebar-title_1: "Qui sommes-nous?"
@@ -217,6 +218,7 @@ sidebar-who-we-are:
   sidebar-title_3: "Plus d'information"
   history: "Histoire"
   organizational-timeline: "Chronologie Organisationnelle"
+  external-committees: "Comités Externes"
   
   
 #Sidebar education
