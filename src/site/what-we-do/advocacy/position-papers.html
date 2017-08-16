@@ -101,14 +101,10 @@ title: "Position Papers"
         
     </div>
 </div>
-{% include footer.html %}
-<!--<script-->
-        <!--src="https://code.jquery.com/jquery-3.2.1.slim.min.js"-->
-        <!--integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="-->
-        <!--crossorigin="anonymous"></script>-->
 <script type="text/javascript">
     $(document).ready(function () {
-
+        //Copyright and credit given to http://kronosapiens.github.io/blog/2014/03/31/a-dynamic-and-generally-efficient-front-end-filtering-algorithm.html
+        //NO liscense on code, however credit due.
         $("#filters :checkbox").click(function () {
             $(".filtered-content").hide();
             var activeFilters = getActiveFilters();
@@ -119,6 +115,7 @@ title: "Position Papers"
                     $lesson.show();
                 }
             });
+            //This code is used to hide a section if all elements are filtered out.
             $(".paper-section").each(function(){
                 $(this).parent().show();
                 //console.log(this);
@@ -126,7 +123,7 @@ title: "Position Papers"
                 if($(this).children(':visible').length === 0) {
                     $(this).parent().hide();
                 }
-                });
+            });
         });
 
         function getActiveFilters() {
@@ -147,8 +144,16 @@ title: "Position Papers"
         }
 
     });
-    
-    
+
+
 </script>
+
+
+{% include footer.html %}
+<!--<script-->
+        <!--src="https://code.jquery.com/jquery-3.2.1.slim.min.js"-->
+        <!--integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="-->
+        <!--crossorigin="anonymous"></script>-->
+
 </body>
 </html>

@@ -4,6 +4,10 @@ position-papers:
     tag-name: "Policy Papers"
   - tag: "PS"
     tag-name: "Position Statements"
+  - tag: "NT"
+    tag-name: "No Tag"
+  - tag: "IP"
+    tag-name: "In Progress"
   paper-collection:
   - section: "Recently Passed at AGM 2016 - Edmonton, AB"
     papers:

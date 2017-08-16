@@ -348,7 +348,7 @@ label {
 	opacity:0.5;
 	font-family:$sans-serif-font-stack;
 }
-.ps, .pp {
+.ps, .pp, .nt, .ip {
 	@extend .file-format;
 }
 .ps {
@@ -356,6 +356,12 @@ label {
 }
 .pp {
 	background-color: $vp-gov-affairs-color;
+}
+.nt {
+	background-color: $darker
+}
+.ip {
+	background-color: $primary-color
 }
 .addendum {
 	color:$neutral;
