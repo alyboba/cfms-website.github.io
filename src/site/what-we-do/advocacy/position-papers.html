@@ -56,7 +56,7 @@ title: "Position Papers"
         <form id="filters">
             {% for filterData in site.data.position-papers.position-papers.filter-tags %}
             <label>
-                <span class="{{filterData.tag-class-name}}">{{filterData.tag}}</span><input class="filter-checkbox"type="checkbox" id="{{filterData.tag | upcase}}">{{filterData.tag-name}}</label>
+                <span class="{{filterData.tag | downcase}}">{{filterData.tag | upcase}}</span><input class="filter-checkbox"type="checkbox" id="{{filterData.tag | upcase}}">{{filterData.tag-name}}</label>
             <br>
             {% endfor %}
         </form>
@@ -79,11 +79,12 @@ title: "Position Papers"
             {% for paperSections in paperCollection.section %}
                 <blockquote>
                     <h3><strong>{{paperSections}}</strong></h3>
-                    <ul>
+                    <ul class="paper-section">
                     {% for papers in paperCollection.papers %}
-                       <li id="paper_{{index}}" class="filtered-content" data-filters="[{{papers.paper-tag}}]">{% if papers.paper-tag != "null" %} <span class="{{papers.paper-tag | downcase}}">{{papers.paper-tag | upcase}}</span> {% endif %}<span class="pub-date">{{papers.paper-publish-date}}</span>
-                       <a href="{{papers.paper-link}}">{{papers.paper-name}}</a></li>
-                       {% assign index = index | plus:1 %} 
+                       <li id="paper_{{index}}" class="filtered-content" data-filters="[{{papers.paper-tag}}]">{% if papers.paper-tag != "null" %}
+                           <span class="{{papers.paper-tag | downcase}}">{{papers.paper-tag | upcase}}</span> {% endif %}<span class="pub-date">{{papers.paper-publish-date}}</span>
+                           <a target="_blank" href="{{papers.paper-link}}">{{papers.paper-name}}</a></li>
+                           {% assign index = index | plus:1 %} 
                     
                     {% endfor %}
                     </ul>
@@ -118,6 +119,14 @@ title: "Position Papers"
                     $lesson.show();
                 }
             });
+            $(".paper-section").each(function(){
+                $(this).parent().show();
+                //console.log(this);
+                console.log($(this).children(":visible").length);
+                if($(this).children(':visible').length === 0) {
+                    $(this).parent().hide();
+                }
+                });
         });
 
         function getActiveFilters() {

@@ -2,10 +2,8 @@ position-papers:
   filter-tags:
   - tag: "PP"
     tag-name: "Policy Papers"
-    tag-class-name: "pp"
   - tag: "PS"
     tag-name: "Position Statements"
-    tag-class-name: "ps"
   paper-collection:
   - section: "Recently Passed at AGM 2016 - Edmonton, AB"
     papers:
