@@ -59,6 +59,13 @@ title: "Position Papers"
                 <span class="{{filterData.tag | downcase}}">{{filterData.tag | upcase}}</span><input class="filter-checkbox"type="checkbox" id="{{filterData.tag | upcase}}">{{filterData.tag-name}}</label>
             <br>
             {% endfor %}
+            
+            <select id="select-box" name="paper-section">
+                <option>All Sections</option>
+                {% for paperSections in site.data.position-papers.position-papers.paper-collection %}
+                <option>{{paperSections.section}}</option>
+                {% endfor %}
+            </select>
         </form>
 
 
@@ -78,7 +85,7 @@ title: "Position Papers"
         {% for paperCollection in site.data.position-papers.position-papers.paper-collection %}
             {% for paperSections in paperCollection.section %}
                 <blockquote>
-                    <h3><strong>{{paperSections}}</strong></h3>
+                    <h3 class="paper-section-title"><strong>{{paperSections}}</strong></h3>
                     <ul class="paper-section">
                     {% for papers in paperCollection.papers %}
                        <li id="paper_{{index}}" class="filtered-content" data-filters="[{{papers.paper-tag}}]">{% if papers.paper-tag != "null" %}
@@ -143,6 +150,30 @@ title: "Position Papers"
             return true;
         }
 
+    });
+    
+    $("#select-box").change(function(){
+        if($(":selected").text() ==="All Sections"){
+            $(".paper-section").each(function() {
+                $(this).parent().show();
+            });
+        }
+        else{
+            $(".paper-section").each(function() {
+                $(this).parent().hide();
+                console.log("hiding elements");
+            });
+            var value= $(":selected").text();
+            console.log(value);
+            $(".paper-section-title").each(function() {
+                console.log(value);
+                console.log($(this).text());
+                if($(this).text() === value) {
+                    $(this).parent().show();
+                    console.log("getting into the if?");
+                }
+            });
+        }
     });
 
 
