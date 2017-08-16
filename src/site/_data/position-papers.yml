@@ -1,13 +1,34 @@
 position-papers:
   filter-tags:
   - tag: "PP"
+    tag-name: "Policy Papers"
+    tag-class-name: "pp"
   - tag: "PS"
-  paper-sections:
-  - section: ""
-  - section: ""
-  papers:
-  - paper-name: ""
-    paper-publish-date: ""
-    paper-link: ""
-    paper-tag: ""
-    paper-section: ""
+    tag-name: "Position Statements"
+    tag-class-name: "ps"
+  paper-collection:
+  - section: "Recently Passed at AGM 2016 - Edmonton, AB"
+    papers:
+    - paper-name: "CFMS Professionalism"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_agm_professionalism.pdf"
+      paper-tag: "PP"
+    - paper-name: "Medical Assistance in Dying"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_position statement on medical assistance in dying.pdf"
+      paper-tag: "PS"
+  - section: "Recently Passed at SGM 2016 - Montreal, QC"
+    papers:
+    - paper-name: "Advocacy and Leadership in Canadian Medical Student Curricula"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_advocacy and leadership.pdf"
+      paper-tag: "PP"
+    - paper-name: "Climate change and global health: Training future physicians to act and mitigate"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_climate change and gh training.pdf"
+      paper-tag: "null"
+    - paper-name: "Supporting Clinician-Scientist Training in Canada"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_supporting clinician-scientist training in canada.pdf"
+      paper-tag: "null"
+    

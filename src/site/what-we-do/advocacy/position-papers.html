@@ -1,4 +1,5 @@
 ---
+title: "Position Papers"
 ---
 <!DOCTYPE html>
 <!--[if IE 8 ]>
@@ -30,7 +31,7 @@
         document.querySelector( "#position-papers" ).classList.toggle("sidebar-active");
     </script>
     <div id="side-content" class="editable">
-        <h1 id="page-title">Position Papers</h1>
+        <h1 id="page-title">{{ page.title }}</h1>
         <div class="pic-wrapper">
             <img class="pic-right" src="/images/page-images/position-papers.png" />
         </div>
@@ -52,9 +53,93 @@
         </blockquote>
         
         <!--Addd liquid logic here-->
+        <form id="filters">
+            {% for filterData in site.data.position-papers.position-papers.filter-tags %}
+            <label>
+                <span class="{{filterData.tag-class-name}}">{{filterData.tag}}</span><input class="filter-checkbox"type="checkbox" id="{{filterData.tag | upcase}}">{{filterData.tag-name}}</label>
+            <br>
+            {% endfor %}
+        </form>
+
+
+
+
+        <!--<blockquote>-->
+            <!--<h3><strong>Recently Passed at AGM</strong><strong> 2016 - Edmonton, AB</strong></h3>-->
+            <!--<ul>-->
+                <!--<li><span class="pp">PP</span><span class="pub-date">2016</span><a href="/files/position-papers/2016_agm_professionalism.pdf">CFMS Professionalism</a></li>-->
+                <!--<li><span class="pp">PP</span><span class="pub-date">2016</span><a href="/files/position-papers/2016_compressed_cfms_position-paper_sept2016_humantrafficking_gubermanherrington.pdf">Human Trafficking</a></li>-->
+                <!--&lt;!&ndash; <li><span class="pp">PP</span><span class="pub-date">2016</span><a href="/files/position-papers/2016_mental health and suicide in indigenous communities in canada - cfms agm 2016.pdf">Suicide in Indigenous Communities</a></li>Postponed&ndash;&gt;-->
+                <!--<li><span class="ps">PS</span><span class="pub-date">2016</span><a href="/files/position-papers/2016_position statement on medical assistance in dying.pdf">Medical Assistance in Dying</a></li>-->
+            <!--</ul>-->
+        <!--</blockquote>-->
+        
+        {% assign index = 1 %}
+        {% for paperCollection in site.data.position-papers.position-papers.paper-collection %}
+            {% for paperSections in paperCollection.section %}
+                <blockquote>
+                    <h3><strong>{{paperSections}}</strong></h3>
+                    <ul>
+                    {% for papers in paperCollection.papers %}
+                       <li id="paper_{{index}}" class="filtered-content" data-filters="[{{papers.paper-tag}}]">{% if papers.paper-tag != "null" %} <span class="{{papers.paper-tag | downcase}}">{{papers.paper-tag | upcase}}</span> {% endif %}<span class="pub-date">{{papers.paper-publish-date}}</span>
+                       <a href="{{papers.paper-link}}">{{papers.paper-name}}</a></li>
+                       {% assign index = index | plus:1 %} 
+                    
+                    {% endfor %}
+                    </ul>
+                </blockquote>
+                
+            {% endfor %}
+        
+        
+        {% endfor %}
+        
+        
+        
         
         
     </div>
 </div>
 {% include footer.html %}
+<!--<script-->
+        <!--src="https://code.jquery.com/jquery-3.2.1.slim.min.js"-->
+        <!--integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="-->
+        <!--crossorigin="anonymous"></script>-->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#filters :checkbox").click(function () {
+            $(".filtered-content").hide();
+            var activeFilters = getActiveFilters();
+            $(".filtered-content").each(function () {
+                var $lesson = $(this);
+                var lessonFilters = $lesson.data("filters");
+                if (lessonQualified(activeFilters, lessonFilters)) {
+                    $lesson.show();
+                }
+            });
+        });
+
+        function getActiveFilters() {
+            var filterArray = [];
+            $("#filters :checkbox:checked").each(function () {
+                filterArray.push(($(this).attr("id")));
+            });
+            return filterArray;
+        }
+
+        function lessonQualified(filters, lesson) {
+            for (var i = 0; i < filters.length; i++) {
+                if ((lesson.indexOf(filters[i])) == -1) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+    });
+    
+    
+</script>
 </body>
+</html>
