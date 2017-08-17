@@ -88,22 +88,40 @@ title: "Position Papers"
                     <h3 class="paper-section-title"><strong>{{paperSections}}</strong></h3>
                     <ul class="paper-section">
                     {% for papers in paperCollection.papers %}
+                        {% comment %}
+                            This logic here is used to Set the data-filters array for each specific paper, assigning the proper tags
+                            From the .yml file. The tags must be organized ie: [A, B, C ,D]
+                        {% endcomment %}
+                        
                         {% assign myArray = "" %}
                         {% for tags in papers.paper-tags %}
                             {% if forloop.first %}
-                                {% assign myArray = myArray | append: {{tags.tag}} %}                            
+                                {% if tags.tag != "null" and tags.tag != "" %}
+                                    {% assign myArray = myArray | append: {{tags.tag}} %} 
+                                {% endif %}
+                                {% if tags.tag == "null" or tags.tag == "" %}
+                                    {% assign myArray = myArray | append: 'NT' %}
+                                {% endif %}
                             {% endif %}
                             {% unless forloop.first %}
                                 {% assign myArray = myArray | append: ', ' %}
-                                {% assign myArray = myArray | append: {{tags.tag}} %}
+                                {% if tags.tag != "null" and tags.tag != "" %}
+                                    {% assign myArray = myArray | append: {{tags.tag}} %}
+                                {% endif %}
+                                {% if tags.tag == "null" or tags.tag == "" %}
+                                    {% assign myArray = myArray | append: 'NT' %}
+                                {% endif %}
                             {% endunless %}
                         {% endfor %}
                         
 
                        <li id="paper_{{index}}" class="filtered-content" data-filters="[{{myArray}}]">
                            {% for tags in papers.paper-tags %}
-                           {% if tags.tag != "null" %}
+                           {% if tags.tag != "null" and tags.tag != "" %}
                            <span class="{{tags.tag | downcase}}">{{tags.tag | upcase}}</span> 
+                           {% endif %}
+                           {% if tags.tag == "null" or tags.tag == "" %}
+                           <span class="nt">NT</span>
                            {% endif %}
                            {% endfor %}
                            <span class="pub-date">{{papers.paper-publish-date}}</span>
