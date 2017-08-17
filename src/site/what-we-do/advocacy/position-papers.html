@@ -88,8 +88,25 @@ title: "Position Papers"
                     <h3 class="paper-section-title"><strong>{{paperSections}}</strong></h3>
                     <ul class="paper-section">
                     {% for papers in paperCollection.papers %}
-                       <li id="paper_{{index}}" class="filtered-content" data-filters="[{{papers.paper-tag}}]">{% if papers.paper-tag != "null" %}
-                           <span class="{{papers.paper-tag | downcase}}">{{papers.paper-tag | upcase}}</span> {% endif %}<span class="pub-date">{{papers.paper-publish-date}}</span>
+                        {% assign myArray = "" %}
+                        {% for tags in papers.paper-tags %}
+                            {% if forloop.first %}
+                                {% assign myArray = myArray | append: {{tags.tag}} %}                            
+                            {% endif %}
+                            {% unless forloop.first %}
+                                {% assign myArray = myArray | append: ', ' %}
+                                {% assign myArray = myArray | append: {{tags.tag}} %}
+                            {% endunless %}
+                        {% endfor %}
+                        
+
+                       <li id="paper_{{index}}" class="filtered-content" data-filters="[{{myArray}}]">
+                           {% for tags in papers.paper-tags %}
+                           {% if tags.tag != "null" %}
+                           <span class="{{tags.tag | downcase}}">{{tags.tag | upcase}}</span> 
+                           {% endif %}
+                           {% endfor %}
+                           <span class="pub-date">{{papers.paper-publish-date}}</span>
                            <a target="_blank" href="{{papers.paper-link}}">{{papers.paper-name}}</a></li>
                            {% assign index = index | plus:1 %} 
                     

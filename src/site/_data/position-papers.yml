@@ -14,23 +14,34 @@ position-papers:
     - paper-name: "CFMS Professionalism"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_agm_professionalism.pdf"
-      paper-tag: "PP"
+      paper-tags:
+      - tag: "PP"
+      - tag: "IP"
     - paper-name: "Medical Assistance in Dying"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_position statement on medical assistance in dying.pdf"
-      paper-tag: "PS"
+      paper-tags:
+      - tag: "PS"
+      - tag: "NT"
+      - tag: "IP"
   - section: "Recently Passed at SGM 2016 - Montreal, QC"
     papers:
     - paper-name: "Advocacy and Leadership in Canadian Medical Student Curricula"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_advocacy and leadership.pdf"
-      paper-tag: "PP"
+      paper-tags:
+      - tag: "PP"
     - paper-name: "Climate change and global health: Training future physicians to act and mitigate"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_climate change and gh training.pdf"
-      paper-tag: "null"
+      paper-tags:
+      - tag: "null"
+      - tag: "PP"
+      - tag: "PS"
+      - tag: "IP"
     - paper-name: "Supporting Clinician-Scientist Training in Canada"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_supporting clinician-scientist training in canada.pdf"
-      paper-tag: "null"
+      paper-tags:
+      - tag: "null"
     
