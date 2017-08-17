@@ -144,7 +144,7 @@ title: "Position Papers"
                            {% endif %}
                            {% endfor %}
                            <span class="pub-date">{{papers.paper-publish-date}}</span>
-                           <a target="_blank" href="{{papers.paper-link}}">{{papers.paper-name}}</a></li>
+                           <a target="_blank" href="{{papers.paper-link}}"><span class="paper-title">{{papers.paper-name}}</span></a></li>
                            {% assign index = index | plus:1 %} 
                     
                     {% endfor %}
