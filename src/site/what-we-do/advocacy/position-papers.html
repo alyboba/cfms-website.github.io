@@ -102,6 +102,10 @@ title: "Position Papers"
         
         {% endfor %}
         
+                <blockquote id="noResultMessage" style="display:none;">
+                    <h3><strong>Nothing was found. Try widening your search criteria </strong></h3>
+                </blockquote>
+        
         
         
         
@@ -110,35 +114,38 @@ title: "Position Papers"
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
-        
         var selectedSection = "All Sections";
         //Copyright and credit given to http://kronosapiens.github.io/blog/2014/03/31/a-dynamic-and-generally-efficient-front-end-filtering-algorithm.html
         //NO liscense on code, however credit due.
         $("#filters :checkbox").click(function () {
-            console.log(selectedSection);
-           // console.log($(":selected").text());
             $(".filtered-content").hide();
             var activeFilters = getActiveFilters();
             $(".filtered-content").each(function () {
-                //var $sectionSelected = 
                 var $paper = $(this);
                 var paperFilters = $paper.data("filters");
                 if (lessonQualified(activeFilters, paperFilters)) {
                     $paper.show();
                 }
             });
-
             
+            selectedSection = textBoxChange();
             //This code is used to hide a section if all elements are filtered out.
             $(".paper-section").each(function(){
-                $(this).parent().show();
-                //console.log(this);
-                //console.log($(this).children(":visible").length);
+                //$(this).parent().show();
                 if($(this).children(':visible').length === 0) {
                     $(this).parent().hide();
                 }
             });
-            selectedSection = textBoxChange(selectedSection);
+            if($(".paper-section:visible").length === 0){
+                $("#noResultMessage").show();
+            }
+            else{
+                $("#noResultMessage").hide();
+            }
+        });
+        
+        $("#select-box").change(function(){
+            selectedSection = textBoxChange();
         });
         
         function getActiveFilters() {
@@ -156,44 +163,20 @@ title: "Position Papers"
             }
             return true;
         }
-    
-    
-    $("#select-box").change(function(){
-        console.log(selectedSection);
-        selectedSection = textBoxChange(selectedSection);
-        console.log("in the change function");
-        console.log(selectedSection);
-    });
-    
-    function textBoxChange(selectedSection) {
-        if($(":selected").text() ==="All Sections"){
-            selectedSection = $(":selected").text();
-            $(".paper-section").each(function() {
+        
+    function textBoxChange() {
+        var selectedSection = $(":selected").text();
+        $(".paper-section").each(function() {
+            $(this).parent().hide();
+            if(selectedSection ==="All Sections"){
                 $(this).parent().show();
-            });
-        }
-        else{
-            $(".paper-section").each(function() {
-                $(this).parent().hide();
-                //console.log("hiding elements");
-            });
-            selectedSection = $(":selected").text();
-            console.log($(":selected").text());
-            console.log("in the textBoxChange");
-            console.log(selectedSection);
-            // console.log(value);
-            $(".paper-section-title").each(function() {
-                //console.log(value);
-                //console.log($(this).text());
-                if($(this).text() === selectedSection) {
-                    $(this).parent().show();
-                    //console.log("getting into the if?");
-                }
-            });
-        }
+            }
+            else if(selectedSection === $(this).prev().text()){
+                $(this).parent().show();
+            }
+        });
         return selectedSection;
     }
-
     });
     
 </script>
