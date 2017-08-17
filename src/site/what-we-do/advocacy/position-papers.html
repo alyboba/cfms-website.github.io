@@ -110,29 +110,37 @@ title: "Position Papers"
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
+        
+        var selectedSection = "All Sections";
         //Copyright and credit given to http://kronosapiens.github.io/blog/2014/03/31/a-dynamic-and-generally-efficient-front-end-filtering-algorithm.html
         //NO liscense on code, however credit due.
         $("#filters :checkbox").click(function () {
+            console.log(selectedSection);
+           // console.log($(":selected").text());
             $(".filtered-content").hide();
             var activeFilters = getActiveFilters();
             $(".filtered-content").each(function () {
-                var $lesson = $(this);
-                var lessonFilters = $lesson.data("filters");
-                if (lessonQualified(activeFilters, lessonFilters)) {
-                    $lesson.show();
+                //var $sectionSelected = 
+                var $paper = $(this);
+                var paperFilters = $paper.data("filters");
+                if (lessonQualified(activeFilters, paperFilters)) {
+                    $paper.show();
                 }
             });
+
+            
             //This code is used to hide a section if all elements are filtered out.
             $(".paper-section").each(function(){
                 $(this).parent().show();
                 //console.log(this);
-                console.log($(this).children(":visible").length);
+                //console.log($(this).children(":visible").length);
                 if($(this).children(':visible').length === 0) {
                     $(this).parent().hide();
                 }
             });
+            selectedSection = textBoxChange(selectedSection);
         });
-
+        
         function getActiveFilters() {
             var filterArray = [];
             $("#filters :checkbox:checked").each(function () {
@@ -140,7 +148,6 @@ title: "Position Papers"
             });
             return filterArray;
         }
-
         function lessonQualified(filters, lesson) {
             for (var i = 0; i < filters.length; i++) {
                 if ((lesson.indexOf(filters[i])) == -1) {
@@ -149,11 +156,18 @@ title: "Position Papers"
             }
             return true;
         }
-
-    });
+    
     
     $("#select-box").change(function(){
+        console.log(selectedSection);
+        selectedSection = textBoxChange(selectedSection);
+        console.log("in the change function");
+        console.log(selectedSection);
+    });
+    
+    function textBoxChange(selectedSection) {
         if($(":selected").text() ==="All Sections"){
+            selectedSection = $(":selected").text();
             $(".paper-section").each(function() {
                 $(this).parent().show();
             });
@@ -161,22 +175,27 @@ title: "Position Papers"
         else{
             $(".paper-section").each(function() {
                 $(this).parent().hide();
-                console.log("hiding elements");
+                //console.log("hiding elements");
             });
-            var value= $(":selected").text();
-            console.log(value);
+            selectedSection = $(":selected").text();
+            console.log($(":selected").text());
+            console.log("in the textBoxChange");
+            console.log(selectedSection);
+            // console.log(value);
             $(".paper-section-title").each(function() {
-                console.log(value);
-                console.log($(this).text());
-                if($(this).text() === value) {
+                //console.log(value);
+                //console.log($(this).text());
+                if($(this).text() === selectedSection) {
                     $(this).parent().show();
-                    console.log("getting into the if?");
+                    //console.log("getting into the if?");
                 }
             });
         }
+        return selectedSection;
+    }
+
     });
-
-
+    
 </script>
 
 
