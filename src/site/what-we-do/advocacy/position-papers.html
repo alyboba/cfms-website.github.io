@@ -30,8 +30,9 @@ title: "Position Papers"
     <script type="text/javascript">
         document.querySelector( "#position-papers" ).classList.toggle("sidebar-active");
     </script>
-    <div id="side-content" class="editable">
+    <div id="side-content">
         <h1 id="page-title">{{ page.title }}</h1>
+        <div class="editable">
         <div class="pic-wrapper">
             <img class="pic-right" src="/images/page-images/position-papers.png" />
         </div>
@@ -51,8 +52,13 @@ title: "Position Papers"
                 <li><span class="file-format">PDF</span><a href="/files/position-papers/cfms_position_paper_guidelines 2016.pdf">Position Paper Guidelines</a> (2016)</li>
             </ul>
         </blockquote>
+        </div>
         
         <!--Addd liquid logic here-->
+        {% comment %}
+            Here is where we build the search form. The checkboxes of tags to filter are automatically generated from the position-papers.yml file
+            They are under the filter-tags data
+        {% endcomment %}
         <form id="filters">
             {% for filterData in site.data.position-papers.position-papers.filter-tags %}
             <label>
@@ -81,18 +87,29 @@ title: "Position Papers"
             <!--</ul>-->
         <!--</blockquote>-->
         
-        {% assign index = 1 %}
+        
+        {% assign index = 1 %} {% comment %} This variable is used to set every single paper a unique id {% endcomment %}
+        
         {% for paperCollection in site.data.position-papers.position-papers.paper-collection %}
+        {% comment %}
+        This first loop grabs the whole paper-collection from the .yml file
+        {% endcomment %}
             {% for paperSections in paperCollection.section %}
+                {% comment %}
+                This for loop now populates the page with each section available in the paper-collection from the .yml file
+                {% endcomment %}
                 <blockquote>
                     <h3 class="paper-section-title"><strong>{{paperSections}}</strong></h3>
                     <ul class="paper-section">
                     {% for papers in paperCollection.papers %}
                         {% comment %}
+                        This loop now grabs all of the papers available to a specific section to populate the section with its papers
+                        {% endcomment %}
+                        
+                        {% comment %}
                             This logic here is used to Set the data-filters array for each specific paper, assigning the proper tags
                             From the .yml file. The tags must be organized ie: [A, B, C ,D]
                         {% endcomment %}
-                        
                         {% assign myArray = "" %}
                         {% for tags in papers.paper-tags %}
                             {% if forloop.first %}
@@ -114,7 +131,9 @@ title: "Position Papers"
                             {% endunless %}
                         {% endfor %}
                         
-
+                        {% comment %}
+                            Here is where we populate each section with the papers available to that section
+                        {% endcomment %}
                        <li id="paper_{{index}}" class="filtered-content" data-filters="[{{myArray}}]">
                            {% for tags in papers.paper-tags %}
                            {% if tags.tag != "null" and tags.tag != "" %}
@@ -131,12 +150,10 @@ title: "Position Papers"
                     {% endfor %}
                     </ul>
                 </blockquote>
-                
             {% endfor %}
-        
-        
         {% endfor %}
         
+                {% comment %} This peice of html is used with front-end logic to display a message if search yielded no results {% endcomment %}
                 <blockquote id="noResultMessage" style="display:none;">
                     <h3><strong>Nothing was found. Try widening your search criteria </strong></h3>
                 </blockquote>
