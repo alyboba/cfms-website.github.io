@@ -15,7 +15,7 @@ position-papers:
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_agm_professionalism.pdf"
       paper-tags:
-      - tag: "PP"
+      - tag: "pp"
       - tag: "IP"
     - paper-name: "Medical Assistance in Dying"
       paper-publish-date: "2016"
@@ -23,7 +23,7 @@ position-papers:
       paper-tags:
       - tag: "PS"
       - tag: "NT"
-      - tag: "IP"
+      - tag: "ip"
       - tag: "null"
   - section: "Recently Passed at SGM 2016 - Montreal, QC"
     papers:

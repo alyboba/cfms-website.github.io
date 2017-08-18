@@ -5,8 +5,9 @@ export default class TagSearchConroller {
 	
 	bindListeners(){
 		$(document).ready(function () {
+			$("#filters").css({"display" : "block"}); //Set the search form visible if the user has javascript enabled...
 			$("#noJavaScriptMessage").css({"display" : "none"}); //If user has javascript, hide this element. If they have no JS, User friendly message will display to them.
-			var searchBar = $('<input style ="display:none;"id="searchFilter" type="text" name="search" placeholder="Search paper name with filters">');
+			var searchBar = $('<legend>Search by Title:</legend><input style ="display:none;"id="searchFilter" type="text" name="search" placeholder="Search Paper Name with Filters">');
 			$("#filters").append(searchBar); //Code used to add element to page if user has javascript installed.
 			$("#searchFilter").css({"display" : "block"});
 			var selectedSection = "All Sections"; //Variable used to pass data between searchFilter, Checkbox Filter, and Selected option filter.
