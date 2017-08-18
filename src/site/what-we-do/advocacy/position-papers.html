@@ -52,6 +52,7 @@ title: "Position Papers"
                 <li><span class="file-format">PDF</span><a href="/files/position-papers/cfms_position_paper_guidelines 2016.pdf">Position Paper Guidelines</a> (2016)</li>
             </ul>
         </blockquote>
+            <h1 style="padding-top:30px;"><strong>Current Policy Documents and Position Statements</strong></h1> <hr />
         </div>
         
         <!--Addd liquid logic here-->
@@ -60,27 +61,33 @@ title: "Position Papers"
             They are under the filter-tags data
         {% endcomment %}
         <blockquote>
-            <h3><strong>Search Form For Position Papers</strong></h3>
+            <h3 class="editable"><strong>Search Form For Position Papers</strong></h3>
             <br>
+            
+            {% for paperInformation in site.data.position-papers.position-papers %}
+            {% if paperInformation.lang == page.lang %}
+            
+            
         <form id="filters" style="display: none;">
             <fieldset class="textAlignLeft">
-                <legend>Search By Tag:</legend>
-                    {% for filterData in site.data.position-papers.position-papers.filter-tags %}
+                <legend class="editable">Search By Tag:</legend>
+                    {% for filterData in paperInformation.filter-tags %}
                         <span class="filter-checkbox-image-wrapper {{filterData.tag | downcase}}">{{filterData.tag | upcase}}</span><input class="filter-checkbox"type="checkbox" id="{{filterData.tag | upcase}}">{{filterData.tag-name}}
                     <br>
                     {% endfor %}
             </fieldset>
             <br>
             <fieldset>
-                <legend>Search By Section:</legend>
+                <legend class="editable">Search By Section:</legend>
             <select id="select-box" name="paper-section">
-                <option>All Sections</option>
-                {% for paperSections in site.data.position-papers.position-papers.paper-collection %}
+                <option id="initialSectionSelection" class="editable">All Sections</option>
+                {% for paperSections in paperInformation.paper-collection %}
                 <option>{{paperSections.section}}</option>
                 {% endfor %}
             </select>
             </fieldset>
             <br>
+            <legend class="editable">Search by Title:</legend><input style ="display:none;"id="searchFilter" type="text" name="search" placeholder="Search Paper Name with Filters">
         </form>
         </blockquote>
         
@@ -91,7 +98,7 @@ title: "Position Papers"
         
         {% assign index = 1 %} {% comment %} This variable is used to set every single paper a unique id {% endcomment %}
         
-        {% for paperCollection in site.data.position-papers.position-papers.paper-collection %}
+        {% for paperCollection in paperInformation.paper-collection %}
         {% comment %}
         This first loop grabs the whole paper-collection from the .yml file
         {% endcomment %}
@@ -159,7 +166,8 @@ title: "Position Papers"
                     <h3><strong>Nothing was found. Try widening your search criteria </strong></h3>
                 </blockquote>
         
-                
+                {% endif %}
+        {% endfor %}
         
     </div>
 </div>

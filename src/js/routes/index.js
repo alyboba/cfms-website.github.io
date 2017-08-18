@@ -30,6 +30,7 @@ export default class Router extends Middleware {
         route('/fr/who-we-are/history.html', Modal);
         route('/fr/who-we-are/organizational-timeline.html', Modal, Pagination);
         route('/what-we-do/advocacy/position-papers.html', TagSearch);
+        route('/fr/what-we-do/advocacy/position-papers.html', TagSearch);
     }
 
     refresh() {
