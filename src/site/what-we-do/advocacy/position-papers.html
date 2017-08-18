@@ -115,7 +115,7 @@ title: "Position Papers"
                         {% for tags in papers.paper-tags %}
                             {% if forloop.first %}
                                 {% if tags.tag != "null" and tags.tag != "" %}
-                                    {% assign myArray = myArray | append: {{tags.tag}} %} 
+                                    {% assign myArray = myArray | append: {{tags.tag | upcase}} %} 
                                 {% endif %}
                                 {% if tags.tag == "null" or tags.tag == "" %}
                                     {% assign myArray = myArray | append: 'NT' %}
@@ -124,7 +124,7 @@ title: "Position Papers"
                             {% unless forloop.first %}
                                 {% assign myArray = myArray | append: ', ' %}
                                 {% if tags.tag != "null" and tags.tag != "" %}
-                                    {% assign myArray = myArray | append: {{tags.tag}} %}
+                                    {% assign myArray = myArray | append: {{tags.tag | upcase}} %}
                                 {% endif %}
                                 {% if tags.tag == "null" or tags.tag == "" %}
                                     {% assign myArray = myArray | append: 'NT' %}
