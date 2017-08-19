@@ -117925,7 +117925,7 @@ var App = function App() {
 ;
 new App();
 
-},{"./routes":511}],487:[function(require,module,exports){
+},{"./routes":512}],487:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -118006,7 +118006,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{"../utils":523}],489:[function(require,module,exports){
+},{"../utils":525}],489:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118159,7 +118159,7 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
 exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
-},{"../repositories/firebase/utils":510}],490:[function(require,module,exports){
+},{"../repositories/firebase/utils":511}],490:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118312,7 +118312,7 @@ var _class = function (_FirebaseConnection) {
 
 exports.default = _class;
 
-},{"../repositories/firebase/utils":510}],492:[function(require,module,exports){
+},{"../repositories/firebase/utils":511}],492:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118674,7 +118674,7 @@ var PaymentsController = function () {
 
 exports.default = PaymentsController;
 
-},{"../utils":523,"request-promise":388}],496:[function(require,module,exports){
+},{"../utils":525,"request-promise":388}],496:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118745,7 +118745,7 @@ var PurchasesController = function () {
 
 exports.default = PurchasesController;
 
-},{"../utils":523,"request-promise":388}],497:[function(require,module,exports){
+},{"../utils":525,"request-promise":388}],497:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118810,7 +118810,7 @@ var RegistrationController = function () {
 
 exports.default = RegistrationController;
 
-},{"../utils":523}],498:[function(require,module,exports){
+},{"../utils":525}],498:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -118910,6 +118910,158 @@ var ModalController = function () {
 exports.default = ModalController;
 
 },{}],499:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TagSearchConroller = function () {
+	function TagSearchConroller() {
+		_classCallCheck(this, TagSearchConroller);
+
+		this.bindListeners();
+	}
+
+	_createClass(TagSearchConroller, [{
+		key: "bindListeners",
+		value: function bindListeners() {
+			$(document).ready(function () {
+				$("#filters").css({ "display": "block" }); //Set the search form visible if the user has javascript enabled...
+				$("#noJavaScriptMessage").css({ "display": "none" }); //If user has javascript, hide this element. If they have no JS, User friendly message will display to them.
+				//var searchBar = $('<legend>Search by Title:</legend><input style ="display:none;"id="searchFilter" type="text" name="search" placeholder="Search Paper Name with Filters">');
+				//$("#filters").append(searchBar); //Code used to add element to page if user has javascript installed.
+				$("#searchFilter").css({ "display": "block" });
+				var initialSection = $('#initialSectionSelection').text();
+				var selectedSection = initialSection; //Variable used to pass data between searchFilter, Checkbox Filter, and Selected option filter.
+				var currentSearchField = ""; //Variable used to pass data between the checkbox filters and typed in filters. Used to integrate the two together
+
+				//Copyright and credit given to http://kronosapiens.github.io/blog/2014/03/31/a-dynamic-and-generally-efficient-front-end-filtering-algorithm.html.
+				$("#filters :checkbox").click(function () {
+					applyTagFilter();
+					applySearchFieldFilter(currentSearchField); //passes substring still in input textbox to function
+					selectedSection = textBoxChange();
+					//This code is used to hide a section if all elements are filtered out.
+					checkSectionAfterFilter();
+				});
+
+				$("#searchFilter").on("keyup", function () {
+					currentSearchField = $(this).val().toLowerCase(); //Grab the new substring entered
+					applySearchFieldFilter(currentSearchField); //pass the input to the function
+					selectedSection = textBoxChange();
+					checkSectionAfterFilter();
+				});
+
+				$("#select-box").change(function () {
+					selectedSection = textBoxChange();
+					checkSectionAfterFilter();
+				});
+
+				/*
+    function that contains logic performed when user types into the search bar.
+     */
+				function applySearchFieldFilter(searchBarFilter) {
+					//iterate through all paper titles, compare the search entry to the passed in parameter
+					$(".paper-title").each(function () {
+						var nameSearched = $(this).text().toLowerCase();
+						var $filteredElement = $(this).parent().parent();
+						var activeFilters = getActiveFilters();
+						var paperFilters = $filteredElement.data("filters");
+						if (nameSearched.indexOf(searchBarFilter) != -1 && lessonQualified(activeFilters, paperFilters)) {
+							//Show the item and add a class of searchSelected on its parents parent, ie the list item
+							$filteredElement.show();
+						} else {
+							//hide the item and remove the class if it exists of the list item.
+							$filteredElement.hide();
+						}
+					});
+				}
+
+				/*
+    Function to hold logic for applying filtering to papers using Tagging system.
+     */
+				function applyTagFilter() {
+					$(".filtered-content").hide();
+					var activeFilters = getActiveFilters();
+					$(".filtered-content").each(function () {
+						var $paper = $(this);
+						var paperFilters = $paper.data("filters");
+						if (lessonQualified(activeFilters, paperFilters)) {
+							$paper.show();
+						}
+					});
+				}
+
+				/*
+    Function used to grab active filters. Utility function of 
+    //Copyright and credit given to http://kronosapiens.github.io/blog/2014/03/31/a-dynamic-and-generally-efficient-front-end-filtering-algorithm.html.
+     */
+				function getActiveFilters() {
+					var filterArray = [];
+					$("#filters :checkbox:checked").each(function () {
+						filterArray.push($(this).attr("id"));
+					});
+					return filterArray;
+				}
+				/*
+    similar to above, Utility function of
+     //Copyright and credit given to http://kronosapiens.github.io/blog/2014/03/31/a-dynamic-and-generally-efficient-front-end-filtering-algorithm.html.
+     */
+				function lessonQualified(filters, lesson) {
+					for (var i = 0; i < filters.length; i++) {
+						if (lesson.indexOf(filters[i]) == -1) {
+							return false;
+						}
+					}
+					return true;
+				}
+
+				/*
+    Function used to detect when select option dropdown box has been modified by end-user. Shows appropriate section of papers to end-user
+     */
+				function textBoxChange() {
+					var selectedSection = $(":selected").text();
+					$(".paper-section").each(function () {
+						$(this).parent().hide();
+						if (selectedSection === initialSection) {
+							$(this).parent().show();
+						} else if (selectedSection === $(this).prev().text()) {
+							$(this).parent().show();
+						}
+					});
+					return selectedSection;
+				}
+
+				/*
+    A function that is called to check whether to show or hide a UX message "Nothing was found. Try widening your search criteria"
+     */
+				function checkSectionAfterFilter() {
+					$(".paper-section").each(function () {
+						//$(this).parent().show();
+						if ($(this).children(':visible').length === 0) {
+							$(this).parent().hide();
+						}
+					});
+					if ($(".paper-section:visible").length === 0) {
+						$("#noResultMessage").show();
+					} else {
+						$("#noResultMessage").hide();
+					}
+				}
+			});
+		}
+	}]);
+
+	return TagSearchConroller;
+}();
+
+exports.default = TagSearchConroller;
+
+},{}],500:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118932,7 +119084,7 @@ var _authentication4 = _interopRequireDefault(_authentication3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/authentication":488,"../services/authentication":519}],500:[function(require,module,exports){
+},{"../controllers/authentication":488,"../services/authentication":521}],501:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118965,7 +119117,7 @@ var Middleware = function Middleware(page) {
 
 exports.default = Middleware;
 
-},{"./authentication":499,"./members-content":501,"./navigation":502}],501:[function(require,module,exports){
+},{"./authentication":500,"./members-content":502,"./navigation":503}],502:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118988,7 +119140,7 @@ var _authentication2 = _interopRequireDefault(_authentication);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/members-content":491,"../services/authentication":519}],502:[function(require,module,exports){
+},{"../controllers/members-content":491,"../services/authentication":521}],503:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119007,7 +119159,7 @@ var _navigation2 = _interopRequireDefault(_navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/navigation":493}],503:[function(require,module,exports){
+},{"../controllers/navigation":493}],504:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119063,7 +119215,7 @@ var MeetingRegistrationModel = function (_Model) {
 
 exports.default = MeetingRegistrationModel;
 
-},{"./model":504,"./user":505}],504:[function(require,module,exports){
+},{"./model":505,"./user":506}],505:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119106,7 +119258,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"lodash":317}],505:[function(require,module,exports){
+},{"lodash":317}],506:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119175,7 +119327,7 @@ var UserModel = function (_Model) {
 
 exports.default = UserModel;
 
-},{"./model":504}],506:[function(require,module,exports){
+},{"./model":505}],507:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119230,7 +119382,7 @@ var ApiRepository = function () {
 
 exports.default = ApiRepository;
 
-},{"request-promise":388}],507:[function(require,module,exports){
+},{"request-promise":388}],508:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119277,7 +119429,7 @@ var UserRepository = function (_ApiRepository) {
 
 exports.default = UserRepository;
 
-},{"./repository":506}],508:[function(require,module,exports){
+},{"./repository":507}],509:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119334,7 +119486,7 @@ var MeetingRegistrationRepository = function (_FirebaseRepository) {
 
 exports.default = MeetingRegistrationRepository;
 
-},{"./repository":509}],509:[function(require,module,exports){
+},{"./repository":510}],510:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119376,7 +119528,7 @@ var Repository = function () {
 
 exports.default = Repository;
 
-},{"./utils":510}],510:[function(require,module,exports){
+},{"./utils":511}],511:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119441,7 +119593,7 @@ var FirebaseRef = function (_FirebaseConnection) {
 exports.FirebaseRef = FirebaseRef;
 exports.FirebaseConnection = FirebaseConnection;
 
-},{"../../config":487,"firebase":199}],511:[function(require,module,exports){
+},{"../../config":487,"firebase":199}],512:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119484,6 +119636,10 @@ var _page = require('page');
 
 var _page2 = _interopRequireDefault(_page);
 
+var _tagSearch = require('./tag-search');
+
+var _tagSearch2 = _interopRequireDefault(_tagSearch);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -119519,6 +119675,8 @@ var Router = function (_Middleware) {
             (0, _page2.default)('/who-we-are/organizational-timeline.html', _modal2.default, _pagination2.default);
             (0, _page2.default)('/fr/who-we-are/history.html', _modal2.default);
             (0, _page2.default)('/fr/who-we-are/organizational-timeline.html', _modal2.default, _pagination2.default);
+            (0, _page2.default)('/what-we-do/advocacy/position-papers.html', _tagSearch2.default);
+            (0, _page2.default)('/fr/what-we-do/advocacy/position-papers.html', _tagSearch2.default);
         }
     }, {
         key: 'refresh',
@@ -119532,7 +119690,7 @@ var Router = function (_Middleware) {
 
 exports.default = Router;
 
-},{"../middlewares":500,"./md-leadership-awards":512,"./meeting-registrations":513,"./members":514,"./modal":515,"./pagination":516,"./purchases":517,"./registration":518,"page":328}],512:[function(require,module,exports){
+},{"../middlewares":501,"./md-leadership-awards":513,"./meeting-registrations":514,"./members":515,"./modal":516,"./pagination":517,"./purchases":518,"./registration":519,"./tag-search":520,"page":328}],513:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119563,7 +119721,7 @@ function LeadershipAwardAdmin(ctx, next) {
     next();
 }
 
-},{"../controllers/md-leadership-awards":489,"../services/authentication":519}],513:[function(require,module,exports){
+},{"../controllers/md-leadership-awards":489,"../services/authentication":521}],514:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119611,7 +119769,7 @@ function MeetingRegistration(ctx, next) {
     next();
 }
 
-},{"../controllers/meeting-registrations":490,"../controllers/payments":495,"../models/meeting-registration":503,"../models/user":505,"../repositories/api/user":507,"../repositories/firebase/meeting-registration":508,"../services/authentication":519,"../services/payments":522}],514:[function(require,module,exports){
+},{"../controllers/meeting-registrations":490,"../controllers/payments":495,"../models/meeting-registration":504,"../models/user":506,"../repositories/api/user":508,"../repositories/firebase/meeting-registration":509,"../services/authentication":521,"../services/payments":524}],515:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119636,7 +119794,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/members":492,"../services/authentication":519}],515:[function(require,module,exports){
+},{"../controllers/members":492,"../services/authentication":521}],516:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119659,7 +119817,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/showModal":498}],516:[function(require,module,exports){
+},{"../controllers/showModal":498}],517:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119682,7 +119840,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/pagination":494}],517:[function(require,module,exports){
+},{"../controllers/pagination":494}],518:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119709,7 +119867,7 @@ function Purchases(ctx, next) {
     next();
 }
 
-},{"../controllers/purchases":496,"../services/authentication":519,"../services/payments":522}],518:[function(require,module,exports){
+},{"../controllers/purchases":496,"../services/authentication":521,"../services/payments":524}],519:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119740,7 +119898,28 @@ function Registration(ctx, next) {
   next();
 }
 
-},{"../controllers/registration":497,"../models/user":505,"../services/authentication":519}],519:[function(require,module,exports){
+},{"../controllers/registration":497,"../models/user":506,"../services/authentication":521}],520:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = TagSearch;
+
+var _tagSearch = require('../controllers/tag-search');
+
+var _tagSearch2 = _interopRequireDefault(_tagSearch);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//Shows Member Account Information on the Members Page
+function TagSearch(ctx, next) {
+	new _tagSearch2.default();
+
+	next();
+}
+
+},{"../controllers/tag-search":499}],521:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119874,7 +120053,7 @@ var AuthenticationService = function () {
 
 exports.default = AuthenticationService;
 
-},{"../../models/user":505,"../../repositories/api/user":507,"../../utils":523,"./providers/auth0":520,"./providers/firebase":521,"jsonwebtoken":289,"lodash":317}],520:[function(require,module,exports){
+},{"../../models/user":506,"../../repositories/api/user":508,"../../utils":525,"./providers/auth0":522,"./providers/firebase":523,"jsonwebtoken":289,"lodash":317}],522:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119942,7 +120121,7 @@ var Auth0Provider = function () {
 
 exports.default = Auth0Provider;
 
-},{"../../../config":487,"auth0-js":87}],521:[function(require,module,exports){
+},{"../../../config":487,"auth0-js":87}],523:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119999,7 +120178,7 @@ var FirebaseProvider = function (_FirebaseConnection) {
 
 exports.default = FirebaseProvider;
 
-},{"../../../repositories/firebase/utils":510}],522:[function(require,module,exports){
+},{"../../../repositories/firebase/utils":511}],524:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -120042,7 +120221,7 @@ var PaymentsService = function (_FirebaseConnection) {
 
 exports.default = PaymentsService;
 
-},{"../repositories/firebase/utils":510}],523:[function(require,module,exports){
+},{"../repositories/firebase/utils":511}],525:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
