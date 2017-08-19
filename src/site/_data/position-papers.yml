@@ -1,0 +1,503 @@
+position-papers:
+- lang: "en"
+  filter-tags:
+  - tag: "PP"
+    tag-name: "Policy Papers"
+  - tag: "PS"
+    tag-name: "Position Statements"
+  - tag: "NT"
+    tag-name: "No Tag"
+  - tag: "IP"
+    tag-name: "In Progress"
+  paper-collection:
+  - section: "Recently Passed at AGM 2016 - Edmonton, AB"
+    papers:
+    - paper-name: "CFMS Professionalism"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_agm_professionalism.pdf"
+      paper-tags:
+      - tag: "pp"
+    - paper-name: "Human Trafficking"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_compressed_cfms_position-paper_sept2016_humantrafficking_gubermanherrington.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Medical Assistance in Dying"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_position statement on medical assistance in dying.pdf"
+      paper-tags:
+      - tag: "PS"
+  - section: "Recently Passed at SGM 2016 - Montreal, QC"
+    papers:
+    - paper-name: "Advocacy and Leadership in Canadian Medical Student Curricula"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_advocacy and leadership.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Climate change and global health: Training future physicians to act and mitigate"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_climate change and gh training.pdf"
+      paper-tags:
+      - tag: "NT"
+    - paper-name: "Less is More: Integration of Resource Stewardship in Medical Education"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_integration of resource stewardship in medical education.pdf"
+      paper-tags:
+      - tag: "NT"
+    - paper-name: "Medical Student Performance Records in Canadian Medical Schools"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_mspr.pdf"
+      paper-tags:
+      - tag: "NT"
+    - paper-name: "Organ and Tissue Donation in Canadian Undergraduate Medical Education"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_organ and tissue donation in canadian undergraduate medical education.pdf"
+      paper-tags:
+      - tag: "NT"
+    - paper-name: "Position Area Summary Statement: Access to Medical Education"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_pass_access to medical education.pdf"
+      paper-tags:
+      - tag: "NT"
+    - paper-name: "Rural and Remote Maternity Care"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_rural and remote maternity care.pdf"
+      paper-tags:
+      - tag: "NT"    
+    - paper-name: "Supporting Clinician-Scientist Training in Canada"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_supporting clinician-scientist training in canada.pdf"
+      paper-tags:
+      - tag: "null"
+  - section: "Medical Student Affairs"
+    papers:
+    - paper-name: "Medical Student Health and Wellbeing"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/2014_Wellness Position Paper_Aug19.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Resources to Support the Learning Environment for Clinical Clerks"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Clinical%20Clerk%20Learning%20Environment%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Mental Health for Medical Students"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Mental%20Health%20for%20Medical%20Students%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Accessibility to Healthcare"
+    papers:
+    - paper-name: "Pharmacare: Promoting Equitable Access to Medications"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Pharmacare%20Policy%20Document.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Family Medicine and Primary Care: Committing to the Future"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015 Family Medicine and Primary Care.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Preserving Medicare and Optimizing the Canadian Health care System"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015 Preserving Medicare and Optimizing the Canadian Healthcare System.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "National Pharmaceutical Drug Shortages"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/National%20Pharmaceutical%20Drug%20Shortages%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Access to Medical Education"
+    papers:
+    - paper-name: "Position Area Summary Statement: Access to Medical Education"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_pass_access to medical education.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Public Health"
+    papers:
+    - paper-name: "Criminalization of HIV"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Criminalization%20of%20HIV%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Professional Ethics"
+    papers:
+    - paper-name: "CFMS Guide to Social Media Professionalism"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/2013 CFMS Guide to Social Media Professionalism.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Industry Funding in Medical Schools"
+      paper-publish-date: "2011"
+      paper-link: "/files/position-papers/cfms_industry_funding_working_group_paper.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Health Equity"
+    papers:
+    - paper-name: "Blood Donation Deferrals"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Blood%20Donation%20Deferral.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Health Care for Transgender Patients: Medical Education and Patient Access"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Transgender%20Health%20Care.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Improving Healthcare for LGBTQ Populations"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015 Improving Healthcare for LGBTQ Populations.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Indigenous Peoples and Health in Medical Education"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015_indigenous_people_in_canadian_med_ed.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Criminalization of HIV"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Criminalization%20of%20HIV%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Protecting the Next Generation from Tobacco Products and Nicotine Addiction"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Nicotine%20and%20Tobacco%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Access to Adequate and Affordable Housing"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/CFMS%20Position%20Statement%20on%20Access%20to%20Adequate%20and%20Affordable%20Housing%20Final.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Social Determinants of Health"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/SDH%20Policy%20Statement%20.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Induced Abortion"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/2013%20CFMS%20Induced%20Abortion.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Comprehensive Sexual Education"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/2013%20CFMS%20Comprehensive%20Sexual%20Education.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Refugees and Asylum Seekers"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/2013%20CFMS%20Refugees%20and%20Asylum%20Seekers.pdf"
+      paper-tags:
+      - tag: "PS"
+  - section: "Competencies for UGME"
+    papers:
+    - paper-name: "Antimicrobial Stewardship"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Antimicrobial%20Resistance%20and%20Stewardship.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Interprofessional Education in Canadian Medical Schools"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Interprofessional%20Education.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Health Care for Transgender Patients: Medical Education and Patient Access"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Transgender%20Health%20Care.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Induced Abortion"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/2013%20CFMS%20Induced%20Abortion.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Disaster Management Plans in Canadian Medical Schools"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Disaster%20Management.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Global Health Core Competencies in UGME"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015 Global Health Core Competencies.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Health & Human Resources"
+    papers:
+    - paper-name: "Physician Recruitment and Retention Strategies"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/CFMS%20Position%20Paper%20Physician%20Recruitment%20and%20Retention%20Strategies.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Post-Graduate Match Location Bias"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/CFMS%20position%20paper%20on%20Post-Graduate%20Match%20Location%20Bias.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Interprofessional Collaborative Care"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Interprofessional%20Care.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Distributed Medical Education"
+      paper-publish-date: "2011"
+      paper-link: "/files/position-papers/cfms_dme_paper_-final_for_distribution2.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "IMGs, IMGCs & CMGs: Canadian Healthcare Training and Self-Sufficiency"
+      paper-publish-date: "2012"
+      paper-link: "/files/position-papers/CFMS%20IMG%20and%20IMGC%20paper_final.pdf"
+      paper-tags:
+      - tag: "PP"
+- lang: "fr"
+  filter-tags:
+  - tag: "PP"
+    tag-name: "Papiers de politique"
+  - tag: "PS"
+    tag-name: "Énoncé de position"
+  - tag: "NT"
+    tag-name: "Aucun tag"
+  - tag: "IP"
+    tag-name: "En cours"
+  paper-collection:
+  - section: "Adopté à l’AG 2016 - Edmonton, AB"
+    papers:
+    - paper-name: "CFMS Professionalism"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_agm_professionalism.pdf"
+      paper-tags:
+      - tag: "pp"
+    - paper-name: "Human Trafficking"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_compressed_cfms_position-paper_sept2016_humantrafficking_gubermanherrington.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Medical Assistance in Dying"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_position statement on medical assistance in dying.pdf"
+      paper-tags:
+      - tag: "PS"
+  - section: "Adopté à la rencontre générale 2016 - Montréal, QC"
+    papers:
+    - paper-name: "Advocacy and Leadership in Canadian Medical Student Curricula"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_advocacy and leadership.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Climate change and global health: Training future physicians to act and mitigate"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_climate change and gh training.pdf"
+      paper-tags:
+      - tag: "NT"
+    - paper-name: "Less is More: Integration of Resource Stewardship in Medical Education"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_integration of resource stewardship in medical education.pdf"
+      paper-tags:
+      - tag: "NT"
+    - paper-name: "Medical Student Performance Records in Canadian Medical Schools"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_mspr.pdf"
+      paper-tags:
+      - tag: "NT"
+    - paper-name: "Organ and Tissue Donation in Canadian Undergraduate Medical Education"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_organ and tissue donation in canadian undergraduate medical education.pdf"
+      paper-tags:
+      - tag: "NT"
+    - paper-name: "Position Area Summary Statement: Access to Medical Education"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_pass_access to medical education.pdf"
+      paper-tags:
+      - tag: "NT"
+    - paper-name: "Rural and Remote Maternity Care"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_rural and remote maternity care.pdf"
+      paper-tags:
+      - tag: "NT"    
+    - paper-name: "Supporting Clinician-Scientist Training in Canada"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_supporting clinician-scientist training in canada.pdf"
+      paper-tags:
+      - tag: "null"
+  - section: "Medical Student Affairs"
+    papers:
+    - paper-name: "Medical Student Health and Wellbeing"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/2014_Wellness Position Paper_Aug19.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Resources to Support the Learning Environment for Clinical Clerks"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Clinical%20Clerk%20Learning%20Environment%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Mental Health for Medical Students"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Mental%20Health%20for%20Medical%20Students%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Accessibility to Healthcare"
+    papers:
+    - paper-name: "Pharmacare: Promoting Equitable Access to Medications"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Pharmacare%20Policy%20Document.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Family Medicine and Primary Care: Committing to the Future"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015 Family Medicine and Primary Care.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Preserving Medicare and Optimizing the Canadian Health care System"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015 Preserving Medicare and Optimizing the Canadian Healthcare System.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "National Pharmaceutical Drug Shortages"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/National%20Pharmaceutical%20Drug%20Shortages%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Access to Medical Education"
+    papers:
+    - paper-name: "Position Area Summary Statement: Access to Medical Education"
+      paper-publish-date: "2016"
+      paper-link: "/files/position-papers/2016_pass_access to medical education.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Public Health"
+    papers:
+    - paper-name: "Criminalization of HIV"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Criminalization%20of%20HIV%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Professional Ethics"
+    papers:
+    - paper-name: "CFMS Guide to Social Media Professionalism"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/2013 CFMS Guide to Social Media Professionalism.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Industry Funding in Medical Schools"
+      paper-publish-date: "2011"
+      paper-link: "/files/position-papers/cfms_industry_funding_working_group_paper.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Health Equity"
+    papers:
+    - paper-name: "Blood Donation Deferrals"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Blood%20Donation%20Deferral.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Health Care for Transgender Patients: Medical Education and Patient Access"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Transgender%20Health%20Care.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Improving Healthcare for LGBTQ Populations"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015 Improving Healthcare for LGBTQ Populations.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Indigenous Peoples and Health in Medical Education"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015_indigenous_people_in_canadian_med_ed.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Criminalization of HIV"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Criminalization%20of%20HIV%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Protecting the Next Generation from Tobacco Products and Nicotine Addiction"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Nicotine%20and%20Tobacco%20Sept%202014.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Access to Adequate and Affordable Housing"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/CFMS%20Position%20Statement%20on%20Access%20to%20Adequate%20and%20Affordable%20Housing%20Final.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Social Determinants of Health"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/SDH%20Policy%20Statement%20.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Induced Abortion"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/2013%20CFMS%20Induced%20Abortion.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Comprehensive Sexual Education"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/2013%20CFMS%20Comprehensive%20Sexual%20Education.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Refugees and Asylum Seekers"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/2013%20CFMS%20Refugees%20and%20Asylum%20Seekers.pdf"
+      paper-tags:
+      - tag: "PS"
+  - section: "Competencies for UGME"
+    papers:
+    - paper-name: "Antimicrobial Stewardship"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Antimicrobial%20Resistance%20and%20Stewardship.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Interprofessional Education in Canadian Medical Schools"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Interprofessional%20Education.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Health Care for Transgender Patients: Medical Education and Patient Access"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Transgender%20Health%20Care.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Induced Abortion"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/2013%20CFMS%20Induced%20Abortion.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Disaster Management Plans in Canadian Medical Schools"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015%20CFMS%20Disaster%20Management.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Global Health Core Competencies in UGME"
+      paper-publish-date: "2015"
+      paper-link: "/files/position-papers/2015 Global Health Core Competencies.pdf"
+      paper-tags:
+      - tag: "PP"
+  - section: "Health & Human Resources"
+    papers:
+    - paper-name: "Physician Recruitment and Retention Strategies"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/CFMS%20Position%20Paper%20Physician%20Recruitment%20and%20Retention%20Strategies.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Post-Graduate Match Location Bias"
+      paper-publish-date: "2013"
+      paper-link: "/files/position-papers/CFMS%20position%20paper%20on%20Post-Graduate%20Match%20Location%20Bias.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Interprofessional Collaborative Care"
+      paper-publish-date: "2014"
+      paper-link: "/files/position-papers/Interprofessional%20Care.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Distributed Medical Education"
+      paper-publish-date: "2011"
+      paper-link: "/files/position-papers/cfms_dme_paper_-final_for_distribution2.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "IMGs, IMGCs & CMGs: Canadian Healthcare Training and Self-Sufficiency"
+      paper-publish-date: "2012"
+      paper-link: "/files/position-papers/CFMS%20IMG%20and%20IMGC%20paper_final.pdf"
+      paper-tags:
+      - tag: "PP"
