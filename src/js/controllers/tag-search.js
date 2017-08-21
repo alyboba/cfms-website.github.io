@@ -5,6 +5,7 @@ export default class TagSearchConroller {
 	
 	bindListeners(){
 		$(document).ready(function () {
+			console.log("Here i am!");
 			$("#filters").css({"display" : "block"}); //Set the search form visible if the user has javascript enabled...
 			$("#noJavaScriptMessage").css({"display" : "none"}); //If user has javascript, hide this element. If they have no JS, User friendly message will display to them.
 			//var searchBar = $('<legend>Search by Title:</legend><input style ="display:none;"id="searchFilter" type="text" name="search" placeholder="Search Paper Name with Filters">');

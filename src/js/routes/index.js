@@ -8,6 +8,7 @@ import Modal from './modal';
 import Pagination from './pagination';
 import route from 'page';
 import TagSearch from './tag-search';
+import MeetingMinutes from './meeting-minutes';
 
 
 export default class Router extends Middleware {
@@ -31,6 +32,7 @@ export default class Router extends Middleware {
         route('/fr/who-we-are/organizational-timeline.html', Modal, Pagination);
         route('/what-we-do/advocacy/position-papers.html', TagSearch);
         route('/fr/what-we-do/advocacy/position-papers.html', TagSearch);
+        route('/members/meeting-minutes.html', MeetingMinutes);
     }
 
     refresh() {
