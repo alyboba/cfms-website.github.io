@@ -24,4 +24,7 @@ export default class FirebaseProvider extends FirebaseConnection {
     logout() {
         this.firebase.auth().signOut();
     }
+    meetingMinutes(){
+        return this.firebase.storage().ref('minutes/');
+    }
 }
