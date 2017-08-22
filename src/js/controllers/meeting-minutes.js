@@ -3,9 +3,10 @@ import Utils from '../utils';
 import ModalController from '../controllers/showModal';
 
 export default class MeetingMinutesController extends FirebaseConnection{
-	constructor(authenticationService) {
+	constructor(authenticationService, ModalController) {
 		super();
 		this.utils = new Utils();
+		this.ModalController = ModalController;
 		this.auth = authenticationService;
 		this.process();
 	}
@@ -23,7 +24,7 @@ export default class MeetingMinutesController extends FirebaseConnection{
 				refPath = refPath+'fr';
 			}
 			this.firebase.database().ref(refPath).once('value').then((snapshot) => {
-				snapshot.forEach(function (childSnapshot){
+				snapshot.forEach((childSnapshot) => {
 					elem += '<blockquote>'; 
 					elem += '<h3 class="bold-red">'+childSnapshot.key+'</h3>';
 					childSnapshot.forEach(function(subChildSnapshot){
@@ -60,9 +61,8 @@ export default class MeetingMinutesController extends FirebaseConnection{
 				
 				
 				document.getElementById('meetingMinutes').innerHTML = elem;
-				let test = new ModalController();
-				test.bindListeners();
-				//console.log(snapshot.val());
+				console.log(this.ModalController);
+				this.modalController = new this.ModalController();
 			});
 			
 

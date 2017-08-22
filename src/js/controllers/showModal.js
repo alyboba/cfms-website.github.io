@@ -9,7 +9,6 @@ export default class ModalController {
 		//}
 		this.currentModal;
 		this.bindListeners();
-		this.instance = this;
 	}
 	static setCurrentModal(currentModal){
 		this.currentModal = currentModal;
@@ -26,7 +25,6 @@ export default class ModalController {
 	
 	//Starting method of class, Other methods below are for events.
 	bindListeners() {
-		window.onload = () => {
 			console.log("Are we accessing the modal Controller??");
 			let buttons = document.getElementsByClassName('clickMe');
 			console.log(buttons);
@@ -48,7 +46,6 @@ export default class ModalController {
 					ModalController.closeTheModal(ModalController.getCurrentModal());
 				}
 			}
-		}	
 	} //end bind listeners method
 	
 	clickTheModal() {
@@ -65,9 +62,6 @@ export default class ModalController {
 		ModalController.setCurrentModal(this.parentElement.parentElement.parentElement);
 		ModalController.closeTheModal(ModalController.getCurrentModal());
 	} //end close Modal
-	get recallModal(){
-		return this.bindListeners();
-	}
 	
 
 }
