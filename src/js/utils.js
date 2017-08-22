@@ -46,5 +46,13 @@ export default class Utils {
             }
         });
     }
+    isPageEnglish(){
+        if(window.location.href.indexOf('/fr/') == -1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     
 }

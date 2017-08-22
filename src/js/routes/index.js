@@ -33,6 +33,7 @@ export default class Router extends Middleware {
         route('/what-we-do/advocacy/position-papers.html', TagSearch);
         route('/fr/what-we-do/advocacy/position-papers.html', TagSearch);
         route('/members/meeting-minutes.html', MeetingMinutes);
+        route('/fr/members/meeting-minutes.html', MeetingMinutes);
     }
 
     refresh() {
