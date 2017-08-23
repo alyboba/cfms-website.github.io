@@ -14,7 +14,7 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		if(this.auth.user){
 			var firebase = this.firebase;
 			console.log("Is this user an admin?  " + this.auth.user.isAdmin);
-			var elem, modalElem;
+			var elem, modalElem, temp;
 			console.log("We are on page with a user signed in!");
 			var subRefPath = '';
 			var subSubRefPath = '';
@@ -60,7 +60,6 @@ export default class MeetingMinutesController extends FirebaseConnection{
 							modalElem += '<div><button class="clickMe">';
 							modalElem += 'Update</button>';
 							modalElem += '<button value="'+subSubRefPath+'" class="deleteEntry">Delete</button></div>';
-							
 							elem += modalElem;
 						} //end admin if here
 						elem += '<br><br>';
@@ -70,7 +69,7 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					//}
 					//elem += '</blockquote>';
 				});
-				var temp = document.createElement("blockquote");
+				temp = document.createElement("blockquote");
 				temp.innerHTML = elem;
 				document.getElementById('meetingMinutes').appendChild(temp);
 				//console.log(this.ModalController);
@@ -89,7 +88,22 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					}
 				}
 			});
-			
+			if(true) {
+				var addEntry = '';
+				addEntry += '<label>Year:</label>';
+				addEntry += '<select><option>2009</option><option>2010</option><option>2011</option><option>2012</option>' +
+					'<option>2013</option><option>2014</option><option>2015</option><option>2016</option>' +
+					'<option>2017</option><option>2018</option><option>2019</option><option>2020</option></select><br>';
+				addEntry += '<label>Title:</label>';
+				addEntry += '<input type="text" id="meetingMinuteTitle" /><br>';
+				addEntry += '<label>Sub-Title:</label>';
+				addEntry += '<input type="text" id="meetingMinuteSubTitle" /><br>';
+				addEntry += '<label>File-Link:</label>';
+				
+				temp = document.createElement('div');
+				temp.innerHTML = addEntry;
+				document.getElementById('addEntryForm').appendChild(temp);
+			}
 		}
 		else{
 			console.log("We are on the page with user not signed in tsk tsk tsk.");
