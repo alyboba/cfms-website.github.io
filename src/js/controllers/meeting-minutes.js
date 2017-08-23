@@ -27,10 +27,11 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			}
 			this.firebase.database().ref(refPath).on('value', (snapshot) => {
 				elem = '';
-				subRefPath = refPath;
+				//subRefPath = refPath;
 				snapshot.forEach((childSnapshot) => {
+					subRefPath = refPath;
 					subRefPath += '/'+childSnapshot.key;
-					elem += '<blockquote>'; 
+					//elem += '<blockquote>'; 
 					elem += '<h3 class="bold-red">'+childSnapshot.key+'</h3>';
 					childSnapshot.forEach((subChildSnapshot) => {
 						subSubRefPath = subRefPath+'/'+subChildSnapshot.key;
@@ -67,10 +68,11 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					//if(true){ //This will be if the user is an admin!
 					//	
 					//}
-					elem += '</blockquote>';
+					//elem += '</blockquote>';
 				});
-				
-				document.getElementById('meetingMinutes').innerHTML = elem;
+				var temp = document.createElement("blockquote");
+				temp.innerHTML = elem;
+				document.getElementById('meetingMinutes').appendChild(temp);
 				//console.log(this.ModalController);
 				if(true) { //TODO: Add check this.auth.user.isAdmin
 					this.modalController = new this.ModalController();
@@ -102,6 +104,7 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			callback: (value) =>{
 				if(value){
 					firebase.database().ref(dbPath).remove().then(() =>{
+						document.getElementById('meetingMinutes').innerHTML = "";
 						vex.dialog.alert('<h3><strong>Success!</strong></h3>');
 					});
 				}
@@ -111,7 +114,6 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			}
 		});
 	}
-	
 	updateMeetingMinutes(){
 		var dbPath = this.value;
 		var title = this.parentElement.parentElement.getElementsByClassName("titleSubmission")[0].value;
@@ -124,6 +126,7 @@ export default class MeetingMinutesController extends FirebaseConnection{
 						title: title,
 						subTitle: subTitle,
 					}).then(() =>{
+						document.getElementById('meetingMinutes').innerHTML = "";
 						vex.dialog.alert('<h3><strong>Success!</strong></h3>');
 					});
 				}
@@ -142,10 +145,3 @@ export default class MeetingMinutesController extends FirebaseConnection{
 	}
 	
 }
-
-
-
-
-
-
-
