@@ -25,12 +25,12 @@ export default class ModalController {
 	
 	//Starting method of class, Other methods below are for events.
 	bindListeners() {
-			console.log("Are we accessing the modal Controller??");
+			//console.log("Are we accessing the modal Controller??");
 			let buttons = document.getElementsByClassName('clickMe');
-			console.log(buttons);
+			//console.log(buttons);
 			for (let i = 0; i < buttons.length; i++) {
 				let button = buttons[i];
-				console.log("are we getting into the for loop?!?!");
+				//console.log("are we getting into the for loop?!?!");
 				button.onclick = this.clickTheModal;
 			}
 			
