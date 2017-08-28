@@ -7,10 +7,12 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		super();
 		this.utils = new Utils();
 		this.ModalController = ModalController;
+		//meetingMinutesController;
 		this.auth = authenticationService;
 		this.process();
 	}
 	process() {
+		//meetingMinutesController = this;
 		if(this.auth.user){
 			var firebase = this.firebase;
 			console.log("Is this user an admin?  " + this.auth.user.isAdmin);
@@ -32,35 +34,21 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					subRefPath = refPath;
 					subRefPath += '/'+childSnapshot.key;
 					//elem += '<blockquote>'; 
-					elem += '<h3 class="bold-red">'+childSnapshot.key+'</h3>';
+					elem += '<h3 class="bold-red meetingMinuteYear">'+childSnapshot.key+'</h3>';
 					childSnapshot.forEach((subChildSnapshot) => {
 						subSubRefPath = subRefPath+'/'+subChildSnapshot.key;
-						elem += '<p><strong>'+subChildSnapshot.val().title+'</strong></p>';
-						elem += '<p>'+subChildSnapshot.val().subTitle+'</p>';
+						elem += '<p><strong class="meetingMinuteTitle">'+subChildSnapshot.val().title+'</strong></p>';
+						elem += '<p class="meetingMinuteSubTitle">'+subChildSnapshot.val().subTitle+'</p>';
 						if(true) { //TODO: Add check this.auth.user.isAdmin
 							//add admin if here
-							modalElem = '';
-							modalElem += '<div class="modal hidden">';
-							modalElem += '<div class="modal-content">';
-							modalElem += '<div class="modal-header">';
-							modalElem += '<h2>' + subChildSnapshot.val().title + '</h2>';
-							modalElem += '</div><hr>';
-							modalElem += '<div class="modal-body">';
-							modalElem += '<label>Title:</label>';
-							modalElem += '<input class="titleSubmission" type="text" placeholder="'+subChildSnapshot.val().title+'"'+
-								'/><br>';
-							modalElem += '<label>Sub-Title:</label>';
-							modalElem += '<input class="subTitleSubmission" type="text" placeholder="'+subChildSnapshot.val().subTitle+'"'+
-								'/><br>';
-							modalElem += '</div><hr>';
-							modalElem += '<div class="modal-footer">';
-							modalElem += '<button value="'+subSubRefPath+'" class="btn btn-default meetingMinutesUpdateButton">Update</button>';
-							modalElem += '<button class="btn btn-default modalCloseButton">Close</button>';
-							modalElem += '<h3><br></h3></div></div></div>';
-							modalElem += '<div><button class="clickMe">';
-							modalElem += 'Update</button>';
-							modalElem += '<button value="'+subSubRefPath+'" class="deleteEntry">Delete</button></div>';
-							elem += modalElem;
+							
+							//modalElem = this.utils.populateModalData(subChildSnapshot.val().title, subChildSnapshot.val().subTitle, subSubRefPath);
+							//elem += modalElem;
+							let updateButton = this.utils.createUpdateButton(subSubRefPath);
+							console.log(updateButton);
+							elem += updateButton;
+							let deleteButton = this.utils.createDeleteButton(subSubRefPath);
+							elem += deleteButton;
 						} //end admin if here
 						elem += '<br><br>';
 					});
@@ -73,10 +61,13 @@ export default class MeetingMinutesController extends FirebaseConnection{
 				temp.innerHTML = elem;
 				document.getElementById('meetingMinutes').appendChild(temp);
 				//console.log(this.ModalController);
+				
+				
+				
 				if(true) { //TODO: Add check this.auth.user.isAdmin
 					this.modalController = new this.ModalController();
 					 //end admin if here
-					var updateButtons = document.getElementsByClassName("meetingMinutesUpdateButton");
+					var updateButtons = document.getElementsByClassName("updateEntry");
 					for(let i=0; i< updateButtons.length; i++){
 						let updateButton = updateButtons[i];
 						updateButton.onclick = this.updateMeetingMinutes;
@@ -89,26 +80,31 @@ export default class MeetingMinutesController extends FirebaseConnection{
 				}
 			});
 			if(true) {
-				var addEntry = '';
-				addEntry += '<label>Year:</label>';
-				addEntry += '<select><option>2009</option><option>2010</option><option>2011</option><option>2012</option>' +
-					'<option>2013</option><option>2014</option><option>2015</option><option>2016</option>' +
-					'<option>2017</option><option>2018</option><option>2019</option><option>2020</option></select><br>';
-				addEntry += '<label>Title:</label>';
-				addEntry += '<input type="text" id="meetingMinuteTitle" /><br>';
-				addEntry += '<label>Sub-Title:</label>';
-				addEntry += '<input type="text" id="meetingMinuteSubTitle" /><br>';
-				addEntry += '<label>File-Link:</label>';
-				
-				temp = document.createElement('div');
-				temp.innerHTML = addEntry;
-				document.getElementById('addEntryForm').appendChild(temp);
+				//var addEntry = '';
+				//addEntry += '<label>Year:</label>';
+				//addEntry += '<select><option>2009</option><option>2010</option><option>2011</option><option>2012</option>' +
+				//	'<option>2013</option><option>2014</option><option>2015</option><option>2016</option>' +
+				//	'<option>2017</option><option>2018</option><option>2019</option><option>2020</option></select><br>';
+				//addEntry += '<label>Title:</label>';
+				//addEntry += '<input type="text" id="meetingMinuteTitle" /><br>';
+				//addEntry += '<label>Sub-Title:</label>';
+				//addEntry += '<input type="text" id="meetingMinuteSubTitle" /><br>';
+				//addEntry += '<label>File-Link:</label>';
+				//addEntry += '<div><input type="file" name="meetingMinuteUpload" id="meetingMinuteFile" class="inputfile" />';
+				//addEntry += '<label for="meetingMinuteUpload"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true">';
+				//addEntry += '</i><span>Choose a file&hellip;</span></label></div>';
+				//addEntry += '<div id="file-upload-link" class="file-link"></div>';
+				//
+				//temp = document.createElement('div');
+				//temp.innerHTML = addEntry;
+				//document.getElementById('addEntryForm').appendChild(temp);
 			}
 		}
+		
+		
 		else{
 			console.log("We are on the page with user not signed in tsk tsk tsk.");
 		}
-		
 	}
 	deleteMeetingMinutes(){
 		var dbPath = this.value;
@@ -129,33 +125,66 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		});
 	}
 	updateMeetingMinutes(){
+		var utils = new Utils();
 		var dbPath = this.value;
-		var title = this.parentElement.parentElement.getElementsByClassName("titleSubmission")[0].value;
-		var subTitle = this.parentElement.parentElement.getElementsByClassName("subTitleSubmission")[0].value;
-		vex.dialog.confirm({
-			message: "Are you sure?",
-			callback: (value) =>{
-				if(value){
-					firebase.database().ref(dbPath).update({
-						title: title,
-						subTitle: subTitle,
-					}).then(() =>{
-						document.getElementById('meetingMinutes').innerHTML = "";
-						vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-					});
-				}
-				else{
-					console.log("clicked no");
-				}
-			}
-		});
+		var title = this.parentElement.getElementsByClassName("meetingMinuteTitle")[0].innerHTML;
+		var subTitle = this.parentElement.getElementsByClassName("meetingMinuteSubTitle")[0].innerHTML;
+		var year = this.parentElement.getElementsByClassName("meetingMinuteYear")[0].innerHTML;
 
-		console.log("Got in here!");
-		console.log(title);
-		console.log(subTitle);
-		console.log(dbPath);
-		//Save the Data into the Db.
+		
+		vex.dialog.open({
+			message: 'Update Values',
+			input: [
+				'<input name="year" type="text" placeholder="'+year+'" required/>',
+				'<input name="title" type="text" placeholder="'+title+'" required />',
+				'<input name="subTitle" type="text" placeholder="'+subTitle+'" required />'
+			].join(''),
+			buttons: [
+				$.extend({}, vex.dialog.buttons.YES, { text: 'Update' }),
+				$.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
+			],
+			callback: function (data) {
+				if (!data) {
+					console.log('Cancelled')
+				} else {
+					//Add check that year is a year
+					if(data.year > 2000 && data.year < 2031) {
+						vex.dialog.confirm({
+							message: "Are you sure?",
+							callback: (value) => {
+								if (value) {
+									if(data.year != year){ //user has updated the year, delete old entry, add new entry.
+										
+									}
+									else {
+										//Add a check if year changed....
+										//If changed, delete old entry, add new entry with new year.
+										firebase.database().ref(dbPath).update({
+											title: title,
+											subTitle: subTitle,
+										}).then(() => {
+											document.getElementById('meetingMinutes').innerHTML = "";
+											vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+										});
+									}
+								}
+								else {
+									console.log("clicked no");
+								}
+							} //end vex confirm callback
+						}); //end vex confirm
+					} //end if
+					else{
+						vex.dialog.alert("Year must be between 2000 and 2030");
+					}
+				} //end else
+			} // end vex.open callback
+		});
+		
+
+
 
 	}
+	
 	
 }
