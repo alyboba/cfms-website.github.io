@@ -1,5 +1,5 @@
 ---
-title: "Position Papers"
+title: Position Papers
 ---
 <!DOCTYPE html>
 <!--[if IE 8 ]>
@@ -32,28 +32,7 @@ title: "Position Papers"
     </script>
     <div id="side-content">
         <h1 id="page-title">{{ page.title }}</h1>
-        <div class="editable">
-        <div class="pic-wrapper">
-            <img class="pic-right" src="/images/page-images/position-papers.png" />
-        </div>
-        <h2><strong>What are Position Papers and Policy Documents?</strong></h2>
-        <p>Policy documents and position statements are evidence-based resources that identify the Canadian medical student perspective for a variety of health systems issues. These documents guide our advocacy efforts.</p>
-        <ul>
-            <li><span class="pp">PP</span><strong>Policy Papers</strong>: These are detailed documents that explore issues within medical education or health care in a structured format, which include framing the problem, highlighting related beliefs and values of the CFMS and providing evidence-based policy or program options to ameliorate the issue.</li>
-            <li><span class="ps">PS</span><strong>Position Statements</strong>: These are brief documents that present medical students&rsquo; perspectives on recent issues within medical education or health care as well as key principles that we believe should guide future debate on the issue.</li>
-        </ul>
-        <p>For more information, please see the <a href="/files/position-papers/CFMS_COHP_TOR.pdf">Committee on Health Policy Terms of Reference</a>.</p>
-        <h2><strong>How can I contribute?</strong></h2>
-        <p>Any CFMS member is welcome to submit a Policy Document or Position Statement for approval by the General Assembly. Contact our National Officer of Health Policy, Tamara Ibrahim, at <a href="mailto:nohp@cfms.org">nohp@cfms.org</a> or our VP Government Affairs, Jessica Harris, at <a href="mailto:vpgovtaffairs@cfms.org">vpgovtaffairs@cfms.org</a> for more information.</p>
-        <blockquote>
-            <h4><strong>Interested in writing a position paper?</strong></h4>
-            <ul>
-                <li><span class="file-format">DOCX</span>Please see this <a href="/files/position-papers/CFMS_position-paper_template_2013-12-30.docx">Position Paper Template</a></li>
-                <li><span class="file-format">PDF</span><a href="/files/position-papers/cfms_position_paper_guidelines 2016.pdf">Position Paper Guidelines</a> (2016)</li>
-            </ul>
-        </blockquote>
-            <h1 style="padding-top:30px;"><strong>Current Policy Documents and Position Statements</strong></h1> <hr />
-        </div>
+        <div class="editable"><div class="pic-wrapper"><img class="pic-right" src="/images/page-images/position-papers.png" /></div><h2><strong>What are Position Papers and Policy Documents?</strong></h2><p>Policy documents and position statements are evidence-based resources that identify the Canadian medical student perspective for a variety of health systems issues. These documents guide our advocacy efforts.</p><ul><li><span class="pp">PP</span><strong>Policy Papers</strong>: These are detailed documents that explore issues within medical education or health care in a structured format, which include framing the problem, highlighting related beliefs and values of the CFMS and providing evidence-based policy or program options to ameliorate the issue.</li><li><span class="ps">PS</span><strong>Position Statements</strong>: These are brief documents that present medical students&rsquo; perspectives on recent issues within medical education or health care as well as key principles that we believe should guide future debate on the issue.</li></ul><p>For more information, please see the <a href="/files/position-papers/CFMS_COHP_TOR.pdf">Committee on Health Policy Terms of Reference</a>.</p><h2><strong>How can I contribute?</strong></h2><p>Any CFMS member is welcome to submit a Policy Document or Position Statement for approval by the General Assembly.</p><p>Please review our&nbsp;<a href="/files/position-papers/cfms_position_paper_guidelines 2016.pdf">Tools and Guidelines for Position and Policy Paper Development​</a>.</p><p>For more information please contact our National Officer of Health Policy, Jovi Wong, at <a href="mailto:nohp@cfms.org">nohp@cfms.org</a> or our VP Government Affairs, Sarah Silverberg, at <a href="mailto:vpgovtaffairs@cfms.org">vpgovtaffairs@cfms.org</a> for more information.</p><blockquote><h4><strong>Interested in writing a position paper?</strong></h4><ul><li><span class="file-format">DOCX</span>Please see this <a href="/files/position-papers/CFMS_position-paper_template_2013-12-30.docx">Position Paper Template</a></li><li><span class="file-format">PDF</span><a href="/files/position-papers/cfms_position_paper_guidelines 2016.pdf">Position Paper Guidelines</a> (2016)</li></ul></blockquote><h1 style="padding-top:30px;"><strong>Current Policy Documents and Position Statements</strong></h1><hr /></div>
         
         <!--Addd liquid logic here-->
         {% comment %}
@@ -62,7 +41,7 @@ title: "Position Papers"
         {% endcomment %}
         <blockquote>
             <h3 class="editable"><strong>Search Form For Position Papers</strong></h3>
-            <br>
+            <br />
             
             {% for paperInformation in site.data.position-papers.position-papers %}
             {% if paperInformation.lang == page.lang %}
@@ -72,11 +51,11 @@ title: "Position Papers"
             <fieldset class="textAlignLeft">
                 <legend class="editable">Search By Tag:</legend>
                     {% for filterData in paperInformation.filter-tags %}
-                        <span class="filter-checkbox-image-wrapper {{filterData.tag | downcase}}">{{filterData.tag | upcase}}</span><input class="filter-checkbox"type="checkbox" id="{{filterData.tag | upcase}}">{{filterData.tag-name}}
-                    <br>
+                        <span class="filter-checkbox-image-wrapper {{filterData.tag | downcase}}">{{filterData.tag | upcase}}</span><input class="filter-checkbox" type="checkbox" id="{{filterData.tag | upcase}}" />{{filterData.tag-name}}
+                    <br />
                     {% endfor %}
             </fieldset>
-            <br>
+            <br />
             <fieldset>
                 <legend class="editable">Search By Section:</legend>
             <select id="select-box" name="paper-section">
@@ -86,8 +65,8 @@ title: "Position Papers"
                 {% endfor %}
             </select>
             </fieldset>
-            <br>
-            <legend class="editable">Search by Title:</legend><input style ="display:none;"id="searchFilter" type="text" name="search" placeholder="Search Paper Name with Filters">
+            <br />
+            <legend class="editable">Search by Title:</legend><input style="display:none;" id="searchFilter" type="text" name="search" placeholder="Search Paper Name with Filters" />
         </form>
         </blockquote>
         
@@ -174,4 +153,3 @@ title: "Position Papers"
 
 {% include footer.html %}
 </body>
-</html>
