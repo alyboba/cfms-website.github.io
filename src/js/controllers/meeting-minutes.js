@@ -147,8 +147,9 @@ export default class MeetingMinutesController extends FirebaseConnection{
 						//Delete old entry @ year,
 						//add new entry into database....
 						if (modalController.isProperYearRange(data.year, 2000, 2030)) {
+							var oldEntryPath = dbPath;
 							console.log("year is in correct format...");
-							modalController.addMeetingMinutes(data.year, data.title, data.subTitle, false);
+							modalController.addMeetingMinutes(data.year, data.title, data.subTitle, false, oldEntryPath);
 						} //end if
 						else {
 							vex.dialog.alert("Year must be between 2000 and 2030");
@@ -160,48 +161,28 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		
 	}
 	deleteMeetingMinutes(dbPath){
-		vex.dialog.confirm({
-			message: "Are you sure?",
-			callback: (value) =>{
-				if(value){
-					firebase.database().ref(dbPath).remove().then(() =>{
-						document.getElementById('meetingMinutes').innerHTML = "";
-						vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-					});
-				}
-				else{
-					console.log("clicked no");
-				}
-			}
+		this.vexConfirm().then( () =>{
+			firebase.database().ref(dbPath).remove().then(() =>{
+				document.getElementById('meetingMinutes').innerHTML = "";
+				vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+			});
 		});
+		
 	}
 	
 	updateMeetingMinutes(dbPath, title, subTitle){
-		console.log(dbPath);
-		console.log(title);
-		console.log(subTitle);
-		vex.dialog.confirm({
-			message: "Are you sure?",
-			callback: (value) => {
-				if (value) {
-					//Add a check if year changed....
-					//If changed, delete old entry, add new entry with new year.
-					firebase.database().ref(dbPath).update({
-						title: title,
-						subTitle: subTitle,
-					}).then(() => {
-						document.getElementById('meetingMinutes').innerHTML = "";
-						vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-					});
-				}
-				else {
-					console.log("clicked no");
-				}
-			} //end vex confirm callback
-		}); //end vex confirm
-		
+		this.vexConfirm().then( () =>{
+			firebase.database().ref(dbPath).update({
+				title: title,
+				subTitle: subTitle,
+			}).then(() => {
+				document.getElementById('meetingMinutes').innerHTML = "";
+				vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+			});
+		});		
 	}
-	addMeetingMinutes(year, title, subTitle, justAdd){
+	
+	addMeetingMinutes(year, title, subTitle,justAdd, oldEntryPath){
 		this.vexConfirm().then( () => {
 		console.log("The promise is true!");
 			firebase.database().ref(this.refPath+'/'+year).push({
@@ -209,9 +190,12 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			subTitle: subTitle
 		}).then( () => {
 			if(!justAdd){
-				console.log("Going to Delete old entry");
+				firebase.database().ref(oldEntryPath).remove().then( () => {
+					vex.dialog.alert('<h3><strong>Old Entry Successfully Removed!</strong></h3>');
+				});
 			}
-			vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+			document.getElementById('meetingMinutes').innerHTML = "";
+			vex.dialog.alert('<h3><strong>Successfully added new Entry!</strong></h3>');
 		});
 		}).catch( () => {
 			console.log("The promise returned false!!!!");
@@ -240,9 +224,5 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		
 		
 	}
-	
-
 }
-
-
 
