@@ -14,7 +14,7 @@ export default class MeetingMinutesController extends FirebaseConnection{
 	}
 	process() {
 		//meetingMinutesController = this;
-		if(this.auth.user){
+		if(this.auth.user){ //check if user is signed in
 			var firebase = this.firebase;
 			console.log("Is this user an admin?  " + this.auth.user.isAdmin);
 			var elem, modalElem, temp;
@@ -29,14 +29,18 @@ export default class MeetingMinutesController extends FirebaseConnection{
 				this.refPath = this.refPath+'fr';
 			}
 			this.firebase.database().ref(this.refPath).on('value', (snapshot) => {
-				elem = '';
+				//console.log("First iteration snap shot = " + snapshot);
+				
 				//subRefPath = refPath;
 				snapshot.forEach((childSnapshot) => {
+					//console.log("second iteration snap shot = " + childSnapshot);
+					elem = '';
 					subRefPath = this.refPath;
 					subRefPath += '/'+childSnapshot.key;
 					//elem += '<blockquote>'; 
 					elem += '<h3 class="bold-red meetingMinuteYear">'+childSnapshot.key+'</h3>';
 					childSnapshot.forEach((subChildSnapshot) => {
+						//console.log("Third iteration snap shot = " + subChildSnapshot);
 						subSubRefPath = subRefPath+'/'+subChildSnapshot.key;
 						elem += '<p><strong class="meetingMinuteTitle">'+subChildSnapshot.val().title+'</strong></p>';
 						elem += '<p class="meetingMinuteSubTitle">'+subChildSnapshot.val().subTitle+'</p>';
@@ -45,10 +49,9 @@ export default class MeetingMinutesController extends FirebaseConnection{
 							
 							//modalElem = this.utils.populateModalData(subChildSnapshot.val().title, subChildSnapshot.val().subTitle, subSubRefPath);
 							//elem += modalElem;
-							let updateButton = this.utils.createUpdateButton(subSubRefPath);
-							console.log(updateButton);
+							let updateButton = this.utils.createButton(subSubRefPath, "Update", "updateEntry");
 							elem += updateButton;
-							let deleteButton = this.utils.createDeleteButton(subSubRefPath);
+							let deleteButton = this.utils.createButton(subSubRefPath, "Delete", "deleteEntry");
 							elem += deleteButton;
 						} //end admin if here
 						elem += '<br><br>';
@@ -57,14 +60,22 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					//	
 					//}
 					//elem += '</blockquote>';
+					temp = document.createElement("blockquote");
+					temp.innerHTML = elem;
+					document.getElementById('meetingMinutes').appendChild(temp);
+					
+					
 				});
-				temp = document.createElement("blockquote");
-				temp.innerHTML = elem;
-				document.getElementById('meetingMinutes').appendChild(temp);
+				if(true) {
+					temp = document.createElement("blockquote");
+					let addButton = this.utils.createButton(this.refPath, "Add", "addEntry");
+					elem = addButton;
+					temp.innerHTML = elem;
+					document.getElementById('meetingMinutes').appendChild(temp);
+				}
 				//console.log(this.ModalController);
 				
-				
-				
+				//TODO: may be fucked somewhere in here as well.. >.>
 				if(true) { //TODO: Add check this.auth.user.isAdmin
 					this.modalController = new this.ModalController();
 					 //end admin if here
@@ -76,30 +87,13 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					var deleteButtons = document.getElementsByClassName("deleteEntry");
 					for(let i=0; i<deleteButtons.length; i++){
 						deleteButtons[i].addEventListener('click', this.deleteMeetingMinutesEvent.bind(this), false);
-						
+					}
+					var addButtons = document.getElementsByClassName("addEntry");
+					for(let i=0; i<addButtons.length; i++){
+						addButtons[i].addEventListener('click', this.addMeetingMinutesEvent.bind(this), false);
 					}
 				}
 			});
-			if(true) {
-				//var addEntry = '';
-				//addEntry += '<label>Year:</label>';
-				//addEntry += '<select><option>2009</option><option>2010</option><option>2011</option><option>2012</option>' +
-				//	'<option>2013</option><option>2014</option><option>2015</option><option>2016</option>' +
-				//	'<option>2017</option><option>2018</option><option>2019</option><option>2020</option></select><br>';
-				//addEntry += '<label>Title:</label>';
-				//addEntry += '<input type="text" id="meetingMinuteTitle" /><br>';
-				//addEntry += '<label>Sub-Title:</label>';
-				//addEntry += '<input type="text" id="meetingMinuteSubTitle" /><br>';
-				//addEntry += '<label>File-Link:</label>';
-				//addEntry += '<div><input type="file" name="meetingMinuteUpload" id="meetingMinuteFile" class="inputfile" />';
-				//addEntry += '<label for="meetingMinuteUpload"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true">';
-				//addEntry += '</i><span>Choose a file&hellip;</span></label></div>';
-				//addEntry += '<div id="file-upload-link" class="file-link"></div>';
-				//
-				//temp = document.createElement('div');
-				//temp.innerHTML = addEntry;
-				//document.getElementById('addEntryForm').appendChild(temp);
-			}
 		}
 		
 		
@@ -107,19 +101,52 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			console.log("We are on the page with user not signed in tsk tsk tsk.");
 		}
 	}
+	addMeetingMinutesEvent(evt){
+		var modalController = this;
+		vex.dialog.open({
+			message: 'Add Meeting Minutes',
+			input: [
+				'<input name="year" type="text" placeholder="Year" required/>',
+				'<input name="title" type="text" placeholder="Title" required />',
+				'<input name="subTitle" type="text" placeholder="sub Title" required />'
+			].join(''),
+			buttons: [
+				$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }),
+				$.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
+			],
+			callback: function (data) {
+				if (!data) {
+					console.log('Cancelled');
+				} else {
+					console.log("hitting the add shit here?");
+					if (modalController.isProperYearRange(data.year, 2000, 2030)) {
+						console.log("got into the if statement b4 the function?!?!");
+						modalController.addMeetingMinutes(data.year, data.title, data.subTitle, true, null);
+					}
+					else{
+						vex.dialog.alert("Year must be between 2000 and 2030");
+					}
+				}
+			}
+		});
+	}
+	
 	deleteMeetingMinutesEvent(evt){
 		var dbPath = evt.target.value;
-		console.log(dbPath);
-		console.log(evt.target.value);
+		//console.log(dbPath);
+		//console.log(evt.target.value);
 		this.deleteMeetingMinutes(dbPath);
 	}
+	
+	//TODO: need to fix this.. sigh....
 	updateMeetingMinutesEvent(evt){
 		var utils = new Utils();
 		var modalController = this;
 		var dbPath = evt.target.value;
-		var title = evt.target.parentElement.getElementsByClassName("meetingMinuteTitle")[0].innerHTML;
-		var subTitle = evt.target.parentElement.getElementsByClassName("meetingMinuteSubTitle")[0].innerHTML;
-		var year = evt.target.parentElement.getElementsByClassName("meetingMinuteYear")[0].innerHTML;
+		var title = evt.target.previousElementSibling.previousElementSibling.firstElementChild.innerHTML;
+		var subTitle = evt.target.previousElementSibling.innerHTML;
+		var year = evt.target.parentNode.getElementsByClassName('meetingMinuteYear')[0].innerHTML;
+		console.log(year);
 		vex.dialog.open({
 			message: 'Update Values',
 			input: [
@@ -161,28 +188,35 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		
 	}
 	deleteMeetingMinutes(dbPath){
+		//let modalController = this;
 		this.vexConfirm().then( () =>{
 			firebase.database().ref(dbPath).remove().then(() =>{
 				document.getElementById('meetingMinutes').innerHTML = "";
+				//modalController.process();
 				vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+				location.reload();
 			});
 		});
 		
 	}
 	
 	updateMeetingMinutes(dbPath, title, subTitle){
+		//let modalController = this;
 		this.vexConfirm().then( () =>{
 			firebase.database().ref(dbPath).update({
 				title: title,
 				subTitle: subTitle,
 			}).then(() => {
 				document.getElementById('meetingMinutes').innerHTML = "";
+				//modalController.process();
 				vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+				location.reload();
 			});
 		});		
 	}
 	
 	addMeetingMinutes(year, title, subTitle,justAdd, oldEntryPath){
+		//let modalController = this;
 		this.vexConfirm().then( () => {
 		console.log("The promise is true!");
 			firebase.database().ref(this.refPath+'/'+year).push({
@@ -195,17 +229,21 @@ export default class MeetingMinutesController extends FirebaseConnection{
 				});
 			}
 			document.getElementById('meetingMinutes').innerHTML = "";
+			//modalController.process();
 			vex.dialog.alert('<h3><strong>Successfully added new Entry!</strong></h3>');
+			location.reload();
 		});
 		}).catch( () => {
 			console.log("The promise returned false!!!!");
 		});
-		
 		console.log(this.refPath);
 	}
+	
 	isProperYearRange(year, startYear, endYear){
 		return year > startYear && year < endYear;
 	}
+	
+	
 	
 	vexConfirm(){
 		return new Promise((resolve, reject) => {
@@ -225,4 +263,6 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		
 	}
 }
+
+
 

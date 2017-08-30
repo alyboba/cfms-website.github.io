@@ -55,51 +55,10 @@ export default class Utils {
         }
     }
     
-    //populateModalData(header, body, path){
-    //    let modalElem = '';
-    //    modalElem += '<div class="modal hidden">';
-    //    modalElem += '<div class="modal-content">';
-    //    modalElem += '<div class="modal-header">';
-    //    modalElem += '<h2>' + header + '</h2>';
-    //    modalElem += '</div><hr>';
-    //    modalElem += '<div class="modal-body">';
-    //    modalElem += '<label>Title:</label>';
-    //    modalElem += '<input class="titleSubmission" type="text" placeholder="'+header+'"'+
-    //      '/><br>';
-    //    modalElem += '<label>Sub-Title:</label>';
-    //    modalElem += '<input class="subTitleSubmission" type="text" placeholder="'+body+'"'+
-    //      '/><br>';
-    //    modalElem += '</div><hr>';
-    //    modalElem += '<div class="modal-footer">';
-    //    modalElem += '<button value="'+ path +'" class="btn btn-default meetingMinutesUpdateButton">Update</button>';
-    //    modalElem += '<button class="btn btn-default modalCloseButton">Close</button>';
-    //    modalElem += '<h3><br></h3></div></div></div>';
-    //    modalElem += '<div><button class="clickMe">';
-    //    modalElem += 'Update</button>';
-    //    modalElem += '<button value="'+ path +'" class="deleteEntry">Delete</button></div>';
-    //    return modalElem;
-    //}
-    
-    createDeleteButton(path){
-        let button = '<button value="'+ path +'" class="deleteEntry">Delete</button>';
+    createButton(path, title, className){
+        let button = '<button value="'+ path +'" class="'+className+'">'+title+'</button>';
         return button;
     }
-    createUpdateButton(path){
-        let button = '<button value="'+ path +'" class="updateEntry">Update</button>';
-        return button;
-        
-    }
-    //createMeetingMinuteYears(startYear, endYear, currentYear){
-    //    console.log("hitting this bitch?");
-    //    let selectBox = '<select name="year">';
-    //    selectBox += '<option value="'+currentYear+'">'+currentYear+'</option>'
-    //    for(let i=startYear; i<endYear+1; i++){
-    //        selectBox += '<option value="'+i+'">'+i+'</option>'
-    //    }
-    //    selectBox += '</select>';
-    //    
-    //    console.log("select box is : "+selectBox);
-    //    return selectBox;
-    //}
+
     
 }
