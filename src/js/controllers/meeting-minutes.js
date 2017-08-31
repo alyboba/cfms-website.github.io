@@ -22,9 +22,10 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			else{
 				this.refPath = this.refPath+'fr';
 			}
+			
+			
 			this.firebase.database().ref(this.refPath).on('value', (snapshot) => { //Iterating over the database
 				snapshot.forEach((childSnapshot) => { //This iterates over the years in the database.
-					//console.log("second iteration snap shot = " + childSnapshot);
 					elem = ''; //Resetting variable for next iteration.
 					subRefPath = this.refPath +'/'+childSnapshot.key;
 					elem += '<h3 class="bold-red meetingMinuteYear">'+childSnapshot.key+'</h3>';
@@ -39,10 +40,12 @@ export default class MeetingMinutesController extends FirebaseConnection{
 						} //end admin if
 						elem += '<br><br>';
 					}); //end third DB call
-
+					
+					
+					
 					temp = document.createElement("blockquote");
 					temp.innerHTML = elem;
-					document.getElementById('meetingMinutes').appendChild(temp);
+					document.getElementById('meetingMinutes').insertBefore(temp, document.getElementById('meetingMinutes').firstChild);
 				}); //end second Db call
 				
 				if(this.auth.user.isAdmin) {  //Executes if user is an admin user.
@@ -61,7 +64,6 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					for(let i=0; i<addButtons.length; i++){
 						addButtons[i].addEventListener('click', this.addMeetingMinutesEvent.bind(this), false);
 					}
-					
 				} //end admin if
 			}); //end first database call
 		}
