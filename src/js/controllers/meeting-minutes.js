@@ -124,12 +124,14 @@ export default class MeetingMinutesController extends FirebaseConnection{
 				});
 			}).catch((error) => {
 				//TODO: add error message in vex, based off error code.
-				console.log("an Error occured, error number "+ error);
+				vex.dialog.alert('<h3><strong>'+error+'</strong></h3>');
+				console.log("an Error occurred, error number "+ error);
 			})
 		}).catch( () => {
 			console.log("The promise returned false!!!!");
 		});
 	}
+	
 	
 	deleteMeetingMinutesEvent(evt){
 		var dbPath = evt.target.value;
@@ -141,7 +143,14 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			firebase.database().ref(dbPath).once('value').then( (snapshot) => {
 				var filePath = snapshot.val().filePath;
 				var storageRef = firebase.storage().ref(filePath);
+				console.log(storageRef);
 				storageRef.delete().then( () =>{
+					firebase.database().ref(dbPath).remove().then(() =>{
+						vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+						location.reload();
+					});
+				}).catch( () => {
+					console.log("The storage in file no longer exists!!!.. Deleting the database entry of broken link!");
 					firebase.database().ref(dbPath).remove().then(() =>{
 						vex.dialog.alert('<h3><strong>Success!</strong></h3>');
 						location.reload();
@@ -159,24 +168,32 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		return new Promise((resolve, reject) => {
 			var filePath = 'minutes/'+file.name;
 			var storageRef = firebase.storage().ref(filePath);
-			var uploadTask =	storageRef.put(file);
-			uploadTask.on('state_changed', (snapshot) => {
-				var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-				console.log('Upload is ' + progress + '% done');
-			}, (error) => {
-				//This function happens if upload hits error.
-				reject(error)
-				//console.log('upload was unsuccessful!!');
-			}, () => {
-				//this is for on complete uploads!
-				console.log("are we ever hitting the final function!?>!?!?!");
-				var downloadURL = uploadTask.snapshot.downloadURL;
-				var fileObject = {
-					downloadURL: downloadURL,
-					filePath: filePath
-				};
-				resolve(fileObject);
+			console.log(storageRef.getDownloadURL());
+			storageRef.getDownloadURL().then( () => { //There already is a file with that name in storage, reject the promise...
+					reject("A File With the same name has already been uploaded!");
+			}).catch(() => { //There is no file with that name in Db, Lets make one!
+				var uploadTask =	storageRef.put(file);
+				uploadTask.on('state_changed', (snapshot) => {
+					var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+					console.log('Upload is ' + progress + '% done');
+				}, (error) => {
+					//This function happens if error hits during upload.
+					reject(error);
+				}, () => {
+					//this is for on complete uploads!
+					console.log("are we ever hitting the final function!?>!?!?!");
+					var downloadURL = uploadTask.snapshot.downloadURL;
+					var fileObject = {
+						downloadURL: downloadURL,
+						filePath: filePath
+					};
+					resolve(fileObject);
+				});
+				
 			});
+			
+			
+
 		});
 	}
 	
