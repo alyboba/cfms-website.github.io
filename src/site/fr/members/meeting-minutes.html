@@ -12,8 +12,7 @@ title: "Procès-verbal de la réunion du FEMC"
 
     <!--Page Specific Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/members.css">
-    <link rel="stylesheet" href="/stylesheets/resources.css">
-    <link rel="stylesheet" href="/stylesheets/modal.css">
+    <link rel="stylesheet" href="/stylesheets/who-we-are.css">
 </head>
 <body>
 {% include nav.html %}
@@ -21,6 +20,9 @@ title: "Procès-verbal de la réunion du FEMC"
 <div class="content">
     {% include sidebar-members.html %}
 
+    <script type="text/javascript">
+        document.querySelector( "#meeting-minutes" ).classList.toggle("sidebar-active");
+    </script>
     <!--Page Specific Formatting-->
     <script type="text/javascript">
         document.querySelector( "#logo-invert" ).classList.toggle("hidden");

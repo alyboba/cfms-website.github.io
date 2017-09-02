@@ -65,7 +65,7 @@ export default class MeetingMinutesController extends FirebaseConnection{
 							let deleteButton = this.utils.createButton(subSubRefPath, "Delete", "deleteEntry");
 							elem += deleteButton;
 						} //end admin if
-						elem += '<br><br>';
+						elem += '<br>';
 					}); //end third DB call
 					
 					temp = document.createElement("blockquote");
