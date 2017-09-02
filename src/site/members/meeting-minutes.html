@@ -1,5 +1,5 @@
 ---
-title: "CFMs Meeting Minutes"
+title: "CFMS Meeting Minutes"
 ---
 
 <!DOCTYPE html>
@@ -12,14 +12,16 @@ title: "CFMs Meeting Minutes"
 
     <!--Page Specific Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/members.css">
-    <link rel="stylesheet" href="/stylesheets/resources.css">
-    <link rel="stylesheet" href="/stylesheets/modal.css">
+    <link rel="stylesheet" href="/stylesheets/who-we-are.css">
 </head>
 <body>
 {% include nav.html %}
 
 <div class="content">
     {% include sidebar-members.html %}
+    <script type="text/javascript">
+        document.querySelector( "#meeting-minutes" ).classList.toggle("sidebar-active");
+    </script>
 
     <!--Page Specific Formatting-->
     <script type="text/javascript">
@@ -27,7 +29,7 @@ title: "CFMs Meeting Minutes"
         document.querySelector( "#members" ).classList.toggle("active");
     </script>
 
-    <div id="side-content" class="editable">
+    <div id="side-content">
         <h1 id="page-title">{{ page.title }}</h1>
 
         <!--<div id="account-details" class="members-only">-->
@@ -40,13 +42,8 @@ title: "CFMs Meeting Minutes"
             <!--</blockquote>-->
         <!--</div>-->
         <div class="members-only">
+            
             <div id="meetingMinutes"></div>
-            
-            <div id="addEntryForm"></div>
-            
-            
-            
-
         </div>
         <div class="non-members">
             <blockquote>
@@ -60,4 +57,5 @@ title: "CFMs Meeting Minutes"
 </div>
 {% include footer.html %}
 </body>
+
 </html>

@@ -56,7 +56,7 @@ export default class Utils {
     }
     
     createButton(path, title, className){
-        let button = '<button value="'+ path +'" class="'+className+'">'+title+'</button>';
+        let button = '<div class="url preview"><p><a style="cursor: pointer;" src="'+ path +'" class="'+className+'">'+title+'</a></p></div>';
         return button;
     }
 

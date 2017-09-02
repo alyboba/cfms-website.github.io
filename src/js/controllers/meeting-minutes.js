@@ -1,8 +1,32 @@
+/*
+ * @file
+ * Provides Controller Functionality for the meeting-minutes.html page.
+ * Populates page with information from database if user is authenticated with firebase as a user
+ * Determines if user is also an admin. If true, allows the admin functionality to add/delete entrys from meeting-minutes
+ * section in database.
+ */
+
 import { FirebaseConnection } from '../repositories/firebase/utils';
 import Utils from '../utils';
 import ModalController from '../controllers/showModal';
 
+
+//TODO: Page could have extra security checks/Ui enhancements. Leaving for now because it is for admins.
+
 export default class MeetingMinutesController extends FirebaseConnection{
+	/*
+	 * @constructor
+	 * @param {Utils} this.utils
+	   * Object to access methods from the src/js/utils.js class
+	 *  
+	 * @param {String} this.refPath
+	   * holds the root reference path to the firebase database
+	 *   
+	 * @param {AuthenticationService} this.auth
+	   * Object used to make sure the user accessing the page is authenticated
+	 * @event this.process
+	   * our base event to be triggered when page initializes.
+	 */
 	constructor(authenticationService, ModalController) {
 		super();
 		this.utils = new Utils();
@@ -13,22 +37,20 @@ export default class MeetingMinutesController extends FirebaseConnection{
 	process() {
 		if(this.auth.user){ //check if user is signed in
 			console.log("Is this user an admin?  " + this.auth.user.isAdmin);
-			let elem, temp; //Variables used to populate page with html.
-			let subRefPath = ''; //Variables used to assign paths to the delete buttons.
-			let subSubRefPath = '';
+			let elem, temp, //Variables used to populate page with html.
+			    subRefPath = '', //Variables used to assign paths to the delete buttons.
+			    subSubRefPath = '';
 			if(this.utils.isPageEnglish()){ //Sets database path to english or french version!
 				this.refPath = this.refPath+'en';
 			}
 			else{
 				this.refPath = this.refPath+'fr';
 			}
-			
-			
 			this.firebase.database().ref(this.refPath).on('value', (snapshot) => { //Iterating over the database
 				snapshot.forEach((childSnapshot) => { //This iterates over the years in the database.
 					elem = ''; //Resetting variable for next iteration.
 					subRefPath = this.refPath +'/'+childSnapshot.key;
-					elem += '<h3 class="bold-red meetingMinuteYear">'+childSnapshot.key+'</h3>';
+					elem += '<h2 class="bold-red meetingMinuteYear">'+childSnapshot.key+'</h2>';
 					childSnapshot.forEach((subChildSnapshot) => { //This iterates over all nodes within each year currently on in DB.
 						subSubRefPath = subRefPath+'/'+subChildSnapshot.key;
 						elem += '<p><strong class="meetingMinuteTitle">'+subChildSnapshot.val().title+'</strong></p>';
@@ -41,8 +63,6 @@ export default class MeetingMinutesController extends FirebaseConnection{
 						elem += '<br><br>';
 					}); //end third DB call
 					
-					
-					
 					temp = document.createElement("blockquote");
 					temp.innerHTML = elem;
 					document.getElementById('meetingMinutes').insertBefore(temp, document.getElementById('meetingMinutes').firstChild);
@@ -53,14 +73,14 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					let addButton = this.utils.createButton(this.refPath, "Add", "addEntry");
 					elem = addButton;
 					temp.innerHTML = elem;
-					document.getElementById('meetingMinutes').appendChild(temp);
+					document.getElementById('meetingMinutes').insertBefore(temp, document.getElementById('meetingMinutes').firstChild);
 					
 					//These will get updated every time a change is made to Database.
-					var deleteButtons = document.getElementsByClassName("deleteEntry");
+					let deleteButtons = document.getElementsByClassName("deleteEntry");
 					for(let i=0; i<deleteButtons.length; i++){
 						deleteButtons[i].addEventListener('click', this.deleteMeetingMinutesEvent.bind(this), false);
 					}
-					var addButtons = document.getElementsByClassName("addEntry");
+					let addButtons = document.getElementsByClassName("addEntry");
 					for(let i=0; i<addButtons.length; i++){
 						addButtons[i].addEventListener('click', this.addMeetingMinutesEvent.bind(this), false);
 					}
@@ -68,40 +88,65 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			}); //end first database call
 		}
 		else{
-			//TODO: add message if user accidently loads page without being signed in?
+			vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
 			console.log("We are on the page with user not signed in tsk tsk tsk.");
 		} //end else 
 	}
 	
+	
+	/*
+	Function used to handle when admin clicks the Add button on webpage.
+	@evt: 
+	 */
 	addMeetingMinutesEvent(evt){
-		var modalController = this;
+		evt.preventDefault();
+		let modalController = this;
 		vex.dialog.open({
 			message: 'Add Meeting Minutes',
 			input: [
 				'<input name="year" type="text" placeholder="Year" required/>',
 				'<input name="title" type="text" placeholder="Title" required />',
 				'<input name="subTitle" type="text" placeholder="sub Title" required />',
-				'<input name="dataFile" id="uploadFile" type="file" required />'
+				'<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />'+
+				'<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>'
 			].join(''),
 			buttons: [
 				$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }),
 				$.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
 			],
-			callback: function (data) {
-				if (!data) {
+			callback: function (data) { //This executes when a button is pressed
+				if (!data) { //Executes if back button pressed
 					console.log('Cancelled');
-				} else {
+				} else { //Executes if Add button pressed
 					console.log("hitting the add shit here?");
 					if (modalController.isProperYearRange(data.year, 2000, 2030)) {
-						var fileUpload = document.getElementById('uploadFile').files[0];
-						console.log("got into the if statement b4 the function?!?!");
-						modalController.addMeetingMinutes(data.year, data.title, data.subTitle, fileUpload, true, null);
+						let fileUpload = document.getElementById('uploadFile').files;
+						if(fileUpload.length == 1 ) {
+							console.log("got into the if statement b4 the function?!?!");
+							modalController.addMeetingMinutes(data.year, data.title, data.subTitle, fileUpload[0], true, null);
+						}
+						else{
+							vex.dialog.alert("You may only attach one file per Entry!");
+						}
 					}
 					else{
 						vex.dialog.alert("Year must be between 2000 and 2030");
 					}
 				}
 			}
+		}).on("change", "#uploadFile", (e) =>{ //This is an event handler dynamically attached only when modal is clicked!.
+			var label	 = e.target.nextElementSibling, 
+				labelVal = label.innerHTML,
+			  fileName = '';
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else
+				fileName = e.target.value.split( '\\' ).pop();
+			
+			if( fileName )
+				label.querySelector( 'span' ).innerHTML = fileName;
+			else
+				label.innerHTML = labelVal;
 		});
 	}
 	
@@ -133,18 +178,19 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			console.log("The promise returned false!!!!");
 		});
 	}
-	
-	
 	deleteMeetingMinutesEvent(evt){
-		var dbPath = evt.target.value;
+		evt.preventDefault();
+		let dbPath = evt.target.getAttribute('src');
+		console.log(dbPath);
 		this.deleteMeetingMinutes(dbPath);
+		
+		
 	}
-	
 	deleteMeetingMinutes(dbPath){
 		this.vexConfirm().then( () =>{
 			firebase.database().ref(dbPath).once('value').then( (snapshot) => {
-				var filePath = snapshot.val().filePath;
-				var storageRef = firebase.storage().ref(filePath);
+				let filePath = snapshot.val().filePath;
+				let storageRef = firebase.storage().ref(filePath);
 				console.log(storageRef);
 				storageRef.delete().then( () =>{
 					firebase.database().ref(dbPath).remove().then(() =>{
@@ -168,24 +214,24 @@ export default class MeetingMinutesController extends FirebaseConnection{
 	
 	fileUploadPromise(file){
 		return new Promise((resolve, reject) => {
-			var filePath = 'minutes/'+file.name;
-			var storageRef = firebase.storage().ref(filePath);
-			console.log(storageRef.getDownloadURL());
+			let filePath = 'minutes/'+file.name;
+			let storageRef = firebase.storage().ref(filePath);
+			//console.log(storageRef.getDownloadURL());
 			storageRef.getDownloadURL().then( () => { //There already is a file with that name in storage, reject the promise...
 					reject("A File With the same name has already been uploaded!");
 			}).catch(() => { //There is no file with that name in Db, Lets make one!
-				var uploadTask =	storageRef.put(file);
+				let uploadTask =	storageRef.put(file);
 				uploadTask.on('state_changed', (snapshot) => {
-					var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+					let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 					console.log('Upload is ' + progress + '% done');
 				}, (error) => {
 					//This function happens if error hits during upload.
 					reject(error);
 				}, () => {
 					//this is for on complete uploads!
-					console.log("are we ever hitting the final function!?>!?!?!");
-					var downloadURL = uploadTask.snapshot.downloadURL;
-					var fileObject = {
+					//console.log("are we ever hitting the final function!?>!?!?!");
+					let downloadURL = uploadTask.snapshot.downloadURL;
+					let fileObject = {
 						downloadURL: downloadURL,
 						filePath: filePath
 					};
@@ -193,9 +239,6 @@ export default class MeetingMinutesController extends FirebaseConnection{
 				});
 				
 			});
-			
-			
-
 		});
 	}
 	
