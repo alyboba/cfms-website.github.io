@@ -34,6 +34,11 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		this.auth = authenticationService;
 		this.process();
 	}
+	/*
+	* @type {user-only && admin-only}
+	* @event
+	  * The main process to execute when controller is initialized via constructor.   
+	 */
 	process() {
 		if(this.auth.user){ //check if user is signed in
 			console.log("Is this user an admin?  " + this.auth.user.isAdmin);
@@ -93,11 +98,11 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		} //end else 
 	}
 	
-	
 	/*
-	Function used to handle when admin clicks the Add button on webpage.
-	@evt: 
-	 */
+	* @type {Admin-only}
+	* @param {object} evt
+	  * Holds reference to the dom element that fired the event.
+	*/
 	addMeetingMinutesEvent(evt){
 		evt.preventDefault();
 		let modalController = this;
@@ -123,7 +128,7 @@ export default class MeetingMinutesController extends FirebaseConnection{
 						let fileUpload = document.getElementById('uploadFile').files;
 						if(fileUpload.length == 1 ) {
 							console.log("got into the if statement b4 the function?!?!");
-							modalController.addMeetingMinutes(data.year, data.title, data.subTitle, fileUpload[0], true, null);
+							modalController.addMeetingMinutes(data.year, data.title, data.subTitle, fileUpload[0]);
 						}
 						else{
 							vex.dialog.alert("You may only attach one file per Entry!");
@@ -150,7 +155,19 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		});
 	}
 	
-	addMeetingMinutes(year, title, subTitle, file, justAdd, oldEntryPath){
+	/*
+	* @type {Admin-only}
+	* @param {String} year
+	*   contains the string for the year entered in modal by admin 
+	* @param {String} title
+	*   contains the string for the title entered in modal by admin
+	* @param {String} subTitle
+	*   contains the string for the subTitle entered in modal by admin
+	* @param {Object} file
+	*   A reference to the file object gathered by input element entered by the admin
+	* @param {Boolean} justAdd
+	*/
+	addMeetingMinutes(year, title, subTitle, file){
 		let modalController = this;
 		this.vexConfirm().then( () => {
 			modalController.fileUploadPromise(file).then( (fileObject ) =>{
@@ -161,31 +178,37 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					fileLink: fileObject.downloadURL,
 					filePath: fileObject.filePath
 				}).then( () => {
-					if(!justAdd){
-						firebase.database().ref(oldEntryPath).remove().then( () => {
-							vex.dialog.alert('<h3><strong>Old Entry Successfully Removed!</strong></h3>');
-						});
-					}
 					vex.dialog.alert('<h3><strong>Successfully added new Entry!</strong></h3>');
 					location.reload();
 				});
 			}).catch((error) => {
 				//TODO: add error message in vex, based off error code.
 				vex.dialog.alert('<h3><strong>'+error+'</strong></h3>');
-				console.log("an Error occurred, error number "+ error);
+				console.log("an Error occurred, Error "+ error);
 			})
 		}).catch( () => {
 			console.log("The promise returned false!!!!");
 		});
 	}
+	
+	/*
+	 * @type {Admin-only}
+	 * @param {object} evt
+	 *   An object to hold reference to the element that triggered the event.
+	 */
 	deleteMeetingMinutesEvent(evt){
 		evt.preventDefault();
 		let dbPath = evt.target.getAttribute('src');
 		console.log(dbPath);
 		this.deleteMeetingMinutes(dbPath);
-		
-		
 	}
+	
+	/*
+	 * @type {Admin-only}
+	 * @param {String}
+	 *   A string to hold reference to the database Path. Path is stored in the elements src attribute.
+	 *   The path is passed to this function through the deleteMeetingsEvent function.
+	 */
 	deleteMeetingMinutes(dbPath){
 		this.vexConfirm().then( () =>{
 			firebase.database().ref(dbPath).once('value').then( (snapshot) => {
@@ -208,10 +231,24 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		});
 	}
 	
+	/*
+	 * A utility function to validate a proper year is entered in the modal form when Adding entry to database.
+	 * @param {String} year
+	 *   The year the user entered
+	 * @param {String} startYear
+	 *   The floor limit of years allowed.
+	 * @param {String} endYear
+	 *   The ceiling limit of years allowed.
+	 */
 	isProperYearRange(year, startYear, endYear){
 		return year > startYear && year < endYear;
 	}
 	
+	/*
+	 * A custom made promise to determine that a file properly uploads
+	 * @param {Object} file
+	 *   The file the user uploaded
+	 */
 	fileUploadPromise(file){
 		return new Promise((resolve, reject) => {
 			let filePath = 'minutes/'+file.name;
@@ -242,6 +279,9 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		});
 	}
 	
+	/*
+	 * A custom promise for if a user is sure to continue or not.
+	 */
 	vexConfirm(){
 		return new Promise((resolve, reject) => {
 			vex.dialog.confirm({
