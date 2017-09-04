@@ -202,6 +202,7 @@ sidebar-who-we-are:
   history: "History"
   organizational-timeline: "Organizational Timeline"
   external-committees: "External Commmittees"
+  photo-gallery: "Photo Gallery"
   
 - lang: "fr"
   sidebar-title_1: "Qui sommes-nous?"
@@ -219,6 +220,7 @@ sidebar-who-we-are:
   history: "Histoire"
   organizational-timeline: "Chronologie Organisationnelle"
   external-committees: "Comités Externes"
+  photo-gallery: "Photo Gallery"
   
   
 #Sidebar education

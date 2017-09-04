@@ -8,6 +8,7 @@ import Modal from './modal';
 import Pagination from './pagination';
 import route from 'page';
 import TagSearch from './tag-search';
+import PhotoGallery from './photo-gallery';
 
 
 export default class Router extends Middleware {
@@ -31,6 +32,9 @@ export default class Router extends Middleware {
         route('/fr/who-we-are/organizational-timeline.html', Modal, Pagination);
         route('/what-we-do/advocacy/position-papers.html', TagSearch);
         route('/fr/what-we-do/advocacy/position-papers.html', TagSearch);
+        route('/who-we-are/photo-gallery.html', PhotoGallery);
+        route('/fr/who-we-are/photo-gallery.html', PhotoGallery);
+        
     }
 
     refresh() {
