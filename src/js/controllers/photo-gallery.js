@@ -1,43 +1,51 @@
-import PhotoSwipe from './dependencies/photo-swipe';
-import PhotoSwipeDefaultUI  from './dependencies/photo-swipe-ui';
+import Helper from './dependencies/blueimp-helper';
+import PhotoSwipe from './dependencies/blueimp-gallery';
+import Fullscreen from './dependencies/blueimp-gallery-fullscreen';
 
 export default class PhotoGalleryController{
 	constructor() {
 		this.process();
 	}
-	
-	
-	
-	
+		
 	process() {
 		$(document).ready(function(){
-			var pswpElement = document.querySelectorAll('.pswp')[0];
-
-// build items array
-			var items = [
-				{
-					src: 'https://placekitten.com/600/400',
-					w: 600,
-					h: 400
+			// Load demo images from flickr:
+			$.ajax({
+				url: 'https://api.flickr.com/services/rest/',
+				data: {
+					format: 'json',
+					method: 'flickr.interestingness.getList',
+					api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line
 				},
-				{
-					src: 'https://placekitten.com/1200/900',
-					w: 1200,
-					h: 900
-				}
-			];
-
-// define options (if needed)
-			var options = {
-				// optionName: 'option value'
-				// for example:
-				index: 0 // start at first slide
-			};
-
-// Initializes and opens PhotoSwipe
-			var gallery = new PhotoSwipe( pswpElement, PhotoSwipeDefaultUI, items, options);
-			gallery.init();
-		});
+				dataType: 'jsonp',
+				jsonp: 'jsoncallback'
+			}).done(function (result) {
+				var carouselLinks = []
+				var linksContainer = $('#links')
+				var baseUrl
+				// Add the demo images as links with thumbnails to the page:
+				$.each(result.photos.photo, function (index, photo) {
+					baseUrl = 'https://farm' + photo.farm + '.static.flickr.com/' +
+						photo.server + '/' + photo.id + '_' + photo.secret
+					$('<a/>')
+						.append($('<img>').prop('src', baseUrl + '_s.jpg'))
+						.prop('href', baseUrl + '_b.jpg')
+						.prop('title', photo.title)
+						.attr('data-gallery', '')
+						.appendTo(linksContainer)
+					carouselLinks.push({
+						href: baseUrl + '_c.jpg',
+						title: photo.title
+					})
+				})
+				// Initialize the Gallery as image carousel:
+				blueimp.Gallery(carouselLinks, {
+					container: '#blueimp-image-carousel',
+					carousel: true
+				})
+			});
+});
+		
 		
 	}
 	
