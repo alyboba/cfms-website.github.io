@@ -67,6 +67,8 @@ export default class PhotoGalleryController{
 				});//end Each
 				
 				$('.photoAlbum').click(function(event){
+					
+					//Need to hide all albums and show a back Button.
 					event.preventDefault();
 					console.log(this.id);
 					console.log("An album was clicked!");
@@ -89,7 +91,7 @@ export default class PhotoGalleryController{
 					}).done(function (result) {
 						console.log(result);
 						var carouselLinks = []
-						var linksContainer = $('#links')
+						var linksContainer = $('#links').empty();
 						var baseUrl
 						// Add the demo images as links with thumbnails to the page:
 						$.each(result.photoset.photo, function (index, photo) {
