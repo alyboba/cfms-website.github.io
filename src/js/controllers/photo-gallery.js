@@ -8,6 +8,15 @@ export default class PhotoGalleryController{
 		this.process();
 	}
 		
+	
+	//documentation for api methods
+	//https://www.flickr.com/services/api/explore/flickr.photosets.getPhotos
+	
+	
+	//To get album list
+	//https://www.flickr.com/services/api/explore/flickr.photosets.getList
+	
+	
 	process() {
 		$(document).ready(function(){
 			// Load demo images from flickr:
