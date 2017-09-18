@@ -10,3 +10,4 @@ coverage/
 .vscode/
 serve/
 .idea/
+package-lock\.json

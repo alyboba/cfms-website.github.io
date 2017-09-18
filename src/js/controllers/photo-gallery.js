@@ -1,3 +1,4 @@
+
 //This import order matters, don't change it or app could break.
 import Helper from './dependencies/blueimp-helper';
 import PhotoSwipe from './dependencies/blueimp-gallery';
@@ -124,7 +125,6 @@ export default class PhotoGalleryController{
 								links = this.getElementsByTagName('a');
 							blueimp.Gallery(links, options);
 						}; //end hooking up lightbox onclick.
-						
 						
 						
 					});//End onClick.
