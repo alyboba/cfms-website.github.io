@@ -17,8 +17,6 @@ export default class PhotoGalleryController{
 	//To get album list
 	//https://www.flickr.com/services/api/explore/flickr.photosets.getList
 	
-	
-	
 	process() {
 		let galleryController = this;
 		$(document).ready(function(){
@@ -52,7 +50,7 @@ export default class PhotoGalleryController{
 								photo.server + '/' + photo.primary + '_' + photo.secret;
 							//var photoId = photo.id;
 							//console.log(photo);
-							albumElem = '<div class="photoAlbum view photo-list-album-view awake" id="' + photo.id + '" style="transform: translate(0px, 8px);width: 240px;height: 240px;background-image:url(' + baseUrl + '_n.jpg)">';
+							albumElem = '<li><div class="photoAlbum view photo-list-album-view awake" id="' + photo.id + '" style="transform: translate(0px, 8px);width: 240px;height: 240px;background-image:url(' + baseUrl + '_n.jpg)">';
 							albumElem += '<a class="interaction-view avatar photo-list-album album ginormous" href="#" title="' + photo.title._content + '" data-rapid_p="65">';
 							albumElem += '<div class="photo-list-album-interaction dark has-actions" data-albumid="' + photo.id + '" >';
 							albumElem += '<a class="overlay" href="#" data-rapid_p="87"></a>';
@@ -66,11 +64,10 @@ export default class PhotoGalleryController{
 								photoString = "photo";
 							}
 							albumElem += '<span class="album-photo-count secondary">' + photo.photos + ' ' + photoString + '</span>';
-							albumElem += '</div></div></div></a></div>';
-							$('#albumContainer').append(albumElem);
+							albumElem += '</div></div></div></a></div></li>';
+							$('#list').append(albumElem);
 							albumElem = "";
 						});//end Each
-						
 						
 						$('.photoAlbum').click(function (event) {
 							event.preventDefault();
@@ -141,6 +138,17 @@ export default class PhotoGalleryController{
 								blueimp.Gallery(links, options);
 							}; //end hooking up lightbox onclick.
 						});//End onClick.
+						//Add search etc here?
+						$.getScript("//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js").done(() =>{
+							console.log("loaded list.js");
+							var monkeyList = new List('albumContainer', {
+								valueNames: ['album-title'],
+								page: 2,
+								pagination: true
+							});
+						});
+						
+						
 					} //End else (if no error)
 				}).fail( (error) =>{
 					console.log("the request failed and errored");
