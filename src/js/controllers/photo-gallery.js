@@ -18,12 +18,11 @@ export default class PhotoGalleryController{
 	//https://www.flickr.com/services/api/explore/flickr.photosets.getList
 	
 	
+	
 	process() {
 		let galleryController = this;
 		$(document).ready(function(){
 			// Load demo images from flickr:
-			
-			
 				$.ajax({
 					url: 'https://api.flickr.com/services/rest/',
 					data: {
@@ -35,105 +34,119 @@ export default class PhotoGalleryController{
 					dataType: 'jsonp',
 					jsonp: 'jsoncallback'
 				}).done((result) => {
-					var albumLinks = [];
-					var albumContainer = $('#albumContainer');
-					let albumElem;
-					//console.log(result);
-					var baseUrl;
-					
-					$.each(result.photosets.photoset, (index, photo) => {
-						baseUrl = 'https://c1.staticflickr.com/' + photo.farm + '/' +
-							photo.server + '/' + photo.primary + '_' + photo.secret;
-						//var photoId = photo.id;
-						//console.log(photo);
-						albumElem = '<div class="photoAlbum view photo-list-album-view awake" id="' + photo.id + '" style="transform: translate(0px, 8px);width: 240px;height: 240px;background-image:url(' + baseUrl + '_n.jpg)">';
-						albumElem += '<a class="interaction-view avatar photo-list-album album ginormous" href="#" title="' + photo.title._content + '" data-rapid_p="65">';
-						albumElem += '<div class="photo-list-album-interaction dark has-actions" data-albumid="' + photo.id + '" >';
-						albumElem += '<a class="overlay" href="#" data-rapid_p="87"></a>';
-						albumElem += '<div class="interaction-bar">';
-						albumElem += '<div class="metadata">';
-						albumElem += '<h4 class="album-title">' + photo.title._content + '</h4>';
-						var photoString;
-						if (photo.photos > 1) {
-							photoString = "photos";
-						} else {
-							photoString = "photo";
-						}
-						albumElem += '<span class="album-photo-count secondary">' + photo.photos + ' ' + photoString + '</span>';
-						albumElem += '</div></div></div></a></div>';
-						$('#albumContainer').append(albumElem);
-						albumElem = "";
-					});//end Each
-					
-					
-					$('.photoAlbum').click(function (event) {
-						event.preventDefault();
-						$('#closeButton').show("slow");
-						$('#albumContainer').hide("slow");
+					//checking to make sure request with api was successful....
+					if(result.stat === "fail"){
+						console.log("Error occured!");
+						console.log(result);
+						//handle error here.....
+					}
+					else {
+						var albumLinks = [];
+						var albumContainer = $('#albumContainer');
+						let albumElem;
+						//console.log(result);
+						var baseUrl;
 						
-						//Will put this in onClick method.
-						$.ajax({
-							url: 'https://api.flickr.com/services/rest/',
-							data: {
-								format: 'json',
-								photoset_id: this.id,
-								user_id: '154596101@N02',
-								method: 'flickr.photosets.getPhotos',
-								//method: 'flickr.interestingness.getList',
-								api_key: '2360ff92cabc49f59a9ceaa136a0fbcb'
-								//api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line blueimp Key
-							},
-							dataType: 'jsonp',
-							jsonp: 'jsoncallback'
-						}).done(function (result) {
-							//console.log(result);
-							var carouselLinks = []
-							var linksContainer = $('#links').empty();
-							var baseUrl
-							// Add the demo images as links with thumbnails to the page:
-							$.each(result.photoset.photo, function (index, photo) {
-								//$.each(result.photos.photo, function (index, photo) {
-								baseUrl = 'https://farm' + photo.farm + '.static.flickr.com/' +
-									photo.server + '/' + photo.id + '_' + photo.secret
-								$('<a/>')
-									.append($('<img>').prop('src', baseUrl + '_s.jpg'))
-									.prop('href', baseUrl + '_b.jpg')
-									.prop('title', photo.title)
-									.attr('data-gallery', '')
-									.appendTo(linksContainer);
-								carouselLinks.push({
-									href: baseUrl + '_c.jpg',
-									title: photo.title
-								});
-							});
-							// Initialize the Gallery as image carousel:
-							blueimp.Gallery(carouselLinks, {
-								container: '#blueimp-image-carousel',
-								carousel: true
-							});
-							$('#blueimp-image-carousel').show("slow");
-							$('#links').show("slow");
-						}); //End ajax call.
+						$.each(result.photosets.photoset, (index, photo) => {
+							baseUrl = 'https://c1.staticflickr.com/' + photo.farm + '/' +
+								photo.server + '/' + photo.primary + '_' + photo.secret;
+							//var photoId = photo.id;
+							//console.log(photo);
+							albumElem = '<div class="photoAlbum view photo-list-album-view awake" id="' + photo.id + '" style="transform: translate(0px, 8px);width: 240px;height: 240px;background-image:url(' + baseUrl + '_n.jpg)">';
+							albumElem += '<a class="interaction-view avatar photo-list-album album ginormous" href="#" title="' + photo.title._content + '" data-rapid_p="65">';
+							albumElem += '<div class="photo-list-album-interaction dark has-actions" data-albumid="' + photo.id + '" >';
+							albumElem += '<a class="overlay" href="#" data-rapid_p="87"></a>';
+							albumElem += '<div class="interaction-bar">';
+							albumElem += '<div class="metadata">';
+							albumElem += '<h4 class="album-title">' + photo.title._content + '</h4>';
+							var photoString;
+							if (photo.photos > 1) {
+								photoString = "photos";
+							} else {
+								photoString = "photo";
+							}
+							albumElem += '<span class="album-photo-count secondary">' + photo.photos + ' ' + photoString + '</span>';
+							albumElem += '</div></div></div></a></div>';
+							$('#albumContainer').append(albumElem);
+							albumElem = "";
+						});//end Each
 						
 						
-						//Hooking up lightBox links to onclick function
-						document.getElementById('links').onclick = function (event) {
-							event = event || window.event;
-							var target = event.target || event.srcElement,
-								link = target.src ? target.parentNode : target,
-								options = {index: link, event: event},
-								links = this.getElementsByTagName('a');
-							blueimp.Gallery(links, options);
-						}; //end hooking up lightbox onclick.
-						
-						
-					});//End onClick.
-					
-					
+						$('.photoAlbum').click(function (event) {
+							event.preventDefault();
+							$('#closeButton').show("slow");
+							$('#albumContainer').hide("slow");
+							
+							//Will put this in onClick method.
+							$.ajax({
+								url: 'https://api.flickr.com/services/rest/',
+								data: {
+									format: 'json',
+									photoset_id: this.id,
+									user_id: '154596101@N02',
+									method: 'flickr.photosets.getPhotos',
+									//method: 'flickr.interestingness.getList',
+									api_key: '2360ff92cabc49f59a9ceaa136a0fbcb'
+									//api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line blueimp Key
+								},
+								dataType: 'jsonp',
+								jsonp: 'jsoncallback'
+							}).done(function (result) {
+								if(result.stat === "fail"){
+									console.log("Error occured while grabbing photo album!");
+									console.log(result);
+								}
+								else {
+									//console.log(result);
+									var carouselLinks = []
+									var linksContainer = $('#links').empty();
+									var baseUrl
+									// Add the demo images as links with thumbnails to the page:
+									$.each(result.photoset.photo, function (index, photo) {
+										//$.each(result.photos.photo, function (index, photo) {
+										baseUrl = 'https://farm' + photo.farm + '.static.flickr.com/' +
+											photo.server + '/' + photo.id + '_' + photo.secret
+										$('<a/>')
+											.append($('<img>').prop('src', baseUrl + '_s.jpg'))
+											.prop('href', baseUrl + '_b.jpg')
+											.prop('title', photo.title)
+											.attr('data-gallery', '')
+											.appendTo(linksContainer);
+										carouselLinks.push({
+											href: baseUrl + '_c.jpg',
+											title: photo.title
+										});
+									});
+									// Initialize the Gallery as image carousel:
+									blueimp.Gallery(carouselLinks, {
+										container: '#blueimp-image-carousel',
+										carousel: true
+									});
+									$('#blueimp-image-carousel').show("slow");
+									$('#links').show("slow");
+								}
+							}).fail((error) => {
+								console.log("The inner request failed with");
+								console.log(error);
+							}); //End ajax call.
+							
+							
+							//Hooking up lightBox links to onclick function
+							document.getElementById('links').onclick = function (event) {
+								event = event || window.event;
+								var target = event.target || event.srcElement,
+									link = target.src ? target.parentNode : target,
+									options = {index: link, event: event},
+									links = this.getElementsByTagName('a');
+								blueimp.Gallery(links, options);
+							}; //end hooking up lightbox onclick.
+						});//End onClick.
+					} //End else (if no error)
+				}).fail( (error) =>{
+					console.log("the request failed and errored");
+					console.log(error);
 				}); //End get photo Albums ajax call
 			
-			
-
 			$('#closeButton').click(function(event){
 				event.preventDefault();
 				$('#closeButton').hide("slow");
