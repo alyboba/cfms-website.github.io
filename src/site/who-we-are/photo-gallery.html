@@ -15,6 +15,7 @@ title: "Photo Gallery"
     <link rel="stylesheet" href="/stylesheets/cards.css">
     <link rel="stylesheet" href="/stylesheets/photo-swipe.css">
     <link rel="stylesheet" href="/stylesheets/flickrStyles.css">
+    <link rel="stylesheet" href="/stylesheets/listJs-styles.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 {% include nav.html %}
@@ -39,13 +40,35 @@ title: "Photo Gallery"
         </div>
         <br />
         <div id="albumContainer">
+            
             <input type="text" class="search" />
+            <!--<select id="filter-tags">-->
+                <!--<option value="Select All">Select All</option>-->
+            <!--</select>-->
+            <br />
+            <br />
+            <br />
+            <ul class="sort-by">
+                <li class="sort btn" data-sort="album-title">Sort by Name</li>
+                <li class="sort btn" data-sort="album-year">Sort by Year</li>
+                <li class="sort btn" data-sort="album-school">Sort by School</li>
+                <li class="sort btn" data-sort="album-event">Sort by Event</li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <ul class="pagination"></ul>
             
             <ul id="list" class="list">
                 
             </ul>
             
-            <ul class="pagination"></ul>
+            
         </div>
         
         <div id="blueimp-image-carousel" class="blueimp-gallery blueimp-gallery-carousel">
