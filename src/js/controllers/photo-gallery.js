@@ -47,8 +47,8 @@ export default class PhotoGalleryController{
 						let albumElem;
 						//console.log(result);
 						var baseUrl;
-						//var tagArray = [];
-						//var addToTagArray = true;
+						var tagArray = [];
+						var addToTagArray = true;
 						$.each(result.photosets.photoset, (index, photo) => {
 							baseUrl = 'https://c1.staticflickr.com/' + photo.farm + '/' +
 								photo.server + '/' + photo.primary + '_' + photo.secret;
@@ -60,7 +60,7 @@ export default class PhotoGalleryController{
 							albumElem += '<a class="overlay" href="#" data-rapid_p="87"></a>';
 							albumElem += '<div class="interaction-bar">';
 							albumElem += '<div class="metadata">';
-							albumElem += '<h4 class="album-title">' + photo.title._content + '</h4>';
+							albumElem += '<h4 class="albumTitle">' + photo.title._content + '</h4>';
 							var albumTags = photo.description._content;
 							var albumTagArray = albumTags.split(',');
 							
@@ -68,28 +68,29 @@ export default class PhotoGalleryController{
 							for(var i=0; i<albumTagArray.length; i++){
 								if(albumTagArray[i].includes("year:")){
 									let subAlbumArray = albumTagArray[i].split(":");
-									albumElem += '<h4 class="album-year">' + subAlbumArray[1].trim() + '</h4>';
+									albumElem += '<h4 class="albumYear">' + subAlbumArray[1].trim() + '</h4>';
+									for(var j=0; j<tagArray.length; j++){
+										if(subAlbumArray[1].trim().toUpperCase() === tagArray[j].toUpperCase()){
+											addToTagArray = false;
+											break;
+										}
+										addToTagArray = true;
+									}
+									if(addToTagArray){
+										tagArray.push(subAlbumArray[1].trim());
+									}
 								}
 								else if(albumTagArray[i].includes("school:")){
 									let subAlbumArray = albumTagArray[i].split(":");
-									albumElem += '<h4 class="album-school">' + subAlbumArray[1].trim() + '</h4>';
+									albumElem += '<h4 class="albumSchool">' + subAlbumArray[1].trim() + '</h4>';
 								}
 								else if(albumTagArray[i].includes("event:")){
 									let subAlbumArray = albumTagArray[i].split(":");
-									albumElem += '<h4 class="album-event">' + subAlbumArray[1].trim() + '</h4>';
+									albumElem += '<h4 class="albumEvent">' + subAlbumArray[1].trim() + '</h4>';
 								}
 								else {
 									albumElem += '<h4 class="albumTag" style="display:none;">' + albumTagArray[i].trim() + '</h4>';
-									//for(var j=0; j<tagArray.length; j++){
-									//	if(albumTagArray[i].trim().toUpperCase() === tagArray[j].toUpperCase()){
-									//		addToTagArray = false;
-									//		break;
-									//	}
-									//	addToTagArray = true;
-									//}
-									//if(addToTagArray){
-									//	tagArray.push(albumTagArray[i].trim());
-									//}
+
 								}
 							}
 							
@@ -105,11 +106,11 @@ export default class PhotoGalleryController{
 							albumElem = "";
 						});//end Each
 						
-						//for(var i=0; i<tagArray.length; i++){
-						//	console.log(tagArray[i]);
-						//	var optionElem = '<option value ="'+tagArray[i]+'">'+tagArray[i]+'</option>';
-						//	$('#filter-tags').append(optionElem);
-						//}
+						for(var i=0; i<tagArray.length; i++){
+							console.log(tagArray[i]);
+							var optionElem = '<option value ="'+tagArray[i]+'">'+tagArray[i]+'</option>';
+							$('#filter-tags').append(optionElem);
+						}
 						
 						
 						$('.photoAlbum').click(function (event) {
@@ -185,26 +186,26 @@ export default class PhotoGalleryController{
 						$.getScript("//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js").done(() =>{
 							console.log("loaded list.js");
 							var monkeyList = new List('albumContainer', {
-								valueNames: ['album-title', 'album-year', 'album-school', 'albumTag', 'album-event'],
+								valueNames: ['albumTitle', 'albumYear', 'albumSchool', 'albumTag', 'albumEvent'],
 								page: 2,
 								pagination: true
 							});
-							//$('#filter-tags').change(function() {
-							//	console.log($('#filter-tags').val());
-							//	var selectedOption = $('#filter-tags').val();
-							//	monkeyList.filter(function(item) {
-							//		console.log(item);
-							//		if(selectedOption === "Select All"){
-							//			return true;
-							//		}
-							//		else if(item.values().albumTag.trim() == selectedOption) {
-							//			return true;
-							//		} else {
-							//			return false;
-							//		}
-							//	});
-							//	return false;
-							//});
+							$('#filter-tags').change(function() {
+								console.log($('#filter-tags').val());
+								var selectedOption = $('#filter-tags').val();
+								monkeyList.filter(function(item) {
+									console.log(item);
+									if(selectedOption === "Select Year"){
+										return true;
+									}
+									else if(item.values().albumYear.trim() == selectedOption) {
+										return true;
+									} else {
+										return false;
+									}
+								});
+								return false;
+							});
 							
 						});
 						
