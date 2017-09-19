@@ -190,7 +190,7 @@ export default class PhotoGalleryController{
 							console.log("loaded list.js");
 							var monkeyList = new List('albumContainer', {
 								valueNames: ['albumTitle', 'albumYear', 'albumSchool', 'albumTag', 'albumEvent'],
-								page: 2,
+								page: 6,
 								pagination: true
 							});
 							$('#filter-tags').change(function() {
@@ -211,7 +211,6 @@ export default class PhotoGalleryController{
 							});
 							
 						});
-						
 						$('.loader').hide();
 					} //End else (if no error)
 				}).fail( (error) =>{
