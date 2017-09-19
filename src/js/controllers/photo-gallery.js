@@ -40,6 +40,7 @@ export default class PhotoGalleryController{
 						console.log("Error occured!");
 						console.log(result);
 						//handle error here.....
+						$('.loader').hide();
 					}
 					else {
 						var albumLinks = [];
@@ -117,6 +118,7 @@ export default class PhotoGalleryController{
 							event.preventDefault();
 							$('#closeButton').show("slow");
 							$('#albumContainer').hide("slow");
+							$('.loader').show("fast");
 							
 							//Will put this in onClick method.
 							$.ajax({
@@ -163,6 +165,7 @@ export default class PhotoGalleryController{
 										container: '#blueimp-image-carousel',
 										carousel: true
 									});
+									$('.loader').hide("fast");
 									$('#blueimp-image-carousel').show("slow");
 									$('#links').show("slow");
 								}
@@ -209,10 +212,7 @@ export default class PhotoGalleryController{
 							
 						});
 						
-						
-							
-						
-						
+						$('.loader').hide();
 					} //End else (if no error)
 				}).fail( (error) =>{
 					console.log("the request failed and errored");
