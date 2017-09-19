@@ -106,6 +106,8 @@ export default class PhotoGalleryController{
 							$('#list').append(albumElem);
 							albumElem = "";
 						});//end Each
+						tagArray = galleryController.bubbleSortArray(tagArray);
+						//Add bubble sort method here.
 						
 						for(var i=0; i<tagArray.length; i++){
 							console.log(tagArray[i]);
@@ -227,6 +229,20 @@ export default class PhotoGalleryController{
 			});
 			
 		}); //End document.ready
+	}//end process
+	
+	bubbleSortArray(array){
+		var length = array.length;
+		for(var i=0; i<length; i++){
+			for(var j=0; j<(length -i -1); j++){
+				if(array[j] > array[j+1]){
+					var temp = array[j];
+					array[j] = array[j+1];
+					array[j+1] = temp;
+				}
+			}
+		}
+		return array;
 	}
 		
 	
