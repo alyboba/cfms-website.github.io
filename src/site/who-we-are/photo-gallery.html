@@ -14,6 +14,7 @@ title: "Photo Gallery"
     <link rel="stylesheet" href="/stylesheets/who-we-are.css">
     <link rel="stylesheet" href="/stylesheets/cards.css">
     <link rel="stylesheet" href="/stylesheets/photo-swipe.css">
+    <!--<link rel="stylesheet" href="/stylesheets/pagination.css">-->
     <link rel="stylesheet" href="/stylesheets/flickrStyles.css">
     <link rel="stylesheet" href="/stylesheets/listJs-styles.css">
 </head>
@@ -40,13 +41,12 @@ title: "Photo Gallery"
         </div>
         <br />
         <div id="albumContainer">
-            
-            <input type="text" class="search" placeholder="Search Albums" />
-            <select id="filter-tags">
-                <option value="Select Year">Select Year</option>
-            </select>
-            <br />
-            <br />
+            <div>
+                <input type="text" class="search" placeholder="Search Albums" />
+                <select id="filter-tags">
+                    <option value="Select Year">Select Year</option>
+                </select>
+            </div>
             <br />
             <ul class="sort-by">
                 <li class="sort btn" data-sort="albumTitle">Sort by Name</li>
@@ -58,16 +58,11 @@ title: "Photo Gallery"
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <ul class="pagination"></ul>
             
             <ul id="list" class="list">
                 
             </ul>
-            
             
         </div>
         

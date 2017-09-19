@@ -1,3 +1,5 @@
+@import 'variables';
+
 #albumContainer > ul {
   list-style:none;
 }
@@ -26,7 +28,7 @@
   margin-right: 10px;
   margin-left: 25px;
   margin-bottom: 15px;
-  float:left;
+  display:inline;
 
 }
 .search:focus {
@@ -38,3 +40,88 @@
   border-bottom: solid 1px #e6e6e6;
   border-left: solid 1px #aaa;
 }
+
+
+//SelectBox styles
+
+select#filter-tags{
+  display:inline;
+  -webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  color: #555;
+  font-size: inherit;
+  margin: 20px;
+  overflow: hidden;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//pagination styles
+
+
+.btn {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px; /*optional*/
+  color: #aaa;
+  font-size: .875em;
+}
+
+.pagination {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.pagination > li {
+  display:inline;
+}
+
+.page {
+  display: inline-block;
+  padding: 6px 10px;
+  margin-right: 1px;
+  border-radius: 3px;
+  border: solid 1px #c0c0c0;
+  background: #e9e9e9;
+  box-shadow: inset 0px 1px 0px rgba(255,255,255, .8), 0px 1px 3px rgba(0,0,0, .1);
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #717171;
+  text-shadow: 0px 1px 0px rgba(255,255,255, 1);
+}
+
+.page:hover, .page.gradient:hover {
+  background: #fefefe;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#f0f0f0));
+  background: -moz-linear-gradient(0% 0% 270deg,#FEFEFE, #f0f0f0);
+}
+
+.pagination >li.active a {
+  border: none;
+  background: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
+  color: $brighter;
+  text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+}
+
