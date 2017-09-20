@@ -213,6 +213,7 @@ body {
     }
     .print{
         display:inline;
+        -webkit-print-color-adjust: exact;
     }
     header.print{
         display:block;
