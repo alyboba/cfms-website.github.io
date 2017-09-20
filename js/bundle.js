@@ -118304,7 +118304,7 @@ var App = function App() {
 ;
 new App();
 
-},{"./routes":514}],489:[function(require,module,exports){
+},{"./routes":515}],489:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -118385,7 +118385,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{"../utils":527}],491:[function(require,module,exports){
+},{"../utils":529}],491:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118538,7 +118538,365 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
 exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
-},{"../repositories/firebase/utils":513}],492:[function(require,module,exports){
+},{"../repositories/firebase/utils":514}],492:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _utils = require('../repositories/firebase/utils');
+
+var _utils2 = require('../utils');
+
+var _utils3 = _interopRequireDefault(_utils2);
+
+var _showModal = require('../controllers/showModal');
+
+var _showModal2 = _interopRequireDefault(_showModal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @file
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Provides Controller Functionality for the meeting-minutes.html page.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Populates page with information from database if user is authenticated with firebase as a user
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Determines if user is also an admin. If true, allows the admin functionality to add/delete entrys from meeting-minutes
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * section in database.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+//TODO: Page could have extra security checks/Ui enhancements. Leaving for now because it is for admins.
+
+var MeetingMinutesController = function (_FirebaseConnection) {
+	_inherits(MeetingMinutesController, _FirebaseConnection);
+
+	/*
+  * @constructor
+  * @param {Utils} this.utils
+    * Object to access methods from the src/js/utils.js class
+  *  
+  * @param {String} this.refPath
+    * holds the root reference path to the firebase database
+  *   
+  * @param {AuthenticationService} this.auth
+    * Object used to make sure the user accessing the page is authenticated
+  * @event this.process
+    * our base event to be triggered when page initializes.
+  */
+	function MeetingMinutesController(authenticationService, ModalController) {
+		_classCallCheck(this, MeetingMinutesController);
+
+		var _this = _possibleConstructorReturn(this, (MeetingMinutesController.__proto__ || Object.getPrototypeOf(MeetingMinutesController)).call(this));
+
+		_this.utils = new _utils3.default();
+		_this.refPath = 'meeting-minutes/';
+		_this.auth = authenticationService;
+		_this.process();
+		return _this;
+	}
+	/*
+ * @type {user-only && admin-only}
+ * @event
+   * The main process to execute when controller is initialized via constructor.   
+  */
+
+
+	_createClass(MeetingMinutesController, [{
+		key: 'process',
+		value: function process() {
+			var _this2 = this;
+
+			if (this.auth.user) {
+				//check if user is signed in
+				console.log("Is this user an admin?  " + this.auth.user.isAdmin);
+				var elem = void 0,
+				    temp = void 0,
+				    //Variables used to populate page with html.
+				subRefPath = '',
+				    //Variables used to assign paths to the delete buttons.
+				subSubRefPath = '';
+				if (this.utils.isPageEnglish()) {
+					//Sets database path to english or french version!
+					this.refPath = this.refPath + 'en';
+				} else {
+					this.refPath = this.refPath + 'fr';
+				}
+				this.firebase.database().ref(this.refPath).on('value', function (snapshot) {
+					//Iterating over the database
+					snapshot.forEach(function (childSnapshot) {
+						//This iterates over the years in the database.
+						elem = ''; //Resetting variable for next iteration.
+						subRefPath = _this2.refPath + '/' + childSnapshot.key;
+						elem += '<h2 class="bold-red meetingMinuteYear">' + childSnapshot.key + '</h2>';
+						childSnapshot.forEach(function (subChildSnapshot) {
+							//This iterates over all nodes within each year currently on in DB.
+							subSubRefPath = subRefPath + '/' + subChildSnapshot.key;
+							elem += '<p><strong class="meetingMinuteTitle">' + subChildSnapshot.val().title + '</strong></p>';
+							elem += '<p class="meetingMinuteSubTitle">' + subChildSnapshot.val().subTitle + '</p>';
+							elem += '<a href="' + subChildSnapshot.val().fileLink + '" target="_blank">' + subChildSnapshot.val().fileTitle + '</a><br>';
+							if (_this2.auth.user.isAdmin) {
+								//TODO: Add check this.auth.user.isAdmin
+								var deleteButton = _this2.utils.createButton(subSubRefPath, "Delete", "deleteEntry");
+								elem += deleteButton;
+							} //end admin if
+							elem += '<br>';
+						}); //end third DB call
+
+						temp = document.createElement("blockquote");
+						temp.innerHTML = elem;
+						document.getElementById('meetingMinutes').insertBefore(temp, document.getElementById('meetingMinutes').firstChild);
+					}); //end second Db call
+
+					if (_this2.auth.user.isAdmin) {
+						//Executes if user is an admin user.
+						temp = document.createElement("blockquote");
+						var addButton = _this2.utils.createButton(_this2.refPath, "Add", "addEntry");
+						elem = addButton;
+						temp.innerHTML = elem;
+						document.getElementById('meetingMinutes').insertBefore(temp, document.getElementById('meetingMinutes').firstChild);
+
+						//These will get updated every time a change is made to Database.
+						var deleteButtons = document.getElementsByClassName("deleteEntry");
+						for (var i = 0; i < deleteButtons.length; i++) {
+							deleteButtons[i].addEventListener('click', _this2.deleteMeetingMinutesEvent.bind(_this2), false);
+						}
+						var addButtons = document.getElementsByClassName("addEntry");
+						for (var _i = 0; _i < addButtons.length; _i++) {
+							addButtons[_i].addEventListener('click', _this2.addMeetingMinutesEvent.bind(_this2), false);
+						}
+					} //end admin if
+				}); //end first database call
+			} else {
+				vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
+				console.log("We are on the page with user not signed in tsk tsk tsk.");
+			} //end else 
+		}
+
+		/*
+  * @type {Admin-only}
+  * @param {object} evt
+    * Holds reference to the dom element that fired the event.
+  */
+
+	}, {
+		key: 'addMeetingMinutesEvent',
+		value: function addMeetingMinutesEvent(evt) {
+			var _this3 = this;
+
+			evt.preventDefault();
+			var modalController = this;
+			vex.dialog.open({
+				message: 'Add Meeting Minutes',
+				input: ['<input name="year" type="text" placeholder="Year" required/>', '<input name="title" type="text" placeholder="Title" required />', '<input name="subTitle" type="text" placeholder="sub Title" required />', '<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />' + '<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>'].join(''),
+				buttons: [$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }), $.extend({}, vex.dialog.buttons.NO, { text: 'Back' })],
+				callback: function callback(data) {
+					//This executes when a button is pressed
+					if (!data) {
+						//Executes if back button pressed
+						console.log('Cancelled');
+					} else {
+						//Executes if Add button pressed
+						console.log("hitting the add shit here?");
+						if (modalController.isProperYearRange(data.year, 2000, 2030)) {
+							var fileUpload = document.getElementById('uploadFile').files;
+							if (fileUpload.length == 1) {
+								console.log("got into the if statement b4 the function?!?!");
+								modalController.addMeetingMinutes(data.year, data.title, data.subTitle, fileUpload[0]);
+							} else {
+								vex.dialog.alert("You may only attach one file per Entry!");
+							}
+						} else {
+							vex.dialog.alert("Year must be between 2000 and 2030");
+						}
+					}
+				}
+			}).on("change", "#uploadFile", function (e) {
+				//This is an event handler dynamically attached only when modal is clicked!.
+				var label = e.target.nextElementSibling,
+				    labelVal = label.innerHTML,
+				    fileName = '';
+				if (_this3.files && _this3.files.length > 1) fileName = (_this3.getAttribute('data-multiple-caption') || '').replace('{count}', _this3.files.length);else fileName = e.target.value.split('\\').pop();
+
+				if (fileName) label.querySelector('span').innerHTML = fileName;else label.innerHTML = labelVal;
+			});
+		}
+
+		/*
+  * @type {Admin-only}
+  * @param {String} year
+  *   contains the string for the year entered in modal by admin 
+  * @param {String} title
+  *   contains the string for the title entered in modal by admin
+  * @param {String} subTitle
+  *   contains the string for the subTitle entered in modal by admin
+  * @param {Object} file
+  *   A reference to the file object gathered by input element entered by the admin
+  * @param {Boolean} justAdd
+  */
+
+	}, {
+		key: 'addMeetingMinutes',
+		value: function addMeetingMinutes(year, title, subTitle, file) {
+			var _this4 = this;
+
+			var modalController = this;
+			this.vexConfirm().then(function () {
+				modalController.fileUploadPromise(file).then(function (fileObject) {
+					firebase.database().ref(_this4.refPath + '/' + year).push({
+						title: title,
+						subTitle: subTitle,
+						fileTitle: file.name,
+						fileLink: fileObject.downloadURL,
+						filePath: fileObject.filePath
+					}).then(function () {
+						vex.dialog.alert('<h3><strong>Successfully added new Entry!</strong></h3>');
+						location.reload();
+					});
+				}).catch(function (error) {
+					//TODO: add error message in vex, based off error code.
+					vex.dialog.alert('<h3><strong>' + error + '</strong></h3>');
+					console.log("an Error occurred, Error " + error);
+				});
+			}).catch(function () {
+				console.log("The promise returned false!!!!");
+			});
+		}
+
+		/*
+   * @type {Admin-only}
+   * @param {object} evt
+   *   An object to hold reference to the element that triggered the event.
+   */
+
+	}, {
+		key: 'deleteMeetingMinutesEvent',
+		value: function deleteMeetingMinutesEvent(evt) {
+			evt.preventDefault();
+			var dbPath = evt.target.getAttribute('src');
+			console.log(dbPath);
+			this.deleteMeetingMinutes(dbPath);
+		}
+
+		/*
+   * @type {Admin-only}
+   * @param {String}
+   *   A string to hold reference to the database Path. Path is stored in the elements src attribute.
+   *   The path is passed to this function through the deleteMeetingsEvent function.
+   */
+
+	}, {
+		key: 'deleteMeetingMinutes',
+		value: function deleteMeetingMinutes(dbPath) {
+			this.vexConfirm().then(function () {
+				firebase.database().ref(dbPath).once('value').then(function (snapshot) {
+					var filePath = snapshot.val().filePath;
+					var storageRef = firebase.storage().ref(filePath);
+					console.log(storageRef);
+					storageRef.delete().then(function () {
+						firebase.database().ref(dbPath).remove().then(function () {
+							vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+							location.reload();
+						});
+					}).catch(function () {
+						console.log("The storage in file no longer exists!!!.. Deleting the database entry of broken link!");
+						firebase.database().ref(dbPath).remove().then(function () {
+							vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+							location.reload();
+						});
+					});
+				});
+			});
+		}
+
+		/*
+   * A utility function to validate a proper year is entered in the modal form when Adding entry to database.
+   * @param {String} year
+   *   The year the user entered
+   * @param {String} startYear
+   *   The floor limit of years allowed.
+   * @param {String} endYear
+   *   The ceiling limit of years allowed.
+   */
+
+	}, {
+		key: 'isProperYearRange',
+		value: function isProperYearRange(year, startYear, endYear) {
+			return year > startYear && year < endYear;
+		}
+
+		/*
+   * A custom made promise to determine that a file properly uploads
+   * @param {Object} file
+   *   The file the user uploaded
+   */
+
+	}, {
+		key: 'fileUploadPromise',
+		value: function fileUploadPromise(file) {
+			return new Promise(function (resolve, reject) {
+				var filePath = 'minutes/' + file.name;
+				var storageRef = firebase.storage().ref(filePath);
+				//console.log(storageRef.getDownloadURL());
+				storageRef.getDownloadURL().then(function () {
+					//There already is a file with that name in storage, reject the promise...
+					reject("A File With the same name has already been uploaded!");
+				}).catch(function () {
+					//There is no file with that name in Db, Lets make one!
+					var uploadTask = storageRef.put(file);
+					uploadTask.on('state_changed', function (snapshot) {
+						var progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+						console.log('Upload is ' + progress + '% done');
+					}, function (error) {
+						//This function happens if error hits during upload.
+						reject(error);
+					}, function () {
+						//this is for on complete uploads!
+						//console.log("are we ever hitting the final function!?>!?!?!");
+						var downloadURL = uploadTask.snapshot.downloadURL;
+						var fileObject = {
+							downloadURL: downloadURL,
+							filePath: filePath
+						};
+						resolve(fileObject);
+					});
+				});
+			});
+		}
+
+		/*
+   * A custom promise for if a user is sure to continue or not.
+   */
+
+	}, {
+		key: 'vexConfirm',
+		value: function vexConfirm() {
+			return new Promise(function (resolve, reject) {
+				vex.dialog.confirm({
+					message: "Are you sure?",
+					callback: function callback(value) {
+						if (value) {
+							resolve(true); //if user selects yes, promise resolves true
+						} else {
+							reject(false);
+						}
+					} //end vex confirm callback
+				});
+			});
+		}
+	}]);
+
+	return MeetingMinutesController;
+}(_utils.FirebaseConnection);
+
+exports.default = MeetingMinutesController;
+
+},{"../controllers/showModal":501,"../repositories/firebase/utils":514,"../utils":529}],493:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118610,7 +118968,7 @@ var MeetingRegistrationsController = function () {
 
 exports.default = MeetingRegistrationsController;
 
-},{}],493:[function(require,module,exports){
+},{}],494:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118691,7 +119049,7 @@ var _class = function (_FirebaseConnection) {
 
 exports.default = _class;
 
-},{"../repositories/firebase/utils":513}],494:[function(require,module,exports){
+},{"../repositories/firebase/utils":514}],495:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118739,7 +119097,7 @@ var MembersController = function () {
 
 exports.default = MembersController;
 
-},{}],495:[function(require,module,exports){
+},{}],496:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118867,7 +119225,7 @@ var NavigationController = function () {
 
 exports.default = NavigationController;
 
-},{"js-cookie":281}],496:[function(require,module,exports){
+},{"js-cookie":281}],497:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118964,7 +119322,7 @@ var PaginationController = function () {
 
 exports.default = PaginationController;
 
-},{}],497:[function(require,module,exports){
+},{}],498:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119053,7 +119411,7 @@ var PaymentsController = function () {
 
 exports.default = PaymentsController;
 
-},{"../utils":527,"request-promise":391}],498:[function(require,module,exports){
+},{"../utils":529,"request-promise":391}],499:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119124,7 +119482,7 @@ var PurchasesController = function () {
 
 exports.default = PurchasesController;
 
-},{"../utils":527,"request-promise":391}],499:[function(require,module,exports){
+},{"../utils":529,"request-promise":391}],500:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119189,7 +119547,7 @@ var RegistrationController = function () {
 
 exports.default = RegistrationController;
 
-},{"../utils":527}],500:[function(require,module,exports){
+},{"../utils":529}],501:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -119203,19 +119561,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * Created by Justin on 7/8/2017.
  */
-var instance = null;
-
+//let instance = null;
 var ModalController = function () {
 	function ModalController() {
 		_classCallCheck(this, ModalController);
 
-		if (instance) {
-			//Singleton pattern
-			return instance;
-		}
+		//if(instance){ //Singleton pattern
+		//	return instance;
+		//}
 		this.currentModal;
 		this.bindListeners();
-		this.instance = this;
 	}
 
 	_createClass(ModalController, [{
@@ -119224,9 +119579,12 @@ var ModalController = function () {
 
 		//Starting method of class, Other methods below are for events.
 		value: function bindListeners() {
+			//console.log("Are we accessing the modal Controller??");
 			var buttons = document.getElementsByClassName('clickMe');
+			//console.log(buttons);
 			for (var i = 0; i < buttons.length; i++) {
 				var button = buttons[i];
+				//console.log("are we getting into the for loop?!?!");
 				button.onclick = this.clickTheModal;
 			}
 
@@ -119248,6 +119606,7 @@ var ModalController = function () {
 		key: "clickTheModal",
 		value: function clickTheModal() {
 			event.preventDefault();
+			console.log("click event working?");
 			ModalController.setCurrentModal(this.parentElement.previousElementSibling);
 			this.parentElement.previousElementSibling.classList.remove("fadeOut");
 			this.parentElement.previousElementSibling.classList.remove("hidden");
@@ -119288,7 +119647,7 @@ var ModalController = function () {
 
 exports.default = ModalController;
 
-},{}],501:[function(require,module,exports){
+},{}],502:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -119310,6 +119669,7 @@ var TagSearchConroller = function () {
 		key: "bindListeners",
 		value: function bindListeners() {
 			$(document).ready(function () {
+				console.log("Here i am!");
 				$("#filters").css({ "display": "block" }); //Set the search form visible if the user has javascript enabled...
 				$("#noJavaScriptMessage").css({ "display": "none" }); //If user has javascript, hide this element. If they have no JS, User friendly message will display to them.
 				//var searchBar = $('<legend>Search by Title:</legend><input style ="display:none;"id="searchFilter" type="text" name="search" placeholder="Search Paper Name with Filters">');
@@ -119440,7 +119800,7 @@ var TagSearchConroller = function () {
 
 exports.default = TagSearchConroller;
 
-},{}],502:[function(require,module,exports){
+},{}],503:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119463,7 +119823,7 @@ var _authentication4 = _interopRequireDefault(_authentication3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/authentication":490,"../services/authentication":523}],503:[function(require,module,exports){
+},{"../controllers/authentication":490,"../services/authentication":525}],504:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119496,7 +119856,7 @@ var Middleware = function Middleware(page) {
 
 exports.default = Middleware;
 
-},{"./authentication":502,"./members-content":504,"./navigation":505}],504:[function(require,module,exports){
+},{"./authentication":503,"./members-content":505,"./navigation":506}],505:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119519,7 +119879,7 @@ var _authentication2 = _interopRequireDefault(_authentication);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/members-content":493,"../services/authentication":523}],505:[function(require,module,exports){
+},{"../controllers/members-content":494,"../services/authentication":525}],506:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119538,7 +119898,7 @@ var _navigation2 = _interopRequireDefault(_navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/navigation":495}],506:[function(require,module,exports){
+},{"../controllers/navigation":496}],507:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119594,7 +119954,7 @@ var MeetingRegistrationModel = function (_Model) {
 
 exports.default = MeetingRegistrationModel;
 
-},{"./model":507,"./user":508}],507:[function(require,module,exports){
+},{"./model":508,"./user":509}],508:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119637,7 +119997,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"lodash":318}],508:[function(require,module,exports){
+},{"lodash":318}],509:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119706,7 +120066,7 @@ var UserModel = function (_Model) {
 
 exports.default = UserModel;
 
-},{"./model":507}],509:[function(require,module,exports){
+},{"./model":508}],510:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119761,7 +120121,7 @@ var ApiRepository = function () {
 
 exports.default = ApiRepository;
 
-},{"request-promise":391}],510:[function(require,module,exports){
+},{"request-promise":391}],511:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119808,7 +120168,7 @@ var UserRepository = function (_ApiRepository) {
 
 exports.default = UserRepository;
 
-},{"./repository":509}],511:[function(require,module,exports){
+},{"./repository":510}],512:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119865,7 +120225,7 @@ var MeetingRegistrationRepository = function (_FirebaseRepository) {
 
 exports.default = MeetingRegistrationRepository;
 
-},{"./repository":512}],512:[function(require,module,exports){
+},{"./repository":513}],513:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119907,7 +120267,7 @@ var Repository = function () {
 
 exports.default = Repository;
 
-},{"./utils":513}],513:[function(require,module,exports){
+},{"./utils":514}],514:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119972,7 +120332,7 @@ var FirebaseRef = function (_FirebaseConnection) {
 exports.FirebaseRef = FirebaseRef;
 exports.FirebaseConnection = FirebaseConnection;
 
-},{"../../config":489,"firebase":200}],514:[function(require,module,exports){
+},{"../../config":489,"firebase":200}],515:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120019,6 +120379,10 @@ var _tagSearch = require('./tag-search');
 
 var _tagSearch2 = _interopRequireDefault(_tagSearch);
 
+var _meetingMinutes = require('./meeting-minutes');
+
+var _meetingMinutes2 = _interopRequireDefault(_meetingMinutes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -120056,6 +120420,8 @@ var Router = function (_Middleware) {
             (0, _page2.default)('/fr/who-we-are/organizational-timeline.html', _modal2.default, _pagination2.default);
             (0, _page2.default)('/what-we-do/advocacy/position-papers.html', _tagSearch2.default);
             (0, _page2.default)('/fr/what-we-do/advocacy/position-papers.html', _tagSearch2.default);
+            (0, _page2.default)('/members/meeting-minutes.html', _meetingMinutes2.default);
+            (0, _page2.default)('/fr/members/meeting-minutes.html', _meetingMinutes2.default);
         }
     }, {
         key: 'refresh',
@@ -120069,7 +120435,7 @@ var Router = function (_Middleware) {
 
 exports.default = Router;
 
-},{"../middlewares":503,"./md-leadership-awards":515,"./meeting-registrations":516,"./members":517,"./modal":518,"./pagination":519,"./purchases":520,"./registration":521,"./tag-search":522,"page":331}],515:[function(require,module,exports){
+},{"../middlewares":504,"./md-leadership-awards":516,"./meeting-minutes":517,"./meeting-registrations":518,"./members":519,"./modal":520,"./pagination":521,"./purchases":522,"./registration":523,"./tag-search":524,"page":331}],516:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120100,7 +120466,36 @@ function LeadershipAwardAdmin(ctx, next) {
     next();
 }
 
-},{"../controllers/md-leadership-awards":491,"../services/authentication":523}],516:[function(require,module,exports){
+},{"../controllers/md-leadership-awards":491,"../services/authentication":525}],517:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = meetingMinutes;
+
+var _meetingMinutes = require('../controllers/meeting-minutes');
+
+var _meetingMinutes2 = _interopRequireDefault(_meetingMinutes);
+
+var _authentication = require('../services/authentication');
+
+var _authentication2 = _interopRequireDefault(_authentication);
+
+var _showModal = require('../controllers/showModal');
+
+var _showModal2 = _interopRequireDefault(_showModal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//Shows Member Account Information on the Members Page
+function meetingMinutes(ctx, next) {
+	new _meetingMinutes2.default(new _authentication2.default(), _showModal2.default);
+
+	next();
+}
+
+},{"../controllers/meeting-minutes":492,"../controllers/showModal":501,"../services/authentication":525}],518:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120148,7 +120543,7 @@ function MeetingRegistration(ctx, next) {
     next();
 }
 
-},{"../controllers/meeting-registrations":492,"../controllers/payments":497,"../models/meeting-registration":506,"../models/user":508,"../repositories/api/user":510,"../repositories/firebase/meeting-registration":511,"../services/authentication":523,"../services/payments":526}],517:[function(require,module,exports){
+},{"../controllers/meeting-registrations":493,"../controllers/payments":498,"../models/meeting-registration":507,"../models/user":509,"../repositories/api/user":511,"../repositories/firebase/meeting-registration":512,"../services/authentication":525,"../services/payments":528}],519:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120173,7 +120568,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/members":494,"../services/authentication":523}],518:[function(require,module,exports){
+},{"../controllers/members":495,"../services/authentication":525}],520:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120196,7 +120591,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/showModal":500}],519:[function(require,module,exports){
+},{"../controllers/showModal":501}],521:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120219,7 +120614,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/pagination":496}],520:[function(require,module,exports){
+},{"../controllers/pagination":497}],522:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120246,7 +120641,7 @@ function Purchases(ctx, next) {
     next();
 }
 
-},{"../controllers/purchases":498,"../services/authentication":523,"../services/payments":526}],521:[function(require,module,exports){
+},{"../controllers/purchases":499,"../services/authentication":525,"../services/payments":528}],523:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120277,7 +120672,7 @@ function Registration(ctx, next) {
   next();
 }
 
-},{"../controllers/registration":499,"../models/user":508,"../services/authentication":523}],522:[function(require,module,exports){
+},{"../controllers/registration":500,"../models/user":509,"../services/authentication":525}],524:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120298,7 +120693,7 @@ function TagSearch(ctx, next) {
 	next();
 }
 
-},{"../controllers/tag-search":501}],523:[function(require,module,exports){
+},{"../controllers/tag-search":502}],525:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120404,6 +120799,12 @@ var AuthenticationService = function () {
             });
         }
     }, {
+        key: 'storageRef',
+        get: function get() {
+            console.log("hitting the method");
+            return this.user ? this.firebase.meetingMinutes() : null;
+        }
+    }, {
         key: 'user',
         get: function get() {
             var user = localStorage.getItem('profile');
@@ -120432,7 +120833,7 @@ var AuthenticationService = function () {
 
 exports.default = AuthenticationService;
 
-},{"../../models/user":508,"../../repositories/api/user":510,"../../utils":527,"./providers/auth0":524,"./providers/firebase":525,"jsonwebtoken":290,"lodash":318}],524:[function(require,module,exports){
+},{"../../models/user":509,"../../repositories/api/user":511,"../../utils":529,"./providers/auth0":526,"./providers/firebase":527,"jsonwebtoken":290,"lodash":318}],526:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120500,7 +120901,7 @@ var Auth0Provider = function () {
 
 exports.default = Auth0Provider;
 
-},{"../../../config":489,"auth0-js":87}],525:[function(require,module,exports){
+},{"../../../config":489,"auth0-js":87}],527:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120550,6 +120951,11 @@ var FirebaseProvider = function (_FirebaseConnection) {
         value: function logout() {
             this.firebase.auth().signOut();
         }
+    }, {
+        key: 'meetingMinutes',
+        value: function meetingMinutes() {
+            return this.firebase.storage().ref('minutes/');
+        }
     }]);
 
     return FirebaseProvider;
@@ -120557,7 +120963,7 @@ var FirebaseProvider = function (_FirebaseConnection) {
 
 exports.default = FirebaseProvider;
 
-},{"../../../repositories/firebase/utils":513}],526:[function(require,module,exports){
+},{"../../../repositories/firebase/utils":514}],528:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -120600,7 +121006,7 @@ var PaymentsService = function (_FirebaseConnection) {
 
 exports.default = PaymentsService;
 
-},{"../repositories/firebase/utils":513}],527:[function(require,module,exports){
+},{"../repositories/firebase/utils":514}],529:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120674,6 +121080,21 @@ var Utils = function () {
                     return true;
                 }
             });
+        }
+    }, {
+        key: 'isPageEnglish',
+        value: function isPageEnglish() {
+            if (window.location.href.indexOf('/fr/') == -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }, {
+        key: 'createButton',
+        value: function createButton(path, title, className) {
+            var button = '<div class="url preview"><p><a style="cursor: pointer;" src="' + path + '" class="' + className + '">' + title + '</a></p></div>';
+            return button;
         }
     }]);
 
