@@ -163,38 +163,44 @@ sidebar-global-health:
     human-rights-peace-pocket-cards: Séries pocket card
     aboriginal-health: Santé autochtone
 sidebar-who-we-are:
-  - lang: en
-    sidebar-title_1: Who We Are
-    executives-officers: Executives &amp; Officers
-    member-schools: Member Schools
-    cfms-representatives: CFMS Representatives
-    cfms-at-your-school: CFMS at your School
-    partner-organizations: Partner Organizations
-    sidebar-title_2: Our Organization
-    governance-structure: Governance Structure
-    internal-policy-bylaws: Bylaws &amp; Internal Policy
-    about-us: About Us
-    alumni: Alumni
-    sidebar-title_3: More Information
-    history: History
-    organizational-timeline: Organizational Timeline
-    external-committees: External Commmittees
-  - lang: fr
-    sidebar-title_1: Qui sommes-nous?
-    executives-officers: Conseil exécutif et directeurs
-    member-schools: Écoles membres
-    cfms-representatives: Représentants de la FEMC
-    cfms-at-your-school: La FEMC à votre école
-    partner-organizations: Organisations partenaires
-    sidebar-title_2: Notre organisation
-    governance-structure: Structure de gouvernance
-    internal-policy-bylaws: Règlements administratifs et politique intérieure
-    about-us: About Us
-    alumni: Anciens
-    sidebar-title_3: Plus d'information
-    history: Histoire
-    organizational-timeline: Chronologie Organisationnelle
-    external-committees: Comités Externes
+- lang: "en"
+  sidebar-title_1: "Who We Are"
+  executives-officers: "Executives &amp; Officers"
+  member-schools: "Member Schools"
+  cfms-representatives: "CFMS Representatives"
+  cfms-at-your-school: "CFMS at your School"
+  partner-organizations: "Partner Organizations"
+  sidebar-title_2: "Our Organization"
+  governance-structure: "Governance Structure"
+  internal-policy-bylaws: "Bylaws &amp; Internal Policy"
+  about-us: "About Us"
+  alumni: "Alumni"
+  sidebar-title_3: "More Information"
+  history: "History"
+  organizational-timeline: "Organizational Timeline"
+  external-committees: "External Commmittees"
+  photo-gallery: "Photo Gallery"
+  
+- lang: "fr"
+  sidebar-title_1: "Qui sommes-nous?"
+  executives-officers: "Conseil exécutif et directeurs"
+  member-schools: "Écoles membres"
+  cfms-representatives: "Représentants de la FEMC"
+  cfms-at-your-school:  "La FEMC à votre école"
+  partner-organizations: "Organisations partenaires"
+  sidebar-title_2: "Notre organisation"
+  governance-structure: "Structure de gouvernance"
+  internal-policy-bylaws: "Règlements administratifs et politique intérieure"
+  about-us: "About Us"
+  alumni: "Anciens"
+  sidebar-title_3: "Plus d'information"
+  history: "Histoire"
+  organizational-timeline: "Chronologie Organisationnelle"
+  external-committees: "Comités Externes"
+  photo-gallery: "Galerie de photos"
+  
+  
+#Sidebar education
 sidebar-education:
   - lang: en
     sidebar-title_1: Education
