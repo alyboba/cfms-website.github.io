@@ -20,26 +20,26 @@ title: "Lasik Membership Card"
 
     <div id="printableCard" class='card print'>
         <header class="print">
-            <h1 class="print editable">Lasik Discount Card</h1>
+            <h1 class="print editable">Lasik Carte de réduction</h1>
         </header>
         <article class="print">
             <div class='area print'>
-            <!--Put lasik image here-->
-            <!--<img alt='My Pic' id='thumb' src='https://s.cdpn.io/1202/timpietrusky_on_rampage_small_1.jpg'>-->
-            <div class="print">
-                <h3 class="print floatLeft"><strong class="print editable">Your Account:&nbsp;</strong></h3>
-                <h4 id="account-name" class="print floatRight"></h4>
-            </div>
-            <br class="print" /> <br class="print" />
-            
+                <!--Put lasik image here-->
+                <!--<img alt='My Pic' id='thumb' src='https://s.cdpn.io/1202/timpietrusky_on_rampage_small_1.jpg'>-->
                 <div class="print">
-                    <h3 class="print floatLeft"><b class="print editable">School</b>:&nbsp;</h3>
-                     <h4 class="print floatRight" id="account-school"></h4>
+                    <h3 class="print floatLeft"><strong class="print editable">Ton compte:&nbsp;</strong></h3>
+                    <h4 id="account-name" class="print floatRight"></h4>
+                </div>
+                <br class="print" /> <br class="print" />
+
+                <div class="print">
+                    <h3 class="print floatLeft"><b class="print editable">École</b>:&nbsp;</h3>
+                    <h4 class="print floatRight" id="account-school"></h4>
                 </div>
                 <br class="print" />
                 <br class="print" />
                 <div class="print">
-                    <h3 class="print floatLeft"><b class="print editable">Graduating Year</b>:&nbsp;</h3>
+                    <h3 class="print floatLeft"><b class="print editable">Année de fin d'études</b>:&nbsp;</h3>
                     <h4 class="print floatRight" id="account-grad-year"></h4>
                 </div>
                 <br class="print" />
@@ -48,15 +48,15 @@ title: "Lasik Membership Card"
                     <h3 class="print floatLeft"><b class="print editable">Email</b>:&nbsp;</h3>
                     <h4 class="print floatRight" id="account-email"></h4>
                 </div>
-                
+
             </div>
         </article>
     </div>
-    
+
     <br /> <br />
-    
-    <button class="printButton editable" id="printClick">Click Here to Print</button>
-        
+
+    <button class="printButton editable" id="printClick">Cliquez ici pour imprimer</button>
+
 </div>
 {% include footer.html %}
 </body>
@@ -65,6 +65,6 @@ title: "Lasik Membership Card"
     $('#printClick').click(function(){
         window.print();
     })
-    
+
 </script>
 </html>
