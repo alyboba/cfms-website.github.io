@@ -205,11 +205,10 @@ body {
 
 
 @media print {
-    @page{
-        margin: 1.0cm;
-    }
-    
     body *{
+        display:none;
+    }
+    #footer{
         display:none;
     }
     .print{
@@ -218,11 +217,30 @@ body {
     header.print{
         display:block;
     }
+    .area{
+        margin-left:0.3cm;
+    }
     .floatLeft{
         float:left;
     }
     .floatRight{
         float:right;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
