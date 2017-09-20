@@ -33,6 +33,7 @@ export default class PhotoGalleryController{
 					if(result.stat === "fail"){
 						console.log("Error occured!");
 						console.log(result);
+						galleryController.handleError("An Error occurred, Please try refreshing the browser.");
 						//handle error here.....
 						$('.loader').hide();
 					}
@@ -122,6 +123,7 @@ export default class PhotoGalleryController{
 								if(result.stat === "fail"){
 									console.log("Error occured while grabbing photo album!");
 									console.log(result);
+									galleryController.handleError("An Error occurred, Please try refreshing the browser.");
 								}
 								else {
 									//console.log(result);
@@ -156,6 +158,7 @@ export default class PhotoGalleryController{
 							}).fail((error) => {
 								console.log("The inner request failed with");
 								console.log(error);
+								galleryController.handleError("An Error occurred, Please try refreshing the browser.");
 							}); //End ajax call.
 							//Hooking up lightBox links to onclick function
 							document.getElementById('links').onclick = function (event) {
@@ -197,6 +200,7 @@ export default class PhotoGalleryController{
 				}).fail( (error) =>{
 					console.log("the request failed and threw an error");
 					console.log(error);
+					galleryController.handleError("An Error occurred, Please try refreshing the browser.");
 				}); //End get photo Albums ajax call
 			
 			$('#closeButton').click(function(event){
@@ -223,4 +227,11 @@ export default class PhotoGalleryController{
 		}
 		return array;
 	}
+	
+	handleError(errorMsg){
+		$('#albumContainer').hide();
+		$('#errorMessage').text(errorMsg);
+		$('#errorMessage').show();
+	}
+	
 }
