@@ -53,14 +53,18 @@ title: "Lasik Membership Card"
         </article>
     </div>
     
-    <h1>To print, Click<button id="printClick">Here</button></h1>
+    <br /> <br />
+    
+    <button class="printButton" id="printClick">Click Here to Print</button>
         
 </div>
 {% include footer.html %}
 </body>
 
 <script>
-    
+    $('#printClick').click(function(){
+        window.print();
+    })
     
 </script>
 </html>
