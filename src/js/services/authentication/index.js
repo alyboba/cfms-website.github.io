@@ -40,6 +40,11 @@ export default class AuthenticationService {
         localStorage.removeItem('profile');
         this.auth0.logout();
     }
+    
+    get storageRef(){
+        console.log("hitting the method");
+        return this.user ? this.firebase.meetingMinutes() : null;
+    }
 
     get user() {
         let user = localStorage.getItem('profile');

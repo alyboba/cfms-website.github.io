@@ -46,5 +46,19 @@ export default class Utils {
             }
         });
     }
+    isPageEnglish(){
+        if(window.location.href.indexOf('/fr/') == -1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    createButton(path, title, className){
+        let button = '<div class="url preview"><p><a style="cursor: pointer;" src="'+ path +'" class="'+className+'">'+title+'</a></p></div>';
+        return button;
+    }
+
     
 }
