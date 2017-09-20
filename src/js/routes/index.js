@@ -9,6 +9,7 @@ import Pagination from './pagination';
 import route from 'page';
 import TagSearch from './tag-search';
 import PhotoGallery from './photo-gallery';
+import MeetingMinutes from './meeting-minutes';
 
 
 export default class Router extends Middleware {
@@ -35,6 +36,8 @@ export default class Router extends Middleware {
         route('/who-we-are/photo-gallery.html', PhotoGallery);
         route('/fr/who-we-are/photo-gallery.html', PhotoGallery);
         
+        route('/members/meeting-minutes.html', MeetingMinutes);
+        route('/fr/members/meeting-minutes.html', MeetingMinutes);
     }
 
     refresh() {
