@@ -120234,9 +120234,9 @@ var PhotoGalleryController = function () {
 					url: 'https://api.flickr.com/services/rest/',
 					data: {
 						format: 'json',
-						user_id: '154596101@N02',
+						user_id: '151536734@N03',
 						method: 'flickr.photosets.getList',
-						api_key: '2360ff92cabc49f59a9ceaa136a0fbcb'
+						api_key: '0de69094c4a08c0ec198f6e200681d2e'
 					},
 					dataType: 'jsonp',
 					jsonp: 'jsoncallback'
@@ -120320,9 +120320,9 @@ var PhotoGalleryController = function () {
 								data: {
 									format: 'json',
 									photoset_id: this.id,
-									user_id: '154596101@N02',
+									user_id: '151536734@N03',
 									method: 'flickr.photosets.getPhotos',
-									api_key: '2360ff92cabc49f59a9ceaa136a0fbcb'
+									api_key: '0de69094c4a08c0ec198f6e200681d2e'
 								},
 								dataType: 'jsonp',
 								jsonp: 'jsoncallback'
