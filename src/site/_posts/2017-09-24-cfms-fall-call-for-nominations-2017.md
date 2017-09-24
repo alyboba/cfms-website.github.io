@@ -28,42 +28,42 @@ Interested? Please [apply here](https://docs.google.com/forms/d/e/1FAIpQLSeTVf6b
 
 **VP Government Affairs**
 
-* AFMC eHealth Committee{: .present-before-paste}
-* National Officer of Health Policy{: .present-before-paste}
-* Committee on Health Policy{: .present-before-paste}
+* AFMC eHealth Committee
+* National Officer of Health Policy
+* Committee on Health Policy
 
 **VP Student Affairs**
 
-* National Wellness Officer{: .present-before-paste}
+* National Wellness Officer
 
 **VP Communications**
 
-* National Officer of Information Technology{: .present-before-paste}
-* Social Media Engagement Committee{: .present-before-paste}
-* CMAJ Student Humanities Blog Editor - English{: .present-before-paste}
+* National Officer of Information Technology
+* Social Media Engagement Committee
+* CMAJ Student Humanities Blog Editor - English
 
 **VP Finance**
 
-* Finance Committee{: .present-before-paste}
-* Strategic Initiatives Funds Committee{: .present-before-paste}
+* Finance Committee
+* Strategic Initiatives Funds Committee
 
 **VP Education**
 
-* Education Committee{: .present-before-paste}
-* AFMC Student Portal Steering Committee{: .present-before-paste}
-* Representative to Clinical Investigator Trainee Association of Canada{: .present-before-paste}
-* CFMS Liaison to Choosing Wisely Canada{: .present-before-paste}
-* National Officer of Research{: .present-before-paste}
+* Education Committee
+* AFMC Student Portal Steering Committee
+* Representative to Clinical Investigator Trainee Association of Canada
+* CFMS Liaison to Choosing Wisely Canada
+* National Officer of Research
 
 **VP Global Health**
 
-* National Officer of Sexual & Reproductive Health{: .present-before-paste}
-* National Officer of Global Health Education{: .present-before-paste}
-* National Officer of Partnerships{: .present-before-paste}
-* National Officer of Partnerships{: .present-before-paste}
-* National Officer of Human Rights and Peace{: .present-before-paste}
-* National Officer of Indigenous Health{: .present-before-paste}
-* Health & Environmental Adaptive Response Team{: .present-before-paste}
+* National Officer of Sexual & Reproductive Health
+* National Officer of Global Health Education
+* National Officer of Partnerships
+* National Officer of Partnerships
+* National Officer of Human Rights and Peace
+* National Officer of Indigenous Health
+* Health & Environmental Adaptive Response Team
 
 Please see program descriptions here: [https://goo.gl/y38dV7](https://goo.gl/y38dV7)
 
