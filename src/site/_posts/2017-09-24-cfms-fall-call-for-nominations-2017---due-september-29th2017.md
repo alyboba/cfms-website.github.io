@@ -24,10 +24,11 @@ Please see program descriptions here: [https://goo.gl/y38dV7](https://goo.gl/y38
 Interested? Please [apply here](https://docs.google.com/forms/d/e/1FAIpQLSeTVf6bVaHgje-_P94Qnc2cf3IvxhBo0Q9btbqQJ7UPmt00Nw/viewform)!
 {: .present-before-paste}
 
+Applications are due **September 29th**, 2017 at 11:59pm EST
 {: .present-before-paste}
 
 **<u>Available Positions</u>**
-{: .present-before-paste}
+{: .present-before-paste.present-before-paste}
 
 **Ontario Regional Representative**
 {: .present-before-paste}
