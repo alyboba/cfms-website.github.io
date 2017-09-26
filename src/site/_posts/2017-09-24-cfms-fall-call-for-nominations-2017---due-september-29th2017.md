@@ -1,6 +1,6 @@
 ---
-title: CFMS Fall Call for Nominations 2017
-date: 2017-09-24 08:59:23
+title: 'CFMS Fall Call for Nominations 2017 - Due September 29th,2017'
+date: 2017-09-24 08:59:00
 description: >-
   As the representative voice of Canadian medical students, the Canadian
   Federation of Medical Students (CFMS) represents you and your colleagues to
@@ -24,7 +24,6 @@ Please see program descriptions here: [https://goo.gl/y38dV7](https://goo.gl/y38
 Interested? Please [apply here](https://docs.google.com/forms/d/e/1FAIpQLSeTVf6bVaHgje-_P94Qnc2cf3IvxhBo0Q9btbqQJ7UPmt00Nw/viewform)!
 {: .present-before-paste}
 
-&nbsp;
 {: .present-before-paste}
 
 **<u>Available Positions</u>**
