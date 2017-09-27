@@ -36,10 +36,19 @@ defaults:
       lang: "fr"
 
 #Number of pages in each archive page.
-paginate: 10
-paginate_path: "news/archives/:num/"
+paginate_multiple:
+  - paginate: 10
+    paginate_path: "news/archives/:num/"
+    sub_dir: '/news'
+  - paginate: 5
+    paginate_path: "human-of-medicine/:num/"
+    sub_dir: "human-medicine-posts"
+
+
+#paginate: 10
+#paginate_path: "news/archives/:num/"
 
 rdiscount:
   extensions: [smart]
 
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-paginate-multiple]
