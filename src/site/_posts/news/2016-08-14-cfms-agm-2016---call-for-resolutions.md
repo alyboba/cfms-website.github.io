@@ -1,4 +1,5 @@
 ---
+categories: news
 title: CFMS AGM 2016 - Call for Resolutions
 date: 2016-08-15T00:00:00.000Z
 description: CFMS AGM 2016 - Call for Resolutions

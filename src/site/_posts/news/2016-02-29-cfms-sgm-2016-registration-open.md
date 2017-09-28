@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "CFMS SGM 2016 &ndash; Registration is now open!"
 date: 2016-02-29
 description: Join us in Montreal QC for the CFMS Spring General Meeting, in conjunction with the Canadian Conference on Medical Education, April 15-16, 2016!

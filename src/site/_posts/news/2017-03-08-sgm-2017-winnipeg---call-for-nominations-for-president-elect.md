@@ -1,4 +1,5 @@
 ---
+categories: news
 title: SGM 2017 Winnipeg - Call for Nominations for President-Elect
 date: 2017-03-08 12:00:00
 description: Nominations are now open for the position of President-Elect of the Canadian Federation of Medical Students (CFMS).

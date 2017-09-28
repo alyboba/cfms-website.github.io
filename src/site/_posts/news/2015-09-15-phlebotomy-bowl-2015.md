@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "Phlebotomy Bowl 2015"
 date: 2015-09-15
 description: CFMS has a long-standing history of giving blood and saving lives. As future doctors, we appreciate how critical it is that blood products are available for patients at any given time. We’re pleased to do our part to help through a national partnership with Canadian Blood Services.

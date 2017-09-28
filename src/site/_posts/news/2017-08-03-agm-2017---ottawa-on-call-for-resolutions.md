@@ -1,8 +1,8 @@
 ---
+categories: news
 title: 'AGM 2017 - Ottawa, ON: Call for Resolutions'
 date: 2017-08-03 00:00:00
 description: 'Medical societies, meeting delegates and member medical students are invited to put forward resolutions for discussion and debate at the CFMS Annual General Meeting during the Members Resolutions Session.'
-categories:
 lang: en
 ---
 

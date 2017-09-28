@@ -1,4 +1,5 @@
 ---
+categories: news
 title: '2016 - CFMS-MD Financial Management Leadership Awards: NOW OPEN! (DUE February 1st)'
 date: 2015-12-06T00:00:00.000Z
 description: 'Applications for the CFMS-MD Financial Management Leadership are now being accepted!'

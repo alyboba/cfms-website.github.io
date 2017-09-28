@@ -1,4 +1,5 @@
 ---
+categories: news
 title: CFMS AGM 2016 - Call for Nominations
 date: 2016-08-15T00:00:00.000Z
 description: 'CFMS AGM 2016: Nominations for Canadian Federation of Medical Students (CFMS) Executive'

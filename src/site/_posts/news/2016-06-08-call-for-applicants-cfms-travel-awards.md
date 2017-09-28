@@ -1,4 +1,5 @@
 ---
+categories: news
 title: Call for Applicants - CFMS Travel Awards
 date: 2016-06-09T00:00:00.000Z
 description: 'The CFMS and MD Financial Management have set aside funds for the 2015-2016 academic year to provide financial assistance for CFMS member medical students who wish to attend our Annual General Meeting, held September 23-25, 2016 in Edmonton, Alberta.'

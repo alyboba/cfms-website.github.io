@@ -1,4 +1,5 @@
 ---
+categories: news
 title: 'Call for Feedback: CFMS Strategic Plan'
 date: 2017-07-17 00:00:00
 description: >-
@@ -8,7 +9,6 @@ description: >-
   to build upon these and outline operational, governance and human resource
   growth plans and changes to enable the organization to continue to represent,
   support & connect members for the next three years.
-categories:
 lang: en
 ---
 

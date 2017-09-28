@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "Trainee Leadership at CMA GC"
 date: 2015-09-03
 description: There was impressive engagement from trainees at this year's CMA General Council in Halifax, NS.  We were excited to see an expansion in the CMA Ambassadors Program which brought 10 medical students, 10 residents, and 10 early career physicians from the region to attend General Council.

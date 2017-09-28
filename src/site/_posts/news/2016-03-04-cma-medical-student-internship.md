@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "CMA &ndash; Medical Student Internship Opportunity"
 date: 2016-03-04
 description: Once again this year, the CMA will be offering a first or second year CFMS student member the chance to complete an internship at their head office in Ottawa.

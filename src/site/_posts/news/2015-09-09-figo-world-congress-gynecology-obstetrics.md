@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "FIGO World Congress on Gynecology and Obstetrics"
 date: 2015-09-09
 description: It is with great pleasure we invite you to apply to be part of the official CFMS / IFMSA delegation to the FIGO Congress on October 4-9.

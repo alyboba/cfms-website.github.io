@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "Call for Applications &ndash; CMAJ Humanities Blog Peer Reviewers"
 date: 2015-10-26
 description: CMAJ is seeking medical students to peer review and help edit the Student Humanities Blog.

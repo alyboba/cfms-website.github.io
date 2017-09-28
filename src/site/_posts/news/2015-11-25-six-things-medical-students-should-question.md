@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "Six Things Medical Students Should Question"
 date: 2015-11-25
 description: The Canadian Federation of Medical Students (CFMS) and Fédération médicale étudiante du Québec (FMEQ), who together represent all medical students in Canada, today released a list of 'Six Things Medical Students Should Question' as part of Choosing Wisely Canada.

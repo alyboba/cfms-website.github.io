@@ -1,4 +1,5 @@
 ---
+categories: news
 title: Call for Submissions - University of Ottawa Journal of Medicine
 date: 2015-12-09T00:00:00.000Z
 description: The University of Ottawa Journal of Medicine (UOJM) is now accepting submissions for our Spring 2016 issue on Preventive and Personalized Medicine.

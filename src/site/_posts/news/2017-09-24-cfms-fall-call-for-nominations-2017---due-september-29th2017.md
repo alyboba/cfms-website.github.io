@@ -7,7 +7,7 @@ description: >-
   many national medical organizations including the Canadian Medical
   Association, the College of Family Physicians, the Royal College of Physicians
   and Surgeons of Canada and others.
-categories:
+categories: news
 lang: en
 ---
 

@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "OMSA and CFMS Joint Message: Reduction of CMG PGY-1 Positions in Ontario"
 date: 2015-07-26
 description: As medical student representative organizations, both the Ontario Medical Students Association (OMSA) and the Canadian Federation of Medical Students (CFMS) believe it is important to inform our members of an impending reduction in the number of residency positions that will be available in the province of Ontario for the 2016 and 2017 R1 Main Residency Matches.

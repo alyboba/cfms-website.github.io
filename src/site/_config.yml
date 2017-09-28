@@ -23,7 +23,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "news"
+      layout: "news"   
   -
     scope:
       path: ""
@@ -41,8 +41,8 @@ paginate_multiple:
     paginate_path: "news/archives/:num/"
     sub_dir: '/news'
   - paginate: 5
-    paginate_path: "human-of-medicine/:num/"
-    sub_dir: "human-medicine-posts"
+    paginate_path: "humans-of-medicine/:num/"
+    sub_dir: "/human-medicine-posts"
 
 
 #paginate: 10

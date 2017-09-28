@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "CFMS SGM 2016 &ndash; Call for Nominations: CFMS President-Elect"
 date: 2016-02-28
 description: Nominations are now open for the position of President-Elect of the Canadian Federation of Medical Students (CFMS). Deadline April 15th, 2016.

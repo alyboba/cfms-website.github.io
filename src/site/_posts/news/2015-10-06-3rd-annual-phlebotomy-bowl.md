@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "3rd Annual Phlebotomy Bowl"
 date: 2015-10-06
 description: It’s time for the start of the 2015-2016 annual Phlebotomy Bowl! Last year’s challenge was an amazing success &ndash; bringing in a total of 751 life-saving blood donations and a total of 105 new blood donors.

@@ -1,4 +1,5 @@
 ---
+categories: news
 title: "CFMS National Health and Wellbeing Survey"
 date: 2015-11-14
 description: The CFMS and FMEQ are collecting new information on the health and behaviors of medical students studying at institutions across Canada, for the purpose of developing and advocating for programs to improve our health.

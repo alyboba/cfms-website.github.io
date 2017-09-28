@@ -1,0 +1,65 @@
+---
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    {% if jekyll.environment == "production" %}
+    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
+    {% else %}
+    <link rel="stylesheet" href="/stylesheets/news.css">
+    {% endif %}
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#human-of-medicine" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    
+    <div id="title">{{ page.title }}</div>
+    <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+    </info>
+    <div id="date">{{ page.date | date: "%B %d, %Y" }}</div>
+    <div id="body">
+        {{ content }}
+    </div>
+</div>
+<!-- Other News -->
+<div id="other-news">
+    <h1>This is hte Humans of medicine layout!</h1>
+    <div id="other-news-list">
+        {% if page.lang == "en" %}
+        {% for post in site.categories.humans-of-medicine limit:5 %}
+        {% unless post.categories contains "fr" %}
+        <div class="news-date">{{ post.date | date: '%b %d' }}</div>
+        <li>
+            <div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
+        </li>
+        {% endunless %}
+        {% endfor %}
+        {% else %}
+        {% assign posts=site.posts | where:"categories", page.lang %}
+        {% for post in posts limit:5 %}
+        <div class="news-date">{{ post.date | date: '%b %d' }}</div>
+        <li>
+            <div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
+        </li>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% include footer.html %}
+</body>
+</html>
+

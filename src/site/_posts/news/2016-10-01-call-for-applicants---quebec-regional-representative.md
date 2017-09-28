@@ -1,4 +1,5 @@
 ---
+categories: news
 title: Call for Applicants - Quebec Regional Representative
 date: 2016-10-02 00:00:00
 description: |-

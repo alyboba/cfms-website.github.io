@@ -1,4 +1,5 @@
 ---
+categories: news
 title: 2016 National Geriatrics Interest Group Awards
 date: 2016-02-15T00:00:00.000Z
 description: The National Geriatrics Interest Group (NGIG) is currently accepting applications for the J.L. NGIG Student Leadership Award and for the NGIG Research Award.

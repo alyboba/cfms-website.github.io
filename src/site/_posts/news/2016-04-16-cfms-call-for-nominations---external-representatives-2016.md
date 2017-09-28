@@ -1,4 +1,5 @@
 ---
+categories: news
 title: CFMS Call for Nominations - External Representatives 2016
 date: 2016-02-19T00:00:00.000Z
 description: 'As the representative voice of Canadian medical students, the Canadian Federation of Medical Students (CFMS) represents you and your colleagues to many national medical organizations including the Canadian Medical Association, the College of Family Physicians, the Royal College of Physicians and Surgeons of Canada and others.'
