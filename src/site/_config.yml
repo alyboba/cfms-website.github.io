@@ -44,7 +44,8 @@ paginate_multiple:
     paginate_path: "humans-of-medicine/:num/"
     sub_dir: "/human-medicine-posts"
 
-
+news-blog-paginate-path: "news/archives/:num/"
+humans-of-medicine-paginate-path: "humans-of-medicine/:num/"
 #paginate: 10
 #paginate_path: "news/archives/:num/"
 

@@ -4,7 +4,7 @@ title: "All Articles"
 
 <!DOCTYPE html>
 
-
+{% assign currentPageUrl = page.url %}
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
@@ -56,13 +56,13 @@ title: "All Articles"
 				<!-- Page Listing -->
 				<div id="page-listing">
 					{% for page in (1..paginator.total_pages) %}
-					    {% if page == paginator.page %}
-						    <em id="current-page" class="page-link">{{ page }}</em>
-					    {% elsif page == 1 %}
-						    <a class="page-link" href="/news/archives/">{{ page }}</a>
-					    {% else %}
-						    <a class="page-link" href="/{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
-					    {% endif %}
+					{% if page == paginator.page %}
+					<em id="current-page" class="page-link">{{ page }}</em>
+					{% elsif page == 1 %}
+					<a class="page-link" href="/news/archives/">{{ page }}</a>
+					{% else %}
+					<a class="page-link" href="/{{ site.news-blog-paginate-path | replace: ':num', page }}">{{ page }}</a>
+					{% endif %}
 					{% endfor %}
 				</div>
 
