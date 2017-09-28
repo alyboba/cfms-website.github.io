@@ -12,6 +12,7 @@ title: "This is a test!"
 
     <!--Page Specific Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/news.css">
+    <link rel="stylesheet" href="/stylesheets/humans-of-medicine.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 {% include nav.html %}
@@ -26,18 +27,19 @@ title: "This is a test!"
 
 <div id="archives" class="content">
     <div id="archives-title">{{ page.url }}</div>
-    <div id="aside">
-        <h6>About the CFMS</h6>
-        {{ site.about_cfms_en }}
-    </div>
-
+    
     <!-- This loops through the paginated posts -->
-    <ul>
+    <ul id="list">
+        
         {% for post in paginator.posts %}
-        <li>
-            <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-            <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
-        </li>
+            <li>
+            <a class="noHighLight" href="{{ post.url }}">{{ post.title }}
+            {{post.excerpt}}
+                
+            </a>
+            </li>
+            <!--<span class="date">{{ post.date | date: '%B %d, %Y' }}</span>-->
+   
         {% endfor %}
     </ul>
 

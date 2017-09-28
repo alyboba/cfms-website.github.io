@@ -6,4 +6,6 @@ categories: humans-of-medicine
 layout: humans-of-medicine
 ---
 
+<img class="right" src="{{site.root}}/images/news-images/CWC.png">
+
 This here is some filler text Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsumLorem ipsumLorem ipsum

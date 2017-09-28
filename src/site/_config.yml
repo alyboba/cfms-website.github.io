@@ -40,12 +40,16 @@ paginate_multiple:
   - paginate: 10
     paginate_path: "news/archives/:num/"
     sub_dir: '/news'
-  - paginate: 5
+  - paginate: 6
     paginate_path: "humans-of-medicine/:num/"
     sub_dir: "/human-medicine-posts"
 
+#paths for the two blogs. If the html files move, this will need updating!
 news-blog-paginate-path: "news/archives/:num/"
 humans-of-medicine-paginate-path: "humans-of-medicine/:num/"
+
+#used for humans-of-medicine blog posts
+excerpt_seperator: ""
 #paginate: 10
 #paginate_path: "news/archives/:num/"
 
