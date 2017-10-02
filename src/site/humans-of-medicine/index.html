@@ -23,7 +23,6 @@ title: "This is a test!"
     document.querySelector( "#human-of-medicine" ).classList.toggle("active");
 </script>
 
-{% assign currentPageUrl = page.url %}
 
 <div id="archives" class="content">
     <div id="archives-title">{{ page.url }}</div>
@@ -33,8 +32,8 @@ title: "This is a test!"
         
         {% for post in paginator.posts %}
             <li>
-            <a class="noHighLight" href="{{ post.url }}">{{ post.title }}
-            {{post.excerpt}}
+            <a class="noHighLight" href="{{ post.url }}">
+            {{post.content}}
                 
             </a>
             </li>

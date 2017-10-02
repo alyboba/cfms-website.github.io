@@ -4,21 +4,37 @@
   display: grid;
   grid-template-columns: 500px 500px;
   grid-gap: 30px;
-
-  @media screen and (max-width: 1098px){
-    grid-template-columns: 250px 250px;
-  }
-  @media screen and (max-width: 585px){
-    grid-template-columns: 250px;
-  }
+  //
+  //@media screen and (max-width: 1098px){
+  //  grid-template-columns: 250px 250px;
+  //}
+  //@media screen and (max-width: 585px){
+  //  grid-template-columns: 250px;
+  //}
 }
 
 .right{
   float:none;
+  left: 0px;
   width: 100% !important;
+  width: 500px;
+  height: auto;
+
 }
 
 .noHighLight, .noHighLight:hover,.noHighLight:visited{
   text-decoration:none;
   color: #777A89;
+}
+
+p{
+  padding-left: 35px;
+  padding-right: 35px;
+  line-height: 28px;
+  margin-left:20px;
+}
+p>.right{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-left: 0px !important;
 }
