@@ -3,6 +3,7 @@
   list-style:none;
   display: grid;
   grid-template-columns: 500px 500px;
+  grid-auto-flow: row dense;
   grid-gap: 30px;
   //
   //@media screen and (max-width: 1098px){
@@ -11,6 +12,9 @@
   //@media screen and (max-width: 585px){
   //  grid-template-columns: 250px;
   //}
+}
+.postContentContainer{
+  width: 480px;
 }
 
 .right{
@@ -27,13 +31,13 @@
   color: #777A89;
 }
 
-p{
-  padding-left: 35px;
+.postContent{
+  width: 90%;
   padding-right: 35px;
-  line-height: 28px;
-  margin-left:20px;
+  line-height: 32px;
+  text-align: center;
 }
-p>.right{
+.postContent > .right{
   padding-left: 0px !important;
   padding-right: 0px !important;
   margin-left: 0px !important;

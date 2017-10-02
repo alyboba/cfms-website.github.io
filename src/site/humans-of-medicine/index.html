@@ -28,19 +28,21 @@ title: "This is a test!"
     <div id="archives-title">{{ page.url }}</div>
     
     <!-- This loops through the paginated posts -->
-    <ul id="list">
+    <div id="list">
         
         {% for post in paginator.posts %}
-            <li>
-            <a class="noHighLight" href="{{ post.url }}">
-            {{post.content}}
+            <div class="postContentContainer">
+            <a class="noHighLight postContent" href="{{ post.url }}">
+            {{ post.content | remove: '<p>' | remove: '</p>' }}
                 
             </a>
-            </li>
-            <!--<span class="date">{{ post.date | date: '%B %d, %Y' }}</span>-->
+            </div>
    
         {% endfor %}
-    </ul>
+    </div>
+    
+    <br />
+    <br />
 
     {% if paginator.total_pages > 1 %}
     <div id="pagination">
