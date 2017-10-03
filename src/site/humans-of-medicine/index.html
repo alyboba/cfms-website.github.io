@@ -1,5 +1,6 @@
 ---
-title: "This is a test!"
+title: "Latest Stories"
+sub-title: "Humans of Medicine"
 ---
 
 <!DOCTYPE html>
@@ -24,20 +25,24 @@ title: "This is a test!"
 </script>
 
 
-<div id="archives" class="content">
-    <div id="archives-title">{{ page.url }}</div>
+<div class="content">
+    <div id="title">
+        <h2>{{ page.sub-title }}</h2>
+        <h1>{{ page.title }}</h1>
+    </div>
+    <br />
+    <br />
     
     <!-- This loops through the paginated posts -->
     <div id="list">
         
         {% for post in paginator.posts %}
-            <div class="postContentContainer">
+            <div class="postContentContainer post-{{forloop.index}}">
             <a class="noHighLight postContent" href="{{ post.url }}">
             {{ post.content | remove: '<p>' | remove: '</p>' }}
                 
             </a>
             </div>
-   
         {% endfor %}
     </div>
     
@@ -79,6 +84,7 @@ title: "This is a test!"
         {% endif %}
     </div>
     {% endif %}
+    <br /> <br />
 </div>
 {% include footer.html %}
 </body>
