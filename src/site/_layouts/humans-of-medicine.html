@@ -29,41 +29,13 @@
 
 <div class="content">
     
-    <div id="title">{{ page.title }}</div>
+    <div id="layoutTitle">{{ page.title }}</div>
     <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
     </info>
     <div id="date">{{ page.date | date: "%B %d, %Y" }}</div>
-    <div id="body">
+    <div id="contentBody">
         {{ content }}
     </div>
-    
-    
-    <!--May implement this later. Bugging out for some reason...-->
-    <!--<br />-->
-    <!--<br />-->
-    <!--<hr>-->
-    <!--&lt;!&ndash;Need to center these styles&ndash;&gt;-->
-    <!--<h2>Humans of Medicine</h2>-->
-    <!--<h1>More Stories</h1>-->
-    <!--<hr>-->
-    <!--<br />-->
-    <!--<br />-->
-
-    <!--<div id="list">-->
-
-        <!--{% for post in site.categories.humans-of-medicine limit:6 %}-->
-        <!--<div class="postContentContainer">-->
-            <!--<a class="noHighLight postContent" href="{{ post.url }}">-->
-                <!--{{ post.content | remove: '<p>' | remove: '</p>' }}-->
-
-            <!--</a>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;<span class="date">{{ post.date | date: '%B %d, %Y' }}</span>&ndash;&gt;-->
-
-        <!--{% endfor %}-->
-    <!--</div>-->
-    
-    
 </div>
 
 {% include footer.html %}

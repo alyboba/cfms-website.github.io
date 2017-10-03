@@ -39,8 +39,7 @@ sub-title: "Humans of Medicine"
         {% for post in paginator.posts %}
             <div class="postContentContainer post-{{forloop.index}}">
             <a class="noHighLight postContent" href="{{ post.url }}">
-            {{ post.content | remove: '<p>' | remove: '</p>' }}
-                
+            {{ post.excerpt }}
             </a>
             </div>
         {% endfor %}
@@ -55,12 +54,12 @@ sub-title: "Humans of Medicine"
         <!-- Previous Page -->
         {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
-        <div id="prev-button" class="button"><a href="{{ paginator.previous_page_path }}">Previous Page</a></div>
+        <div id="prev-button" class="button"><a href="{{ paginator.previous_page_path }}">Previous Stories</a></div>
         {% else %}
-        <div id="prev-button" class="button"><a href="{{ paginator.previous_page_path }}">Previous Page</a></div>
+        <div id="prev-button" class="button"><a href="{{ paginator.previous_page_path }}">Previous Stories</a></div>
         {% endif %}
         {% else %}
-        <div id="prev-button" class="button inactive"><a href="#">Previous Page</a></div>
+        <div id="prev-button" class="button inactive"><a href="#">Previous Stories</a></div>
         {% endif %}
 
         <!-- Page Listing -->
@@ -78,9 +77,9 @@ sub-title: "Humans of Medicine"
 
         <!-- Next Page -->
         {% if paginator.next_page %}
-        <div id="next-button" class="button"><a href="{{ paginator.next_page_path }}">Next Page</a></div>
+        <div id="next-button" class="button"><a href="{{ paginator.next_page_path }}">More Stories</a></div>
         {% else %}
-        <div id="next-button" class="button inactive"><a href="#">Next Page</a></div>
+        <div id="next-button" class="button inactive"><a href="#">More Stories</a></div>
         {% endif %}
     </div>
     {% endif %}

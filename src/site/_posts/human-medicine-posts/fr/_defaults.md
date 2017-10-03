@@ -1,8 +1,8 @@
 ---
+excerpt_separator: <!--more-->
 title: "Please fill in title here."
 date:
 description: "Please fill in description here."
-categories:
-  - fr
-lang: "fr"
+categories: french-humans-of-medicine
+layout: humans-of-medicine
 ---

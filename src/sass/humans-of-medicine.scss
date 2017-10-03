@@ -16,7 +16,7 @@
 
   @media screen and (max-width: 1385px) {
     grid-template-columns: 1fr 1fr;
-    grid-gap:15px;
+    grid-gap: 35px;
   }
   
   @media screen and (max-width: 915px) {
@@ -26,11 +26,18 @@
 }
 
 .right{
-  float: none;
+  display:block !important;
+  float: none !important;
   left: 0px;
-  width: 100% !important;
+  margin: auto !important;
+  //width: 100% !important;
+  width: auto !important;
   height: auto;
-
+  padding-bottom: 30px !important;
+  max-height: 293px;
+  @media screen and (max-width: 450px) {
+    max-height: 180px;
+  }
 }
 #pagination{
   text-align:center;
@@ -44,11 +51,10 @@
 .postContent{
   width: 90%;
   padding-right: 35px;
-  line-height: 34px;
-  text-align: center;
+  line-height: 28px;
 }
+
 .postContent > .right{
   padding-left: 0px !important;
   padding-right: 0px !important;
-  margin-left: 0px !important;
 }

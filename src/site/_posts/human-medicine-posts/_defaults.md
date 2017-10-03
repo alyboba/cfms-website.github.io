@@ -1,4 +1,5 @@
 ---
+excerpt_separator: <!--more-->
 title: "Please fill in title here."
 date:
 description: "Please fill in description here."
