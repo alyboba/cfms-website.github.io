@@ -2,6 +2,7 @@
 title: "Please fill in title here."
 date:
 description: "Please fill in description here."
-categories: french-news
+categories: fr/news
 lang: "fr"
+permalink: /fr/:categories/:year/:month/:day/:title.html
 ---

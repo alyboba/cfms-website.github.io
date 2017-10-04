@@ -40,6 +40,9 @@ paginate_multiple:
   - paginate: 10
     paginate_path: "news/archives/:num/"
     sub_dir: '/news'
+  - paginate: 10
+    paginate_path: "fr/news/archives/:num/"
+    sub_dir: '/news/fr'
   - paginate: 6
     paginate_path: "humans-of-medicine/:num/"
     sub_dir: "/human-medicine-posts"
