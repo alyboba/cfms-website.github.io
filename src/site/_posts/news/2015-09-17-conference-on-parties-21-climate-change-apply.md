@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Conference of Parties 21 on Climate Change &ndash; APPLY NOW!"
 date: 2015-09-17

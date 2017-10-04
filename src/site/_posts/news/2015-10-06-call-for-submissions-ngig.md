@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Call for Submissions &ndash; National Geriatric Interest Group"
 date: 2015-10-06

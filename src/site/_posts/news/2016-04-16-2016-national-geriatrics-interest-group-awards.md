@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: 2016 National Geriatrics Interest Group Awards
 date: 2016-02-15T00:00:00.000Z

@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS Spring Update"
 date: 2015-05-31

@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: CMA Medical Student Internship - Call for Applicants
 date: 2017-02-21 22:30:00

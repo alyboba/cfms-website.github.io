@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: University of Toronto Medical Journal - Call for Submissions
 date: 2016-09-13T00:00:00.000Z

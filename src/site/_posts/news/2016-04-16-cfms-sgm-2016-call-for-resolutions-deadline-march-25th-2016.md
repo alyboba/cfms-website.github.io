@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: 'CFMS SGM 2016: Call for Resolutions (DEADLINE March 25th, 2016)'
 date: 2016-02-28T00:00:00.000Z

@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS members SAVE on UpToDate"
 date: 2015-04-13

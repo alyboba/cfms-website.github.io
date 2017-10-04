@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Choosing Wisely Canada: Student Recommendations (PRIZES AVAILABLE)"
 date: 2015-07-10

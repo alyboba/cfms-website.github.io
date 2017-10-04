@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "3rd Annual Phlebotomy Bowl"
 date: 2015-10-06

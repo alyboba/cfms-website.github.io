@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CMA GC Medical Student Ambassador Program (DUE May 27th)"
 date: 2015-05-13

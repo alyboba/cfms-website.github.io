@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS National Health and Wellbeing Survey"
 date: 2015-11-14

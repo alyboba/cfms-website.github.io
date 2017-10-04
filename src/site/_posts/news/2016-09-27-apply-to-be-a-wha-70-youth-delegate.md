@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: Apply to be a WHA 70 Youth Delegate
 date: 2016-09-28T00:00:00.000Z

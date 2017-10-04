@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: MDFM Leadership Award Deadline Extended
 date: 2017-01-13 00:00:00

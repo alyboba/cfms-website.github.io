@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "OMSA and CFMS Joint Message: Reduction of CMG PGY-1 Positions in Ontario"
 date: 2015-07-26

@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS SGM 2016 &ndash; Call for Nominations: CFMS President-Elect"
 date: 2016-02-28

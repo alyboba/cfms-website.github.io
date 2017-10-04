@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS AGM Call for Resolutions"
 date: 2015-08-15

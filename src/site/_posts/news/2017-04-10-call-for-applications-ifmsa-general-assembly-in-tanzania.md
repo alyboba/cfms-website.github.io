@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: 'Call for Applications: IFMSA General Assembly in Tanzania'
 date: 2017-04-10 09:00:00

@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: New Student-Run Clinic Toolkit
 date: 2017-03-04 12:00:00

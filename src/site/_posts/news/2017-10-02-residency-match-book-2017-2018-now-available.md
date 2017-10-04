@@ -4,7 +4,7 @@ date: 2017-10-02 00:00:00
 description: >-
   The Residency Match Book is a joint initiative of the CFMS and CaRMS designed
   to educate medical students about the Match and assist with career planning.
-categories:
+categories: news
 lang: en
 ---
 

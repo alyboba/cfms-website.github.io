@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "PRESS RELEASE: CFMS Supports Comprehensive Sexual Education in Ontario."
 date: 2015-05-22

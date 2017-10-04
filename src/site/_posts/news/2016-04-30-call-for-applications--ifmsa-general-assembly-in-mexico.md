@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: Call for Applications – IFMSA General Assembly in Mexico
 date: 2016-04-30

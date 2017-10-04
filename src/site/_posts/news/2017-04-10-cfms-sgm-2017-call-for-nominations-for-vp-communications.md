@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: 'CFMS SGM 2017: Call for Nominations for VP Communications'
 date: 2017-04-10 09:00:00

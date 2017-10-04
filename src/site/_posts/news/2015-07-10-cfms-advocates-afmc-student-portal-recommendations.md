@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS Advocates &ndash; AFMC Student Portal Recommendations"
 date: 2015-07-10

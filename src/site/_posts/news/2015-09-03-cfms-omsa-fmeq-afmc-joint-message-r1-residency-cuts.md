@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS, OMSA, FMEQ, & AFMC Joint Message on R1 Residency Cuts"
 date: 2015-09-03

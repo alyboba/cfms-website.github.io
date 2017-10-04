@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "MEDIA ALERT: CFMS Addresses the Residency Match in the Media"
 date: 2015-06-05

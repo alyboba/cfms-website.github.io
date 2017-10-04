@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS Gives Blood &ndash; Even in the Summer!"
 date: 2015-07-22

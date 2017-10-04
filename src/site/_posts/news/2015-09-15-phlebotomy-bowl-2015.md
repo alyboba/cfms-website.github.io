@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Phlebotomy Bowl 2015"
 date: 2015-09-15

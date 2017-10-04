@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Meet your local Government Affairs and Advocacy Committee Representatives"
 date: 2015-11-08

@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: Get involved with the CFMS - Winter Call for Applications
 date: 2017-01-20 22:30:00

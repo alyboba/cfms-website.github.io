@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Call for Applications &ndash; CMAJ Humanities Blog Peer Reviewers"
 date: 2015-10-26

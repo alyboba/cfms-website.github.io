@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "2016 National Summer Institute in Refugee Health"
 date: 2016-03-16

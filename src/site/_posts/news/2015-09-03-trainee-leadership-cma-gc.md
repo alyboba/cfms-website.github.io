@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Trainee Leadership at CMA GC"
 date: 2015-09-03

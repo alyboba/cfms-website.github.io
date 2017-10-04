@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS Call for Nominations: CFMS Executive Positions"
 date: 2015-08-17

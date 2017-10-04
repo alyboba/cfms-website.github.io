@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: SGM 2017 Winnipeg - Call for Resolutions
 date: 2017-03-07 12:00:00

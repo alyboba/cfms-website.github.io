@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Support our MD/PhD Programs: CITAC Open Letter"
 date: 2015-09-03

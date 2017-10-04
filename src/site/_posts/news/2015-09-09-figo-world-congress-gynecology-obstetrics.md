@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "FIGO World Congress on Gynecology and Obstetrics"
 date: 2015-09-09

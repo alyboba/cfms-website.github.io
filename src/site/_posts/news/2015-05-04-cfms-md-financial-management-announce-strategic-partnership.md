@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS and MD Financial Management Announce Strategic Partnership"
 date: 2015-05-04

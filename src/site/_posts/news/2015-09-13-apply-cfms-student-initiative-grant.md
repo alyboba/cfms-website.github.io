@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Apply for a CFMS Student Initiative Grant! (Due Oct 23, 2015)"
 date: 2015-09-13

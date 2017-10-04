@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Six Things Medical Students Should Question"
 date: 2015-11-25

@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: 'Apply for the MDFM Leadership Award today!'
 date: 2016-12-02 00:00:00

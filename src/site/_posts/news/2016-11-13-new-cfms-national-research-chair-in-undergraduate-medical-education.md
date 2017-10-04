@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: New CFMS National Research Chair in Undergraduate Medical Education
 date: 2016-11-14 00:00:00

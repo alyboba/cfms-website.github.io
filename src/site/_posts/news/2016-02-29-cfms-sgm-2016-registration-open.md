@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS SGM 2016 &ndash; Registration is now open!"
 date: 2016-02-29

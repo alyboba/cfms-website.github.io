@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: SGM 2017 Winnipeg - Registration NOW OPEN
 date: 2017-03-08 12:00:00

@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS President Co-Hosts Seniors Town Hall with the CMA"
 date: 2015-05-31

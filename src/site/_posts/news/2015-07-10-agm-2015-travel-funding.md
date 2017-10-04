@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "AGM 2015 Travel Funding &ndash; Windsor, ON. DUE August 7th, 2015"
 date: 2015-07-10

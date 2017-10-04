@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: 'Get Involved With The CFMS! - Fall Call for Nominations'
 date: 2016-10-15 00:00:00

@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: Call for Applications - IFMSA General Assembly in Montenegro (March 2017)
 date: 2016-11-30 00:00:00

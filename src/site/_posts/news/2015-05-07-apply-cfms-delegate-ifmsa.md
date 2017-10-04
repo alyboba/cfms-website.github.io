@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "Apply to be a CFMS Delegate to IFMSA (DUE May 8th)"
 date: 2015-05-07

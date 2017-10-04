@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: Call for Applicants – CFMS-MD Financial Management Travel Awards
 date: 2016-01-20T00:00:00.000Z

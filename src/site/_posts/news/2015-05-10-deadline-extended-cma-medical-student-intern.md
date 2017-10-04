@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "DEADLINE EXTENDED (May 15) Employment Opportunity: CMA Medical Student Intern"
 date: 2015-05-10

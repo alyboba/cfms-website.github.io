@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: Call for Applications – CFMS National Exchange Officer (NEO)
 date: 2016-04-30

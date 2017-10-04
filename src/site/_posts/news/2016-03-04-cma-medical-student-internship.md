@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CMA &ndash; Medical Student Internship Opportunity"
 date: 2016-03-04

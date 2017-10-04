@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: 'Call for Application: Travel Awards for SGM 2017'
 date: 2017-01-15 22:30:00

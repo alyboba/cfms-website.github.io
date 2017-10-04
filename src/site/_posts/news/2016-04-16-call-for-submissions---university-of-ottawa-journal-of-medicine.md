@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: Call for Submissions - University of Ottawa Journal of Medicine
 date: 2015-12-09T00:00:00.000Z

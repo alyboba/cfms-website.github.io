@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: "CFMS and the Canadian Medical Hall of Fame Create Partnership"
 date: 2015-03-19

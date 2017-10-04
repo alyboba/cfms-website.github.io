@@ -1,4 +1,5 @@
 ---
+lang: en
 categories: news
 title: 'Welcome to the new CFMS Website!'
 date: 2016-04-25
