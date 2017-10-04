@@ -2,7 +2,7 @@
 ---
 
 <!DOCTYPE html>
-
+{% assign hideLangToggle = true %}
 
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
@@ -19,7 +19,7 @@
     {% endif %}
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-{% include nav.html %}
+{% include nav.html hideLangToggle = true %}
 
 <!--Page Specific Formatting-->
 <script type="text/javascript">

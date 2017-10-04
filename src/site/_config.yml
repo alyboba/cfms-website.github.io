@@ -48,7 +48,7 @@ paginate_multiple:
     sub_dir: "/human-medicine-posts"
   - paginate: 6
     paginate_path: "fr/humans-of-medicine/:num/"
-    sub_dir: "/human-of-medicine-posts/fr"
+    sub_dir: "/human-medicine-posts/fr"
 
 #paths for the two blogs. If the html files move, this will need updating!
 news-blog-paginate-path: "news/archives/:num/"
