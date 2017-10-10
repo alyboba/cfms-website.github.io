@@ -18,6 +18,7 @@ install:
 script: bash ./deploy.sh
 branches:
   only:
+  - iss11
   - staging
 env:
   global:
