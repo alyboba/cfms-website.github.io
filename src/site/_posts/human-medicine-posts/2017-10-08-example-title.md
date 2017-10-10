@@ -13,8 +13,6 @@ lang: en
 
 This is a First post for the Blog,
 
-&lt;!–-more-–&gt; Once you have Added posts please Delete this!
+&lt;!–--more-–&gt; Once you have Added posts please Delete this!
 
-&nbsp; <!--more-->
-
-This is more text after the excerpt. This is an example.
+&nbsp;This is more text after the excerpt. This is an example.
