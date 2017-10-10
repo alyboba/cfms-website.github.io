@@ -61,4 +61,4 @@ humans-of-medicine-paginate-path: "humans-of-medicine/:num/"
 rdiscount:
   extensions: [smart]
 
-gems: [jekyll-paginate, jekyll-paginate-multiple]
+pluagins_dir: [jekyll-paginate, jekyll-paginate-multiple]
