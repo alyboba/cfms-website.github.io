@@ -1,7 +1,7 @@
 ---
 lang: "fr"
 permalink: /fr/:categories/:year/:month/:day/:title.html
-categories: news
+categories: french-news
 title: "Example french news post"
 date: 2017-03-19
 description: "example Description"

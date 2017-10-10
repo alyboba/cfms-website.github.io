@@ -1,9 +1,9 @@
 ---
-excerpt_separator: <!--more-->
+excerpt_separator: "[//]: <excerpt>"
 title: "Example title"
 date: 2017-10-08
 description: "Example Description"
-categories: humans-of-medicine
+categories: french-humans-of-medicine
 layout: humans-of-medicine
 permalink: /fr/:categories/:year/:month/:day/:title.html
 lang: "fr"

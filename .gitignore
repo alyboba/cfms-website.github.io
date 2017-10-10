@@ -3,6 +3,7 @@ cfms-website.sublime-project
 cfms-website.sublime-workspace
 .DS_Store
 .sass-cache/
+Gemfile*
 .jekyll-metadata
 node_modules/
 coverage/
