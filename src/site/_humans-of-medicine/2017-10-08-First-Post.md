@@ -3,9 +3,10 @@ excerpt_separator: "[//]: <excerpt>"
 title: "Example title"
 date: 2017-10-08
 description: "Example Description"
-categories: humans-of-medicine
 layout: humans-of-medicine
 lang: "en"
+paginate:
+  collection: humans-of-medicine
 ---
 
 <img class="right" src="/images/news-images/CMHF.png">

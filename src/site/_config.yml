@@ -16,14 +16,53 @@ repository: cfms-website/cfms-website.github.io
 
 keep_files: ['stylesheets/', 'js/', 'files/', 'images/']
 
-#Set the default layout for a post to the 'news' format
+collections:
+  news:
+    output: true
+  french-news:
+    output: true
+  humans-of-medicine:
+    output: true
+  french-humans-of-medicine:
+    output: true
+      
+
+#Set the default layout and language for collections
 defaults:
   -
     scope:
       path: ""
       type: "posts"
     values:
-      layout: "news"   
+      layout: "news" 
+  -
+    scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "news"
+      lang: "en"
+  -
+    scope:
+      path: ""
+      type: "french-news"
+    values:
+      layout: "news"
+      lang: "fr"
+  -
+    scope:
+      path: ""
+      type: "humans-of-medicine"
+    values:
+      layout: "humans-of-medicine"
+      lang: "en"
+  -
+    scope:
+      path: ""
+      type: "french-humans-of-medicine"
+    values:
+      layout: "humans-of-medicine"
+      lang: "fr"   
   -
     scope:
       path: ""
@@ -34,21 +73,22 @@ defaults:
       path: "fr"
     values:
       lang: "fr"
+      
 
-#Number of pages in each archive page.
-paginate_multiple:
-  - paginate: 10
-    paginate_path: "news/archives/:num/"
-    sub_dir: '/news'
-  - paginate: 10
-    paginate_path: "fr/news/archives/:num/"
-    sub_dir: '/news/fr'
-  - paginate: 6
-    paginate_path: "humans-of-medicine/:num/"
-    sub_dir: "/human-medicine-posts"
-  - paginate: 6
-    paginate_path: "fr/humans-of-medicine/:num/"
-    sub_dir: "/human-medicine-posts/fr"
+pagination:
+  enabled: true
+  permalink: '/:num/'
+  title: ':title | :num of :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+ # extension: htm
+ # indexpage: 'default'
+  trail: 
+    before: 2
+    after: 2
+
+
 
 #paths for the two blogs. If the html files move, this will need updating!
 news-blog-paginate-path: "news/archives/:num/"
@@ -61,6 +101,6 @@ humans-of-medicine-paginate-path: "humans-of-medicine/:num/"
 rdiscount:
   extensions: [smart]
 
-gems: [jekyll-paginate, jekyll-paginate-multiple]
+gems: [jekyll-paginate, jekyll-paginate-v2]
 
-pluagins_dir: [jekyll-paginate, jekyll-paginate-multiple]
+pluagins_dir: [jekyll-paginate, jekyll-paginate-v2]
