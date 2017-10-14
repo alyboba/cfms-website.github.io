@@ -75,7 +75,6 @@ defaults:
       lang: "fr"
       
       
-      
 pagination:
   enabled: true
   permalink: '/:num/'
