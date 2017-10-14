@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: SGM 2017 Winnipeg - Call for Resolutions
 date: 2017-03-07 12:00:00
 description: 'Medical societies, meeting delegates and member medical students are invited to put forward resolutions for discussion and debate at the CFMS Spring General Meeting during the Members Resolutions Session'

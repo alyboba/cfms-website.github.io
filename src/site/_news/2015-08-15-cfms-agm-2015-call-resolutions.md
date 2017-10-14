@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: "CFMS AGM Call for Resolutions"
 date: 2015-08-15
 description: Medical societies, meeting delegates and member medical students are invited to put forward resolutions for discussion and debate at the CFMS Annual General Meeting during the Members Resolutions Sessions (tentatively scheduled for Saturday September 19, 2015).

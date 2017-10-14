@@ -4,7 +4,6 @@ date: 2017-08-10 00:00:00
 description: >-
   Nominations are now open for the following Executive Member positions of the
   Canadian Federation of Medical Students.
-categories: news
 lang: en
 ---
 

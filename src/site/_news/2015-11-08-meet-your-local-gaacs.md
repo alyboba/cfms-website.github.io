@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: "Meet your local Government Affairs and Advocacy Committee Representatives"
 date: 2015-11-08
 description: There are medical students working hard to promote health advocacy at all CFMS member schools across Canada! See who from your school is a representative.

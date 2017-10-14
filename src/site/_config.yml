@@ -16,7 +16,6 @@ repository: cfms-website/cfms-website.github.io
 
 keep_files: ['stylesheets/', 'js/', 'files/', 'images/']
 
-
 collections:
   news:
     output: true
@@ -43,6 +42,7 @@ defaults:
     values:
       layout: "news"
       lang: "en"
+      permalink: '/news/:year/:month/:day/:title.html'
   -
     scope:
       path: ""
@@ -50,6 +50,7 @@ defaults:
     values:
       layout: "news"
       lang: "fr"
+      permalink: '/fr/news/:year/:month/:day/:title.html'
   -
     scope:
       path: ""
@@ -57,6 +58,8 @@ defaults:
     values:
       layout: "humans-of-medicine"
       lang: "en"
+      excerpt_seperator: '[](More)'
+      permalink: '/humans-of-medicine/:year/:month/:day/:title.html'
   -
     scope:
       path: ""
@@ -64,6 +67,7 @@ defaults:
     values:
       layout: "humans-of-medicine"
       lang: "fr"   
+      permalink: '/fr/humans-of-medicine/:year/:month/:day/:title.html'
   -
     scope:
       path: ""

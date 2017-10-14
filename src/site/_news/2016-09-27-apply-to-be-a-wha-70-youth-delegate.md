@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: Apply to be a WHA 70 Youth Delegate
 date: 2016-09-28T00:00:00.000Z
 description: The Government of Canada is offering the opportunity to one Canadian youth to attend the world health assembly as part of the Canadian delegation and to observe the workings of this specialised agency of the United Nations.

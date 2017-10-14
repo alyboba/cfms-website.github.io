@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: "CFMS President Co-Hosts Seniors Town Hall with the CMA"
 date: 2015-05-31
 description: Harold Albrecht, MP for Kitchener-Conestoga, together with the Canadian Medical Association (CMA) hosted a town hall meeting to consult with local seniors, health care professionals, and service providers on preparing for Canada's aging population.

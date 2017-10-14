@@ -1,5 +1,4 @@
 ---
-categories: news
 title: Call for CFMS National Exchange Officer
 date: 2017-05-18 22:15:00
 description: The CFMS National Exchange Officers (NEOs) are the students responsible for facilitating and managing exchange opportunities offered to Canadian medical student through the International Federation of Medical Student Exchange program.

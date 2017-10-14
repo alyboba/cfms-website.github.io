@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: "MEDIA ALERT: CFMS Addresses the Residency Match in the Media"
 date: 2015-06-05
 description: Recent media reports have drawn attention to the integrity of candidates participating in the residency matching process in Canada. The Canadian Federation of Medical Students (CFMS) supports its student members in upholding the highest standards of professionalism.

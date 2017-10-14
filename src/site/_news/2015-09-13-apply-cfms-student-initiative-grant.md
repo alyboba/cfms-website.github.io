@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: "Apply for a CFMS Student Initiative Grant! (Due Oct 23, 2015)"
 date: 2015-09-13
 description: CFMS Student Initiative Grants were established in 2007 to provide support and funding to medical student initiatives. The fund was established in response to the increasing number of medical student run initiatives and the need for official and financial support from our national student organization.

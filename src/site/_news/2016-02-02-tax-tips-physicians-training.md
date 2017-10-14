@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: "Tax Tips for Physicians in Training"
 date: 2016-02-02
 description: Each year, the CMA prepares a document outlining all the tax tips that you can benefit from as a physician or a physician in training.

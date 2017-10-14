@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: "CMA GC Medical Student Ambassador Program (DUE May 27th)"
 date: 2015-05-13
 description: The Canadian Medical Association (CMA) is excited to announce an expansion of its Ambassador Program – to better engage and involve younger physicians.

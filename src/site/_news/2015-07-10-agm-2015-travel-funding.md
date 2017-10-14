@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: "AGM 2015 Travel Funding &ndash; Windsor, ON. DUE August 7th, 2015"
 date: 2015-07-10
 description: In partnership with MD Financial Management, the CFMS provides financial assistance for CFMS member medical students who wish to attend our Annual General Meeting, held this September 18th-20th, 2015 in Windsor, Ontario.

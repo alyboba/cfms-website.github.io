@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: Call for Applicants – CFMS-MD Financial Management Travel Awards
 date: 2016-01-20T00:00:00.000Z
 description: 'The CFMS and MD Financial Management have set aside funds for the 2015-2016 academic year to provide financial assistance for CFMS member medical students who wish to attend our Spring General Meeting, held April 15-16, 2016 in Montreal, Quebec.'

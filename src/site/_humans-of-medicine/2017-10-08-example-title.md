@@ -1,12 +1,9 @@
 ---
-excerpt_separator: '[](More)'
+excerpt_separator: '[](Excerpt)'
 title: Example title
 date: 2017-10-08 00:00:00
 description: Example Description
-layout: humans-of-medicine
 lang: en
-paginate:
-  collection: humans-of-medicine
 ---
 
 
@@ -14,7 +11,7 @@ paginate:
 
 This is a First post for the Blog,
 
-[](More)
+[](Excerpt)
 
 Once you have Added posts please Delete this!
 

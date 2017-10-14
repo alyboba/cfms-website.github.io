@@ -2,7 +2,6 @@
 title: 'Call for Applications: Travel Awards to AGM 2017'
 date: 2017-08-03 00:00:00
 description: "The CFMS and MD Financial Management have set aside funds to provide for\_travel awards for students interested in attending our Annual General Meeting, held September 22-24, 2017 in Ottawa, Ontario."
-categories: news
 lang: en
 ---
 

@@ -1,6 +1,5 @@
 ---
 lang: en
-categories: news
 title: "2016 National Summer Institute in Refugee Health"
 date: 2016-03-16
 description: The Catholic Centre for Immigrants and the University of Ottawa are proud to host the 2016 National Summer Institute in Refugee Health, presented by the WHO Collaborating Centre on Technology Assessment and Health Equity and the Canadian Collaboration for Immigrant and Refugee Health.
