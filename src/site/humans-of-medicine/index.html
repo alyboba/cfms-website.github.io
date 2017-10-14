@@ -93,4 +93,16 @@ pagination:
 </div>
 {% include footer.html %}
 </body>
+<script>
+    (function(){
+    var x = document.getElementById("list");
+    var imgs = x.getElementsByTagName("IMG");
+    for(var i=0; i<imgs.length; i++){
+        imgs[i].classList.add("zoom-brick_pic");
+    }
+
+    })()
+    
+</script>
+
 </html>

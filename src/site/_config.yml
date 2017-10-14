@@ -92,15 +92,9 @@ pagination:
     before: 2
     after: 2
 
-
-
 #paths for the two blogs. If the html files move, this will need updating!
 news-blog-paginate-path: "news/archives/:num/"
 humans-of-medicine-paginate-path: "humans-of-medicine/:num/"
-
-#used for humans-of-medicine blog posts
-#paginate: 10
-#paginate_path: "news/archives/:num/"
 
 rdiscount:
   extensions: [smart]

@@ -10,6 +10,7 @@
 }
 
 #list {
+  position:relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
@@ -25,7 +26,7 @@
   }
 }
 
-.right{
+.right, p img{
   display:block !important;
   float: none !important;
   left: 0px;
@@ -34,10 +35,8 @@
   width: auto !important;
   height: auto;
   padding-bottom: 30px !important;
-  max-height: 293px;
-  @media screen and (max-width: 450px) {
-    max-height: 180px;
-  }
+  max-width: 400px;
+
 }
 #pagination{
   text-align:center;
@@ -54,7 +53,15 @@
   line-height: 28px;
 }
 
-.postContent > .right{
+.postContent > .right, .postContent > p > img{
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
+
+
+
+
+
+
+
+
