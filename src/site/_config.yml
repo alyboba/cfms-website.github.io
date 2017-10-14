@@ -73,8 +73,7 @@ defaults:
       path: "fr"
     values:
       lang: "fr"
-      
-      
+       
 pagination:
   enabled: true
   permalink: '/:num/'
