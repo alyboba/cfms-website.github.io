@@ -16,6 +16,7 @@ repository: cfms-website/cfms-website.github.io
 
 keep_files: ['stylesheets/', 'js/', 'files/', 'images/']
 
+
 collections:
   news:
     output: true
