@@ -29,8 +29,13 @@
 
 		<!-- News Article -->
    		<div id="aside">
-			<h6>About the CFMS</h6>
-			{{ site.about_cfms_en }}
+			{% if page.lang == "fr" %}
+				<h6>À Propos du FEMC</h6>
+				{{ site.about_cfms_fr }}
+			{% else %}
+				<h6>About the CFMS</h6>
+				{{ site.about_cfms_en }}
+			{% endif %}
 		</div>
         <div id="title">{{ page.title }}</div>
         <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
