@@ -102,5 +102,5 @@ rdiscount:
 
 #gems: [jekyll-paginate, jekyll-paginate-v2]
 
-plugins_dir:
+plugins:
   - jekyll-paginate-v2
