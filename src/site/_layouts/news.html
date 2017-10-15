@@ -3,6 +3,8 @@
 
 <!DOCTYPE html>
 {% assign hideLangToggle = true %}
+{% assign sortedEn = (site.news | sort: 'date') | reverse %}
+{% assign sortedFr = (site.french-news | sort: 'date') | reverse %}
 
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
@@ -50,14 +52,14 @@
 			<h1>Other News</h1>
 			<div id="other-news-list">
 				{% if page.lang == "en" %}
-				{% for post in site.news limit:5 %}
+				{% for post in sortedEn limit:5 %}
 					<div class="news-date">{{ post.date | date: '%b %d' }}</div>
 					<li>
 						<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
 					</li>
 				{% endfor %}
 				{% else %}
-					{% for post in site.french-news limit:5 %}
+					{% for post in sortedFr limit:5 %}
 						<div class="news-date">{{ post.date | date: '%b %d' }}</div>
 						<li>
 							<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
