@@ -67,6 +67,7 @@ defaults:
     values:
       layout: "humans-of-medicine"
       lang: "fr"   
+      excerpt_seperator: '[](More)'
       permalink: '/fr/humans-of-medicine/:year/:month/:day/:title.html'
   -
     scope:
