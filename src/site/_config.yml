@@ -100,7 +100,7 @@ humans-of-medicine-paginate-path: "humans-of-medicine/:num/"
 rdiscount:
   extensions: [smart]
 
-#gems: [jekyll-paginate, jekyll-paginate-v2]
+gems: [jekyll-paginate, jekyll-paginate-v2]
 
 plugins_dir:
   - jekyll-paginate-v2
