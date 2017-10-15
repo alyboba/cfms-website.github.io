@@ -13,7 +13,7 @@ install:
   - nvm alias default node
   - gem install github-pages
   - gem install jekyll-paginate
-  - gem install jekyll-paginate-multiple
+  - gem install jekyll-paginate-v2
   - npm install
 script: bash ./deploy.sh
 branches:
