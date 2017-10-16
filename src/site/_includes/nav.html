@@ -39,16 +39,19 @@
 					</li>
 					<li id="members"><a class="top-level" href="{{ nav.lang_path }}/members/">{{ nav.members }}</a></li>
 					<li id="news"><a class="top-level" href="{{ nav.lang_path }}/news/">{{ nav.news }}</a></li>
+					<li id="human-of-medicine"><a class="top-level" href="{{ nav.lang_path }}/humans-of-medicine/">{{ nav.human-of-medicine }}</a></li>
 					{% if site.enable_login == true %}
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">{{ nav.login }}</a></li>
 					{% else %}
 						<li id="login-button-wrapper"><a href='' onclick='return false;' id="login-button" class="redirect-modal">{{ nav.login }}</a></li>
 					{% endif %}
-					{% if nav.lang == "en" %}
-						<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr{{ page.url }}">FR</a></li>
-					{% else %}
-						<li id="lang-toggle"><a id="en" href='{{ page.url | replace: "/fr/", "/" }}'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
-					{% endif %}
+					{% unless include.hideLangToggle %}
+						{% if nav.lang == "en" %}
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr{{ page.url }}">FR</a></li>
+						{% else %}
+							<li id="lang-toggle"><a id="en" href='{{ page.url | replace: "/fr/", "/" }}'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+						{% endif %}
+					{% endunless %}
 				</ul>
 			</div>
 		</div>

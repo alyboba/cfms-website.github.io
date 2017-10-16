@@ -1,0 +1,44 @@
+---
+---
+
+<!DOCTYPE html>
+{% assign hideLangToggle = true %}
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    {% if jekyll.environment == "production" %}
+    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
+    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/humans-of-medicine.css">
+    {% else %}
+    <link rel="stylesheet" href="/stylesheets/news.css">
+    <link rel="stylesheet" href="/stylesheets/humans-of-medicine.css">
+    {% endif %}
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html hideLangToggle = true %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#human-of-medicine" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    
+    <div id="layoutTitle">{{ page.title }}</div>
+    <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+    </info>
+    <div id="date">{{ page.date | date: "%B %d, %Y" }}</div>
+    <div id="contentBody">
+        {{ content }}
+    </div>
+</div>
+
+{% include footer.html %}
+</body>
+</html>
+
