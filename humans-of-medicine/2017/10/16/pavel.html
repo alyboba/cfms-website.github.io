@@ -373,8 +373,10 @@ function submitApplication() {
 </style> 
 
     <!--Page Specific Stylesheet-->
-    <link rel="stylesheet" href="/stylesheets/news.css">
-    <link rel="stylesheet" href="/stylesheets/humans-of-medicine.css">
+    
+    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
+    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/humans-of-medicine.css">
+    
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 
@@ -423,10 +425,6 @@ function submitApplication() {
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
-						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/humans-of-medicine/index.html">FR</a></li>
-						
-					
 				</ul>
 			</div>
 		</div>
@@ -441,42 +439,24 @@ function submitApplication() {
     document.querySelector( "#human-of-medicine" ).classList.toggle("active");
 </script>
 
-
 <div class="content">
-    <div id="title">
-        <h2>Humans of Medicine</h2>
-        <h1>Latest Stories</h1>
+    
+    <div id="layoutTitle">Strange</div>
+    <info datetime="2017-10-16">
+    </info>
+    <div id="date">October 16, 2017</div>
+    <div id="contentBody">
+        <p><img src="/uploads/versions/antonio-lee---x----200-300x---.jpg" alt="" />Times were tough.. at the old medicine school, but i managed to pull through. here’s how…</p>
+
+<p><a href="Excerpt"></a></p>
+
+<p> </p>
+
+<p>This is some more text, this is after the excerpt. blah de blah de blah de blah!</p>
+
     </div>
-    <br />
-    <br />
-    
-    <!-- This loops through the paginated posts -->
-    <div id="list">
-        
-        
-            <div class="postContentContainer post-1">
-            <a class="noHighLight postContent" href="/humans-of-medicine/2017/10/16/pavel.html">
-            <p><img src="/uploads/versions/antonio-lee---x----200-300x---.jpg" alt="" />Times were tough.. at the old medicine school, but i managed to pull through. here’s how…</p>
-
-
-            </a>
-            </div>
-        
-            <div class="postContentContainer post-2">
-            <a class="noHighLight postContent" href="/humans-of-medicine/2017/10/15/first-post.html">
-            <p>This is the first post to the Humans of medicine blog. Please remove this post once you have added new posts to the collection.</p>
-
-            </a>
-            </div>
-        
-    </div>
-    
-    <br />
-    <br />
-
-    
-    <br /> <br />
 </div>
+
 <script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -662,5 +642,5 @@ $('.redirect-modal').click(function(){
 </script>
 <script type="text/javascript" src="/js/bundle.js"></script>
 </body>
-
 </html>
+
