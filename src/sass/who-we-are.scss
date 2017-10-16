@@ -205,6 +205,32 @@
 
 /* #About Us
 ––––––––––––––––––––––––––––––––––––––––*/
+#alumni-content {
+	width:100%;
+	#page-title {margin-bottom:0;}
+}
+#alumni {
+	padding-bottom:20px;
+	margin-top:-1px;
+}
+.alumni {
+	display: flex;
+	border-top: 1px solid $brighter;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	.alumni-info {
+		padding-left: 10px;
+		max-width: 600px;
+	}
+}
+
+#signiture {
+	width: 15rem;
+}
+
+
+/* #About Us
+––––––––––––––––––––––––––––––––––––––––*/
 #about-us-content {
 	width:100%;
 	#page-title {margin-bottom:0;}

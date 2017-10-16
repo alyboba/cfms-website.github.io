@@ -1,0 +1,96 @@
+---
+title: "Historique FEMC"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/who-we-are.css">
+    <link rel="stylesheet" href="/stylesheets/cards.css">
+    <link rel="stylesheet" href="/stylesheets/modal.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#who-we-are" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-who-we-are.html %}
+    <script type="text/javascript">
+        document.querySelector( "#history" ).classList.toggle("sidebar-active");
+    </script>
+    <div id="member-schools-content">
+        <h1 id="page-title">{{ page.title }}</h1>
+        <div>
+
+            {% for historyInformation in site.data.history.history %}
+            {% if historyInformation.lang == page.lang %}
+            {{ historyInformation.description }}
+            {% endif %}
+            {% endfor %}
+
+            <ul class="cards">
+
+                {% for presidentInformation in site.data.history.past-presidents %}
+                {% if presidentInformation.year != "" %}
+                <li class="cards__item">
+                    <div class="modal hidden">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Présidents entre les années de {{ presidentInformation.year }}</h2>
+                            </div>
+                            <hr>
+                            <div class="modal-body">
+                                <table>
+                                    <tr>
+                                        <th>An</th>
+                                        <th>Prénom</th>
+                                        <th>Emplacement</th>
+                                    </tr>
+                                    {% for presInfo in presidentInformation.presidents %}
+                                    {% if presInfo.president-year != "" %}
+                                    <tr>
+                                        <td>{{ presInfo.president-year }}</td>
+                                        <td>{{ presInfo.president-name }}</td>
+                                        <td>{{ presInfo.president-location }}</td>
+                                    </tr>
+                                    {% endif %}
+                                    {% endfor %}
+                                </table>
+                            </div>
+                            <hr>
+                            <div class="modal-footer">
+                                <button class="btn btn-default modalCloseButton">Close</button>
+                                <h3><br></h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <button class="clickMe">
+                            <img title="Past Presidents of the year {{ presidentInformation.year }}" alt="Click to view information of presidents of year {{ presidentInformation.year }}"
+                                 class="card__image" src="../../images/page-images/pocket-cards/{{ presidentInformation.card-img }}"/>
+                        </button>
+                    </div>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>
+</html>

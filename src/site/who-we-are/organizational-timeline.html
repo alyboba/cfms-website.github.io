@@ -1,0 +1,108 @@
+---
+title: "Organizational Timeline"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/who-we-are.css">
+    <link rel="stylesheet" href="/stylesheets/cards.css">
+    <link rel="stylesheet" href="/stylesheets/modal.css">
+    <link rel="stylesheet" href="/stylesheets/pagination.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#who-we-are" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-who-we-are.html %}
+    <script type="text/javascript">
+        document.querySelector( "#organizational-timeline" ).classList.toggle("sidebar-active");
+    </script>
+    <div id="member-schools-content">
+        <h1 id="page-title">{{ page.title }}</h1>
+        <div>
+
+            {% for organizationalTimeline in site.data.organizational-timeline.organizational-timeline %}
+            {% if organizationalTimeline.lang == page.lang %}
+                <nav aria-label="Page Navigation" class="text-center">
+                    <ul class="pagination">
+                        {% for president in organizationalTimeline.president-information %}
+                            <li><a href="" id="{{ president.year }}" class="paginationLink">{{ president.year }}s</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            <hr>
+            {% for president in organizationalTimeline.president-information %}
+                <div id="page{{president.year}}" class="{% if forloop.first %} show {% endif %} {% unless forloop.first %} hide {% endunless %}  paginationPages">
+                    <h2 class="text-center">{{ president.year }}s</h2>
+                    {% for presidentInfo in president.presidents %}
+                        <div class="modal hidden">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>{{presidentInfo.president-name}}</h2>
+                                </div>
+                                <hr>
+                                <div class="modal-body">
+                                    {% if presidentInfo.cfms-executive-committee %}
+                                    <h3><strong>Executive Committee:</strong></h3>
+                                    <ul>
+                                        {% for exec in presidentInfo.cfms-executive-committee %}
+                                            <li>{{ exec.executive-committee-member }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <hr>
+                                    {% endif %}
+                                    {% if presidentInfo.cfms-accomplishments %}
+                                    <h3><strong>Accomplishments:</strong></h3>
+                                    <ul>
+                                        {% for presAccomplishment in presidentInfo.cfms-accomplishments %}
+                                             <li>{{ presAccomplishment.accomplishment }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <hr>
+                                    {% endif %}
+                                    {% if presidentInfo.cfms-major-issues %}
+                                    <h3><strong>Major Issues:</strong></h3>
+                                    <ul>
+                                        {% for issue in presidentInfo.cfms-major-issues %}
+                                             <li>{{ issue.major-issue }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <hr>
+                                    {% endif %}
+                                </div>
+                                <hr>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default modalCloseButton">Close</button>
+                                    <h3><br></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="clickMe" >{{ presidentInfo.president-years }} - {{ presidentInfo.president-name }} {{ presidentInfo.president-location }} </a>
+                        </div>
+                    <br>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>
+</html>

@@ -4,7 +4,13 @@ import { LeadershipAwardUser, LeadershipAwardAdmin } from './md-leadership-award
 import Registration from './registration';
 import MeetingRegistrations from './meeting-registrations';
 import Purchases from './purchases';
+import Modal from './modal';
+import Pagination from './pagination';
 import route from 'page';
+import TagSearch from './tag-search';
+import PhotoGallery from './photo-gallery';
+import MeetingMinutes from './meeting-minutes';
+
 
 export default class Router extends Middleware {
     constructor() {
@@ -16,11 +22,24 @@ export default class Router extends Middleware {
     _bindRoutes() {
         route('/members', Members);
         route('/fr/members', Members);
+        route('/resources/lasik-membership-card.html', Members);
+        route('/fr/resources/lasik-membership-card.html', Members);
         route('/resources/md-leadership-awards-application.html', LeadershipAwardUser);
         route('/resources/md-leadership-awards-view-applications.html', LeadershipAwardAdmin);
         route('/new-account.html', Registration);
         route('/meetings/:meeting', MeetingRegistrations);
         route('/purchases/:purchase', Purchases);
+        route('/who-we-are/history.html', Modal);
+        route('/who-we-are/organizational-timeline.html', Modal, Pagination);
+        route('/fr/who-we-are/history.html', Modal);
+        route('/fr/who-we-are/organizational-timeline.html', Modal, Pagination);
+        route('/what-we-do/advocacy/position-papers.html', TagSearch);
+        route('/fr/what-we-do/advocacy/position-papers.html', TagSearch);
+        route('/who-we-are/photo-gallery.html', PhotoGallery);
+        route('/fr/who-we-are/photo-gallery.html', PhotoGallery);
+        
+        route('/members/meeting-minutes.html', MeetingMinutes);
+        route('/fr/members/meeting-minutes.html', MeetingMinutes);
     }
 
     refresh() {
