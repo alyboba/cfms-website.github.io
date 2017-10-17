@@ -40,6 +40,10 @@ export default class AuthenticationService {
         localStorage.removeItem('profile');
         this.auth0.logout();
     }
+
+    resetPassword(email) {
+        this.auth0.resetPassword(email);
+    }
     
     get storageRef(){
         console.log("hitting the method");
