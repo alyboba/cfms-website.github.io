@@ -122066,7 +122066,10 @@ var AuthenticationService = function () {
             var _this = this;
 
             this.auth0.getAccessToken(email, password, function (err, accessToken, uid) {
-                if (err) return console.log(err);
+                if (err) {
+                    $("#loading-overlay").remove();
+                    return _this.utils.showAlert("Failed to login", "Please double check your credentials or reset your password.");
+                }
                 _this.UserRepository.get(uid).then(function (user) {
                     localStorage.setItem('profile', JSON.stringify(user.toSparseRow()));
                     _this.dispatchUser();
