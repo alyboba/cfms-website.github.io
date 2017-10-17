@@ -16,14 +16,59 @@ repository: cfms-website/cfms-website.github.io
 
 keep_files: ['stylesheets/', 'js/', 'files/', 'images/']
 
-#Set the default layout for a post to the 'news' format
+collections:
+  news:
+    output: true
+  french-news:
+    output: true
+  humans-of-medicine:
+    output: true
+  french-humans-of-medicine:
+    output: true
+      
+
+#Set the default layout and language for collections
 defaults:
   -
     scope:
       path: ""
       type: "posts"
     values:
+      layout: "news" 
+  -
+    scope:
+      path: ""
+      type: "news"
+    values:
       layout: "news"
+      lang: "en"
+      permalink: '/news/:year/:month/:day/:title.html'
+  -
+    scope:
+      path: ""
+      type: "french-news"
+    values:
+      layout: "news"
+      lang: "fr"
+      permalink: '/fr/news/:year/:month/:day/:title.html'
+  -
+    scope:
+      path: ""
+      type: "humans-of-medicine"
+    values:
+      layout: "humans-of-medicine"
+      lang: "en"
+      excerpt_seperator: '[](More)'
+      permalink: '/humans-of-medicine/:year/:month/:day/:title.html'
+  -
+    scope:
+      path: ""
+      type: "french-humans-of-medicine"
+    values:
+      layout: "humans-of-medicine"
+      lang: "fr"   
+      excerpt_seperator: '[](More)'
+      permalink: '/fr/humans-of-medicine/:year/:month/:day/:title.html'
   -
     scope:
       path: ""
@@ -34,12 +79,27 @@ defaults:
       path: "fr"
     values:
       lang: "fr"
+       
+pagination:
+  enabled: true
+  permalink: '/:num/'
+  title: ':title | :num of :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+ # extension: htm
+ # indexpage: 'default'
+  trail: 
+    before: 2
+    after: 2
 
-#Number of pages in each archive page.
-paginate: 10
-paginate_path: "news/archives/:num/"
+#paths for the two blogs. If the html files move, this will need updating!
+news-blog-paginate-path: "news/archives/:num/"
+humans-of-medicine-paginate-path: "humans-of-medicine/:num/"
 
 rdiscount:
   extensions: [smart]
 
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-paginate-v2]
+
+#plugins_dir: [_plugins]

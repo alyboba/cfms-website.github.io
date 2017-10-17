@@ -2,7 +2,9 @@
 ---
 
 <!DOCTYPE html>
-
+{% assign hideLangToggle = true %}
+{% assign sortedEn = (site.news | sort: 'date') | reverse %}
+{% assign sortedFr = (site.french-news | sort: 'date') | reverse %}
 
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
@@ -17,7 +19,7 @@
 	{% endif %}
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-	{% include nav.html %}
+{% include nav.html hideLangToggle = true %}
 	
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
@@ -29,8 +31,13 @@
 
 		<!-- News Article -->
    		<div id="aside">
-			<h6>About the CFMS</h6>
-			{{ site.about_cfms_en }}
+			{% if page.lang == "fr" %}
+				<h6>À Propos du FEMC</h6>
+				{{ site.about_cfms_fr }}
+			{% else %}
+				<h6>About the CFMS</h6>
+				{{ site.about_cfms_en }}
+			{% endif %}
 		</div>
         <div id="title">{{ page.title }}</div>
         <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
@@ -45,17 +52,14 @@
 			<h1>Other News</h1>
 			<div id="other-news-list">
 				{% if page.lang == "en" %}
-				{% for post in site.posts limit:5 %}
-					{% unless post.categories contains "fr" %}
-						<div class="news-date">{{ post.date | date: '%b %d' }}</div>
-						<li>
-							<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
-						</li>
-					{% endunless %}
+				{% for post in sortedEn limit:5 %}
+					<div class="news-date">{{ post.date | date: '%b %d' }}</div>
+					<li>
+						<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
+					</li>
 				{% endfor %}
 				{% else %}
-					{% assign posts=site.posts | where:"categories", page.lang %}
-					{% for post in posts limit:5 %}
+					{% for post in sortedFr limit:5 %}
 						<div class="news-date">{{ post.date | date: '%b %d' }}</div>
 						<li>
 							<div class="news-link"><a href="{{ post.url }}">{{ post.title }}</a></div>
