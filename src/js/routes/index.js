@@ -10,6 +10,7 @@ import route from 'page';
 import TagSearch from './tag-search';
 import PhotoGallery from './photo-gallery';
 import MeetingMinutes from './meeting-minutes';
+import ForgotPassword from './forgot-password';
 
 
 export default class Router extends Middleware {
@@ -37,7 +38,9 @@ export default class Router extends Middleware {
         route('/fr/what-we-do/advocacy/position-papers.html', TagSearch);
         route('/who-we-are/photo-gallery.html', PhotoGallery);
         route('/fr/who-we-are/photo-gallery.html', PhotoGallery);
-        
+        route('/forgot-password.html', ForgotPassword);
+        route('/fr/forgot-password.html', ForgotPassword);
+
         route('/members/meeting-minutes.html', MeetingMinutes);
         route('/fr/members/meeting-minutes.html', MeetingMinutes);
     }

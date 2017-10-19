@@ -5,7 +5,11 @@ SOURCE_BRANCH="staging"
 TARGET_BRANCH="master"
 
 function doCompile {
+  #Renaming gemfile for build 
+  mv Gemfile notGemfile
   gulp build
+  #renaming gemfile back after build completes to avoid errors
+  mv notGemfile Gemfile
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify

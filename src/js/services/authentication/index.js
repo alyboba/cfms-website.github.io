@@ -21,7 +21,10 @@ export default class AuthenticationService {
  
     login(email, password, cb) {
         this.auth0.getAccessToken(email, password, (err, accessToken, uid) => {
-            if (err) return console.log(err);
+            if (err) {
+                $("#loading-overlay").remove();
+                return this.utils.showAlert("Failed to login", "Please double check your credentials or reset your password.");
+            }
             this.UserRepository.get(uid)
                 .then(user => {
                     localStorage.setItem('profile', JSON.stringify(user.toSparseRow()));
@@ -39,6 +42,10 @@ export default class AuthenticationService {
         this.firebase.logout();
         localStorage.removeItem('profile');
         this.auth0.logout();
+    }
+
+    resetPassword(email) {
+        this.auth0.resetPassword(email);
     }
     
     get storageRef(){

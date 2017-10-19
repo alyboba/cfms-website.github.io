@@ -1,5 +1,10 @@
 ---
-title: "All Articles"
+lang: "fr"
+title: "Tous les articles"
+pagination:
+  enabled: true
+  collection: french-news
+  per_page: 10
 ---
 
 <!DOCTYPE html>
@@ -25,8 +30,8 @@ title: "All Articles"
 	<div id="archives" class="content">
 		<div id="archives-title">{{ page.title }}</div>
     	<div id="aside">
-			<h6>About the CFMS</h6>
-			{{ site.about_cfms_en }}
+			<h6>À Propos du FEMC</h6>
+			{{ site.about_cfms_fr }}
 		</div>
 
 		<!-- This loops through the paginated posts -->
@@ -75,6 +80,11 @@ title: "All Articles"
 			</div>
 		{% endif %}
 	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 	{% include footer.html %}
 </body>
 </html>

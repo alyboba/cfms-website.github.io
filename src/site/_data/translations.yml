@@ -21,6 +21,7 @@ nav:
     meetings: Meetings
     members: Members
     news: News
+    human-of-medicine: Humans of Medicine
     login: Login
     logout: Logout
   - lang: fr
@@ -37,6 +38,7 @@ nav:
     meetings: Réunions
     members: Membres
     news: Nouvelles
+    human-of-medicine: Humains de la Médecine
     login: Se connecter
     logout: Se déconnecter
 financial_resources:
