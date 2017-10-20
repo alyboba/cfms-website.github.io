@@ -9,26 +9,17 @@
     <link rel="stylesheet" href="view/match.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 
+	
+	<!--External Libraries required for app to work.-->
     <script src="https://npmcdn.com/zone.js@0.6.12"></script>
     <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.27/system.js"></script>
-	<!--<link rel="stylesheet" type="text/css" href="https://rawgit.com/akserg/ng2-dnd/master/ng2-dnd.css"> -->  
+	<script src="https://npmcdn.com/core-js@2.4.0/client/shim.min.js"></script>
 
-    <!-- 1. Load libraries -->
-     <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
+	<!--This is the bundle of the pdfMake directory-->
+    <script src="bundles/couples-match-vendors.min.js"></script>
     
-    <script src='pdfmake/pdfmake.min.js'></script>
-    <script src='pdfmake/vfs_fonts.js'></script>
-    
-    <!-- 2. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
-    <script>
-      System.import('app').catch(function(err){ console.error(err); });
-    </script>
+ 
 
 	<!--Page Specific Stylesheet-->
 	<!--Metadata-->
@@ -537,6 +528,9 @@ function submitApplication() {
 		<h1 id="page-title">Couples Match Application</h1>
 		<match-app>Loading...</match-app>
 	</div>
+
+	<!--This has to be included AFTER the match-app element to ensure that it has been loaded first by the browser.-->
+	<script src="bundles/couples-match-bundle.min.js"></script>
 
 	<!-- Match App Footer Resources-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
