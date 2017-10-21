@@ -115,6 +115,33 @@ position-papers:
       paper-link: "/files/position-papers/2016_pass_access to medical education.pdf"
       paper-tags:
       - tag: "PP"
+  - section: "Medical Education"
+    papers:
+    - paper-name: "Representation"
+      paper-publish-date: "2010"
+      paper-link: "/files/position-papers/representation_paper.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Diversity in Medicine"
+      paper-publish-date: "2010"
+      paper-link: "/files/position-papers/diversity_in_medicine_-_updated_2010__cait_c_.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Tuition"
+      paper-publish-date: "2010"
+      paper-link: "/files/position-papers/2000_-_tuition.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "The Senior Medical Student Charter II"
+      paper-publish-date: "2004"
+      paper-link: "/files/position-papers/2004_-_charter_clarifiers.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Career Decision Making"
+      paper-publish-date: "2003"
+      paper-link: "/files/position-papers/career_decision.pdf"
+      paper-tags:
+      - tag: "PP"                    
   - section: "Public Health"
     papers:
     - paper-name: "Criminalization of HIV"
@@ -191,6 +218,11 @@ position-papers:
       paper-link: "/files/position-papers/2013%20CFMS%20Refugees%20and%20Asylum%20Seekers.pdf"
       paper-tags:
       - tag: "PS"
+    - paper-name: "Aboriginal Health"
+      paper-publish-date: "2010"
+      paper-link: "/files/position-papers/cfms_aboriginal_health_policy_statement_-_final.pdf"
+      paper-tags:
+      - tag: "PP"
   - section: "Competencies for UGME"
     papers:
     - paper-name: "Antimicrobial Stewardship"
@@ -248,6 +280,21 @@ position-papers:
     - paper-name: "IMGs, IMGCs & CMGs: Canadian Healthcare Training and Self-Sufficiency"
       paper-publish-date: "2012"
       paper-link: "/files/position-papers/CFMS%20IMG%20and%20IMGC%20paper_final.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Return of Service"
+      paper-publish-date: "2010"
+      paper-link: "/files/position-papers/return_of_service_position_paper_-_updated_2010.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Ethical Recruitment of IMGs by Canadian Provinces"
+      paper-publish-date: "2008"
+      paper-link: "/files/position-papers/2008_-_canadian_ps_-_final_version_-_april_24.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Public Private Interface"
+      paper-publish-date: "2006"
+      paper-link: "/files/position-papers/2006_-_ppi_discussion_paper.pdf"
       paper-tags:
       - tag: "PP"
 - lang: "fr"
@@ -366,6 +413,33 @@ position-papers:
       paper-link: "/files/position-papers/2016_pass_access to medical education.pdf"
       paper-tags:
       - tag: "PP"
+  - section: "Medical Education"
+    papers:
+    - paper-name: "Representation"
+      paper-publish-date: "2010"
+      paper-link: "/files/position-papers/representation_paper.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Diversity in Medicine"
+      paper-publish-date: "2010"
+      paper-link: "/files/position-papers/diversity_in_medicine_-_updated_2010__cait_c_.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Tuition"
+      paper-publish-date: "2010"
+      paper-link: "/files/position-papers/2000_-_tuition.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "The Senior Medical Student Charter II"
+      paper-publish-date: "2004"
+      paper-link: "/files/position-papers/2004_-_charter_clarifiers.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Career Decision Making"
+      paper-publish-date: "2003"
+      paper-link: "/files/position-papers/career_decision.pdf"
+      paper-tags:
+      - tag: "PP"             
   - section: "Public Health"
     papers:
     - paper-name: "Criminalization of HIV"
@@ -442,6 +516,11 @@ position-papers:
       paper-link: "/files/position-papers/2013%20CFMS%20Refugees%20and%20Asylum%20Seekers.pdf"
       paper-tags:
       - tag: "PS"
+    - paper-name: "Aboriginal Health"
+      paper-publish-date: "2010"
+      paper-link: "/files/position-papers/cfms_aboriginal_health_policy_statement_-_final.pdf"
+      paper-tags:
+      - tag: "PP"
   - section: "Competencies for UGME"
     papers:
     - paper-name: "Antimicrobial Stewardship"
@@ -501,3 +580,119 @@ position-papers:
       paper-link: "/files/position-papers/CFMS%20IMG%20and%20IMGC%20paper_final.pdf"
       paper-tags:
       - tag: "PP"
+    - paper-name: "Return of Service"
+      paper-publish-date: "2010"
+      paper-link: "/files/position-papers/return_of_service_position_paper_-_updated_2010.pdf"
+      paper-tags:
+      - tag: "PS"
+    - paper-name: "Ethical Recruitment of IMGs by Canadian Provinces"
+      paper-publish-date: "2008"
+      paper-link: "/files/position-papers/2008_-_canadian_ps_-_final_version_-_april_24.pdf"
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Public Private Interface"
+      paper-publish-date: "2006"
+      paper-link: "/files/position-papers/2006_-_ppi_discussion_paper.pdf"
+      paper-tags:
+      - tag: "PP"
+archived-position-papers:
+- lang: "en"
+  papers:
+  - original-name: "Family Medicine"
+    original-publish-date: "2005"
+    original-link: "/files/position-papers/archived/2005_-_family_medicine.pdf"
+    updated-versions:
+    - name: "Family Medicine and Primary Care: Committing to the Future"
+      publish-date: "2015"     
+  - original-name: "Disaster and Emergency Preparedness"
+    original-publish-date: "2007"
+    original-link: "/files/position-papers/archived/2007-DEP-Policy-Paper.pdf"
+    updated-versions:
+    - name: "Disaster Management Plans in Canadian Medical Schools"
+      publish-date: "2015"
+  - original-name: "Interprofessional Education"
+    original-publish-date: "2008"
+    original-link: "/files/position-papers/archived/2008-IPE.pdf"
+    updated-versions:
+    - name: "Interprofessional Education in Canadian Medical Schools"
+      publish-date: "2015"
+  - original-name: "National Pharmaceutical Strategy"
+    original-publish-date: "2009"
+    original-link: "/files/position-papers/archived/2009-NPS.pdf"
+    updated-versions:
+    - name: "National Pharmaceutical Drug Shortages"
+      publish-date: "2014"
+  - original-name: "Cigarillos"
+    original-publish-date: "2009"
+    original-link: "/files/position-papers/archived/2009-Cigarillos-Position-Paper.pdf"
+    updated-versions:
+    - name: "Protecting the Next Generation from Tobacco Products and Nicotine Addiction"
+      publish-date: "2014"
+  - original-name: "Health Human Resources"
+    original-publish-date: "2010"
+    original-link: "/files/position-papers/archived/2010-Human-Health-Resources.pdf"
+    updated-versions:
+    - name: "Interprofessional Collaborative Care"
+      publish-date: "2014"
+  - original-name: "Mental Health for Medical Students"
+    original-publish-date: "2010"
+    original-link: "/files/position-papers/archived/2010-Mental-Health-Paper.pdf"
+    updated-versions:
+    - name: "Mental Health for Medical Students"
+      publish-date: "2014"
+  - original-name: "Principles to Protect and Support the Learning Environment for Medical Students"
+    original-publish-date: "2010"
+    original-link: "/files/position-papers/archived/2010-Medical_student_charter.pdf"
+    updated-versions:
+    - name: "Resources to Support the Learning Environment for Clinical Clerks"
+      publish-date: "2014"
+- lang: "fr"
+  papers:
+  - original-name: "Family Medicine"
+    original-publish-date: "2005"
+    original-link: "/files/position-papers/archived/2005_-_family_medicine.pdf"
+    updated-versions:
+    - name: "Family Medicine and Primary Care: Committing to the Future"
+      publish-date: "2015"     
+  - original-name: "Disaster and Emergency Preparedness"
+    original-publish-date: "2007"
+    original-link: "/files/position-papers/archived/2007-DEP-Policy-Paper.pdf"
+    updated-versions:
+    - name: "Disaster Management Plans in Canadian Medical Schools"
+      publish-date: "2015"
+  - original-name: "Interprofessional Education"
+    original-publish-date: "2008"
+    original-link: "/files/position-papers/archived/2008-IPE.pdf"
+    updated-versions:
+    - name: "Interprofessional Education in Canadian Medical Schools"
+      publish-date: "2015"
+  - original-name: "National Pharmaceutical Strategy"
+    original-publish-date: "2009"
+    original-link: "/files/position-papers/archived/2009-NPS.pdf"
+    updated-versions:
+    - name: "National Pharmaceutical Drug Shortages"
+      publish-date: "2014"
+  - original-name: "Cigarillos"
+    original-publish-date: "2009"
+    original-link: "/files/position-papers/archived/2009-Cigarillos-Position-Paper.pdf"
+    updated-versions:
+    - name: "Protecting the Next Generation from Tobacco Products and Nicotine Addiction"
+      publish-date: "2014"
+  - original-name: "Health Human Resources"
+    original-publish-date: "2010"
+    original-link: "/files/position-papers/archived/2010-Human-Health-Resources.pdf"
+    updated-versions:
+    - name: "Interprofessional Collaborative Care"
+      publish-date: "2014"
+  - original-name: "Mental Health for Medical Students"
+    original-publish-date: "2010"
+    original-link: "/files/position-papers/archived/2010-Mental-Health-Paper.pdf"
+    updated-versions:
+    - name: "Mental Health for Medical Students"
+      publish-date: "2014"
+  - original-name: "Principles to Protect and Support the Learning Environment for Medical Students"
+    original-publish-date: "2010"
+    original-link: "/files/position-papers/archived/2010-Medical_student_charter.pdf"
+    updated-versions:
+    - name: "Resources to Support the Learning Environment for Clinical Clerks"
+      publish-date: "2014"
