@@ -54,6 +54,13 @@ title: "Prise de positions"
                     </li>
                 </ul>
             </blockquote>
+            <blockquote>
+                <h4>Documents de politique archivés et documents de position</h4>
+                <p>Pour consulter nos documents de politique et documents de position archivés, voir <a href="archived-position-papers.html">Documents de Politique Archivés et Documents de Position</a>
+                </p>
+            </blockquote>
+            
+            
         <h1 style="padding-top:30px;"><strong>Documents actuels de politique et d&rsquo;&eacute;nonc&eacute;s de position</strong></h1><hr />
         </div>
         
@@ -111,7 +118,8 @@ title: "Prise de positions"
                 <blockquote>
                     <h3 class="paper-section-title"><strong>{{paperSections}}</strong></h3>
                     <ul class="paper-section">
-                    {% for papers in paperCollection.papers %}
+                        {% assign sectionPapers = paperCollection.papers | sort: 'paper-publish-date' %}
+                        {% for papers in sectionPapers reversed %}
                         {% comment %}
                         This loop now grabs all of the papers available to a specific section to populate the section with its papers
                         {% endcomment %}
