@@ -228,6 +228,7 @@ sidebar-student-affairs:
   - lang: en
     sidebar-title_1: Student Affairs
     overview: Overview
+    student-initiative-grants: Student Initiative Grants
     our-team: Our Team
     medical-students-with-disabilities: Medical Students with Disabilities
     sidebar-title_2: Resources
@@ -237,6 +238,7 @@ sidebar-student-affairs:
     sidebar-title_1: Affaires étudiantes
     overview: Aperçu
     our-team: Notre conseil
+    student-initiative-grants: Subventions pour Initiatives Étudiantes
     medical-students-with-disabilities: Étudiants en Médecine Handicapés
     sidebar-title_2: Ressources
     wellness: Bien-être
