@@ -93,7 +93,12 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			}); //end first database call
 		}
 		else{
-			vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
+			if(this.utils.isPageEnglish()){
+				vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
+			}
+			else{
+				vex.dialog.alert('<h3><strong>Vous devez être connecté pour voir cette page!</strong></h3>');
+			}
 			console.log("We are on the page with user not signed in tsk tsk tsk.");
 		} //end else 
 	}

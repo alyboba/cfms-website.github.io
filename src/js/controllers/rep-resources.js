@@ -49,7 +49,8 @@ export default class RepResourcesController extends FirebaseConnection {
 					
 					temp = document.createElement("blockquote");
 					temp.innerHTML = elem;
-					document.getElementById(this.containerId).insertBefore(temp, document.getElementById(this.containerId).firstChild);
+					document.getElementById(this.containerId).appendChild(temp); //Using this to display items alphabetically.
+					//document.getElementById(this.containerId).insertBefore(temp, document.getElementById(this.containerId).firstChild);
 					
 				
 					
@@ -57,8 +58,10 @@ export default class RepResourcesController extends FirebaseConnection {
 				
 				if(this.auth.user.isAdmin) {  //Executes if user is an admin user.
 					temp = document.createElement("blockquote");
-					let addButton = this.utils.createButton(this.refPath, "Add", "addEntry");
-					elem = addButton;
+					let addElementButton = this.utils.createButton(this.refPath, "Add Element To Existing Section", "addEntryElement");
+					elem = addElementButton;
+					let addSectionButton = this.utils.createButton(this.refPath, "Add Element to New Section", "addEntrySection");
+					elem += addSectionButton;
 					temp.innerHTML = elem;
 					document.getElementById(this.containerId).insertBefore(temp, document.getElementById(this.containerId).firstChild);
 					
@@ -67,25 +70,29 @@ export default class RepResourcesController extends FirebaseConnection {
 					for(let i=0; i<deleteButtons.length; i++){
 						deleteButtons[i].addEventListener('click', this.deleteMeetingMinutesEvent.bind(this), false);
 					}
-					let addButtons = document.getElementsByClassName("addEntry");
+					let addButtons = document.getElementsByClassName("addEntryElement");
 					for(let i=0; i<addButtons.length; i++){
-						addButtons[i].addEventListener('click', this.addMeetingMinutesEvent.bind(this), false);
+						addButtons[i].addEventListener('click', this.addRepResourcesElementEvent.bind(this), false);
+					}
+					let addSectionButtons = document.getElementsByClassName("addEntrySection");
+					for(let i=0; i<addSectionButtons.length; i++){
+						addSectionButtons[i].addEventListener('click', this.addRepResourcesSectionEvent.bind(this), false);
 					}
 				} //end admin if
 			}); //end first database call
 		}
 		else{
-			vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
+			if(this.utils.isPageEnglish()){
+				vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
+			}
+			else{
+				vex.dialog.alert('<h3><strong>Vous devez être connecté pour voir cette page!</strong></h3>');
+			}
 			console.log("We are on the page with user not signed in tsk tsk tsk.");
 		} //end else 
 	}
 	
-	/*
-	 * @type {Admin-only}
-	 * @param {object} evt
-	 * Holds reference to the dom element that fired the event.
-	 */
-	addMeetingMinutesEvent(evt){
+	addRepResourcesSectionEvent(evt){
 		let options = '';
 		evt.preventDefault();
 		let modalController = this;
@@ -94,7 +101,63 @@ export default class RepResourcesController extends FirebaseConnection {
 		}
 		
 		vex.dialog.open({
-			message: 'Add Rep Resources',
+			message: 'Add new Rep Resources Section',
+			input: [
+				'<input name="section" type="text" placeholder="Section Name" required />',
+				'<input name="title" type="text" placeholder="Title" required />',
+				'<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />'+
+				'<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>'
+			].join(''),
+			buttons: [
+				$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }),
+				$.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
+			],
+			callback: function (data) { //This executes when a button is pressed
+				if (!data) { //Executes if back button pressed
+					console.log('Cancelled');
+				} else { //Executes if Add button pressed
+					console.log("hitting the add shit here?");
+					let fileUpload = document.getElementById('uploadFile').files;
+					if(fileUpload.length == 1 ) {
+						console.log("got into the if statement b4 the function?!?!");
+						modalController.addMeetingMinutes(data.section, data.title, fileUpload[0]);
+					}
+					else{
+						vex.dialog.alert("You may only attach one file per Entry!");
+					}
+				}
+			}
+		}).on("change", "#uploadFile", (e) =>{ //This is an event handler dynamically attached only when modal is clicked!.
+			var label	 = e.target.nextElementSibling,
+				labelVal = label.innerHTML,
+				fileName = '';
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else
+				fileName = e.target.value.split( '\\' ).pop();
+			if( fileName )
+				label.querySelector( 'span' ).innerHTML = fileName;
+			else
+				label.innerHTML = labelVal;
+		});
+	}
+	
+	
+	/*
+	 * @type {Admin-only}
+	 * @param {object} evt
+	 * Holds reference to the dom element that fired the event.
+	 */
+	addRepResourcesElementEvent(evt){
+		let options = '';
+		evt.preventDefault();
+		let modalController = this;
+		for(var i=0; i<modalController.repResourcePaths.length; i++){
+			options += '<option value="'+modalController.repResourcePaths[i]+'">'+modalController.repResourcePaths[i]+'</option>';
+		}
+		
+		vex.dialog.open({
+			message: 'Add Rep Resources Element',
 			input: [
 				'<select name="section">',
 				options,
