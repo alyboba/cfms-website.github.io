@@ -51,6 +51,7 @@ export default class RepResourcesController extends FirebaseConnection {
 					temp.innerHTML = elem;
 					document.getElementById(this.containerId).insertBefore(temp, document.getElementById(this.containerId).firstChild);
 					
+				
 					
 				}); //end second Db call
 				
