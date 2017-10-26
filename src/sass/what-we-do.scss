@@ -76,6 +76,10 @@ $number-margin-mobile:40px;
 		@extend .tag-style;
 		background-color:$vp-gov-affairs-color;
 	}
+	#student-affairs {
+		@extend .tag-style;
+		background-color:$vp-communications-color;
+	}
 	a {color:$primary-color-bright;}
 	ul { 
 		counter-reset: section; 
