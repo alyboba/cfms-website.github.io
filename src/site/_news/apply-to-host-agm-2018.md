@@ -1,7 +1,9 @@
 ---
-title: Apply to Host AGM 2018!
-date:
-description: Please fill in description here.
+title: Apply to Host AGM 2018! (Due December 4th)
+date: 2017-10-26 00:00:00
+description: >-
+  The CFMS is now accepting applications from our member schools to host the
+  2018 Annual General Meeting!
 lang: en
 ---
 
