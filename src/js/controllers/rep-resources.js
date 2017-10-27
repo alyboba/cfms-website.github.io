@@ -1,50 +1,29 @@
-/*
- * @file
- * Provides Controller Functionality for the meeting-minutes.html page.
- * Populates page with information from database if user is authenticated with firebase as a user
- * Determines if user is also an admin. If true, allows the admin functionality to add/delete entrys from meeting-minutes
- * section in database.
+/**
+ * Created by Justin on 10/24/2017.
  */
-
 import { FirebaseConnection } from '../repositories/firebase/utils';
 import Utils from '../utils';
 import ModalController from '../controllers/showModal';
 
 
-//TODO: Page could have extra security checks/Ui enhancements. Leaving for now because it is for admins.
 
-export default class MeetingMinutesController extends FirebaseConnection{
-	/*
-	 * @constructor
-	 * @param {Utils} this.utils
-	   * Object to access methods from the src/js/utils.js class
-	 *  
-	 * @param {String} this.refPath
-	   * holds the root reference path to the firebase database
-	 *   
-	 * @param {AuthenticationService} this.auth
-	   * Object used to make sure the user accessing the page is authenticated
-	 * @event this.process
-	   * our base event to be triggered when page initializes.
-	 */
-	constructor(authenticationService, ModalController) {
+export default class RepResourcesController extends FirebaseConnection {
+	constructor(authenticationService){
 		super();
 		this.utils = new Utils();
-		this.refPath = 'meeting-minutes/';
+		this.refPath = 'rep-resources/';
+		this.containerId = "rep-resources";
+		this.repResourcePaths = [];
 		this.auth = authenticationService;
 		this.process();
 	}
-	/*
-	* @type {user-only && admin-only}
-	* @event
-	  * The main process to execute when controller is initialized via constructor.   
-	 */
+	
 	process() {
 		if(this.auth.user){ //check if user is signed in
 			console.log("Is this user an admin?  " + this.auth.user.isAdmin);
 			let elem, temp, //Variables used to populate page with html.
-			    subRefPath = '', //Variables used to assign paths to the delete buttons.
-			    subSubRefPath = '';
+				subRefPath = '', //Variables used to assign paths to the delete buttons.
+				subSubRefPath = '';
 			if(this.utils.isPageEnglish()){ //Sets database path to english or french version!
 				this.refPath = this.refPath+'en';
 			}
@@ -52,16 +31,16 @@ export default class MeetingMinutesController extends FirebaseConnection{
 				this.refPath = this.refPath+'fr';
 			}
 			this.firebase.database().ref(this.refPath).on('value', (snapshot) => { //Iterating over the database
-				snapshot.forEach((childSnapshot) => { //This iterates over the years in the database.
+				snapshot.forEach((childSnapshot) => { //This iterates over the subclasses in the database.
 					elem = ''; //Resetting variable for next iteration.
+					this.repResourcePaths.push(childSnapshot.key); //Adding the section title to an array, used for admin to add entries.
 					subRefPath = this.refPath +'/'+childSnapshot.key;
 					elem += '<h2 class="bold-red meetingMinuteYear">'+childSnapshot.key+'</h2>';
-					childSnapshot.forEach((subChildSnapshot) => { //This iterates over all nodes within each year currently on in DB.
+					childSnapshot.forEach((subChildSnapshot) => { //This iterates over all nodes within each subclass currently on in DB.
 						subSubRefPath = subRefPath+'/'+subChildSnapshot.key;
 						elem += '<p><strong class="meetingMinuteTitle">'+subChildSnapshot.val().title+'</strong></p>';
-						elem += '<p class="meetingMinuteSubTitle">'+subChildSnapshot.val().subTitle+'</p>';
 						elem += '<a href="'+subChildSnapshot.val().fileLink+'" target="_blank">'+ subChildSnapshot.val().fileTitle +'</a><br>'
-						if(this.auth.user.isAdmin) { //TODO: Add check this.auth.user.isAdmin
+						if(this.auth.user.isAdmin) { //checks if user is admin
 							let deleteButton = this.utils.createButton(subSubRefPath, "Delete", "deleteEntry");
 							elem += deleteButton;
 						} //end admin if
@@ -70,24 +49,34 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					
 					temp = document.createElement("blockquote");
 					temp.innerHTML = elem;
-					document.getElementById('meetingMinutes').insertBefore(temp, document.getElementById('meetingMinutes').firstChild);
+					document.getElementById(this.containerId).appendChild(temp); //Using this to display items alphabetically.
+					//document.getElementById(this.containerId).insertBefore(temp, document.getElementById(this.containerId).firstChild);
+					
+				
+					
 				}); //end second Db call
 				
 				if(this.auth.user.isAdmin) {  //Executes if user is an admin user.
 					temp = document.createElement("blockquote");
-					let addButton = this.utils.createButton(this.refPath, "Add", "addEntry");
-					elem = addButton;
+					let addElementButton = this.utils.createButton(this.refPath, "Add Element To Existing Section", "addEntryElement");
+					elem = addElementButton;
+					let addSectionButton = this.utils.createButton(this.refPath, "Add Element to New Section", "addEntrySection");
+					elem += addSectionButton;
 					temp.innerHTML = elem;
-					document.getElementById('meetingMinutes').insertBefore(temp, document.getElementById('meetingMinutes').firstChild);
+					document.getElementById(this.containerId).insertBefore(temp, document.getElementById(this.containerId).firstChild);
 					
 					//These will get updated every time a change is made to Database.
 					let deleteButtons = document.getElementsByClassName("deleteEntry");
 					for(let i=0; i<deleteButtons.length; i++){
 						deleteButtons[i].addEventListener('click', this.deleteMeetingMinutesEvent.bind(this), false);
 					}
-					let addButtons = document.getElementsByClassName("addEntry");
+					let addButtons = document.getElementsByClassName("addEntryElement");
 					for(let i=0; i<addButtons.length; i++){
-						addButtons[i].addEventListener('click', this.addMeetingMinutesEvent.bind(this), false);
+						addButtons[i].addEventListener('click', this.addRepResourcesElementEvent.bind(this), false);
+					}
+					let addSectionButtons = document.getElementsByClassName("addEntrySection");
+					for(let i=0; i<addSectionButtons.length; i++){
+						addSectionButtons[i].addEventListener('click', this.addRepResourcesSectionEvent.bind(this), false);
 					}
 				} //end admin if
 			}); //end first database call
@@ -103,20 +92,19 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		} //end else 
 	}
 	
-	/*
-	* @type {Admin-only}
-	* @param {object} evt
-	  * Holds reference to the dom element that fired the event.
-	*/
-	addMeetingMinutesEvent(evt){
+	addRepResourcesSectionEvent(evt){
+		let options = '';
 		evt.preventDefault();
 		let modalController = this;
+		for(var i=0; i<modalController.repResourcePaths.length; i++){
+			options += '<option value="'+modalController.repResourcePaths[i]+'">'+modalController.repResourcePaths[i]+'</option>';
+		}
+		
 		vex.dialog.open({
-			message: 'Add Meeting Minutes',
+			message: 'Add new Rep Resources Section',
 			input: [
-				'<input name="year" type="text" placeholder="Year" required/>',
+				'<input name="section" type="text" placeholder="Section Name" required />',
 				'<input name="title" type="text" placeholder="Title" required />',
-				'<input name="subTitle" type="text" placeholder="sub Title" required />',
 				'<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />'+
 				'<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>'
 			].join(''),
@@ -129,30 +117,82 @@ export default class MeetingMinutesController extends FirebaseConnection{
 					console.log('Cancelled');
 				} else { //Executes if Add button pressed
 					console.log("hitting the add shit here?");
-					if (modalController.isProperYearRange(data.year, 2000, 2030)) {
-						let fileUpload = document.getElementById('uploadFile').files;
-						if(fileUpload.length == 1 ) {
-							console.log("got into the if statement b4 the function?!?!");
-							modalController.addMeetingMinutes(data.year, data.title, data.subTitle, fileUpload[0]);
-						}
-						else{
-							vex.dialog.alert("You may only attach one file per Entry!");
-						}
+					let fileUpload = document.getElementById('uploadFile').files;
+					if(fileUpload.length == 1 ) {
+						console.log("got into the if statement b4 the function?!?!");
+						modalController.addMeetingMinutes(data.section, data.title, fileUpload[0]);
 					}
 					else{
-						vex.dialog.alert("Year must be between 2000 and 2030");
+						vex.dialog.alert("You may only attach one file per Entry!");
 					}
 				}
 			}
 		}).on("change", "#uploadFile", (e) =>{ //This is an event handler dynamically attached only when modal is clicked!.
-			var label	 = e.target.nextElementSibling, 
+			var label	 = e.target.nextElementSibling,
 				labelVal = label.innerHTML,
-			  fileName = '';
+				fileName = '';
 			if( this.files && this.files.length > 1 )
 				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
 			else
 				fileName = e.target.value.split( '\\' ).pop();
-			
+			if( fileName )
+				label.querySelector( 'span' ).innerHTML = fileName;
+			else
+				label.innerHTML = labelVal;
+		});
+	}
+	
+	
+	/*
+	 * @type {Admin-only}
+	 * @param {object} evt
+	 * Holds reference to the dom element that fired the event.
+	 */
+	addRepResourcesElementEvent(evt){
+		let options = '';
+		evt.preventDefault();
+		let modalController = this;
+		for(var i=0; i<modalController.repResourcePaths.length; i++){
+			options += '<option value="'+modalController.repResourcePaths[i]+'">'+modalController.repResourcePaths[i]+'</option>';
+		}
+		
+		vex.dialog.open({
+			message: 'Add Rep Resources Element',
+			input: [
+				'<select name="section">',
+				options,
+				'</select>',
+				'<input name="title" type="text" placeholder="Title" required />',
+				'<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />'+
+				'<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>'
+			].join(''),
+			buttons: [
+				$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }),
+				$.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
+			],
+			callback: function (data) { //This executes when a button is pressed
+				if (!data) { //Executes if back button pressed
+					console.log('Cancelled');
+				} else { //Executes if Add button pressed
+					console.log("hitting the add shit here?");
+					let fileUpload = document.getElementById('uploadFile').files;
+					if(fileUpload.length == 1 ) {
+						console.log("got into the if statement b4 the function?!?!");
+						modalController.addMeetingMinutes(data.section, data.title, fileUpload[0]);
+					}
+					else{
+						vex.dialog.alert("You may only attach one file per Entry!");
+					}
+				}
+			}
+		}).on("change", "#uploadFile", (e) =>{ //This is an event handler dynamically attached only when modal is clicked!.
+			var label	 = e.target.nextElementSibling,
+				labelVal = label.innerHTML,
+				fileName = '';
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else
+				fileName = e.target.value.split( '\\' ).pop();
 			if( fileName )
 				label.querySelector( 'span' ).innerHTML = fileName;
 			else
@@ -161,24 +201,23 @@ export default class MeetingMinutesController extends FirebaseConnection{
 	}
 	
 	/*
-	* @type {Admin-only}
-	* @param {String} year
-	*   contains the string for the year entered in modal by admin 
-	* @param {String} title
-	*   contains the string for the title entered in modal by admin
-	* @param {String} subTitle
-	*   contains the string for the subTitle entered in modal by admin
-	* @param {Object} file
-	*   A reference to the file object gathered by input element entered by the admin
-	* @param {Boolean} justAdd
-	*/
-	addMeetingMinutes(year, title, subTitle, file){
+	 * @type {Admin-only}
+	 * @param {String} year
+	 *   contains the string for the year entered in modal by admin 
+	 * @param {String} title
+	 *   contains the string for the title entered in modal by admin
+	 * @param {String} subTitle
+	 *   contains the string for the subTitle entered in modal by admin
+	 * @param {Object} file
+	 *   A reference to the file object gathered by input element entered by the admin
+	 * @param {Boolean} justAdd
+	 */
+	addMeetingMinutes(section, title, file){
 		let modalController = this;
 		this.vexConfirm().then( () => {
 			modalController.fileUploadPromise(file).then( (fileObject ) =>{
-				firebase.database().ref(this.refPath+'/'+year).push({
+				firebase.database().ref(this.refPath+'/'+section).push({
 					title: title,
-					subTitle: subTitle,
 					fileTitle: file.name,
 					fileLink: fileObject.downloadURL,
 					filePath: fileObject.filePath
@@ -256,11 +295,11 @@ export default class MeetingMinutesController extends FirebaseConnection{
 	 */
 	fileUploadPromise(file){
 		return new Promise((resolve, reject) => {
-			let filePath = 'minutes/'+file.name;
+			let filePath = 'rep-resources/'+file.name;
 			let storageRef = firebase.storage().ref(filePath);
 			//console.log(storageRef.getDownloadURL());
 			storageRef.getDownloadURL().then( () => { //There already is a file with that name in storage, reject the promise...
-					reject("A File With the same name has already been uploaded!");
+				reject("A File With the same name has already been uploaded!");
 			}).catch(() => { //There is no file with that name in Db, Lets make one!
 				let uploadTask =	storageRef.put(file);
 				uploadTask.on('state_changed', (snapshot) => {
@@ -305,6 +344,5 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		
 	}
 }
-
 
 
