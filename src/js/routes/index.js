@@ -11,6 +11,7 @@ import TagSearch from './tag-search';
 import PhotoGallery from './photo-gallery';
 import MeetingMinutes from './meeting-minutes';
 import ForgotPassword from './forgot-password';
+import RepResources from './rep-resources';
 
 
 export default class Router extends Middleware {
@@ -43,6 +44,9 @@ export default class Router extends Middleware {
 
         route('/members/meeting-minutes.html', MeetingMinutes);
         route('/fr/members/meeting-minutes.html', MeetingMinutes);
+        
+        route('/resources/rep-resources.html', RepResources);
+        route('/fr/resources/rep-resources.html', RepResources);
     }
 
     refresh() {

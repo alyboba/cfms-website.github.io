@@ -1,0 +1,55 @@
+---
+title: "Rep Resources"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/resources.css">
+</head>
+<body>
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#resources" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <h1 class="editable" id="page-title">Rep Resources</h1>
+    
+    <div id="members-only">
+        <p class="editable">This page is intended for CFMS Reps who represent students at their schools. If there are any additional 
+            resources that you think could be helpful, please contact the VP Communications
+            (<a href="mailto:vpcommunications@cfms.org">vpcommunications@cfms.org</a>).</p>
+        <div id="rep-resources">
+            <!--javascript dynamically populates sensitive data here if user is validated-->
+            
+        </div>
+        <h2 class="bold-red editable">Contact List</h2>
+        <p class="editable">Please email the VP Communications (
+        <a href="mailto:vpcommunications@cfms.org">vpcommunications@cfms.org</a> to obtain the latest Contact List.</p>
+        
+        
+    </div>
+    
+        <div class="non-members">
+            <blockquote>
+                <h3><strong>Please login to see this page</strong></h3>
+                <ul>
+                    <li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
+                </ul>
+            </blockquote>
+        </div>
+</div>
+
+<div>{% include footer.html %}</div>
+</body>
+</html>
