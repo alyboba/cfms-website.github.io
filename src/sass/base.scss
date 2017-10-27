@@ -548,11 +548,26 @@ label {
 	img.right {width:100%;}
 }
 
-.bold-red{
+
+.bold-red {
 	font-size:24px;
 	padding-bottom:12px;
 	font-weight:bold;
 	text-transform: uppercase;
 	color:$primary-color;
 	font-family:$sans-serif-font-stack;
+}
+/*
+added helper classes
+*/
+.underline {
+	text-decoration: underline;
+}
+.text-red {
+	color:$primary-color;
+	font-family:$sans-serif-font-stack;
+}
+.small-font {
+	font-size: 11pt;
+	font-family: Calibri;
 }
