@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 
 
-<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
-<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"> <![endif]-->
 <head>
-	<!--Metadata-->
+    <!--Metadata-->
 <meta charset="utf-8">
 <title>Canadian Federation of Medical Students</title>
 <meta name="description" content="Canadian Federation of Medical Students">
@@ -372,60 +374,58 @@ function submitApplication() {
     .animate { visibility: hidden; }
 </style> 
 
-	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css"/>
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-	
-	
 
 	
 		<div id="top-padding"></div>
-		<div id="top-bar" class="invert fr">
+		<div id="top-bar" class="invert en">
 			<div id="top-icon" class="animate">
-				<div id="logo-group" class="fr">
+				<div id="logo-group" class="en">
 					<img id="logo-invert" src="/images/cfms-logo-invert.svg">
 					<img id="logo" src="/images/cfms-logo.svg">
-					<a href="/fr/">FEMC</a>
+					<a href="/">CFMS</a>
 				</div>
-				<span id="logo-desc"><a class="fr" href="/fr/">Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada</a></span>
+				<span id="logo-desc"><a class="en" href="/">Canadian Federation of<br>Medical Students</a></span>
 			</div>
 			<div id="top-hamburger" class="animate">
 				<a onclick="return false;" id="hamburger-toggle" href=""><span></span></a>
 			</div>
 			<div id="top-nav" class="animate">
-				<ul class="fr">
-					<li id="who-we-are"><a class="top-level" href="/fr/who-we-are/">Qui sommes-nous?</a></li>
-					<li id="what-we-do"><a class="top-level" href="/fr/what-we-do/">Que faisons-nous?</a>
+				<ul class="en">
+					<li id="who-we-are"><a class="top-level" href="/who-we-are/">Who we are</a></li>
+					<li id="what-we-do"><a class="top-level" href="/what-we-do/">What we do</a>
 						<div id="sub-menu">
 						    <ul>
-						    	<li><a href="/fr/what-we-do/advocacy/">Représentation</a></li>
-						    	<li><a href="/fr/what-we-do/education/">Éducation</a></li>
-						    	<li><a href="/fr/what-we-do/global-health/">Santé mondiale</a></li>
-						    	<li><a href="/fr/what-we-do/student-affairs/">Affaires étudiantes</a></li>
+						    	<li><a href="/what-we-do/advocacy/">Advocacy</a></li>
+						    	<li><a href="/what-we-do/education/">Education</a></li>
+						    	<li><a href="/what-we-do/global-health/">Global Health</a></li>
+						    	<li><a href="/what-we-do/student-affairs/">Student Affairs</a></li>
 						    </ul>
 						</div>
 					</li>
-					<li id="resources"><a class="top-level" href="/fr/resources/">Ressources</a></li>
-					<li id="meetings"><a class="top-level" href="/fr/meetings/">Réunions</a>
+					<li id="resources"><a class="top-level" href="/resources/">Resources</a></li>
+					<li id="meetings"><a class="top-level" href="/meetings/">Meetings</a>
 						<div id="sub-menu">
 						    <ul>
-						        <li><a href="/fr/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
-						        <li><a href="/fr/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>
-						        <li><a href="/fr/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>
- 						    	<li><a href="/fr/meetings/sgm-2016-montreal.html">SGM 2016 &ndash; Montreal, QC</a></li>
+						        <li><a href="/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
+						        <li><a href="/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>
+						        <li><a href="/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>
+ 						    	<li><a href="/meetings/sgm-2016-montreal.html">SGM 2016 &ndash; Montreal, QC</a></li>
 						    </ul>
 						</div>
 					</li>
-					<li id="members"><a class="top-level" href="/fr/members/">Membres</a></li>
-					<li id="news"><a class="top-level" href="/fr/news/">Nouvelles</a></li>
-					<li id="human-of-medicine"><a class="top-level" href="/fr/humans-of-medicine/">Humains de la Médecine</a></li>
+					<li id="members"><a class="top-level" href="/members/">Members</a></li>
+					<li id="news"><a class="top-level" href="/news/">News</a></li>
+					<li id="human-of-medicine"><a class="top-level" href="/humans-of-medicine/">Humans of Medicine</a></li>
 					
-						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Se connecter</a></li>
+						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
 						
-							<li id="lang-toggle"><a id="en" href='/what-we-do/student-affairs/wellness.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/what-we-do/student-affairs/blood-drive.html">FR</a></li>
 						
 					
 				</ul>
@@ -434,46 +434,135 @@ function submitApplication() {
 	
 
 	
-	<!--Page Specific Formatting-->
-	<script type="text/javascript">
-		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#what-we-do" ).classList.toggle("active");
-	</script>
 
-	<div class="content">
-		<!-- Displays the sidebar and emphasizes the active page -->
-		<div id="sidebar">
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector("#logo-invert").classList.toggle("hidden");
+    document.querySelector("#what-we-do").classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    <div id="sidebar">
 	<div id="scroll">
 		
 		
+		<span id="sidebar-title">Student Affairs</span>
+		<ul>
+			<li><a id="overview" href=".">Overview</a></li>
+			<li><a id="our-team" href="our-team.html">Our Team</a></li>
+			<li><a id="student-initiative-grants" href="student-initiative-grants.html">Student Initiative Grants</a></li>
+			<li><a id="medical-students-with-disabilities" href="medical-students-with-disabilities.html">Medical Students with Disabilities</a></li>
+			<li><a id="blood-drive" href="blood-drive.html">Blood Drive</a></li>
+		</ul>
+		<span id="sidebar-title">Resources</span>
+		<ul>
+			<li><a id="wellness" href="wellness.html">Wellness</a></li>
+			<li><a id="discounts" href="../../resources/discounts.html">Student Discounts</a></li>
+		</ul>
 		
 		
-		<span id="sidebar-title">Affaires étudiantes</span>
-		<ul>
-			<li><a id="overview" href=".">Aperçu</a></li>
-			<li><a id="our-team" href="our-team.html">Notre conseil</a></li>
-			<li><a id="student-initiative-grants" href="student-initiative-grants.html">Subventions pour Initiatives Étudiantes</a></li>
-			<li><a id="medical-students-with-disabilities" href="medical-students-with-disabilities.html">Étudiants en Médecine Handicapés</a></li>
-			<li><a id="blood-drive" href="blood-drive.html">Collect de Sang</a></li>
-		</ul>
-		<span id="sidebar-title">Ressources</span>
-		<ul>
-			<li><a id="wellness" href="wellness.html">Bien-être</a></li>
-			<li><a id="discounts" href="../../resources/discounts.html">Rabais étudiants</a></li>
-		</ul>
 		
 		
 	</div>
 </div>
-		<script type="text/javascript">
-			document.querySelector( "#wellness" ).classList.toggle("sidebar-active");
-		</script>
-		<div id="side-content" class="editable">
-			<h1 id="page-title">Wellness</h1>
-			<p>The Education Committee is a new committee under the Canadian Federation of Medical Students (CFMS) that aims to connect medical student societies and their respective students with the goal of enhancing medical education across the nation.</p>				
-		</div>
-	</div>
-	<script type="text/javascript">
+    <script type="text/javascript">
+        document.querySelector("#blood-drive").classList.toggle("sidebar-active");
+    </script>
+    <div id="side-content" class="editable">
+        <h1 id="page-title">Blood Drive</h1>
+        <h2 class="text-red">2011 Update</h2>
+        <p>Continuing the invaluable efforts of previous CFMS blood drive officers and all the medical students who have
+            been contributing to the blood drive efforts, the Partners for Life (PFL) program has been a success – the 
+            donation units of 2010 is approximately 80% of our goal! In addition in sustaining long-term partnership with 
+            Canadian Blood Services, PFL also encourages student to donate at a consistent basis. Blood donation is a truly 
+            cumulative effort of many dedicated donors and volunteers/staff.</p>
+        
+        <p>One of the great advantages of PFL is its flexibility – once the CFMS students have signed up as a PFL member 
+            (via submitting a PFL form to the staff at the local clinic or online), your donations will count towards your
+            medical school’s pledge even if you are half way across the country!</p>
+        
+        <p>In addition to blood donation, different schools have been taking initiatives to raise awareness and encourage 
+            students to come out to donate. While some have continued their excellent efforts in volunteer programs held by 
+            Canadian Blood Services, other have went around to different primary schools to present educational information 
+            related to blood, or have introduced challenges within their own medical school to as a way of promoting blood donation.</p>
+        
+        <p>While many of us are aware of its importance, blood donation is more than a genuine effort in helping people; it can save lives in a subtle yet meaningful way.</p>
+        
+        <p>Shall you have any questions and would like to find out more information about how to get involved in the blood donation efforts at your school,
+            please contact your local school’s Champion, or myself at <a href="mailto:ccheu009@uottawa.ca">ccheu009@uottawa.ca</a></p>
+        
+        <p>Roll up those white coats & Happy bleeding!</p>
+        <p><span class="letter-signature">Crystal Cheung</span></p>
+        <div class="letter-sign-children">
+            <p>CFMS Blood Drive Officer</p>
+            <p>Canadian Blood Service National PFL Champion</p>
+        </div>
+        
+        
+        <hr>
+        <h2 class="text-red">2010 Update</h2>
+        <a href="/files/blood-drive/blooddrive2010.pdf" target="_blank">Recent article on the blood drive</a>
+        <p></p>
+        <p>In previous years, the CFMS blood drive was a once a year event, but this past year we started a new program with 
+            Canadian Blood Services that helps us contribute all year long! The CFMS is CBS’ longest standing partner 
+            (it’s true – look it up!), and we have decided to move forward with that partnership and become part of the Partners For Life (PFL)
+            program which will really help us maximize the donations we make across the country. Entering into a PFL partnership gives us 
+            access to CBS’ vast resources and nationwide team of coordinators who will help organize and promote blood donation opportunities 
+            to med students at every CFMS school. Through the PFL program, CBS will help us organize our efforts and help make sure that every 
+            student at every school is aware of the donation events available in their community. I am very confident that through the PFL program, 
+            CBS will help us reach donation numbers that we would have previously thought impossible to achieve. Our goal for this year is 1000 
+            donations, and we are getting closer to that number every day!</p>
+        
+        <p>One of the great things about our partnership with CBS is that they not only make sure that we are reaching our donation potential, 
+            but they also help us find ways to get everyone involved with the very important work of getting blood products to the patients who 
+            need them. Last year, several schools across the country took advantage of this opportunity and got involved with volunteer programs 
+            held by CBS to help raise awareness in their communities of the great need for blood products. There is much more to the work of supplying 
+            blood products than just lying on a table to bleed; CBS is helping us go beyond a blood drive to get more involved in the many different 
+            ways CBS helps the communities we all belong to.</p>
+        
+        <p>If you would like to get involved either by donating or volunteering your time and talents, contact your campus’ blood drive Champion, 
+            or contact the national Champion at <a href="mailto:blood@cfms.org">blood@cfms.org</a> or <a href="mailto:mike.bevilacqua@med.ucalgary.ca">mike.bevilacqua@med.ucalgary.ca.</a></p>
+        
+        <p>Roll up your whitecoats and give!!</p>
+
+        <p><span class="letter-signature">Mike Bevilacqua</span></p>
+        <div class="letter-sign-children">
+            <p>CFMS Blood Drive Officer</p>
+            <p>National PFL Champion</p>
+            <a href="/files/blood-drive/DrGrahamblooddrive2010letter.pdf" target="_blank">Letter from Dr. Graham Sher, CEO of Canadian Blood Services, to the CFMS</a>
+        </div>
+        
+        <hr>
+        <h2 class="text-red">2009 Update</h2>
+        <p>Dear Members of the CFMS:</p>
+        <p>To begin with, I would like to thank all of you who have taken your time to support the Canadian Blood Services 
+            Partners for Life program. It may sound cliché but your efforts truly are life saving.</p>
+        
+        <p>As I write this letter, I’m a third-year med student at the University of Alberta, but not too long ago I was a 
+            14 year old battling acute myelogenous leukemia. While it was an unfortunate diagnosis, I still consider myself 
+            very lucky for two reasons: 1) because my sister was the perfect match for a stem cell transplant and 2) because 
+            of the selfless donors who made my treatment possible. During the course of my chemo and transplant I received 30+ 
+            blood product transfusions including red blood cells, platelets and stem cells. In other words, people like you 
+            saved my life more than 30 times.</p>
+        <p>Speaking now as a medical student, it’s no secret that most of us venture down this long path to becoming doctors 
+            so we can make a difference in the lives of others. With this in mind, it’s also no surprise to see such a strong 
+            contingent of my peers taking their time to give blood.</p>
+        
+        <p>On that note, I want to thank you again for offering your time and blood to save lives of people like me. And for 
+            those of you out there considering donating, I encourage you to take that step and roll up your sleeve. You never
+            know whose life you could save.</p>
+
+        <p><span class="letter-signature">Chris Blackmore,</span></p>
+        <div class="letter-sign-children">
+            <p>University of Alberta Med 2010</p>
+        </div>
+        
+        
+    </div>
+</div>
+<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;
@@ -485,7 +574,7 @@ function submitApplication() {
 		<h1>
 			<div id="twitter-title">
 				
-					Derniers tweets
+					Latest tweets
 				
 				<span style="opacity:0.3">:</span></div>
 			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
@@ -497,43 +586,41 @@ function submitApplication() {
 
 	
 		
-	
-		
 			<div class="column">
-				<h1>Pour nous joindre <span style="opacity:0.3">:</span></h1>
+				<h1>Contact us <span style="opacity:0.3">:</span></h1>
 				<div class="icon"><i class="fa fa-map-marker"></i></div>
 				<li>
-					Fédération des étudiants et des étudiantes en médecine du Canada<br>
+					Canadian Federation of Medical Students<br>
 					267 O'Connor Street, Suite 401<br>
 					Ottawa, ON K2P 1V3
 				</li>
 				<div class="icon"><i class="fa fa-phone"></i></div>
 				<li>
-					<b>Téléphone</b>: 613&ndash;565&ndash;7740<br>
-					<b>Télécopieur</b>: 613&ndash;565&ndash;7742
+					<b>Phone</b>: 613&ndash;565&ndash;7740<br>
+					<b>Fax</b>: 613&ndash;565&ndash;7742
 				</li>
 				<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
 				<div id="emails">
-					<li><b>Questions diverses</b>: Rosemary Conliffe<br>
+					<li><b>General Inquiries</b>: Rosemary Conliffe<br>
 					    <script>getEmail("office")</script>
 					</li>
-					<li><b>Médias</b>: Christina Schweitzer<br>
+					<li><b>Media</b>: Christina Schweitzer<br>
 						<script>getEmail("vpcommunications")</script>
 					</li>
-					<li><b>Technologies de l'information</b>: Pavel Yarmak<br>
+					<li><b>Information Technology</b>: Pavel Yarmak<br>
 						<script>getEmail("it")</script>
 					</li>
 				</div>
 			</div>
 		
 	
-	
 		
+	
 	
 		
 			<div class="column">
 				<h1>
-					Trouvez nous sur <span style="opacity:0.3">:</span>
+					Find us on <span style="opacity:0.3">:</span>
 					<div id="social-media">
 						<a class="social-icon" href="https://www.facebook.com/CFMSFEMC"><i class="fa fa-facebook"></i></a>
 						/
@@ -545,7 +632,7 @@ function submitApplication() {
 				<div class="icon"><i class="fa fa-sitemap"></i></div>
 				<li>
 					
-						<b>Plan du site:</b> <a href="/fr/sitemap.html">cfms.org/sitemap.html</a>
+						<b>Site map:</b> <a href="/sitemap.html">cfms.org/sitemap.html</a>
 					
 				</li>
 				<div class="icon"><i class="fa fa-question-circle"></i></div>
@@ -559,9 +646,11 @@ function submitApplication() {
 				<div class="icon"><i class="fa fa-copyright"></i></div>
 				<li>
 					<script>document.write((new Date()).getFullYear())</script>
-					FEMC. Tous droits réservés.<br>Développé par <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
+					CFMS. All Rights Reserved.<br>Developed by <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
 				</li>		
 			</div>
+		
+	
 		
 	
 </div>
@@ -651,11 +740,10 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript">
 	window.config = {
 		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","human-of-medicine":"Humans of Medicine","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","human-of-medicine":"Humains de la Médecine","login":"Se connecter","logout":"Se déconnecter"}]`),
-		lang: `fr`,
+		lang: `en`,
 		leadership_award_year: `2016-2017`,
 		env: `production`
 	}
 </script>
 <script type="text/javascript" src="/js/bundle.js"></script>
 </body>
-</html>
