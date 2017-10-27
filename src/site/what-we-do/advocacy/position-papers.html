@@ -11,7 +11,7 @@ title: Position Papers
 <head>
     {% include head.html %}
     <!--Page Specific Stylesheet-->
-    <link rel="stylesheet" href="/stylesheets/what-we-do-copy.css" />
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css" />
     <script type="text/javascript" src="/js/resolution.js"></script>
     <!--Page Specific Stylesheet-->
 
@@ -23,6 +23,25 @@ title: Position Papers
 <script type="text/javascript">
     document.querySelector( "#logo-invert" ).classList.toggle("hidden");
     document.querySelector( "#what-we-do" ).classList.toggle("active");
+
+    function escapeHTML(input) {
+        return input.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function showPaperSummary(summary, status, link) {
+        summary = (summary) ? summary : 'N/A';
+        status = (status) ? status : 'N/A';
+        vex.dialog.buttons.YES.text = 'Download';
+        vex.dialog.buttons.NO.text = 'Close';
+        var msg = '<h2>Summary</h2>' + escapeHTML(summary) + '<br><h2>Status</h2>' + escapeHTML(status);
+
+        vex.dialog.confirm({
+            message: msg,
+            callback: function (value) {
+                if (value) window.open(link);
+            }
+        });
+    }
 </script>
 <div class="content">
     <!-- Displays the sidebar and emphasizes the active page -->
@@ -132,7 +151,7 @@ title: Position Papers
                            {% endif %}
                            {% endfor %}
                            <span class="pub-date">{{papers.paper-publish-date}}</span>
-                           <a target="_blank" href="{{papers.paper-link}}"><span class="paper-title">{{papers.paper-name}}</span></a></li>
+                           <span class="paper-title" onclick="showPaperSummary('{{papers.paper-summary}}', '{{papers.paper-status}}', '{{papers.paper-link}}');">{{papers.paper-name}}</span></li>
                            {% assign index = index | plus:1 %} 
                     
                     {% endfor %}
