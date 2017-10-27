@@ -562,10 +562,21 @@ added helper classes
 	font-size: 11pt;
 	font-family: Calibri;
 }
-.letter-sign-children *{
+.letter-sign-children * {
 	font-size: 10pt;
 }
-.letter-signature{
+.letter-signature {
 	border: 0;
 	border-bottom: 1px solid #000;
+}
+.text-black {
+	color:$darker;
+}
+.bold-red {
+	font-size:24px;
+	padding-bottom:12px;
+	font-weight:bold;
+	text-transform: uppercase;
+	color:$primary-color;
+	font-family:$sans-serif-font-stack;
 }

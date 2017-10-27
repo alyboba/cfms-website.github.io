@@ -141,6 +141,7 @@ sidebar-global-health:
     sidebar-title_1: Global Health
     overview: Overview
     our-team: Our Team
+    reports-and-documents: Reports and Documents
     sidebar-title_2: Resources
     international-exchanges: International Exchanges
     ifmsa: Global Health Opportunities
@@ -155,6 +156,7 @@ sidebar-global-health:
     sidebar-title_1: Santé globale
     overview: Aperçu
     our-team: Notre conseil
+    reports-and-documents: Rapports et Documents
     sidebar-title_2: Ressources
     international-exchanges: Échanges internationaux
     ifmsa: Opportunités de santé globale
@@ -228,6 +230,7 @@ sidebar-student-affairs:
   - lang: en
     sidebar-title_1: Student Affairs
     overview: Overview
+    student-initiative-grants: Student Initiative Grants
     our-team: Our Team
     blood-drive: Blood Drive
     medical-students-with-disabilities: Medical Students with Disabilities
@@ -239,6 +242,7 @@ sidebar-student-affairs:
     overview: Aperçu
     our-team: Notre conseil
     blood-drive: Collect de Sang
+    student-initiative-grants: Subventions pour Initiatives Étudiantes
     medical-students-with-disabilities: Étudiants en Médecine Handicapés
     sidebar-title_2: Ressources
     wellness: Bien-être

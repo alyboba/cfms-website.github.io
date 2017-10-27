@@ -2,11 +2,12 @@
 	<div id="scroll">
 	    {% for gh in site.data.translations.sidebar-global-health %}
 		{% if gh.lang == page.lang %}
-		<span id="sidebar-title"><a href="">{{gh.sidebar-title_1}}</a></span>
+		<span id="sidebar-title">{{gh.sidebar-title_1}}</span>
 		<ul>
 
 			<li><a id="overview" href=".">{{gh.overview}}</a></li>
 			<li><a id="our-team" href="our-team.html">{{gh.our-team}}</a></li>
+			<li><a id="reports-and-documents" href="reports-and-documents.html">{{gh.reports-and-documents}}</a></li>
 
 		</ul>
 		
