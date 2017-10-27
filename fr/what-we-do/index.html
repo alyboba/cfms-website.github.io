@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 
 
-<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
-<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"> <![endif]-->
 <head>
-	<!--Metadata-->
+    <!--Metadata-->
 <meta charset="utf-8">
 <title>Canadian Federation of Medical Students</title>
 <meta name="description" content="Canadian Federation of Medical Students">
@@ -372,11 +374,11 @@ function submitApplication() {
     .animate { visibility: hidden; }
 </style> 
 
-	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css"/>
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-	
+
 	
 
 	
@@ -433,19 +435,43 @@ function submitApplication() {
 		</div>
 	
 
-	
-	<!--Page Specific Formatting-->
-	<script type="text/javascript">
-		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#what-we-do" ).classList.toggle("active");
-	</script>
 
-	<!-- Newest Article -->
-	<div id="what-we-do-home">
-		<h1 class="editable">What do we do?</h1>
-		<div class="editable"><p>The CFMS is actively involved in a number of projects that aim to better serve our members. Visit our <a href="advocacy/">Advocacy</a>, <a href="education/">Education</a>, <a href="global-health/">Global Health</a>, and <a href="student-affairs/">Student Affairs</a> pages to learn more about the exciting initiatives that the CFMS is pursuing. Some of these include:</p><ul><li><a href="global-health/international-exchanges.html">International Exchanges</a><p>Canada participates in a bilateral international exchange program where medical students can undertake clinical electives or research projects in a foreign country for a period of four weeks. You can apply via the CFMS.</p> <span id="global-health"><a href="global-health/">Global Health</a></span></li><li><a href="education/cfms-matchbook.html">Residency Matchbook</a><p>The CFMS prepares an annual review of the CaRMS match, to help educate medical students about the Match and assist with career planning.</p> <span id="education"><a href="education/">Education</a></span></li><li><a href="advocacy/lobby-day.html">Lobby Day</a><p>Lobby Day is one of the CFMS's signature annual events during which medical students from across the nation come to Parliament Hill in Ottawa to speak with policy makers on an issue of importance.</p> <span id="advocacy"><a href="advocacy/">Advocacy</a></span></li></ul></div>
-	</div>
-	<div class="dark-footer"><script type="text/javascript">
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector("#logo-invert").classList.toggle("hidden");
+    document.querySelector("#what-we-do").classList.toggle("active");
+</script>
+
+<!-- Newest Article -->
+<div id="what-we-do-home">
+    <h1 class="editable">What do we do?</h1>
+    <div class="editable"><p>The CFMS is actively involved in a number of projects that aim to better serve our members.
+        Visit our <a href="advocacy/">Advocacy</a>, <a href="education/">Education</a>, <a href="global-health/">Global
+            Health</a>, and <a href="student-affairs/">Student Affairs</a> pages to learn more about the exciting
+        initiatives that the CFMS is pursuing. Some of these include:</p>
+        <ul>
+            <li><a href="global-health/international-exchanges.html">International Exchanges</a>
+                <p>Canada participates in a bilateral international exchange program where medical students can
+                    undertake clinical electives or research projects in a foreign country for a period of four weeks.
+                    You can apply via the CFMS.</p> <span id="global-health"><a href="global-health/">Global Health</a></span>
+            </li>
+            <li><a href="education/cfms-matchbook.html">Residency Matchbook</a>
+                <p>The CFMS prepares an annual review of the CaRMS match, to help educate medical students about the
+                    Match and assist with career planning.</p> <span id="education"><a
+                        href="education/">Education</a></span></li>
+            <li><a href="advocacy/lobby-day.html">Lobby Day</a>
+                <p>Lobby Day is one of the CFMS's signature annual events during which medical students from across the
+                    nation come to Parliament Hill in Ottawa to speak with policy makers on an issue of importance.</p>
+                <span id="advocacy"><a href="advocacy/">Advocacy</a></span></li>
+            <li><a href="student-affairs/wellness.html">CFMS Wellness</a>
+                <p>CFMS recognizes that student wellness is a priority. Visit here for information regarding wellness at your schools!</p>
+                <span id="student-affairs"><a href="student-affairs/">Student Affairs</a></span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<div class="dark-footer"><script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;

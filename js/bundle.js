@@ -118486,7 +118486,7 @@ var App = function App() {
 ;
 new App();
 
-},{"./routes":523}],491:[function(require,module,exports){
+},{"./routes":524}],491:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -118567,7 +118567,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{"../utils":538}],493:[function(require,module,exports){
+},{"../utils":540}],493:[function(require,module,exports){
 'use strict';
 
 /*
@@ -119531,7 +119531,7 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
 exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
-},{"../repositories/firebase/utils":521}],498:[function(require,module,exports){
+},{"../repositories/firebase/utils":522}],498:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119666,7 +119666,11 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 					} //end admin if
 				}); //end first database call
 			} else {
-				vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
+				if (this.utils.isPageEnglish()) {
+					vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
+				} else {
+					vex.dialog.alert('<h3><strong>Vous devez être connecté pour voir cette page!</strong></h3>');
+				}
 				console.log("We are on the page with user not signed in tsk tsk tsk.");
 			} //end else 
 		}
@@ -119889,7 +119893,7 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 
 exports.default = MeetingMinutesController;
 
-},{"../controllers/showModal":508,"../repositories/firebase/utils":521,"../utils":538}],499:[function(require,module,exports){
+},{"../controllers/showModal":509,"../repositories/firebase/utils":522,"../utils":540}],499:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120042,7 +120046,7 @@ var _class = function (_FirebaseConnection) {
 
 exports.default = _class;
 
-},{"../repositories/firebase/utils":521}],501:[function(require,module,exports){
+},{"../repositories/firebase/utils":522}],501:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120405,7 +120409,7 @@ var PaymentsController = function () {
 
 exports.default = PaymentsController;
 
-},{"../utils":538,"request-promise":393}],505:[function(require,module,exports){
+},{"../utils":540,"request-promise":393}],505:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120734,7 +120738,7 @@ var PurchasesController = function () {
 
 exports.default = PurchasesController;
 
-},{"../utils":538,"request-promise":393}],507:[function(require,module,exports){
+},{"../utils":540,"request-promise":393}],507:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120799,7 +120803,396 @@ var RegistrationController = function () {
 
 exports.default = RegistrationController;
 
-},{"../utils":538}],508:[function(require,module,exports){
+},{"../utils":540}],508:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _utils = require('../repositories/firebase/utils');
+
+var _utils2 = require('../utils');
+
+var _utils3 = _interopRequireDefault(_utils2);
+
+var _showModal = require('../controllers/showModal');
+
+var _showModal2 = _interopRequireDefault(_showModal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by Justin on 10/24/2017.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+
+var RepResourcesController = function (_FirebaseConnection) {
+	_inherits(RepResourcesController, _FirebaseConnection);
+
+	function RepResourcesController(authenticationService) {
+		_classCallCheck(this, RepResourcesController);
+
+		var _this = _possibleConstructorReturn(this, (RepResourcesController.__proto__ || Object.getPrototypeOf(RepResourcesController)).call(this));
+
+		_this.utils = new _utils3.default();
+		_this.refPath = 'rep-resources/';
+		_this.containerId = "rep-resources";
+		_this.repResourcePaths = [];
+		_this.auth = authenticationService;
+		_this.process();
+		return _this;
+	}
+
+	_createClass(RepResourcesController, [{
+		key: 'process',
+		value: function process() {
+			var _this2 = this;
+
+			if (this.auth.user) {
+				//check if user is signed in
+				console.log("Is this user an admin?  " + this.auth.user.isAdmin);
+				var elem = void 0,
+				    temp = void 0,
+				    //Variables used to populate page with html.
+				subRefPath = '',
+				    //Variables used to assign paths to the delete buttons.
+				subSubRefPath = '';
+				if (this.utils.isPageEnglish()) {
+					//Sets database path to english or french version!
+					this.refPath = this.refPath + 'en';
+				} else {
+					this.refPath = this.refPath + 'fr';
+				}
+				this.firebase.database().ref(this.refPath).on('value', function (snapshot) {
+					//Iterating over the database
+					snapshot.forEach(function (childSnapshot) {
+						//This iterates over the subclasses in the database.
+						elem = ''; //Resetting variable for next iteration.
+						_this2.repResourcePaths.push(childSnapshot.key); //Adding the section title to an array, used for admin to add entries.
+						subRefPath = _this2.refPath + '/' + childSnapshot.key;
+						elem += '<h2 class="bold-red meetingMinuteYear">' + childSnapshot.key + '</h2>';
+						childSnapshot.forEach(function (subChildSnapshot) {
+							//This iterates over all nodes within each subclass currently on in DB.
+							subSubRefPath = subRefPath + '/' + subChildSnapshot.key;
+							elem += '<p><strong class="meetingMinuteTitle">' + subChildSnapshot.val().title + '</strong></p>';
+							elem += '<a href="' + subChildSnapshot.val().fileLink + '" target="_blank">' + subChildSnapshot.val().fileTitle + '</a><br>';
+							if (_this2.auth.user.isAdmin) {
+								//checks if user is admin
+								var deleteButton = _this2.utils.createButton(subSubRefPath, "Delete", "deleteEntry");
+								elem += deleteButton;
+							} //end admin if
+							elem += '<br>';
+						}); //end third DB call
+
+						temp = document.createElement("blockquote");
+						temp.innerHTML = elem;
+						document.getElementById(_this2.containerId).appendChild(temp); //Using this to display items alphabetically.
+						//document.getElementById(this.containerId).insertBefore(temp, document.getElementById(this.containerId).firstChild);
+
+					}); //end second Db call
+
+					if (_this2.auth.user.isAdmin) {
+						//Executes if user is an admin user.
+						temp = document.createElement("blockquote");
+						var addElementButton = _this2.utils.createButton(_this2.refPath, "Add Element To Existing Section", "addEntryElement");
+						elem = addElementButton;
+						var addSectionButton = _this2.utils.createButton(_this2.refPath, "Add Element to New Section", "addEntrySection");
+						elem += addSectionButton;
+						temp.innerHTML = elem;
+						document.getElementById(_this2.containerId).insertBefore(temp, document.getElementById(_this2.containerId).firstChild);
+
+						//These will get updated every time a change is made to Database.
+						var deleteButtons = document.getElementsByClassName("deleteEntry");
+						for (var i = 0; i < deleteButtons.length; i++) {
+							deleteButtons[i].addEventListener('click', _this2.deleteMeetingMinutesEvent.bind(_this2), false);
+						}
+						var addButtons = document.getElementsByClassName("addEntryElement");
+						for (var _i = 0; _i < addButtons.length; _i++) {
+							addButtons[_i].addEventListener('click', _this2.addRepResourcesElementEvent.bind(_this2), false);
+						}
+						var addSectionButtons = document.getElementsByClassName("addEntrySection");
+						for (var _i2 = 0; _i2 < addSectionButtons.length; _i2++) {
+							addSectionButtons[_i2].addEventListener('click', _this2.addRepResourcesSectionEvent.bind(_this2), false);
+						}
+					} //end admin if
+				}); //end first database call
+			} else {
+				if (this.utils.isPageEnglish()) {
+					vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
+				} else {
+					vex.dialog.alert('<h3><strong>Vous devez être connecté pour voir cette page!</strong></h3>');
+				}
+				console.log("We are on the page with user not signed in tsk tsk tsk.");
+			} //end else 
+		}
+	}, {
+		key: 'addRepResourcesSectionEvent',
+		value: function addRepResourcesSectionEvent(evt) {
+			var _this3 = this;
+
+			var options = '';
+			evt.preventDefault();
+			var modalController = this;
+			for (var i = 0; i < modalController.repResourcePaths.length; i++) {
+				options += '<option value="' + modalController.repResourcePaths[i] + '">' + modalController.repResourcePaths[i] + '</option>';
+			}
+
+			vex.dialog.open({
+				message: 'Add new Rep Resources Section',
+				input: ['<input name="section" type="text" placeholder="Section Name" required />', '<input name="title" type="text" placeholder="Title" required />', '<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />' + '<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>'].join(''),
+				buttons: [$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }), $.extend({}, vex.dialog.buttons.NO, { text: 'Back' })],
+				callback: function callback(data) {
+					//This executes when a button is pressed
+					if (!data) {
+						//Executes if back button pressed
+						console.log('Cancelled');
+					} else {
+						//Executes if Add button pressed
+						console.log("hitting the add shit here?");
+						var fileUpload = document.getElementById('uploadFile').files;
+						if (fileUpload.length == 1) {
+							console.log("got into the if statement b4 the function?!?!");
+							modalController.addMeetingMinutes(data.section, data.title, fileUpload[0]);
+						} else {
+							vex.dialog.alert("You may only attach one file per Entry!");
+						}
+					}
+				}
+			}).on("change", "#uploadFile", function (e) {
+				//This is an event handler dynamically attached only when modal is clicked!.
+				var label = e.target.nextElementSibling,
+				    labelVal = label.innerHTML,
+				    fileName = '';
+				if (_this3.files && _this3.files.length > 1) fileName = (_this3.getAttribute('data-multiple-caption') || '').replace('{count}', _this3.files.length);else fileName = e.target.value.split('\\').pop();
+				if (fileName) label.querySelector('span').innerHTML = fileName;else label.innerHTML = labelVal;
+			});
+		}
+
+		/*
+   * @type {Admin-only}
+   * @param {object} evt
+   * Holds reference to the dom element that fired the event.
+   */
+
+	}, {
+		key: 'addRepResourcesElementEvent',
+		value: function addRepResourcesElementEvent(evt) {
+			var _this4 = this;
+
+			var options = '';
+			evt.preventDefault();
+			var modalController = this;
+			for (var i = 0; i < modalController.repResourcePaths.length; i++) {
+				options += '<option value="' + modalController.repResourcePaths[i] + '">' + modalController.repResourcePaths[i] + '</option>';
+			}
+
+			vex.dialog.open({
+				message: 'Add Rep Resources Element',
+				input: ['<select name="section">', options, '</select>', '<input name="title" type="text" placeholder="Title" required />', '<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />' + '<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>'].join(''),
+				buttons: [$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }), $.extend({}, vex.dialog.buttons.NO, { text: 'Back' })],
+				callback: function callback(data) {
+					//This executes when a button is pressed
+					if (!data) {
+						//Executes if back button pressed
+						console.log('Cancelled');
+					} else {
+						//Executes if Add button pressed
+						console.log("hitting the add shit here?");
+						var fileUpload = document.getElementById('uploadFile').files;
+						if (fileUpload.length == 1) {
+							console.log("got into the if statement b4 the function?!?!");
+							modalController.addMeetingMinutes(data.section, data.title, fileUpload[0]);
+						} else {
+							vex.dialog.alert("You may only attach one file per Entry!");
+						}
+					}
+				}
+			}).on("change", "#uploadFile", function (e) {
+				//This is an event handler dynamically attached only when modal is clicked!.
+				var label = e.target.nextElementSibling,
+				    labelVal = label.innerHTML,
+				    fileName = '';
+				if (_this4.files && _this4.files.length > 1) fileName = (_this4.getAttribute('data-multiple-caption') || '').replace('{count}', _this4.files.length);else fileName = e.target.value.split('\\').pop();
+				if (fileName) label.querySelector('span').innerHTML = fileName;else label.innerHTML = labelVal;
+			});
+		}
+
+		/*
+   * @type {Admin-only}
+   * @param {String} year
+   *   contains the string for the year entered in modal by admin 
+   * @param {String} title
+   *   contains the string for the title entered in modal by admin
+   * @param {String} subTitle
+   *   contains the string for the subTitle entered in modal by admin
+   * @param {Object} file
+   *   A reference to the file object gathered by input element entered by the admin
+   * @param {Boolean} justAdd
+   */
+
+	}, {
+		key: 'addMeetingMinutes',
+		value: function addMeetingMinutes(section, title, file) {
+			var _this5 = this;
+
+			var modalController = this;
+			this.vexConfirm().then(function () {
+				modalController.fileUploadPromise(file).then(function (fileObject) {
+					firebase.database().ref(_this5.refPath + '/' + section).push({
+						title: title,
+						fileTitle: file.name,
+						fileLink: fileObject.downloadURL,
+						filePath: fileObject.filePath
+					}).then(function () {
+						vex.dialog.alert('<h3><strong>Successfully added new Entry!</strong></h3>');
+						location.reload();
+					});
+				}).catch(function (error) {
+					//TODO: add error message in vex, based off error code.
+					vex.dialog.alert('<h3><strong>' + error + '</strong></h3>');
+					console.log("an Error occurred, Error " + error);
+				});
+			}).catch(function () {
+				console.log("The promise returned false!!!!");
+			});
+		}
+
+		/*
+   * @type {Admin-only}
+   * @param {object} evt
+   *   An object to hold reference to the element that triggered the event.
+   */
+
+	}, {
+		key: 'deleteMeetingMinutesEvent',
+		value: function deleteMeetingMinutesEvent(evt) {
+			evt.preventDefault();
+			var dbPath = evt.target.getAttribute('src');
+			console.log(dbPath);
+			this.deleteMeetingMinutes(dbPath);
+		}
+
+		/*
+   * @type {Admin-only}
+   * @param {String}
+   *   A string to hold reference to the database Path. Path is stored in the elements src attribute.
+   *   The path is passed to this function through the deleteMeetingsEvent function.
+   */
+
+	}, {
+		key: 'deleteMeetingMinutes',
+		value: function deleteMeetingMinutes(dbPath) {
+			this.vexConfirm().then(function () {
+				firebase.database().ref(dbPath).once('value').then(function (snapshot) {
+					var filePath = snapshot.val().filePath;
+					var storageRef = firebase.storage().ref(filePath);
+					console.log(storageRef);
+					storageRef.delete().then(function () {
+						firebase.database().ref(dbPath).remove().then(function () {
+							vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+							location.reload();
+						});
+					}).catch(function () {
+						console.log("The storage in file no longer exists!!!.. Deleting the database entry of broken link!");
+						firebase.database().ref(dbPath).remove().then(function () {
+							vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+							location.reload();
+						});
+					});
+				});
+			});
+		}
+
+		/*
+   * A utility function to validate a proper year is entered in the modal form when Adding entry to database.
+   * @param {String} year
+   *   The year the user entered
+   * @param {String} startYear
+   *   The floor limit of years allowed.
+   * @param {String} endYear
+   *   The ceiling limit of years allowed.
+   */
+
+	}, {
+		key: 'isProperYearRange',
+		value: function isProperYearRange(year, startYear, endYear) {
+			return year > startYear && year < endYear;
+		}
+
+		/*
+   * A custom made promise to determine that a file properly uploads
+   * @param {Object} file
+   *   The file the user uploaded
+   */
+
+	}, {
+		key: 'fileUploadPromise',
+		value: function fileUploadPromise(file) {
+			return new Promise(function (resolve, reject) {
+				var filePath = 'rep-resources/' + file.name;
+				var storageRef = firebase.storage().ref(filePath);
+				//console.log(storageRef.getDownloadURL());
+				storageRef.getDownloadURL().then(function () {
+					//There already is a file with that name in storage, reject the promise...
+					reject("A File With the same name has already been uploaded!");
+				}).catch(function () {
+					//There is no file with that name in Db, Lets make one!
+					var uploadTask = storageRef.put(file);
+					uploadTask.on('state_changed', function (snapshot) {
+						var progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+						console.log('Upload is ' + progress + '% done');
+					}, function (error) {
+						//This function happens if error hits during upload.
+						reject(error);
+					}, function () {
+						//this is for on complete uploads!
+						//console.log("are we ever hitting the final function!?>!?!?!");
+						var downloadURL = uploadTask.snapshot.downloadURL;
+						var fileObject = {
+							downloadURL: downloadURL,
+							filePath: filePath
+						};
+						resolve(fileObject);
+					});
+				});
+			});
+		}
+
+		/*
+   * A custom promise for if a user is sure to continue or not.
+   */
+
+	}, {
+		key: 'vexConfirm',
+		value: function vexConfirm() {
+			return new Promise(function (resolve, reject) {
+				vex.dialog.confirm({
+					message: "Are you sure?",
+					callback: function callback(value) {
+						if (value) {
+							resolve(true); //if user selects yes, promise resolves true
+						} else {
+							reject(false);
+						}
+					} //end vex confirm callback
+				});
+			});
+		}
+	}]);
+
+	return RepResourcesController;
+}(_utils.FirebaseConnection);
+
+exports.default = RepResourcesController;
+
+},{"../controllers/showModal":509,"../repositories/firebase/utils":522,"../utils":540}],509:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -120899,7 +121292,7 @@ var ModalController = function () {
 
 exports.default = ModalController;
 
-},{}],509:[function(require,module,exports){
+},{}],510:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -121052,7 +121445,7 @@ var TagSearchConroller = function () {
 
 exports.default = TagSearchConroller;
 
-},{}],510:[function(require,module,exports){
+},{}],511:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121075,7 +121468,7 @@ var _authentication4 = _interopRequireDefault(_authentication3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/authentication":492,"../services/authentication":534}],511:[function(require,module,exports){
+},{"../controllers/authentication":492,"../services/authentication":536}],512:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121108,7 +121501,7 @@ var Middleware = function Middleware(page) {
 
 exports.default = Middleware;
 
-},{"./authentication":510,"./members-content":512,"./navigation":513}],512:[function(require,module,exports){
+},{"./authentication":511,"./members-content":513,"./navigation":514}],513:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121131,7 +121524,7 @@ var _authentication2 = _interopRequireDefault(_authentication);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/members-content":500,"../services/authentication":534}],513:[function(require,module,exports){
+},{"../controllers/members-content":500,"../services/authentication":536}],514:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121150,7 +121543,7 @@ var _navigation2 = _interopRequireDefault(_navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/navigation":502}],514:[function(require,module,exports){
+},{"../controllers/navigation":502}],515:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121206,7 +121599,7 @@ var MeetingRegistrationModel = function (_Model) {
 
 exports.default = MeetingRegistrationModel;
 
-},{"./model":515,"./user":516}],515:[function(require,module,exports){
+},{"./model":516,"./user":517}],516:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121249,7 +121642,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"lodash":320}],516:[function(require,module,exports){
+},{"lodash":320}],517:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121318,7 +121711,7 @@ var UserModel = function (_Model) {
 
 exports.default = UserModel;
 
-},{"./model":515}],517:[function(require,module,exports){
+},{"./model":516}],518:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121373,7 +121766,7 @@ var ApiRepository = function () {
 
 exports.default = ApiRepository;
 
-},{"request-promise":393}],518:[function(require,module,exports){
+},{"request-promise":393}],519:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121420,7 +121813,7 @@ var UserRepository = function (_ApiRepository) {
 
 exports.default = UserRepository;
 
-},{"./repository":517}],519:[function(require,module,exports){
+},{"./repository":518}],520:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121477,7 +121870,7 @@ var MeetingRegistrationRepository = function (_FirebaseRepository) {
 
 exports.default = MeetingRegistrationRepository;
 
-},{"./repository":520}],520:[function(require,module,exports){
+},{"./repository":521}],521:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121519,7 +121912,7 @@ var Repository = function () {
 
 exports.default = Repository;
 
-},{"./utils":521}],521:[function(require,module,exports){
+},{"./utils":522}],522:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121584,7 +121977,7 @@ var FirebaseRef = function (_FirebaseConnection) {
 exports.FirebaseRef = FirebaseRef;
 exports.FirebaseConnection = FirebaseConnection;
 
-},{"../../config":491,"firebase":202}],522:[function(require,module,exports){
+},{"../../config":491,"firebase":202}],523:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121608,7 +122001,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/forgot-password":496,"../services/authentication":534}],523:[function(require,module,exports){
+},{"../controllers/forgot-password":496,"../services/authentication":536}],524:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121667,6 +122060,10 @@ var _forgotPassword = require('./forgot-password');
 
 var _forgotPassword2 = _interopRequireDefault(_forgotPassword);
 
+var _repResources = require('./rep-resources');
+
+var _repResources2 = _interopRequireDefault(_repResources);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -121713,6 +122110,9 @@ var Router = function (_Middleware) {
 
             (0, _page2.default)('/members/meeting-minutes.html', _meetingMinutes2.default);
             (0, _page2.default)('/fr/members/meeting-minutes.html', _meetingMinutes2.default);
+
+            (0, _page2.default)('/resources/rep-resources.html', _repResources2.default);
+            (0, _page2.default)('/fr/resources/rep-resources.html', _repResources2.default);
         }
     }, {
         key: 'refresh',
@@ -121726,7 +122126,7 @@ var Router = function (_Middleware) {
 
 exports.default = Router;
 
-},{"../middlewares":511,"./forgot-password":522,"./md-leadership-awards":524,"./meeting-minutes":525,"./meeting-registrations":526,"./members":527,"./modal":528,"./pagination":529,"./photo-gallery":530,"./purchases":531,"./registration":532,"./tag-search":533,"page":333}],524:[function(require,module,exports){
+},{"../middlewares":512,"./forgot-password":523,"./md-leadership-awards":525,"./meeting-minutes":526,"./meeting-registrations":527,"./members":528,"./modal":529,"./pagination":530,"./photo-gallery":531,"./purchases":532,"./registration":533,"./rep-resources":534,"./tag-search":535,"page":333}],525:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121757,7 +122157,7 @@ function LeadershipAwardAdmin(ctx, next) {
     next();
 }
 
-},{"../controllers/md-leadership-awards":497,"../services/authentication":534}],525:[function(require,module,exports){
+},{"../controllers/md-leadership-awards":497,"../services/authentication":536}],526:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121786,7 +122186,7 @@ function meetingMinutes(ctx, next) {
 	next();
 }
 
-},{"../controllers/meeting-minutes":498,"../controllers/showModal":508,"../services/authentication":534}],526:[function(require,module,exports){
+},{"../controllers/meeting-minutes":498,"../controllers/showModal":509,"../services/authentication":536}],527:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121834,7 +122234,7 @@ function MeetingRegistration(ctx, next) {
     next();
 }
 
-},{"../controllers/meeting-registrations":499,"../controllers/payments":504,"../models/meeting-registration":514,"../models/user":516,"../repositories/api/user":518,"../repositories/firebase/meeting-registration":519,"../services/authentication":534,"../services/payments":537}],527:[function(require,module,exports){
+},{"../controllers/meeting-registrations":499,"../controllers/payments":504,"../models/meeting-registration":515,"../models/user":517,"../repositories/api/user":519,"../repositories/firebase/meeting-registration":520,"../services/authentication":536,"../services/payments":539}],528:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121859,7 +122259,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/members":501,"../services/authentication":534}],528:[function(require,module,exports){
+},{"../controllers/members":501,"../services/authentication":536}],529:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121882,7 +122282,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/showModal":508}],529:[function(require,module,exports){
+},{"../controllers/showModal":509}],530:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121905,7 +122305,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/pagination":503}],530:[function(require,module,exports){
+},{"../controllers/pagination":503}],531:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121925,7 +122325,7 @@ function TagSearch(ctx, next) {
 	next();
 }
 
-},{"../controllers/photo-gallery":505}],531:[function(require,module,exports){
+},{"../controllers/photo-gallery":505}],532:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121952,7 +122352,7 @@ function Purchases(ctx, next) {
     next();
 }
 
-},{"../controllers/purchases":506,"../services/authentication":534,"../services/payments":537}],532:[function(require,module,exports){
+},{"../controllers/purchases":506,"../services/authentication":536,"../services/payments":539}],533:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121983,7 +122383,32 @@ function Registration(ctx, next) {
   next();
 }
 
-},{"../controllers/registration":507,"../models/user":516,"../services/authentication":534}],533:[function(require,module,exports){
+},{"../controllers/registration":507,"../models/user":517,"../services/authentication":536}],534:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = meetingMinutes;
+
+var _repResources = require('../controllers/rep-resources');
+
+var _repResources2 = _interopRequireDefault(_repResources);
+
+var _authentication = require('../services/authentication');
+
+var _authentication2 = _interopRequireDefault(_authentication);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//Shows Member Account Information on the Members Page
+function meetingMinutes(ctx, next) {
+	new _repResources2.default(new _authentication2.default());
+
+	next();
+}
+
+},{"../controllers/rep-resources":508,"../services/authentication":536}],535:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122004,7 +122429,7 @@ function TagSearch(ctx, next) {
 	next();
 }
 
-},{"../controllers/tag-search":509}],534:[function(require,module,exports){
+},{"../controllers/tag-search":510}],536:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122152,7 +122577,7 @@ var AuthenticationService = function () {
 
 exports.default = AuthenticationService;
 
-},{"../../models/user":516,"../../repositories/api/user":518,"../../utils":538,"./providers/auth0":535,"./providers/firebase":536,"jsonwebtoken":292,"lodash":320}],535:[function(require,module,exports){
+},{"../../models/user":517,"../../repositories/api/user":519,"../../utils":540,"./providers/auth0":537,"./providers/firebase":538,"jsonwebtoken":292,"lodash":320}],537:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122238,7 +122663,7 @@ var Auth0Provider = function () {
 
 exports.default = Auth0Provider;
 
-},{"../../../config":491,"../../../utils":538,"auth0-js":87}],536:[function(require,module,exports){
+},{"../../../config":491,"../../../utils":540,"auth0-js":87}],538:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122300,7 +122725,7 @@ var FirebaseProvider = function (_FirebaseConnection) {
 
 exports.default = FirebaseProvider;
 
-},{"../../../repositories/firebase/utils":521}],537:[function(require,module,exports){
+},{"../../../repositories/firebase/utils":522}],539:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -122343,7 +122768,7 @@ var PaymentsService = function (_FirebaseConnection) {
 
 exports.default = PaymentsService;
 
-},{"../repositories/firebase/utils":521}],538:[function(require,module,exports){
+},{"../repositories/firebase/utils":522}],540:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
