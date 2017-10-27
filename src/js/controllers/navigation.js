@@ -1,7 +1,9 @@
 import cookies from 'js-cookie';
+import LoginController from './login';
 
 export default class NavigationController {
     constructor() {
+	      this.loginController = new LoginController();
         this.bindListeners();
     }
 
@@ -39,9 +41,9 @@ export default class NavigationController {
                             adminElements[i].style.display = 'block';
                     }
                     //File upload support
-                    var fileUploaders = document.getElementsByClassName('inputfile'), i;
+                    var fileUploaders = document.getElementsByClassName('awardApplicationUpload'), i;
                     for (var i = 0; i < fileUploaders.length; i++) {
-                        fileUploaders[i].addEventListener('change', handleFileSelect, false);
+                        fileUploaders[i].addEventListener('change', this.loginController.handleFileSelect.bind(this), false);
                     }
                 }
                 else {

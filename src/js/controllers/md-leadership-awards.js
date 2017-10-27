@@ -1,13 +1,16 @@
 import { FirebaseConnection } from '../repositories/firebase/utils';
+import LoginController from './login';
 
 class LeadershipAwardUserController extends FirebaseConnection {
     constructor(authenticationService) {
         super();
+        this.loginController = new LoginController();
         this.auth = authenticationService;
         this.process();
     }
 
     process() {
+        var controller = this;
         //Have they even saved any files?
         var refPath = 'leadership-award/' + window.config.leadership_award_year;
         this.firebase.database().ref(refPath).once('value').then((snapshot) => {
@@ -16,21 +19,21 @@ class LeadershipAwardUserController extends FirebaseConnection {
                 var application = snapshot.child(this.auth.user.uid);
                 //Loads the submitted application if one exists
                 if (application.child('submitted').exists()) {
-                    loadSubmission();
+                    this.loginController.loadSubmission();
                 }
                 //Otherwise displays saved files
                 else {
                     refPath = refPath + '/' + this.auth.user.uid;
                     if (application.child('personalStatement').exists())
-                        loadPrevFile(refPath, 'personal-statement', application.val().personalStatement);
+                        controller.loadPrevFile(refPath, 'personal-statement', application.val().personalStatement);
                     if (application.child('curriculumVitae').exists())
-                        loadPrevFile(refPath, 'curriculum-vitae', application.val().curriculumVitae);
+                        controller.loadPrevFile(refPath, 'curriculum-vitae', application.val().curriculumVitae);
                     if (application.child('letterGoodStanding').exists())
-                        loadPrevFile(refPath, 'letter-good-standing', application.val().letterGoodStanding);
+                        controller.loadPrevFile(refPath, 'letter-good-standing', application.val().letterGoodStanding);
                     if (application.child('reference1').exists())
-                        loadPrevFile(refPath, 'reference-1', application.val().reference1);
+                        controller.loadPrevFile(refPath, 'reference-1', application.val().reference1);
                     if (application.child('reference2').exists())
-                        loadPrevFile(refPath, 'reference-2', application.val().reference2);
+                        controller.loadPrevFile(refPath, 'reference-2', application.val().reference2);
 
                     var beforeSubmissionElements = document.getElementsByClassName('before-submission'), i;
                     for (var i = 0; i < beforeSubmissionElements.length; i++)
@@ -50,6 +53,31 @@ class LeadershipAwardUserController extends FirebaseConnection {
             }
         });
     }
+	loadPrevFile (refPath, id, fileName){
+    var controller = this;
+    var storageRef = this.firebase.storage().ref();
+		//Set the button to show the file name
+		input = document.getElementById (id);
+		label = input.nextElementSibling;
+		label.querySelector( 'span' ).innerHTML = fileName;
+		
+		//Set the URL to display by the button
+		storageRef.child(refPath + '/' + id + '/' + fileName).getDownloadURL().then(function(url) {
+			controller.setFileLink (id, url);
+		}).catch(function(error) {
+			// File doesn't exist
+		});
+	}
+	
+	/**
+	 * Sets the file link from the target id to the correct url
+	 */
+	setFileLink (id, url){
+		document.getElementById(id+'-link').innerHTML = '<a href="' +  url + '" target="_blank">View File</a>';
+	}
+    
+    
+    
 }
 
 class LeadershipAwardAdminController extends FirebaseConnection {
