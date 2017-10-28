@@ -2,8 +2,8 @@
 title: 'Call for Applications: Opioids Task Force (Due November 10th)'
 date: 2017-10-27 00:00:00
 description: >-
-  Help synthesize content created for National Lobby Day into a position paper
-  and develop advocacy strategies to combat the Opioid Crisis
+  Synthesize research and content created for National Lobby Day into a position
+  paper and develop advocacy strategies to combat the Opioid Crisis
 lang: en
 ---
 
@@ -17,7 +17,3 @@ The Opioids Task Force will also develop advocacy strategies for increasing the 
 **Applications are due Friday, November 10th at 11:59 pm ET.**
 
 **Application form: [https://goo.gl/forms/RvnTfP5arkgiFOo82](https://goo.gl/forms/RvnTfP5arkgiFOo82)**<br><br>Questions can be directed to Yipeng Ge, CFMS VP Government Affairs ([vpgovtaffairs@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,103,111,118,116,97,102,102,97,105,114,115,64,99,102,109,115,46,111,114,103))))
-
-&nbsp;
-
-&nbsp;
