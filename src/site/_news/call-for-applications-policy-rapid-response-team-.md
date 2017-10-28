@@ -1,7 +1,9 @@
 ---
 title: 'Call for Applications: Policy Rapid Response Team (Due November 10th)'
 date: 2017-10-28 00:00:00
-description: Please fill in description here.
+description: >-
+  Rapidly address timely political and health policy issues, e.g. tax reform,
+  Pharmacare, and the federal budget
 lang: en
 ---
 
