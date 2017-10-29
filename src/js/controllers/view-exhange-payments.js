@@ -1,7 +1,7 @@
-export default class MeetingRegistrationsController {
-    constructor(authenticationService, meetingRegistrationRepository) {
+export default class ViewExchangePayments {
+    constructor(authenticationService, exchangePaymentRepository) {
         this.auth = authenticationService;
-        this.exchangePaymentRepository = meetingRegistrationRepository;
+        this.exchangePaymentRepository = exchangePaymentRepository;
         this.t = null;
         this.process();
     }
@@ -13,29 +13,29 @@ export default class MeetingRegistrationsController {
         this.t = $('#example').DataTable();
 
         this.exchangePaymentRepository.getAll().then(val => {
-            let meetingBox = $('#selected-meeting');
-            let meetings = {};
-            val.forEach(meeting => {
-                meetings[meeting.key] = meeting;
+            let meetingBox = $('#selected-exchange');
+            let exchanges = {};
+            val.forEach(exchange => {
+                exchanges[exchange.key] = exchange;
                 meetingBox.append($('<option>', {
-                    value: meeting.key,
-                    text: meeting.key
+                    value: exchange.key,
+                    text: exchange.key
                 }));
             });
             meetingBox.change(() => {
                 const id = meetingBox.val();
                 this.t.clear();
-                this._populateTable(id, meetings[id].val())
+                this._populateTable(id, exchanges[id].val())
             });
         });
     }
 
     _populateTable(id, meeting) {
-        for(let meetingId in meeting) {
-            this.exchangePaymentRepository.get(`${id}/${meetingId}`).then(val => {
+        for(let exchangeId in meeting) {
+            this.exchangePaymentRepository.get(`${id}/${exchangeId}`).then(val => {
                 const user = val.user;
                 const row = [
-                    meetingId,
+                    exchangeId,
                     user.email,
                     user.given_name,
                     user.family_name,
