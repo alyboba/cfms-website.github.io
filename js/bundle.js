@@ -119394,7 +119394,7 @@ var ExchangesController = function () {
 
             (0, _requestPromise2.default)(options).then(function (data) {
                 if (data.message === "Declined") return _this.utils.showAlert("Declined", "Please check your payment information.");
-                _this.utils.showAlert("Success", "We look forward to seeing you at the event!");
+                _this.utils.showAlert("Success", "Enjoy your international exchange!");
                 _this.handleUserAlreadyPaid();
             }).catch(function (err) {
                 this.utils.showAlert("Something went wrong", "Please try again later.");
@@ -119998,7 +119998,7 @@ var MeetingRegistrationsController = function () {
         _classCallCheck(this, MeetingRegistrationsController);
 
         this.auth = authenticationService;
-        this.exchangePaymentRepository = meetingRegistrationRepository;
+        this.meetingRegistrationRepository = meetingRegistrationRepository;
         this.t = null;
         this.process();
     }
@@ -120013,7 +120013,7 @@ var MeetingRegistrationsController = function () {
 
             this.t = $('#example').DataTable();
 
-            this.exchangePaymentRepository.getAll().then(function (val) {
+            this.meetingRegistrationRepository.getAll().then(function (val) {
                 var meetingBox = $('#selected-meeting');
                 var meetings = {};
                 val.forEach(function (meeting) {
@@ -120036,7 +120036,7 @@ var MeetingRegistrationsController = function () {
             var _this2 = this;
 
             var _loop = function _loop(meetingId) {
-                _this2.exchangePaymentRepository.get(id + '/' + meetingId).then(function (val) {
+                _this2.meetingRegistrationRepository.get(id + '/' + meetingId).then(function (val) {
                     var user = val.user;
                     var row = [meetingId, user.email, user.given_name, user.family_name, val.amount, val.approved];
                     _this2.t.row.add(row).draw(false);
@@ -121565,17 +121565,18 @@ var ViewExchangePayments = function () {
             this.t = $('#example').DataTable();
 
             this.exchangePaymentRepository.getAll().then(function (val) {
-                var meetingBox = $('#selected-exchange');
+                var exchangeBox = $('#selected-exchange');
                 var exchanges = {};
                 val.forEach(function (exchange) {
+                    console.log(exchange);
                     exchanges[exchange.key] = exchange;
-                    meetingBox.append($('<option>', {
+                    exchangeBox.append($('<option>', {
                         value: exchange.key,
                         text: exchange.key
                     }));
                 });
-                meetingBox.change(function () {
-                    var id = meetingBox.val();
+                exchangeBox.change(function () {
+                    var id = exchangeBox.val();
                     _this.t.clear();
                     _this._populateTable(id, exchanges[id].val());
                 });
@@ -121583,8 +121584,10 @@ var ViewExchangePayments = function () {
         }
     }, {
         key: '_populateTable',
-        value: function _populateTable(id, meeting) {
+        value: function _populateTable(id, exchange) {
             var _this2 = this;
+
+            console.log(exchange);
 
             var _loop = function _loop(exchangeId) {
                 _this2.exchangePaymentRepository.get(id + '/' + exchangeId).then(function (val) {
@@ -121594,7 +121597,7 @@ var ViewExchangePayments = function () {
                 });
             };
 
-            for (var exchangeId in meeting) {
+            for (var exchangeId in exchange) {
                 _loop(exchangeId);
             }
         }
@@ -122293,7 +122296,7 @@ var _payments2 = _interopRequireDefault(_payments);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ExchangePayments(ctx, next) {
-    if (ctx.params.meeting == 'view-payments.html') new _viewExhangePayments2.default(new _authentication2.default(), new _exchangePayments2.default(_exchangePayment2.default, new _user2.default(_user4.default)));else new _exchanges2.default({ authenticationService: new _authentication2.default(), paymentsService: new _payments2.default() });
+    if (ctx.params.exchange === 'view-payments.html') new _viewExhangePayments2.default(new _authentication2.default(), new _exchangePayments2.default(_exchangePayment2.default, new _user2.default(_user4.default)));else new _exchanges2.default({ authenticationService: new _authentication2.default(), paymentsService: new _payments2.default() });
     next();
 }
 
@@ -122421,7 +122424,7 @@ var Router = function (_Middleware) {
             (0, _page2.default)('/new-account.html', _registration2.default);
             (0, _page2.default)('/meetings/:meeting', _meetingRegistrations2.default);
             (0, _page2.default)('/purchases/:purchase', _purchases2.default);
-            (0, _page2.default)('/exchanges/:exchange', _purchases2.default);
+            (0, _page2.default)('/exchanges/:exchange', _exchanges2.default);
             (0, _page2.default)('/who-we-are/history.html', _modal2.default);
             (0, _page2.default)('/who-we-are/organizational-timeline.html', _modal2.default, _pagination2.default);
             (0, _page2.default)('/fr/who-we-are/history.html', _modal2.default);
