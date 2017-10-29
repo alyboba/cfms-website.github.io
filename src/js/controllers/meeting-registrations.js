@@ -1,7 +1,7 @@
 export default class MeetingRegistrationsController {
     constructor(authenticationService, meetingRegistrationRepository) {
         this.auth = authenticationService;
-        this.exchangePaymentRepository = meetingRegistrationRepository;
+        this.meetingRegistrationRepository = meetingRegistrationRepository;
         this.t = null;
         this.process();
     }
@@ -12,7 +12,7 @@ export default class MeetingRegistrationsController {
 
         this.t = $('#example').DataTable();
 
-        this.exchangePaymentRepository.getAll().then(val => {
+        this.meetingRegistrationRepository.getAll().then(val => {
             let meetingBox = $('#selected-meeting');
             let meetings = {};
             val.forEach(meeting => {
@@ -32,7 +32,7 @@ export default class MeetingRegistrationsController {
 
     _populateTable(id, meeting) {
         for(let meetingId in meeting) {
-            this.exchangePaymentRepository.get(`${id}/${meetingId}`).then(val => {
+            this.meetingRegistrationRepository.get(`${id}/${meetingId}`).then(val => {
                 const user = val.user;
                 const row = [
                     meetingId,

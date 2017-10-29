@@ -32,7 +32,7 @@ export default class Router extends Middleware {
         route('/new-account.html', Registration);
         route('/meetings/:meeting', MeetingRegistrations);
         route('/purchases/:purchase', Purchases);
-        route('/exchanges/:exchange', Purchases);
+        route('/exchanges/:exchange', Exchanges);
         route('/who-we-are/history.html', Modal);
         route('/who-we-are/organizational-timeline.html', Modal, Pagination);
         route('/fr/who-we-are/history.html', Modal);

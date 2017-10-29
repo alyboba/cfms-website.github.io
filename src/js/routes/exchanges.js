@@ -8,7 +8,7 @@ import AuthenticationService from '../services/authentication';
 import PaymentsService from '../services/payments';
 
 export default function ExchangePayments(ctx, next) {
-    if (ctx.params.meeting == 'view-payments.html')
+    if (ctx.params.exchange === 'view-payments.html')
         new ViewExchangePayments(new AuthenticationService(), new ExchangePaymentRepository(ExchangePaymentModel, new UserRepository(UserModel)));
     else
         new ExchangesController({ authenticationService: new AuthenticationService(), paymentsService: new PaymentsService() });

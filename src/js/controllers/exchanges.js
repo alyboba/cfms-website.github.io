@@ -32,7 +32,7 @@ export default class ExchangesController {
             request(options)
                 .then((data) => {
                     if (data.message === "Declined") return this.utils.showAlert("Declined", "Please check your payment information.");
-                    this.utils.showAlert("Success", "We look forward to seeing you at the event!");
+                    this.utils.showAlert("Success", "Enjoy your international exchange!");
                     this.handleUserAlreadyPaid();
                 })
                 .catch(function (err) {

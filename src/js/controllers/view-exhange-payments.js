@@ -13,25 +13,27 @@ export default class ViewExchangePayments {
         this.t = $('#example').DataTable();
 
         this.exchangePaymentRepository.getAll().then(val => {
-            let meetingBox = $('#selected-exchange');
+            let exchangeBox = $('#selected-exchange');
             let exchanges = {};
             val.forEach(exchange => {
+                console.log(exchange);
                 exchanges[exchange.key] = exchange;
-                meetingBox.append($('<option>', {
+                exchangeBox.append($('<option>', {
                     value: exchange.key,
                     text: exchange.key
                 }));
             });
-            meetingBox.change(() => {
-                const id = meetingBox.val();
+            exchangeBox.change(() => {
+                const id = exchangeBox.val();
                 this.t.clear();
                 this._populateTable(id, exchanges[id].val())
             });
         });
     }
 
-    _populateTable(id, meeting) {
-        for(let exchangeId in meeting) {
+    _populateTable(id, exchange) {
+        console.log(exchange);
+        for(let exchangeId in exchange) {
             this.exchangePaymentRepository.get(`${id}/${exchangeId}`).then(val => {
                 const user = val.user;
                 const row = [
