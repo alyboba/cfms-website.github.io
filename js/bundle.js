@@ -119359,12 +119359,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var PaymentsController = function () {
-    function PaymentsController(_ref) {
+var ExchangesController = function () {
+    function ExchangesController(_ref) {
         var authenticationService = _ref.authenticationService,
             paymentsService = _ref.paymentsService;
 
-        _classCallCheck(this, PaymentsController);
+        _classCallCheck(this, ExchangesController);
 
         this.service = paymentsService;
         this.auth = authenticationService;
@@ -119373,7 +119373,7 @@ var PaymentsController = function () {
         this.checkExchangePayment();
     }
 
-    _createClass(PaymentsController, [{
+    _createClass(ExchangesController, [{
         key: 'processPayform',
         value: function processPayform(e) {
             var _this = this;
@@ -119422,10 +119422,10 @@ var PaymentsController = function () {
         }
     }]);
 
-    return PaymentsController;
+    return ExchangesController;
 }();
 
-exports.default = PaymentsController;
+exports.default = ExchangesController;
 
 },{"../utils":545,"request-promise":393}],497:[function(require,module,exports){
 'use strict';
