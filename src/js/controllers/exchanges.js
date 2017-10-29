@@ -1,7 +1,7 @@
 import request from 'request-promise';
 import Utils from '../utils';
 
-export default class PaymentsController {
+export default class ExchangesController {
     constructor({ authenticationService, paymentsService }) {
         this.service = paymentsService;
         this.auth = authenticationService;
