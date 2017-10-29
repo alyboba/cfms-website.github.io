@@ -373,6 +373,7 @@ function submitApplication() {
 </style> 
 
 	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
 </head>
 <body>
 	
@@ -422,7 +423,7 @@ function submitApplication() {
 					
 					
 						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/meetings/view-registrations.html">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/what-we-do/education/accreditation.html">FR</a></li>
 						
 					
 				</ul>
@@ -433,70 +434,67 @@ function submitApplication() {
 	
 
 	
-	<!--Page Specific Formatting-->
-	<script type="text/javascript">
-		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#meetings" ).classList.toggle("active");
-	</script>
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		<div id="sidebar">
+	<div id="scroll">
+		
+		
+		<span id="sidebar-title">Education</span>
+		<ul>
+			<li><a id="overview" href=".">Overview</a></li>
+			<li><a id="our-team" href="our-team.html">Our Team</a></li>
+			<li><a id="educational-advocacy" href="educational-advocacy.html">Educational Advocacy</a></li>
+			<li><a id="national-research-chair" href="national_research_chair.html">National Research Chair</a></li>
+						
+		</ul>
+		<span id="sidebar-title">Resources</span>
+		<ul>
+			<li><a id="matchbook" href="cfms-matchbook.html">Residency Matchbook</a></li>
+			<li><a id="accreditation-toolkit" href="accreditation.html">Accreditation Toolkit</a></li>
+			<!--<li><a id="elective-status-board" href="elective-status-board.html">Elective Status Board</a></li>-->
+			<li><a id="student-run-clinics" href="src-toolkit.html">Student Run Clinics Toolkit</a></li>
+			<li><a id="lmcc-preparation" href="http://mcc.ca/examinations/mccqe-part-i/exam-preparation-resources/"><i class="fa fa-external-link"></i></a></li>
+		</ul>
+		
+		
+		
+		
+	</div>
+</div>
+		<script type="text/javascript">
+			document.querySelector( "#accreditation-toolkit" ).classList.toggle("sidebar-active");
+		</script>
+		<!--Page Specific Formatting-->
+		<script type="text/javascript">
+			document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+			document.querySelector( "#what-we-do" ).classList.toggle("active");
+		</script>
 
-    <div class="content">
-		<div class="student-finances-content">
-			<h1 id="page-title">View Registrations</h1>
-				<div class="admin-only">
-					<blockquote style="max-width: 100%">
-						<h3><strong>Registrations</strong></h3>
-						<label>Meeting</label>
-						<div class="select">
-							<select id="selected-meeting">
-								<option disabled selected value> -- select a meeting -- </option>
-							</select>
-							<div class="select_arrow"></div>
-						</div>
-							<table id="example" class="display" cellspacing="0" width="100%">
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>Email</th>
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Amount</th>
-										<th>Approved</th>
-									</tr>
-								</thead>
-								<tfoot>
-									<tr>
-										<th>ID</th>
-										<th>Email</th>
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Amount</th>
-										<th>Approved</th>
-									</tr>
-								</tfoot>
-							</table>
-					</blockquote>
-				</div>
-			</div>
-			<div id="not-authorized" class="members-only">
-				<blockquote>
-					<h3><strong>You are not authorized to view this resource</strong></h3>
-					<ul>
-						<li>You must be an administrator in order to view this page.</li>
-					</ul>
-				</blockquote>
-			</div>
-			<div class="non-members">
-				<blockquote>
-					<h3><strong>Please login to see this page</strong></h3>
-					<ul>
-						<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
-					</ul>
-				</blockquote>
-			</div>
+		<div id="side-content" class="editable">
+			<h1 id="page-title">Accreditation</h1>
+            <blockquote>
+                <h2>Independent Student Analysis Toolkit</h2>
+                <p>The Toolkit is updated yearly to remain aligned with the <a href="https://cacms-cafmc.ca/accreditation-documents">documents</a> released by the Committee on Accreditation of Canadian Medical School.
+                    For your ISA, please use the Toolkit version associated with your school's accreditation year, not the most recent version of the Toolkit.
+                    You can determine your school's accreditation year <a href="https://cacms-cafmc.ca/about-cacms/accredited-programs/next-full-site-visit-dates">here</a>.
+                    Below you can also find a link to previously completed ISAs.</p>
+                <div class="members-only">
+                    <ul>
+                        <li><a href="https://drive.google.com/drive/folders/0B1V0fZ3hAF80M2FyZUJRSUJFYk0?usp=sharing">2018-2019 Toolkit</a></li>
+                        <li><a href="https://drive.google.com/drive/folders/0B1V0fZ3hAF80d2dMVnRWakdFT2c?usp=sharing">2017-2018 Toolkit</a></li>
+                        <li><a href="https://drive.google.com/drive/folders/0B1V0fZ3hAF80SzlSVmp3Y0ZiWWc?usp=sharing">Past ISAs</a></li>
+                    </ul>
+                </div>
+                <div class="non-members">
+                    <ul ng-hide="authData">
+                        <li>To access these files, please log in.</li>
+                    </ul>
+                </div>
+            </blockquote>
 		</div>
-    </div>
-
-	<div><script type="text/javascript">
+	</div>
+	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;
@@ -679,6 +677,6 @@ $('.redirect-modal').click(function(){
 		env: `production`
 	}
 </script>
-<script type="text/javascript" src="/js/bundle.js"></script></div>
-</body>	
+<script type="text/javascript" src="/js/bundle.js"></script>
+</body>
 </html>

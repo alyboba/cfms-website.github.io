@@ -373,7 +373,9 @@ function submitApplication() {
 </style> 
 
 	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/meetings.css" />
 </head>
+
 <body>
 	
 	
@@ -422,7 +424,7 @@ function submitApplication() {
 					
 					
 						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/meetings/view-registrations.html">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/exchanges/demo.html">FR</a></li>
 						
 					
 				</ul>
@@ -439,64 +441,24 @@ function submitApplication() {
 		document.querySelector( "#meetings" ).classList.toggle("active");
 	</script>
 
-    <div class="content">
-		<div class="student-finances-content">
-			<h1 id="page-title">View Registrations</h1>
-				<div class="admin-only">
-					<blockquote style="max-width: 100%">
-						<h3><strong>Registrations</strong></h3>
-						<label>Meeting</label>
-						<div class="select">
-							<select id="selected-meeting">
-								<option disabled selected value> -- select a meeting -- </option>
-							</select>
-							<div class="select_arrow"></div>
-						</div>
-							<table id="example" class="display" cellspacing="0" width="100%">
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>Email</th>
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Amount</th>
-										<th>Approved</th>
-									</tr>
-								</thead>
-								<tfoot>
-									<tr>
-										<th>ID</th>
-										<th>Email</th>
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Amount</th>
-										<th>Approved</th>
-									</tr>
-								</tfoot>
-							</table>
-					</blockquote>
-				</div>
-			</div>
-			<div id="not-authorized" class="members-only">
-				<blockquote>
-					<h3><strong>You are not authorized to view this resource</strong></h3>
-					<ul>
-						<li>You must be an administrator in order to view this page.</li>
-					</ul>
-				</blockquote>
-			</div>
-			<div class="non-members">
-				<blockquote>
-					<h3><strong>Please login to see this page</strong></h3>
-					<ul>
-						<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
-					</ul>
-				</blockquote>
-			</div>
-		</div>
-    </div>
+    <h1 id="page-title">Demo Exchange 2017</h1>
 
-	<div><script type="text/javascript">
+	<blockquote id="payment-container" style="max-width: 100%">
+
+		<h4><strong>Demo exchange for testing purposes</strong></h4>
+		<form id="payment-form" payment-id="DEMO" action="/#" method="POST">
+			<script src="https://payform.beanstream.com/payform/beanstream_payform.js" data-image="https://cfms.org/images/cfms-logo.svg"
+			data-name="CFMS" data-description="Demo Exchange 2017" data-amount="1" data-currency="cad" data-billingaddress="false"
+			data-submitform="false" data-primarycolor="#BB0A21">
+
+			</script>
+		</form>
+		<p>
+			By clicking this button you are agreeing to our <strong><a href="/payment-policies.html" target="_blank">payment policies</a></strong>.
+		</p>
+	</blockquote>
+
+	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;
@@ -679,6 +641,5 @@ $('.redirect-modal').click(function(){
 		env: `production`
 	}
 </script>
-<script type="text/javascript" src="/js/bundle.js"></script></div>
-</body>	
-</html>
+<script type="text/javascript" src="/js/bundle.js"></script>
+</body>

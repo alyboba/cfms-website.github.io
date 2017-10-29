@@ -118486,7 +118486,7 @@ var App = function App() {
 ;
 new App();
 
-},{"./routes":524}],491:[function(require,module,exports){
+},{"./routes":529}],491:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -118567,7 +118567,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{"../utils":540}],493:[function(require,module,exports){
+},{"../utils":545}],493:[function(require,module,exports){
 'use strict';
 
 /*
@@ -119347,6 +119347,95 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _requestPromise = require('request-promise');
+
+var _requestPromise2 = _interopRequireDefault(_requestPromise);
+
+var _utils = require('../utils');
+
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var PaymentsController = function () {
+    function PaymentsController(_ref) {
+        var authenticationService = _ref.authenticationService,
+            paymentsService = _ref.paymentsService;
+
+        _classCallCheck(this, PaymentsController);
+
+        this.service = paymentsService;
+        this.auth = authenticationService;
+        this.utils = new _utils2.default();
+        document.addEventListener('beanstream_payform_complete', this.processPayform.bind(this), false);
+        this.checkExchangePayment();
+    }
+
+    _createClass(PaymentsController, [{
+        key: 'processPayform',
+        value: function processPayform(e) {
+            var _this = this;
+
+            if (!this.auth.user) return console.log("You must be logged in to proceed.");
+            var data = e.eventDetail;
+            data.id = this.eventId;
+            var options = {
+                method: 'POST',
+                uri: 'https://cfms.us.webtask.io/api/payments/', // TODO: devapi when in debug mode
+                headers: {
+                    'Authorization': 'Bearer ' + this.auth.accessToken,
+                    'Content-Type': 'application/json'
+                },
+                body: data,
+                json: true // Automatically parses the JSON string in the response
+            };
+
+            (0, _requestPromise2.default)(options).then(function (data) {
+                if (data.message === "Declined") return _this.utils.showAlert("Declined", "Please check your payment information.");
+                _this.utils.showAlert("Success", "We look forward to seeing you at the event!");
+                _this.handleUserAlreadyPaid();
+            }).catch(function (err) {
+                this.utils.showAlert("Something went wrong", "Please try again later.");
+            });
+        }
+    }, {
+        key: 'checkExchangePayment',
+        value: function checkExchangePayment() {
+            var _this2 = this;
+
+            if (!this.auth.user) return;
+            this.service.checkExchangePayment(this.auth.user.uid, this.eventId, function (paid) {
+                if (paid) _this2.handleUserAlreadyPaid();
+            });
+        }
+    }, {
+        key: 'handleUserAlreadyPaid',
+        value: function handleUserAlreadyPaid() {
+            document.getElementById("payment-container").innerHTML = "<h4><strong>You have already paid for your exchange!</strong></h4>";
+        }
+    }, {
+        key: 'eventId',
+        get: function get() {
+            return document.getElementById("payment-form").getAttribute("payment-id");
+        }
+    }]);
+
+    return PaymentsController;
+}();
+
+exports.default = PaymentsController;
+
+},{"../utils":545,"request-promise":393}],497:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var AuthenticationController = function () {
@@ -119378,7 +119467,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{}],497:[function(require,module,exports){
+},{}],498:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119531,7 +119620,7 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
 exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
-},{"../repositories/firebase/utils":522}],498:[function(require,module,exports){
+},{"../repositories/firebase/utils":526}],499:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119893,7 +119982,7 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 
 exports.default = MeetingMinutesController;
 
-},{"../controllers/showModal":509,"../repositories/firebase/utils":522,"../utils":540}],499:[function(require,module,exports){
+},{"../controllers/showModal":510,"../repositories/firebase/utils":526,"../utils":545}],500:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119909,7 +119998,7 @@ var MeetingRegistrationsController = function () {
         _classCallCheck(this, MeetingRegistrationsController);
 
         this.auth = authenticationService;
-        this.meetingRegistrationRepository = meetingRegistrationRepository;
+        this.exchangePaymentRepository = meetingRegistrationRepository;
         this.t = null;
         this.process();
     }
@@ -119924,7 +120013,7 @@ var MeetingRegistrationsController = function () {
 
             this.t = $('#example').DataTable();
 
-            this.meetingRegistrationRepository.getAll().then(function (val) {
+            this.exchangePaymentRepository.getAll().then(function (val) {
                 var meetingBox = $('#selected-meeting');
                 var meetings = {};
                 val.forEach(function (meeting) {
@@ -119947,7 +120036,7 @@ var MeetingRegistrationsController = function () {
             var _this2 = this;
 
             var _loop = function _loop(meetingId) {
-                _this2.meetingRegistrationRepository.get(id + '/' + meetingId).then(function (val) {
+                _this2.exchangePaymentRepository.get(id + '/' + meetingId).then(function (val) {
                     var user = val.user;
                     var row = [meetingId, user.email, user.given_name, user.family_name, val.amount, val.approved];
                     _this2.t.row.add(row).draw(false);
@@ -119965,7 +120054,7 @@ var MeetingRegistrationsController = function () {
 
 exports.default = MeetingRegistrationsController;
 
-},{}],500:[function(require,module,exports){
+},{}],501:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120046,7 +120135,7 @@ var _class = function (_FirebaseConnection) {
 
 exports.default = _class;
 
-},{"../repositories/firebase/utils":522}],501:[function(require,module,exports){
+},{"../repositories/firebase/utils":526}],502:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120095,7 +120184,7 @@ var MembersController = function () {
 
 exports.default = MembersController;
 
-},{}],502:[function(require,module,exports){
+},{}],503:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120223,7 +120312,7 @@ var NavigationController = function () {
 
 exports.default = NavigationController;
 
-},{"js-cookie":283}],503:[function(require,module,exports){
+},{"js-cookie":283}],504:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120320,7 +120409,7 @@ var PaginationController = function () {
 
 exports.default = PaginationController;
 
-},{}],504:[function(require,module,exports){
+},{}],505:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120409,7 +120498,7 @@ var PaymentsController = function () {
 
 exports.default = PaymentsController;
 
-},{"../utils":540,"request-promise":393}],505:[function(require,module,exports){
+},{"../utils":545,"request-promise":393}],506:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120667,7 +120756,7 @@ var PhotoGalleryController = function () {
 
 exports.default = PhotoGalleryController;
 
-},{"./dependencies/blueimp-gallery":494,"./dependencies/blueimp-gallery-fullscreen":493,"./dependencies/blueimp-helper":495}],506:[function(require,module,exports){
+},{"./dependencies/blueimp-gallery":494,"./dependencies/blueimp-gallery-fullscreen":493,"./dependencies/blueimp-helper":495}],507:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120721,7 +120810,6 @@ var PurchasesController = function () {
             (0, _requestPromise2.default)(options).then(function (data) {
                 if (data.message === "Declined") return _this.utils.showAlert("Declined", "Please check your payment information.");
                 _this.utils.showAlert("Success", "Thank you and enjoy your purchase!");
-                _this.handleRegisteredUser();
             }).catch(function (err) {
                 this.utils.showAlert("Something went wrong", "Please try again later.");
             });
@@ -120738,7 +120826,7 @@ var PurchasesController = function () {
 
 exports.default = PurchasesController;
 
-},{"../utils":540,"request-promise":393}],507:[function(require,module,exports){
+},{"../utils":545,"request-promise":393}],508:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120803,7 +120891,7 @@ var RegistrationController = function () {
 
 exports.default = RegistrationController;
 
-},{"../utils":540}],508:[function(require,module,exports){
+},{"../utils":545}],509:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121192,7 +121280,7 @@ var RepResourcesController = function (_FirebaseConnection) {
 
 exports.default = RepResourcesController;
 
-},{"../controllers/showModal":509,"../repositories/firebase/utils":522,"../utils":540}],509:[function(require,module,exports){
+},{"../controllers/showModal":510,"../repositories/firebase/utils":526,"../utils":545}],510:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -121292,7 +121380,7 @@ var ModalController = function () {
 
 exports.default = ModalController;
 
-},{}],510:[function(require,module,exports){
+},{}],511:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -121445,7 +121533,79 @@ var TagSearchConroller = function () {
 
 exports.default = TagSearchConroller;
 
-},{}],511:[function(require,module,exports){
+},{}],512:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ViewExchangePayments = function () {
+    function ViewExchangePayments(authenticationService, exchangePaymentRepository) {
+        _classCallCheck(this, ViewExchangePayments);
+
+        this.auth = authenticationService;
+        this.exchangePaymentRepository = exchangePaymentRepository;
+        this.t = null;
+        this.process();
+    }
+
+    _createClass(ViewExchangePayments, [{
+        key: 'process',
+        value: function process() {
+            var _this = this;
+
+            if (!this.auth.user || !this.auth.user.isAdmin) return console.log('Access denied.');
+            var profile = this.auth.user;
+
+            this.t = $('#example').DataTable();
+
+            this.exchangePaymentRepository.getAll().then(function (val) {
+                var meetingBox = $('#selected-exchange');
+                var exchanges = {};
+                val.forEach(function (exchange) {
+                    exchanges[exchange.key] = exchange;
+                    meetingBox.append($('<option>', {
+                        value: exchange.key,
+                        text: exchange.key
+                    }));
+                });
+                meetingBox.change(function () {
+                    var id = meetingBox.val();
+                    _this.t.clear();
+                    _this._populateTable(id, exchanges[id].val());
+                });
+            });
+        }
+    }, {
+        key: '_populateTable',
+        value: function _populateTable(id, meeting) {
+            var _this2 = this;
+
+            var _loop = function _loop(exchangeId) {
+                _this2.exchangePaymentRepository.get(id + '/' + exchangeId).then(function (val) {
+                    var user = val.user;
+                    var row = [exchangeId, user.email, user.given_name, user.family_name, val.amount, val.approved];
+                    _this2.t.row.add(row).draw(false);
+                });
+            };
+
+            for (var exchangeId in meeting) {
+                _loop(exchangeId);
+            }
+        }
+    }]);
+
+    return ViewExchangePayments;
+}();
+
+exports.default = ViewExchangePayments;
+
+},{}],513:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121468,7 +121628,7 @@ var _authentication4 = _interopRequireDefault(_authentication3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/authentication":492,"../services/authentication":536}],512:[function(require,module,exports){
+},{"../controllers/authentication":492,"../services/authentication":541}],514:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121501,7 +121661,7 @@ var Middleware = function Middleware(page) {
 
 exports.default = Middleware;
 
-},{"./authentication":511,"./members-content":513,"./navigation":514}],513:[function(require,module,exports){
+},{"./authentication":513,"./members-content":515,"./navigation":516}],515:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121524,7 +121684,7 @@ var _authentication2 = _interopRequireDefault(_authentication);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/members-content":500,"../services/authentication":536}],514:[function(require,module,exports){
+},{"../controllers/members-content":501,"../services/authentication":541}],516:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121543,7 +121703,63 @@ var _navigation2 = _interopRequireDefault(_navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/navigation":502}],515:[function(require,module,exports){
+},{"../controllers/navigation":503}],517:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _model = require('./model');
+
+var _model2 = _interopRequireDefault(_model);
+
+var _user = require('./user');
+
+var _user2 = _interopRequireDefault(_user);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ExchangePaymentModel = function (_Model) {
+    _inherits(ExchangePaymentModel, _Model);
+
+    function ExchangePaymentModel(payment) {
+        _classCallCheck(this, ExchangePaymentModel);
+
+        var _this = _possibleConstructorReturn(this, (ExchangePaymentModel.__proto__ || Object.getPrototypeOf(ExchangePaymentModel)).call(this));
+
+        Object.assign(_this, payment);
+        return _this;
+    }
+
+    _createClass(ExchangePaymentModel, null, [{
+        key: 'fromRow',
+        value: function fromRow(row) {
+            return new ExchangePaymentModel(row);
+        }
+    }, {
+        key: 'fromRows',
+        value: function fromRows(rows) {
+            return rows.map(function (row) {
+                return new ExchangePaymentModel(row);
+            });
+        }
+    }]);
+
+    return ExchangePaymentModel;
+}(_model2.default);
+
+exports.default = ExchangePaymentModel;
+
+},{"./model":519,"./user":520}],518:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121599,7 +121815,7 @@ var MeetingRegistrationModel = function (_Model) {
 
 exports.default = MeetingRegistrationModel;
 
-},{"./model":516,"./user":517}],516:[function(require,module,exports){
+},{"./model":519,"./user":520}],519:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121642,7 +121858,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"lodash":320}],517:[function(require,module,exports){
+},{"lodash":320}],520:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121711,7 +121927,7 @@ var UserModel = function (_Model) {
 
 exports.default = UserModel;
 
-},{"./model":516}],518:[function(require,module,exports){
+},{"./model":519}],521:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121766,7 +121982,7 @@ var ApiRepository = function () {
 
 exports.default = ApiRepository;
 
-},{"request-promise":393}],519:[function(require,module,exports){
+},{"request-promise":393}],522:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121813,7 +122029,64 @@ var UserRepository = function (_ApiRepository) {
 
 exports.default = UserRepository;
 
-},{"./repository":518}],520:[function(require,module,exports){
+},{"./repository":521}],523:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _repository = require('./repository');
+
+var _repository2 = _interopRequireDefault(_repository);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ExchangePaymentRepository = function (_FirebaseRepository) {
+    _inherits(ExchangePaymentRepository, _FirebaseRepository);
+
+    function ExchangePaymentRepository(Model, UserRepository) {
+        _classCallCheck(this, ExchangePaymentRepository);
+
+        var _this = _possibleConstructorReturn(this, (ExchangePaymentRepository.__proto__ || Object.getPrototypeOf(ExchangePaymentRepository)).call(this, Model, 'ifmsa_exchanges'));
+
+        _this.UserRepository = UserRepository;
+        return _this;
+    }
+
+    _createClass(ExchangePaymentRepository, [{
+        key: 'get',
+        value: function get(id) {
+            var _this2 = this;
+
+            return _get(ExchangePaymentRepository.prototype.__proto__ || Object.getPrototypeOf(ExchangePaymentRepository.prototype), 'get', this).call(this, id).then(function (payment) {
+                return _this2.UserRepository.get(payment.uid).then(function (user) {
+                    delete payment.uid;
+                    payment.user = user;
+                    return payment;
+                });
+            }).catch(function (err) {
+                return console.log('Error: ' + err);
+            });
+        }
+    }]);
+
+    return ExchangePaymentRepository;
+}(_repository2.default);
+
+exports.default = ExchangePaymentRepository;
+
+},{"./repository":525}],524:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121870,7 +122143,7 @@ var MeetingRegistrationRepository = function (_FirebaseRepository) {
 
 exports.default = MeetingRegistrationRepository;
 
-},{"./repository":521}],521:[function(require,module,exports){
+},{"./repository":525}],525:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121912,7 +122185,7 @@ var Repository = function () {
 
 exports.default = Repository;
 
-},{"./utils":522}],522:[function(require,module,exports){
+},{"./utils":526}],526:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121977,7 +122250,54 @@ var FirebaseRef = function (_FirebaseConnection) {
 exports.FirebaseRef = FirebaseRef;
 exports.FirebaseConnection = FirebaseConnection;
 
-},{"../../config":491,"firebase":202}],523:[function(require,module,exports){
+},{"../../config":491,"firebase":202}],527:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = ExchangePayments;
+
+var _viewExhangePayments = require('../controllers/view-exhange-payments');
+
+var _viewExhangePayments2 = _interopRequireDefault(_viewExhangePayments);
+
+var _exchangePayments = require('../repositories/firebase/exchange-payments');
+
+var _exchangePayments2 = _interopRequireDefault(_exchangePayments);
+
+var _exchangePayment = require('../models/exchange-payment');
+
+var _exchangePayment2 = _interopRequireDefault(_exchangePayment);
+
+var _user = require('../repositories/api/user');
+
+var _user2 = _interopRequireDefault(_user);
+
+var _user3 = require('../models/user');
+
+var _user4 = _interopRequireDefault(_user3);
+
+var _exchanges = require('../controllers/exchanges');
+
+var _exchanges2 = _interopRequireDefault(_exchanges);
+
+var _authentication = require('../services/authentication');
+
+var _authentication2 = _interopRequireDefault(_authentication);
+
+var _payments = require('../services/payments');
+
+var _payments2 = _interopRequireDefault(_payments);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ExchangePayments(ctx, next) {
+    if (ctx.params.meeting == 'view-payments.html') new _viewExhangePayments2.default(new _authentication2.default(), new _exchangePayments2.default(_exchangePayment2.default, new _user2.default(_user4.default)));else new _exchanges2.default({ authenticationService: new _authentication2.default(), paymentsService: new _payments2.default() });
+    next();
+}
+
+},{"../controllers/exchanges":496,"../controllers/view-exhange-payments":512,"../models/exchange-payment":517,"../models/user":520,"../repositories/api/user":522,"../repositories/firebase/exchange-payments":523,"../services/authentication":541,"../services/payments":544}],528:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122001,7 +122321,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/forgot-password":496,"../services/authentication":536}],524:[function(require,module,exports){
+},{"../controllers/forgot-password":497,"../services/authentication":541}],529:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122031,6 +122351,10 @@ var _meetingRegistrations2 = _interopRequireDefault(_meetingRegistrations);
 var _purchases = require('./purchases');
 
 var _purchases2 = _interopRequireDefault(_purchases);
+
+var _exchanges = require('./exchanges');
+
+var _exchanges2 = _interopRequireDefault(_exchanges);
 
 var _modal = require('./modal');
 
@@ -122097,6 +122421,7 @@ var Router = function (_Middleware) {
             (0, _page2.default)('/new-account.html', _registration2.default);
             (0, _page2.default)('/meetings/:meeting', _meetingRegistrations2.default);
             (0, _page2.default)('/purchases/:purchase', _purchases2.default);
+            (0, _page2.default)('/exchanges/:exchange', _purchases2.default);
             (0, _page2.default)('/who-we-are/history.html', _modal2.default);
             (0, _page2.default)('/who-we-are/organizational-timeline.html', _modal2.default, _pagination2.default);
             (0, _page2.default)('/fr/who-we-are/history.html', _modal2.default);
@@ -122126,7 +122451,7 @@ var Router = function (_Middleware) {
 
 exports.default = Router;
 
-},{"../middlewares":512,"./forgot-password":523,"./md-leadership-awards":525,"./meeting-minutes":526,"./meeting-registrations":527,"./members":528,"./modal":529,"./pagination":530,"./photo-gallery":531,"./purchases":532,"./registration":533,"./rep-resources":534,"./tag-search":535,"page":333}],525:[function(require,module,exports){
+},{"../middlewares":514,"./exchanges":527,"./forgot-password":528,"./md-leadership-awards":530,"./meeting-minutes":531,"./meeting-registrations":532,"./members":533,"./modal":534,"./pagination":535,"./photo-gallery":536,"./purchases":537,"./registration":538,"./rep-resources":539,"./tag-search":540,"page":333}],530:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122157,7 +122482,7 @@ function LeadershipAwardAdmin(ctx, next) {
     next();
 }
 
-},{"../controllers/md-leadership-awards":497,"../services/authentication":536}],526:[function(require,module,exports){
+},{"../controllers/md-leadership-awards":498,"../services/authentication":541}],531:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122186,7 +122511,7 @@ function meetingMinutes(ctx, next) {
 	next();
 }
 
-},{"../controllers/meeting-minutes":498,"../controllers/showModal":509,"../services/authentication":536}],527:[function(require,module,exports){
+},{"../controllers/meeting-minutes":499,"../controllers/showModal":510,"../services/authentication":541}],532:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122234,7 +122559,7 @@ function MeetingRegistration(ctx, next) {
     next();
 }
 
-},{"../controllers/meeting-registrations":499,"../controllers/payments":504,"../models/meeting-registration":515,"../models/user":517,"../repositories/api/user":519,"../repositories/firebase/meeting-registration":520,"../services/authentication":536,"../services/payments":539}],528:[function(require,module,exports){
+},{"../controllers/meeting-registrations":500,"../controllers/payments":505,"../models/meeting-registration":518,"../models/user":520,"../repositories/api/user":522,"../repositories/firebase/meeting-registration":524,"../services/authentication":541,"../services/payments":544}],533:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122259,7 +122584,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/members":501,"../services/authentication":536}],529:[function(require,module,exports){
+},{"../controllers/members":502,"../services/authentication":541}],534:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122282,7 +122607,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/showModal":509}],530:[function(require,module,exports){
+},{"../controllers/showModal":510}],535:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122305,7 +122630,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/pagination":503}],531:[function(require,module,exports){
+},{"../controllers/pagination":504}],536:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122325,7 +122650,7 @@ function TagSearch(ctx, next) {
 	next();
 }
 
-},{"../controllers/photo-gallery":505}],532:[function(require,module,exports){
+},{"../controllers/photo-gallery":506}],537:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122352,7 +122677,7 @@ function Purchases(ctx, next) {
     next();
 }
 
-},{"../controllers/purchases":506,"../services/authentication":536,"../services/payments":539}],533:[function(require,module,exports){
+},{"../controllers/purchases":507,"../services/authentication":541,"../services/payments":544}],538:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122383,7 +122708,7 @@ function Registration(ctx, next) {
   next();
 }
 
-},{"../controllers/registration":507,"../models/user":517,"../services/authentication":536}],534:[function(require,module,exports){
+},{"../controllers/registration":508,"../models/user":520,"../services/authentication":541}],539:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122408,7 +122733,7 @@ function meetingMinutes(ctx, next) {
 	next();
 }
 
-},{"../controllers/rep-resources":508,"../services/authentication":536}],535:[function(require,module,exports){
+},{"../controllers/rep-resources":509,"../services/authentication":541}],540:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122429,7 +122754,7 @@ function TagSearch(ctx, next) {
 	next();
 }
 
-},{"../controllers/tag-search":510}],536:[function(require,module,exports){
+},{"../controllers/tag-search":511}],541:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122577,7 +122902,7 @@ var AuthenticationService = function () {
 
 exports.default = AuthenticationService;
 
-},{"../../models/user":517,"../../repositories/api/user":519,"../../utils":540,"./providers/auth0":537,"./providers/firebase":538,"jsonwebtoken":292,"lodash":320}],537:[function(require,module,exports){
+},{"../../models/user":520,"../../repositories/api/user":522,"../../utils":545,"./providers/auth0":542,"./providers/firebase":543,"jsonwebtoken":292,"lodash":320}],542:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122663,7 +122988,7 @@ var Auth0Provider = function () {
 
 exports.default = Auth0Provider;
 
-},{"../../../config":491,"../../../utils":540,"auth0-js":87}],538:[function(require,module,exports){
+},{"../../../config":491,"../../../utils":545,"auth0-js":87}],543:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122725,7 +123050,7 @@ var FirebaseProvider = function (_FirebaseConnection) {
 
 exports.default = FirebaseProvider;
 
-},{"../../../repositories/firebase/utils":522}],539:[function(require,module,exports){
+},{"../../../repositories/firebase/utils":526}],544:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -122756,7 +123081,17 @@ var PaymentsService = function (_FirebaseConnection) {
         value: function checkRegistration(uid, name, cb) {
             this.firebase.database().ref("/users/" + uid + "/registrations").orderByKey().once("value").then(function (registrations) {
                 var found = registrations.forEach(function (registration) {
-                    if (name == registration.val()) return true;
+                    if (name === registration.val()) return true;
+                });
+                return cb(found);
+            });
+        }
+    }, {
+        key: "checkExchangePayment",
+        value: function checkExchangePayment(uid, name, cb) {
+            this.firebase.database().ref("/users/" + uid + "/exchanges").orderByKey().once("value").then(function (payments) {
+                var found = payments.forEach(function (payment) {
+                    if (name === payment.val()) return true;
                 });
                 return cb(found);
             });
@@ -122768,7 +123103,7 @@ var PaymentsService = function (_FirebaseConnection) {
 
 exports.default = PaymentsService;
 
-},{"../repositories/firebase/utils":522}],540:[function(require,module,exports){
+},{"../repositories/firebase/utils":526}],545:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
