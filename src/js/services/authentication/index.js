@@ -57,6 +57,14 @@ export default class AuthenticationService {
         let user = localStorage.getItem('profile');
         return (user && this.accessToken) ? new UserModel(user) : null;
     }
+    get userId(){
+        let user = this.user;
+        if(user == null){
+            return;
+        }
+        let str = user.user_id.split("|");
+        return str[1];
+    }
 
     get accessToken() {
         let accessToken = localStorage.getItem('accessToken');
