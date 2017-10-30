@@ -1,0 +1,46 @@
+---
+title: Bilateral Exchange 2017
+cost: 900
+id: BilateralExchange2017
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/meetings.css" />
+</head>
+
+<body>
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#meetings" ).classList.toggle("active");
+	</script>
+
+    <h1 id="page-title">{{ page.title }}</h1>
+
+	<blockquote id="payment-container" style="max-width: 100%">
+
+		<h4><strong>Pay for your bilateral exchange online</strong></h4>
+		<form id="payment-form" payment-id="{{ page.id }}" action="/#" method="POST">
+			<script src="https://payform.beanstream.com/payform/beanstream_payform.js" data-image="https://cfms.org/images/cfms-logo.svg"
+			data-name="CFMS" data-description="{{ page.title }}" data-amount="{{ page.cost }}" data-currency="cad" data-billingaddress="false"
+			data-submitform="false" data-primarycolor="#BB0A21">
+
+			</script>
+		</form>
+		<p>
+			By clicking this button you are agreeing to our <strong><a href="/payment-policies.html" target="_blank">payment policies</a></strong>.
+		</p>
+	</blockquote>
+
+	{% include footer.html %}
+</body>

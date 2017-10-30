@@ -1,0 +1,56 @@
+---
+title: "Accreditation"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body>
+	{% include nav.html %}
+	
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-education.html %}
+		<script type="text/javascript">
+			document.querySelector( "#accreditation-toolkit" ).classList.toggle("sidebar-active");
+		</script>
+		<!--Page Specific Formatting-->
+		<script type="text/javascript">
+			document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+			document.querySelector( "#what-we-do" ).classList.toggle("active");
+		</script>
+
+		<div id="side-content" class="editable">
+			<h1 id="page-title">{{ page.title }}</h1>
+            <blockquote>
+                <h2>Independent Student Analysis Toolkit</h2>
+                <p>The Toolkit is updated yearly to remain aligned with the <a href="https://cacms-cafmc.ca/accreditation-documents">documents</a> released by the Committee on Accreditation of Canadian Medical School.
+                    For your ISA, please use the Toolkit version associated with your school's accreditation year, not the most recent version of the Toolkit.
+                    You can determine your school's accreditation year <a href="https://cacms-cafmc.ca/about-cacms/accredited-programs/next-full-site-visit-dates">here</a>.
+                    Below you can also find a link to previously completed ISAs.</p>
+                <div class="members-only">
+                    <ul>
+                        <li><a href="https://drive.google.com/drive/folders/0B1V0fZ3hAF80M2FyZUJRSUJFYk0?usp=sharing">2018-2019 Toolkit</a></li>
+                        <li><a href="https://drive.google.com/drive/folders/0B1V0fZ3hAF80d2dMVnRWakdFT2c?usp=sharing">2017-2018 Toolkit</a></li>
+                        <li><a href="https://drive.google.com/drive/folders/0B1V0fZ3hAF80SzlSVmp3Y0ZiWWc?usp=sharing">Past ISAs</a></li>
+                    </ul>
+                </div>
+                <div class="non-members">
+                    <ul ng-hide="authData">
+                        <li>To access these files, please log in.</li>
+                    </ul>
+                </div>
+            </blockquote>
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>

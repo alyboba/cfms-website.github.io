@@ -151,6 +151,7 @@ sidebar-global-health:
     human-rights-peace: Human Rights &amp; Peace
     human-rights-peace-pocket-cards: Pocket Card Series
     climate-change-and-health: Climate Change &amp; Health
+    advocacy-toolkit: Advocacy Toolkit
     aboriginal-health: Aboriginal Health
   - lang: fr
     sidebar-title_1: Santé globale
@@ -165,6 +166,7 @@ sidebar-global-health:
     reproductive-sexual-health: Reproduction &amp; santé sexuelle
     human-rights-peace: Droits humains &amp; paix
     human-rights-peace-pocket-cards: Séries pocket card
+    advocacy-toolkit: Trousse-à-outils pour plaidoirie
     aboriginal-health: Santé autochtone
 sidebar-who-we-are:
 - lang: "en"
@@ -214,6 +216,7 @@ sidebar-education:
     national-research-chair: National Research Chair
     sidebar-title_2: Resources
     residency-matchbook: Residency Matchbook
+    accreditation-toolkit: Accreditation Toolkit
     student-run-clinics-toolkit: Student Run Clinics Toolkit
     lmcc-prep-link: LMCC Preparation Resources
   - lang: fr
@@ -224,6 +227,7 @@ sidebar-education:
     national-research-chair: Président national de recherche
     sidebar-title_2: Ressources
     residency-matchbook: Guide pour le jumelage en résidence
+    accreditation-toolkit: Accreditation Toolkit
     student-run-clinics-toolkit: Trousse-à-outils pour cliniques dirigées par étudiants
     lmcc-prep-link: Ressources préparatoires pour LCMC
 sidebar-student-affairs:

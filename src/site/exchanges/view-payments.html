@@ -1,5 +1,5 @@
 ---
-title: Meeting Registrations
+title: View Exchange Payments
 ---
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ title: Meeting Registrations
 </head>
 <body>
 	{% include nav.html %}
-	
+
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
 		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
@@ -23,14 +23,14 @@ title: Meeting Registrations
 
     <div class="content">
 		<div class="student-finances-content">
-			<h1 id="page-title">View Registrations</h1>
+			<h1 id="page-title">{{ page.title }}</h1>
 				<div class="admin-only">
 					<blockquote style="max-width: 100%">
-						<h3><strong>Registrations</strong></h3>
-						<label>Meeting</label>
+						<h3><strong>Payments</strong></h3>
+						<label>Exchange</label>
 						<div class="select">
-							<select id="selected-meeting">
-								<option disabled selected value> -- select a meeting -- </option>
+							<select id="selected-exchange">
+								<option disabled selected value> -- select an exchange -- </option>
 							</select>
 							<div class="select_arrow"></div>
 						</div>

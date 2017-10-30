@@ -4,6 +4,7 @@ import { LeadershipAwardUser, LeadershipAwardAdmin } from './md-leadership-award
 import Registration from './registration';
 import MeetingRegistrations from './meeting-registrations';
 import Purchases from './purchases';
+import Exchanges from './exchanges';
 import Modal from './modal';
 import Pagination from './pagination';
 import route from 'page';
@@ -31,6 +32,7 @@ export default class Router extends Middleware {
         route('/new-account.html', Registration);
         route('/meetings/:meeting', MeetingRegistrations);
         route('/purchases/:purchase', Purchases);
+        route('/exchanges/:exchange', Exchanges);
         route('/who-we-are/history.html', Modal);
         route('/who-we-are/organizational-timeline.html', Modal, Pagination);
         route('/fr/who-we-are/history.html', Modal);

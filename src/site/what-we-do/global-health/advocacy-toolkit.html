@@ -1,0 +1,38 @@
+---
+title: "Advocacy Toolkit"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-global-health.html %}
+		<script type="text/javascript">
+			document.querySelector( "#advocacy-toolkit" ).classList.toggle("sidebar-active");
+		</script>
+		<div id="side-content" class="editable">
+			<h1 id="page-title">{{ page.title }}</h1>
+			<p>Feel strongly about an issue but don’t know how to advocate for it? Looking for tips on how to better your communication skills with stakeholders and politicians? The new CFMS Advocacy Toolkit is where to find tips for improving your advocacy platform on any topic! Your Global Health Advocates have made it easier than ever to find resources, develop skills and begin campaigning, by condensing key material gathered by former experienced CFMS members in a more accession format. We hope that this 4-part series can help guide your latest advocacy project to success!</p>
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>
