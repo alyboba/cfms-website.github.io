@@ -22,4 +22,4 @@ function isAdmin() { auth.token.isAdmin === true }
 
 function isUser(uid) { auth.uid === uid }
 
-function isSignedIn() { auth != null }
+isSignedIn() { auth != null }
