@@ -251,6 +251,25 @@ sidebar-student-affairs:
     sidebar-title_2: Ressources
     wellness: Bien-être
     discounts: Rabais étudiants
+sidebar-communications:
+  - lang: en
+    sidebar-title_1: Communications
+    overview: Overview
+    our-team: Our Team
+    sidebar-title_2: Resources
+    press-releases: Press Releases
+    cfms-in-the-news: CFMS in the News
+    communiques: Communiques
+    graphics: Graphics
+  - lang: fr
+    sidebar-title_1: Communications
+    overview: Aperçu
+    our-team: Notre Conseil
+    sidebar-title_2: Ressources
+    press-releases: Communiqués de Presse
+    cfms-in-the-news: FEMC dans les Nouvelles
+    communiques: Communiques
+    graphics: Graphique
 sidebar-advocacy:
   - lang: en
     sidebar-title_1: Advocacy
