@@ -94,7 +94,7 @@ The CFMS issued a policy [statement](https://www.cfms.org/files/position-papers/
 
 *Adopted by the 68th General Assembly, Chicago, October 2017*
 
-*Source:*[*https://www.wma.net/policies-post/wma-statement-on-bullying-and-harassment-within-the-profession/*](https://www.wma.net/policies-post/wma-statement-on-bullying-and-harassment-within-the-profession/)
+*Source:*[https://www.wma.net/policies-post/wma-statement-on-bullying-and-harassment-within-the-profession/](https://www.wma.net/policies-post/wma-statement-on-bullying-and-harassment-within-the-profession/)
 
 **About the CFMS**
 
@@ -106,6 +106,8 @@ Christina Schweitzer, Vice-President Communications
 
 Canadian Federation of Medical Students
 
-Email: vpcommunications@cfms.org
+Email: [vpcommunications@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,99,111,109,109,117,110,105,99,97,116,105,111,110,115,64,99,102,109,115,46,111,114,103)))
 
 Cell: 1-587-225-8165
+
+[/CFMS Press Release_Bullying and Harassment Within the Profession.pdf](/CFMS Press Release_Bullying and Harassment Within the Profession.pdf)
