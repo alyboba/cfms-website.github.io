@@ -10,7 +10,7 @@ export default class extends FirebaseConnection {
 
     process() {
         let editor = document.getElementById('edit-members-only');
-        if (editor && this.auth.user.isAdmin) return this.injectEditor(editor);
+        if (editor && this.auth.user.isAdmin && this.checkDomain()) return this.injectEditor(editor);
         console.log("Fetching members only content from firebase...");
         const refPath = 'members_only_content' + this.urlToRef(); // TODO: DRY this crap up
         const ref = this.firebase.database().ref(refPath);
@@ -21,6 +21,7 @@ export default class extends FirebaseConnection {
     }
 
     injectEditor(editor) {
+        editor.style.display = 'block';
         const refPath = 'members_only_content' + this.urlToRef();
         const codeMirror = new CodeMirror(editor, { lineWrapping: true, lineNumbers: true, mode: 'htmlmixed' });
         const ref = this.firebase.database().ref(refPath);
