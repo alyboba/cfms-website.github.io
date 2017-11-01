@@ -114,5 +114,4 @@ Email: [vpcommunications@cfms.org](javascript:void(location.href='mailto:'+Strin
 
 Cell: 1-587-225-8165
 
-* Press Release:
-* [/CFMS Press Release_Bullying and Harassment Within the Profession.pdf](/CFMS Press Release_Bullying and Harassment Within the Profession.pdf)
+> Press release:<br>[/CFMS Press Release_Bullying and Harassment Within the Profession.pdf](/CFMS Press Release_Bullying and Harassment Within the Profession.pdf)
