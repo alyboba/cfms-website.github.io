@@ -1,0 +1,46 @@
+---
+title: TEDMED
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]>
+<html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/members.css"/>
+</head>
+<body>
+{% include nav.html %}
+
+<div class="content">
+    {% include sidebar-members.html %}
+
+    <!--Page Specific Formatting-->
+    <script type="text/javascript">
+        document.querySelector("#logo-invert").classList.toggle("hidden");
+//        document.querySelector("#members").classList.toggle("active");
+    </script>
+
+    <div id="side-content" class="editable">
+        <h1 id="page-title">{{ page.title }}</h1>
+        <div class="members-only">
+
+        </div>
+        <div class="non-members">
+            <blockquote><h3><strong>Please login to see this page</strong></h3>
+                <ul>
+                    <li>>Please login to the CFMS website in order to view the content on this page.
+                    </li>
+                </ul>
+            </blockquote>
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>

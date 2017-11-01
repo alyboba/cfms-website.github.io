@@ -5,7 +5,6 @@ export default class MembersController {
     }
 
     process() {
-        console.log("hitting this page?");
         if (this.auth.user) {
             let profile = this.auth.user;
             var firstName = profile.given_name;
