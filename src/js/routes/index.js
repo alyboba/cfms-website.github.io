@@ -52,6 +52,7 @@ export default class Router extends Middleware {
         route('/fr/resources/rep-resources.html', RepResources);
 
         route('/members/tedmed.html', TedMed);
+        route('/fr/members/tedmed.html', TedMed);
     }
 
     refresh() {
