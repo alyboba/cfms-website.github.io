@@ -184,4 +184,8 @@ $('.redirect-modal').click(function(){
 		env: `{{ jekyll.environment }}`
 	}
 </script>
+{% if jekyll.environment == "production" %}
+<script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
+{% else %}
 <script type="text/javascript" src="/js/bundle.js"></script>
+{% endif %}
