@@ -38,4 +38,4 @@ The CFMS stands behind all CMGs who go unmatched and endeavours to continue to p
 <br>Email: vpcommunications@cfms.org
 <br>Cell: 1-613-983-8721
 
-[/UnmatchedCMGPressRelease.pdf](/UnmatchedCMGPressRelease.pdf)
+[/UnmatchedCMGPressRelease.pdf](/uploads/news-documents/UnmatchedCMGPressRelease.pdf)
