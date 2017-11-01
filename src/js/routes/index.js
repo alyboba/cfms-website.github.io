@@ -13,6 +13,7 @@ import PhotoGallery from './photo-gallery';
 import MeetingMinutes from './meeting-minutes';
 import ForgotPassword from './forgot-password';
 import RepResources from './rep-resources';
+import Communiques from './communiques';
 
 
 export default class Router extends Middleware {
@@ -46,6 +47,9 @@ export default class Router extends Middleware {
 
         route('/members/meeting-minutes.html', MeetingMinutes);
         route('/fr/members/meeting-minutes.html', MeetingMinutes);
+	
+        route('/members/communique.html', Communiques);
+        route('/fr/members/communique.html', Communiques);
         
         route('/resources/rep-resources.html', RepResources);
         route('/fr/resources/rep-resources.html', RepResources);
