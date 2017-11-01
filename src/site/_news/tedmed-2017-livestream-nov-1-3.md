@@ -8,7 +8,7 @@ lang: en
 ---
 
 
-![](/uploads/versions/tedmedlive2017---x----3000-823x---.png)Thanks to a new CMA partnership with TEDMED, CFMS members can livestream TEDMED 2017 from Nov 1-3.
+![](/uploads/versions/tedmedlive2017-1---x----3000-823x---.png)Thanks to a new CMA partnership with TEDMED, CFMS members can livestream TEDMED 2017 from Nov 1-3.
 
 The CMA recently announced an exciting 3-year partnership with the world-famous TEDMED, becoming the first Canadian global partner.&nbsp; The CMA is pleased to make CFMS members part of this partnership, with an opportunity to stream any of the presentations in real-time or on-demand.&nbsp;
 
