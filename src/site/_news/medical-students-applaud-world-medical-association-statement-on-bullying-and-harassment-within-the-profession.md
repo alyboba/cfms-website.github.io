@@ -1,7 +1,5 @@
 ---
-title: >-
-  PRESS RELEASE: Medical students applaud World Medical Association statement on
-  bullying and harassment within the profession
+title: PRESS RELEASE
 date: 2017-10-31 00:00:00
 description: >-
   Medical student mistreatment is a known issue for Canadian trainees – with
