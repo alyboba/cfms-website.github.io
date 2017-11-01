@@ -122826,6 +122826,7 @@ var Router = function (_Middleware) {
             (0, _page2.default)('/fr/resources/rep-resources.html', _repResources2.default);
 
             (0, _page2.default)('/members/tedmed.html', _tedmed2.default);
+            (0, _page2.default)('/fr/members/tedmed.html', _tedmed2.default);
         }
     }, {
         key: 'refresh',
