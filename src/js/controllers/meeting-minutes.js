@@ -8,7 +8,7 @@
 
 import { FirebaseConnection } from '../repositories/firebase/utils';
 import Utils from '../utils';
-import ModalController from '../controllers/showModal';
+//import DatabaseEntryModel from '../models/meeting-minutes';
 
 
 //TODO: Page could have extra security checks/Ui enhancements. Leaving for now because it is for admins.
@@ -27,10 +27,12 @@ export default class MeetingMinutesController extends FirebaseConnection{
 	 * @event this.process
 	   * our base event to be triggered when page initializes.
 	 */
-	constructor(authenticationService, ModalController) {
+	constructor(authenticationService, DatabaseEntryModel) {
 		super();
 		this.utils = new Utils();
+		this.Model = DatabaseEntryModel;
 		this.refPath = 'meeting-minutes/';
+		this.storageRefPath = 'minutes/';
 		this.auth = authenticationService;
 		this.process();
 	}
@@ -94,14 +96,14 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		}
 		else{
 			if(this.utils.isPageEnglish()){
-				vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
+				this.utils.displayVexAlert('You must be signed in to view this page!');
 			}
 			else{
-				vex.dialog.alert('<h3><strong>Vous devez être connecté pour voir cette page!</strong></h3>');
+				this.utils.displayVexAlert('Vous devez être connecté pour voir cette page!');
 			}
 			console.log("We are on the page with user not signed in tsk tsk tsk.");
 		} //end else 
-	}
+	} //end process
 	
 	/*
 	* @type {Admin-only}
@@ -110,91 +112,101 @@ export default class MeetingMinutesController extends FirebaseConnection{
 	*/
 	addMeetingMinutesEvent(evt){
 		evt.preventDefault();
+		let htmlInput = '<input name="year" type="text" placeholder="Year" required/>'+
+								'<input name="title" type="text" placeholder="Title" required />'+
+								'<input name="subTitle" type="text" placeholder="Sub Title" required />'+
+								'<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />'+
+								'<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>';
 		let modalController = this;
-		vex.dialog.open({
-			message: 'Add Meeting Minutes',
-			input: [
-				'<input name="year" type="text" placeholder="Year" required/>',
-				'<input name="title" type="text" placeholder="Title" required />',
-				'<input name="subTitle" type="text" placeholder="sub Title" required />',
-				'<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />'+
-				'<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>'
-			].join(''),
-			buttons: [
-				$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }),
-				$.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
-			],
-			callback: function (data) { //This executes when a button is pressed
-				if (!data) { //Executes if back button pressed
-					console.log('Cancelled');
-				} else { //Executes if Add button pressed
-					console.log("hitting the add shit here?");
-					if (modalController.isProperYearRange(data.year, 2000, 2030)) {
-						let fileUpload = document.getElementById('uploadFile').files;
-						if(fileUpload.length == 1 ) {
-							console.log("got into the if statement b4 the function?!?!");
-							modalController.addMeetingMinutes(data.year, data.title, data.subTitle, fileUpload[0]);
-						}
-						else{
-							vex.dialog.alert("You may only attach one file per Entry!");
-						}
-					}
-					else{
-						vex.dialog.alert("Year must be between 2000 and 2030");
-					}
-				}
-			}
-		}).on("change", "#uploadFile", (e) =>{ //This is an event handler dynamically attached only when modal is clicked!.
-			var label	 = e.target.nextElementSibling, 
-				labelVal = label.innerHTML,
-			  fileName = '';
-			if( this.files && this.files.length > 1 )
-				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
-			else
-				fileName = e.target.value.split( '\\' ).pop();
+		//let databaseModel = new DatabaseEntryModel();
+		modalController.utils.adminDisplayVexDialog(htmlInput, "Add Meeting Minutes",data =>{
+			//Grabs data entered by the user.
+			console.log(data);
+			let databaseModel = new modalController.Model(data);
+			console.log(databaseModel.obj);
 			
-			if( fileName )
-				label.querySelector( 'span' ).innerHTML = fileName;
-			else
-				label.innerHTML = labelVal;
 		});
-	}
+
+		
+		
+			//console.log(databaseModel.object);
+				// if (modalController.isProperYearRange(data.year, 2000, 2030)) {
+				// 	let fileUpload = document.getElementById('uploadFile').files;
+				// 	if (fileUpload.length == 1) {
+				// 		//let meetingMinutes = new DatabaseEntryModel(data.title, data.subTitle);
+				// 		let pushObject = {};
+				// 		console.log("got into the if statement b4 the function?!?!");
+				// 		if(modalController.utils.vexConfirm()){
+				// 			//They clicked they are sure
+				// 			modalController.utils.fileUploadPromise(modalController.firebase, modalController.storageRefPath, fileUpload[0])
+				// 				.then((fileObject) =>{
+				// 				//promise returned 
+				// 				}).catch((error) =>{
+				// 				//error occured.
+				// 			});
+				// 		}
+				// 		else{
+				// 			//clicked no.
+				// 		}
+				//		
+				// 		modalController.addMeetingMinutes(data.year, data.title, data.subTitle, fileUpload[0]);
+				// 	}
+				// 	else {
+				// 		this.utils.displayVexAlert("You may only attach one file per Entry!");
+				// 	}
+				// }
+				// else{
+				// 	this.utils.displayVexAlert("Year must be between 2000 and 2030");
+				// }
+				
+		
+		
+				
+		
+
+		
+
+		
+		
+	} // end addMeetingMinutesEvent
+			
+
 	
-	/*
-	* @type {Admin-only}
-	* @param {String} year
-	*   contains the string for the year entered in modal by admin 
-	* @param {String} title
-	*   contains the string for the title entered in modal by admin
-	* @param {String} subTitle
-	*   contains the string for the subTitle entered in modal by admin
-	* @param {Object} file
-	*   A reference to the file object gathered by input element entered by the admin
-	* @param {Boolean} justAdd
-	*/
-	addMeetingMinutes(year, title, subTitle, file){
-		let modalController = this;
-		this.vexConfirm().then( () => {
-			modalController.fileUploadPromise(file).then( (fileObject ) =>{
-				firebase.database().ref(this.refPath+'/'+year).push({
-					title: title,
-					subTitle: subTitle,
-					fileTitle: file.name,
-					fileLink: fileObject.downloadURL,
-					filePath: fileObject.filePath
-				}).then( () => {
-					vex.dialog.alert('<h3><strong>Successfully added new Entry!</strong></h3>');
-					location.reload();
-				});
-			}).catch((error) => {
-				//TODO: add error message in vex, based off error code.
-				vex.dialog.alert('<h3><strong>'+error+'</strong></h3>');
-				console.log("an Error occurred, Error "+ error);
-			})
-		}).catch( () => {
-			console.log("The promise returned false!!!!");
-		});
-	}
+	
+	// /*
+	// * @type {Admin-only}
+	// * @param {String} year
+	// *   contains the string for the year entered in modal by admin 
+	// * @param {String} title
+	// *   contains the string for the title entered in modal by admin
+	// * @param {String} subTitle
+	// *   contains the string for the subTitle entered in modal by admin
+	// * @param {Object} file
+	// *   A reference to the file object gathered by input element entered by the admin
+	// */
+	// addMeetingMinutes(year, title, subTitle, file){
+	// 	let modalController = this;
+	// 	this.vexConfirm().then( () => {
+	// 		modalController.utils.fileUploadPromise(firebase, modalController.storageRefPath, file).then( (fileObject ) =>{
+	// 			firebase.database().ref(this.refPath+'/'+year).push({
+	// 				title: title,
+	// 				subTitle: subTitle,
+	// 				fileTitle: file.name,
+	// 				fileLink: fileObject.downloadURL,
+	// 				filePath: fileObject.filePath
+	// 			}).then( () => {
+	// 				vex.dialog.alert('<h3><strong>Successfully added new Entry!</strong></h3>');
+	// 				location.reload();
+	// 			});
+	// 		}).catch((error) => {
+	// 			//TODO: add error message in vex, based off error code.
+	// 			vex.dialog.alert('<h3><strong>'+error+'</strong></h3>');
+	// 			console.log("an Error occurred, Error "+ error);
+	// 		})
+	// 	}).catch( () => {
+	// 		console.log("The promise returned false!!!!");
+	// 	});
+	// }
 	
 	/*
 	 * @type {Admin-only}
@@ -249,61 +261,59 @@ export default class MeetingMinutesController extends FirebaseConnection{
 		return year > startYear && year < endYear;
 	}
 	
-	/*
-	 * A custom made promise to determine that a file properly uploads
-	 * @param {Object} file
-	 *   The file the user uploaded
-	 */
-	fileUploadPromise(file){
-		return new Promise((resolve, reject) => {
-			let filePath = 'minutes/'+file.name;
-			let storageRef = firebase.storage().ref(filePath);
-			//console.log(storageRef.getDownloadURL());
-			storageRef.getDownloadURL().then( () => { //There already is a file with that name in storage, reject the promise...
-					reject("A File With the same name has already been uploaded!");
-			}).catch(() => { //There is no file with that name in Db, Lets make one!
-				let uploadTask =	storageRef.put(file);
-				uploadTask.on('state_changed', (snapshot) => {
-					let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-					console.log('Upload is ' + progress + '% done');
-				}, (error) => {
-					//This function happens if error hits during upload.
-					reject(error);
-				}, () => {
-					//this is for on complete uploads!
-					//console.log("are we ever hitting the final function!?>!?!?!");
-					let downloadURL = uploadTask.snapshot.downloadURL;
-					let fileObject = {
-						downloadURL: downloadURL,
-						filePath: filePath
-					};
-					resolve(fileObject);
-				});
-				
-			});
-		});
-	}
-	
-	/*
-	 * A custom promise for if a user is sure to continue or not.
-	 */
-	vexConfirm(){
-		return new Promise((resolve, reject) => {
-			vex.dialog.confirm({
-				message: "Are you sure?",
-				callback: (value) => {
-					if (value) {
-						resolve(true); //if user selects yes, promise resolves true
-					}
-					else {
-						reject(false);
-					}
-				} //end vex confirm callback
-			});
-		});
-		
-		
-	}
+	// /*
+	//  * A custom made promise to determine that a file properly uploads
+	//  * @param {Object} file
+	//  *   The file the user uploaded
+	//  */
+	// fileUploadPromise(file){
+	// 	return new Promise((resolve, reject) => {
+	// 		let filePath = 'minutes/'+file.name;
+	// 		let storageRef = firebase.storage().ref(filePath);
+	// 		//console.log(storageRef.getDownloadURL());
+	// 		storageRef.getDownloadURL().then( () => { //There already is a file with that name in storage, reject the promise...
+	// 				reject("A File With the same name has already been uploaded!");
+	// 		}).catch(() => { //There is no file with that name in Db, Lets make one!
+	// 			let uploadTask =	storageRef.put(file);
+	// 			uploadTask.on('state_changed', (snapshot) => {
+	// 				let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+	// 				console.log('Upload is ' + progress + '% done');
+	// 			}, (error) => {
+	// 				//This function happens if error hits during upload.
+	// 				reject(error);
+	// 			}, () => {
+	// 				//this is for on complete uploads!
+	// 				//console.log("are we ever hitting the final function!?>!?!?!");
+	// 				let downloadURL = uploadTask.snapshot.downloadURL;
+	// 				let fileObject = {
+	// 					downloadURL: downloadURL,
+	// 					filePath: filePath
+	// 				};
+	// 				resolve(fileObject);
+	// 			});
+	//			
+	// 		});
+	// 	});
+	// }
+	//
+	// /*
+	//  * A custom promise for if a user is sure to continue or not.
+	//  */
+	// vexConfirm(){
+	// 	return new Promise((resolve, reject) => {
+	// 		vex.dialog.confirm({
+	// 			message: "Are you sure?",
+	// 			callback: (value) => {
+	// 				if (value) {
+	// 					resolve(true); //if user selects yes, promise resolves true
+	// 				}
+	// 				else {
+	// 					reject(false);
+	// 				}
+	// 			} //end vex confirm callback
+	// 		});
+	// 	});
+	// }
 }
 
 

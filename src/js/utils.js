@@ -60,5 +60,140 @@ export default class Utils {
         return button;
     }
 
-    
+
+
+	
+	
+	adminAddEntry(path, firebase, storagePath, object, file){
+		let modalController = this;
+		this.vexConfirm().then( () => {
+      if(Utils.fileAvailable(file)){ //checks if a file is available 
+        modalController.fileUploadPromise(firebase, storagePath, file).then( (fileObject ) =>{
+        	//check if file is already uploaded or not.
+	          object.fileLink = fileObject.downloadURL;
+	          object.filePath = fileObject.filePath;
+        }).catch((error) => {
+          //TODO: add error message in vex, based off error code.
+          vex.dialog.alert('<h3><strong>'+error+'</strong></h3>');
+          console.log("an Error occurred, Error "+ error);
+		    })
+      }
+		}).catch( () => {
+			console.log("The File Upload promise returned false!!!!");
+		});
+	}
+	
+	addDatabaseEntry(firebase, object, path){
+		firebase.database().ref(path).push({
+			object
+		}).then( () => {
+			return true;
+		}).catch(() =>{
+			return false;
+		});
+		
+	}
+	
+	static fileAvailable(file){
+	    if(file == null){
+	        return false;
+      }
+      return true;
+  }
+  
+  
+   adminDisplayVexDialog(htmlInput, message, callback){
+		let obj = "object didn't get set...";
+	  vex.dialog.open({
+		  message: message,
+		  input: [
+			  htmlInput
+		  ].join(''),
+		  buttons: [
+			  $.extend({}, vex.dialog.buttons.YES, { text: 'Add' }),
+			  $.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
+		  ],
+		  callback: function(data) { //This executes when a button is pressed
+		   if (!data) { //Executes if back button pressed
+			   console.log("hit no data....");
+			   callback(null);
+		   } else { //Executes if Add button pressed
+			   console.log("hit the data...");
+			   console.log(data);
+			   callback(data);
+		   }
+	   }
+	  }).on("change", "#uploadFile", (e) =>{ //This is an event handler dynamically attached only when modal is clicked!.
+		  var label	 = e.target.nextElementSibling,
+			  labelVal = label.innerHTML,
+			  fileName = '';
+		  if( this.files && this.files.length > 1 )
+			  fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+		  else
+			  fileName = e.target.value.split( '\\' ).pop();
+		
+		  if( fileName )
+			  label.querySelector( 'span' ).innerHTML = fileName;
+		  else
+			  label.innerHTML = labelVal;
+	  });
+	  console.log("hitting this already..");	   
+  }
+  
+  
+  
+  displayVexAlert(message){
+	  vex.dialog.alert('<h3><strong>' + message + '</strong></h3>');
+  }
+	
+	/*
+* A custom promise for if a user is sure to continue or not.
+*/
+	vexConfirm(){
+		return new Promise((resolve, reject) => {
+			vex.dialog.confirm({
+				message: "Are you sure?",
+				callback: (value) => {
+					if (value) {
+						resolve(true); //if user selects yes, promise resolves true
+					}
+					else {
+						reject(false);
+					}
+				} //end vex confirm callback
+			});
+		});
+	}
+	
+	fileUploadPromise(firebase, fileDirectory, file){
+		return new Promise((resolve, reject) => {
+			let filePath = fileDirectory + file.name;
+			let storageRef = firebase.storage().ref(filePath);
+			//console.log(storageRef.getDownloadURL());
+			storageRef.getDownloadURL().then( () => { //There already is a file with that name in storage, reject the promise...
+				reject("A File With the same name has already been uploaded!");
+			}).catch(() => { //There is no file with that name in Db, Lets make one!
+				let uploadTask =	storageRef.put(file);
+				uploadTask.on('state_changed', (snapshot) => {
+					let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+					console.log('Upload is ' + progress + '% done');
+				}, (error) => {
+					//This function happens if error hits during upload.
+					reject(error);
+				}, () => {
+					//this is for on complete uploads!
+					//console.log("are we ever hitting the final function!?>!?!?!");
+					let downloadURL = uploadTask.snapshot.downloadURL;
+					let fileObject = {
+						downloadURL: downloadURL,
+						filePath: filePath
+					};
+					resolve(fileObject);
+				});
+			});
+		});
+	}
+	
+	
+	
 }
