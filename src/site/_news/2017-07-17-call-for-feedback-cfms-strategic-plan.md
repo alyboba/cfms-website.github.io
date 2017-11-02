@@ -33,7 +33,7 @@ Since SGM, a small writing team comprised of CFMS Executive Committee members, a
 
 We also invite you to participate in feedback of the penultimate plan, via WebEx teleconference at **10AM EST** on **August 12th, 2017**. You can log-in to WebEx&nbsp;[here](https://meetings.webex.com/collabs/#/meetings/detail?uuid=M0U0YSSIBR5KR40HNLB7ILFRN3-12DI9&amp;ucs=email)&nbsp;and participate in the conference using meeting code 195 953 270. No password is required. Please allow yourself 10-15 minutes prior to the call to set-up WebEx on your home computer.
 
-Please check out the Draft Strategic Operations [here](/CFMS Strategic Plan 2017-2022 - DRAFT - July 16 2017.pdf). We kindly ask that you send your feedback/comments to [strategicplan@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(115,116,114,97,116,101,103,105,99,112,108,97,110,64,99,102,109,115,46,111,114,103)))
+Please check out the Draft Strategic Operations [here](/uploads/news-documents/CFMS Strategic Plan 2017-2022 - DRAFT - July 16 2017.pdf). We kindly ask that you send your feedback/comments to [strategicplan@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(115,116,114,97,116,101,103,105,99,112,108,97,110,64,99,102,109,115,46,111,114,103)))
 
 On behalf of the CFMS, we would like to personally thank you for taking the time to add your prospective to our CFMS Strategic Operations and Human Resources Plan.
 

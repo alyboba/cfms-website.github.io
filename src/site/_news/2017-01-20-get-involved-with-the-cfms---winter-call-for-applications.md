@@ -14,19 +14,19 @@ As the representative voice of Canadian medical students, the Canadian Federatio
 
 **The positions currently available include:**
 
-* [CFMS Representative to Canadian Medical Association Committee on Ethics](/CMA Committee on Ethics 2017.pdf)
+* [CFMS Representative to Canadian Medical Association Committee on Ethics](/uploads/news-documents/CMA Committee on Ethics 2017.pdf)
 
-* [CFMS Representative to Canadian Association for Medical Education](/CAME Representative Description 2017.pdf)
+* [CFMS Representative to Canadian Association for Medical Education](/uploads/news-documents/CAME Representative Description 2017.pdf)
 
-* [Junior Representative to the Committee on the Accreditation of Canadian Medical Schools (two year term)](/CACMS Representative Description 2017.pdf)
+* [Junior Representative to the Committee on the Accreditation of Canadian Medical Schools (two year term)](/uploads/news-documents/CACMS Representative Description 2017.pdf)
 
-* [International Conference on Residency Education Representative](/International Conference on Residency Education Representative 2017.pdf)
+* [International Conference on Residency Education Representative](/uploads/news-documents/International Conference on Residency Education Representative 2017.pdf)
 
-* [Blood Drive Chair](/Blood Drive Description 2017.pdf)
+* [Blood Drive Chair](/uploads/news-documents/Blood Drive Description 2017.pdf)
 
-* [CFMS-FMEQ National Health and Wellbeing Survey – Student Research Position](/Wellness Survey Research Position 2017.pdf)
+* [CFMS-FMEQ National Health and Well-being Survey – Student Research Position](/uploads/news-documents/Wellness Survey Research Position 2017.pdf)
 
-* [Education Committee](/VP Education - Winter Call 2017.pdf)
+* [Education Committee](/uploads/news-documents/VP Education - Winter Call 2017.pdf)
 
   * Education Research Grants File Lead
 
