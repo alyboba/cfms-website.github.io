@@ -1,20 +1,13 @@
 import Model from './model';
 
 export default class DatabaseEntryModel extends Model{
-	constructor(data) {
+	constructor(databaseEntryKey, data) {
 		super();
+		this.key = databaseEntryKey;
 		this.obj = Object.assign(data);
 	}
-	// get obj(){
-	// 	return this.obj;
-	// }
-	// set obj(data){
-	// 	console.log("In the obj set method?");
-	// 	this.obj = Object.assign(data);
-	// }
-	
-	
-	
-	
+	bundleFileWithData(fileObj){
+		this.obj = Object.assign(this.obj, fileObj);
+	}
 	
 }

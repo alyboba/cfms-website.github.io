@@ -100,10 +100,8 @@ export default class Utils {
       }
       return true;
   }
-  
-  
+	
    adminDisplayVexDialog(htmlInput, message, callback){
-		let obj = "object didn't get set...";
 	  vex.dialog.open({
 		  message: message,
 		  input: [
@@ -115,11 +113,8 @@ export default class Utils {
 		  ],
 		  callback: function(data) { //This executes when a button is pressed
 		   if (!data) { //Executes if back button pressed
-			   console.log("hit no data....");
 			   callback(null);
 		   } else { //Executes if Add button pressed
-			   console.log("hit the data...");
-			   console.log(data);
 			   callback(data);
 		   }
 	   }
@@ -137,7 +132,6 @@ export default class Utils {
 		  else
 			  label.innerHTML = labelVal;
 	  });
-	  console.log("hitting this already..");	   
   }
   
   
@@ -165,34 +159,7 @@ export default class Utils {
 		});
 	}
 	
-	fileUploadPromise(firebase, fileDirectory, file){
-		return new Promise((resolve, reject) => {
-			let filePath = fileDirectory + file.name;
-			let storageRef = firebase.storage().ref(filePath);
-			//console.log(storageRef.getDownloadURL());
-			storageRef.getDownloadURL().then( () => { //There already is a file with that name in storage, reject the promise...
-				reject("A File With the same name has already been uploaded!");
-			}).catch(() => { //There is no file with that name in Db, Lets make one!
-				let uploadTask =	storageRef.put(file);
-				uploadTask.on('state_changed', (snapshot) => {
-					let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-					console.log('Upload is ' + progress + '% done');
-				}, (error) => {
-					//This function happens if error hits during upload.
-					reject(error);
-				}, () => {
-					//this is for on complete uploads!
-					//console.log("are we ever hitting the final function!?>!?!?!");
-					let downloadURL = uploadTask.snapshot.downloadURL;
-					let fileObject = {
-						downloadURL: downloadURL,
-						filePath: filePath
-					};
-					resolve(fileObject);
-				});
-			});
-		});
-	}
+
 	
 	
 	

@@ -6,14 +6,16 @@
  * section in database.
  */
 
-import { FirebaseConnection } from '../repositories/firebase/utils';
+//import { FirebaseRef } from '../repositories/firebase/utils';
 import Utils from '../utils';
+import { AdminUtils } from "../repositories/firebase/adminUtils";
+import DatabaseEntryModel from "../models/meeting-minutes";
 //import DatabaseEntryModel from '../models/meeting-minutes';
 
 
 //TODO: Page could have extra security checks/Ui enhancements. Leaving for now because it is for admins.
 
-export default class MeetingMinutesController extends FirebaseConnection{
+export default class MeetingMinutesController extends AdminUtils {
 	/*
 	 * @constructor
 	 * @param {Utils} this.utils
@@ -28,13 +30,16 @@ export default class MeetingMinutesController extends FirebaseConnection{
 	   * our base event to be triggered when page initializes.
 	 */
 	constructor(authenticationService, DatabaseEntryModel) {
-		super();
+		super('meeting-minutes/', DatabaseEntryModel);
 		this.utils = new Utils();
-		this.Model = DatabaseEntryModel;
+		this.dataModel = DatabaseEntryModel;
+		//this.Model = DatabaseEntryModel;
 		this.refPath = 'meeting-minutes/';
 		this.storageRefPath = 'minutes/';
 		this.auth = authenticationService;
 		this.process();
+		
+		
 	}
 	/*
 	* @type {user-only && admin-only}
@@ -48,11 +53,13 @@ export default class MeetingMinutesController extends FirebaseConnection{
 			    subRefPath = '', //Variables used to assign paths to the delete buttons.
 			    subSubRefPath = '';
 			if(this.utils.isPageEnglish()){ //Sets database path to english or french version!
-				this.refPath = this.refPath+'en';
+				this.refPath = this.refPath+'en/';
 			}
 			else{
-				this.refPath = this.refPath+'fr';
+				this.refPath = this.refPath+'fr/';
 			}
+			
+			
 			this.firebase.database().ref(this.refPath).on('value', (snapshot) => { //Iterating over the database
 				snapshot.forEach((childSnapshot) => { //This iterates over the years in the database.
 					elem = ''; //Resetting variable for next iteration.
@@ -117,96 +124,39 @@ export default class MeetingMinutesController extends FirebaseConnection{
 								'<input name="subTitle" type="text" placeholder="Sub Title" required />'+
 								'<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />'+
 								'<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>';
-		let modalController = this;
+		let controller = this;
 		//let databaseModel = new DatabaseEntryModel();
-		modalController.utils.adminDisplayVexDialog(htmlInput, "Add Meeting Minutes",data =>{
+		controller.utils.adminDisplayVexDialog(htmlInput, "Add Meeting Minutes",data =>{
 			//Grabs data entered by the user.
-			console.log(data);
-			let databaseModel = new modalController.Model(data);
-			console.log(databaseModel.obj);
-			
+			if(data && controller.isProperYearRange(data.year, 2000, 2030)) {
+				let fileUpload = document.getElementById('uploadFile').files;
+				if(fileUpload && fileUpload.length == 1) {
+					controller.fileUploadPromise(controller.storageRefPath, fileUpload[0])
+						.then((fileObject) => {
+							let key = data.year;
+							delete data.year;
+							let databaseModel = new controller.dataModel(key, data);
+							databaseModel.bundleFileWithData(fileObject);
+							controller.addEntry(controller.refPath+databaseModel.key, databaseModel.obj)
+								.then(msg =>{
+								controller.utils.displayVexAlert(msg);
+								}).catch(error => {
+								controller.utils.displayVexAlert(error);
+							});
+					}).catch((error) => {
+						controller.utils.displayVexAlert(error);
+						});
+				}
+				else{
+					controller.utils.displayVexAlert("You are missing a file");
+				}
+			}
 		});
-
-		
-		
-			//console.log(databaseModel.object);
-				// if (modalController.isProperYearRange(data.year, 2000, 2030)) {
-				// 	let fileUpload = document.getElementById('uploadFile').files;
-				// 	if (fileUpload.length == 1) {
-				// 		//let meetingMinutes = new DatabaseEntryModel(data.title, data.subTitle);
-				// 		let pushObject = {};
-				// 		console.log("got into the if statement b4 the function?!?!");
-				// 		if(modalController.utils.vexConfirm()){
-				// 			//They clicked they are sure
-				// 			modalController.utils.fileUploadPromise(modalController.firebase, modalController.storageRefPath, fileUpload[0])
-				// 				.then((fileObject) =>{
-				// 				//promise returned 
-				// 				}).catch((error) =>{
-				// 				//error occured.
-				// 			});
-				// 		}
-				// 		else{
-				// 			//clicked no.
-				// 		}
-				//		
-				// 		modalController.addMeetingMinutes(data.year, data.title, data.subTitle, fileUpload[0]);
-				// 	}
-				// 	else {
-				// 		this.utils.displayVexAlert("You may only attach one file per Entry!");
-				// 	}
-				// }
-				// else{
-				// 	this.utils.displayVexAlert("Year must be between 2000 and 2030");
-				// }
-				
-		
-		
-				
-		
-
-		
-
-		
-		
 	} // end addMeetingMinutesEvent
 			
-
-	
-	
-	// /*
-	// * @type {Admin-only}
-	// * @param {String} year
-	// *   contains the string for the year entered in modal by admin 
-	// * @param {String} title
-	// *   contains the string for the title entered in modal by admin
-	// * @param {String} subTitle
-	// *   contains the string for the subTitle entered in modal by admin
-	// * @param {Object} file
-	// *   A reference to the file object gathered by input element entered by the admin
-	// */
-	// addMeetingMinutes(year, title, subTitle, file){
-	// 	let modalController = this;
-	// 	this.vexConfirm().then( () => {
-	// 		modalController.utils.fileUploadPromise(firebase, modalController.storageRefPath, file).then( (fileObject ) =>{
-	// 			firebase.database().ref(this.refPath+'/'+year).push({
-	// 				title: title,
-	// 				subTitle: subTitle,
-	// 				fileTitle: file.name,
-	// 				fileLink: fileObject.downloadURL,
-	// 				filePath: fileObject.filePath
-	// 			}).then( () => {
-	// 				vex.dialog.alert('<h3><strong>Successfully added new Entry!</strong></h3>');
-	// 				location.reload();
-	// 			});
-	// 		}).catch((error) => {
-	// 			//TODO: add error message in vex, based off error code.
-	// 			vex.dialog.alert('<h3><strong>'+error+'</strong></h3>');
-	// 			console.log("an Error occurred, Error "+ error);
-	// 		})
-	// 	}).catch( () => {
-	// 		console.log("The promise returned false!!!!");
-	// 	});
-	// }
+	somefunction(){
+		
+	}
 	
 	/*
 	 * @type {Admin-only}
@@ -258,7 +208,14 @@ export default class MeetingMinutesController extends FirebaseConnection{
 	 *   The ceiling limit of years allowed.
 	 */
 	isProperYearRange(year, startYear, endYear){
-		return year > startYear && year < endYear;
+			if(year >= startYear && year <= endYear){
+				return true;
+			}
+			else{
+				this.utils.displayVexAlert("Year must be between "+startYear+" and "+ endYear+ " inclusive");
+				return false;
+			}
+
 	}
 	
 	// /*
