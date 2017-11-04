@@ -121948,7 +121948,6 @@ var ViewExchangePayments = function () {
                 var exchangeBox = $('#selected-exchange');
                 var exchanges = {};
                 val.forEach(function (exchange) {
-                    console.log(exchange);
                     exchanges[exchange.key] = exchange;
                     exchangeBox.append($('<option>', {
                         value: exchange.key,
@@ -121971,8 +121970,7 @@ var ViewExchangePayments = function () {
 
             var _loop = function _loop(exchangeId) {
                 _this2.exchangePaymentRepository.get(id + '/' + exchangeId).then(function (val) {
-                    var user = val.user;
-                    var row = [exchangeId, user.email, user.given_name, user.family_name, val.amount, val.approved];
+                    var row = [exchangeId, val.custom.email, val.custom.name, val.amount, val.approved === '1' ? 'Yes' : 'No'];
                     _this2.t.row.add(row).draw(false);
                 });
             };
@@ -122450,15 +122448,16 @@ var ExchangePaymentRepository = function (_FirebaseRepository) {
     _createClass(ExchangePaymentRepository, [{
         key: 'get',
         value: function get(id) {
-            var _this2 = this;
-
             return _get(ExchangePaymentRepository.prototype.__proto__ || Object.getPrototypeOf(ExchangePaymentRepository.prototype), 'get', this).call(this, id).then(function (payment) {
-                return _this2.UserRepository.get(payment.uid).then(function (user) {
-                    delete payment.uid;
-                    payment.user = user;
-                    return payment;
-                });
-            }).catch(function (err) {
+                return payment;
+            })
+            // this.UserRepository.get(payment.uid)
+            // .then(user => {
+            //     delete payment.uid;
+            //     payment.user = user;
+            //     return payment;
+            // }))
+            .catch(function (err) {
                 return console.log('Error: ' + err);
             });
         }
