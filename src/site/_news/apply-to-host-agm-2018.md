@@ -12,7 +12,7 @@ lang: en
 
 **The CFMS Executive will review applications received by December 4th, 2017 11:59 PM EST, with the winning school announced December 8th.**<br><br>Please see the attached Proposal Request document which outlines all items needed in a school’s bid. The scoring matrix and the sponsorship policy are also included to help facilitate your application process.<br><br>Any requests, questions or concerns can be directed to the CFMS Western Regional Representative Victor Do ([vdo@ualberta.ca](javascript:void(location.href='mailto:'+String.fromCharCode(118,100,111,64,117,97,108,98,101,114,116,97,46,99,97))))
 
-> *Important Documents:*<br>[CFMS AGM 2018 Bid Proposal Request](/CFMS AGM 2018 Bid_Proposal Request.pdf)
+> *Important Documents:*<br>[CFMS AGM 2018 Bid Proposal Request](/uploads/news-documents/CFMS AGM 2018 Bid_Proposal Request.pdf)
 >
 >
-> [CFMS AGM 2018 Selection Process and Scoring Matix](/CFMS AGM 2018 Selection Process &amp; Matrix.pdf)
+> [CFMS AGM 2018 Selection Process and Scoring Matix](/uploads/news-documents/CFMS AGM 2018 Selection Process &amp; Matrix.pdf)

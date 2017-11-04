@@ -10,4 +10,4 @@ Medical societies, meeting delegates and member medical students are invited to 
 
 Resolutions must be received by Dr Carl White Ulysse, CFMS SGM Chair, by e-mail at [resolutions@cfms.org](&#109;&#097;&#105;&#108;&#116;&#111;:&#114;&#101;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;&#064;&#099;&#102;&#109;&#115;&#046;&#111;&#114;&#103;).
 
-[Submission details, including associated guidelines, can be found here.](/Call for Resolutions - Detailed Document.pdf)
+[Submission details, including associated guidelines, can be found here.](/uploads/news-documents/Call for Resolutions - Detailed Document.pdf)

@@ -12,4 +12,4 @@ Interested individuals must forward their names and full contact information by 
 
 Nominations will close strictly at this time. Any CFMS member student may run. While previous experience with the workings of the CFMS is strongly encouraged, it is not required.
 
-For more information, please click [here](/Call for Nominations - Detailed Document.pdf).
+For more information, please click [here](/uploads/news-documents/Call for Nominations - Detailed Document.pdf).
