@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 
+
+
+
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
@@ -71,10 +74,12 @@
 
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/news.css">
+	
+		<link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
+	
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-	
+
 	
 		<div id="top-padding"></div>
 		<div id="top-bar" class="invert en">
@@ -121,10 +126,6 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
-						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/news/archives/5/index.html">FR</a></li>
-						
-					
 				</ul>
 			</div>
 		</div>
@@ -139,126 +140,99 @@
 		document.querySelector( "#news" ).classList.toggle("active");
 	</script>
 
-	<div id="archives" class="content">
-		<div id="archives-title">All Articles | 5 of 9</div>
-    	<div id="aside">
-			<h6>About the CFMS</h6>
-			The CFMS is an organization representing over 8,000 medical students from 14 Canadian medical student societies from coast to coast. We represent medical students to the public, to the federal government, and to national and international medical organizations.
+	<div class="content">
+
+		<!-- News Article -->
+   		<div id="aside">
+			
+				<h6>About the CFMS</h6>
+				The CFMS is an organization representing over 8,000 medical students from 14 Canadian medical student societies from coast to coast. We represent medical students to the public, to the federal government, and to national and international medical organizations.
+			
 		</div>
+        <div id="title">OPEN LETTER: CFMS Response to AFMC Support for Matching Canadian Medical Graduates</div>
+        <info datetime="2017-11-07">
+        </info>
+    	<div id="date">November 07, 2017</div>
+        <div id="body">
+	        <p>Dear Dr. Michael Strong</p>
 
-		<!-- This loops through the paginated posts -->
-		<ul>
-			
-				<li>
-					<h1><a href="/news/2016/05/03/carms-forum-at-ccme-2016.html">CaRMS Forum at CCME 2016</a></h1>
-			    	<span class="date">May 03, 2016</span>
-			    </li>
-			
-				<li>
-					<h1><a href="/news/2016/04/30/call-for-applications-ifmsa-general-assembly-in-mexico.html">Call for Applications – IFMSA General Assembly in Mexico</a></h1>
-			    	<span class="date">April 30, 2016</span>
-			    </li>
-			
-				<li>
-					<h1><a href="/news/2016/04/30/call-for-applications-cfms-national-exchange-officer-neo.html">Call for Applications – CFMS National Exchange Officer (NEO)</a></h1>
-			    	<span class="date">April 30, 2016</span>
-			    </li>
-			
-				<li>
-					<h1><a href="/news/2016/04/25/cfms-new-website.html">Welcome to the new CFMS Website!</a></h1>
-			    	<span class="date">April 25, 2016</span>
-			    </li>
-			
-				<li>
-					<h1><a href="/news/2016/03/16/national-summer-institute-refugee-health.html">2016 National Summer Institute in Refugee Health</a></h1>
-			    	<span class="date">March 16, 2016</span>
-			    </li>
-			
-				<li>
-					<h1><a href="/news/2016/03/04/cma-medical-student-internship.html">CMA &ndash; Medical Student Internship Opportunity</a></h1>
-			    	<span class="date">March 04, 2016</span>
-			    </li>
-			
-				<li>
-					<h1><a href="/news/2016/02/29/cfms-sgm-2016-registration-open.html">CFMS SGM 2016 &ndash; Registration is now open!</a></h1>
-			    	<span class="date">February 29, 2016</span>
-			    </li>
-			
-				<li>
-					<h1><a href="/news/2016/02/28/cfms-sgm-2016-call-for-resolutions-deadline-march-25th-2016.html">CFMS SGM 2016: Call for Resolutions (DEADLINE March 25th, 2016)</a></h1>
-			    	<span class="date">February 28, 2016</span>
-			    </li>
-			
-				<li>
-					<h1><a href="/news/2016/02/28/cfms-sgm-2016-call-for-nominations-president-elect.html">CFMS SGM 2016 &ndash; Call for Nominations: CFMS President-Elect</a></h1>
-			    	<span class="date">February 28, 2016</span>
-			    </li>
-			
-				<li>
-					<h1><a href="/news/2016/02/19/cfms-call-for-nominations-external-representatives-2016.html">CFMS Call for Nominations - External Representatives 2016</a></h1>
-			    	<span class="date">February 19, 2016</span>
-			    </li>
-			
-		</ul>
+<p>AFMC Board Chair</p>
 
-		
-			<div id="pagination">
+<p>-&amp;-</p>
 
-				<!-- Previous Page -->
-				
-					
-						<div id="prev-button" class="button"><a href="/news/archives/4/index.html">Previous Page</a></div>
-					
-				
+<p>Dr. Geneviève Moineau</p>
 
-				<!-- Page Listing -->
-				<div id="page-listing">
-					
-					
-					<a class="page-link" href="/news/archives/">1</a>
-					
-					
-					
-					<a class="page-link" href="/news/archives/2/">2</a>
-					
-					
-					
-					<a class="page-link" href="/news/archives/3/">3</a>
-					
-					
-					
-					<a class="page-link" href="/news/archives/4/">4</a>
-					
-					
-					
-					<em id="current-page" class="page-link">5</em>
-					
-					
-					
-					<a class="page-link" href="/news/archives/6/">6</a>
-					
-					
-					
-					<a class="page-link" href="/news/archives/7/">7</a>
-					
-					
-					
-					<a class="page-link" href="/news/archives/8/">8</a>
-					
-					
-					
-					<a class="page-link" href="/news/archives/9/">9</a>
-					
-					
-				</div>
+<p>AFMC President &amp; CEO</p>
 
-				<!-- Next Page -->
-				
-				    <div id="next-button" class="button"><a href="/news/archives/6/index.html">Next Page</a></div>
-			    
-			</div>
-		
+<p><strong><u>OPEN LETTER: CFMS RESPONSE TO AFMC SUPPORT FOR MATCHING CANADIAN MEDICAL GRADUATES </u></strong></p>
+
+<p>The Canadian Federation of Medical Students (CFMS) commends the Association of Faculties of Medicine of Canada (AFMC)’s recent announcement expressing strong commitment from Canada’s Deans of Medicine to matching graduates of Canadian medical schools.</p>
+
+<p>According to data from the Canadian Residency Matching Service (CaRMS), the most recent match cycle yielded 68 unmatched current-year Canadian Medical Graduates (CMGs) after both iterations. Additionally, there were 46 prior-year unmatched CMGs and 31 current-year CMGs who did not participate in the second iteration after going unmatched in the first. With a total of 145 Canadian medical student participants who were unsuccessful in securing a residency position after both iterations, this is the highest number of unmatched CMGs our nation has ever seen. The number is expected to increase exponentially should purposeful and urgent action not be taken.</p>
+
+<p>The CFMS represents over 8,300 Canadian medical students nationally at 15 medical schools. We have worked collaboratively with the AFMC through, but not limited to, its Residency Matching Committee to ensure that solutions to the unmatched CMG crisis are being developed in a timely fashion. There remains, however, much more work to be done. We stress the need for continued collaboration between the CFMS, its partner learner organizations, and the AFMC.</p>
+
+<p>In this vein, we strongly emphasize the important role Canada’s medical faculties can play in supporting unmatched CMGs—many of whom have been unsuccessful in multiple cycles. We continue to strongly recommend that all Canadian medical faculties:</p>
+
+<ol>
+  <li>Adopt a standardized extension of clerkship curriculum for all medical students who go unmatched after the second iteration of the CaRMS residency match in their graduating year.</li>
+  <li>Provide better education and awareness about both preventable and non-preventable red flags to students throughout the entire duration of their undergraduate medical education, with increased emphasis in the final year.</li>
+  <li>Offer comprehensive wellness and mental health resources and supports to any student who goes unmatched following the CaRMS residency match process.</li>
+  <li>Provide personalized career planning resources to unmatched medical students including information about non-clinical careers.</li>
+  <li>Extend student status to all unmatched students entering the extended clerkship curriculum to ensure student loans do not require repayment during the unmatched cycle.</li>
+  <li>Extend student status to all unmatched students or provide insurance coverage such that unmatched students can continue clinical duties and secure clinical electives.</li>
+  <li>Urge their postgraduate programs to provide timely feedback to unmatched students to help them better understand the reasons they were unmatched and to allow them to improve for future residency matches.</li>
+  <li>Explore the development of an unmatched student network.</li>
+</ol>
+
+<p>Finally, the CFMS strongly endorses a return of the ratio of Canadian medical student applicants to postgraduate entry positions to 1:1.2. In order to achieve this goal, we encourage the AFMC to work with provincial and federal governments to increase the number of residency positions available to CMGs.</p>
+
+<p>The CFMS is optimistic that many of these recommendations can be realized well in advance of the currently proposed deadline of October 2018 and looks forward to actively participating in the upcoming AFMC consultation process to develop further recommendations.</p>
+
+<p>The CFMS board and I look forward to the opportunity to meet with you to further discuss this important issue.</p>
+
+<p>Sincerely,</p>
+
+<p><img src="/uploads/versions/henry--kaylynn-signature-line-1---x----821-106x---.png" alt="" />Henry Annan                                                            Kaylynn Purdy</p>
+
+<p>CFMS President 2017-18                                     CFMS VP Medical Education 2017-18</p>
+
+        </div>
 	</div>
+	    <!-- Other News -->
+        <div id="other-news">
+			<h1>Other News</h1>
+			<div id="other-news-list">
+				
+				
+					<div class="news-date">Nov 07</div>
+					<li>
+						<div class="news-link"><a href="/news/2017/11/07/open-letter.html">OPEN LETTER: CFMS Response to AFMC Support for Matching Canadian Medical Graduates</a></div>
+					</li>
+				
+					<div class="news-date">Nov 01</div>
+					<li>
+						<div class="news-link"><a href="/news/2017/11/01/tedmed-2017-livestream-nov-1-3.html">TEDMED 2017: Stream On-Demand, Until February 8th</a></div>
+					</li>
+				
+					<div class="news-date">Oct 31</div>
+					<li>
+						<div class="news-link"><a href="/news/2017/10/31/medical-students-applaud-world-medical-association-statement-on-bullying-and-harassment-within-the-profession.html">PRESS RELEASE: Medical students applaud World Medical Association statement on bullying and harassment within the profession</a></div>
+					</li>
+				
+					<div class="news-date">Oct 28</div>
+					<li>
+						<div class="news-link"><a href="/news/2017/10/28/call-for-applications-policy-rapid-response-team.html">Call for Applications: Policy Rapid Response Team (Due November 10th)</a></div>
+					</li>
+				
+					<div class="news-date">Oct 27</div>
+					<li>
+						<div class="news-link"><a href="/news/2017/10/27/call-for-applications-opioids-task-force.html">Call for Applications: Opioids Task Force (Due November 10th)</a></div>
+					</li>
+				
+				
+			</div>
+		</div>
 	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -447,3 +421,4 @@ $('.redirect-modal').click(function(){
 
 </body>
 </html>
+
