@@ -52,3 +52,5 @@ Sincerely,
 ![](/uploads/versions/henry--kaylynn-signature-line-1---x----821-106x---.png)Henry Annan &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Kaylynn Purdy
 
 CFMS President 2017-18 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CFMS VP Medical Education 2017-18
+
+[/CFMS Open Letter- Response to AFMC Support for Matching CMGs.pdf](/CFMS Open Letter- Response to AFMC Support for Matching CMGs.pdf)
