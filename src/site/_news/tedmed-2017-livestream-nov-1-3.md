@@ -12,7 +12,7 @@ lang: en
 
 The CMA recently announced an exciting 3-year partnership with the world-famous TEDMED, becoming the first Canadian global partner.&nbsp; The CMA is pleased to make CFMS members part of this partnership, with an opportunity to stream any of the presentations in real-time or on-demand.&nbsp;
 
-Live sessions can be viewed between November 1<sup>st</sup>&nbsp;and 3rd, while** on demand sessions can be viewed from November 2<sup>nd</sup>&nbsp;to February 8<sup>th</sup>.**
+Live sessions can be viewed between November 1<sup>st</sup>&nbsp;and 3rd, while **on demand sessions can be viewed from November 2<sup>nd</sup>&nbsp;to February 8<sup>th</sup>**.
 
 **Take a look at the&nbsp;[program](http://www.tedmed.com/event/stageprogram) to see what sessions interest you.**
 
