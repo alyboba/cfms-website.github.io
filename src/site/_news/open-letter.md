@@ -26,7 +26,7 @@ AFMC President & CEO
 
 The Canadian Federation of Medical Students (CFMS) commends the Association of Faculties of Medicine of Canada (AFMC)’s recent announcement expressing strong commitment from Canada’s Deans of Medicine to matching graduates of Canadian medical schools.
 
-According to data from the Canadian Residency Matching Service (CaRMS), the most recent match cycle yielded 68 unmatched current-year Canadian Medical Graduates (CMGs) after both iterations. Additionally, there were 46 prior-year unmatched CMGs and 31 current-year CMGs who did not participate in the second iteration after going unmatched in the first. With a total of 145 Canadian medical student participants who were unsuccessful in securing a residency position after both iterations, this is the highest number of unmatched CMGs our nation has ever seen. The number is expected to increase exponentially should purposeful and urgent action not be taken.
+According to data from the Canadian Residency Matching Service (CaRMS), the most recent match cycle yielded 68 unmatched current-year Canadian Medical Graduates (CMGs) after both iterations. Additionally, there were 46 prior-year unmatched CMGs and 31 current-year CMGs who did not participate in the second iteration after going unmatched in the first. These numbers are expected to increase exponentially should purposeful and urgent action not be taken.
 
 The CFMS represents over 8,300 Canadian medical students nationally at 15 medical schools. We have worked collaboratively with the AFMC through, but not limited to, its Residency Matching Committee to ensure that solutions to the unmatched CMG crisis are being developed in a timely fashion. There remains, however, much more work to be done. We stress the need for continued collaboration between the CFMS, its partner learner organizations, and the AFMC.
 
@@ -52,5 +52,7 @@ Sincerely,
 ![](/uploads/versions/henry--kaylynn-signature-line-1---x----821-106x---.png)Henry Annan &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Kaylynn Purdy
 
 CFMS President 2017-18 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CFMS VP Medical Education 2017-18
+
+***Correction:** An earlier version of this open letter stated that 145 Canadian medical students were unsuccessful in securing a residency position after both iterations. However, this number includes 32 current year residents that were unsuccessful in transferring residency programs.*
 
 [/CFMS Open Letter- Response to AFMC Support for Matching CMGs.pdf](/CFMS Open Letter- Response to AFMC Support for Matching CMGs.pdf)
