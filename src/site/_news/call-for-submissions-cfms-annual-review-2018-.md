@@ -9,7 +9,7 @@ lang: en
 ---
 
 
-The CFMS Annual Review, an annual magazine showcasing initiatives, research, projects, and creative talent from medical students across Canada, is calling for submissions from all medical students. Share stories from your travels and clinical experiences. Tell us about your reflections, musings, and opinions. Show off your artistic talent, be it poetry, painting, or photography.
+![](/uploads/versions/annual-review---x----2249-2249x---.png)The CFMS Annual Review, an annual magazine showcasing initiatives, research, projects, and creative talent from medical students across Canada, is calling for submissions from all medical students. Share stories from your travels and clinical experiences. Tell us about your reflections, musings, and opinions. Show off your artistic talent, be it poetry, painting, or photography.
 
 The magazine is circulated to readers across Canada, including medical students, medical school deans, medical organizations, provincial ministers of health, and members of parliament.
 
