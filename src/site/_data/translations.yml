@@ -281,6 +281,9 @@ sidebar-advocacy:
     lobby-day: Lobby Day
     position-papers: Position Papers
     toolkit: Advocacy Toolkit
+    day-of-action: Day of Action
+    task-forces: Task Forces
+    research-committee: Research Committee
   - lang: fr
     sidebar-title_1: Plaidoirie
     overview: Aperçu
@@ -289,6 +292,9 @@ sidebar-advocacy:
     lobby-day: Journée de plaidoirie
     position-papers: Exposés de position
     toolkit: Trousse-à-outils pour plaidoirie
+    day-of-action: Journée d'action
+    task-forces: Task Forces
+    research-committee: Comité de recherche
 sidebar-discounts:
   - lang: en
     sidebar-title_1: Discounts
