@@ -16,6 +16,6 @@ The Canadian Federation of Medical Students is inviting applications to join the
 
 Applications are due **Tuesday, November 30th, 2017 at 23:59 EST.**
 
-The application can be found here: https://docs.google.com/forms/d/e/1FAIpQLSeruDu2apX3p03NesRsWQUTgViqdjHGbsU6GjC3X3XMRb020w/viewform
+The application can be found here: [https://docs.google.com/forms/d/e/1FAIpQLSeruDu2apX3p03NesRsWQUTgViqdjHGbsU6GjC3X3XMRb020w/viewform](https://docs.google.com/forms/d/e/1FAIpQLSeruDu2apX3p03NesRsWQUTgViqdjHGbsU6GjC3X3XMRb020w/viewform)
 
 Questions can be directed to the CFMS VP Global Health, Chris Briggs at [vpglobalhealth@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,103,108,111,98,97,108,104,101,97,108,116,104,64,99,102,109,115,46,111,114,103)))
