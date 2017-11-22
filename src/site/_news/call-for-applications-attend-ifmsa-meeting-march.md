@@ -12,7 +12,7 @@ lang: en
 ---
 
 
-The Canadian Federation of Medical Students is inviting applications to join the CFMS Delegation to the IFMSA General Assembly in Hurghada, Egypt, March 1-7, 2018. CFMS will select a small and effective team, and provide partial funding to help support the cost of their travel.
+![](/uploads/versions/attend-ifmsa---x----2000-756x---.png)The Canadian Federation of Medical Students is inviting applications to join the **CFMS Delegation to the IFMSA General Assembly in Hurghada, Egypt, March 1-7, 2018**. CFMS will select a small and effective team, and provide partial funding to help support the cost of their travel.
 
 Delegates may also choose to attend the pre-March Meeting from February 25- March 1, on their own prerogative.
 
