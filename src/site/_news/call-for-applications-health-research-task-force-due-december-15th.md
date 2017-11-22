@@ -1,6 +1,6 @@
 ---
 title: 'Call for Applications: Health Research Task Force (Due December 15th)'
-date:
+date: 2017-11-22 00:00:00
 description: >-
   The purpose of this task force is to research, gather, and formulate a CFMS
   briefing document and written statement to the Standing Committee on Health
@@ -23,4 +23,4 @@ Deadline: Friday December 15, 2017 @ midnight ET
 
 Link to application: [https://goo.gl/forms/FgmlLG6G1MQLNJvh1](https://goo.gl/forms/FgmlLG6G1MQLNJvh1)
 
-For questions please contact Yipeng Ge, VP Government Affairs ([vpgovtaffairs@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,103,111,118,116,97,102,102,97,105,114,115,64,99,102,109,115,46,111,114,103))))&nbsp;
+For questions please contact Yipeng Ge, VP Government Affairs ([vpgovtaffairs@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,103,111,118,116,97,102,102,97,105,114,115,64,99,102,109,115,46,111,114,103))))
