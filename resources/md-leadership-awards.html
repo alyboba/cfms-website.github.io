@@ -162,6 +162,11 @@
 					<li><a id="finances" href="student-finances.html">Student Finances</a></li>
 					<li><a id="leadership-awards" href="/resources/md-leadership-awards.html">MD Leadership Awards</a></li>
 					
+						<div class="members-only">
+							<li><a id="travel-awards-instructions" style="padding-left:15px;" href="/resources/md-leadership-awards-instructions.html">How to Apply</a></li>
+							<li><a id="leadership-awards-apply-now" style="padding-left:15px;" href="/resources/md-leadership-awards-application.html">Submit Application</a></li>
+						</div>
+					
 					<!-- Removed side previous winners -->
 					<!-- <li><a id="leadership-awards-prev-winners" style="padding-left:15px;" href="/resources/md-leadership-awards-prev-winners.html">Previous Recipients</a></li> -->
 					<li><a id="travel-awards" href="/resources/md-travel-awards.html">MD Travel Awards</a></li>
@@ -191,20 +196,23 @@
    			<a id="finances-side-image" href="https://mdm.ca/"><img class="right" style="max-width:25%" src="/images/MDFM_CFMS.jpg" /></a>
 
 			<p>The CFMS and MD Financial Management want to recognize some of the passionate, dedicated and caring medical student leaders across Canada who have made innovative contributions to their schools and communities.</p>
-			<p>In recognition of their achievements, one student from each of the 14 member schools of the Canadian Federation of Medical Students (CFMS) will receive a Medical Student Leadership Award. This award consists of:</p>
+			<p>In recognition of their achievements, one student from each of the 15 member schools of the Canadian Federation of Medical Students (CFMS) will receive a Medical Student Leadership Award. This award consists of:</p>
 			<ol>
 				<li>A certificate of recognition</li>
 				<li>A cash prize of $2000</li>
-				<li>Subsidized travel to the awards reception at the CFMS Spring General Meeting in Winnipeg on April 28-29<sup>th</sup>, 2017</li>
+				<li>Subsidized travel to the awards reception at the CFMS Spring General Meeting in Halifax on April 27-29<sup>th</sup>, 2018</li>
 			</ol>
 			
 			
 			<div>
-				<blockquote>
-					<h4><strong>Applications to the CFMS &ndash; MD Financial Management Leadership Awards are currently closed</strong></h4>
-					<ul>
-						<li>Applications for 2018 year will open in late Fall 2017</li>
+				<blockquote class="editable">
+					<h4><strong>Apply to the 2018 CFMS &ndash; MD Financial Management Leadership Awards</strong></h4>
+					<ul class="non-members">
+						<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to apply.</li>
 					</ul>
+					<div id="application-instructions-button" class="button members-only">
+						<a href="md-leadership-awards-instructions.html">See Instructions</a>
+					</div>
 				</blockquote>
 			</div>
 			
@@ -393,7 +401,7 @@ $('.redirect-modal').click(function(){
 	window.config = {
 		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","communications":"Communications","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","human-of-medicine":"Humans of Medicine","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","communications":"Communications","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","human-of-medicine":"Humains de la Médecine","login":"Se connecter","logout":"Se déconnecter"}]`),
 		lang: `en`,
-		leadership_award_year: `2016-2017`,
+		leadership_award_year: `2017-2018`,
 		env: `production`
 	}
 </script>

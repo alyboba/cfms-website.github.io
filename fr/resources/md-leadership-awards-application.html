@@ -164,6 +164,11 @@
 					<li><a id="finances" href="student-finances.html">Les finances des étudiants</a></li>
 					<li><a id="leadership-awards" href="/fr/resources/md-leadership-awards.html">Prix de leadership MD</a></li>
 					
+						<div class="members-only">
+							<li><a id="travel-awards-instructions" style="padding-left:15px;" href="/fr/resources/md-leadership-awards-instructions.html">How to Apply</a></li>
+							<li><a id="leadership-awards-apply-now" style="padding-left:15px;" href="/fr/resources/md-leadership-awards-application.html">Submit Application</a></li>
+						</div>
+					
 					<!-- Removed side previous winners -->
 					<!-- <li><a id="leadership-awards-prev-winners" style="padding-left:15px;" href="/fr/resources/md-leadership-awards-prev-winners.html">Previous Recipients</a></li> -->
 					<li><a id="travel-awards" href="/fr/resources/md-travel-awards.html">Bourses de voyage MD</a></li>
@@ -189,98 +194,144 @@
 
 		<div class="student-finances-content">
 			<h1 id="page-title">Submit your Application</h1>
+
 			<a id="finances-side-image" href="https://mdm.ca/"><img class="right" style="max-width:25%" src="/images/MDFM_CFMS.jpg"></a>
 
-			<div class="members-only">
-				<p>Apply to the CFMS-MD Financial Management Leadership Awards via the form below. Questions about the application process can be directed to the CFMS VP Services, Han Yan, at <a href="mailto:vpservices@cfms.org">vpservices@cfms.org</a>.</p>
+			
+				<div class="members-only">
+					<!--Displays the application submission form-->
+					<div class="before-submission">
+						<blockquote>
+							<h2 class="submission-header"><strong>Your Application</strong></h2>
+							<label>Name</label>
+							<div class="submission-text-field"><span id="account-name"></span></div>
+							<label>Medical School</label>
+							<div class="submission-text-field"><span id="account-school"></span></div>
+							<label>Graduating Year</label>
+							<div class="submission-text-field"><span id="account-grad-year"></span></div>
+							<label>Email Address</label>
+							<div class="submission-text-field" style="display:none"><span id="account-email"></span></div>
+							<div class="input">
+								<input name='email-address' id='email-address' type='email' placeholder=''/>
+							</div>
+							<label>CMA Membership ID (Six Digits)</label>
+							<div class="input">
+								<input name='cma-membership' id='cma-membership' type='text' placeholder=''/>
+							</div>
+							<label>Twitter Handle (optional)</label>
+							<div class="input">
+								<input name='twitter-handle' id='twitter-handle' type='text' value='@'/>
+							</div>
+							<label>Meeting Attendance</label>
+							<p class="submission-body-text">If selected, will you be available to attend the Spring General Meeting in Halifax (April 27-29, 2018)?</p>
+							<div class="input">
+								<div class="select">
+									<select id='attend-cfms-meeting'>
+									  <option value="Yes I'll be able to attend">Yes I'll be able to attend</option>
+									  <option value="No I will not be able to attend">No I will not be able to attend</option>
+									</select>
+									<div class="select_arrow"></div>
+								</div>
+							</div> 
 
-				<blockquote>
-					<h2 class="submission-header"><strong>Your Application</strong></h2>
-					<label>Name</label>
-					<div class="submission-text-field"><span id="account-name"></span></div>
-					<label>Medical School</label>
-					<div class="submission-text-field"><span id="account-school"></span></div>
-					<label>Graduating Year</label>
-					<div class="submission-text-field"><span id="account-grad-year"></span></div>
-					<label>Email Address</label>
-					<div class="submission-text-field"><span id="account-email"></span></div>
-					<label>CMA Membership ID (Six Digits)</label>
-					<div class="input">
-						<input name='cma_membership' id='cma_membership' type='text' placeholder=''/>
-					</div>
-					<label>Twitter Handle (optional)</label>
-					<div class="input">
-						<input name='twitter-handle' id='twitter-handle' type='text' value='@'/>
-					</div>
-					<label>Meeting Attendance</label>
-					<p class="submission-body-text">If selected, will you be available to attend the Spring General Meeting in Winnipeg (April 28-29, 2017)?</p>
-					<div class="input">
-						<div class="select">
-							<select id='attend-cfms-meeting'>
-							  <option value="Yes I'll be able to attend">Yes I'll be able to attend</option>
-							  <option value="No I will not be able to attend">No I will not be able to attend</option>
-							</select>
-							<div class="select_arrow"></div>
-						</div>
-					</div> 
+							<h2 class="submission-header"><strong>Upload Files</strong></h2>
+							<p class="submission-body-text">Please make sure that you follow the instructions in the <a href="md-leadership-awards-instructions.html">How to Apply</a> section. Applications that do not meet the criteria will be <em>disqualified</em>. When you are finished, press the <strong>Submit Application</strong> button.</p>
+							<p class="submission-body-text" style="padding-top:0px">Files that you upload are <strong>saved automatically</strong>. Please submit documents in either a <strong>PDF</strong> or <strong>DOC/DOCX</strong> format.</p>
 
-					<h2 class="submission-header"><strong>Upload Files</strong></h2>
-					<p class="submission-body-text">Please make sure that you follow the instructions in the <a href="md-leadership-awards-instructions.html">How to Apply</a> section. Applications that do not meet the criteria will be <em>disqualified</em>. When you are finished, press the <strong>Submit Application</strong> button.</p>
-					<p class="submission-body-text" style="padding-top:0px">Files that you upload are <strong>saved automatically</strong>. Please submit documents in either a <strong>PDF</strong> or <strong>DOC/DOCX</strong> format.</p>
+							<label>Personal Statement</label>
+							<div>
+								<input type="file" name="personal-statement" id="personal-statement" class="inputfile awardApplicationUpload" disabled/>
+								<label for="personal-statement"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+							</div>
+							<div id="personal-statement-link" class="file-link"></div>
 
-					<label>Personal Statement</label>
-					<div>
-						<input type="file" name="personal-statement" id="personal-statement" class="inputfile awardApplicationUpload" disabled/>
-						<label for="personal-statement"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
-					</div>
-					<div id="personal-statement-link" class="file-link"></div>
+							<label>Resume/Curriculum Vitae</label>
+							<div>
+								<input type="file" name="curriculum-vitae" id="curriculum-vitae" class="inputfile awardApplicationUpload" disabled/>
+								<label for="curriculum-vitae"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+							</div>
+							<div id="curriculum-vitae-link" class="file-link"></div>
 
-					<label>Resume/Curriculum Vitae</label>
-					<div>
-						<input type="file" name="curriculum-vitae" id="curriculum-vitae" class="inputfile awardApplicationUpload" disabled/>
-						<label for="curriculum-vitae"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
-					</div>
-					<div id="curriculum-vitae-link" class="file-link"></div>
+							<label>Letter of Good Standing</label>
+							<div>
+								<input type="file" name="letter-good-standing" id="letter-good-standing" class="inputfile awardApplicationUpload" disabled/>
+								<label for="letter-good-standing"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+							</div>
+							<div id="letter-good-standing-link" class="file-link"></div>
 
-					<label>Letter of Good Standing</label>
-					<div>
-						<input type="file" name="letter-good-standing" id="letter-good-standing" class="inputfile awardApplicationUpload" disabled/>
-						<label for="letter-good-standing"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
-					</div>
-					<div id="letter-good-standing-link" class="file-link"></div>
+							<label>Reference Letter 1</label>
+							<div>
+								<input type="file" name="reference-1" id="reference-1" class="inputfile awardApplicationUpload" disabled/>
+								<label for="reference-1"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+							</div>
+							<div id="reference-1-link" class="file-link"></div>
 
-					<label>Reference Letter 1</label>
-					<div>
-						<input type="file" name="reference-1" id="reference-1" class="inputfile awardApplicationUpload" disabled/>
-						<label for="reference-1"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
-					</div>
-					<div id="reference-1-link" class="file-link"></div>
+							<label>Reference Letter 2</label>
+							<div>
+								<input type="file" name="reference-2" id="reference-2" class="inputfile awardApplicationUpload" disabled/>
+								<label for="reference-2"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+							</div>
+							<div id="reference-2-link" class="file-link"></div>
 
-					<label>Reference Letter 2</label>
-					<div>
-						<input type="file" name="reference-2" id="reference-2" class="inputfile awardApplicationUpload" disabled/>
-						<label for="reference-2"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
+							<div class="button" id="submit-button" style="margin-top:10px;">
+								<a href="#page-title" onclick='window.submitApplication();'>
+									<strong>Submit Application</strong>
+								</a>
+							</div>
+						</blockquote>
 					</div>
-					<div id="reference-2-link" class="file-link"></div>
 
-					<div class="button" id="submit-button" style="margin-top:10px;">
-						<a style="cursor:pointer" onclick='handleSignUp();'>
-							<strong>Submit Application</strong>
-						</a>
+					<!--Displays your application once you've submitted-->
+					<div class="after-submission">
+						<blockquote>
+							<h3 style="padding-bottom:20px"><strong>Your Application has been Submitted</strong></h3>
+				            <div class="flex-wrapper award-application">
+					            <div class="left-col">
+						            <h4 class="review-header"><strong>Your Application</strong></h4>
+									<label>Name</label>
+									<div id="submitted-name" class="review-text-field"></div>
+									<label>Medical School</label>
+									<div id="submitted-school" class="review-text-field"></div>
+									<label>Graduating Year</label>
+									<div id="submitted-grad-year" class="review-text-field"></div>
+									<label>Email Address</label>
+									<div id="submitted-email" class="review-text-field"></div>
+									<label>CMA Membership ID</label>
+									<div id="submitted-cma-id" class="review-text-field"></div>
+									<label>Twitter Handle</label>
+									<div id="submitted-twitter-handle" class="review-text-field"></div>
+									<label>Attending the CFMS SGM?</label>
+									<div id="submitted-attending-sgm" class="review-text-field"></div>
+					            </div>
+					            <div class="right-col">
+					            	<h4 class="review-header"><strong>Attached Files</strong></h4>
+					            	<ul>
+										<li><a id="submitted-personal-statement" href="" target="_blank">Personal Statement</a></li>
+										<li><a id="submitted-curriculum-vitae" href="" target="_blank">Resume/Curriculum Vitae</a></li>
+										<li><a id="submitted-letter-good-standing" href="" target="_blank">Proof of Good Standing</a></li>
+										<li><a id="submitted-reference-1" href="" target="_blank">Reference Letter #1</a></li>
+										<li><a id="submitted-reference-2" href="" target="_blank">Reference Letter #2</a></li>
+									</ul>
+									<h4><strong>Date Submitted</strong></h4>
+									<div id="submitted-date-time" class="review-text-field" style="font-weight:normal"></div>
+					            </div>
+				            </div>
+				            <p class="addendum"><strong>Concerns?</strong> Please contact the CFMS IT Team at <a href="mailto:it@cfms.org">it@cfms.org</a> if there are any issues with your application.</p>
+			            </blockquote>
 					</div>
-				</blockquote>
-				<div class="addendum">
-					<p>MD Financial Management provides financial products and services, the MD Family of Funds and investment counselling services through the MD Group of Companies. For a detailed list of these companies, visit <a href ="http://md.cma.ca/">md.cma.ca</a></p>
+					<div class="addendum">
+						<p>MD Financial Management provides financial products and services, the MD Family of Funds and investment counselling services through the MD Group of Companies. For a detailed list of these companies, visit <a href ="http://md.cma.ca/">md.cma.ca</a></p>
+					</div>
 				</div>
-			</div>
-			<div class="non-members">
-				<blockquote>
-					<h3><strong>Please login to see this page</strong></h3>
-					<ul>
-						<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
-					</ul>
-				</blockquote>
-			</div>
+				<div class="non-members">
+					<blockquote>
+						<h3><strong>Please login to see this page</strong></h3>
+						<ul>
+							<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
+						</ul>
+					</blockquote>
+				</div>
+			
 		</div>
 	</div>
 	<div><script type="text/javascript">
@@ -462,7 +513,7 @@ $('.redirect-modal').click(function(){
 	window.config = {
 		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","communications":"Communications","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","human-of-medicine":"Humans of Medicine","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","communications":"Communications","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","human-of-medicine":"Humains de la Médecine","login":"Se connecter","logout":"Se déconnecter"}]`),
 		lang: `fr`,
-		leadership_award_year: `2016-2017`,
+		leadership_award_year: `2017-2018`,
 		env: `production`
 	}
 </script>
@@ -480,7 +531,6 @@ $('.redirect-modal').click(function(){
 		{
 			var label	 = input.nextElementSibling,
 				labelVal = label.innerHTML;
-
 			input.addEventListener( 'change', function( e )
 			{
 				var fileName = '';
