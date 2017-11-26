@@ -78,7 +78,7 @@ title: MD Leadership Awards Application Form
 
 							<h2 class="submission-header"><strong>Upload Files</strong></h2>
 							<p class="submission-body-text">Please make sure that you follow the instructions in the <a href="md-leadership-awards-instructions.html">How to Apply</a> section. Applications that do not meet the criteria will be <em>disqualified</em>. When you are finished, press the <strong>Submit Application</strong> button.</p>
-							<p class="submission-body-text" style="padding-top:0px">Files that you upload are <strong>saved automatically</strong>. Please submit documents in either a <strong>PDF</strong> or <strong>DOC/DOCX</strong> format.</p>
+							<p class="submission-body-text" style="padding-top:0px">Files that you upload are <strong>saved automatically</strong>. Please submit your personal statement, resume/curriculum vitae, letter of good standing and 2 reference letters as a single scanned/uploaded as document in either a <strong>PDF</strong> or <strong>DOC/DOCX</strong> format.</p>
 
 							<label>Personal Statement</label>
 							<div>
@@ -87,33 +87,40 @@ title: MD Leadership Awards Application Form
 							</div>
 							<div id="personal-statement-link" class="file-link"></div>
 
-							<label>Resume/Curriculum Vitae</label>
-							<div>
-								<input type="file" name="curriculum-vitae" id="curriculum-vitae" class="inputfile awardApplicationUpload" disabled/>
-								<label for="curriculum-vitae"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
-							</div>
-							<div id="curriculum-vitae-link" class="file-link"></div>
+							<!--<label>Personal Statement</label>-->
+							<!--<div>-->
+								<!--<input type="file" name="personal-statement" id="personal-statement" class="inputfile awardApplicationUpload" disabled/>-->
+								<!--<label for="personal-statement"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>-->
+							<!--</div>-->
+							<!--<div id="personal-statement-link" class="file-link"></div>-->
 
-							<label>Letter of Good Standing</label>
-							<div>
-								<input type="file" name="letter-good-standing" id="letter-good-standing" class="inputfile awardApplicationUpload" disabled/>
-								<label for="letter-good-standing"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
-							</div>
-							<div id="letter-good-standing-link" class="file-link"></div>
+							<!--<label>Resume/Curriculum Vitae</label>-->
+							<!--<div>-->
+								<!--<input type="file" name="curriculum-vitae" id="curriculum-vitae" class="inputfile awardApplicationUpload" disabled/>-->
+								<!--<label for="curriculum-vitae"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>-->
+							<!--</div>-->
+							<!--<div id="curriculum-vitae-link" class="file-link"></div>-->
 
-							<label>Reference Letter 1</label>
-							<div>
-								<input type="file" name="reference-1" id="reference-1" class="inputfile awardApplicationUpload" disabled/>
-								<label for="reference-1"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
-							</div>
-							<div id="reference-1-link" class="file-link"></div>
+							<!--<label>Letter of Good Standing</label>-->
+							<!--<div>-->
+								<!--<input type="file" name="letter-good-standing" id="letter-good-standing" class="inputfile awardApplicationUpload" disabled/>-->
+								<!--<label for="letter-good-standing"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>-->
+							<!--</div>-->
+							<!--<div id="letter-good-standing-link" class="file-link"></div>-->
 
-							<label>Reference Letter 2</label>
-							<div>
-								<input type="file" name="reference-2" id="reference-2" class="inputfile awardApplicationUpload" disabled/>
-								<label for="reference-2"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>
-							</div>
-							<div id="reference-2-link" class="file-link"></div>
+							<!--<label>Reference Letter 1</label>-->
+							<!--<div>-->
+								<!--<input type="file" name="reference-1" id="reference-1" class="inputfile awardApplicationUpload" disabled/>-->
+								<!--<label for="reference-1"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>-->
+							<!--</div>-->
+							<!--<div id="reference-1-link" class="file-link"></div>-->
+
+							<!--<label>Reference Letter 2</label>-->
+							<!--<div>-->
+								<!--<input type="file" name="reference-2" id="reference-2" class="inputfile awardApplicationUpload" disabled/>-->
+								<!--<label for="reference-2"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>-->
+							<!--</div>-->
+							<!--<div id="reference-2-link" class="file-link"></div>-->
 
 							<div class="button" id="submit-button" style="margin-top:10px;">
 								<a href="#page-title" onclick='window.submitApplication();'>
@@ -148,11 +155,12 @@ title: MD Leadership Awards Application Form
 					            <div class="right-col">
 					            	<h4 class="review-header"><strong>Attached Files</strong></h4>
 					            	<ul>
-										<li><a id="submitted-personal-statement" href="" target="_blank">Personal Statement</a></li>
-										<li><a id="submitted-curriculum-vitae" href="" target="_blank">Resume/Curriculum Vitae</a></li>
-										<li><a id="submitted-letter-good-standing" href="" target="_blank">Proof of Good Standing</a></li>
-										<li><a id="submitted-reference-1" href="" target="_blank">Reference Letter #1</a></li>
-										<li><a id="submitted-reference-2" href="" target="_blank">Reference Letter #2</a></li>
+										<li><a id="submitted-personal-statement" href="" target="_blank">Supporting Documents</a></li>
+										<!--<li><a id="submitted-personal-statement" href="" target="_blank">Personal Statement</a></li>-->
+										<!--<li><a id="submitted-curriculum-vitae" href="" target="_blank">Resume/Curriculum Vitae</a></li>-->
+										<!--<li><a id="submitted-letter-good-standing" href="" target="_blank">Proof of Good Standing</a></li>-->
+										<!--<li><a id="submitted-reference-1" href="" target="_blank">Reference Letter #1</a></li>-->
+										<!--<li><a id="submitted-reference-2" href="" target="_blank">Reference Letter #2</a></li>-->
 									</ul>
 									<h4><strong>Date Submitted</strong></h4>
 									<div id="submitted-date-time" class="review-text-field" style="font-weight:normal"></div>

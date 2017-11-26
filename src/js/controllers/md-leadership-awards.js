@@ -27,16 +27,18 @@ class LeadershipAwardUserController extends FirebaseConnection {
 				    //Otherwise displays saved files
 				    else {
 					    //refPath = refPath + '/' + controller.auth.userId;
-					    if (application.child('personalStatement').exists())
-						    controller.loadPrevFile(refPath, 'personal-statement', application.val().personalStatement);
-					    if (application.child('curriculumVitae').exists())
-						    controller.loadPrevFile(refPath, 'curriculum-vitae', application.val().curriculumVitae);
-					    if (application.child('letterGoodStanding').exists())
-						    controller.loadPrevFile(refPath, 'letter-good-standing', application.val().letterGoodStanding);
-					    if (application.child('reference1').exists())
-						    controller.loadPrevFile(refPath, 'reference-1', application.val().reference1);
-					    if (application.child('reference2').exists())
-						    controller.loadPrevFile(refPath, 'reference-2', application.val().reference2);
+                        if (application.child('completeApplication').exists())
+                           controller.loadPrevFile(refPath, 'complete-application', application.val().completeApplication);
+					    // if (application.child('personalStatement').exists())
+						 //    controller.loadPrevFile(refPath, 'personal-statement', application.val().personalStatement);
+					    // if (application.child('curriculumVitae').exists())
+						 //    controller.loadPrevFile(refPath, 'curriculum-vitae', application.val().curriculumVitae);
+					    // if (application.child('letterGoodStanding').exists())
+						 //    controller.loadPrevFile(refPath, 'letter-good-standing', application.val().letterGoodStanding);
+					    // if (application.child('reference1').exists())
+						 //    controller.loadPrevFile(refPath, 'reference-1', application.val().reference1);
+					    // if (application.child('reference2').exists())
+						 //    controller.loadPrevFile(refPath, 'reference-2', application.val().reference2);
 					
 					    var beforeSubmissionElements = document.getElementsByClassName('before-submission'), i;
 					    for (var i = 0; i < beforeSubmissionElements.length; i++)
@@ -94,11 +96,13 @@ class LeadershipAwardUserController extends FirebaseConnection {
 				//Ensures that every necessary file is present
 				var refPath = 'leadership-award/' + window.config.leadership_award_year +'/' + controller.auth.userId;
 				controller.firebase.database().ref(refPath).once('value').then(function (snapshot) {
-					if (!snapshot.child('personalStatement').exists()
-						|| !snapshot.child('curriculumVitae').exists()
-						|| !snapshot.child('letterGoodStanding').exists()
-						|| !snapshot.child('reference1').exists()
-						|| !snapshot.child('reference2').exists()) {
+					if (!snapshot.child('completeApplication').exists()
+						// !snapshot.child('personalStatement').exists()
+						// || !snapshot.child('curriculumVitae').exists()
+						// || !snapshot.child('letterGoodStanding').exists()
+						// || !snapshot.child('reference1').exists()
+						// || !snapshot.child('reference2').exists()
+					) {
 						vex.dialog.alert('<h3><strong>Missing Supporting Document</strong></h3><p>You are missing a supporting document.</p>');
 						return;
 					}
@@ -128,11 +132,12 @@ class LeadershipAwardUserController extends FirebaseConnection {
 						twitterHandle: twitterHandle,
 						meetingAttendance: meetingAttendance,
 						dateSubmitted: controller.getTimeEST(),
-						linkPersonalStatement: document.getElementById('personal-statement-link').childNodes[0].href,
-						linkCurriculumVitae: document.getElementById('curriculum-vitae-link').childNodes[0].href,
-						linkLetterGoodStanding: document.getElementById('letter-good-standing-link').childNodes[0].href,
-						linkReference1: document.getElementById('reference-1-link').childNodes[0].href,
-						linkReference2: document.getElementById('reference-2-link').childNodes[0].href,
+                        linkCompleteApplication: document.getElementById('complete-application-link').childNodes[0].href,
+						// linkPersonalStatement: document.getElementById('personal-statement-link').childNodes[0].href,
+						// linkCurriculumVitae: document.getElementById('curriculum-vitae-link').childNodes[0].href,
+						// linkLetterGoodStanding: document.getElementById('letter-good-standing-link').childNodes[0].href,
+						// linkReference1: document.getElementById('reference-1-link').childNodes[0].href,
+						// linkReference2: document.getElementById('reference-2-link').childNodes[0].href,
 					});
 					//Displays success dialog
 					vex.dialog.alert('<h3><strong>Application Submitted</strong></h3><p>Congratulations! You have successfully submitted your application.</p>');
@@ -171,33 +176,40 @@ class LeadershipAwardUserController extends FirebaseConnection {
 				document.getElementById('submitted-twitter-handle').innerHTML = '<a href="https://twitter.com/' + twitterHandle.substring(1) + '" target="_blank">' + twitterHandle + '</a>';
 			document.getElementById('submitted-attending-sgm').textContent = snapshot.val().meetingAttendance;
 			document.getElementById('submitted-date-time').textContent = snapshot.val().dateSubmitted;
-			
-			//Loads submitted files
-			storageRef.child(refPath + '/personal-statement/' + snapshot.val().personalStatement).getDownloadURL().then(function(url) {
-				document.getElementById('submitted-personal-statement').href = url;
-			}).catch(function(error) {
-				// File doesn't exist
-			});
-			storageRef.child(refPath + '/curriculum-vitae/' + snapshot.val().curriculumVitae).getDownloadURL().then(function(url) {
-				document.getElementById('submitted-curriculum-vitae').href = url;
-			}).catch(function(error) {
-				// File doesn't exist
-			});
-			storageRef.child(refPath + '/letter-good-standing/' + snapshot.val().letterGoodStanding).getDownloadURL().then(function(url) {
-				document.getElementById('submitted-letter-good-standing').href = url;
-			}).catch(function(error) {
-				// File doesn't exist
-			});
-			storageRef.child(refPath + '/reference-1/' + snapshot.val().reference1).getDownloadURL().then(function(url) {
-				document.getElementById('submitted-reference-1').href = url;
-			}).catch(function(error) {
-				// File doesn't exist
-			});
-			storageRef.child(refPath + '/reference-2/' + snapshot.val().reference2).getDownloadURL().then(function(url) {
-				document.getElementById('submitted-reference-2').href = url;
-			}).catch(function(error) {
-				// File doesn't exist
-			});
+
+            //Loads submitted files
+            storageRef.child(refPath + '/complete-application/' + snapshot.val().completeApplication).getDownloadURL().then(function(url) {
+                document.getElementById('submitted-complete-application').href = url;
+            }).catch(function(error) {
+                // File doesn't exist
+            });
+
+			// //Loads submitted files
+			// storageRef.child(refPath + '/personal-statement/' + snapshot.val().personalStatement).getDownloadURL().then(function(url) {
+			// 	document.getElementById('submitted-personal-statement').href = url;
+			// }).catch(function(error) {
+			// 	// File doesn't exist
+			// });
+			// storageRef.child(refPath + '/curriculum-vitae/' + snapshot.val().curriculumVitae).getDownloadURL().then(function(url) {
+			// 	document.getElementById('submitted-curriculum-vitae').href = url;
+			// }).catch(function(error) {
+			// 	// File doesn't exist
+			// });
+			// storageRef.child(refPath + '/letter-good-standing/' + snapshot.val().letterGoodStanding).getDownloadURL().then(function(url) {
+			// 	document.getElementById('submitted-letter-good-standing').href = url;
+			// }).catch(function(error) {
+			// 	// File doesn't exist
+			// });
+			// storageRef.child(refPath + '/reference-1/' + snapshot.val().reference1).getDownloadURL().then(function(url) {
+			// 	document.getElementById('submitted-reference-1').href = url;
+			// }).catch(function(error) {
+			// 	// File doesn't exist
+			// });
+			// storageRef.child(refPath + '/reference-2/' + snapshot.val().reference2).getDownloadURL().then(function(url) {
+			// 	document.getElementById('submitted-reference-2').href = url;
+			// }).catch(function(error) {
+			// 	// File doesn't exist
+			// });
 		});
 		
 		//Hides the submission form and displays the application
@@ -270,26 +282,30 @@ class LeadershipAwardUserController extends FirebaseConnection {
 		controller.firebase.database().ref(refPath).once('value').then(function(snapshot) {
 			var deletePath = refPath + '/' + evt.target.id + '/';
 			switch(evt.target.id) {
-				case 'personal-statement':
-					if (snapshot.child('personalStatement').exists())
-						controller.deleteFile (deletePath + snapshot.val().personalStatement);
-					break;
-				case 'curriculum-vitae':
-					if (snapshot.child('curriculumVitae').exists())
-						controller.deleteFile (deletePath + snapshot.val().curriculumVitae);
-					break;
-				case 'letter-good-standing':
-					if (snapshot.child('letterGoodStanding').exists())
-						controller.deleteFile (deletePath + snapshot.val().letterGoodStanding);
-					break;
-				case 'reference-1':
-					if (snapshot.child('reference1').exists())
-						controller.deleteFile (deletePath + snapshot.val().reference1);
-					break;
-				case 'reference-2':
-					if (snapshot.child('reference2').exists())
-						controller.deleteFile (deletePath + snapshot.val().reference2);
-					break;
+                case 'complete-application':
+                	if (snapshot.child('completeApplication').exists())
+                		controller.deleteFile (deletePath + snapshot.val().completeApplication);
+                	break;
+				// case 'personal-statement':
+				// 	if (snapshot.child('personalStatement').exists())
+				// 		controller.deleteFile (deletePath + snapshot.val().personalStatement);
+				// 	break;
+				// case 'curriculum-vitae':
+				// 	if (snapshot.child('curriculumVitae').exists())
+				// 		controller.deleteFile (deletePath + snapshot.val().curriculumVitae);
+				// 	break;
+				// case 'letter-good-standing':
+				// 	if (snapshot.child('letterGoodStanding').exists())
+				// 		controller.deleteFile (deletePath + snapshot.val().letterGoodStanding);
+				// 	break;
+				// case 'reference-1':
+				// 	if (snapshot.child('reference1').exists())
+				// 		controller.deleteFile (deletePath + snapshot.val().reference1);
+				// 	break;
+				// case 'reference-2':
+				// 	if (snapshot.child('reference2').exists())
+				// 		controller.deleteFile (deletePath + snapshot.val().reference2);
+				// 	break;
 			}
 			
 			//Add the new version of the file
@@ -313,31 +329,36 @@ class LeadershipAwardUserController extends FirebaseConnection {
 		}).then (function(){
 			refPath = 'leadership-award/' + window.config.leadership_award_year + '/' + controller.auth.userId;
 			switch(evt.target.id) {
-				case 'personal-statement':
-					controller.firebase.database().ref(refPath).update({
-						personalStatement:file.name
-					})
-					break;
-				case 'curriculum-vitae':
-					controller.firebase.database().ref(refPath).update({
-						curriculumVitae:file.name
-					})
-					break;
-				case 'letter-good-standing':
-					controller.firebase.database().ref(refPath).update({
-						letterGoodStanding:file.name
-					})
-					break;
-				case 'reference-1':
-					controller.firebase.database().ref(refPath).update({
-						reference1:file.name
-					})
-					break;
-				case 'reference-2':
-					controller.firebase.database().ref(refPath).update({
-						reference2:file.name
-					})
-					break;
+                case 'complete-application':
+                	controller.firebase.database().ref(refPath).update({
+                		completeApplication:file.name
+                	})
+                	break;
+				// case 'personal-statement':
+				// 	controller.firebase.database().ref(refPath).update({
+				// 		personalStatement:file.name
+				// 	})
+				// 	break;
+				// case 'curriculum-vitae':
+				// 	controller.firebase.database().ref(refPath).update({
+				// 		curriculumVitae:file.name
+				// 	})
+				// 	break;
+				// case 'letter-good-standing':
+				// 	controller.firebase.database().ref(refPath).update({
+				// 		letterGoodStanding:file.name
+				// 	})
+				// 	break;
+				// case 'reference-1':
+				// 	controller.firebase.database().ref(refPath).update({
+				// 		reference1:file.name
+				// 	})
+				// 	break;
+				// case 'reference-2':
+				// 	controller.firebase.database().ref(refPath).update({
+				// 		reference2:file.name
+				// 	})
+				// 	break;
 			}
 		});
 	} //End handle fileSelect
@@ -396,11 +417,12 @@ class LeadershipAwardAdminController extends FirebaseConnection {
                     applicationsHTML += '<label>Attending the CFMS SGM?</label><div class="review-text-field">';
                     applicationsHTML += submission.val().meetingAttendance + '</div>';
                     applicationsHTML += '</div><div class="right-col"><h4 class="review-header"><strong>Attached Files</strong></h4><ul>';
-                    applicationsHTML += '<li><a href="' + submission.val().linkPersonalStatement + '" target="_blank">Personal Statement</a></li>';
-                    applicationsHTML += '<li><a href="' + submission.val().linkCurriculumVitae + '" target="_blank">Resume/Curriculum Vitae</a></li>';
-                    applicationsHTML += '<li><a href="' + submission.val().linkLetterGoodStanding + '" target="_blank">Proof of Good Standing</a></li>';
-                    applicationsHTML += '<li><a href="' + submission.val().linkReference1 + '" target="_blank">Reference Letter #1</a></li>';
-                    applicationsHTML += '<li><a href="' + submission.val().linkReference2 + '" target="_blank">Reference Letter #2</a></li>';
+                    applicationsHTML += '<li><a href="' + submission.val().linkCompleteApplication + '" target="_blank">Supporting Documents</a></li>';
+                    // applicationsHTML += '<li><a href="' + submission.val().linkPersonalStatement + '" target="_blank">Personal Statement</a></li>';
+                    // applicationsHTML += '<li><a href="' + submission.val().linkCurriculumVitae + '" target="_blank">Resume/Curriculum Vitae</a></li>';
+                    // applicationsHTML += '<li><a href="' + submission.val().linkLetterGoodStanding + '" target="_blank">Proof of Good Standing</a></li>';
+                    // applicationsHTML += '<li><a href="' + submission.val().linkReference1 + '" target="_blank">Reference Letter #1</a></li>';
+                    // applicationsHTML += '<li><a href="' + submission.val().linkReference2 + '" target="_blank">Reference Letter #2</a></li>';
                     applicationsHTML += '</ul><h4><strong>Date Submitted</strong></h4>';
                     applicationsHTML += '<div class="review-text-field" style="font-weight:normal">' + submission.val().dateSubmitted + '</div>';
                     applicationsHTML += '</ul></div></div></blockquote>';
