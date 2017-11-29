@@ -16,7 +16,6 @@ export default class ViewExchangePayments {
             let exchangeBox = $('#selected-exchange');
             let exchanges = {};
             val.forEach(exchange => {
-                console.log(exchange);
                 exchanges[exchange.key] = exchange;
                 exchangeBox.append($('<option>', {
                     value: exchange.key,
@@ -35,14 +34,12 @@ export default class ViewExchangePayments {
         console.log(exchange);
         for(let exchangeId in exchange) {
             this.exchangePaymentRepository.get(`${id}/${exchangeId}`).then(val => {
-                const user = val.user;
                 const row = [
                     exchangeId,
-                    user.email,
-                    user.given_name,
-                    user.family_name,
+                    val.custom.email,
+                    val.custom.name,
                     val.amount,
-                    val.approved
+                    (val.approved === '1') ? 'Yes' : 'No'
                 ];
                 this.t.row.add(row).draw(false);
             });

@@ -36,60 +36,28 @@ title: MD Travel Awards
 
 		<div class="student-finances-content">
 			<h1 id="page-title">View Submitted Applications ({{ site.leadership_award_years }})</h1>
-		   
-            <blockquote>
-	            <div class="flex-wrapper award-application">
-		            <div class="left-col">
-			            <h4 class="review-header"><strong>Applicant</strong></h4>
-						<label>Name</label>
-						<div class="review-text-field">Kevan Lu</div>
-						<label>Medical School</label>
-						<div class="review-text-field">Western University</div>
-						<label>Graduating Year</label>
-						<div class="review-text-field">2017</div>
-						<label>Email Address</label>
-						<div class="review-text-field">klu2017@meds.uwo.ca</div>
-		            </div>
-		            <div class="right-col">
-		            	<h4 class="review-header"><strong>Attached Files</strong></h4>
-		            	<ul>
-							<li><a href="hi.html">Personal Statement</a></li>
-							<li><a href="hi.html">Resume/Curriculum Vitae</a></li>
-							<li><a href="hi.html">Proof of Good Standing</a></li>
-							<li><a href="hi.html">Reference Letter #1</a></li>
-							<li><a href="hi.html">Reference Letter #2</a></li>
-						</ul>
-		            </div>
-	            </div>
-            </blockquote>
-            <blockquote>
-	            <div class="flex-wrapper award-application">
-		            <div class="left-col">
-			            <h4 class="review-header"><strong>Applicant</strong></h4>
-						<label>Name</label>
-						<div class="review-text-field"><span id="account-name">Kevan Lu</span></div>
-						<label>Medical School</label>
-						<div class="review-text-field"><span id="account-school">Western University</span></div>
-						<label>Graduating Year</label>
-						<div class="review-text-field"><span id="account-grad-year">2017</span></div>
-						<label>Email Address</label>
-						<div class="review-text-field"><span id="account-email">klu2017@meds.uwo.ca</span></div>
-		            </div>
-		            <div class="right-col">
-		            	<h4 class="review-header"><strong>Attached Files</strong></h4>
-						<div class="review-text-field"><span id="account-name">Kevan Lu</span></div>
-						<label>Medical School</label>
-						<div class="review-text-field"><span id="account-school">Western University</span></div>
-						<label>Graduating Year</label>
-						<div class="review-text-field"><span id="account-grad-year">2017</span></div>
-						<label>Email Address</label>
-						<div class="review-text-field"><span id="account-email">klu2017@meds.uwo.ca</span></div>
-		            </div>
-	            </div>
-            </blockquote>
-
+			<div class="admin-only">
+				<div id="submitted-applications-list">
+				</div>
+			</div>
+			<div id="not-authorized" class="members-only">
+				<blockquote>
+					<h3><strong>You are not authorized to view this resource</strong></h3>
+					<ul>
+						<li>You must be an administrator in order to view this page.</li>
+					</ul>
+				</blockquote>
+			</div>
+			<div class="non-members">
+				<blockquote>
+					<h3><strong>Please login to see this page</strong></h3>
+					<ul>
+						<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
+					</ul>
+				</blockquote>
+			</div>
 		</div>
 	</div>
 	<div>{% include footer.html %}</div>
-</body>
+</body>	
 </html>

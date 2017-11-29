@@ -1,5 +1,5 @@
 ---
-title: MD Travel Awards
+title: MD Leadership Awards
 ---
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ title: MD Travel Awards
 	{% include head.html %}
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/resources.css">
+	<link rel="stylesheet" href="/stylesheets/resources.css" />
 </head>
 <body>
 	{% include nav.html %}
@@ -24,7 +24,7 @@ title: MD Travel Awards
 
 	<div class="finances-banner-outer">
 		<div class="content finances-banner-inner" style="background-color:#69A99F;">
-			<img src="{{site.root}}/images/banners/MedEd-Counsel-Campaign-Banner-e.jpg">
+			<img src="{{site.root}}/images/banners/MedEd-Counsel-Campaign-Banner-e.jpg" />
 		</div>
 	</div>
 	<div class="finances content">
@@ -35,19 +35,20 @@ title: MD Travel Awards
 		</script>
 		<div class="student-finances-content">
 			<h1 id="page-title">MD Leadership Awards</h1>
-   			<a id="finances-side-image" href="https://mdm.ca/"><img class="right" style="max-width:25%" src="/images/MDFM_CFMS.jpg"></a>
+   			<a id="finances-side-image" href="https://mdm.ca/"><img class="right" style="max-width:25%" src="/images/MDFM_CFMS.jpg" /></a>
 
 			<p>The CFMS and MD Financial Management want to recognize some of the passionate, dedicated and caring medical student leaders across Canada who have made innovative contributions to their schools and communities.</p>
-			<p>In recognition of their achievements, one student from each of the 14 member schools of the Canadian Federation of Medical Students (CFMS) will receive a Medical Student Leadership Award. This award consists of:</p>
+			<p>In recognition of their achievements, one student from each of the 15 member schools of the Canadian Federation of Medical Students (CFMS) will receive a Medical Student Leadership Award. This award consists of:</p>
 			<ol>
 				<li>A certificate of recognition</li>
 				<li>A cash prize of $2000</li>
-				<li>Subsidized travel to the awards reception at the CFMS Spring General Meeting in Winnipeg on April 28-29<sup>th</sup>, 2017</li>
+				<li>Subsidized travel to the awards reception at the CFMS Spring General Meeting in Halifax on April 27-29<sup>th</sup>, 2018</li>
 			</ol>
 			
+			{% if site.enable_leadership_awards %}
 			<div>
 				<blockquote class="editable">
-					<h4><strong>Apply to the 2017 CFMS &ndash; MD Financial Management Leadership Awards</strong></h4>
+					<h4><strong>Apply to the 2018 CFMS &ndash; MD Financial Management Leadership Awards</strong></h4>
 					<ul class="non-members">
 						<li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to apply.</li>
 					</ul>
@@ -56,12 +57,21 @@ title: MD Travel Awards
 					</div>
 				</blockquote>
 			</div>
+			{% else %}
+			<div>
+				<blockquote>
+					<h4><strong>{{ site.md_awards_closed_header }}</strong></h4>
+					<ul>
+						<li>{{ site.md_awards_closed_caption }}</li>
+					</ul>
+				</blockquote>
+			</div>
+			{% endif %}
 			<div class="addendum">
-				<p>MD Financial Management provides financial products and services, the MD Family of Funds and investment counselling services through the MD Group of Companies. For a detailed list of these companies, visit <a href ="http://md.cma.ca/">md.cma.ca</a></p>
+				<p>MD Financial Management provides financial products and services, the MD Family of Funds and investment counselling services through the MD Group of Companies. For a detailed list of these companies, visit <a href="http://md.cma.ca/">md.cma.ca</a></p>
 				
 			</div>
 		</div>
 	</div>
 	<div>{% include footer.html %}</div>
 </body>
-</html>

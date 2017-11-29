@@ -8,12 +8,13 @@ export default class ExchangePaymentRepository extends FirebaseRepository {
 
     get(id) {
         return super.get(id)
-            .then(payment => this.UserRepository.get(payment.uid)
-                .then(user => {
-                    delete payment.uid;
-                    payment.user = user;
-                    return payment;
-                }))
+            .then(payment => payment)
+                // this.UserRepository.get(payment.uid)
+                // .then(user => {
+                //     delete payment.uid;
+                //     payment.user = user;
+                //     return payment;
+                // }))
             .catch(err => console.log(`Error: ${err}`));
     }
 }
