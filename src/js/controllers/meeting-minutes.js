@@ -8,20 +8,20 @@
 
 //import { FirebaseRef } from '../repositories/firebase/utils';
 import Utils from '../utils';
-import { AdminUtils } from "../repositories/firebase/adminUtils";
+import { FirebaseStorageRepository } from "../repositories/firebase/firebase-storage";
 import DatabaseEntryModel from "../models/meeting-minutes";
 //import DatabaseEntryModel from '../models/meeting-minutes';
 
 
 //TODO: Page could have extra security checks/Ui enhancements. Leaving for now because it is for admins.
 
-export default class MeetingMinutesController extends AdminUtils {
+export default class MeetingMinutesController {
 	/*
 	 * @constructor
 	 * @param {Utils} this.utils
 	   * Object to access methods from the src/js/utils.js class
 	 *  
-	 * @param {String} this.refPath
+	 * @param {String} this.childRefPath
 	   * holds the root reference path to the firebase database
 	 *   
 	 * @param {AuthenticationService} this.auth
@@ -29,12 +29,11 @@ export default class MeetingMinutesController extends AdminUtils {
 	 * @event this.process
 	   * our base event to be triggered when page initializes.
 	 */
-	constructor(authenticationService, DatabaseEntryModel) {
-		super('meeting-minutes/', DatabaseEntryModel);
+	constructor(authenticationService, MeetingMinuteRepository) {
+		// super('meeting-minutes/', DatabaseEntryModel);
 		this.utils = new Utils();
-		this.dataModel = DatabaseEntryModel;
-		//this.Model = DatabaseEntryModel;
-		this.refPath = 'meeting-minutes/';
+		this.repository = MeetingMinuteRepository;
+		this.childRefPath = '';
 		this.storageRefPath = 'minutes/';
 		this.auth = authenticationService;
 		this.process();
@@ -53,17 +52,16 @@ export default class MeetingMinutesController extends AdminUtils {
 			    subRefPath = '', //Variables used to assign paths to the delete buttons.
 			    subSubRefPath = '';
 			if(this.utils.isPageEnglish()){ //Sets database path to english or french version!
-				this.refPath = this.refPath+'en/';
+				this.childRefPath = this.childRefPath+'en/';
 			}
 			else{
-				this.refPath = this.refPath+'fr/';
+				this.childRefPath = this.childRefPath+'fr/';
 			}
 			
-			
-			this.firebase.database().ref(this.refPath).on('value', (snapshot) => { //Iterating over the database
+			this.ref.child(this.childRefPath).on('value', (snapshot) => { //Iterating over the database
 				snapshot.forEach((childSnapshot) => { //This iterates over the years in the database.
 					elem = ''; //Resetting variable for next iteration.
-					subRefPath = this.refPath +'/'+childSnapshot.key;
+					subRefPath = this.childRefPath +childSnapshot.key;
 					elem += '<h2 class="bold-red meetingMinuteYear">'+childSnapshot.key+'</h2>';
 					childSnapshot.forEach((subChildSnapshot) => { //This iterates over all nodes within each year currently on in DB.
 						subSubRefPath = subRefPath+'/'+subChildSnapshot.key;
@@ -84,7 +82,7 @@ export default class MeetingMinutesController extends AdminUtils {
 				
 				if(this.auth.user.isAdmin) {  //Executes if user is an admin user.
 					temp = document.createElement("blockquote");
-					let addButton = this.utils.createButton(this.refPath, "Add", "addEntry");
+					let addButton = this.utils.createButton(this.childRefPath, "Add", "addEntry");
 					elem = addButton;
 					temp.innerHTML = elem;
 					document.getElementById('meetingMinutes').insertBefore(temp, document.getElementById('meetingMinutes').firstChild);
@@ -133,11 +131,11 @@ export default class MeetingMinutesController extends AdminUtils {
 				if(fileUpload && fileUpload.length == 1) {
 					controller.fileUploadPromise(controller.storageRefPath, fileUpload[0])
 						.then((fileObject) => {
-							let key = data.year;
+							let year = data.year;
 							delete data.year;
-							let databaseModel = new controller.dataModel(key, data);
+							let meetingMinuteEntry = new controller.dataModel(year, data);
 							databaseModel.bundleFileWithData(fileObject);
-							controller.addEntry(controller.refPath+databaseModel.key, databaseModel.obj)
+							controller.addEntry(controller.childRefPath+databaseModel.key, databaseModel)
 								.then(msg =>{
 								controller.utils.displayVexAlert(msg);
 								}).catch(error => {
@@ -167,7 +165,10 @@ export default class MeetingMinutesController extends AdminUtils {
 		evt.preventDefault();
 		let dbPath = evt.target.getAttribute('src');
 		console.log(dbPath);
-		this.deleteMeetingMinutes(dbPath);
+		this.utils.vexConfirm().then( () => {
+			this.deleteMeetingMinutes(dbPath);
+		});
+		
 	}
 	
 	/*
@@ -176,27 +177,27 @@ export default class MeetingMinutesController extends AdminUtils {
 	 *   A string to hold reference to the database Path. Path is stored in the elements src attribute.
 	 *   The path is passed to this function through the deleteMeetingsEvent function.
 	 */
-	deleteMeetingMinutes(dbPath){
-		this.vexConfirm().then( () =>{
-			firebase.database().ref(dbPath).once('value').then( (snapshot) => {
-				let filePath = snapshot.val().filePath;
-				let storageRef = firebase.storage().ref(filePath);
-				console.log(storageRef);
-				storageRef.delete().then( () =>{
-					firebase.database().ref(dbPath).remove().then(() =>{
-						vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-						location.reload();
-					});
-				}).catch( () => {
-					console.log("The storage in file no longer exists!!!.. Deleting the database entry of broken link!");
-					firebase.database().ref(dbPath).remove().then(() =>{
-						vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-						location.reload();
-					});
-				});
-			});
-		});
-	}
+	// deleteMeetingMinutes(dbPath){
+	// 	this.vexConfirm().then( () =>{
+	// 		firebase.database().ref(dbPath).once('value').then( (snapshot) => {
+	// 			let filePath = snapshot.val().filePath;
+	// 			let storageRef = firebase.storage().ref(filePath);
+	// 			console.log(storageRef);
+	// 			storageRef.delete().then( () =>{
+	// 				firebase.database().ref(dbPath).remove().then(() =>{
+	// 					vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+	// 					location.reload();
+	// 				});
+	// 			}).catch( () => {
+	// 				console.log("The storage in file no longer exists!!!.. Deleting the database entry of broken link!");
+	// 				firebase.database().ref(dbPath).remove().then(() =>{
+	// 					vex.dialog.alert('<h3><strong>Success!</strong></h3>');
+	// 					location.reload();
+	// 				});
+	// 			});
+	// 		});
+	// 	});
+	// }
 	
 	/*
 	 * A utility function to validate a proper year is entered in the modal form when Adding entry to database.
