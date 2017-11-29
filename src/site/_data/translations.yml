@@ -21,7 +21,7 @@ nav:
     resources: Resources
     meetings: Meetings
     members: Members
-    news: News
+    news:
     human-of-medicine: Humans of Medicine
     login: Login
     logout: Logout
@@ -39,74 +39,72 @@ nav:
     resources: Ressources
     meetings: Réunions
     members: Membres
-    news: Nouvelles
+    news:
     human-of-medicine: Humains de la Médecine
     login: Se connecter
     logout: Se déconnecter
 financial_resources:
-- lang: "en"
-  student_services: "Services for Students"
-  financial_advice: "Financial Advice for:"
-  testimonials: "Testimonials"
-  student_finances: "Student Finances"
-  student_finances_url: "student-finances.html"
-  md_leadership_awards: "MD Leadership Awards"
-  md_leadership_awards_url: "/resources/md-leadership-awards.html"
-  md_leadership_awards_instructions: "How to Apply"
-  md_leadership_awards_instructions_url: "/resources/md-leadership-awards-instructions.html"
-  md_leadership_awards_apply: "Submit Application"
-  md_leadership_awards_apply_url: "/resources/md-leadership-awards-application.html"
-  md_leadership_awards_prev_winners: "Previous Recipients"
-  md_leadership_awards_prev_winners_url: "/resources/md-leadership-awards-prev-winners.html"
-  md_travel_awards: "MD Travel Awards"
-  md_travel_awards_url: "/resources/md-travel-awards.html"
-  managing_debt: "Managing Debt"
-  managing_debt_url: "https://mdm.ca/physician-life-stages/students/managing-debt/"
-  paying_med_school: "Paying for Medical School"
-  paying_med_school_url: "https://mdm.ca/physician-life-stages/students/paying-for-medical-school/"
-  preparing_residency: "Preparing for Residency"
-  preparing_residency_url: "https://mdm.ca/physician-life-stages/students/preparing-for-residency/"
-  studying_abroad: "Studying Abroad"
-  studying_abroad_url: "https://mdm.ca/physician-life-stages/students/resources-for-studying-abroad/"
-  client_testimonials: "Client Testimonials"
-  client_testimonials_url: "https://mdm.ca/about-md/testimonials/"
-  meeting-minutes: "Meeting Minutes"
-- lang: "fr"
-  student_services: "Services aux étudiants"
-  financial_advice: "Conseils financiers:"
-  testimonials: "Témoignages"
-  student_finances: "Les finances des étudiants"
-  student_finances_url: "student-finances.html"
-  md_leadership_awards: "Prix de leadership MD"
-  md_leadership_awards_url: "/fr/resources/md-leadership-awards.html"
-  md_leadership_awards_instructions: "How to Apply"
-  md_leadership_awards_instructions_url: "/fr/resources/md-leadership-awards-instructions.html"
-  md_leadership_awards_apply: "Submit Application"
-  md_leadership_awards_apply_url: "/fr/resources/md-leadership-awards-application.html"
-  md_leadership_awards_prev_winners: "Previous Recipients"
-  md_leadership_awards_prev_winners_url: "/fr/resources/md-leadership-awards-prev-winners.html"
-  md_travel_awards: "Bourses de voyage MD"
-  md_travel_awards_url: "/fr/resources/md-travel-awards.html"
-  managing_debt: "Gérer vos dettes"
-  managing_debt_url: "https://mdm.ca/fr/%c3%a9tapes-de-carri%c3%a8re/etudiants-en-medecine/gerer-vos-dettes"
-  paying_med_school: "Payer vos études en médecine"
-  paying_med_school_url: "https://mdm.ca/fr/%C3%A9tapes-de-carri%C3%A8re/etudiants-en-medecine/payer-vos-etudes-en-medecine"
-  preparing_residency: "Vous préparer à la résidence"
-  preparing_residency_url: "https://mdm.ca/fr/%c3%a9tapes-de-carri%c3%a8re/etudiants-en-medecine/vous-preparer-a-la-residence"
-  studying_abroad: "Étudier à l’étranger"
-  studying_abroad_url: "https://mdm.ca/fr/%C3%A9tapes-de-carri%C3%A8re/etudiants-en-medecine/des-ressources-pour-etudier-a-l-etranger"
-  client_testimonials: "Témoignages de vos collègues"
-  client_testimonials_url: "https://mdm.ca/fr/au-sujet-de-md/temoignages"
-  meeting-minutes: "Comptes rendus des réunions"
-
-#Footer
-#======
-
-#Latest tweets
-latest_tweets_en: "Latest tweets"
-latest_tweets_fr: "Derniers tweets"
-
-#Find us on
+  - lang: en
+    student_services: Services for Students
+    financial_advice: 'Financial Advice for:'
+    testimonials: Testimonials
+    student_finances: Student Finances
+    student_finances_url: student-finances.html
+    md_leadership_awards: MD Leadership Awards
+    md_leadership_awards_url: /resources/md-leadership-awards.html
+    md_leadership_awards_instructions: How to Apply
+    md_leadership_awards_instructions_url: /resources/md-leadership-awards-instructions.html
+    md_leadership_awards_apply: Submit Application
+    md_leadership_awards_apply_url: /resources/md-leadership-awards-application.html
+    md_leadership_awards_prev_winners: Previous Recipients
+    md_leadership_awards_prev_winners_url: /resources/md-leadership-awards-prev-winners.html
+    md_travel_awards: MD Travel Awards
+    md_travel_awards_url: /resources/md-travel-awards.html
+    managing_debt: Managing Debt
+    managing_debt_url: 'https://mdm.ca/physician-life-stages/students/managing-debt/'
+    paying_med_school: Paying for Medical School
+    paying_med_school_url: 'https://mdm.ca/physician-life-stages/students/paying-for-medical-school/'
+    preparing_residency: Preparing for Residency
+    preparing_residency_url: 'https://mdm.ca/physician-life-stages/students/preparing-for-residency/'
+    studying_abroad: Studying Abroad
+    studying_abroad_url: >-
+      https://mdm.ca/physician-life-stages/students/resources-for-studying-abroad/
+    client_testimonials: Client Testimonials
+    client_testimonials_url: 'https://mdm.ca/about-md/testimonials/'
+    meeting-minutes: Meeting Minutes
+  - lang: fr
+    student_services: Services aux étudiants
+    financial_advice: 'Conseils financiers:'
+    testimonials: Témoignages
+    student_finances: Les finances des étudiants
+    student_finances_url: student-finances.html
+    md_leadership_awards: Prix de leadership MD
+    md_leadership_awards_url: /fr/resources/md-leadership-awards.html
+    md_leadership_awards_instructions: How to Apply
+    md_leadership_awards_instructions_url: /fr/resources/md-leadership-awards-instructions.html
+    md_leadership_awards_apply: Submit Application
+    md_leadership_awards_apply_url: /fr/resources/md-leadership-awards-application.html
+    md_leadership_awards_prev_winners: Previous Recipients
+    md_leadership_awards_prev_winners_url: /fr/resources/md-leadership-awards-prev-winners.html
+    md_travel_awards: Bourses de voyage MD
+    md_travel_awards_url: /fr/resources/md-travel-awards.html
+    managing_debt: Gérer vos dettes
+    managing_debt_url: >-
+      https://mdm.ca/fr/%c3%a9tapes-de-carri%c3%a8re/etudiants-en-medecine/gerer-vos-dettes
+    paying_med_school: Payer vos études en médecine
+    paying_med_school_url: >-
+      https://mdm.ca/fr/%C3%A9tapes-de-carri%C3%A8re/etudiants-en-medecine/payer-vos-etudes-en-medecine
+    preparing_residency: Vous préparer à la résidence
+    preparing_residency_url: >-
+      https://mdm.ca/fr/%c3%a9tapes-de-carri%c3%a8re/etudiants-en-medecine/vous-preparer-a-la-residence
+    studying_abroad: Étudier à l’étranger
+    studying_abroad_url: >-
+      https://mdm.ca/fr/%C3%A9tapes-de-carri%C3%A8re/etudiants-en-medecine/des-ressources-pour-etudier-a-l-etranger
+    client_testimonials: Témoignages de vos collègues
+    client_testimonials_url: 'https://mdm.ca/fr/au-sujet-de-md/temoignages'
+    meeting-minutes: Comptes rendus des réunions
+latest_tweets_en: Latest tweets
+latest_tweets_fr: Derniers tweets
 find_us_on:
   - lang: en
     title: Find us on
@@ -171,44 +169,40 @@ sidebar-global-health:
     advocacy-toolkit: Trousse-à-outils pour plaidoirie
     aboriginal-health: Santé autochtone
 sidebar-who-we-are:
-- lang: "en"
-  sidebar-title_1: "Who We Are"
-  executives-officers: "Executives &amp; Officers"
-  member-schools: "Member Schools"
-  cfms-representatives: "CFMS Representatives"
-  cfms-at-your-school: "CFMS at your School"
-  partner-organizations: "Partner Organizations"
-  sidebar-title_2: "Our Organization"
-  governance-structure: "Governance Structure"
-  internal-policy-bylaws: "Bylaws &amp; Internal Policy"
-  about-us: "About Us"
-  alumni: "Alumni"
-  sidebar-title_3: "More Information"
-  history: "History"
-  organizational-timeline: "Organizational Timeline"
-  external-committees: "External Commmittees"
-  photo-gallery: "Photo Gallery"
-  
-- lang: "fr"
-  sidebar-title_1: "Qui sommes-nous?"
-  executives-officers: "Conseil exécutif et directeurs"
-  member-schools: "Écoles membres"
-  cfms-representatives: "Représentants de la FEMC"
-  cfms-at-your-school:  "La FEMC à votre école"
-  partner-organizations: "Organisations partenaires"
-  sidebar-title_2: "Notre organisation"
-  governance-structure: "Structure de gouvernance"
-  internal-policy-bylaws: "Règlements administratifs et politique intérieure"
-  about-us: "About Us"
-  alumni: "Anciens"
-  sidebar-title_3: "Plus d'information"
-  history: "Histoire"
-  organizational-timeline: "Chronologie Organisationnelle"
-  external-committees: "Comités Externes"
-  photo-gallery: "Galerie de photos"
-  
-  
-#Sidebar education
+  - lang: en
+    sidebar-title_1: Who We Are
+    executives-officers: Executives &amp; Officers
+    member-schools: Member Schools
+    cfms-representatives: CFMS Representatives
+    cfms-at-your-school: CFMS at your School
+    partner-organizations: Partner Organizations
+    sidebar-title_2: Our Organization
+    governance-structure: Governance Structure
+    internal-policy-bylaws: Bylaws &amp; Internal Policy
+    about-us: About Us
+    alumni: Alumni
+    sidebar-title_3: More Information
+    history: History
+    organizational-timeline: Organizational Timeline
+    external-committees: External Commmittees
+    photo-gallery: Photo Gallery
+  - lang: fr
+    sidebar-title_1: Qui sommes-nous?
+    executives-officers: Conseil exécutif et directeurs
+    member-schools: Écoles membres
+    cfms-representatives: Représentants de la FEMC
+    cfms-at-your-school: La FEMC à votre école
+    partner-organizations: Organisations partenaires
+    sidebar-title_2: Notre organisation
+    governance-structure: Structure de gouvernance
+    internal-policy-bylaws: Règlements administratifs et politique intérieure
+    about-us: About Us
+    alumni: Anciens
+    sidebar-title_3: Plus d'information
+    history: Histoire
+    organizational-timeline: Chronologie Organisationnelle
+    external-committees: Comités Externes
+    photo-gallery: Galerie de photos
 sidebar-education:
   - lang: en
     sidebar-title_1: Education
@@ -299,7 +293,7 @@ sidebar-discounts:
   - lang: en
     sidebar-title_1: Discounts
     travel-and-accommodations: Travel and Accommodations
-    disability-insurance: Disability Insuarance
+    disability-insurance: Disability Insurance
     textbooks: Textbooks
     online-resources: Online Resources
     lasik: LASIK MD Vision Correction
