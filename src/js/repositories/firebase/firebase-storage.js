@@ -5,6 +5,7 @@ import {FirebaseConnection} from "./utils";
 export default class FirebaseStorageRepository  extends FirebaseConnection {
 	constructor(refPath){
 		super();
+		this.storageRefPath = refPath;
 		this.storageRef = this.firebase.storage().ref(refPath);
 	}
 	
@@ -29,7 +30,7 @@ export default class FirebaseStorageRepository  extends FirebaseConnection {
 					let downloadURL = uploadTask.snapshot.downloadURL;
 					let fileObject = {
 						downloadURL: downloadURL,
-						filePath: filePath,
+						filePath: this.storageRefPath+file.name,
 						fileTitle: file.name
 					};
 					resolve(fileObject);
@@ -53,27 +54,16 @@ export default class FirebaseStorageRepository  extends FirebaseConnection {
 	
 	
 	//Still need to fix this function, split it out etc.
-	deleteEntry(dbPath){
-		this.ref.child(dbPath).once('value').then( (snapshot) => {
-			let filePath = snapshot.val().filePath;
-			let storageRef = this.firebase.storage().ref(filePath);
-			console.log(storageRef);
-			storageRef.delete().then( () =>{
-				this.ref.child(dbPath).remove().then(() =>{
-					vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-					location.reload();
-				});
-			}).catch( () => {
-				console.log("The storage in file no longer exists!!!.. Deleting the database entry of broken link!");
-				firebase.database().ref(dbPath).remove().then(() =>{
-					vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-					location.reload();
-				});
+	deleteEntry(fileName){
+		let storageReference = this.storageRef;
+		return new Promise((resolve, reject)=> {
+			let storageRef = storageReference.child(fileName);
+			storageRef.delete()
+				.then(() =>{
+				resolve();
+				}).catch((err) =>{
+				reject(err);
 			});
 		});
-		
-		
-		
-		
 	}
 }

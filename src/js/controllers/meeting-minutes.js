@@ -5,40 +5,20 @@
  * Determines if user is also an admin. If true, allows the admin functionality to add/delete entrys from meeting-minutes
  * section in database.
  */
-
-//import { FirebaseRef } from '../repositories/firebase/utils';
+import { FirebaseConnection } from '../repositories/firebase/utils';
 import Utils from '../utils';
 import { FirebaseStorageRepository } from "../repositories/firebase/firebase-storage";
-import DatabaseEntryModel from "../models/meeting-minutes";
-//import DatabaseEntryModel from '../models/meeting-minutes';
 
+export default class MeetingMinutesController extends FirebaseConnection {
 
-//TODO: Page could have extra security checks/Ui enhancements. Leaving for now because it is for admins.
-
-export default class MeetingMinutesController {
-	/*
-	 * @constructor
-	 * @param {Utils} this.utils
-	   * Object to access methods from the src/js/utils.js class
-	 *  
-	 * @param {String} this.childRefPath
-	   * holds the root reference path to the firebase database
-	 *   
-	 * @param {AuthenticationService} this.auth
-	   * Object used to make sure the user accessing the page is authenticated
-	 * @event this.process
-	   * our base event to be triggered when page initializes.
-	 */
-	constructor(authenticationService, MeetingMinuteRepository) {
-		// super('meeting-minutes/', DatabaseEntryModel);
+	constructor(authenticationService, firebaseStorageService) {
+		super();
+		this.firebaseStorage = firebaseStorageService;
 		this.utils = new Utils();
-		this.repository = MeetingMinuteRepository;
-		this.childRefPath = '';
+		this.refPath = 'meeting-minutes/';
 		this.storageRefPath = 'minutes/';
 		this.auth = authenticationService;
 		this.process();
-		
-		
 	}
 	/*
 	* @type {user-only && admin-only}
@@ -52,16 +32,15 @@ export default class MeetingMinutesController {
 			    subRefPath = '', //Variables used to assign paths to the delete buttons.
 			    subSubRefPath = '';
 			if(this.utils.isPageEnglish()){ //Sets database path to english or french version!
-				this.childRefPath = this.childRefPath+'en/';
+				this.refPath = this.refPath+'en/';
 			}
 			else{
-				this.childRefPath = this.childRefPath+'fr/';
+				this.refPath = this.refPath+'fr/';
 			}
-			
-			this.ref.child(this.childRefPath).on('value', (snapshot) => { //Iterating over the database
+			this.firebase.database().ref(this.refPath).on('value', (snapshot) => {
 				snapshot.forEach((childSnapshot) => { //This iterates over the years in the database.
 					elem = ''; //Resetting variable for next iteration.
-					subRefPath = this.childRefPath +childSnapshot.key;
+					subRefPath = this.refPath +childSnapshot.key;
 					elem += '<h2 class="bold-red meetingMinuteYear">'+childSnapshot.key+'</h2>';
 					childSnapshot.forEach((subChildSnapshot) => { //This iterates over all nodes within each year currently on in DB.
 						subSubRefPath = subRefPath+'/'+subChildSnapshot.key;
@@ -129,18 +108,19 @@ export default class MeetingMinutesController {
 			if(data && controller.isProperYearRange(data.year, 2000, 2030)) {
 				let fileUpload = document.getElementById('uploadFile').files;
 				if(fileUpload && fileUpload.length == 1) {
-					controller.fileUploadPromise(controller.storageRefPath, fileUpload[0])
+					this.firebaseStorage.fileUploadPromise(fileUpload[0], this.storageRefPath)
 						.then((fileObject) => {
-							let year = data.year;
-							delete data.year;
-							let meetingMinuteEntry = new controller.dataModel(year, data);
-							databaseModel.bundleFileWithData(fileObject);
-							controller.addEntry(controller.childRefPath+databaseModel.key, databaseModel)
-								.then(msg =>{
-								controller.utils.displayVexAlert(msg);
-								}).catch(error => {
-								controller.utils.displayVexAlert(error);
-							});
+							controller.firebase.database().ref(this.refPath+'/'+data.year).push({
+								title: data.title,
+								subTitle: data.subTitle,
+								fileTitle: fileObject.fileTitle,
+								fileLink: fileObject.downloadURL,
+								filePath: fileObject.filePath
+						}).then(() => {
+								location.reload();
+							}).catch((err) => {
+								controller.utils.displayVexAlert('<h3><strong>'+err+'</strong></h3>')
+							})
 					}).catch((error) => {
 						controller.utils.displayVexAlert(error);
 						});
@@ -151,11 +131,8 @@ export default class MeetingMinutesController {
 			}
 		});
 	} // end addMeetingMinutesEvent
-			
-	somefunction(){
-		
-	}
 	
+		
 	/*
 	 * @type {Admin-only}
 	 * @param {object} evt
@@ -168,7 +145,6 @@ export default class MeetingMinutesController {
 		this.utils.vexConfirm().then( () => {
 			this.deleteMeetingMinutes(dbPath);
 		});
-		
 	}
 	
 	/*
@@ -177,28 +153,27 @@ export default class MeetingMinutesController {
 	 *   A string to hold reference to the database Path. Path is stored in the elements src attribute.
 	 *   The path is passed to this function through the deleteMeetingsEvent function.
 	 */
-	// deleteMeetingMinutes(dbPath){
-	// 	this.vexConfirm().then( () =>{
-	// 		firebase.database().ref(dbPath).once('value').then( (snapshot) => {
-	// 			let filePath = snapshot.val().filePath;
-	// 			let storageRef = firebase.storage().ref(filePath);
-	// 			console.log(storageRef);
-	// 			storageRef.delete().then( () =>{
-	// 				firebase.database().ref(dbPath).remove().then(() =>{
-	// 					vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-	// 					location.reload();
-	// 				});
-	// 			}).catch( () => {
-	// 				console.log("The storage in file no longer exists!!!.. Deleting the database entry of broken link!");
-	// 				firebase.database().ref(dbPath).remove().then(() =>{
-	// 					vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-	// 					location.reload();
-	// 				});
-	// 			});
-	// 		});
-	// 	});
-	// }
-	
+	deleteMeetingMinutes(dbPath){
+			this.firebase.database().ref(dbPath).once('value').then( (snapshot) => {
+				let fileName = snapshot.val().fileTitle;
+				this.firebaseStorage.deleteEntry(fileName)
+					.then(() => {
+						this.firebase.database().ref(dbPath).remove()
+							.then(() => {
+								//this.utils.displayVexAlert('<h3><strong>Success!</strong></h3>');
+								location.reload();
+							});
+					}).catch((err) => {
+					console.log(err);
+					this.firebase.database().ref(dbPath).remove()
+						.then(() => {
+							//this.utils.displayVexAlert('<h3><strong>Success!</strong></h3>');
+							location.reload();
+						});
+				});
+			});
+	}
+		
 	/*
 	 * A utility function to validate a proper year is entered in the modal form when Adding entry to database.
 	 * @param {String} year
@@ -216,62 +191,7 @@ export default class MeetingMinutesController {
 				this.utils.displayVexAlert("Year must be between "+startYear+" and "+ endYear+ " inclusive");
 				return false;
 			}
-
 	}
-	
-	// /*
-	//  * A custom made promise to determine that a file properly uploads
-	//  * @param {Object} file
-	//  *   The file the user uploaded
-	//  */
-	// fileUploadPromise(file){
-	// 	return new Promise((resolve, reject) => {
-	// 		let filePath = 'minutes/'+file.name;
-	// 		let storageRef = firebase.storage().ref(filePath);
-	// 		//console.log(storageRef.getDownloadURL());
-	// 		storageRef.getDownloadURL().then( () => { //There already is a file with that name in storage, reject the promise...
-	// 				reject("A File With the same name has already been uploaded!");
-	// 		}).catch(() => { //There is no file with that name in Db, Lets make one!
-	// 			let uploadTask =	storageRef.put(file);
-	// 			uploadTask.on('state_changed', (snapshot) => {
-	// 				let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-	// 				console.log('Upload is ' + progress + '% done');
-	// 			}, (error) => {
-	// 				//This function happens if error hits during upload.
-	// 				reject(error);
-	// 			}, () => {
-	// 				//this is for on complete uploads!
-	// 				//console.log("are we ever hitting the final function!?>!?!?!");
-	// 				let downloadURL = uploadTask.snapshot.downloadURL;
-	// 				let fileObject = {
-	// 					downloadURL: downloadURL,
-	// 					filePath: filePath
-	// 				};
-	// 				resolve(fileObject);
-	// 			});
-	//			
-	// 		});
-	// 	});
-	// }
-	//
-	// /*
-	//  * A custom promise for if a user is sure to continue or not.
-	//  */
-	// vexConfirm(){
-	// 	return new Promise((resolve, reject) => {
-	// 		vex.dialog.confirm({
-	// 			message: "Are you sure?",
-	// 			callback: (value) => {
-	// 				if (value) {
-	// 					resolve(true); //if user selects yes, promise resolves true
-	// 				}
-	// 				else {
-	// 					reject(false);
-	// 				}
-	// 			} //end vex confirm callback
-	// 		});
-	// 	});
-	// }
 }
 
 
