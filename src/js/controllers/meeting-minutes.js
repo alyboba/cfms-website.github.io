@@ -61,7 +61,7 @@ export default class MeetingMinutesController extends FirebaseConnection {
 				
 				if(this.auth.user.isAdmin) {  //Executes if user is an admin user.
 					temp = document.createElement("blockquote");
-					let addButton = this.utils.createButton(this.childRefPath, "Add", "addEntry");
+					let addButton = this.utils.createButton(this.refPath, "Add", "addEntry");
 					elem = addButton;
 					temp.innerHTML = elem;
 					document.getElementById('meetingMinutes').insertBefore(temp, document.getElementById('meetingMinutes').firstChild);
@@ -193,6 +193,8 @@ export default class MeetingMinutesController extends FirebaseConnection {
 			}
 	}
 }
+
+
 
 
 

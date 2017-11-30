@@ -14,6 +14,7 @@ import MeetingMinutes from './meeting-minutes';
 import ForgotPassword from './forgot-password';
 import RepResources from './rep-resources';
 import Communiques from './communiques';
+import ArchivedCommuniques from './communiques-archived';
 
 
 export default class Router extends Middleware {
@@ -50,6 +51,8 @@ export default class Router extends Middleware {
 	
         route('/members/communique.html', Communiques);
         route('/fr/members/communique.html', Communiques);
+        route('/members/archived-communiques.html', ArchivedCommuniques);
+	      route('/fr/members/archived-communiques.html', ArchivedCommuniques);
         
         route('/resources/rep-resources.html', RepResources);
         route('/fr/resources/rep-resources.html', RepResources);
