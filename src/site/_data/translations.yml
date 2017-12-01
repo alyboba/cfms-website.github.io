@@ -307,3 +307,10 @@ sidebar-discounts:
     textbooks: Réductions sur les Manuels
     online-resources: Rabais sur les ressources électroniques Médicales
     lasik: Correction de la vision LASIK MD
+sidebar-databases:
+  - lang: en
+    sidebar-title_1: Databases
+    accommodations: Accommodations
+  - lang: fr
+    sidebar-title_1: Base de données
+    accommodations: Hébergement
