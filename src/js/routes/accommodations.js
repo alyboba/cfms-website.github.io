@@ -1,4 +1,5 @@
 import AccommodationsController from '../controllers/accommodations';
+import AuthenticationService from '../services/authentication';
 
 
 //Shows Member Account Information on the Members Page
@@ -7,7 +8,7 @@ export default function meetingMinutes(ctx, next) {
 	let province = ctx.params.province;
 	
 	
-	new AccommodationsController(listing, province);
+	new AccommodationsController(listing, province, new AuthenticationService());
 	
 	next();
 }
