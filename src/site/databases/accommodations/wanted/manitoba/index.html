@@ -12,7 +12,6 @@ title: "Wanted, Manitoba"
 
     <!--Page Specific Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/members.css">
-    <link rel="stylesheet" href="/stylesheets/responstable.css">
 </head>
 <body>
 {% include nav.html %}
@@ -36,17 +35,51 @@ title: "Wanted, Manitoba"
             <h1>Listings</h1>
             <!--Will need to add paginating on table?-->
             <!--Will also need to add Searching functionality in controller...-->
-            <table class="responstable" id="accommodationsDatabase">
+            <table class="display" id="accommodationsDatabase">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <!--This data-th details is used atm for when screen size is super small...-->
+                        <th data-th="Details"><span>Rent</span></th> 
+                        <th>Payment</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Location/Address</th>
+                        <th>User Name</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                
                 <tr>
-                    <th>City</th>
-                    <!--This data-th details is used atm for when screen size is super small...-->
-                    <th data-th="Details"><span>Rent</span></th> 
-                    <th>Payment</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Location/Address</th>
-                    <th>User Name</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td></td>
+                    
+                    
                 </tr>
+                
+                
+                <tfoot>
+                    <tr>
+                        <th>City</th>
+                        <!--This data-th details is used atm for when screen size is super small...-->
+                        <th data-th="Details"><span>Rent</span></th>
+                        <th>Payment</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Location/Address</th>
+                        <th>User Name</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>                
+                </tfoot>
                 
                 <!--Data from Db will be populated here, appended after the headers...-->
             </table>
@@ -63,6 +96,5 @@ title: "Wanted, Manitoba"
     </div>
 </div>
 {% include footer.html %}
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 </body>
 </html>
