@@ -12,6 +12,7 @@ title: "Wanted, Manitoba"
 
     <!--Page Specific Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/members.css">
+    <link rel="stylesheet" href="/stylesheets/responstable.css">
 </head>
 <body>
 {% include nav.html %}
@@ -19,7 +20,7 @@ title: "Wanted, Manitoba"
 <div class="content">
     {% include sidebar-databases.html %}
     <!--<script type="text/javascript">-->
-			<!--document.querySelector( "#accommodations-database" ).classList.toggle("sidebar-active");-->
+    <!--document.querySelector( "#accommodations-database" ).classList.toggle("sidebar-active");-->
     <!--</script>-->
 
     <!--Page Specific Formatting-->
@@ -33,8 +34,23 @@ title: "Wanted, Manitoba"
 
         <div class="members-only">
             <h1>Listings</h1>
-            
-            <div id="accommodationsDatabase"></div>
+            <!--Will need to add paginating on table?-->
+            <!--Will also need to add Searching functionality in controller...-->
+            <table class="responstable" id="accommodationsDatabase">
+                <tr>
+                    <th>City</th>
+                    <!--This data-th details is used atm for when screen size is super small...-->
+                    <th data-th="Details"><span>Rent</span></th> 
+                    <th>Payment</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Location/Address</th>
+                    <th>User Name</th>
+                </tr>
+                
+                <!--Data from Db will be populated here, appended after the headers...-->
+            </table>
+
         </div>
         <div class="non-members">
             <blockquote>
@@ -47,6 +63,6 @@ title: "Wanted, Manitoba"
     </div>
 </div>
 {% include footer.html %}
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 </body>
-
 </html>

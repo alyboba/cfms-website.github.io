@@ -10,10 +10,15 @@ export default class AccommodationsController {
 	}
 	
 	process(){
+		$(document).ready(() => {
+			console.log($('#accommodationsDatabase'))
+			$('#accommodationsDatabase').DataTable( {
+				"pagingType": "full_numbers"
+			});
+		});
 		console.log("hello from accommodationsController!");
 		console.log(`Listing is ${this.listing}`);
 		console.log(`Province is ${this.province}`);
 	}
-	
 	
 }
