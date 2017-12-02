@@ -72,6 +72,29 @@
 	img { box-shadow: 5px 5px 10px rgba(0,0,0,0.3);}
 }
 
+.form-error{
+	color:darkred;
+}
+
+input:focus {
+	background-color:#18b6d6;
+	border-color: #5e97b0;
+}
+input.error{
+	border: 2px solid darkred;
+}
+input.valid {
+	border: 2px solid #4cae4c;
+}
+
+input:invalid {
+	border: 2px dashed red;
+}
+input:valid {
+	border: 2px solid darkgreen;
+}
+
+
 /* iPad portrait browsing*/
 @media only screen and (max-width: 959px) {
 	#what-we-do-home {padding-top:30px;}

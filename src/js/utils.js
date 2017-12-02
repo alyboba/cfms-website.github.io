@@ -99,7 +99,13 @@ export default class Utils {
 		vex.dialog.alert('<h3><strong>' + message + '</strong></h3>');
 	}
 	
-	
+	sanatizeInput(input){
+		let output = input.replace(/<script[^>]*?>.*?<\/script>/gi, '').
+		replace(/<[\/\!]*?[^<>]*?>/gi, '').
+		replace(/<style[^>]*?>.*?<\/style>/gi, '').
+		replace(/<![\s\S]*?--[ \t\n\r]*>/gi, '');
+		return output;
+	}
 	
 	/*
 * A custom promise for if a user is sure to continue or not.
