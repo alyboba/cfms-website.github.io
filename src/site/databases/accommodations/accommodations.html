@@ -1,5 +1,5 @@
 ---
-title: "Accommodations Database"
+title: "Wanted, Manitoba"
 ---
 
 <!DOCTYPE html>
@@ -18,25 +18,94 @@ title: "Accommodations Database"
 
 <div class="content">
     {% include sidebar-databases.html %}
-    <script type="text/javascript">
-			document.querySelector( "#accommodations-database" ).classList.toggle("sidebar-active");
-    </script>
+    <!--<script type="text/javascript">-->
+    <!--document.querySelector( "#accommodations-database" ).classList.toggle("sidebar-active");-->
+    <!--</script>-->
 
     <!--Page Specific Formatting-->
     <!--<script type="text/javascript">-->
-			<!--document.querySelector( "#logo-invert" ).classList.toggle("hidden");-->
-			<!--document.querySelector( "#members" ).classList.toggle("active");-->
+    <!--document.querySelector( "#logo-invert" ).classList.toggle("hidden");-->
+    <!--document.querySelector( "#members" ).classList.toggle("active");-->
     <!--</script>-->
 
     <div id="side-content">
         <h1 id="page-title">{{ page.title }}</h1>
 
         <div class="members-only">
-            <h1>Manitoba</h1>
-            <li><a href="wanted/manitoba/index.html">Wanted, Manitoba</a></li>
-            <li><a href="offered/manitoba/index.html">Offered, Manitoba</a></li>
+            <h1>Listings</h1><br /><br />
+            <!--Will need to add paginating on table?-->
+            <!--Will also need to add Searching functionality in controller...-->
+            <div id="addButton">
+            </div>
+            <select id="select-listing">
+                <option disabled selected value> -- Select a Listing -- </option>
+                <option value="offered">Offered</option>
+                <option value="wanted">Wanted</option>
+            </select>
+            <select id="select-province">
+                <option disabled selected value> --  Select a Province -- </option>
+                <option value="alberta">Alberta</option>
+                <option value="saskatchewan">Saskatchewan</option>
+                <option value="britishColumbia">British Columbia</option>
+                <option value="yukon">Yukon</option>
+                <option value="northWestTerritories">North West Territories</option>
+                <option value="nunavut">Nunavut</option>
+                <option value="manitoba">Manitoba</option>
+                <option value="ontario">Ontario</option>
+                <option value="quebec">Quebec</option>
+                <option value="novaScotia">Nova Scotia</option>
+                <option value="newfoundlandLabrador">Newfoundland & Labrador</option>
+                <option value="princeEdwardIsland">Prince Edward Island</option>
+                <option value="newBrunswick">New Brunswick</option>
+                
+            </select>
+            <table class="display" id="accommodationsDatabase">
+                <thead>
+                <tr>
+                    <th>City</th>
+                    <!--This data-th details is used atm for when screen size is super small...-->
+                    <th data-th="Details"><span>Rent</span></th>
+                    <th>Payment</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Location/Address</th>
+                    <th>User Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
 
-            <div id="accommodationsDatabase"></div>
+                <!--<tr>-->
+                <!--<td>1</td>-->
+                <!--<td>2</td>-->
+                <!--<td>3</td>-->
+                <!--<td>4</td>-->
+                <!--<td>5</td>-->
+                <!--<td>6</td>-->
+                <!--<td>7</td>-->
+                <!--<td>8</td>-->
+                <!--<td></td>-->
+                <!--</tr>-->
+
+
+                <tfoot>
+                <tr>
+                    <th>City</th>
+                    <!--This data-th details is used atm for when screen size is super small...-->
+                    <th data-th="Details"><span>Rent</span></th>
+                    <th>Payment</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Location/Address</th>
+                    <th>User Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </tfoot>
+
+                <!--Data from Db will be populated here, appended after the headers...-->
+            </table>
+
         </div>
         <div class="non-members">
             <blockquote>
@@ -50,5 +119,4 @@ title: "Accommodations Database"
 </div>
 {% include footer.html %}
 </body>
-
 </html>

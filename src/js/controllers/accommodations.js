@@ -2,14 +2,16 @@ import { FirebaseConnection } from '../repositories/firebase/utils';
 import Utils from '../utils';
 
 export default class AccommodationsController extends FirebaseConnection {
-	constructor(listing, province, authService) {
+	constructor(authService) {
 		super();
 		this.utils = new Utils();
 		this.auth = authService;
 		this.refPath = 'accommodations/';
-		this.listing = listing;
-		this.province = province;
+		//this.listing = listing;
+		//this.province = province;
 		this.dbRef;
+		this.listing = null;
+		this.province = null;
 		this.userName = null;
 		this.userId = null;
 		this.table;
@@ -18,52 +20,80 @@ export default class AccommodationsController extends FirebaseConnection {
 	}
 	
 	process(){
-		if(this.auth.user){
-			if(this.utils.isPageEnglish()){ //Set ref path in db to en or fr depending which page...
+		if(this.auth.user) {
+			if (this.utils.isPageEnglish()) { //Set ref path in db to en or fr depending which page...
 				this.refPath += 'en/';
 			}
-			else{
+			else {
 				this.refPath += 'fr/';
 			}
+			this.table = $('#accommodationsDatabase').DataTable(); //Initializing Datatables.
+			
+			$('#select-listing').change(() => {
+				this.listing = $('#select-listing').find(":selected").val();
+				this.populateTable();
+			});
+			$('#select-province').change(() => {
+				this.province = $('#select-province').find(":selected").val();
+				this.populateTable();
+			});
+		}
+
+	}
+	
+	
+	populateTable(){
+		//console.log()
+		if(this.listing && this.province){ //Make sure user has selected both select options..
+			this.table.clear();
 			this.createAddButton();
 			let refPath = this.refPath+this.listing+'/'+this.province;
-			this.table = $('#accommodationsDatabase').DataTable(); //Initializing Datatables.
-			this.dbRef = this.firebase.database().ref(this.refPath).child(`${this.listing}/${this.province}`);
+			this.dbRef = this.firebase.database().ref(this.refPath).child(`${this.listing}/${this.province}`); //Reset reference.
 			
 			this.dbRef.on('value', (snapshot) => {
 				//Since this is an observable, clear table each time it is invoked to avoid overlapping data.....
 				this.table.clear();
-				snapshot.forEach((listing) => {
-					//console.log(listing.key);
-					let delTemp = ''
-					if(this.auth.isAdmin || listing.val().uid == this.auth.user.identities[0].user_id) {
-						//console.log("This getting called?");
-						let delButton = this.utils.createButton(refPath +'/'+ listing.key, "Del", 'delEntry');
-						delTemp = delButton;
-						//Need to still make 1 for edit buttons...
+				if(snapshot.hasChildren()){
+					snapshot.forEach((listing) => {
+						//console.log(listing.key);
+						let delTemp = ''
+						if(this.auth.isAdmin || listing.val().uid == this.auth.user.identities[0].user_id) {
+							//console.log("This getting called?");
+							let delButton = this.utils.createButton(refPath +'/'+ listing.key, "Del", 'delEntry');
+							delTemp = delButton;
+							//Need to still make 1 for edit buttons...
+						}
+						//A row will be an array of our table data to enter...
+						let row = [
+							listing.val().city,
+							listing.val().rent,
+							listing.val().payment,
+							listing.val().startDate,
+							listing.val().endDate,
+							listing.val().locationAddress,
+							listing.val().userName,
+							'',
+							delTemp,
+						];
+						this.table.row.add(row).draw(false);
+					});
+					//This needs to be inside the observable so isn't called off race condition..
+					let delButtons = document.getElementsByClassName('delEntry');
+					for(let i=0; i<delButtons.length; i++){
+						delButtons[i].addEventListener('click', this.deleteDatabaseEntryEvent.bind(this), false);
 					}
-					
-					//A row will be an array of our table data to enter...
-					let row = [
-						listing.val().city,
-						listing.val().rent,
-						listing.val().payment,
-						listing.val().startDate,
-						listing.val().endDate, 
-						listing.val().locationAddress,
-						listing.val().userName,
-						'',
-						delTemp,
-					];
-					this.table.row.add(row).draw(false);
-				});
-				//This needs to be inside the observable so isn't called off race condition..
-				let delButtons = document.getElementsByClassName('delEntry');
-				for(let i=0; i<delButtons.length; i++){
-					delButtons[i].addEventListener('click', this.deleteDatabaseEntryEvent.bind(this), false);
-				}				
+					console.log("yes it has children");
+				}
+				else{
+					this.table.clear().draw(); //NO data available, so clear it all out and redraw it..
+				}
+				
+
 			});
-			
+		}
+		else{
+			console.log("this getting called?");
+			this.table.clear();
 		}
 	}
 	
@@ -132,6 +162,7 @@ export default class AccommodationsController extends FirebaseConnection {
 	
 	
 	createAddButton(){
+		document.getElementById('addButton').innerHTML = '';
 		let temp = document.createElement('div');
 		let addButton = this.utils.createButton((this.refPath+this.listing+'/'+this.province), "Add Entry", "addEntry");
 		temp.innerHTML = addButton;

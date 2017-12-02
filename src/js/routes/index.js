@@ -47,7 +47,7 @@ export default class Router extends Middleware {
         route('/members/meeting-minutes.html', MeetingMinutes);
         route('/fr/members/meeting-minutes.html', MeetingMinutes);
         
-        route('/databases/accommodations/:listing/:province/*.html', Accommodations);
+        route('/databases/accommodations/accommodations.html', Accommodations);
         
         route('/resources/rep-resources.html', RepResources);
         route('/fr/resources/rep-resources.html', RepResources);
