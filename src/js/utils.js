@@ -59,7 +59,11 @@ export default class Utils {
         let button = '<div class="url preview"><p><a style="cursor: pointer;" src="'+ path +'" class="'+className+'">'+title+'</a></p></div>';
         return button;
     }
-	
+    
+    createWithIdButton(path, title, idName, className){
+			let button = '<div class="url preview"><p><a style="cursor: pointer;" src="'+ path +'" id="'+idName+'" class="'+className+'">'+title+'</a></p></div>';
+			return button;
+		}
 	
 	adminDisplayVexDialog(htmlInput, message, callback){
 		vex.dialog.open({

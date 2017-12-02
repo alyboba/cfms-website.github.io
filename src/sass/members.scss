@@ -77,7 +77,6 @@
 }
 
 input:focus {
-	background-color:#18b6d6;
 	border-color: #5e97b0;
 }
 input.error{
@@ -87,12 +86,6 @@ input.valid {
 	border: 2px solid #4cae4c;
 }
 
-input:invalid {
-	border: 2px dashed red;
-}
-input:valid {
-	border: 2px solid darkgreen;
-}
 
 td.details-control {
 	background: url('../images/databases/details_open.png') no-repeat center center;

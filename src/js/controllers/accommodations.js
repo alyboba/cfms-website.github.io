@@ -55,12 +55,16 @@ export default class AccommodationsController extends FirebaseConnection {
 			this.dbRef = this.firebase.database().ref(this.refPath).child(`${this.listing}/${this.province}`); //Reset reference.
 			this.dbRef.on('value', (snapshot) => {
 				//Since this is an observable, clear table each time it is invoked to avoid overlapping data.....
-				//this.table.clear().draw();
+				this.table.clear(); //Needs to be here for updating data.
+				
 				if (snapshot.hasChildren()) {
 					snapshot.forEach((listing) => {
 						//console.log(listing.key);
 						let delTemp = '';
+						let editTemp ='';
 						if (this.auth.isAdmin || listing.val().uid == this.auth.user.identities[0].user_id) {
+							let editButton = this.utils.createWithIdButton(refPath+'/'+listing.key, 'Edit', listing.key, 'editEntry');
+							editTemp = editButton;
 							//console.log("This getting called?");
 							let delButton = this.utils.createButton(refPath + '/' + listing.key, "Del", 'delEntry');
 							delTemp = delButton;
@@ -75,27 +79,28 @@ export default class AccommodationsController extends FirebaseConnection {
 							listing.val().payment,
 							listing.val().startDate,
 							listing.val().endDate,
-							'',
+							editTemp,
 							delTemp
 						];
 						let data = [
 							listing.val().locationAddress,
 							listing.val().userName,
 						];
-						//this.table.row.data().add(data);
-						this.table.row.add(row).child(this.format(data)).draw(false);
-						//
+						this.table.row.add(row).child(this.formatExpand(data)).draw(false);
 					});
-										
 					let expandButtons = document.getElementsByClassName('details-control');
 					for(let i=0; i<expandButtons.length; i++){
 						expandButtons[i].addEventListener('click', this.expandEvent.bind(this), false);
 					}
-					
 					//This needs to be inside the observable so isn't called off race condition..
 					let delButtons = document.getElementsByClassName('delEntry');
 					for (let i = 0; i < delButtons.length; i++) {
 						delButtons[i].addEventListener('click', this.deleteDatabaseEntryEvent.bind(this), false);
+					}
+					let editButtons = document.getElementsByClassName('editEntry');
+					console.log(editButtons);
+					for (let i = 0; i < editButtons.length; i++) {
+						editButtons[i].addEventListener('click', this.editDatabaseEntry.bind(this), false);
 					}
 				}
 				else {
@@ -104,17 +109,61 @@ export default class AccommodationsController extends FirebaseConnection {
 			});
 		}
 		else {
-			console.log("this getting called?");
 			this.table.clear();
 		}
 	}
+	
+	editDatabaseEntry(evt){
+		let key = evt.target.getAttribute('id');
+		let controller = this;
+		this.dbRef.child(key).once('value').then( (snapshot) => {
+			let obj = {};
+			console.log(snapshot.val().city);
+			obj['city'] = snapshot.val().city;
+			obj['rent'] = snapshot.val().rent;
+			obj['payment'] = snapshot.val().payment;
+			obj['startDate'] = snapshot.val().startDate;
+			obj['endDate'] = snapshot.val().endDate;
+			obj['locationAddress'] = snapshot.val().locationAddress;
+			let htmlInput = this.setHtmlInput(obj);
+			console.log(obj.city);
+			console.log(htmlInput);
+			
+		  this.utils.adminDisplayVexDialog(htmlInput, "Edit Entry", data => {
+		  	if(data){
+				  for(const prop in data){
+					  data[prop] = controller.utils.sanatizeInput(data[prop]);
+				  }
+				  let username = controller.auth.user.given_name + ' ' + controller.auth.user.family_name;
+				  let uid = controller.auth.user.identities[0].user_id;
+				  
+				  this.dbRef.child(key).update({
+					  city: data.city,
+					  rent: data.rent,
+					  payment: data.payment,
+					  startDate: data.startDate,
+					  endDate: data.endDate,
+					  locationAddress: data.locationAddress,
+					  userName: username,
+					  uid: uid
+				  });
+			  }
+		  }).then(() => {
+			  controller.utils.displayVexAlert('Successfully Updated Entry');
+		  }).catch((err) => {
+			  controller.utils.displayVexAlert(err);
+		  });
+		}).catch((err) => {
+			console.log(err);
+		});
+	}
+	
 	
 	expandEvent(evt){
 		console.log(this);
 		console.log(evt);
 		let tr = $(evt.target).closest('tr');
 		let row = this.table.row(tr);
-		
 		if(row.child.isShown()){
 			row.child.hide();
 			tr.removeClass('shown');
@@ -123,19 +172,18 @@ export default class AccommodationsController extends FirebaseConnection {
 			row.child.show();
 			tr.addClass('shown');
 		}
-		
 	}
 	
 	
-	format(d) {
+	formatExpand(infoArray) {
 		return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
 			'<tr>' +
 			'<td>Location / Address:</td>' +
-			'<td>' + d[0] + '</td>' +
+			'<td>' + infoArray[0] + '</td>' +
 			'</tr>' +
 			'<tr>' +
 			'<td>Full Name:</td>' +
-			'<td>' + d[1] + '</td>' +
+			'<td>' + infoArray[1] + '</td>' +
 			'</tr>' +
 			'</table>';
 		
@@ -159,31 +207,60 @@ export default class AccommodationsController extends FirebaseConnection {
 		});
 	}
 	
-	addDatabaseEntryEvent(evt) {
-		evt.preventDefault();
-		let htmlInput = '<input name="city" type="text" placeholder="City" required minlength="2" maxlength="15" data-validation-error-msg="Please Enter Value between 2-15 characters"/>' +
-			'<input name="rent" type="text" placeholder="Rent" required minlength="2" maxlength="10" data-validation-error-msg="Please Enter Value between 2-10 characters" />' +
-			'<input name="payment" type="text" placeholder="Payment" required minlength="2" maxlength="10" data-validation-error-msg="Please Enter Value between 2-10 characters" />' +
-			'<input class="validate" name="startDate" required pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" data-validation-help="YYYY-MM-DD" type="text"  placeholder="Start Date"/>' +
-			'<input name="endDate" type="text" required pattern ="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" data-validation-help="YYYY-MM-DD"  placeholder="End Date" />' +
-			'<input name="locationAddress" required minlength="10" maxlength="180" type="text"  placeholder="Location / Address" />' +
+	
+	setHtmlInput(data){
+		let cityVal = data ? data.city : '';
+		let rentVal = data ? data.rent : '';
+		let paymentVal = data ? data.payment : '';
+		let startDateVal = data ? data.startDate : '';
+		let endDateVal = data ? data.endDate : '';
+		let locationAddressVal = data ? data.locationAddress : '';
+		return '<input name="city" value="'+cityVal+'" type="text" placeholder="City" required minlength="2" maxlength="15" data-validation-error-msg="Please Enter Value between 2-15 characters"/>' +
+			'<input name="rent" value="'+rentVal+'" type="text" placeholder="Rent" required minlength="2" maxlength="10" data-validation-error-msg="Please Enter Value between 2-10 characters" />' +
+			'<input name="payment" value="'+paymentVal + '" type="text" placeholder="Payment" required minlength="2" maxlength="10" data-validation-error-msg="Please Enter Value between 2-10 characters" />' +
+			'<input class="validate" value="'+startDateVal+'" name="startDate" required pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" data-validation-help="YYYY-MM-DD" type="text"  placeholder="Start Date"/>' +
+			'<input name="endDate" value="'+endDateVal+'" type="text" required pattern ="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" data-validation-help="YYYY-MM-DD"  placeholder="End Date" />' +
+			'<textarea name="locationAddress" required minlength="10" maxlength="180" type="text"  placeholder="Location / Address" >'+locationAddressVal+
+			'</textarea>' +
 			
 			"<script>" +
 			"$.validate({" +
 			"modules: 'html5'});" +
 			"</script>";
+	}
+	
+	addDatabaseEntryEvent(evt) {
+		evt.preventDefault();
+		let htmlInput = this.setHtmlInput(null);
+		
+		// let htmlInput = '<input name="city" type="text" placeholder="City" required minlength="2" maxlength="15" data-validation-error-msg="Please Enter Value between 2-15 characters"/>' +
+		// 	'<input name="rent" type="text" placeholder="Rent" required minlength="2" maxlength="10" data-validation-error-msg="Please Enter Value between 2-10 characters" />' +
+		// 	'<input name="payment" type="text" placeholder="Payment" required minlength="2" maxlength="10" data-validation-error-msg="Please Enter Value between 2-10 characters" />' +
+		// 	'<input class="validate" name="startDate" required pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" data-validation-help="YYYY-MM-DD" type="text"  placeholder="Start Date"/>' +
+		// 	'<input name="endDate" type="text" required pattern ="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" data-validation-help="YYYY-MM-DD"  placeholder="End Date" />' +
+		// 	'<textarea name="locationAddress" required minlength="10" maxlength="180" type="text"  placeholder="Location / Address" ></textarea>' +
+		//	
+		// 	"<script>" +
+		// 	"$.validate({" +
+		// 	"modules: 'html5'});" +
+		// 	"</script>";
 		
 		
 		let controller = this;
 		
 		controller.utils.adminDisplayVexDialog(htmlInput, "Add Entry", data => {
 			if (data) {
-				data.city = controller.utils.sanatizeInput(data.city);
-				data.rent = controller.utils.sanatizeInput(data.rent);
-				data.payment = controller.utils.sanatizeInput(data.payment);
-				data.startDate = controller.utils.sanatizeInput(data.startDate);
-				data.endDate = controller.utils.sanatizeInput(data.endDate);
-				data.locationAddress = controller.utils.sanatizeInput(data.locationAddress);
+				console.log(data);
+				for(const prop in data){ 
+					data[prop] = controller.utils.sanatizeInput(data[prop]);
+				}
+				
+				// data.city = controller.utils.sanatizeInput(data.city);
+				// data.rent = controller.utils.sanatizeInput(data.rent);
+				// data.payment = controller.utils.sanatizeInput(data.payment);
+				// data.startDate = controller.utils.sanatizeInput(data.startDate);
+				// data.endDate = controller.utils.sanatizeInput(data.endDate);
+				// data.locationAddress = controller.utils.sanatizeInput(data.locationAddress);
 				
 				let username = controller.auth.user.given_name + ' ' + controller.auth.user.family_name;
 				let uid = controller.auth.user.identities[0].user_id;
@@ -215,6 +292,7 @@ export default class AccommodationsController extends FirebaseConnection {
 		let button = document.getElementsByClassName('addEntry');
 		button[0].addEventListener('click', this.addDatabaseEntryEvent.bind(this), false);
 	}
+	
 	
 	
 }
