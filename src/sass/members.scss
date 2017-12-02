@@ -94,6 +94,14 @@ input:valid {
 	border: 2px solid darkgreen;
 }
 
+td.details-control {
+	background: url('../images/databases/details_open.png') no-repeat center center;
+	cursor: pointer;
+}
+tr.shown td.details-control {
+	background: url('../images/databases/details_close.png') no-repeat center center;
+}
+
 
 /* iPad portrait browsing*/
 @media only screen and (max-width: 959px) {
