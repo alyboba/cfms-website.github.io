@@ -3,7 +3,10 @@ title: >-
   Call for Applications: IFMSA August Meeting 2018 - CFMS Fundraising
   Coordinator (Due December 20th)
 date: 2017-11-30 00:00:00
-description: Please fill in description here.
+description: >-
+  One CFMS member will be hired to join the fundraising team to help
+  IFMSA-Quebec fundraise for the event and search fro strategic partners,
+  particularly across Canada.
 lang: en
 ---
 
@@ -26,7 +29,7 @@ Proposed Tasks for the CFMS Fundraising Coordinator;
 
 Selection Criteria
 
-* Be a medical student in Ontario, Manitoba, Saskatchewan, Alberta, New Brunswick or British Columbia;
+* Be a medical student in Ontario, Manitoba, Saskatchewan, Alberta, New Brunswick, British Columbia, Newfoundland, or Nova Scotia;
 * Show interest in large-scale events;
 * Must stay involved until the end of the project in August 2018;
 * Master English, written and spoken (French is a plus);
