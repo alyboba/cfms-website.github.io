@@ -13,4 +13,12 @@ export default class Repository {
     getAll() {
         return this.ref.orderByKey().once('value');
     }
+    
+    remove(id) {
+        
+    }
+    
+    add(model) {
+        return this.ref.push(model.toRow());
+    }
 }
