@@ -21,7 +21,7 @@ nav:
     resources: Resources
     meetings: Meetings
     members: Members
-    news:
+    news: News
     human-of-medicine: Humans of Medicine
     login: Login
     logout: Logout
@@ -39,7 +39,7 @@ nav:
     resources: Ressources
     meetings: Réunions
     members: Membres
-    news:
+    news: Nouvelles
     human-of-medicine: Humains de la Médecine
     login: Se connecter
     logout: Se déconnecter
@@ -307,3 +307,10 @@ sidebar-discounts:
     textbooks: Réductions sur les Manuels
     online-resources: Rabais sur les ressources électroniques Médicales
     lasik: Correction de la vision LASIK MD
+sidebar-databases:
+  - lang: en
+    sidebar-title_1: Databases
+    accommodations: Accommodations
+  - lang: fr
+    sidebar-title_1: Base de données
+    accommodations: Hébergement

@@ -59,86 +59,57 @@ export default class Utils {
         let button = '<div class="url preview"><p><a style="cursor: pointer;" src="'+ path +'" class="'+className+'">'+title+'</a></p></div>';
         return button;
     }
-
-
-
+    
+    createWithIdButton(path, title, idName, className){
+			let button = '<div class="url preview"><p><a style="cursor: pointer;" src="'+ path +'" id="'+idName+'" class="'+className+'">'+title+'</a></p></div>';
+			return button;
+		}
 	
-	
-	adminAddEntry(path, firebase, storagePath, object, file){
-		let modalController = this;
-		this.vexConfirm().then( () => {
-      if(Utils.fileAvailable(file)){ //checks if a file is available 
-        modalController.fileUploadPromise(firebase, storagePath, file).then( (fileObject ) =>{
-        	//check if file is already uploaded or not.
-	          object.fileLink = fileObject.downloadURL;
-	          object.filePath = fileObject.filePath;
-        }).catch((error) => {
-          //TODO: add error message in vex, based off error code.
-          vex.dialog.alert('<h3><strong>'+error+'</strong></h3>');
-          console.log("an Error occurred, Error "+ error);
-		    })
-      }
-		}).catch( () => {
-			console.log("The File Upload promise returned false!!!!");
+	adminDisplayVexDialog(htmlInput, message, callback){
+		vex.dialog.open({
+			message: message,
+			input: [
+				htmlInput
+			].join(''),
+			buttons: [
+				$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }),
+				$.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
+			],
+			callback: function(data) { //This executes when a button is pressed
+				if (!data) { //Executes if back button pressed
+					callback(null);
+				} else { //Executes if Add button pressed
+					callback(data);
+				}
+			}
+		}).on("change", "#uploadFile", (e) =>{ //This is an event handler dynamically attached only when modal is clicked!.
+			var label	 = e.target.nextElementSibling,
+				labelVal = label.innerHTML,
+				fileName = '';
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else
+				fileName = e.target.value.split( '\\' ).pop();
+			
+			if( fileName )
+				label.querySelector( 'span' ).innerHTML = fileName;
+			else
+				label.innerHTML = labelVal;
 		});
 	}
 	
-	addDatabaseEntry(firebase, object, path){
-		firebase.database().ref(path).push({
-			object
-		}).then( () => {
-			return true;
-		}).catch(() =>{
-			return false;
-		});
-		
+	
+	displayVexAlert(message){
+		vex.dialog.alert('<h3><strong>' + message + '</strong></h3>');
 	}
 	
-	static fileAvailable(file){
-	    if(file == null){
-	        return false;
-      }
-      return true;
-  }
-	
-   adminDisplayVexDialog(htmlInput, message, callback){
-	  vex.dialog.open({
-		  message: message,
-		  input: [
-			  htmlInput
-		  ].join(''),
-		  buttons: [
-			  $.extend({}, vex.dialog.buttons.YES, { text: 'Add' }),
-			  $.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
-		  ],
-		  callback: function(data) { //This executes when a button is pressed
-		   if (!data) { //Executes if back button pressed
-			   callback(null);
-		   } else { //Executes if Add button pressed
-			   callback(data);
-		   }
-	   }
-	  }).on("change", "#uploadFile", (e) =>{ //This is an event handler dynamically attached only when modal is clicked!.
-		  var label	 = e.target.nextElementSibling,
-			  labelVal = label.innerHTML,
-			  fileName = '';
-		  if( this.files && this.files.length > 1 )
-			  fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
-		  else
-			  fileName = e.target.value.split( '\\' ).pop();
-		
-		  if( fileName )
-			  label.querySelector( 'span' ).innerHTML = fileName;
-		  else
-			  label.innerHTML = labelVal;
-	  });
-  }
-  
-  
-  
-  displayVexAlert(message){
-	  vex.dialog.alert('<h3><strong>' + message + '</strong></h3>');
-  }
+	sanatizeInput(input){
+		let output = input.replace(/<script[^>]*?>.*?<\/script>/gi, '').
+		replace(/<[\/\!]*?[^<>]*?>/gi, '').
+		replace(/<style[^>]*?>.*?<\/style>/gi, '').
+		replace(/<![\s\S]*?--[ \t\n\r]*>/gi, '');
+		return output;
+	}
 	
 	/*
 * A custom promise for if a user is sure to continue or not.
@@ -159,7 +130,16 @@ export default class Utils {
 		});
 	}
 	
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -72,6 +72,30 @@
 	img { box-shadow: 5px 5px 10px rgba(0,0,0,0.3);}
 }
 
+.form-error{
+	color:darkred;
+}
+
+input:focus {
+	border-color: #5e97b0;
+}
+input.error{
+	border: 2px solid darkred;
+}
+input.valid {
+	border: 2px solid #4cae4c;
+}
+
+
+td.details-control {
+	background: url('../images/databases/details_open.png') no-repeat center center;
+	cursor: pointer;
+}
+tr.shown td.details-control {
+	background: url('../images/databases/details_close.png') no-repeat center center;
+}
+
+
 /* iPad portrait browsing*/
 @media only screen and (max-width: 959px) {
 	#what-we-do-home {padding-top:30px;}

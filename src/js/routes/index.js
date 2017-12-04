@@ -15,7 +15,7 @@ import ForgotPassword from './forgot-password';
 import RepResources from './rep-resources';
 import Communiques from './communiques';
 import ArchivedCommuniques from './communiques-archived';
-
+import Accommodations from './accommodations';
 
 export default class Router extends Middleware {
     constructor() {
@@ -53,6 +53,9 @@ export default class Router extends Middleware {
         route('/fr/members/communique.html', Communiques);
         route('/members/archived-communiques.html', ArchivedCommuniques);
 	      route('/fr/members/archived-communiques.html', ArchivedCommuniques);
+        
+        route('/databases/accommodations/accommodations.html', Accommodations);
+	      route('/fr/databases/accommodations/accommodations.html', Accommodations);
         
         route('/resources/rep-resources.html', RepResources);
         route('/fr/resources/rep-resources.html', RepResources);
