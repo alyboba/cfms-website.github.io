@@ -59,6 +59,88 @@ export default class Utils {
         let button = '<div class="url preview"><p><a style="cursor: pointer;" src="'+ path +'" class="'+className+'">'+title+'</a></p></div>';
         return button;
     }
-
     
+    createWithIdButton(path, title, idName, className){
+			let button = '<div class="url preview"><p><a style="cursor: pointer;" src="'+ path +'" id="'+idName+'" class="'+className+'">'+title+'</a></p></div>';
+			return button;
+		}
+	
+	adminDisplayVexDialog(htmlInput, message, callback){
+		vex.dialog.open({
+			message: message,
+			input: [
+				htmlInput
+			].join(''),
+			buttons: [
+				$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }),
+				$.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
+			],
+			callback: function(data) { //This executes when a button is pressed
+				if (!data) { //Executes if back button pressed
+					callback(null);
+				} else { //Executes if Add button pressed
+					callback(data);
+				}
+			}
+		}).on("change", "#uploadFile", (e) =>{ //This is an event handler dynamically attached only when modal is clicked!.
+			var label	 = e.target.nextElementSibling,
+				labelVal = label.innerHTML,
+				fileName = '';
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else
+				fileName = e.target.value.split( '\\' ).pop();
+			
+			if( fileName )
+				label.querySelector( 'span' ).innerHTML = fileName;
+			else
+				label.innerHTML = labelVal;
+		});
+	}
+	
+	
+	displayVexAlert(message){
+		vex.dialog.alert('<h3><strong>' + message + '</strong></h3>');
+	}
+	
+	sanatizeInput(input){
+		let output = input.replace(/<script[^>]*?>.*?<\/script>/gi, '').
+		replace(/<[\/\!]*?[^<>]*?>/gi, '').
+		replace(/<style[^>]*?>.*?<\/style>/gi, '').
+		replace(/<![\s\S]*?--[ \t\n\r]*>/gi, '');
+		return output;
+	}
+	
+	/*
+* A custom promise for if a user is sure to continue or not.
+*/
+	vexConfirm(){
+		return new Promise((resolve, reject) => {
+			vex.dialog.confirm({
+				message: "Are you sure?",
+				callback: (value) => {
+					if (value) {
+						resolve(true); //if user selects yes, promise resolves true
+					}
+					else {
+						reject(false);
+					}
+				} //end vex confirm callback
+			});
+		});
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

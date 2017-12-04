@@ -1,0 +1,12 @@
+<div id="sidebar">
+    <div id="scroll">
+        {% for sideObject in site.data.translations.sidebar-databases %}
+        {% if sideObject.lang == page.lang %}
+        <span id="sidebar-title">{{sideObject.sidebar-title_1}}</span>
+        <ul>
+            <li><a id="accommodations-database" href="accommodations.html">{{ sideObject.accommodations }}</a></li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
