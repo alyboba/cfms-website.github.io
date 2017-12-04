@@ -118741,7 +118741,7 @@ var App = function App() {
 ;
 new App();
 
-},{"./routes":532}],492:[function(require,module,exports){
+},{"./routes":536}],492:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -119053,7 +119053,7 @@ var AccommodationsController = function (_FirebaseConnection) {
 
 exports.default = AccommodationsController;
 
-},{"../repositories/firebase/utils":528,"../utils":548}],494:[function(require,module,exports){
+},{"../repositories/firebase/utils":530,"../utils":552}],494:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119100,7 +119100,234 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{"../utils":548}],495:[function(require,module,exports){
+},{"../utils":552}],495:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _utils = require('../utils');
+
+var _utils2 = _interopRequireDefault(_utils);
+
+var _utils3 = require('../repositories/firebase/utils');
+
+var _firebaseStorage = require('../repositories/firebase/firebase-storage');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CommuniquesController = function (_FirebaseConnection) {
+	_inherits(CommuniquesController, _FirebaseConnection);
+
+	function CommuniquesController(path, authenticationService, firebaseStorageService) {
+		_classCallCheck(this, CommuniquesController);
+
+		var _this = _possibleConstructorReturn(this, (CommuniquesController.__proto__ || Object.getPrototypeOf(CommuniquesController)).call(this));
+
+		_this.firebaseStorage = firebaseStorageService;
+		_this.utils = new _utils2.default();
+		_this.refPath = path;
+		_this.storageRefPath = 'communiques/';
+		_this.auth = authenticationService;
+		_this.process();
+		return _this;
+	}
+
+	_createClass(CommuniquesController, [{
+		key: 'process',
+		value: function process() {
+			var _this2 = this;
+
+			if (this.auth.user) {
+				//check if user is signed in
+				console.log("Is this user an admin?  " + this.auth.user.isAdmin);
+				var elem = void 0,
+				    temp = void 0,
+				    //Variables used to populate page with html.
+				subRefPath = '',
+				    //Variables used to assign paths to the delete buttons.
+				subSubRefPath = '';
+				if (this.utils.isPageEnglish()) {
+					//Sets database path to english or french version!
+					this.refPath = this.refPath + 'en/';
+				} else {
+					this.refPath = this.refPath + 'fr/';
+				}
+				this.firebase.database().ref(this.refPath).on('value', function (snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						//This iterates over the years in the database.
+						elem = ''; //Resetting variable for next iteration.
+						subRefPath = _this2.refPath + childSnapshot.key;
+						elem += '<h2 class="bold-red meetingMinuteYear">' + childSnapshot.key + '</h2>';
+						childSnapshot.forEach(function (subChildSnapshot) {
+							//This iterates over all nodes within each year currently on in DB.
+							subSubRefPath = subRefPath + '/' + subChildSnapshot.key;
+							elem += '<a href="' + subChildSnapshot.val().fileLink + '" target="_blank">' + subChildSnapshot.val().title + '</a><br>';
+							if (_this2.auth.user.isAdmin) {
+								//TODO: Add check this.auth.user.isAdmin
+								var deleteButton = _this2.utils.createButton(subSubRefPath, "Delete", "deleteEntry");
+								elem += deleteButton;
+							} //end admin if
+							elem += '<br>';
+						}); //end third DB call
+
+
+						temp = document.createElement("blockquote");
+						temp.innerHTML = elem;
+						document.getElementById('communiqueInformation').insertBefore(temp, document.getElementById('communiqueInformation').firstChild);
+					}); //end second Db call
+
+					if (_this2.auth.user.isAdmin) {
+						//Executes if user is an admin user.
+						temp = document.createElement("blockquote");
+						var addButton = _this2.utils.createButton(_this2.refPath, "Add", "addEntry");
+						elem = addButton;
+						temp.innerHTML = elem;
+						document.getElementById('communiqueInformation').insertBefore(temp, document.getElementById('communiqueInformation').firstChild);
+
+						//These will get updated every time a change is made to Database.
+						var deleteButtons = document.getElementsByClassName("deleteEntry");
+						for (var i = 0; i < deleteButtons.length; i++) {
+							deleteButtons[i].addEventListener('click', _this2.deleteMeetingMinutesEvent.bind(_this2), false);
+						}
+						var addButtons = document.getElementsByClassName("addEntry");
+						for (var _i = 0; _i < addButtons.length; _i++) {
+							addButtons[_i].addEventListener('click', _this2.addCommuniqueEvent.bind(_this2), false);
+						}
+					} //end admin if
+				}); //end first database call
+			} else {
+				if (this.utils.isPageEnglish()) {
+					this.utils.displayVexAlert('You must be signed in to view this page!');
+				} else {
+					this.utils.displayVexAlert('Vous devez être connecté pour voir cette page!');
+				}
+				console.log("We are on the page with user not signed in tsk tsk tsk.");
+			} //end else 
+		} //end process
+
+
+	}, {
+		key: 'addCommuniqueEvent',
+		value: function addCommuniqueEvent(evt) {
+			var _this3 = this;
+
+			evt.preventDefault();
+			var htmlInput = '<input name="year" type="text" placeholder="Year" required/>' + '<input name="title" type="text" placeholder="Title" required />' + '<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />' + '<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>';
+			var controller = this;
+			//let databaseModel = new DatabaseEntryModel();
+			controller.utils.adminDisplayVexDialog(htmlInput, "Add Meeting Minutes", function (data) {
+				//Grabs data entered by the user.
+				if (data && controller.isProperYearRange(data.year, 2000, 2030)) {
+					var fileUpload = document.getElementById('uploadFile').files;
+					if (fileUpload && fileUpload.length == 1) {
+						_this3.firebaseStorage.fileUploadPromise(fileUpload[0], _this3.storageRefPath).then(function (fileObject) {
+							controller.firebase.database().ref(_this3.refPath + '/' + data.year).push({
+								title: data.title,
+								fileTitle: fileObject.fileTitle,
+								fileLink: fileObject.downloadURL,
+								filePath: fileObject.filePath
+							}).then(function () {
+								location.reload();
+							}).catch(function (err) {
+								controller.utils.displayVexAlert('<h3><strong>' + err + '</strong></h3>');
+							});
+						}).catch(function (error) {
+							controller.utils.displayVexAlert(error);
+						});
+					} else {
+						controller.utils.displayVexAlert("You are missing a file");
+					}
+				}
+			});
+		} // end addCommuniqueEvent
+
+
+		/*
+   * @type {Admin-only}
+   * @param {object} evt
+   *   An object to hold reference to the element that triggered the event.
+   */
+
+	}, {
+		key: 'deleteMeetingMinutesEvent',
+		value: function deleteMeetingMinutesEvent(evt) {
+			var _this4 = this;
+
+			evt.preventDefault();
+			var dbPath = evt.target.getAttribute('src');
+			console.log(dbPath);
+			this.utils.vexConfirm().then(function () {
+				_this4.deleteMeetingMinutes(dbPath);
+			});
+		}
+
+		/*
+   * @type {Admin-only}
+   * @param {String}
+   *   A string to hold reference to the database Path. Path is stored in the elements src attribute.
+   *   The path is passed to this function through the deleteMeetingsEvent function.
+   */
+
+	}, {
+		key: 'deleteMeetingMinutes',
+		value: function deleteMeetingMinutes(dbPath) {
+			var _this5 = this;
+
+			this.firebase.database().ref(dbPath).once('value').then(function (snapshot) {
+				var fileName = snapshot.val().fileTitle;
+				_this5.firebaseStorage.deleteEntry(fileName).then(function () {
+					_this5.firebase.database().ref(dbPath).remove().then(function () {
+						//this.utils.displayVexAlert('<h3><strong>Success!</strong></h3>');
+						location.reload();
+					});
+				}).catch(function (err) {
+					console.log(err);
+					_this5.firebase.database().ref(dbPath).remove().then(function () {
+						//this.utils.displayVexAlert('<h3><strong>Success!</strong></h3>');
+						location.reload();
+					});
+				});
+			});
+		}
+
+		/*
+  * A utility function to validate a proper year is entered in the modal form when Adding entry to database.
+  * @param {String} year
+  *   The year the user entered
+  * @param {String} startYear
+  *   The floor limit of years allowed.
+  * @param {String} endYear
+  *   The ceiling limit of years allowed.
+  */
+
+	}, {
+		key: 'isProperYearRange',
+		value: function isProperYearRange(year, startYear, endYear) {
+			if (year >= startYear && year <= endYear) {
+				return true;
+			} else {
+				this.utils.displayVexAlert("Year must be between " + startYear + " and " + endYear + " inclusive");
+				return false;
+			}
+		}
+	}]);
+
+	return CommuniquesController;
+}(_utils3.FirebaseConnection);
+
+exports.default = CommuniquesController;
+
+},{"../repositories/firebase/firebase-storage":527,"../repositories/firebase/utils":530,"../utils":552}],496:[function(require,module,exports){
 'use strict';
 
 /*
@@ -119184,7 +119411,7 @@ exports.default = AuthenticationController;
 	return Gallery;
 });
 
-},{}],496:[function(require,module,exports){
+},{}],497:[function(require,module,exports){
 "use strict";
 
 !function () {
@@ -119679,7 +119906,7 @@ exports.default = AuthenticationController;
 });
 
 
-},{}],497:[function(require,module,exports){
+},{}],498:[function(require,module,exports){
 'use strict';
 
 /*
@@ -119871,7 +120098,7 @@ exports.default = AuthenticationController;
 	}
 })();
 
-},{}],498:[function(require,module,exports){
+},{}],499:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119960,7 +120187,7 @@ var ExchangesController = function () {
 
 exports.default = ExchangesController;
 
-},{"../utils":548,"request-promise":394}],499:[function(require,module,exports){
+},{"../utils":552,"request-promise":394}],500:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120000,7 +120227,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{}],500:[function(require,module,exports){
+},{}],501:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120489,7 +120716,7 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
 exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
-},{"../repositories/firebase/utils":528}],501:[function(require,module,exports){
+},{"../repositories/firebase/utils":530}],502:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120504,9 +120731,7 @@ var _utils2 = require('../utils');
 
 var _utils3 = _interopRequireDefault(_utils2);
 
-var _showModal = require('../controllers/showModal');
-
-var _showModal2 = _interopRequireDefault(_showModal);
+var _firebaseStorage = require('../repositories/firebase/firebase-storage');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -120522,31 +120747,19 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 * section in database.
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
 
-//TODO: Page could have extra security checks/Ui enhancements. Leaving for now because it is for admins.
 
 var MeetingMinutesController = function (_FirebaseConnection) {
 	_inherits(MeetingMinutesController, _FirebaseConnection);
 
-	/*
-  * @constructor
-  * @param {Utils} this.utils
-    * Object to access methods from the src/js/utils.js class
-  *  
-  * @param {String} this.refPath
-    * holds the root reference path to the firebase database
-  *   
-  * @param {AuthenticationService} this.auth
-    * Object used to make sure the user accessing the page is authenticated
-  * @event this.process
-    * our base event to be triggered when page initializes.
-  */
-	function MeetingMinutesController(authenticationService, ModalController) {
+	function MeetingMinutesController(authenticationService, firebaseStorageService) {
 		_classCallCheck(this, MeetingMinutesController);
 
 		var _this = _possibleConstructorReturn(this, (MeetingMinutesController.__proto__ || Object.getPrototypeOf(MeetingMinutesController)).call(this));
 
+		_this.firebaseStorage = firebaseStorageService;
 		_this.utils = new _utils3.default();
 		_this.refPath = 'meeting-minutes/';
+		_this.storageRefPath = 'minutes/';
 		_this.auth = authenticationService;
 		_this.process();
 		return _this;
@@ -120574,16 +120787,15 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 				subSubRefPath = '';
 				if (this.utils.isPageEnglish()) {
 					//Sets database path to english or french version!
-					this.refPath = this.refPath + 'en';
+					this.refPath = this.refPath + 'en/';
 				} else {
-					this.refPath = this.refPath + 'fr';
+					this.refPath = this.refPath + 'fr/';
 				}
 				this.firebase.database().ref(this.refPath).on('value', function (snapshot) {
-					//Iterating over the database
 					snapshot.forEach(function (childSnapshot) {
 						//This iterates over the years in the database.
 						elem = ''; //Resetting variable for next iteration.
-						subRefPath = _this2.refPath + '/' + childSnapshot.key;
+						subRefPath = _this2.refPath + childSnapshot.key;
 						elem += '<h2 class="bold-red meetingMinuteYear">' + childSnapshot.key + '</h2>';
 						childSnapshot.forEach(function (subChildSnapshot) {
 							//This iterates over all nodes within each year currently on in DB.
@@ -120625,13 +120837,13 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 				}); //end first database call
 			} else {
 				if (this.utils.isPageEnglish()) {
-					vex.dialog.alert('<h3><strong>You must be signed in to view this page!</strong></h3>');
+					this.utils.displayVexAlert('You must be signed in to view this page!');
 				} else {
-					vex.dialog.alert('<h3><strong>Vous devez être connecté pour voir cette page!</strong></h3>');
+					this.utils.displayVexAlert('Vous devez être connecté pour voir cette page!');
 				}
 				console.log("We are on the page with user not signed in tsk tsk tsk.");
 			} //end else 
-		}
+		} //end process
 
 		/*
   * @type {Admin-only}
@@ -120645,83 +120857,36 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 			var _this3 = this;
 
 			evt.preventDefault();
-			var modalController = this;
-			vex.dialog.open({
-				message: 'Add Meeting Minutes',
-				input: ['<input name="year" type="text" placeholder="Year" required/>', '<input name="title" type="text" placeholder="Title" required />', '<input name="subTitle" type="text" placeholder="sub Title" required />', '<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />' + '<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>'].join(''),
-				buttons: [$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }), $.extend({}, vex.dialog.buttons.NO, { text: 'Back' })],
-				callback: function callback(data) {
-					//This executes when a button is pressed
-					if (!data) {
-						//Executes if back button pressed
-						console.log('Cancelled');
+			var htmlInput = '<input name="year" type="text" placeholder="Year" required/>' + '<input name="title" type="text" placeholder="Title" required />' + '<input name="subTitle" type="text" placeholder="Sub Title" required />' + '<input name="uploadFile" id="uploadFile" type="file" class="inputfile" />' + '<label for="uploadFile"><i style="padding-right:8px" class="fa fa-file-o" aria-hidden="true"></i> <span>Choose a file&hellip;</span></label>';
+			var controller = this;
+			//let databaseModel = new DatabaseEntryModel();
+			controller.utils.adminDisplayVexDialog(htmlInput, "Add Meeting Minutes", function (data) {
+				//Grabs data entered by the user.
+				if (data && controller.isProperYearRange(data.year, 2000, 2030)) {
+					var fileUpload = document.getElementById('uploadFile').files;
+					if (fileUpload && fileUpload.length == 1) {
+						_this3.firebaseStorage.fileUploadPromise(fileUpload[0], _this3.storageRefPath).then(function (fileObject) {
+							controller.firebase.database().ref(_this3.refPath + '/' + data.year).push({
+								title: data.title,
+								subTitle: data.subTitle,
+								fileTitle: fileObject.fileTitle,
+								fileLink: fileObject.downloadURL,
+								filePath: fileObject.filePath
+							}).then(function () {
+								location.reload();
+							}).catch(function (err) {
+								controller.utils.displayVexAlert('<h3><strong>' + err + '</strong></h3>');
+							});
+						}).catch(function (error) {
+							controller.utils.displayVexAlert(error);
+						});
 					} else {
-						//Executes if Add button pressed
-						console.log("hitting the add shit here?");
-						if (modalController.isProperYearRange(data.year, 2000, 2030)) {
-							var fileUpload = document.getElementById('uploadFile').files;
-							if (fileUpload.length == 1) {
-								console.log("got into the if statement b4 the function?!?!");
-								modalController.addMeetingMinutes(data.year, data.title, data.subTitle, fileUpload[0]);
-							} else {
-								vex.dialog.alert("You may only attach one file per Entry!");
-							}
-						} else {
-							vex.dialog.alert("Year must be between 2000 and 2030");
-						}
+						controller.utils.displayVexAlert("You are missing a file");
 					}
 				}
-			}).on("change", "#uploadFile", function (e) {
-				//This is an event handler dynamically attached only when modal is clicked!.
-				var label = e.target.nextElementSibling,
-				    labelVal = label.innerHTML,
-				    fileName = '';
-				if (_this3.files && _this3.files.length > 1) fileName = (_this3.getAttribute('data-multiple-caption') || '').replace('{count}', _this3.files.length);else fileName = e.target.value.split('\\').pop();
-
-				if (fileName) label.querySelector('span').innerHTML = fileName;else label.innerHTML = labelVal;
 			});
-		}
+		} // end addMeetingMinutesEvent
 
-		/*
-  * @type {Admin-only}
-  * @param {String} year
-  *   contains the string for the year entered in modal by admin 
-  * @param {String} title
-  *   contains the string for the title entered in modal by admin
-  * @param {String} subTitle
-  *   contains the string for the subTitle entered in modal by admin
-  * @param {Object} file
-  *   A reference to the file object gathered by input element entered by the admin
-  * @param {Boolean} justAdd
-  */
-
-	}, {
-		key: 'addMeetingMinutes',
-		value: function addMeetingMinutes(year, title, subTitle, file) {
-			var _this4 = this;
-
-			var modalController = this;
-			this.vexConfirm().then(function () {
-				modalController.fileUploadPromise(file).then(function (fileObject) {
-					firebase.database().ref(_this4.refPath + '/' + year).push({
-						title: title,
-						subTitle: subTitle,
-						fileTitle: file.name,
-						fileLink: fileObject.downloadURL,
-						filePath: fileObject.filePath
-					}).then(function () {
-						vex.dialog.alert('<h3><strong>Successfully added new Entry!</strong></h3>');
-						location.reload();
-					});
-				}).catch(function (error) {
-					//TODO: add error message in vex, based off error code.
-					vex.dialog.alert('<h3><strong>' + error + '</strong></h3>');
-					console.log("an Error occurred, Error " + error);
-				});
-			}).catch(function () {
-				console.log("The promise returned false!!!!");
-			});
-		}
 
 		/*
    * @type {Admin-only}
@@ -120732,10 +120897,14 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 	}, {
 		key: 'deleteMeetingMinutesEvent',
 		value: function deleteMeetingMinutesEvent(evt) {
+			var _this4 = this;
+
 			evt.preventDefault();
 			var dbPath = evt.target.getAttribute('src');
 			console.log(dbPath);
-			this.deleteMeetingMinutes(dbPath);
+			this.utils.vexConfirm().then(function () {
+				_this4.deleteMeetingMinutes(dbPath);
+			});
 		}
 
 		/*
@@ -120748,22 +120917,20 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 	}, {
 		key: 'deleteMeetingMinutes',
 		value: function deleteMeetingMinutes(dbPath) {
-			this.vexConfirm().then(function () {
-				firebase.database().ref(dbPath).once('value').then(function (snapshot) {
-					var filePath = snapshot.val().filePath;
-					var storageRef = firebase.storage().ref(filePath);
-					console.log(storageRef);
-					storageRef.delete().then(function () {
-						firebase.database().ref(dbPath).remove().then(function () {
-							vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-							location.reload();
-						});
-					}).catch(function () {
-						console.log("The storage in file no longer exists!!!.. Deleting the database entry of broken link!");
-						firebase.database().ref(dbPath).remove().then(function () {
-							vex.dialog.alert('<h3><strong>Success!</strong></h3>');
-							location.reload();
-						});
+			var _this5 = this;
+
+			this.firebase.database().ref(dbPath).once('value').then(function (snapshot) {
+				var fileName = snapshot.val().fileTitle;
+				_this5.firebaseStorage.deleteEntry(fileName).then(function () {
+					_this5.firebase.database().ref(dbPath).remove().then(function () {
+						//this.utils.displayVexAlert('<h3><strong>Success!</strong></h3>');
+						location.reload();
+					});
+				}).catch(function (err) {
+					console.log(err);
+					_this5.firebase.database().ref(dbPath).remove().then(function () {
+						//this.utils.displayVexAlert('<h3><strong>Success!</strong></h3>');
+						location.reload();
 					});
 				});
 			});
@@ -120782,67 +120949,12 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 	}, {
 		key: 'isProperYearRange',
 		value: function isProperYearRange(year, startYear, endYear) {
-			return year > startYear && year < endYear;
-		}
-
-		/*
-   * A custom made promise to determine that a file properly uploads
-   * @param {Object} file
-   *   The file the user uploaded
-   */
-
-	}, {
-		key: 'fileUploadPromise',
-		value: function fileUploadPromise(file) {
-			return new Promise(function (resolve, reject) {
-				var filePath = 'minutes/' + file.name;
-				var storageRef = firebase.storage().ref(filePath);
-				//console.log(storageRef.getDownloadURL());
-				storageRef.getDownloadURL().then(function () {
-					//There already is a file with that name in storage, reject the promise...
-					reject("A File With the same name has already been uploaded!");
-				}).catch(function () {
-					//There is no file with that name in Db, Lets make one!
-					var uploadTask = storageRef.put(file);
-					uploadTask.on('state_changed', function (snapshot) {
-						var progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
-						console.log('Upload is ' + progress + '% done');
-					}, function (error) {
-						//This function happens if error hits during upload.
-						reject(error);
-					}, function () {
-						//this is for on complete uploads!
-						//console.log("are we ever hitting the final function!?>!?!?!");
-						var downloadURL = uploadTask.snapshot.downloadURL;
-						var fileObject = {
-							downloadURL: downloadURL,
-							filePath: filePath
-						};
-						resolve(fileObject);
-					});
-				});
-			});
-		}
-
-		/*
-   * A custom promise for if a user is sure to continue or not.
-   */
-
-	}, {
-		key: 'vexConfirm',
-		value: function vexConfirm() {
-			return new Promise(function (resolve, reject) {
-				vex.dialog.confirm({
-					message: "Are you sure?",
-					callback: function callback(value) {
-						if (value) {
-							resolve(true); //if user selects yes, promise resolves true
-						} else {
-							reject(false);
-						}
-					} //end vex confirm callback
-				});
-			});
+			if (year >= startYear && year <= endYear) {
+				return true;
+			} else {
+				this.utils.displayVexAlert("Year must be between " + startYear + " and " + endYear + " inclusive");
+				return false;
+			}
 		}
 	}]);
 
@@ -120851,7 +120963,7 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 
 exports.default = MeetingMinutesController;
 
-},{"../controllers/showModal":512,"../repositories/firebase/utils":528,"../utils":548}],502:[function(require,module,exports){
+},{"../repositories/firebase/firebase-storage":527,"../repositories/firebase/utils":530,"../utils":552}],503:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120923,7 +121035,7 @@ var MeetingRegistrationsController = function () {
 
 exports.default = MeetingRegistrationsController;
 
-},{}],503:[function(require,module,exports){
+},{}],504:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121005,7 +121117,7 @@ var _class = function (_FirebaseConnection) {
 
 exports.default = _class;
 
-},{"../repositories/firebase/utils":528}],504:[function(require,module,exports){
+},{"../repositories/firebase/utils":530}],505:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121053,7 +121165,7 @@ var MembersController = function () {
 
 exports.default = MembersController;
 
-},{}],505:[function(require,module,exports){
+},{}],506:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121175,7 +121287,7 @@ var NavigationController = function () {
 
 exports.default = NavigationController;
 
-},{"js-cookie":283}],506:[function(require,module,exports){
+},{"js-cookie":283}],507:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121272,7 +121384,7 @@ var PaginationController = function () {
 
 exports.default = PaginationController;
 
-},{}],507:[function(require,module,exports){
+},{}],508:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121361,7 +121473,7 @@ var PaymentsController = function () {
 
 exports.default = PaymentsController;
 
-},{"../utils":548,"request-promise":394}],508:[function(require,module,exports){
+},{"../utils":552,"request-promise":394}],509:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121619,7 +121731,7 @@ var PhotoGalleryController = function () {
 
 exports.default = PhotoGalleryController;
 
-},{"./dependencies/blueimp-gallery":496,"./dependencies/blueimp-gallery-fullscreen":495,"./dependencies/blueimp-helper":497}],509:[function(require,module,exports){
+},{"./dependencies/blueimp-gallery":497,"./dependencies/blueimp-gallery-fullscreen":496,"./dependencies/blueimp-helper":498}],510:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121689,7 +121801,7 @@ var PurchasesController = function () {
 
 exports.default = PurchasesController;
 
-},{"../utils":548,"request-promise":394}],510:[function(require,module,exports){
+},{"../utils":552,"request-promise":394}],511:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121754,7 +121866,7 @@ var RegistrationController = function () {
 
 exports.default = RegistrationController;
 
-},{"../utils":548}],511:[function(require,module,exports){
+},{"../utils":552}],512:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122143,7 +122255,7 @@ var RepResourcesController = function (_FirebaseConnection) {
 
 exports.default = RepResourcesController;
 
-},{"../controllers/showModal":512,"../repositories/firebase/utils":528,"../utils":548}],512:[function(require,module,exports){
+},{"../controllers/showModal":513,"../repositories/firebase/utils":530,"../utils":552}],513:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -122243,7 +122355,7 @@ var ModalController = function () {
 
 exports.default = ModalController;
 
-},{}],513:[function(require,module,exports){
+},{}],514:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -122396,7 +122508,7 @@ var TagSearchConroller = function () {
 
 exports.default = TagSearchConroller;
 
-},{}],514:[function(require,module,exports){
+},{}],515:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122469,7 +122581,7 @@ var ViewExchangePayments = function () {
 
 exports.default = ViewExchangePayments;
 
-},{}],515:[function(require,module,exports){
+},{}],516:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122492,7 +122604,7 @@ var _authentication4 = _interopRequireDefault(_authentication3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/authentication":494,"../services/authentication":544}],516:[function(require,module,exports){
+},{"../controllers/authentication":494,"../services/authentication":548}],517:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122525,7 +122637,7 @@ var Middleware = function Middleware(page) {
 
 exports.default = Middleware;
 
-},{"./authentication":515,"./members-content":517,"./navigation":518}],517:[function(require,module,exports){
+},{"./authentication":516,"./members-content":518,"./navigation":519}],518:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122548,7 +122660,7 @@ var _authentication2 = _interopRequireDefault(_authentication);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/members-content":503,"../services/authentication":544}],518:[function(require,module,exports){
+},{"../controllers/members-content":504,"../services/authentication":548}],519:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122567,7 +122679,7 @@ var _navigation2 = _interopRequireDefault(_navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/navigation":505}],519:[function(require,module,exports){
+},{"../controllers/navigation":506}],520:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122623,7 +122735,7 @@ var ExchangePaymentModel = function (_Model) {
 
 exports.default = ExchangePaymentModel;
 
-},{"./model":521,"./user":522}],520:[function(require,module,exports){
+},{"./model":522,"./user":523}],521:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122679,7 +122791,7 @@ var MeetingRegistrationModel = function (_Model) {
 
 exports.default = MeetingRegistrationModel;
 
-},{"./model":521,"./user":522}],521:[function(require,module,exports){
+},{"./model":522,"./user":523}],522:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122722,7 +122834,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"lodash":320}],522:[function(require,module,exports){
+},{"lodash":320}],523:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122791,7 +122903,7 @@ var UserModel = function (_Model) {
 
 exports.default = UserModel;
 
-},{"./model":521}],523:[function(require,module,exports){
+},{"./model":522}],524:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122846,7 +122958,7 @@ var ApiRepository = function () {
 
 exports.default = ApiRepository;
 
-},{"request-promise":394}],524:[function(require,module,exports){
+},{"request-promise":394}],525:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122893,7 +123005,7 @@ var UserRepository = function (_ApiRepository) {
 
 exports.default = UserRepository;
 
-},{"./repository":523}],525:[function(require,module,exports){
+},{"./repository":524}],526:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122951,7 +123063,108 @@ var ExchangePaymentRepository = function (_FirebaseRepository) {
 
 exports.default = ExchangePaymentRepository;
 
-},{"./repository":527}],526:[function(require,module,exports){
+},{"./repository":529}],527:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _utils = require("./utils");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FirebaseStorageRepository = function (_FirebaseConnection) {
+	_inherits(FirebaseStorageRepository, _FirebaseConnection);
+
+	function FirebaseStorageRepository(refPath) {
+		_classCallCheck(this, FirebaseStorageRepository);
+
+		var _this = _possibleConstructorReturn(this, (FirebaseStorageRepository.__proto__ || Object.getPrototypeOf(FirebaseStorageRepository)).call(this));
+
+		_this.storageRefPath = refPath;
+		_this.storageRef = _this.firebase.storage().ref(refPath);
+		return _this;
+	}
+
+	_createClass(FirebaseStorageRepository, [{
+		key: "fileUploadPromise",
+		value: function fileUploadPromise(file) {
+			var _this2 = this;
+
+			return new Promise(function (resolve, reject) {
+				// let filePath = fileDirectory + ;
+				var storageRef = _this2.storageRef.child(file.name);
+				//console.log(storageRef.getDownloadURL());
+				storageRef.getDownloadURL().then(function () {
+					//There already is a file with that name in storage, reject the promise...
+					reject("A File With the same name has already been uploaded!");
+				}).catch(function () {
+					//There is no file with that name in Db, Lets make one!
+					var uploadTask = storageRef.put(file);
+					uploadTask.on('state_changed', function (snapshot) {
+						var progress = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+						console.log('Upload is ' + progress + '% done');
+					}, function (error) {
+						//This function happens if error hits during upload.
+						reject(error);
+					}, function () {
+						//this is for on complete uploads!
+						//console.log("are we ever hitting the final function!?>!?!?!");
+						var downloadURL = uploadTask.snapshot.downloadURL;
+						var fileObject = {
+							downloadURL: downloadURL,
+							filePath: _this2.storageRefPath + file.name,
+							fileTitle: file.name
+						};
+						resolve(fileObject);
+					});
+				});
+			});
+		}
+	}, {
+		key: "addEntry",
+		value: function addEntry(path, obj) {
+			var _this3 = this;
+
+			return new Promise(function (resolve, reject) {
+				_this3.ref.child(path).push(obj).then(function () {
+					resolve("Successfully Added Entry");
+				}).catch(function (error) {
+					reject(error);
+				});
+			});
+		}
+
+		//Still need to fix this function, split it out etc.
+
+	}, {
+		key: "deleteEntry",
+		value: function deleteEntry(fileName) {
+			var storageReference = this.storageRef;
+			return new Promise(function (resolve, reject) {
+				var storageRef = storageReference.child(fileName);
+				storageRef.delete().then(function () {
+					resolve();
+				}).catch(function (err) {
+					reject(err);
+				});
+			});
+		}
+	}]);
+
+	return FirebaseStorageRepository;
+}(_utils.FirebaseConnection);
+
+exports.default = FirebaseStorageRepository;
+
+},{"./utils":530}],528:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123008,7 +123221,7 @@ var MeetingRegistrationRepository = function (_FirebaseRepository) {
 
 exports.default = MeetingRegistrationRepository;
 
-},{"./repository":527}],527:[function(require,module,exports){
+},{"./repository":529}],529:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123043,6 +123256,14 @@ var Repository = function () {
         value: function getAll() {
             return this.ref.orderByKey().once('value');
         }
+    }, {
+        key: 'remove',
+        value: function remove(id) {}
+    }, {
+        key: 'add',
+        value: function add(model) {
+            return this.ref.push(model.toRow());
+        }
     }]);
 
     return Repository;
@@ -123050,7 +123271,7 @@ var Repository = function () {
 
 exports.default = Repository;
 
-},{"./utils":528}],528:[function(require,module,exports){
+},{"./utils":530}],530:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123115,7 +123336,7 @@ var FirebaseRef = function (_FirebaseConnection) {
 exports.FirebaseRef = FirebaseRef;
 exports.FirebaseConnection = FirebaseConnection;
 
-},{"../../config":492,"firebase":202}],529:[function(require,module,exports){
+},{"../../config":492,"firebase":202}],531:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123138,7 +123359,63 @@ function Accommodations(ctx, next) {
 	next();
 }
 
-},{"../controllers/accommodations":493,"../services/authentication":544}],530:[function(require,module,exports){
+},{"../controllers/accommodations":493,"../services/authentication":548}],532:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = ArchivedCommuniques;
+
+var _communiques = require('../controllers/communiques');
+
+var _communiques2 = _interopRequireDefault(_communiques);
+
+var _authentication = require('../services/authentication');
+
+var _authentication2 = _interopRequireDefault(_authentication);
+
+var _firebaseStorage = require('../repositories/firebase/firebase-storage');
+
+var _firebaseStorage2 = _interopRequireDefault(_firebaseStorage);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ArchivedCommuniques(ctx, next) {
+	new _communiques2.default('communiques/archived/', new _authentication2.default(), new _firebaseStorage2.default('communiques/archived/'));
+	next();
+}
+
+},{"../controllers/communiques":495,"../repositories/firebase/firebase-storage":527,"../services/authentication":548}],533:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = Communiques;
+
+var _communiques = require('../controllers/communiques');
+
+var _communiques2 = _interopRequireDefault(_communiques);
+
+var _authentication = require('../services/authentication');
+
+var _authentication2 = _interopRequireDefault(_authentication);
+
+var _firebaseStorage = require('../repositories/firebase/firebase-storage');
+
+var _firebaseStorage2 = _interopRequireDefault(_firebaseStorage);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//Shows Member Account Information on the Members Page
+function Communiques(ctx, next) {
+	new _communiques2.default('communiques/', new _authentication2.default(), new _firebaseStorage2.default('communiques/'));
+
+	next();
+}
+
+},{"../controllers/communiques":495,"../repositories/firebase/firebase-storage":527,"../services/authentication":548}],534:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123185,7 +123462,7 @@ function ExchangePayments(ctx, next) {
     next();
 }
 
-},{"../controllers/exchanges":498,"../controllers/view-exhange-payments":514,"../models/exchange-payment":519,"../models/user":522,"../repositories/api/user":524,"../repositories/firebase/exchange-payments":525,"../services/authentication":544,"../services/payments":547}],531:[function(require,module,exports){
+},{"../controllers/exchanges":499,"../controllers/view-exhange-payments":515,"../models/exchange-payment":520,"../models/user":523,"../repositories/api/user":525,"../repositories/firebase/exchange-payments":526,"../services/authentication":548,"../services/payments":551}],535:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123209,7 +123486,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/forgot-password":499,"../services/authentication":544}],532:[function(require,module,exports){
+},{"../controllers/forgot-password":500,"../services/authentication":548}],536:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123276,6 +123553,14 @@ var _repResources = require('./rep-resources');
 
 var _repResources2 = _interopRequireDefault(_repResources);
 
+var _communiques = require('./communiques');
+
+var _communiques2 = _interopRequireDefault(_communiques);
+
+var _communiquesArchived = require('./communiques-archived');
+
+var _communiquesArchived2 = _interopRequireDefault(_communiquesArchived);
+
 var _accommodations = require('./accommodations');
 
 var _accommodations2 = _interopRequireDefault(_accommodations);
@@ -123328,6 +123613,11 @@ var Router = function (_Middleware) {
             (0, _page2.default)('/members/meeting-minutes.html', _meetingMinutes2.default);
             (0, _page2.default)('/fr/members/meeting-minutes.html', _meetingMinutes2.default);
 
+            (0, _page2.default)('/members/communique.html', _communiques2.default);
+            (0, _page2.default)('/fr/members/communique.html', _communiques2.default);
+            (0, _page2.default)('/members/archived-communiques.html', _communiquesArchived2.default);
+            (0, _page2.default)('/fr/members/archived-communiques.html', _communiquesArchived2.default);
+
             (0, _page2.default)('/databases/accommodations/accommodations.html', _accommodations2.default);
             (0, _page2.default)('/fr/databases/accommodations/accommodations.html', _accommodations2.default);
 
@@ -123346,7 +123636,7 @@ var Router = function (_Middleware) {
 
 exports.default = Router;
 
-},{"../middlewares":516,"./accommodations":529,"./exchanges":530,"./forgot-password":531,"./md-leadership-awards":533,"./meeting-minutes":534,"./meeting-registrations":535,"./members":536,"./modal":537,"./pagination":538,"./photo-gallery":539,"./purchases":540,"./registration":541,"./rep-resources":542,"./tag-search":543,"page":333}],533:[function(require,module,exports){
+},{"../middlewares":517,"./accommodations":531,"./communiques":533,"./communiques-archived":532,"./exchanges":534,"./forgot-password":535,"./md-leadership-awards":537,"./meeting-minutes":538,"./meeting-registrations":539,"./members":540,"./modal":541,"./pagination":542,"./photo-gallery":543,"./purchases":544,"./registration":545,"./rep-resources":546,"./tag-search":547,"page":333}],537:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123377,7 +123667,7 @@ function LeadershipAwardAdmin(ctx, next) {
     next();
 }
 
-},{"../controllers/md-leadership-awards":500,"../services/authentication":544}],534:[function(require,module,exports){
+},{"../controllers/md-leadership-awards":501,"../services/authentication":548}],538:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123393,20 +123683,19 @@ var _authentication = require('../services/authentication');
 
 var _authentication2 = _interopRequireDefault(_authentication);
 
-var _showModal = require('../controllers/showModal');
+var _firebaseStorage = require('../repositories/firebase/firebase-storage');
 
-var _showModal2 = _interopRequireDefault(_showModal);
+var _firebaseStorage2 = _interopRequireDefault(_firebaseStorage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //Shows Member Account Information on the Members Page
 function meetingMinutes(ctx, next) {
-	new _meetingMinutes2.default(new _authentication2.default(), _showModal2.default);
-
+	new _meetingMinutes2.default(new _authentication2.default(), new _firebaseStorage2.default('minutes/'));
 	next();
 }
 
-},{"../controllers/meeting-minutes":501,"../controllers/showModal":512,"../services/authentication":544}],535:[function(require,module,exports){
+},{"../controllers/meeting-minutes":502,"../repositories/firebase/firebase-storage":527,"../services/authentication":548}],539:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123454,7 +123743,7 @@ function MeetingRegistration(ctx, next) {
     next();
 }
 
-},{"../controllers/meeting-registrations":502,"../controllers/payments":507,"../models/meeting-registration":520,"../models/user":522,"../repositories/api/user":524,"../repositories/firebase/meeting-registration":526,"../services/authentication":544,"../services/payments":547}],536:[function(require,module,exports){
+},{"../controllers/meeting-registrations":503,"../controllers/payments":508,"../models/meeting-registration":521,"../models/user":523,"../repositories/api/user":525,"../repositories/firebase/meeting-registration":528,"../services/authentication":548,"../services/payments":551}],540:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123479,7 +123768,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/members":504,"../services/authentication":544}],537:[function(require,module,exports){
+},{"../controllers/members":505,"../services/authentication":548}],541:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123502,7 +123791,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/showModal":512}],538:[function(require,module,exports){
+},{"../controllers/showModal":513}],542:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123525,7 +123814,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/pagination":506}],539:[function(require,module,exports){
+},{"../controllers/pagination":507}],543:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123545,7 +123834,7 @@ function TagSearch(ctx, next) {
 	next();
 }
 
-},{"../controllers/photo-gallery":508}],540:[function(require,module,exports){
+},{"../controllers/photo-gallery":509}],544:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123572,7 +123861,7 @@ function Purchases(ctx, next) {
     next();
 }
 
-},{"../controllers/purchases":509,"../services/authentication":544,"../services/payments":547}],541:[function(require,module,exports){
+},{"../controllers/purchases":510,"../services/authentication":548,"../services/payments":551}],545:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123603,7 +123892,7 @@ function Registration(ctx, next) {
   next();
 }
 
-},{"../controllers/registration":510,"../models/user":522,"../services/authentication":544}],542:[function(require,module,exports){
+},{"../controllers/registration":511,"../models/user":523,"../services/authentication":548}],546:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123628,7 +123917,7 @@ function meetingMinutes(ctx, next) {
 	next();
 }
 
-},{"../controllers/rep-resources":511,"../services/authentication":544}],543:[function(require,module,exports){
+},{"../controllers/rep-resources":512,"../services/authentication":548}],547:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123649,7 +123938,7 @@ function TagSearch(ctx, next) {
 	next();
 }
 
-},{"../controllers/tag-search":513}],544:[function(require,module,exports){
+},{"../controllers/tag-search":514}],548:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123807,7 +124096,7 @@ var AuthenticationService = function () {
 
 exports.default = AuthenticationService;
 
-},{"../../models/user":522,"../../repositories/api/user":524,"../../utils":548,"./providers/auth0":545,"./providers/firebase":546,"jsonwebtoken":292,"lodash":320}],545:[function(require,module,exports){
+},{"../../models/user":523,"../../repositories/api/user":525,"../../utils":552,"./providers/auth0":549,"./providers/firebase":550,"jsonwebtoken":292,"lodash":320}],549:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123893,7 +124182,7 @@ var Auth0Provider = function () {
 
 exports.default = Auth0Provider;
 
-},{"../../../config":492,"../../../utils":548,"auth0-js":87}],546:[function(require,module,exports){
+},{"../../../config":492,"../../../utils":552,"auth0-js":87}],550:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123955,7 +124244,7 @@ var FirebaseProvider = function (_FirebaseConnection) {
 
 exports.default = FirebaseProvider;
 
-},{"../../../repositories/firebase/utils":528}],547:[function(require,module,exports){
+},{"../../../repositories/firebase/utils":530}],551:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -124008,7 +124297,7 @@ var PaymentsService = function (_FirebaseConnection) {
 
 exports.default = PaymentsService;
 
-},{"../repositories/firebase/utils":528}],548:[function(require,module,exports){
+},{"../repositories/firebase/utils":530}],552:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

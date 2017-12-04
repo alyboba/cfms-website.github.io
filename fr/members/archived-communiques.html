@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 
 
-<!--[if IE 8 ]>
-<html class="ie8"> <![endif]-->
-<!--[if IE 9 ]>
-<html class="ie9"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
     <!--Metadata-->
 <meta charset="utf-8">
@@ -76,16 +74,8 @@
 
 
     <!--Page Specific Stylesheet-->
-    <link rel="stylesheet" href="/stylesheets/members.css"/>
-
-    <!-- CodeMirror -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
-
-<!-- Firepad -->
-<link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
-<script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
-
+    <link rel="stylesheet" href="/stylesheets/members.css">
+    <link rel="stylesheet" href="/stylesheets/who-we-are.css">
 </head>
 <body>
 
@@ -138,7 +128,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" href='/members/tedmed.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+							<li id="lang-toggle"><a id="en" href='/members/archived-communiques.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
 						
 					
 				</ul>
@@ -174,29 +164,33 @@
 	
 
 
+    <script type="text/javascript">
+			document.querySelector( "#communique" ).classList.toggle("sidebar-active");
+    </script>
 
     <!--Page Specific Formatting-->
     <script type="text/javascript">
-        document.querySelector("#logo-invert").classList.toggle("hidden");
-        document.querySelector("#tedmed").classList.toggle("active");
+			document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+			document.querySelector( "#members" ).classList.toggle("active");
     </script>
 
-    <div id="side-content" class="editable">
-        <h1 id="page-title">TEDMED</h1>
+    <div id="side-content">
+        <h1 id="page-title" class="editable">Old CFMS Communiques</h1>
         <div class="members-only">
-            <div id="edit-members-only">
-    <div id="preview"></div>
-</div>
+            <div id="communiqueInformation"></div>
         </div>
-        <div class="non-members">
-            <blockquote><h3><strong>Please login to see this page</strong></h3>
-                <ul>
-                    <li>>Please login to the CFMS website in order to view the content on this page.
-                    </li>
-                </ul>
-            </blockquote>
-        </div>
+
+        
     </div>
+    <div class="non-members">
+        <blockquote>
+            <h3><strong>Please login to see this page</strong></h3>
+            <ul>
+                <li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
+            </ul>
+        </blockquote>
+    </div>
+</div>
 </div>
 <script type="text/javascript">
 	function getEmail(username){
@@ -385,3 +379,5 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
 
 </body>
+
+</html>
