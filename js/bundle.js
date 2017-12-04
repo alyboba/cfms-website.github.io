@@ -118741,7 +118741,7 @@ var App = function App() {
 ;
 new App();
 
-},{"./routes":530}],492:[function(require,module,exports){
+},{"./routes":532}],492:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -118776,6 +118776,284 @@ var dev_logout = exports.dev_logout = {
 };
 
 },{}],493:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _utils = require('../repositories/firebase/utils');
+
+var _utils2 = require('../utils');
+
+var _utils3 = _interopRequireDefault(_utils2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AccommodationsController = function (_FirebaseConnection) {
+	_inherits(AccommodationsController, _FirebaseConnection);
+
+	function AccommodationsController(authService) {
+		_classCallCheck(this, AccommodationsController);
+
+		var _this = _possibleConstructorReturn(this, (AccommodationsController.__proto__ || Object.getPrototypeOf(AccommodationsController)).call(this));
+
+		_this.utils = new _utils3.default();
+		_this.auth = authService;
+		_this.refPath = 'accommodations/';
+		_this.dbRef;
+		_this.listing = null;
+		_this.province = null;
+		_this.userName = null;
+		_this.userId = null;
+		_this.table;
+		_this.process();
+		return _this;
+	}
+
+	_createClass(AccommodationsController, [{
+		key: 'process',
+		value: function process() {
+			var _this2 = this;
+
+			if (this.auth.user) {
+				if (this.utils.isPageEnglish()) {
+					//Set ref path in db to en or fr depending which page...
+					this.refPath += 'en/';
+				} else {
+					this.refPath += 'fr/';
+				}
+				this.table = $('#accommodationsDatabase').DataTable({
+					"columnDefs": [{ className: "details-control", "targets": [0] }]
+				}); //Initializing Datatables.
+
+				$('#select-listing').change(function () {
+					_this2.listing = $('#select-listing').find(":selected").val();
+					_this2.populateTable();
+				});
+				$('#select-province').change(function () {
+					_this2.province = $('#select-province').find(":selected").val();
+					_this2.populateTable();
+				});
+			}
+		}
+	}, {
+		key: 'populateTable',
+		value: function populateTable() {
+			var _this3 = this;
+
+			if (this.listing && this.province) {
+				//Make sure user has selected both select options..
+				this.table.clear().draw();
+				this.createAddButton();
+				var controller = this;
+				var refPath = this.refPath + this.listing + '/' + this.province;
+				this.dbRef = this.firebase.database().ref(this.refPath).child(this.listing + '/' + this.province); //Reset reference.
+				this.dbRef.on('value', function (snapshot) {
+					//Since this is an observable, clear table each time it is invoked to avoid overlapping data.....
+					_this3.table.clear(); //Needs to be here for updating data.
+
+
+					if (snapshot.hasChildren()) {
+						snapshot.forEach(function (listing) {
+							//console.log(listing.key);
+							var delTemp = '';
+							var editTemp = '';
+							if (_this3.auth.user.isAdmin || listing.val().uid == _this3.auth.user.identities[0].user_id) {
+								var editButton = _this3.utils.createWithIdButton(refPath + '/' + listing.key, 'Edit', listing.key, 'editEntry');
+								editTemp = editButton;
+								var delButton = _this3.utils.createButton(refPath + '/' + listing.key, "Del", 'delEntry');
+								delTemp = delButton;
+								//Need to still make 1 for edit buttons...
+							}
+							//A row will be an array of our table data to enter...
+							var row = ['', listing.val().city, listing.val().rent, listing.val().payment, listing.val().startDate, listing.val().endDate, editTemp, delTemp];
+							var data = [listing.val().locationAddress, listing.val().userName];
+							_this3.table.row.add(row).child(_this3.formatExpand(data)).draw(false); //Create row and a child underneath it.
+						});
+						//Setting event handlers based on which data selected..
+						var expandButtons = document.getElementsByClassName('details-control');
+						for (var i = 0; i < expandButtons.length; i++) {
+							expandButtons[i].addEventListener('click', _this3.expandEvent.bind(_this3), false);
+						}
+						//This needs to be inside the observable so isn't called off race condition..
+						var delButtons = document.getElementsByClassName('delEntry');
+						for (var _i = 0; _i < delButtons.length; _i++) {
+							delButtons[_i].addEventListener('click', _this3.deleteDatabaseEntryEvent.bind(_this3), false);
+						}
+						var editButtons = document.getElementsByClassName('editEntry');
+						for (var _i2 = 0; _i2 < editButtons.length; _i2++) {
+							editButtons[_i2].addEventListener('click', _this3.editDatabaseEntry.bind(_this3), false);
+						}
+					} else {
+						_this3.table.clear().draw(); //NO data available, so clear it all out and redraw it..
+					}
+				});
+			} else {
+				this.table.clear();
+			}
+		}
+	}, {
+		key: 'editDatabaseEntry',
+		value: function editDatabaseEntry(evt) {
+			var _this4 = this;
+
+			var key = evt.target.getAttribute('id');
+			var controller = this;
+			this.dbRef.child(key).once('value', function (snapshot) {
+				var obj = {};
+				obj['city'] = snapshot.val().city;
+				obj['rent'] = snapshot.val().rent;
+				obj['payment'] = snapshot.val().payment;
+				obj['startDate'] = snapshot.val().startDate;
+				obj['endDate'] = snapshot.val().endDate;
+				obj['locationAddress'] = snapshot.val().locationAddress;
+				var htmlInput = _this4.setHtmlInput(obj);
+
+				_this4.utils.adminDisplayVexDialog(htmlInput, "Edit Entry", function (data) {
+					if (data) {
+						for (var prop in data) {
+							data[prop] = controller.utils.sanatizeInput(data[prop]);
+						}
+						var username = controller.auth.user.given_name + ' ' + controller.auth.user.family_name;
+						var uid = controller.auth.user.identities[0].user_id;
+						_this4.dbRef.child(key).update({
+							city: data.city,
+							rent: data.rent,
+							payment: data.payment,
+							startDate: data.startDate,
+							endDate: data.endDate,
+							locationAddress: data.locationAddress,
+							userName: username,
+							uid: uid
+						}).then(function () {
+							controller.utils.displayVexAlert('Successfully Updated Entry');
+						}).catch(function (err) {
+							controller.utils.displayVexAlert(err);
+						});
+					}
+				});
+			});
+		}
+		//Event used for when user expands table.
+
+	}, {
+		key: 'expandEvent',
+		value: function expandEvent(evt) {
+			console.log(this);
+			console.log(evt);
+			var tr = $(evt.target).closest('tr');
+			var row = this.table.row(tr);
+			if (row.child.isShown()) {
+				row.child.hide();
+				tr.removeClass('shown');
+			} else {
+				row.child.show();
+				tr.addClass('shown');
+			}
+		}
+
+		//Utility function used for creating a sub table beneath a row to contain more data.
+
+	}, {
+		key: 'formatExpand',
+		value: function formatExpand(infoArray) {
+			return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' + '<tr>' + '<td>Location / Address:</td>' + '<td>' + infoArray[0] + '</td>' + '</tr>' + '<tr>' + '<td>Full Name:</td>' + '<td>' + infoArray[1] + '</td>' + '</tr>' + '</table>';
+		}
+	}, {
+		key: 'deleteDatabaseEntryEvent',
+		value: function deleteDatabaseEntryEvent(evt) {
+			var _this5 = this;
+
+			evt.preventDefault();
+			var dbPath = evt.target.getAttribute('src');
+			this.utils.vexConfirm().then(function () {
+				_this5.delEntry(dbPath);
+			});
+		}
+	}, {
+		key: 'delEntry',
+		value: function delEntry(dbPath) {
+			var _this6 = this;
+
+			this.firebase.database().ref(dbPath).remove().then(function () {
+				_this6.utils.displayVexAlert("Successfully Deleted Entry");
+			}).catch(function (err) {
+				_this6.utils.displayVexAlert(err);
+			});
+		}
+
+		//Utility function used to set the htmlInput used with vex.
+
+	}, {
+		key: 'setHtmlInput',
+		value: function setHtmlInput(data) {
+			var cityVal = data ? data.city : '';
+			var rentVal = data ? data.rent : '';
+			var paymentVal = data ? data.payment : '';
+			var startDateVal = data ? data.startDate : '';
+			var endDateVal = data ? data.endDate : '';
+			var locationAddressVal = data ? data.locationAddress : '';
+			return '<input name="city" value="' + cityVal + '" type="text" placeholder="City" required minlength="2" maxlength="15" data-validation-error-msg="Please Enter Value between 2-15 characters"/>' + '<input name="rent" value="' + rentVal + '" type="text" placeholder="Rent" required minlength="2" maxlength="10" data-validation-error-msg="Please Enter Value between 2-10 characters" />' + '<input name="payment" value="' + paymentVal + '" type="text" placeholder="Payment" required minlength="2" maxlength="10" data-validation-error-msg="Please Enter Value between 2-10 characters" />' + '<input class="validate" value="' + startDateVal + '" name="startDate" required pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" data-validation-help="YYYY-MM-DD" type="text"  placeholder="Start Date"/>' + '<input name="endDate" value="' + endDateVal + '" type="text" required pattern ="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" data-validation-help="YYYY-MM-DD"  placeholder="End Date" />' + '<textarea name="locationAddress" required minlength="10" maxlength="180" type="text"  placeholder="Location / Address" >' + locationAddressVal + '</textarea>' + "<script>" + "$.validate({" + "modules: 'html5'});" + "</script>";
+		}
+	}, {
+		key: 'addDatabaseEntryEvent',
+		value: function addDatabaseEntryEvent(evt) {
+			evt.preventDefault();
+			var htmlInput = this.setHtmlInput(null);
+			var controller = this;
+			controller.utils.adminDisplayVexDialog(htmlInput, "Add Entry", function (data) {
+				if (data) {
+					console.log(data);
+					for (var prop in data) {
+						data[prop] = controller.utils.sanatizeInput(data[prop]);
+					}
+					var username = controller.auth.user.given_name + ' ' + controller.auth.user.family_name;
+					var uid = controller.auth.user.identities[0].user_id;
+					controller.dbRef.push({
+						city: data.city,
+						rent: data.rent,
+						payment: data.payment,
+						startDate: data.startDate,
+						endDate: data.endDate,
+						locationAddress: data.locationAddress,
+						userName: username,
+						uid: uid
+					}).then(function () {
+						controller.utils.displayVexAlert('Successfully Added Entry');
+					}).catch(function (err) {
+						controller.utils.displayVexAlert(err);
+					});
+				}
+			});
+		}
+	}, {
+		key: 'createAddButton',
+		value: function createAddButton() {
+			document.getElementById('addButton').innerHTML = '';
+			var temp = document.createElement('div');
+			var addButton = this.utils.createButton(this.refPath + this.listing + '/' + this.province, "Add Entry", "addEntry");
+			temp.innerHTML = addButton;
+			document.getElementById('addButton').appendChild(temp);
+			var button = document.getElementsByClassName('addEntry');
+			button[0].addEventListener('click', this.addDatabaseEntryEvent.bind(this), false);
+		}
+	}]);
+
+	return AccommodationsController;
+}(_utils.FirebaseConnection);
+
+exports.default = AccommodationsController;
+
+},{"../repositories/firebase/utils":528,"../utils":548}],494:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -118822,7 +119100,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{"../utils":546}],494:[function(require,module,exports){
+},{"../utils":548}],495:[function(require,module,exports){
 'use strict';
 
 /*
@@ -118906,7 +119184,7 @@ exports.default = AuthenticationController;
 	return Gallery;
 });
 
-},{}],495:[function(require,module,exports){
+},{}],496:[function(require,module,exports){
 "use strict";
 
 !function () {
@@ -119401,7 +119679,7 @@ exports.default = AuthenticationController;
 });
 
 
-},{}],496:[function(require,module,exports){
+},{}],497:[function(require,module,exports){
 'use strict';
 
 /*
@@ -119593,7 +119871,7 @@ exports.default = AuthenticationController;
 	}
 })();
 
-},{}],497:[function(require,module,exports){
+},{}],498:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119682,7 +119960,7 @@ var ExchangesController = function () {
 
 exports.default = ExchangesController;
 
-},{"../utils":546,"request-promise":394}],498:[function(require,module,exports){
+},{"../utils":548,"request-promise":394}],499:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -119722,7 +120000,7 @@ var AuthenticationController = function () {
 
 exports.default = AuthenticationController;
 
-},{}],499:[function(require,module,exports){
+},{}],500:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120211,7 +120489,7 @@ var LeadershipAwardAdminController = function (_FirebaseConnection2) {
 exports.LeadershipAwardUserController = LeadershipAwardUserController;
 exports.LeadershipAwardAdminController = LeadershipAwardAdminController;
 
-},{"../repositories/firebase/utils":527}],500:[function(require,module,exports){
+},{"../repositories/firebase/utils":528}],501:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120573,7 +120851,7 @@ var MeetingMinutesController = function (_FirebaseConnection) {
 
 exports.default = MeetingMinutesController;
 
-},{"../controllers/showModal":511,"../repositories/firebase/utils":527,"../utils":546}],501:[function(require,module,exports){
+},{"../controllers/showModal":512,"../repositories/firebase/utils":528,"../utils":548}],502:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120645,7 +120923,7 @@ var MeetingRegistrationsController = function () {
 
 exports.default = MeetingRegistrationsController;
 
-},{}],502:[function(require,module,exports){
+},{}],503:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120727,7 +121005,7 @@ var _class = function (_FirebaseConnection) {
 
 exports.default = _class;
 
-},{"../repositories/firebase/utils":527}],503:[function(require,module,exports){
+},{"../repositories/firebase/utils":528}],504:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120775,7 +121053,7 @@ var MembersController = function () {
 
 exports.default = MembersController;
 
-},{}],504:[function(require,module,exports){
+},{}],505:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120897,7 +121175,7 @@ var NavigationController = function () {
 
 exports.default = NavigationController;
 
-},{"js-cookie":283}],505:[function(require,module,exports){
+},{"js-cookie":283}],506:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -120994,7 +121272,7 @@ var PaginationController = function () {
 
 exports.default = PaginationController;
 
-},{}],506:[function(require,module,exports){
+},{}],507:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121083,7 +121361,7 @@ var PaymentsController = function () {
 
 exports.default = PaymentsController;
 
-},{"../utils":546,"request-promise":394}],507:[function(require,module,exports){
+},{"../utils":548,"request-promise":394}],508:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121341,7 +121619,7 @@ var PhotoGalleryController = function () {
 
 exports.default = PhotoGalleryController;
 
-},{"./dependencies/blueimp-gallery":495,"./dependencies/blueimp-gallery-fullscreen":494,"./dependencies/blueimp-helper":496}],508:[function(require,module,exports){
+},{"./dependencies/blueimp-gallery":496,"./dependencies/blueimp-gallery-fullscreen":495,"./dependencies/blueimp-helper":497}],509:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121411,7 +121689,7 @@ var PurchasesController = function () {
 
 exports.default = PurchasesController;
 
-},{"../utils":546,"request-promise":394}],509:[function(require,module,exports){
+},{"../utils":548,"request-promise":394}],510:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121476,7 +121754,7 @@ var RegistrationController = function () {
 
 exports.default = RegistrationController;
 
-},{"../utils":546}],510:[function(require,module,exports){
+},{"../utils":548}],511:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -121865,7 +122143,7 @@ var RepResourcesController = function (_FirebaseConnection) {
 
 exports.default = RepResourcesController;
 
-},{"../controllers/showModal":511,"../repositories/firebase/utils":527,"../utils":546}],511:[function(require,module,exports){
+},{"../controllers/showModal":512,"../repositories/firebase/utils":528,"../utils":548}],512:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -121965,7 +122243,7 @@ var ModalController = function () {
 
 exports.default = ModalController;
 
-},{}],512:[function(require,module,exports){
+},{}],513:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -122118,7 +122396,7 @@ var TagSearchConroller = function () {
 
 exports.default = TagSearchConroller;
 
-},{}],513:[function(require,module,exports){
+},{}],514:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122191,7 +122469,7 @@ var ViewExchangePayments = function () {
 
 exports.default = ViewExchangePayments;
 
-},{}],514:[function(require,module,exports){
+},{}],515:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122214,7 +122492,7 @@ var _authentication4 = _interopRequireDefault(_authentication3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/authentication":493,"../services/authentication":542}],515:[function(require,module,exports){
+},{"../controllers/authentication":494,"../services/authentication":544}],516:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122247,7 +122525,7 @@ var Middleware = function Middleware(page) {
 
 exports.default = Middleware;
 
-},{"./authentication":514,"./members-content":516,"./navigation":517}],516:[function(require,module,exports){
+},{"./authentication":515,"./members-content":517,"./navigation":518}],517:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122270,7 +122548,7 @@ var _authentication2 = _interopRequireDefault(_authentication);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/members-content":502,"../services/authentication":542}],517:[function(require,module,exports){
+},{"../controllers/members-content":503,"../services/authentication":544}],518:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122289,7 +122567,7 @@ var _navigation2 = _interopRequireDefault(_navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"../controllers/navigation":504}],518:[function(require,module,exports){
+},{"../controllers/navigation":505}],519:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122345,7 +122623,7 @@ var ExchangePaymentModel = function (_Model) {
 
 exports.default = ExchangePaymentModel;
 
-},{"./model":520,"./user":521}],519:[function(require,module,exports){
+},{"./model":521,"./user":522}],520:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122401,7 +122679,7 @@ var MeetingRegistrationModel = function (_Model) {
 
 exports.default = MeetingRegistrationModel;
 
-},{"./model":520,"./user":521}],520:[function(require,module,exports){
+},{"./model":521,"./user":522}],521:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122444,7 +122722,7 @@ var Model = function () {
 
 exports.default = Model;
 
-},{"lodash":320}],521:[function(require,module,exports){
+},{"lodash":320}],522:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122513,7 +122791,7 @@ var UserModel = function (_Model) {
 
 exports.default = UserModel;
 
-},{"./model":520}],522:[function(require,module,exports){
+},{"./model":521}],523:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122568,7 +122846,7 @@ var ApiRepository = function () {
 
 exports.default = ApiRepository;
 
-},{"request-promise":394}],523:[function(require,module,exports){
+},{"request-promise":394}],524:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122615,7 +122893,7 @@ var UserRepository = function (_ApiRepository) {
 
 exports.default = UserRepository;
 
-},{"./repository":522}],524:[function(require,module,exports){
+},{"./repository":523}],525:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122673,7 +122951,7 @@ var ExchangePaymentRepository = function (_FirebaseRepository) {
 
 exports.default = ExchangePaymentRepository;
 
-},{"./repository":526}],525:[function(require,module,exports){
+},{"./repository":527}],526:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122730,7 +123008,7 @@ var MeetingRegistrationRepository = function (_FirebaseRepository) {
 
 exports.default = MeetingRegistrationRepository;
 
-},{"./repository":526}],526:[function(require,module,exports){
+},{"./repository":527}],527:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122772,7 +123050,7 @@ var Repository = function () {
 
 exports.default = Repository;
 
-},{"./utils":527}],527:[function(require,module,exports){
+},{"./utils":528}],528:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122837,7 +123115,30 @@ var FirebaseRef = function (_FirebaseConnection) {
 exports.FirebaseRef = FirebaseRef;
 exports.FirebaseConnection = FirebaseConnection;
 
-},{"../../config":492,"firebase":202}],528:[function(require,module,exports){
+},{"../../config":492,"firebase":202}],529:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = Accommodations;
+
+var _accommodations = require('../controllers/accommodations');
+
+var _accommodations2 = _interopRequireDefault(_accommodations);
+
+var _authentication = require('../services/authentication');
+
+var _authentication2 = _interopRequireDefault(_authentication);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Accommodations(ctx, next) {
+	new _accommodations2.default(new _authentication2.default());
+	next();
+}
+
+},{"../controllers/accommodations":493,"../services/authentication":544}],530:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122884,7 +123185,7 @@ function ExchangePayments(ctx, next) {
     next();
 }
 
-},{"../controllers/exchanges":497,"../controllers/view-exhange-payments":513,"../models/exchange-payment":518,"../models/user":521,"../repositories/api/user":523,"../repositories/firebase/exchange-payments":524,"../services/authentication":542,"../services/payments":545}],529:[function(require,module,exports){
+},{"../controllers/exchanges":498,"../controllers/view-exhange-payments":514,"../models/exchange-payment":519,"../models/user":522,"../repositories/api/user":524,"../repositories/firebase/exchange-payments":525,"../services/authentication":544,"../services/payments":547}],531:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122908,7 +123209,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/forgot-password":498,"../services/authentication":542}],530:[function(require,module,exports){
+},{"../controllers/forgot-password":499,"../services/authentication":544}],532:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -122975,6 +123276,10 @@ var _repResources = require('./rep-resources');
 
 var _repResources2 = _interopRequireDefault(_repResources);
 
+var _accommodations = require('./accommodations');
+
+var _accommodations2 = _interopRequireDefault(_accommodations);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -123023,6 +123328,9 @@ var Router = function (_Middleware) {
             (0, _page2.default)('/members/meeting-minutes.html', _meetingMinutes2.default);
             (0, _page2.default)('/fr/members/meeting-minutes.html', _meetingMinutes2.default);
 
+            (0, _page2.default)('/databases/accommodations/accommodations.html', _accommodations2.default);
+            (0, _page2.default)('/fr/databases/accommodations/accommodations.html', _accommodations2.default);
+
             (0, _page2.default)('/resources/rep-resources.html', _repResources2.default);
             (0, _page2.default)('/fr/resources/rep-resources.html', _repResources2.default);
         }
@@ -123038,7 +123346,7 @@ var Router = function (_Middleware) {
 
 exports.default = Router;
 
-},{"../middlewares":515,"./exchanges":528,"./forgot-password":529,"./md-leadership-awards":531,"./meeting-minutes":532,"./meeting-registrations":533,"./members":534,"./modal":535,"./pagination":536,"./photo-gallery":537,"./purchases":538,"./registration":539,"./rep-resources":540,"./tag-search":541,"page":333}],531:[function(require,module,exports){
+},{"../middlewares":516,"./accommodations":529,"./exchanges":530,"./forgot-password":531,"./md-leadership-awards":533,"./meeting-minutes":534,"./meeting-registrations":535,"./members":536,"./modal":537,"./pagination":538,"./photo-gallery":539,"./purchases":540,"./registration":541,"./rep-resources":542,"./tag-search":543,"page":333}],533:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123069,7 +123377,7 @@ function LeadershipAwardAdmin(ctx, next) {
     next();
 }
 
-},{"../controllers/md-leadership-awards":499,"../services/authentication":542}],532:[function(require,module,exports){
+},{"../controllers/md-leadership-awards":500,"../services/authentication":544}],534:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123098,7 +123406,7 @@ function meetingMinutes(ctx, next) {
 	next();
 }
 
-},{"../controllers/meeting-minutes":500,"../controllers/showModal":511,"../services/authentication":542}],533:[function(require,module,exports){
+},{"../controllers/meeting-minutes":501,"../controllers/showModal":512,"../services/authentication":544}],535:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123146,7 +123454,7 @@ function MeetingRegistration(ctx, next) {
     next();
 }
 
-},{"../controllers/meeting-registrations":501,"../controllers/payments":506,"../models/meeting-registration":519,"../models/user":521,"../repositories/api/user":523,"../repositories/firebase/meeting-registration":525,"../services/authentication":542,"../services/payments":545}],534:[function(require,module,exports){
+},{"../controllers/meeting-registrations":502,"../controllers/payments":507,"../models/meeting-registration":520,"../models/user":522,"../repositories/api/user":524,"../repositories/firebase/meeting-registration":526,"../services/authentication":544,"../services/payments":547}],536:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123171,7 +123479,7 @@ function members(ctx, next) {
     next();
 }
 
-},{"../controllers/members":503,"../services/authentication":542}],535:[function(require,module,exports){
+},{"../controllers/members":504,"../services/authentication":544}],537:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123194,7 +123502,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/showModal":511}],536:[function(require,module,exports){
+},{"../controllers/showModal":512}],538:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123217,7 +123525,7 @@ function modal(ctx, next) {
    * Created by Justin on 7/8/2017.
    */
 
-},{"../controllers/pagination":505}],537:[function(require,module,exports){
+},{"../controllers/pagination":506}],539:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123237,7 +123545,7 @@ function TagSearch(ctx, next) {
 	next();
 }
 
-},{"../controllers/photo-gallery":507}],538:[function(require,module,exports){
+},{"../controllers/photo-gallery":508}],540:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123264,7 +123572,7 @@ function Purchases(ctx, next) {
     next();
 }
 
-},{"../controllers/purchases":508,"../services/authentication":542,"../services/payments":545}],539:[function(require,module,exports){
+},{"../controllers/purchases":509,"../services/authentication":544,"../services/payments":547}],541:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123295,7 +123603,7 @@ function Registration(ctx, next) {
   next();
 }
 
-},{"../controllers/registration":509,"../models/user":521,"../services/authentication":542}],540:[function(require,module,exports){
+},{"../controllers/registration":510,"../models/user":522,"../services/authentication":544}],542:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123320,7 +123628,7 @@ function meetingMinutes(ctx, next) {
 	next();
 }
 
-},{"../controllers/rep-resources":510,"../services/authentication":542}],541:[function(require,module,exports){
+},{"../controllers/rep-resources":511,"../services/authentication":544}],543:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123341,7 +123649,7 @@ function TagSearch(ctx, next) {
 	next();
 }
 
-},{"../controllers/tag-search":512}],542:[function(require,module,exports){
+},{"../controllers/tag-search":513}],544:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123499,7 +123807,7 @@ var AuthenticationService = function () {
 
 exports.default = AuthenticationService;
 
-},{"../../models/user":521,"../../repositories/api/user":523,"../../utils":546,"./providers/auth0":543,"./providers/firebase":544,"jsonwebtoken":292,"lodash":320}],543:[function(require,module,exports){
+},{"../../models/user":522,"../../repositories/api/user":524,"../../utils":548,"./providers/auth0":545,"./providers/firebase":546,"jsonwebtoken":292,"lodash":320}],545:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123585,7 +123893,7 @@ var Auth0Provider = function () {
 
 exports.default = Auth0Provider;
 
-},{"../../../config":492,"../../../utils":546,"auth0-js":87}],544:[function(require,module,exports){
+},{"../../../config":492,"../../../utils":548,"auth0-js":87}],546:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -123647,7 +123955,7 @@ var FirebaseProvider = function (_FirebaseConnection) {
 
 exports.default = FirebaseProvider;
 
-},{"../../../repositories/firebase/utils":527}],545:[function(require,module,exports){
+},{"../../../repositories/firebase/utils":528}],547:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -123700,11 +124008,11 @@ var PaymentsService = function (_FirebaseConnection) {
 
 exports.default = PaymentsService;
 
-},{"../repositories/firebase/utils":527}],546:[function(require,module,exports){
+},{"../repositories/firebase/utils":528}],548:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -123730,69 +124038,136 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var instance = null;
 
 var Utils = function () {
-    function Utils() {
-        _classCallCheck(this, Utils);
+	function Utils() {
+		_classCallCheck(this, Utils);
 
-        if (instance) return instance;
-        _vexJs2.default.registerPlugin(_vexDialog2.default);
-        _vexJs2.default.defaultOptions.className = Config.vex;
-        this.vex = _vexJs2.default;
-        instance = this;
-    }
+		if (instance) return instance;
+		_vexJs2.default.registerPlugin(_vexDialog2.default);
+		_vexJs2.default.defaultOptions.className = Config.vex;
+		this.vex = _vexJs2.default;
+		instance = this;
+	}
 
-    _createClass(Utils, [{
-        key: 'showAlert',
-        value: function showAlert(title, description) {
-            var titleTemplate = '<h3><strong>' + title + '</strong></h3>';
-            var descriptionTemplate = '<p>' + description + '</p>';
-            var message = description ? titleTemplate + descriptionTemplate : titleTemplate;
-            this.vex.dialog.alert({
-                unsafeMessage: message
-            });
-        }
-    }, {
-        key: 'showSigninModal',
-        value: function showSigninModal(cb) {
-            var self = this;
-            this.vex.dialog.open({
-                unsafeMessage: '<h3><strong>Log in to cfms.org</strong></h3>',
-                input: "<div class='vex-custom-field-wrapper'><label for='email'>EMAIL ADDRESS</label><div class='vex-custom-input-wrapper'><input name='email' id='login-email' type='email' placeholder='Enter your email' /></div></div><div class='vex-custom-field-wrapper'><label for='password'>PASSWORD</label><div class='vex-custom-input-wrapper'><input id='login-password' name='password' type='password' value='' placeholder='Enter your password'/></div><div id='new-account-link'><a href='/new-account.html'>Create a New Account</a></div><div id='forgot-password'><a href='/forgot-password.html'>Forgot your Password?</a></div></div>",
-                beforeClose: function beforeClose() {
-                    if (!this.value) return true;else if (!this.value.email || !this.value.password) {
-                        var form = $(this.form);
-                        var emailField = form.find("input[name='email']");
-                        var passwordField = form.find("input[name='password']");
-                        if (!this.value.email) emailField.addClass("error-field");
-                        if (!this.value.password) passwordField.addClass("error-field");
-                        return false;
-                    }
-                    $("body").append("<div id='loading-overlay' class='loading'>Loading&#8230;</div>");
-                    cb(this.value.email, this.value.password, function (profile) {
-                        $("#loading-overlay").remove();
-                        self.showAlert("Signed in", 'Welcome back ' + profile.given_name + ' ' + profile.family_name + '.');
-                    });
-                    return true;
-                }
-            });
-        }
-    }, {
-        key: 'isPageEnglish',
-        value: function isPageEnglish() {
-            if (window.location.href.indexOf('/fr/') == -1) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }, {
-        key: 'createButton',
-        value: function createButton(path, title, className) {
-            var button = '<div class="url preview"><p><a style="cursor: pointer;" src="' + path + '" class="' + className + '">' + title + '</a></p></div>';
-            return button;
-        }
-    }]);
+	_createClass(Utils, [{
+		key: 'showAlert',
+		value: function showAlert(title, description) {
+			var titleTemplate = '<h3><strong>' + title + '</strong></h3>';
+			var descriptionTemplate = '<p>' + description + '</p>';
+			var message = description ? titleTemplate + descriptionTemplate : titleTemplate;
+			this.vex.dialog.alert({
+				unsafeMessage: message
+			});
+		}
+	}, {
+		key: 'showSigninModal',
+		value: function showSigninModal(cb) {
+			var self = this;
+			this.vex.dialog.open({
+				unsafeMessage: '<h3><strong>Log in to cfms.org</strong></h3>',
+				input: "<div class='vex-custom-field-wrapper'><label for='email'>EMAIL ADDRESS</label><div class='vex-custom-input-wrapper'><input name='email' id='login-email' type='email' placeholder='Enter your email' /></div></div><div class='vex-custom-field-wrapper'><label for='password'>PASSWORD</label><div class='vex-custom-input-wrapper'><input id='login-password' name='password' type='password' value='' placeholder='Enter your password'/></div><div id='new-account-link'><a href='/new-account.html'>Create a New Account</a></div><div id='forgot-password'><a href='/forgot-password.html'>Forgot your Password?</a></div></div>",
+				beforeClose: function beforeClose() {
+					if (!this.value) return true;else if (!this.value.email || !this.value.password) {
+						var form = $(this.form);
+						var emailField = form.find("input[name='email']");
+						var passwordField = form.find("input[name='password']");
+						if (!this.value.email) emailField.addClass("error-field");
+						if (!this.value.password) passwordField.addClass("error-field");
+						return false;
+					}
+					$("body").append("<div id='loading-overlay' class='loading'>Loading&#8230;</div>");
+					cb(this.value.email, this.value.password, function (profile) {
+						$("#loading-overlay").remove();
+						self.showAlert("Signed in", 'Welcome back ' + profile.given_name + ' ' + profile.family_name + '.');
+					});
+					return true;
+				}
+			});
+		}
+	}, {
+		key: 'isPageEnglish',
+		value: function isPageEnglish() {
+			if (window.location.href.indexOf('/fr/') == -1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}, {
+		key: 'createButton',
+		value: function createButton(path, title, className) {
+			var button = '<div class="url preview"><p><a style="cursor: pointer;" src="' + path + '" class="' + className + '">' + title + '</a></p></div>';
+			return button;
+		}
+	}, {
+		key: 'createWithIdButton',
+		value: function createWithIdButton(path, title, idName, className) {
+			var button = '<div class="url preview"><p><a style="cursor: pointer;" src="' + path + '" id="' + idName + '" class="' + className + '">' + title + '</a></p></div>';
+			return button;
+		}
+	}, {
+		key: 'adminDisplayVexDialog',
+		value: function adminDisplayVexDialog(htmlInput, message, _callback) {
+			var _this = this;
 
-    return Utils;
+			vex.dialog.open({
+				message: message,
+				input: [htmlInput].join(''),
+				buttons: [$.extend({}, vex.dialog.buttons.YES, { text: 'Add' }), $.extend({}, vex.dialog.buttons.NO, { text: 'Back' })],
+				callback: function callback(data) {
+					//This executes when a button is pressed
+					if (!data) {
+						//Executes if back button pressed
+						_callback(null);
+					} else {
+						//Executes if Add button pressed
+						_callback(data);
+					}
+				}
+			}).on("change", "#uploadFile", function (e) {
+				//This is an event handler dynamically attached only when modal is clicked!.
+				var label = e.target.nextElementSibling,
+				    labelVal = label.innerHTML,
+				    fileName = '';
+				if (_this.files && _this.files.length > 1) fileName = (_this.getAttribute('data-multiple-caption') || '').replace('{count}', _this.files.length);else fileName = e.target.value.split('\\').pop();
+
+				if (fileName) label.querySelector('span').innerHTML = fileName;else label.innerHTML = labelVal;
+			});
+		}
+	}, {
+		key: 'displayVexAlert',
+		value: function displayVexAlert(message) {
+			vex.dialog.alert('<h3><strong>' + message + '</strong></h3>');
+		}
+	}, {
+		key: 'sanatizeInput',
+		value: function sanatizeInput(input) {
+			var output = input.replace(/<script[^>]*?>.*?<\/script>/gi, '').replace(/<[\/\!]*?[^<>]*?>/gi, '').replace(/<style[^>]*?>.*?<\/style>/gi, '').replace(/<![\s\S]*?--[ \t\n\r]*>/gi, '');
+			return output;
+		}
+
+		/*
+  * A custom promise for if a user is sure to continue or not.
+  */
+
+	}, {
+		key: 'vexConfirm',
+		value: function vexConfirm() {
+			return new Promise(function (resolve, reject) {
+				vex.dialog.confirm({
+					message: "Are you sure?",
+					callback: function callback(value) {
+						if (value) {
+							resolve(true); //if user selects yes, promise resolves true
+						} else {
+							reject(false);
+						}
+					} //end vex confirm callback
+				});
+			});
+		}
+	}]);
+
+	return Utils;
 }();
 
 exports.default = Utils;
