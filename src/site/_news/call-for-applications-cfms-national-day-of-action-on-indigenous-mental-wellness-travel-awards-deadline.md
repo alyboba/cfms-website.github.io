@@ -12,7 +12,7 @@ lang: en
 ---
 
 
-The CFMS is pleased to provide financial assistance courtesy of MD Financial Management, to students interested in attending our **2018 National Day of Action, held February 10-12, 2018 in Ottawa, Ontario**. This years topic is Indigenous Mental Wellness and further details on the Day of Action can be found&nbsp;[here](https://www.cfms.org/what-we-do/advocacy/day-of-action.html).
+The CFMS is pleased to provide financial assistance courtesy of MD Financial Management, to students interested in attending our **2018 National Day of Action, held February 10-12, 2018 in Ottawa, Ontario**. This year's topic is Indigenous Mental Wellness and further details on the Day of Action can be found&nbsp;[here](https://www.cfms.org/what-we-do/advocacy/day-of-action.html).
 
 Preference for these awards will be given to CFMS members with lived indigenous experience and demonstrated interest in the topic area.
 
