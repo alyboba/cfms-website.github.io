@@ -1,0 +1,93 @@
+---
+title: "Carms Interview Database"
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/members.css">
+</head>
+<body>
+{% include nav.html %}
+
+<div class="content">
+    {% include sidebar-databases.html %}
+    <script type="text/javascript">
+			document.querySelector( "#carms-interview-database" ).classList.toggle("sidebar-active");
+    </script>
+
+    <!--Page Specific Formatting-->
+    <script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#resources" ).classList.toggle("active");
+    </script>
+
+    <div id="side-content">
+        <h1 class="editable" id="page-title">{{ page.title }}</h1>
+
+        <div class="members-only">
+            <h1 class="editable">Reviews</h1><br /><br />
+            <p class="editable"></p>
+            <datalist id="schools">
+                
+            </datalist>
+            <input id="schools-list" type="text" list="schools"/>
+            
+            <datalist id="specialties">
+                
+            </datalist>
+            <input id="specialties-list" type="text" list="specialties"/>
+            
+            <!--Will need to add paginating on table?-->
+            <!--Will also need to add Searching functionality in controller...-->
+            <div id="addButton">
+            </div>
+
+            <table class="display" id="interviewsDatabase">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Reviewed By</th>
+                    <!--This data-th details is used atm for when screen size is super small...-->
+                    <th>Date Reviewed</th>
+                    <th>Overall Rating</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Reviewed By</th>
+                    <!--This data-th details is used atm for when screen size is super small...-->
+                    <th>Date Reviewed</th>
+                    <th>Overall Rating</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </tfoot>
+
+                <!--Data from Db will be populated here, appended after the headers...-->
+            </table>
+
+        </div>
+        <div class="non-members">
+            <blockquote>
+                <h3><strong>Please login to see this page</strong></h3>
+                <ul>
+                    <li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
+                </ul>
+            </blockquote>
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>
+</html>

@@ -219,7 +219,6 @@ export default class AccommodationsController extends FirebaseConnection {
 		let controller = this;
 		controller.utils.adminDisplayVexDialog(htmlInput, "Add Entry", data => {
 			if (data) {
-				console.log(data);
 				for (const prop in data) {
 					data[prop] = controller.utils.sanatizeInput(data[prop]);
 				}
