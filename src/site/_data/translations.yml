@@ -215,6 +215,7 @@ sidebar-education:
     accreditation-toolkit: Accreditation Toolkit
     student-run-clinics-toolkit: Student Run Clinics Toolkit
     lmcc-prep-link: LMCC Preparation Resources
+    reports: Reports
   - lang: fr
     sidebar-title_1: Éducation
     overview: Aperçu
@@ -226,6 +227,7 @@ sidebar-education:
     accreditation-toolkit: Accreditation Toolkit
     student-run-clinics-toolkit: Trousse-à-outils pour cliniques dirigées par étudiants
     lmcc-prep-link: Ressources préparatoires pour LCMC
+    reports: Rapports
 sidebar-student-affairs:
   - lang: en
     sidebar-title_1: Student Affairs
