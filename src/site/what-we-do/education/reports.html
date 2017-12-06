@@ -1,0 +1,52 @@
+---
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]>
+<html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css"/>
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector("#logo-invert").classList.toggle("hidden");
+    document.querySelector("#what-we-do").classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-education.html %}
+    <script type="text/javascript">
+        document.querySelector("#reports").classList.toggle("sidebar-active");
+    </script>
+    <div id="side-content" class="editable"><h1 id="page-title">Reports</h1>
+
+        <p>The Education Portfolio develops many reports and recommendation documents to be used by our membership at the local level, and to advocate for CFMS members at various stakeholder meetings. This section contains reports and documents relating to the advancement of medical education in Canada produced by the CFMS. </p>
+        <ul>
+            <li><strong><a href="/files/education-reports/entry-routes.pdf">Entry Routes</a></strong>: In 2017, the CFMS conducted a survey of senior medical students in Canada, and abroad, to better understand how students perceive their exposure to all the available PGY1 Residency Entry Routes, preparation for their chosen speciality, and stress levels surrounding obtaining their chosen speciality. There were 118 CMG respondents to the survey.<br></br>For reproduction or use of this data for any additional reports, please contact <a href="mailto:vpcommunications@cfms.org">vpcommuncations@cfms.org</a>.
+            </li>
+
+            </li>
+        </ul>
+        <!--<blockquote><h4><strong>Visit our NEW Wellness Site!</strong></h4>-->
+        <!--    <ul>-->
+        <!--        <li>Visit our newly developed <a href="http://cfmswellness.squarespace.com/">CFMS Wellness Site</a> for-->
+        <!--            nation-wide wellness tips for each medical school!-->
+        <!--        </li>-->
+        <!--    </ul>-->
+        <!--</blockquote>-->
+
+    </div>
+</div>
+{% include footer.html %}
+</body>
