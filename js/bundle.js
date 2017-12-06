@@ -10906,7 +10906,7 @@ Management.prototype.linkUser = function(userId, secondaryUserToken, cb) {
 module.exports = Management;
 
 },{"../helper/assert":67,"../helper/request-builder":78,"../helper/response-handler":79,"url-join":472}],89:[function(require,module,exports){
-module.exports = { raw: '8.11.3' };
+module.exports = { raw: '8.12.0' };
 
 },{}],90:[function(require,module,exports){
 var urljoin = require('url-join');
@@ -11077,6 +11077,7 @@ function WebAuth(options) {
       redirectUri: { optional: true, type: 'string', message: 'redirectUri is not valid' },
       scope: { optional: true, type: 'string', message: 'scope is not valid' },
       audience: { optional: true, type: 'string', message: 'audience is not valid' },
+      popupOrigin: { optional: true, type: 'string', message: 'popupOrigin is not valid' },
       leeway: { optional: true, type: 'number', message: 'leeway is not valid' },
       plugins: { optional: true, type: 'array', message: 'plugins is not valid' },
       _disableDeprecationWarnings: {
@@ -11679,18 +11680,19 @@ module.exports = WebAuth;
 
 },{"../authentication":65,"../helper/assert":67,"../helper/error":70,"../helper/object":73,"../helper/plugins":75,"../helper/window":86,"./cross-origin-authentication":90,"./popup":92,"./redirect":93,"./silent-authentication-handler":94,"./transaction-manager":95,"./web-message-handler":97,"idtoken-verifier":256,"qs":369}],92:[function(require,module,exports){
 var urljoin = require('url-join');
-var WinChan = require('winchan');
 
 var urlHelper = require('../helper/url');
 var assert = require('../helper/assert');
 var responseHandler = require('../helper/response-handler');
 var PopupHandler = require('../helper/popup-handler');
 var objectHelper = require('../helper/object');
+var windowHelper = require('../helper/window');
 var Warn = require('../helper/warn');
 var TransactionManager = require('./transaction-manager');
 
 function Popup(webAuth, options) {
   this.baseOptions = options;
+  this.baseOptions.popupOrigin = options.popupOrigin;
   this.client = webAuth.client;
   this.webAuth = webAuth;
 
@@ -11762,10 +11764,17 @@ Popup.prototype.getPopupHandler = function(options, preload) {
  */
 Popup.prototype.callback = function(options) {
   var _this = this;
-  WinChan.onOpen(function(popupOrigin, r, cb) {
-    _this.webAuth.parseHash(options || {}, function(err, data) {
-      return cb(err || data);
-    });
+  options = options || {};
+  var originUrl =
+    options.popupOrigin || this.baseOptions.popupOrigin || windowHelper.getWindow().origin;
+  _this.webAuth.parseHash(options || {}, function(err, data) {
+    // {a, d} is WinChan's message format.
+    // We have to keep the same format because we're opening the popup with WinChan.
+    var response = { a: 'response', d: data };
+    if (err) {
+      response = { a: 'error', d: err };
+    }
+    windowHelper.getWindow().opener.postMessage(JSON.stringify(response), originUrl);
   });
 };
 
@@ -11983,7 +11992,7 @@ Popup.prototype.signupAndLogin = function(options, cb) {
 
 module.exports = Popup;
 
-},{"../helper/assert":67,"../helper/object":73,"../helper/popup-handler":76,"../helper/response-handler":79,"../helper/url":84,"../helper/warn":85,"./transaction-manager":95,"url-join":472,"winchan":489}],93:[function(require,module,exports){
+},{"../helper/assert":67,"../helper/object":73,"../helper/popup-handler":76,"../helper/response-handler":79,"../helper/url":84,"../helper/warn":85,"../helper/window":86,"./transaction-manager":95,"url-join":472}],93:[function(require,module,exports){
 var UsernamePassword = require('./username-password');
 var objectHelper = require('../helper/object');
 var Warn = require('../helper/warn');
