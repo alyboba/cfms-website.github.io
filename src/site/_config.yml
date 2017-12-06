@@ -25,6 +25,8 @@ collections:
     output: true
   french-humans-of-medicine:
     output: true
+  cfms-in-the-news:
+    output: true
       
 
 #Set the default layout and language for collections
