@@ -2,7 +2,7 @@
 title: >-
   Call for Applications: CFMS National Day of Action Travel Awards, Sponsored by
   MD Financial Management (Due December 15th)
-date:
+date: 2017-12-06 00:00:00
 description: Please fill in description here.
 lang: en
 ---
