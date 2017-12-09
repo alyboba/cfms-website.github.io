@@ -580,3 +580,25 @@ added helper classes
 	color:$primary-color;
 	font-family:$sans-serif-font-stack;
 }
+.inline{
+	display:inline !important;
+	margin-left:0.5rem;
+}
+.floatRight{
+	float:right !important;
+	@media (max-width: 600px){
+		float:none !important;
+	}
+}
+.floatLeft{
+	float:left !important;
+	@media (max-width: 600px){
+		float:none !important;
+	}
+}
+.hidden{
+	display:none !important;
+}
+.show{
+	display:block !important;
+}

@@ -21,10 +21,19 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		this.schoolSpecialtyHash = schoolData;
 		this.specialtySchoolHash = specialtyData;
 		this.table;
+		this.form = null;
 		this.process();
 	}
 	
 	process() {
+		$(document).ready(() =>{
+			$("#generalImpression, #qualityEducational, #qualityHospital, #interviewFriendliness, #easeInterview, #locationCultural").barrating({
+				theme: 'fontawesome-stars'
+			});
+			this.form = $('#dataForm');
+		});
+		
+		
 		if (this.auth.user) {
 			//Initially populate our lists with the schools and list from data pulled in.
 			this.createList(this.schools, 'schools-list', 'School');
@@ -44,6 +53,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 				if (value == "notSelected") {
 					this.createList(this.specialties, 'specialties-list', 'Specialty');
 					this.schoolRefPath = null;
+					document.getElementById('addButton').innerHTML = "";
 				}
 				else {
 					let specialties = this.schoolSpecialtyHash.filter((list) => list.school === value).map((list) => list.specialties);
@@ -62,6 +72,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 				if(value == "notSelected"){
 					this.createList(this.schools, 'schools-list', 'School');
 					this.specialtyRefPath = null;
+					document.getElementById('addButton').innerHTML = "";
 				}
 				else {
 					let schools = this.specialtySchoolHash.filter((list) => list.specialty === value).map((list) => list.schools);
@@ -139,41 +150,17 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		}
 	}
 	
-	
-	addDatabaseEntryEvent(evt) {
+	clickAddEntryButton(evt){
 		evt.preventDefault();
-		let htmlInput = this.setHtmlInput(null);
-		let controller = this;
-		controller.utils.adminDisplayVexDialog(htmlInput, "Add Entry", data => {
-			if (data) {
-				for (const prop in data) {
-					data[prop] = controller.utils.sanatizeInput(data[prop]);
-				}
-				let username = controller.auth.user.given_name + ' ' + controller.auth.user.family_name;
-				let uid = controller.auth.user.identities[0].user_id;
-				controller.dbRef.push({
-					city: data.city,
-					rent: data.rent,
-					payment: data.payment,
-					startDate: data.startDate,
-					endDate: data.endDate,
-					locationAddress: data.locationAddress,
-					userName: username,
-					uid: uid
-				}).then(() => {
-					controller.utils.displayVexAlert('Successfully Added Entry');
-				}).catch((err) => {
-					controller.utils.displayVexAlert(err);
-				});
-			}
-		});
+		let refPath = evt.target.getAttribute("src");
+		console.log(refPath);
+		console.log(evt.target);
+		console.log(this.form);
+		this.form.removeClass("hidden");
+		this.form.addClass("animated fadeInDown");
 	}
 	
-	
-	
-	
-	
-	
+		
 	handleListChange(id, array, list, name) {
 		if (array.length > 0) {
 			this.createList(array[0], id, name);
@@ -198,7 +185,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		temp.innerHTML = addButton;
 		document.getElementById('addButton').appendChild(temp);
 		let button = document.getElementsByClassName('addEntry');
-		button[0].addEventListener('click', this.addDatabaseEntryEvent.bind(this), false);
+		button[0].addEventListener('click', this.clickAddEntryButton.bind(this), false);
 	}
 	
 	formatExpand(infoArray) {
