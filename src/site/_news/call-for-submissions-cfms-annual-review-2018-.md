@@ -1,15 +1,18 @@
 ---
-title: 'Call for Submissions: CFMS Annual Review 2018 (Due January 15th)'
+title: 'Call for Submissions and Cover Art: CFMS Annual Review 2018 (Due January 15th)'
 date: 2017-11-13 00:00:00
 description: >-
   The CFMS Annual Review, an annual magazine showcasing initiatives, research,
   projects, and creative talent from medical students across Canada, is calling
-  for submissions from all medical students.
+  for submissions from all medical students. This year's cover art theme will be
+  'Indigenous Health'
 lang: en
 ---
 
 
 ![](/uploads/versions/annual-review---x----2249-2249x---.png)The CFMS Annual Review, an annual magazine showcasing initiatives, research, projects, and creative talent from medical students across Canada, is calling for submissions from all medical students. Share stories from your travels and clinical experiences. Tell us about your reflections, musings, and opinions. Show off your artistic talent, be it poetry, painting, or photography.
+
+![](/uploads/versions/annual-review-call-for-cover-art-submissions-1---x----612-792x---.jpg)This year’s cover art theme is ‘Indigenous Health’! We are looking for cover art submissions designed by medical students. Feel free to use your artistic license to put together a design based on what Indigenous Health means to you. The specifications are 8.5 by 11 inches. One design will be chosen for this year’s cover art, but the remaining submissions may be featured in the creative art section of the magazine.
 
 The magazine is circulated to readers across Canada, including medical students, medical school deans, medical organizations, provincial ministers of health, and members of parliament.
 
