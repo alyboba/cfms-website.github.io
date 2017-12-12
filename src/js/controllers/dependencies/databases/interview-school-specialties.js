@@ -4,55 +4,71 @@ var schools = ["Dalhousie University","McGill University","McMaster University",
 var schoolData = [
 	{
 		school: "Dalhousie University",
-		specialties: ["Anatomical Pathology","Anesthesiology","Cardiac Surgery","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Pathology","General Surgery","Internal Medicine","Laboratory Medicine","Neurology","Neurosurgery","Nuclear Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Radiation Oncology","Urology"]
+		specialties: ["Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Obstetrics & Gynecology","Ophthalmology","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Urology"]
 	},
 	{
 		school: "McGill University",
-		specialties: ["Anatomical Pathology","Anesthesiology","Cardiac Surgery","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Medical Biochemistry","Medical Genetics","Neurology","Neurology - Pediatric","Neurosurgery","Nuclear Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology","Vascular Surgery"]
+		specialties: ["Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Psychiatry"]
 	},
 	{
 		school: "McMaster University",
-		specialties: ["Anatomical Pathology","Anesthesiology","Cardiac Surgery","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Pathology","General Surgery","Internal Medicine","Medical Biochemistry","Medical Microbiology","Neurology","Neurology - Pediatric","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology","Vascular Surgery"]
+		specialties: ["Anatomical Pathology","Anesthesiology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Pathology","General Surgery","Internal Medicine","Medical Biochemistry","Neurology","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Urology"]
+	},
+	{
+		school: "Memorial University of Newfoundland",
+		specialties: ["Anatomical Pathology","Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Neurology","Obstetrics & Gynecology","Orthopedic Surgery","Pediatrics","Psychiatry"]
+	},
+	{
+		school: "Northern Ontario School of Medicine",
+		specialties: ["Family Medicine","General Surgery","Internal Medicine","Orthopedic Surgery","Pediatrics","Psychiatry","Public Health and Preventive Medicine"]
+	},
+	{
+		school: "Queen's University",
+		specialties: ["Anesthesiology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Laboratory Medicine","Neurology","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Pediatrics","Physical Medicine & Rehabilitation","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology"]
 	},
 	{
 		school: "Universite de Montreal",
-		specialties: ["Anatomical Pathology","Anesthesiology","Cardiac Surgery","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Medical Biochemistry","Medical Genetics","Medical Microbiology","Neurology","Neurology - Pediatric","Neuropathology","Neurosurgery","Nuclear Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology","Vascular Surgery"]
+		specialties: ["Anatomical Pathology","Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Neurology","Neurology - Pediatric","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Plastic Surgery","Psychiatry"]
 	},
 	{
 		school: "Universite de Sherbrooke",
-		specialties: ["Anatomical Pathology","Anesthesiology","Dermatology","Diagnostic Radiology","Family Medicine","General Surgery","Internal Medicine","Medical Biochemistry","Medical Microbiology","Neurology","Neurosurgery","Nuclear Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Urology"]
+		specialties: ["Anatomical Pathology","Anesthesiology","Dermatology","Diagnostic Radiology","Family Medicine","General Surgery","Internal Medicine","Medical Biochemistry","Neurology","Neurosurgery","Nuclear Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Urology"]
 	},
 	{
 		school: "Universite Laval",
-		specialties: ["Anatomical Pathology","Anesthesiology","Cardiac Surgery","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Medical Biochemistry","Medical Microbiology","Neurology","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology","Vascular Surgery"]
+		specialties: ["Anatomical Pathology","Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Neurology","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology"]
 	},
 	{
 		school: "University of Alberta",
-		specialties: ["Anatomical Pathology","Anesthesiology","Cardiac Surgery","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Pathology","General Surgery","Hematological Pathology","Internal Medicine","Medical Microbiology","Neurology","Neurology - Pediatric","Neurosurgery","Nuclear Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology"]
+		specialties: ["Anatomical Pathology","Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Hematological Pathology","Internal Medicine","Neurology","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Urology"]
 	},
 	{
 		school: "University of British Columbia",
-		specialties: ["Anatomical Pathology","Anesthesiology","Cardiac Surgery","Community Medicine","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Pathology","General Surgery","Hematological Pathology","Internal Medicine","Medical Biochemistry","Medical Genetics","Medical Microbiology","Neurology","Neurology - Pediatric","Neuropathology","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology","Vascular Surgery"]
+		specialties: ["Anatomical Pathology","Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Neurology","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Radiation Oncology","Urology"]
 	},
 	{
 		school: "University of Calgary",
-		specialties: ["Anatomical Pathology","Anesthesiology","Cardiac Surgery","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Pathology","General Surgery","Internal Medicine","Medical Genetics","Neurology","Neurology - Pediatric","Neuropathology","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology"]
+		specialties: ["Anatomical Pathology","Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Pathology","General Surgery","Internal Medicine","Neurology","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Radiation Oncology"]
 	},
 	{
 		school: "University of Manitoba",
-		specialties: ["Anatomical Pathology","Anesthesiology","Cardiac Surgery","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Medical Genetics","Medical Microbiology","Neurology","Neurosurgery","Nuclear Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology"]
+		specialties: ["Anatomical Pathology","Anesthesiology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Neurology","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology"]
 	},
 	{
 		school: "University of Ottawa",
-		specialties: ["Anesthesiology","Cardiac Surgery","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Pathology","General Surgery","Internal Medicine","Laboratory Medicine","Medical Genetics","Neurology","Neurology - Pediatric","Neurosurgery","Nuclear Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology","Vascular Surgery"]
+		specialties: ["Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Pathology","General Surgery","Internal Medicine","Neurology","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Radiation Oncology","Urology"]
+	},
+	{
+		school: "University of Saskatchewan",
+		specialties: ["Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Pathology","General Surgery","Internal Medicine","Neurology","Neurosurgery","Nuclear Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Urology"]
 	},
 	{
 		school: "University of Toronto",
-		specialties: ["Anesthesiology","Cardiac Surgery","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Laboratory Medicine","Medical Genetics","Neurology","Neurology - Pediatric","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Radiation Oncology","Urology","Vascular Surgery"]
+		specialties: ["Anesthesiology","Dermatology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Neurology","Neurology - Pediatric","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Public Health and Preventive Medicine","Urology"]
 	},
 	{
 		school: "University of Western Ontario",
-		specialties: ["Anatomical Pathology","Anesthesiology","Cardiac Surgery","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Medical Microbiology","Neurology","Neurology - Pediatric","Neurosurgery","Nuclear Medicine","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Radiation Oncology","Urology","Vascular Surgery"]
+		specialties: ["Anatomical Pathology","Anesthesiology","Diagnostic Radiology","Emergency Medicine","Family Medicine","General Surgery","Internal Medicine","Neurology","Neurology - Pediatric","Neurosurgery","Obstetrics & Gynecology","Ophthalmology","Orthopedic Surgery","Otolaryngology","Pediatrics","Physical Medicine & Rehabilitation","Plastic Surgery","Psychiatry","Radiation Oncology","Urology"]
 	}
 ];
 var specialtyData = [
@@ -189,8 +205,5 @@ var specialtyData = [
 		schools: ["McGill University","McMaster University","Universite Laval","Universite de Montreal","University of British Columbia","University of Ottawa","University of Toronto","University of Western Ontario"]
 	}
 ];
-	
-	
 
-export {schools, specialties, schoolData, specialtyData};
-	
+export {specialtyData, specialties, schoolData, schools}

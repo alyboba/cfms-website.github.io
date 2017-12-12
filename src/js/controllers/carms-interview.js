@@ -119,26 +119,46 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		else{
 			username = 'Anonymous Reviewer';
 		}
+		
+		this.dbRef.push({
+			reviewedBy: username,
+			dateReviewed: dateReviewed,
+			overallRating: generalImpression,
+			interviewSetting: interviewSetting,
+			howDidPrepare: howPrepare,
+			generalComments: generalComments,
+			mostInterestingDifficultQuestion: mostInterestingQuestion,
+			positiveAspects: positiveAspects,
+			negativeAspects: negativeAspects,
+			lessonsLearned: lessonsLearned,
+			uid: uid
+			
+		}).then(() => {
+			this.utils.displayVexAlert('Successfully Added Entry');
+			this.closeForm();
+		}).catch((err) => {
+			this.utils.displayVexAlert(err);
+		});
 		console.log(anonymousReview);
 		console.log(generalImpression);
 		console.log(qualityHospital);
-		
 		console.log(username);
-		
 		console.log(dateReviewed);
-		
 		
 	}
 	
 	cancelFormEvent(evt){
 		evt.preventDefault();
+		this.closeForm();
+	}
+	
+	closeForm(){
 		let form = this.form;
 		this.form.removeClass('fadeInDown');
 		this.form.addClass('fadeOutUp');
 		setTimeout(function(){
 			form.addClass('hidden');
 		}, 750);
-		
 	}
 	
 	
@@ -207,6 +227,21 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		}
 	}
 	
+	expandEvent(evt) {
+		console.log(this);
+		console.log(evt);
+		let tr = $(evt.target).closest('tr');
+		let row = this.table.row(tr);
+		if (row.child.isShown()) {
+			row.child.hide();
+			tr.removeClass('shown');
+		}
+		else {
+			row.child.show();
+			tr.addClass('shown');
+		}
+	}
+	
 	clickAddEntryButton(evt){
 		evt.preventDefault();
 		let refPath = evt.target.getAttribute("src");
@@ -218,7 +253,6 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		this.form.removeClass("fadeOutUp");
 		this.form.addClass("animated fadeInDown");
 	}
-	
 		
 	handleListChange(id, array, list, name) {
 		if (array.length > 0) {
@@ -250,31 +284,31 @@ export default class CarmsInterviewController extends FirebaseConnection {
 	formatExpand(infoArray) {
 		return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
 			'<tr>' +
-			'<td>Interview Setting</td>' +
+			'<td><strong>Interview Setting</strong></td>' +
 			'<td>' + infoArray[0] + '</td>' +
 			'</tr>' +
 			'<tr>' +
-			'<td>How Did you Prepare for the Interview?:</td>' +
+			'<td><strong>How Did you Prepare for the Interview?:</strong></td>' +
 			'<td>' + infoArray[1] + '</td>' +
 			'</tr>' +
 			'<tr>' +
-			'<td>General Comments About the Interview:</td>' +
+			'<td><strong>General Comments About the Interview:</strong></td>' +
 			'<td>' + infoArray[1] + '</td>' +
 			'</tr>' +
 			'<tr>' +
-			'<td>Most Interesting or Difficult Question:</td>' +
+			'<td><strong>Most Interesting or Difficult Question:</strong></td>' +
 			'<td>' + infoArray[1] + '</td>' +
 			'</tr>' +
 			'<tr>' +
-			'<td>Positive Aspects of the Interview:</td>' +
+			'<td><strong>Positive Aspects of the Interview:</strong></td>' +
 			'<td>' + infoArray[1] + '</td>' +
 			'</tr>' +
 			'<tr>' +
-			'<td>Negative Aspects of the Interview:</td>' +
+			'<td><strong>Negative Aspects of the Interview:</strong></td>' +
 			'<td>' + infoArray[1] + '</td>' +
 			'</tr>' +
 			'<tr>' +
-			'<td>Lessons Learned/Advice for Future Applicants:</td>' +
+			'<td><strong>Lessons Learned/Advice for Future Applicants:</strong></td>' +
 			'<td>' + infoArray[1] + '</td>' +
 			'</tr>' +
 			'</table>';
