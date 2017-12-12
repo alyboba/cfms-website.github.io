@@ -1,5 +1,6 @@
 import {FirebaseConnection} from '../repositories/firebase/utils';
 import Utils from '../utils';
+import {format} from 'date-fns';
 import {schools, specialties, schoolData, specialtyData} from './dependencies/databases/interview-school-specialties';
 
 
@@ -23,6 +24,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		this.table;
 		this.form = null;
 		this.process();
+		this.eventHandlers();
 	}
 	
 	process() {
@@ -84,6 +86,61 @@ export default class CarmsInterviewController extends FirebaseConnection {
 			});
 		}
 	}
+	
+	eventHandlers(){
+		document.getElementById('cancelButton').addEventListener('click', this.cancelFormEvent.bind(this));
+		document.getElementById('addSubmitButton').addEventListener('click', this.addInterview.bind(this));
+	}
+	
+	addInterview(evt){
+		evt.preventDefault();
+		let generalImpression = $('#generalImpression').val();
+		let qualityHospital = $('#qualityHospital').val();
+		let qualityEducation = $('#qualityEducational').val();
+		let interviewFriendliness = $('#interviewFriendliness').val();
+		let easeInterview = $('#easeInterview').val();
+		let locationCultural = $('#locationCultural').val();
+		let anonymousReview = $('#anonymous:checked').val() == 'yes' ? true : false;
+		let interviewSetting = $('#interviewSetting').val();
+		let howPrepare = $('#prepare').val();
+		let generalComments = $('#generalComments').val();
+		let mostInterestingQuestion = $('#mostInterestingQuestion').val();
+		let positiveAspects = $('#positiveAspects').val();
+		let negativeAspects = $('#negativeAspects').val();
+		let lessonsLearned = $('#lessonsLearned').val();
+		let uid = this.auth.user.identities[0].user_id;
+		let username;
+		let dateReviewed = format(new Date(), 'MMMM Do, YYYY @ h:mA (Z)');
+		
+		
+		if(!anonymousReview){
+			username = this.auth.user.given_name + ' ' + this.auth.user.family_name;
+		}
+		else{
+			username = 'Anonymous Reviewer';
+		}
+		console.log(anonymousReview);
+		console.log(generalImpression);
+		console.log(qualityHospital);
+		
+		console.log(username);
+		
+		console.log(dateReviewed);
+		
+		
+	}
+	
+	cancelFormEvent(evt){
+		evt.preventDefault();
+		let form = this.form;
+		this.form.removeClass('fadeInDown');
+		this.form.addClass('fadeOutUp');
+		setTimeout(function(){
+			form.addClass('hidden');
+		}, 750);
+		
+	}
+	
 	
 	populateTable(){
 		if(this.specialtyRefPath && this.schoolRefPath){ //Make sure user has selected both options.
@@ -156,7 +213,9 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		console.log(refPath);
 		console.log(evt.target);
 		console.log(this.form);
+		$('#editSubmitButton').hide();
 		this.form.removeClass("hidden");
+		this.form.removeClass("fadeOutUp");
 		this.form.addClass("animated fadeInDown");
 	}
 	
@@ -220,5 +279,24 @@ export default class CarmsInterviewController extends FirebaseConnection {
 			'</tr>' +
 			'</table>';
 	}
+	
+	
+	whichTransitionEvent(id) {
+		let t;
+		let elem = document.getElementById(id);
+		let el = document.createElement('fakeelement');
+		let transitions = {
+			'transition': 'transitionend',
+			'OTransition': 'oTransitionEnd',
+			'MozTransition': 'transitionend',
+			'WebkitTransition': 'webkitTransitionEnd'
+		};
+		for (let t in transitions) {
+			if (elem.style[t] !== undefined) {
+				return transitions[t];
+			}
+		}
+	}
+	
 		
 }
