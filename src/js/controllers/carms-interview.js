@@ -76,7 +76,6 @@ export default class CarmsInterviewController extends FirebaseConnection {
 			//Handle when user changes specialties list.
 			$('#specialties-list').change((evt) => {
 				let schoolValue = $('#schools-list').find(":selected").val();
-				console.log(schoolValue);
 				let value = evt.target.value;
 				if(value == "notSelected"){
 					this.createList(this.schools, 'schools-list', 'School');
@@ -273,8 +272,6 @@ export default class CarmsInterviewController extends FirebaseConnection {
 			this.utils.displayVexAlert(err);
 		});
 	}
-	
-	
 	
 	cancelFormEvent(evt){
 		evt.preventDefault();
