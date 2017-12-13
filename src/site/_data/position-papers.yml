@@ -11,34 +11,33 @@ position-papers:
     tag-name: "In Progress"
   paper-collection:
   - section: "Recently Passed at AGM 2017 - Ottawa, ON"
-  papers:
+    papers:
     - paper-name: "Curricular Advocacy"
       paper-publish-date: "2017"
       paper-link: "/files/position-papers/curricular-advocacy-paper.pdf"
-      paper-summary: ""
-      paper-status: ""
+      paper-summary: "Summary coming soon"
+      paper-status: "Status coming soon"
       paper-tags:
       - tag: "pp"
-    papers:
     - paper-name: "Support for Unmatched Canadian Medical Students"
       paper-publish-date: "2017"
       paper-link: "/files/position-papers/agm_2017_support_unmatched.pdf"
-      paper-summary: ""
-      paper-status: ""
+      paper-summary: "Summary coming soon"
+      paper-status: "Status coming soon"
       paper-tags:
       - tag: "pp"
     - paper-name: "Support of Medical Student Parents in Undergraduate Medical Education"
       paper-publish-date: "2017"
       paper-link: "/files/position-papers/agm_2017_support_of_parents.pdf"
-      paper-summary: ""
-      paper-status: ""
+      paper-summary: "Summary coming soon"
+      paper-status: "Status coming soon"
       paper-tags:
       - tag: "PP"
     - paper-name: "Personal Day Policies at Canadian Medical Schools"
       paper-publish-date: "2017"
       paper-link: "/files/position-papers/agm_2017_personnal_days.pdf"
-      paper-summary: ""
-      paper-status: ""
+      paper-summary: "Summary coming soon"
+      paper-status: "Status coming soon"
       paper-tags:
       - tag: "PS"
   - section: "SGM 2017 - Winnipeg, MB"
