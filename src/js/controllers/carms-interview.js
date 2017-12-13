@@ -115,40 +115,46 @@ export default class CarmsInterviewController extends FirebaseConnection {
 						let downVotes = listing.child('downVotes');
 						let upVoteLink = '',
 							downVoteLink = '',
-							displayVote = true;
+							displayVote = true,
+							acceptVote = true;
 						
-						if(listing.val().uid == this.auth.user.identities[0].user_id){
+						if(listing.val().uid == this.auth.user.identities[0].user_id){ //If entry is users, don't show the votes.
 							displayVote = false;
 						}
 						if(upVotes.numChildren() > 0){
 							upVotes.forEach((upVote) => {
-								if(upVote.val().uid == this.auth.user.identities[0].user_id){
-									displayVote = false;
+								if(upVote.val().uid == this.auth.user.identities[0].user_id){ //If user has voted on this particular one. reject further votes.
+									acceptVote = false;
 								}
 							});
 						}
 						if(downVotes.numChildren() > 0){
 							downVotes.forEach((downVote) => {
 								if(downVote.val().uid == this.auth.user.identities[0].user_id){
-									displayVote = false;
+									acceptVote = false;
 								}
 							});
 						}
 						
 						if(displayVote){
-							upVoteLink = '<span class="jrBtn upVote"><span class="buttonText" style="color:green;">' +
-								upVotes.numChildren()+'</span><span class="icon iconThumbUp"></span></span>';
-							
-							downVoteLink = '<span class="jrBtn downVote"><span class="buttonText" style="color:red;">' +
-								downVotes.numChildren()+'</span><span class="icon iconThumbDown"></span></span>';
+							if(acceptVote){
+								upVoteLink = '<span data-key="'+listing.key+'" class="jrBtn upVote"><span data-key="'+listing.key+'" class="buttonText" style="color:green;">' +
+									upVotes.numChildren()+'</span><span data-key="'+listing.key+'" class="icon iconThumbUp"></span></span>';
+								
+								downVoteLink = '<span data-key="'+listing.key+'" class="jrBtn downVote"><span data-key="'+listing.key+'" class="buttonText" style="color:red;">' +
+									downVotes.numChildren()+'</span><span data-key="'+listing.key+'" class="icon iconThumbDown"></span></span>';
+								
+							}
+							else{
+								upVoteLink = '<div class="rejectVote up"><span class="jrBtn"><span class="buttonText" style="color:green;">' +
+									upVotes.numChildren()+'</span><span class="icon iconThumbUp"></span></span></div>';
+								
+								downVoteLink = '<div class="rejectVote down"><span class="jrBtn"><span class="buttonText" style="color:red;">' +
+									downVotes.numChildren()+'</span><span class="icon iconThumbDown"></span></span></div>';
+								
+							}
 						}
-						else{
-							upVoteLink = '<span class="jrBtn rejectVote"><span class="buttonText" style="color:green;">' +
-								upVotes.numChildren()+'</span><span class="icon iconThumbUp"></span></span>';
-							
-							downVoteLink = '<span class="jrBtn rejectVote"><span class="buttonText" style="color:red;">' +
-								downVotes.numChildren()+'</span><span class="icon iconThumbDown"></span></span>';
-						}
+
 						
 						if(this.auth.user.isAdmin || listing.val().uid == this.auth.user.identities[0].user_id){
 							let editButton = this.utils.createWithIdButton(refPath + '/' + listing.key, 'Edit', listing.key, 'editEntry');
@@ -176,10 +182,6 @@ export default class CarmsInterviewController extends FirebaseConnection {
 							listing.val().lessonsLearned ? listing.val().lessonsLearned : ''
 						];
 						this.table.row.add(row).child(this.formatExpand(data)).draw(false); //Create row and a child underneath it.
-						
-						
-						
-						
 					});
 					
 					let expandButtons = document.getElementsByClassName('details-control');
@@ -195,6 +197,18 @@ export default class CarmsInterviewController extends FirebaseConnection {
 					for (let i = 0; i < editButtons.length; i++) {
 						editButtons[i].addEventListener('click', this.editDatabaseEntry.bind(this), false);
 					}
+					let upVoteButtons = document.getElementsByClassName('upVote');
+					for (let i = 0; i < upVoteButtons.length; i++) {
+						upVoteButtons[i].addEventListener('click', this.upVoteEvent.bind(this), false);
+					}
+					let downVoteButtons = document.getElementsByClassName('downVote');
+					for (let i = 0; i < downVoteButtons.length; i++) {
+						downVoteButtons[i].addEventListener('click', this.downVoteEvent.bind(this), false);
+					}
+					let rejectVoteButtons = document.getElementsByClassName('rejectVote');
+					for (let i = 0; i < rejectVoteButtons.length; i++) {
+						rejectVoteButtons[i].addEventListener('click', this.rejectVoteEvent.bind(this), false);
+					}
 				}
 				else {
 					this.table.clear().draw(); //NO data available, so clear it all out and redraw it..
@@ -204,6 +218,31 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		else {
 			this.table.clear();
 		}
+	}
+	
+	upVoteEvent(evt){
+		let key = evt.target.getAttribute('data-key');
+		this.submitVote(key, true);
+	}
+	
+	downVoteEvent(evt){
+		let key = evt.target.getAttribute('data-key');
+		this.submitVote(key, false);
+	}
+	
+	rejectVoteEvent(evt){
+		this.utils.displayVexAlert("You have Already voted on this entry!");
+	}
+	
+	submitVote(key, voteUp){
+		let voteString = voteUp ? 'upVotes' : 'downVotes';
+		this.dbRef.child(key).child(voteString).push({
+			uid: this.auth.user.identities[0].user_id
+		}).then(() =>{
+			this.utils.displayVexAlert('Thank you for your Vote!');
+		}).catch((err) =>{
+			this.utils.displayVexAlert(err);
+		});
 	}
 	
 	editDatabaseEntry(evt){
@@ -269,7 +308,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		overallImpression = overallImpression.toFixed(2);
 		
 		if(!anonymousReview){
-			username = this.auth.user.given_name + ' ' + this.auth.user.family_name;
+			username = this.auth.user.given_name; // + ' ' + this.auth.user.family_name; //Should this just be first name or first/last?
 		}
 		else{
 			username = 'Anonymous Reviewer';
