@@ -4,6 +4,12 @@ import {format} from 'date-fns';
 import {schools, specialties, schoolData, specialtyData} from './dependencies/databases/interview-school-specialties';
 
 
+//Need to add form sanatizing
+//need form validation
+//Need editing functionality.
+
+
+
 export default class CarmsInterviewController extends FirebaseConnection {
 	constructor(authService) {
 		super();
@@ -22,6 +28,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		this.schoolSpecialtyHash = schoolData;
 		this.specialtySchoolHash = specialtyData;
 		this.table;
+		this.editKey;
 		this.form = null;
 		this.process();
 		this.eventHandlers();
@@ -29,8 +36,12 @@ export default class CarmsInterviewController extends FirebaseConnection {
 	
 	process() {
 		$(document).ready(() =>{
-			$("#generalImpression, #qualityEducational, #qualityHospital, #interviewFriendliness, #easeInterview, #locationCultural").barrating({
+			$('#generalImpression').barrating({
 				theme: 'fontawesome-stars'
+			});
+			$("#qualityEducational, #qualityHospital, #interviewFriendliness, #easeInterview, #locationCultural").barrating({
+				theme: 'fontawesome-stars',
+				allowEmpty: true
 			});
 			this.form = $('#dataForm');
 		});
@@ -90,78 +101,9 @@ export default class CarmsInterviewController extends FirebaseConnection {
 	eventHandlers(){
 		document.getElementById('cancelButton').addEventListener('click', this.cancelFormEvent.bind(this));
 		document.getElementById('addSubmitButton').addEventListener('click', this.addInterview.bind(this));
+		document.getElementById('editSubmitButton').addEventListener('click', this.editInterview.bind(this));
 	}
-	
-	addInterview(evt){
-		evt.preventDefault();
-		let generalImpression = $('#generalImpression').val();
-		let qualityHospital = $('#qualityHospital').val();
-		let qualityEducation = $('#qualityEducational').val();
-		let interviewFriendliness = $('#interviewFriendliness').val();
-		let easeInterview = $('#easeInterview').val();
-		let locationCultural = $('#locationCultural').val();
-		let anonymousReview = $('#anonymous:checked').val() == 'yes' ? true : false;
-		let interviewSetting = $('#interviewSetting').val();
-		let howPrepare = $('#prepare').val();
-		let generalComments = $('#generalComments').val();
-		let mostInterestingQuestion = $('#mostInterestingQuestion').val();
-		let positiveAspects = $('#positiveAspects').val();
-		let negativeAspects = $('#negativeAspects').val();
-		let lessonsLearned = $('#lessonsLearned').val();
-		let uid = this.auth.user.identities[0].user_id;
-		let username;
-		let dateReviewed = format(new Date(), 'MMMM Do, YYYY @ h:mA (Z)');
 		
-		
-		if(!anonymousReview){
-			username = this.auth.user.given_name + ' ' + this.auth.user.family_name;
-		}
-		else{
-			username = 'Anonymous Reviewer';
-		}
-		
-		this.dbRef.push({
-			reviewedBy: username,
-			dateReviewed: dateReviewed,
-			overallRating: generalImpression,
-			interviewSetting: interviewSetting,
-			howDidPrepare: howPrepare,
-			generalComments: generalComments,
-			mostInterestingDifficultQuestion: mostInterestingQuestion,
-			positiveAspects: positiveAspects,
-			negativeAspects: negativeAspects,
-			lessonsLearned: lessonsLearned,
-			uid: uid
-			
-		}).then(() => {
-			this.utils.displayVexAlert('Successfully Added Entry');
-			this.closeForm();
-		}).catch((err) => {
-			this.utils.displayVexAlert(err);
-		});
-		console.log(anonymousReview);
-		console.log(generalImpression);
-		console.log(qualityHospital);
-		console.log(username);
-		console.log(dateReviewed);
-		
-	}
-	
-	cancelFormEvent(evt){
-		evt.preventDefault();
-		this.closeForm();
-	}
-	
-	closeForm(){
-		let form = this.form;
-		this.form.removeClass('fadeInDown');
-		this.form.addClass('fadeOutUp');
-		setTimeout(function(){
-			form.addClass('hidden');
-		}, 750);
-	}
-	
-	
 	populateTable(){
 		if(this.specialtyRefPath && this.schoolRefPath){ //Make sure user has selected both options.
 			this.table.clear().draw();
@@ -174,14 +116,12 @@ export default class CarmsInterviewController extends FirebaseConnection {
 					snapshot.forEach((listing) => {
 						let delTemp = '',
 							editTemp = '';
-						
 						if(this.auth.user.isAdmin || listing.val().uid == this.auth.user.identities[0].user_id){
 							let editButton = this.utils.createWithIdButton(refPath + '/' + listing.key, 'Edit', listing.key, 'editEntry');
 							editTemp = editButton;
 							let delButton = this.utils.createButton(refPath + '/' + listing.key, "Del", 'delEntry');
 							delTemp = delButton;
 						}
-						
 						let row = [
 							'',
 							listing.val().reviewedBy,
@@ -191,13 +131,13 @@ export default class CarmsInterviewController extends FirebaseConnection {
 							delTemp
 						];
 						let data = [
-							listing.val().interviewSetting,
-							listing.val().howDidPrepare,
-							listing.val().generalComments,
-							listing.val().mostInterestingDifficultQuestion,
-							listing.val().positiveAspects,
-							listing.val().negativeAspects,
-							listing.val().lessonsLearned
+							listing.val().interviewSetting ? listing.val().interviewSetting : '',
+							listing.val().howDidPrepare ? listing.val().howDidPrepare : '',
+							listing.val().generalComments ? listing.val().generalComments : '',
+							listing.val().mostInterestingDifficultQuestion ? listing.val().mostInterestingDifficultQuestion : '',
+							listing.val().positiveAspects ? listing.val().positiveAspects : '',
+							listing.val().negativeAspects ? listing.val().negativeAspects : '',
+							listing.val().lessonsLearned ? listing.val().lessonsLearned : ''
 						];
 						this.table.row.add(row).child(this.formatExpand(data)).draw(false); //Create row and a child underneath it.
 					});
@@ -227,6 +167,144 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		}
 	}
 	
+	editDatabaseEntry(evt){
+		evt.preventDefault();
+		$('#addSubmitButton').hide();
+		$('#editSubmitButton').show();
+		this.displayForm();
+		let key = evt.target.getAttribute('id');
+		this.editKey = key;
+		this.dbRef.child(key).once('value', (snapshot) => {
+			$('#interviewSetting').val(snapshot.val().interviewSetting);
+			$('#prepare').val(snapshot.val().howDidPrepare);
+			$('#generalComments').val(snapshot.val().generalComments);
+			$('#mostInterestingQuestion').val(snapshot.val().mostInterestingDifficultQuestion);
+			$('#positiveAspects').val(snapshot.val().positiveAspects);
+			$('#negativeAspects').val(snapshot.val().negativeAspects);
+			$('#lessonsLearned').val(snapshot.val().lessonsLearned);
+			$('#generalImpression').val(snapshot.val().generalImpression);
+			$('#qualityHospital').val(snapshot.val().qualityHospital);
+			$('#qualityEducational').val(snapshot.val().qualityEducation);
+			$('#interviewFriendliness').val(snapshot.val().interviewFriendliness);
+			$('#easeInterview').val(snapshot.val().easeInterview);
+			$('#locationCultural').val(snapshot.val().locationCultural);
+		});
+		
+		
+		
+		console.log(evt.target.getAttribute('id'));
+		console.log("clicked edit database entry");
+	}
+	
+	editInterview(evt){
+		evt.preventDefault();
+		console.log(this.editKey);
+		console.log("clicked edit interview");
+	}
+
+	
+	
+	addInterview(evt){
+		evt.preventDefault();
+		let starInfo = this.calculateStarRating();
+		let starRatings = starInfo.starRatings;
+		let totalStars = starInfo.totalStars;
+		let overallImpression = totalStars/starRatings;
+		overallImpression = overallImpression.toFixed(2);
+
+		let anonymousReview = $('#anonymous:checked').val() == 'yes' ? true : false;
+		let generalImpression = $('#generalImpression').val();
+		let qualityHospital = $('#qualityHospital').val();
+		let qualityEducation = $('#qualityEducational').val();
+		let interviewFriendliness = $('#interviewFriendliness').val();
+		let easeInterview = $('#easeInterview').val();
+		let locationCultural = $('#locationCultural').val();
+		
+		let interviewSetting = $('#interviewSetting').val();
+		let howPrepare = $('#prepare').val();
+		let generalComments = $('#generalComments').val();
+		let mostInterestingQuestion = $('#mostInterestingQuestion').val();
+		let positiveAspects = $('#positiveAspects').val();
+		let negativeAspects = $('#negativeAspects').val();
+		let lessonsLearned = $('#lessonsLearned').val();
+		let uid = this.auth.user.identities[0].user_id;
+		let username;
+		let dateReviewed = format(new Date(), 'MMMM Do, YYYY @ h:mA (Z)');
+		
+		
+		if(!anonymousReview){
+			username = this.auth.user.given_name + ' ' + this.auth.user.family_name;
+		}
+		else{
+			username = 'Anonymous Reviewer';
+		}
+		
+		this.dbRef.push({
+			generalImpression: generalImpression,
+			qualityHospital: qualityHospital,
+			qualityEducation: qualityEducation,
+			interviewFriendliness: interviewFriendliness,
+			easeInterview: easeInterview,
+			locationCultural: locationCultural,
+			reviewedBy: username,
+			dateReviewed: dateReviewed,
+			overallRating: overallImpression,
+			interviewSetting: interviewSetting,
+			howDidPrepare: howPrepare,
+			generalComments: generalComments,
+			mostInterestingDifficultQuestion: mostInterestingQuestion,
+			positiveAspects: positiveAspects,
+			negativeAspects: negativeAspects,
+			lessonsLearned: lessonsLearned,
+			uid: uid
+
+		}).then(() => {
+			this.utils.displayVexAlert('Successfully Added Entry');
+			this.closeForm();
+		}).catch((err) => {
+			this.utils.displayVexAlert(err);
+		});
+		
+		//console.log(anonymousReview);
+		console.log(totalStars);
+		console.log(starRatings);
+		console.log(overallImpression);
+		// console.log(username);
+		// console.log(dateReviewed);
+		//
+	}
+	
+	deleteDatabaseEntryEvent(evt) {
+		evt.preventDefault();
+		let dbPath = evt.target.getAttribute('src');
+		this.utils.vexConfirm().then(() => {
+			this.delEntry(dbPath);
+		});
+	}
+	
+	delEntry(dbPath) {
+		this.firebase.database().ref(dbPath).remove()
+			.then(() => {
+				this.utils.displayVexAlert("Successfully Deleted Entry");
+			}).catch((err) => {
+			this.utils.displayVexAlert(err);
+		});
+	}
+	
+	cancelFormEvent(evt){
+		evt.preventDefault();
+		this.closeForm();
+	}
+	
+	closeForm(){
+		let form = this.form;
+		this.form.removeClass('fadeInDown');
+		this.form.addClass('fadeOutUp');
+		setTimeout(function(){
+			form.addClass('hidden');
+		}, 750);
+	}
+	
 	expandEvent(evt) {
 		console.log(this);
 		console.log(evt);
@@ -244,11 +322,12 @@ export default class CarmsInterviewController extends FirebaseConnection {
 	
 	clickAddEntryButton(evt){
 		evt.preventDefault();
-		let refPath = evt.target.getAttribute("src");
-		console.log(refPath);
-		console.log(evt.target);
-		console.log(this.form);
 		$('#editSubmitButton').hide();
+		$('#addSubmitButton').show();
+		this.displayForm();
+	}
+	
+	displayForm(){
 		this.form.removeClass("hidden");
 		this.form.removeClass("fadeOutUp");
 		this.form.addClass("animated fadeInDown");
@@ -282,54 +361,109 @@ export default class CarmsInterviewController extends FirebaseConnection {
 	}
 	
 	formatExpand(infoArray) {
-		return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
-			'<tr>' +
+		let str = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
+		str += infoArray[0] == '' ? '' : '<tr>' +
 			'<td><strong>Interview Setting</strong></td>' +
 			'<td>' + infoArray[0] + '</td>' +
-			'</tr>' +
-			'<tr>' +
+			'</tr>';
+		
+		str += infoArray[1] == '' ? '' : '<tr>' +
 			'<td><strong>How Did you Prepare for the Interview?:</strong></td>' +
 			'<td>' + infoArray[1] + '</td>' +
-			'</tr>' +
-			'<tr>' +
+			'</tr>';
+		
+		str += infoArray[2] == '' ? '' : '<tr>' +
 			'<td><strong>General Comments About the Interview:</strong></td>' +
-			'<td>' + infoArray[1] + '</td>' +
-			'</tr>' +
-			'<tr>' +
+			'<td>' + infoArray[2] + '</td>' +
+			'</tr>';
+		
+		str += infoArray[3] == '' ? '' : '<tr>' +
 			'<td><strong>Most Interesting or Difficult Question:</strong></td>' +
-			'<td>' + infoArray[1] + '</td>' +
-			'</tr>' +
-			'<tr>' +
+			'<td>' + infoArray[3] + '</td>' +
+			'</tr>';
+		
+		str += infoArray[4] == '' ? '' : '<tr>' +
 			'<td><strong>Positive Aspects of the Interview:</strong></td>' +
-			'<td>' + infoArray[1] + '</td>' +
-			'</tr>' +
-			'<tr>' +
+			'<td>' + infoArray[4] + '</td>' +
+			'</tr>';
+		
+		str += infoArray[5] == '' ? '' : '<tr>' +
 			'<td><strong>Negative Aspects of the Interview:</strong></td>' +
-			'<td>' + infoArray[1] + '</td>' +
-			'</tr>' +
-			'<tr>' +
+			'<td>' + infoArray[5] + '</td>' +
+			'</tr>';
+		
+		str += infoArray[6] == '' ? '' : '<tr>' +
 			'<td><strong>Lessons Learned/Advice for Future Applicants:</strong></td>' +
-			'<td>' + infoArray[1] + '</td>' +
-			'</tr>' +
-			'</table>';
+			'<td>' + infoArray[6] + '</td>' +
+			'</tr>';
+		
+		str += '</table>';
+		
+		return str;
+		
+		// return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+		// 	'<tr>' +
+		// 	'<td><strong>Interview Setting</strong></td>' +
+		// 	'<td>' + infoArray[0] + '</td>' +
+		// 	'</tr>' +
+		// 	'<tr>' +
+		// 	'<td><strong>How Did you Prepare for the Interview?:</strong></td>' +
+		// 	'<td>' + infoArray[1] + '</td>' +
+		// 	'</tr>' +
+		// 	'<tr>' +
+		// 	'<td><strong>General Comments About the Interview:</strong></td>' +
+		// 	'<td>' + infoArray[2] + '</td>' +
+		// 	'</tr>' +
+		// 	'<tr>' +
+		// 	'<td><strong>Most Interesting or Difficult Question:</strong></td>' +
+		// 	'<td>' + infoArray[3] + '</td>' +
+		// 	'</tr>' +
+		// 	'<tr>' +
+		// 	'<td><strong>Positive Aspects of the Interview:</strong></td>' +
+		// 	'<td>' + infoArray[4] + '</td>' +
+		// 	'</tr>' +
+		// 	'<tr>' +
+		// 	'<td><strong>Negative Aspects of the Interview:</strong></td>' +
+		// 	'<td>' + infoArray[5] + '</td>' +
+		// 	'</tr>' +
+		// 	'<tr>' +
+		// 	'<td><strong>Lessons Learned/Advice for Future Applicants:</strong></td>' +
+		// 	'<td>' + infoArray[6] + '</td>' +
+		// 	'</tr>' +
+		// 	'</table>';
 	}
 	
 	
-	whichTransitionEvent(id) {
-		let t;
-		let elem = document.getElementById(id);
-		let el = document.createElement('fakeelement');
-		let transitions = {
-			'transition': 'transitionend',
-			'OTransition': 'oTransitionEnd',
-			'MozTransition': 'transitionend',
-			'WebkitTransition': 'webkitTransitionEnd'
-		};
-		for (let t in transitions) {
-			if (elem.style[t] !== undefined) {
-				return transitions[t];
-			}
+	calculateStarRating(){
+		let starRatings = 1;
+		let totalStars =  Math.floor($('#generalImpression').val());
+		if($('#qualityHospital').val()){
+			totalStars += Math.floor($('#qualityHospital').val());
+			starRatings++;
 		}
+		if($('#qualityEducational').val()){
+			totalStars += Math.floor($('#qualityEducational').val());
+			starRatings++;
+		}
+		if($('#interviewFriendliness').val()){
+			totalStars += Math.floor($('#interviewFriendliness').val());
+			starRatings++;
+		}
+		
+		if($('#easeInterview').val()){
+			totalStars += Math.floor($('#easeInterview').val());
+			starRatings++;
+		}
+		if($('#locationCultural').val()){
+			totalStars += Math.floor($('#locationCultural').val());
+			starRatings++;
+		}
+		
+		let obj = {
+			starRatings: starRatings,
+			totalStars: totalStars
+		};
+		return obj;
 	}
 	
 		
