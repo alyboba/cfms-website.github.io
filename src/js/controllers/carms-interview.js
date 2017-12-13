@@ -6,7 +6,6 @@ import {schools, specialties, schoolData, specialtyData} from './dependencies/da
 
 //Need to add form sanatizing
 //need form validation
-//Need editing functionality.
 
 
 
@@ -46,7 +45,6 @@ export default class CarmsInterviewController extends FirebaseConnection {
 			this.form = $('#dataForm');
 		});
 		
-		
 		if (this.auth.user) {
 			//Initially populate our lists with the schools and list from data pulled in.
 			this.createList(this.schools, 'schools-list', 'School');
@@ -57,11 +55,9 @@ export default class CarmsInterviewController extends FirebaseConnection {
 				]
 			}); //Initializing dataTables.
 			
-			
 			//Handle when user changes schools list
 			$('#schools-list').change((evt) => {
 				let specialtyValue = $('#specialties-list').find(":selected").val();
-				console.log(specialtyValue);
 				let value = evt.target.value;
 				if (value == "notSelected") {
 					this.createList(this.specialties, 'specialties-list', 'Specialty');
@@ -155,7 +151,6 @@ export default class CarmsInterviewController extends FirebaseConnection {
 					for (let i = 0; i < editButtons.length; i++) {
 						editButtons[i].addEventListener('click', this.editDatabaseEntry.bind(this), false);
 					}
-					
 				}
 				else {
 					this.table.clear().draw(); //NO data available, so clear it all out and redraw it..
@@ -189,48 +184,45 @@ export default class CarmsInterviewController extends FirebaseConnection {
 			$('#easeInterview').val(snapshot.val().easeInterview);
 			$('#locationCultural').val(snapshot.val().locationCultural);
 		});
-		
-		
-		
-		console.log(evt.target.getAttribute('id'));
-		console.log("clicked edit database entry");
 	}
 	
 	editInterview(evt){
 		evt.preventDefault();
-		console.log(this.editKey);
-		console.log("clicked edit interview");
-	}
+		let updateObj = this.createFormObject();
+		this.dbRef.child(this.editKey).update(updateObj)
+			.then(()=>{
+				this.utils.displayVexAlert('Successfully Updated Entry');
+				this.closeForm();
+			}).catch((err) =>{
+				this.utils.displayVexAlert(err);
+		});
 
+	}
 	
 	
 	addInterview(evt){
 		evt.preventDefault();
-		let starInfo = this.calculateStarRating();
-		let starRatings = starInfo.starRatings;
-		let totalStars = starInfo.totalStars;
-		let overallImpression = totalStars/starRatings;
+		let addObj = this.createFormObject();
+		this.dbRef.push(addObj)
+		.then(() => {
+			this.utils.displayVexAlert('Successfully Added Entry');
+			this.closeForm();
+		}).catch((err) => {
+			this.utils.displayVexAlert(err);
+		});
+	}
+	
+	createFormObject(){
+		let starInfo = this.calculateStarRating(),
+			starRatings = starInfo.starRatings,
+			totalStars = starInfo.totalStars,
+			overallImpression = totalStars/starRatings,
+			username,
+			uid = this.auth.user.identities[0].user_id,
+			dateReviewed = format(new Date(), 'MMMM Do, YYYY @ hh:mmA (Z)'),
+			anonymousReview = $('#anonymous:checked').val() == 'yes' ? true : false;
+		
 		overallImpression = overallImpression.toFixed(2);
-
-		let anonymousReview = $('#anonymous:checked').val() == 'yes' ? true : false;
-		let generalImpression = $('#generalImpression').val();
-		let qualityHospital = $('#qualityHospital').val();
-		let qualityEducation = $('#qualityEducational').val();
-		let interviewFriendliness = $('#interviewFriendliness').val();
-		let easeInterview = $('#easeInterview').val();
-		let locationCultural = $('#locationCultural').val();
-		
-		let interviewSetting = $('#interviewSetting').val();
-		let howPrepare = $('#prepare').val();
-		let generalComments = $('#generalComments').val();
-		let mostInterestingQuestion = $('#mostInterestingQuestion').val();
-		let positiveAspects = $('#positiveAspects').val();
-		let negativeAspects = $('#negativeAspects').val();
-		let lessonsLearned = $('#lessonsLearned').val();
-		let uid = this.auth.user.identities[0].user_id;
-		let username;
-		let dateReviewed = format(new Date(), 'MMMM Do, YYYY @ h:mA (Z)');
-		
 		
 		if(!anonymousReview){
 			username = this.auth.user.given_name + ' ' + this.auth.user.family_name;
@@ -238,40 +230,30 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		else{
 			username = 'Anonymous Reviewer';
 		}
-		
-		this.dbRef.push({
-			generalImpression: generalImpression,
-			qualityHospital: qualityHospital,
-			qualityEducation: qualityEducation,
-			interviewFriendliness: interviewFriendliness,
-			easeInterview: easeInterview,
-			locationCultural: locationCultural,
+		let obj = {
+			generalImpression: $('#generalImpression').val(),
+			qualityHospital: $('#qualityHospital').val(),
+			qualityEducation: $('#qualityEducational').val(),
+			interviewFriendliness: $('#interviewFriendliness').val(),
+			easeInterview: $('#easeInterview').val(),
+			locationCultural: $('#locationCultural').val(),
 			reviewedBy: username,
 			dateReviewed: dateReviewed,
 			overallRating: overallImpression,
-			interviewSetting: interviewSetting,
-			howDidPrepare: howPrepare,
-			generalComments: generalComments,
-			mostInterestingDifficultQuestion: mostInterestingQuestion,
-			positiveAspects: positiveAspects,
-			negativeAspects: negativeAspects,
-			lessonsLearned: lessonsLearned,
+			interviewSetting: $('#interviewSetting').val(),
+			howDidPrepare: $('#prepare').val(),
+			generalComments: $('#generalComments').val(),
+			mostInterestingDifficultQuestion: $('#mostInterestingQuestion').val(),
+			positiveAspects: $('#positiveAspects').val(),
+			negativeAspects: $('#negativeAspects').val(),
+			lessonsLearned: $('#lessonsLearned').val(),
 			uid: uid
-
-		}).then(() => {
-			this.utils.displayVexAlert('Successfully Added Entry');
-			this.closeForm();
-		}).catch((err) => {
-			this.utils.displayVexAlert(err);
-		});
-		
-		//console.log(anonymousReview);
-		console.log(totalStars);
-		console.log(starRatings);
-		console.log(overallImpression);
-		// console.log(username);
-		// console.log(dateReviewed);
-		//
+		};
+		//Sanatize the data to remove malicious injected code.
+		for(const prop in obj){
+			obj[prop] = this.utils.sanatizeInput(obj[prop]);
+		}
+		return obj;
 	}
 	
 	deleteDatabaseEntryEvent(evt) {
@@ -286,10 +268,13 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		this.firebase.database().ref(dbPath).remove()
 			.then(() => {
 				this.utils.displayVexAlert("Successfully Deleted Entry");
+				this.closeForm();
 			}).catch((err) => {
 			this.utils.displayVexAlert(err);
 		});
 	}
+	
+	
 	
 	cancelFormEvent(evt){
 		evt.preventDefault();
@@ -322,6 +307,8 @@ export default class CarmsInterviewController extends FirebaseConnection {
 	
 	clickAddEntryButton(evt){
 		evt.preventDefault();
+		document.getElementById('dataForm').reset();
+		$("#generalImpression, #qualityEducational, #qualityHospital, #interviewFriendliness, #easeInterview, #locationCultural").barrating('clear');
 		$('#editSubmitButton').hide();
 		$('#addSubmitButton').show();
 		this.displayForm();
@@ -396,43 +383,9 @@ export default class CarmsInterviewController extends FirebaseConnection {
 			'<td><strong>Lessons Learned/Advice for Future Applicants:</strong></td>' +
 			'<td>' + infoArray[6] + '</td>' +
 			'</tr>';
-		
 		str += '</table>';
-		
 		return str;
-		
-		// return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
-		// 	'<tr>' +
-		// 	'<td><strong>Interview Setting</strong></td>' +
-		// 	'<td>' + infoArray[0] + '</td>' +
-		// 	'</tr>' +
-		// 	'<tr>' +
-		// 	'<td><strong>How Did you Prepare for the Interview?:</strong></td>' +
-		// 	'<td>' + infoArray[1] + '</td>' +
-		// 	'</tr>' +
-		// 	'<tr>' +
-		// 	'<td><strong>General Comments About the Interview:</strong></td>' +
-		// 	'<td>' + infoArray[2] + '</td>' +
-		// 	'</tr>' +
-		// 	'<tr>' +
-		// 	'<td><strong>Most Interesting or Difficult Question:</strong></td>' +
-		// 	'<td>' + infoArray[3] + '</td>' +
-		// 	'</tr>' +
-		// 	'<tr>' +
-		// 	'<td><strong>Positive Aspects of the Interview:</strong></td>' +
-		// 	'<td>' + infoArray[4] + '</td>' +
-		// 	'</tr>' +
-		// 	'<tr>' +
-		// 	'<td><strong>Negative Aspects of the Interview:</strong></td>' +
-		// 	'<td>' + infoArray[5] + '</td>' +
-		// 	'</tr>' +
-		// 	'<tr>' +
-		// 	'<td><strong>Lessons Learned/Advice for Future Applicants:</strong></td>' +
-		// 	'<td>' + infoArray[6] + '</td>' +
-		// 	'</tr>' +
-		// 	'</table>';
 	}
-	
 	
 	calculateStarRating(){
 		let starRatings = 1;
@@ -465,6 +418,4 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		};
 		return obj;
 	}
-	
-		
 }
