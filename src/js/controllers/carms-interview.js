@@ -111,6 +111,45 @@ export default class CarmsInterviewController extends FirebaseConnection {
 					snapshot.forEach((listing) => {
 						let delTemp = '',
 							editTemp = '';
+						let upVotes = listing.child('upVotes');
+						let downVotes = listing.child('downVotes');
+						let upVoteLink = '',
+							downVoteLink = '',
+							displayVote = true;
+						
+						if(listing.val().uid == this.auth.user.identities[0].user_id){
+							displayVote = false;
+						}
+						if(upVotes.numChildren() > 0){
+							upVotes.forEach((upVote) => {
+								if(upVote.val().uid == this.auth.user.identities[0].user_id){
+									displayVote = false;
+								}
+							});
+						}
+						if(downVotes.numChildren() > 0){
+							downVotes.forEach((downVote) => {
+								if(downVote.val().uid == this.auth.user.identities[0].user_id){
+									displayVote = false;
+								}
+							});
+						}
+						
+						if(displayVote){
+							upVoteLink = '<span class="jrBtn upVote"><span class="buttonText" style="color:green;">' +
+								upVotes.numChildren()+'</span><span class="icon iconThumbUp"></span></span>';
+							
+							downVoteLink = '<span class="jrBtn downVote"><span class="buttonText" style="color:red;">' +
+								downVotes.numChildren()+'</span><span class="icon iconThumbDown"></span></span>';
+						}
+						else{
+							upVoteLink = '<span class="jrBtn rejectVote"><span class="buttonText" style="color:green;">' +
+								upVotes.numChildren()+'</span><span class="icon iconThumbUp"></span></span>';
+							
+							downVoteLink = '<span class="jrBtn rejectVote"><span class="buttonText" style="color:red;">' +
+								downVotes.numChildren()+'</span><span class="icon iconThumbDown"></span></span>';
+						}
+						
 						if(this.auth.user.isAdmin || listing.val().uid == this.auth.user.identities[0].user_id){
 							let editButton = this.utils.createWithIdButton(refPath + '/' + listing.key, 'Edit', listing.key, 'editEntry');
 							editTemp = editButton;
@@ -123,7 +162,9 @@ export default class CarmsInterviewController extends FirebaseConnection {
 							listing.val().dateReviewed,
 							listing.val().overallRating,
 							editTemp,
-							delTemp
+							delTemp,
+							upVoteLink,
+							downVoteLink
 						];
 						let data = [
 							listing.val().interviewSetting ? listing.val().interviewSetting : '',
@@ -135,6 +176,10 @@ export default class CarmsInterviewController extends FirebaseConnection {
 							listing.val().lessonsLearned ? listing.val().lessonsLearned : ''
 						];
 						this.table.row.add(row).child(this.formatExpand(data)).draw(false); //Create row and a child underneath it.
+						
+						
+						
+						
 					});
 					
 					let expandButtons = document.getElementsByClassName('details-control');
