@@ -602,3 +602,7 @@ added helper classes
 .show{
 	display:block !important;
 }
+.fixedWidthMd > select{
+	width: 15rem;
+	overflow:hidden;
+}

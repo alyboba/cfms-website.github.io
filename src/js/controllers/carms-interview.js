@@ -271,28 +271,37 @@ export default class CarmsInterviewController extends FirebaseConnection {
 	
 	editInterview(evt){
 		evt.preventDefault();
-		let updateObj = this.createFormObject();
-		this.dbRef.child(this.editKey).update(updateObj)
-			.then(()=>{
-				this.utils.displayVexAlert('Successfully Updated Entry');
-				this.closeForm();
-			}).catch((err) =>{
+		if(this.specialtyRefPath && this.schoolRefPath) {
+			let updateObj = this.createFormObject();
+			this.dbRef.child(this.editKey).update(updateObj)
+				.then(() => {
+					this.utils.displayVexAlert('Successfully Updated Entry');
+					this.closeForm();
+				}).catch((err) => {
 				this.utils.displayVexAlert(err);
-		});
-
+			});
+		}
+		else{
+			this.utils.displayVexAlert("Please select a school and specialty!");
+		}
 	}
 	
 	
 	addInterview(evt){
 		evt.preventDefault();
-		let addObj = this.createFormObject();
-		this.dbRef.push(addObj)
-		.then(() => {
-			this.utils.displayVexAlert('Successfully Added Entry');
-			this.closeForm();
-		}).catch((err) => {
-			this.utils.displayVexAlert(err);
-		});
+		if(this.specialtyRefPath && this.schoolRefPath) {
+			let addObj = this.createFormObject();
+			this.dbRef.push(addObj)
+				.then(() => {
+					this.utils.displayVexAlert('Successfully Added Entry');
+					this.closeForm();
+				}).catch((err) => {
+				this.utils.displayVexAlert(err);
+			});
+		}
+		else{
+			this.utils.displayVexAlert("Please select a school and specialty!");
+		}
 	}
 	
 	createFormObject(){
