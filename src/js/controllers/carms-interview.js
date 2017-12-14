@@ -63,6 +63,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 					this.createList(this.specialties, 'specialties-list', 'Specialty');
 					this.schoolRefPath = null;
 					document.getElementById('addButton').innerHTML = "";
+					this.table.clear().draw();
 				}
 				else {
 					let specialties = this.schoolSpecialtyHash.filter((list) => list.school === value).map((list) => list.specialties);
@@ -81,6 +82,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 					this.createList(this.schools, 'schools-list', 'School');
 					this.specialtyRefPath = null;
 					document.getElementById('addButton').innerHTML = "";
+					this.table.clear().draw();
 				}
 				else {
 					let schools = this.specialtySchoolHash.filter((list) => list.specialty === value).map((list) => list.schools);
@@ -92,7 +94,6 @@ export default class CarmsInterviewController extends FirebaseConnection {
 			});
 		}
 	}
-	
 	eventHandlers(){
 		document.getElementById('cancelButton').addEventListener('click', this.cancelFormEvent.bind(this));
 		document.getElementById('addSubmitButton').addEventListener('click', this.addInterview.bind(this));
@@ -381,8 +382,6 @@ export default class CarmsInterviewController extends FirebaseConnection {
 	}
 	
 	expandEvent(evt) {
-		console.log(this);
-		console.log(evt);
 		let tr = $(evt.target).closest('tr');
 		let row = this.table.row(tr);
 		if (row.child.isShown()) {
