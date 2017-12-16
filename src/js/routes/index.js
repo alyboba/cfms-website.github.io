@@ -16,6 +16,7 @@ import RepResources from './rep-resources';
 import Communiques from './communiques';
 import ArchivedCommuniques from './communiques-archived';
 import Accommodations from './accommodations';
+import SiteMap from './sitemap';
 
 export default class Router extends Middleware {
     constructor() {
@@ -59,6 +60,9 @@ export default class Router extends Middleware {
         
         route('/resources/rep-resources.html', RepResources);
         route('/fr/resources/rep-resources.html', RepResources);
+        
+        route('/sitemap.html', SiteMap);
+	      route('/fr/sitemap.html', SiteMap);
     }
 
     refresh() {
