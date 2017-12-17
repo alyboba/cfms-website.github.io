@@ -1,0 +1,46 @@
+{% capture html %}
+
+    {% if include.context == "/" %}
+
+    <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+    {% endif %}
+<ul>
+
+    {% assign entries = site.pages | sort: "path" %}
+    <h1>{{include.currentPath}}</h1>
+    
+    {% for entry in entries %}
+
+    {% capture slug    %}{{ entry.url | split: "/"   | last                       }}{% endcapture %}
+    {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
+    
+    {% capture currentTreePath %}{{current}}{{slug}}{% endcapture %}
+    
+    
+
+    {% if current == include.context %}
+    <li>
+        <h2>{{slug}}</h2>
+        <h3>{{current}}</h3>
+        <h4>{{currentTreePath}}</h4>
+        <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+        {% assign newDepth = include.depth +1 %}
+        {% include sitemap.html context=entry.url currentPath=currentTreePath depth=newDepth %}
+    </li>
+    {% elsif entry.url contains include.currentPath and include.currentPath != '' and currentTreePath != include.currentPath %}
+    
+    <h2>{{slug}}</h2>
+    <h3>{{current}}</h3>
+    <h4>{{currentTreePath}}</h4>
+    <li>
+        <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+    </li>
+
+  
+    {% endif %}
+    
+
+    {% endfor %}
+</ul>
+{% endcapture %}{{ html | strip_newlines | replace:'    ','' | replace:'    ','' | replace:'  ',' ' }}

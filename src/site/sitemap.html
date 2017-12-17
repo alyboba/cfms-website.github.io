@@ -22,35 +22,61 @@ title: "Site Map"
 </script>
 
 <div class="content">
+        
     <div id="sitemap">
         <h1>{{ page.title }}<i class="fa fa-sitemap"></i></h1>
-        <h2>cfms.org</h2>
-
-
-        <table class="display" id="sitemapTable">
-            <thead>
-            <tr>
-                <th>Url</th>
-                <th>Last Modified</th>
-                <th>Change Frequency</th>
-                <th>Priority</th>
-            </tr>
-            </thead>
-            <tfoot>
-            <tr>
-                <th>Url</th>
-                <th>Last Modified</th>
-                <th>Change Frequency</th>
-                <th>Priority</th>
-            </tr>
-            </tfoot>
-
-            <!--Data from Db will be populated here, appended after the headers...-->
-        </table>
+        
+            {% include sitemap.html context="/" currentPath="" depth=1%}
+      
+        
+        
+ 
 
     </div>
+    <div id="legend">
+        <h1>Responsibilities<i class="fa fa-list-ul"></i></h1>
+        <p>The coloured dots on the site map correspond to the most responsible person for each page, as follows:</p>
+        <ul>
+            <li id="president-legend">President</li>
+            <li id="vp-education-legend">VP Education</li>
+            <li id="vp-communications-legend">VP Communications</li>
+            <li id="vp-finance-legend">VP Finance</li>
+            <li id="vp-gov-affairs-legend">VP Government Affairs</li>
+            <li id="vp-student-affairs-legend">VP Student Affairs</li>
+            <li id="vp-global-health-legend">VP Global Health</li>
+            <li id="it-officer-legend">National IT Officer</li>
+        </ul>
+        <p>Note that any pages that are coloured like <span id="incomplete-legend">this</span> are incomplete.</p>
+    </div>
+    
  
 </div>
+
+<!--Adding table after zee fact-->
+<div class="content">
+    <table id="sitemapTable">
+        <thead>
+        <tr>
+            <th>Url</th>
+            <th>Last Modified</th>
+            <th>Change Frequency</th>
+            <th>Priority</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>Url</th>
+            <th>Last Modified</th>
+            <th>Change Frequency</th>
+            <th>Priority</th>
+        </tr>
+        </tfoot>
+
+        <!--Data from Db will be populated here, appended after the headers...-->
+    </table>
+</div>
+
+
 
 {% include footer.html %}
 </body>
