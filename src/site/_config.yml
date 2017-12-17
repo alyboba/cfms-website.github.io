@@ -106,6 +106,6 @@ rdiscount:
   extensions: [smart]
 
 url: "https://cfms.org"
-gems: [jekyll-paginate, jekyll-paginate-v2]
+plugins: [jekyll-paginate, jekyll-paginate-v2]
 
 #plugins_dir: [_plugins]
