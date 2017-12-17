@@ -1,46 +1,57 @@
 {% capture html %}
-
     {% if include.context == "/" %}
-
-    <a href="{{ site.baseurl }}/">{{ site.title }}</a>
-
+      <a href="{{ site.baseurl }}/"><h2>{{ site.title }}</h2></a>
     {% endif %}
 <ul>
-
     {% assign entries = site.pages | sort: "path" %}
+    {% assign currentDirectory = include.currentPath | append: '/' %}
+
+    {% comment %}
     <h1>{{include.currentPath}}</h1>
+    <h8>{{currentDirectory}}</h8>
+    {% endcomment %}
     
     {% for entry in entries %}
+    
+    {% unless entry.sitemap.exclude == "yes" %}
+    
 
     {% capture slug    %}{{ entry.url | split: "/"   | last                       }}{% endcapture %}
     {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
+    
+    {% capture directory %}{{ current | replace: '//', '/' }}{% endcapture %}
     
     {% capture currentTreePath %}{{current}}{{slug}}{% endcapture %}
     
     
 
     {% if current == include.context %}
-    <li>
-        <h2>{{slug}}</h2>
-        <h3>{{current}}</h3>
-        <h4>{{currentTreePath}}</h4>
-        <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+
+    
+    <li >
+        <a href="{{ site.baseurl }}{{ entry.url }}">
+        <span class="{% if entry.sitemap.role=='National IT Officer' %}it-officer{% elsif entry.sitemap.role=='VP Communications' %}vp-communications
+        {% elsif entry.sitemap.role=='President' %}president{% elsif entry.sitemap.role=='VP Education' %}vp-education{% elsif entry.sitemap.role=='VP Finance'%}
+        vp-finance{% elsif entry.sitemap.role=='VP Government Affairs' %}vp-gov-affairs{% elsif entry.sitemap.role=='VP Student Affairs' %}
+        vp-student-affairs{% elsif entry.sitemap.role=='VP Global Health' %}vp-global-health{% endif %}">{{ entry.title }}</span></a>
         {% assign newDepth = include.depth +1 %}
         {% include sitemap.html context=entry.url currentPath=currentTreePath depth=newDepth %}
+        {% assign currentDirectory = include.currentPath | append: '/' %}
+        {% continue %}
     </li>
-    {% elsif entry.url contains include.currentPath and include.currentPath != '' and currentTreePath != include.currentPath %}
-    
-    <h2>{{slug}}</h2>
-    <h3>{{current}}</h3>
-    <h4>{{currentTreePath}}</h4>
-    <li>
+    {% elsif entry.url contains include.currentPath and include.currentPath != '' and currentTreePath != include.currentPath and currentDirectory == directory %}
+
+    <li class="{% if entry.sitemap.role=='National IT Officer' %}it-officer{% elsif entry.sitemap.role=='VP Communications' %}vp-communications
+        {% elsif entry.sitemap.role=='President' %}president{% elsif entry.sitemap.role=='VP Education' %}vp-education{% elsif entry.sitemap.role=='VP Finance'%}
+        vp-finance{% elsif entry.sitemap.role=='VP Government Affairs' %}vp-gov-affairs{% elsif entry.sitemap.role=='VP Student Affairs' %}
+        vp-student-affairs{% elsif entry.sitemap.role=='VP Global Health' %}vp-global-health{% endif %}">
+        
+        
         <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
     </li>
-
-  
-    {% endif %}
     
-
+    {% endif %}
+    {% endunless %}
     {% endfor %}
 </ul>
 {% endcapture %}{{ html | strip_newlines | replace:'    ','' | replace:'    ','' | replace:'  ',' ' }}
