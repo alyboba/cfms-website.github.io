@@ -35,7 +35,7 @@
         vp-finance{% elsif entry.sitemap.role=='VP Government Affairs' %}vp-gov-affairs{% elsif entry.sitemap.role=='VP Student Affairs' %}
         vp-student-affairs{% elsif entry.sitemap.role=='VP Global Health' %}vp-global-health{% endif %}">{{ entry.title }}</span></a>
         {% assign newDepth = include.depth +1 %}
-        {% include sitemap.html context=entry.url currentPath=currentTreePath depth=newDepth %}
+        {% include sitemap.html context=entry.url currentPath=currentTreePath %}
         {% assign currentDirectory = include.currentPath | append: '/' %}
         {% continue %}
     </li>

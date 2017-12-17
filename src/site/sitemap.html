@@ -28,7 +28,11 @@ sitemap:
     <div id="sitemap">
         <h1>{{ page.title }}<i class="fa fa-sitemap"></i></h1>
         
-            {% include sitemap.html context="/" currentPath="" depth=1%}
+        {% if page.lang == 'en' %}
+            {% include sitemap.html context="/" currentPath="" lang='fr'%}
+        {% elsif page.lang == 'fr' %}
+            {% include sitemap.html context="/" currentPath=""  lang='en'%}
+        {% endif %}
       
         
         
