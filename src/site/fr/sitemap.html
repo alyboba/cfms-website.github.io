@@ -2,7 +2,7 @@
 title: "Site Map"
 lang: 'fr'
 sitemap:
-exclude: 'yes'
+  exclude: 'yes'
 ---
 
 <!DOCTYPE html>
@@ -28,17 +28,11 @@ exclude: 'yes'
 
 	<div id="sitemap">
 		<h1>{{ page.title }}<i class="fa fa-sitemap"></i></h1>
-
 		{% if page.lang == 'fr' %}
-		{% include sitemap.html context="/fr/" currentPath="" lang='fr'%}
+			{% include sitemap.html context="/fr/" currentPath="" lang='fr'%}
 		{% elsif page.lang == 'en' %}
-		{% include sitemap.html context="/" currentPath=""  lang='en'%}
+			{% include sitemap.html context="/" currentPath=""  lang='en'%}
 		{% endif %}
-
-
-
-
-
 	</div>
 	<div id="legend">
 		<h1>Responsibilities<i class="fa fa-list-ul"></i></h1>
@@ -55,36 +49,7 @@ exclude: 'yes'
 		</ul>
 		<p>Note that any pages that are coloured like <span id="incomplete-legend">this</span> are incomplete.</p>
 	</div>
-
-
 </div>
-
-<!--Adding table after zee fact-->
-<div class="content">
-	<table id="sitemapTable">
-		<thead>
-		<tr>
-			<th>Url</th>
-			<th>Last Modified</th>
-			<th>Change Frequency</th>
-			<th>Priority</th>
-		</tr>
-		</thead>
-		<tfoot>
-		<tr>
-			<th>Url</th>
-			<th>Last Modified</th>
-			<th>Change Frequency</th>
-			<th>Priority</th>
-		</tr>
-		</tfoot>
-
-		<!--Data from Db will be populated here, appended after the headers...-->
-	</table>
-</div>
-
-
-
 {% include footer.html %}
 </body>
 </html>

@@ -55,14 +55,13 @@ export default class Router extends Middleware {
         route('/members/archived-communiques.html', ArchivedCommuniques);
 	      route('/fr/members/archived-communiques.html', ArchivedCommuniques);
         
-        route('/databases/accommodations/accommodations.html', Accommodations);
-	      route('/fr/databases/accommodations/accommodations.html', Accommodations);
+        route('/databases/accommodations/', Accommodations);
+	      route('/fr/databases/accommodations/', Accommodations);
         
         route('/resources/rep-resources.html', RepResources);
         route('/fr/resources/rep-resources.html', RepResources);
         
         route('/sitemap.html', SiteMap);
-	      route('/fr/sitemap.html', SiteMap);
     }
 
     refresh() {
