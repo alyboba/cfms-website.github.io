@@ -1,5 +1,6 @@
 ---
 title: "Site Map"
+lang: 'en'
 sitemap:
   exclude: 'yes'
 ---
@@ -28,9 +29,9 @@ sitemap:
     <div id="sitemap">
         <h1>{{ page.title }}<i class="fa fa-sitemap"></i></h1>
         
-        {% if page.lang == 'en' %}
-            {% include sitemap.html context="/" currentPath="" lang='fr'%}
-        {% elsif page.lang == 'fr' %}
+        {% if page.lang == 'fr' %}
+            {% include sitemap.html context="/fr/" currentPath="" lang='fr'%}
+        {% elsif page.lang == 'en' %}
             {% include sitemap.html context="/" currentPath=""  lang='en'%}
         {% endif %}
       
