@@ -17,6 +17,7 @@ import Communiques from './communiques';
 import ArchivedCommuniques from './communiques-archived';
 import Accommodations from './accommodations';
 import CarmsInterview from './carms-interview';
+import SiteMap from './sitemap';
 
 export default class Router extends Middleware {
     constructor() {
@@ -54,15 +55,17 @@ export default class Router extends Middleware {
         route('/fr/members/communique.html', Communiques);
         route('/members/archived-communiques.html', ArchivedCommuniques);
 	      route('/fr/members/archived-communiques.html', ArchivedCommuniques);
-        
-        route('/databases/accommodations.html', Accommodations);
-	      route('/fr/databases/accommodations.html', Accommodations);
-	      
+        		    
         route('/databases/carms-interview.html', CarmsInterview);
 	      route('/fr/databases/carms-interview.html', CarmsInterview);
       
+        route('/databases/accommodations.html', Accommodations);
+	      route('/fr/databases/accommodations.html', Accommodations);
+        
         route('/resources/rep-resources.html', RepResources);
         route('/fr/resources/rep-resources.html', RepResources);
+        
+        route('/sitemap.html', SiteMap);
     }
 
     refresh() {

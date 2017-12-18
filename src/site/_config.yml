@@ -12,6 +12,9 @@ leadership_award_years: "2017-2018"
 md_awards_closed_header: "Applications to the CFMS &ndash; MD Financial Management Leadership Awards are currently closed"
 md_awards_closed_caption: "Applications for 2019 year will open in late Fall 2018"
 
+title: "Canadian Federation of Medical Students"
+titleFr: "Fédération des étudiants et des étudiantes en médecine du Canada"
+
 repository: cfms-website/cfms-website.github.io
 
 keep_files: ['stylesheets/', 'js/', 'files/', 'images/']
@@ -102,6 +105,7 @@ humans-of-medicine-paginate-path: "humans-of-medicine/:num/"
 rdiscount:
   extensions: [smart]
 
-gems: [jekyll-paginate, jekyll-paginate-v2]
+url: "https://cfms.org"
+plugins: [jekyll-paginate, jekyll-paginate-v2]
 
 #plugins_dir: [_plugins]
