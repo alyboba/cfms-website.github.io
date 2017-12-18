@@ -95,6 +95,52 @@ tr.shown td.details-control {
 	background: url('../images/databases/details_close.png') no-repeat center center;
 }
 
+.icon{
+	display: inline-block;
+	overflow:hidden;
+	text-indent: -9999px;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+	vertical-align: middle;
+	background-image: url('../images/icons.png');
+	background-repeat: no-repeat;
+}
+.iconThumbUp{
+	background-position: -48px -80px;
+	margin: 0 0 0 5px;
+}
+.iconThumbDown{
+	background-position: -64px -80px;
+	margin: 0 0 0 5px;
+}
+.buttonText{
+	vertical-align: middle;
+}
+.jrBtn{
+	color: #333;
+	border-radius: 4px;
+	cursor: pointer;
+	display: inline-block;
+	padding: 3px 6px;
+	border: 1px solid #ccc;
+	font-size: 13px;
+	text-shadow: 0 0 1px #fff;
+	vertical-align: middle;
+	white-space: nowrap;
+	background-color: #ddd;
+}
+.jrBtn:hover{
+	background-color: #ccc;
+	background-image: -moz-linear-gradient(center top , #ddd, #f5f5f5);
+	background-image: -o-linear-gradient(top, #ddd, #f5f5f5);
+	background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #ddd), color-stop(1, #f5f5f5));
+	background-image: -webkit-linear-gradient(#ddd, #f5f5f5);
+	background-image: linear-gradient(to left top, #ddd, #f5f5f5);
+	-moz-box-shadow: 0 0 2px #999;
+	-webkit-box-shadow: 0 0 2px #999;
+	box-shadow: 0 0 2px #999;
+}
 
 /* iPad portrait browsing*/
 @media only screen and (max-width: 959px) {
