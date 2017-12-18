@@ -29,13 +29,13 @@ export default class SitemapController {
 				success: function(response){
 					xml = response;
 					let json = xmlToJson(xml);
-					console.log("hello?");
-					console.log(json);
-					console.log(json.urlset.url);
 					$('#sitemapTable').DataTable({
 						"data": json.urlset.url,
 						"columns" :[
-							{ "data" : "loc.#text"},
+                            {
+                                "data": "loc.#text",
+                                "render": (data, type, row, meta) => `<a href="${data}">${data}</a>`
+                            },
 							{ "data" : "lastmod.#text"},
 							{ "data" : "changefreq.#text"},
 							{ "data" : "priority.#text"}
