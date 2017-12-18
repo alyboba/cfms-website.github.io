@@ -59,8 +59,8 @@ export default class Router extends Middleware {
         route('/databases/carms-interview.html', CarmsInterview);
 	      route('/fr/databases/carms-interview.html', CarmsInterview);
       
-        route('/databases/accommodations/', Accommodations);
-	      route('/fr/databases/accommodations/', Accommodations);
+        route('/databases/accommodations.html', Accommodations);
+	      route('/fr/databases/accommodations.html', Accommodations);
         
         route('/resources/rep-resources.html', RepResources);
         route('/fr/resources/rep-resources.html', RepResources);
