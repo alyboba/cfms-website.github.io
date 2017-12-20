@@ -1,5 +1,9 @@
 ---
 title: "CFMS in the News"
+sitemap:
+  priority: 0.7
+  changefreq: monthly
+  role: VP Communications
 ---
 {% assign years = ((site.cfms-in-the-news | map: "year") | uniq) | sort | reverse %}
 {% assign sorted = (site.cfms-in-the-news | sort: 'date') | reverse %}
@@ -27,7 +31,7 @@ title: "CFMS in the News"
 	document.querySelector("#news").classList.toggle("active");
 </script>
 
-<div id="archives" class="content">
+<div id="archives" class="content editable">
     <div id="archives-title">{{ page.title }}</div>
     <div id="aside">
         <h6>About the CFMS</h6>

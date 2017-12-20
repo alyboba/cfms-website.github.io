@@ -4,6 +4,10 @@ pagination:
   enabled: true
   collection: news
   per_page: 10
+sitemap:
+  priority: 0.6
+  changefreq: weekly
+  role: VP Communications
 ---
 
 <!DOCTYPE html>
@@ -26,7 +30,7 @@ pagination:
 	</script>
 
 	<div id="archives" class="content">
-		<div id="archives-title">{{ page.title }}</div>
+		<div class="editable" id="archives-title">{{ page.title }}</div>
     	<div id="aside">
 			<h6>About the CFMS</h6>
 			{{ site.about_cfms_en }}

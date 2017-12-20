@@ -2,6 +2,10 @@
 title: Demo Exchange 2017
 cost: 1
 id: DEMO
+sitemap:
+  priority: 0.5
+  changefreq: monthly
+  role: National IT Officer
 ---
 
 <!DOCTYPE html>
@@ -25,11 +29,11 @@ id: DEMO
 		document.querySelector( "#meetings" ).classList.toggle("active");
 	</script>
 
-    <h1 id="page-title">{{ page.title }}</h1>
+    <h1 class="editable" id="page-title">{{ page.title }}</h1>
 
 	<blockquote id="payment-container" style="max-width: 100%">
 
-		<h4><strong>Demo exchange for testing purposes</strong></h4>
+		<h4><strong class="editable">Demo exchange for testing purposes</strong></h4>
 		<form id="payment-form" payment-id="{{ page.id }}" action="/#" method="POST">
 			<script src="https://payform.beanstream.com/payform/beanstream_payform.js" data-image="https://cfms.org/images/cfms-logo.svg"
 			data-name="CFMS" data-description="{{ page.title }}" data-amount="{{ page.cost }}" data-currency="cad" data-billingaddress="false"
@@ -37,7 +41,7 @@ id: DEMO
 
 			</script>
 		</form>
-		<p>
+		<p class="editable">
 			By clicking this button you are agreeing to our <strong><a href="/payment-policies.html" target="_blank">payment policies</a></strong>.
 		</p>
 	</blockquote>
