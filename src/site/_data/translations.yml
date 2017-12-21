@@ -176,6 +176,7 @@ sidebar-who-we-are:
     cfms-representatives: CFMS Representatives
     cfms-at-your-school: CFMS at your School
     partner-organizations: Partner Organizations
+    external-committees: External Commmittees
     sidebar-title_2: Our Organization
     governance-structure: Governance Structure
     internal-policy-bylaws: Bylaws &amp; Internal Policy
@@ -184,7 +185,6 @@ sidebar-who-we-are:
     sidebar-title_3: More Information
     history: History
     organizational-timeline: Organizational Timeline
-    external-committees: External Commmittees
     photo-gallery: Photo Gallery
   - lang: fr
     sidebar-title_1: Qui sommes-nous?
@@ -193,6 +193,7 @@ sidebar-who-we-are:
     cfms-representatives: Représentants de la FEMC
     cfms-at-your-school: La FEMC à votre école
     partner-organizations: Organisations partenaires
+    external-committees: Comités Externes
     sidebar-title_2: Notre organisation
     governance-structure: Structure de gouvernance
     internal-policy-bylaws: Règlements administratifs et politique intérieure
@@ -201,7 +202,6 @@ sidebar-who-we-are:
     sidebar-title_3: Plus d'information
     history: Histoire
     organizational-timeline: Chronologie Organisationnelle
-    external-committees: Comités Externes
     photo-gallery: Galerie de photos
 sidebar-education:
   - lang: en
