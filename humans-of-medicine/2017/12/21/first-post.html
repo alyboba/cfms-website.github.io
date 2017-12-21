@@ -74,8 +74,10 @@
 
 
     <!--Page Specific Stylesheet-->
-    <link rel="stylesheet" href="/stylesheets/news.css">
-    <link rel="stylesheet" href="/stylesheets/humans-of-medicine.css">
+    
+    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
+    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/humans-of-medicine.css">
+    
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 
@@ -125,10 +127,6 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
-						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/humans-of-medicine/index.html">FR</a></li>
-						
-					
 				</ul>
 			</div>
 		</div>
@@ -143,44 +141,24 @@
     document.querySelector( "#human-of-medicine" ).classList.toggle("active");
 </script>
 
-
 <div class="content">
-    <div id="title">
-        <h2 class="editable">Humans of Medicine</h2>
-        <h1 class="editable">Latest Stories</h1>
-    </div>
-    <br />
-    <br />
     
-    <!-- This loops through the paginated posts -->
-    <div id="list">
-        
-        
-            <div class="postContentContainer post-1">
-            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/21/first-post.html">
-            <p><img src="/uploads/versions/12304299-10203964746352789-5568612748186044327-o---x----1365-1365x---.jpg" alt="" /></p>
+    <div id="layoutTitle">Second Post</div>
+    <info datetime="2017-12-21">
+    </info>
+    <div id="date">December 21, 2017</div>
+    <div id="contentBody">
+        <p><img src="/uploads/versions/12304299-10203964746352789-5568612748186044327-o---x----1365-1365x---.jpg" alt="" /></p>
 
 <p><img src="/uploads/versions/pavel-yarmakprofile---x----1339-1339x---.jpg" alt="" />This is the second post to the Humans of medicine blog. Please remove this post once you have added new posts to the collection.</p>
 
+<p><a href="Excerpt"></a></p>
 
-            </a>
-            </div>
-        
-            <div class="postContentContainer post-2">
-            <a class="noHighLight postContent" href="/humans-of-medicine/2017/10/15/first-post-copy.html">
-            <p>This is the first post to the Humans of medicine blog. Please remove this post once you have added new posts to the collection.</p>
+<p>More details are here…..</p>
 
-            </a>
-            </div>
-        
     </div>
-    
-    <br />
-    <br />
-
-    
-    <br /> <br />
 </div>
+
 <script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -368,5 +346,5 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
 
 </body>
-
 </html>
+
