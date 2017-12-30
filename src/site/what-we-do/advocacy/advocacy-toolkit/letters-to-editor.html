@@ -1,0 +1,119 @@
+---
+title: Letters To Editor
+sitemap:
+  priority: 0.4
+  changefreq: monthly
+  role: VP Government Affairs
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-advocacy.html %}
+
+    <div id="side-content" class="editable">
+        <h1 id="page-title">{{page.title}}</h1>
+
+        <p>
+            What is it? <br />
+            Letters to the editor are short opinion pieces, usually less than 300 words, printed in newspapers and magazines.
+            They can be designed to educate the community about your topic of interest, publicize your cause, challenge an
+            existing viewpoint, gain the attention of politicians and policy makers, and spark action.
+        </p>
+
+        <p>Advantages:</p>
+        <ul>
+            <li>Low cost/free to publish</li>
+            <li>Large readership</li>
+            <li>Informal</li>
+        </ul>
+
+        <p>Disadvantages:</p>
+
+        <ul>
+            <li>Competition with other authors, acceptance may be difficult</li>
+            <li>Submissions typically selected based on relevance to current events</li>
+            <li>Usually, one author is restricted to publishing no more than once every two weeks</li>
+        </ul>
+
+        <p>How to write a Letter to the Editor <br />
+            Adapted from “How to Write a Letter to the Editor” published by the National Post</p>
+
+        <ul>
+            <li>Keep submissions to 200-300 words</li>
+            <li>Start your letter with a catchy phrase to get people’s attention</li>
+            <li>Take a stance, do not present both sides without drawing a conclusion</li>
+            <li>Write simply and plainly as much as possible</li>
+            <li>Present a single point rather than a complex argument</li>
+            <li>Use humour, emotion, and personal experience to appeal to readers</li>
+            <li>Be topical and current – editors look for stories and issues currently on the minds of readers</li>
+            <li>Paste the letter directly into your e-mail, do not send as an attachment</li>
+            <li>Provide your full name, phone number and address in the letter so that editors can contact you for verification, or to seek your approval for editing changes</li>
+            <li>Do not send your letter to numerous media outlets - pick one and stick with it</li>
+            <li>Be sure to mention that you are a medical student and not a faculty member or physician associated with a particular institution</li>
+        </ul>
+
+        <p>If you are trying to reach a medical audience, consider publishing an opinion piece or commentary in a medical
+            journal. Each journal tends to have different submission guidelines for op-ed articles. Make sure you check out
+            their publication instructions before you begin drafting your article.</p>
+
+        <p><br>Sample Letter to the Editor<br><a href="http://www.schizophrenia.ca/docs/SampleLetterToEditor.pdf">http://www.schizophrenia.ca/docs/SampleLetterToEditor.pdf</a></p>
+
+        <p><br>Where to Publish<br>The following are just a few ideas of where to submit your letter. There are many more that are not mentioned here, so look around to find a publication that best suits your needs.</p>
+
+        <p>National Media: <br />1) Globe and Mail <br />Email: <a href="mailto:letters@globeandmail.com">letters@globeandmail.com</a>
+            <br />Fax: 416-585-5085
+        </p>
+
+        <p>2) National Post<br><a href="http://www.nationalpost.com/contact/letters/index.html?name=Letters">http://www.nationalpost.com/contact/letters/index.html?name=Letters</a></p>
+
+        <p>Local media:<br />1) The Toronto Star<br />Email: <a href="mailto:lettertoed@thestar.ca">lettertoed@thestar.ca</a><br />Fax: 416-869-4322</p>
+
+        <p>2) The Vancouver Sun<br /><a href="mailto:sunletters@vancouversun.com">sunletters@vancouversun.com</a><br />Fax: 604-605-2188</p>
+
+        <p>3) Le journal de Montréal<br /><a href="http://www.journaldemontreal.com/contactez-nous">http://www.journaldemontreal.com/contactez-nous</a></p>
+
+        <p>4) The Gazette<br />Email: <a href="mailto:letters@montrealgazette.com">letters@montrealgazette.com</a><br />Fax: 514-987-2639</p>
+
+        <p><br>Publications with a medical audience:<br>1) The Canadian Association Medical Journal (CMAJ) Salon or Commentaries section:&nbsp;<a href="http://www.cmaj.ca/site/authors/preparing.xhtml">http://www.cmaj.ca/site/authors/preparing.xhtml</a></p>
+
+        <p>2) Canadian Family Physician Commentaries section:<br><a href="http://www.cfp.ca/site/misc/cfp_authors.xhtml">http://www.cfp.ca/site/misc/cfp_authors.xhtml</a></p>
+
+        <p>3) Canadian Journal of Public Health:<br><a href="http://journal.cpha.ca/index.php/cjph/about/submissions#authorGuidelines">http://journal.cpha.ca/index.php/cjph/about/submissions#authorGuidelines</a></p>
+
+        <p><br>References:<br><a href="http://www.acp-cpa.ca/lettertoeditortips.htm">http://www.acp-cpa.ca/lettertoeditortips.htm</a></p>
+
+        <p><a href="http://www.nationalpost.com/news/story.html?id=3eafdfc5-1af1-430b-8bb4-3b1dc3f8abc0&amp;p=1">http://www.nationalpost.com/news/story.html?id=3eafdfc5-1af1-430b-8bb4-3b1dc3f8abc0&amp;p=1</a></p>
+
+        <p><a href="http://www.nytimes.com/2004/05/23/opinion/23READ.html?ex=1141189200&amp;en=1fd8b7f8078f4183&amp;ei">http://www.nytimes.com/2004/05/23/opinion/23READ.html?ex=1141189200&amp;en=1fd8b7f8078f4183&amp;ei</a></p>
+
+        <p><a href="http://news.ubc.ca/services-for-ubc/writing-an-effective-opinion-editorial-piece-or-letter-to-the-editor/">http://news.ubc.ca/services-for-ubc/writing-an-effective-opinion-editorial-piece-or-letter-to-the-editor/</a><a href="http://news.ubc.ca/services-for-ubc/writing-an-effective-opinion-editorial-piece-or-letter-to-the-editor/"></a></p>
+
+        <div>
+            <a class="floatLeft" href="communication.html">Back</a>
+            <a class="floatRight" href="letter-writing-campaign.html">Forward</a>
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,64 @@
+---
+title: Community Forums and Public Meetings
+sitemap:
+  priority: 0.4
+  changefreq: monthly
+  role: VP Government Affairs
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-advocacy.html %}
+
+    <div id="side-content" class="editable">
+        <h1 id="page-title">{{page.title}}</h1>
+
+        <p>What is it?<br>Another form of spreading your message and facilitating debate occurs through community forums and public meetings. Examples include&nbsp;<a href="http://www.cihr.ca/e/34951.html">Cafe Scientifique</a>&nbsp;run by the Canadian Institutes of Health Research.</p>
+
+        <p><br>Town halls and meetings bring together community education and advocacy. They offer a venue to enhance awareness and understanding of an issue while allowing for discussion amongst community members. Further, community members can express concerns and opinions on the issue through this venue, offering a unique setting of dialogue.</p>
+        <p><br>A successful community meeting can require a great deal of planning and sometimes funding. Further, the meeting can be dominated by few individuals, so planning ahead for this can avoid such outcomes.</p>
+        <p><br>How to do it?</p>
+        <ol>
+            <li>Organize a planning committee</li>
+            <li>Select a venue and date that will be accessible to your target audience</li>
+            <li>Invite speakers who are experts on the issue and offer various perspectives</li>
+            <li>Publicize the event and the speakers in a way which will be accessible to your target audience</li>
+            <li>During the event allot specific time to discussion, both small group and plenary, where ideas and opinions can be voiced. This is a great opportunity to obtain varying perspectives on the issue and what people envision as an ideal outcome</li>
+            <li>Debrief the event at the end, reflecting on what went well and what could be improved</li>
+        </ol>
+        <p>References<br><a href="http://www.nifvi.org/pdf/Community%20Meetings,%20Turning%20Education%20into%20Advocacy.pdf">http://www.nifvi.org/pdf/Community%20Meetings,%20Turning%20Education%20into%20Advocacy.pdf</a></p>
+
+        <div>
+            <a class="floatLeft" href="direct-action.html">Back</a>
+            <a class="floatRight" href="social-media.html">Forward</a>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+{% include footer.html %}
+</body>
+</html>
