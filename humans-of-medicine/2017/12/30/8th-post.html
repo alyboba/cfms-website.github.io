@@ -74,8 +74,10 @@
 
 
     <!--Page Specific Stylesheet-->
-    <link rel="stylesheet" href="/stylesheets/news.css">
-    <link rel="stylesheet" href="/stylesheets/humans-of-medicine.css">
+    
+    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
+    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/humans-of-medicine.css">
+    
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 
@@ -125,10 +127,6 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
-						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/humans-of-medicine/index.html">FR</a></li>
-						
-					
 				</ul>
 			</div>
 		</div>
@@ -143,38 +141,14 @@
     document.querySelector( "#human-of-medicine" ).classList.toggle("active");
 </script>
 
-
 <div class="content">
-    <div id="title">
-        <h2 class="editable">Humans of Medicine</h2>
-        <h1 class="editable">Latest Stories</h1>
-    </div>
-    <br />
-    <br />
     
-    <!-- This loops through the paginated posts -->
-    <div id="list">
-        
-        
-            <div class="postContentContainer post-1">
-            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/9th-post.html">
-            <p><img src="images/humans-of-medicine/9th-post.jpg" alt="" /></p>
-
-<p>“I was a bright-eyed first year. You were an unmatched fourth year. 
-I asked you for advice on the road ahead.
-I asked, ‘how do you stay emotionally strong?’
-And one of the last things you said to me was ‘it’s not that I’m emotionally strong, it’s that I’m emotionally detached.’”</p>
-
-<ul>
-  <li>Medical Student, University of Toronto</li>
-</ul>
-
-            </a>
-            </div>
-        
-            <div class="postContentContainer post-2">
-            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/8th-post.html">
-            <p><img src="images/humans-of-medicine/8th-post.jpg" alt="" /></p>
+    <div id="layoutTitle"></div>
+    <info datetime="2017-12-30">
+    </info>
+    <div id="date">December 30, 2017</div>
+    <div id="contentBody">
+        <p><img src="images/humans-of-medicine/8th-post.jpg" alt="" /></p>
 
 <p>“It feels like people around me are always looking to be the face of a new idea or a big discovery. Imagine if we all worked together instead of trying to get our own recognition or praise. I challenge you all to forget about your resumes, focus on your goals, and find people who share your vision to make it happen!”</p>
 
@@ -182,98 +156,9 @@ And one of the last things you said to me was ‘it’s not that I’m emotional
   <li>Medical Student, University of Manitoba</li>
 </ul>
 
-            </a>
-            </div>
-        
-            <div class="postContentContainer post-3">
-            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/7th-post.html">
-            <p><img src="images/humans-of-medicine/7th-post.jpg" alt="" /></p>
-
-<p>“I worry that as I continue through my medical career, I may become acclimatized to various sub-optimal aspects of patient care and accept them as ‘the way we’ve always done things.’ I’m realizing more and more the importance of becoming involved in advocacy and quality improvement as I continue in my studies and future practice. However, making change in a system with a limited budget and one that is entrenched in tradition will require both patients and healthcare practitioners to speak up about sub-optimal aspects of care.”</p>
-
-<ul>
-  <li>Medical Student, University of Western Ontario</li>
-</ul>
-
-
-            </a>
-            </div>
-        
-            <div class="postContentContainer post-4">
-            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/6th-post.html">
-            <p><img src="images/humans-of-medicine/6th-post.jpg" alt="" /></p>
-
-<p>“When I painting I’m allowed to go outside the lines. It’s okay if I mess up, or make something hideous because as long as I have the proper supplies I get infinite do-overs. Everyone needs something that gives them the freedom to learn from their mistakes.”</p>
-
-<ul>
-  <li>Medical Student, University of Toronto</li>
-</ul>
-
-
-            </a>
-            </div>
-        
-            <div class="postContentContainer post-5">
-            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/5th-post.html">
-            <p><img src="images/humans-of-medicine/5th-post.jpg" alt="" /></p>
-
-<p>“I was born in a small town in Ukraine called Nezhin so if growing up someone were to tell me that just a couple of decades later I would be living in Canada and studying to become a medical doctor I probably would have called them crazy! This is something I try to keep in mind and reflect upon once in a while. I am eternally grateful for the opportunities that I have been afforded over the years and I will, therefore, strive to assist others on their journeys as countless people have helped me on my own.”</p>
-
-<ul>
-  <li>Pavel Yarmak, Medical Student (University of Manitoba)</li>
-</ul>
-
-            </a>
-            </div>
-        
-            <div class="postContentContainer post-6">
-            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/4th-post.html">
-            <p><img src="/images/execs/2017-2018/Henry Annan.jpg" alt="" /></p>
-
-<p>“My greatest inspiration is my grandmother, who died suddenly about a year ago. She was compassion and altruism personified. She was always willing to help out family, friends and strangers alike in their time of need regardless of how little money she had or how busy she was. She was also my biggest cheerleader and greatest teacher—teaching me about the importance of being principled, respecting the viewpoints of others and never being too proud to say please, thank you and sorry. I remember the day I was elected CFMS president, April 29, 2017. That was the same day she would have celebrated her 84th birthday—the first birthday I had missed. It was an emotional day to say the least.”</p>
-
-<ul>
-  <li>Henry Annan, CFMS President (Dalhousie University)</li>
-</ul>
-
-
-            </a>
-            </div>
-        
     </div>
-    
-    <br />
-    <br />
-
-    
-    <div id="pagination">
-
-        <!-- Previous Page -->
-        
-        <div id="prev-button" class="button inactive"><a href="#">Previous Stories</a></div>
-        
-
-        <!-- Page Listing -->
-        <div id="page-listing">
-            
-            
-            <em id="current-page" class="page-link">1</em>
-            
-            
-            
-            <a class="page-link" href="/humans-of-medicine/2/">2</a>
-            
-            
-        </div>
-
-        <!-- Next Page -->
-        
-        <div id="next-button" class="button"><a href="/humans-of-medicine/2/index.html">More Stories</a></div>
-        
-    </div>
-    
-    <br /> <br />
 </div>
+
 <script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -461,5 +346,5 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
 
 </body>
-
 </html>
+
