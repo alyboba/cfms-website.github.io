@@ -74,10 +74,8 @@
 
 
     <!--Page Specific Stylesheet-->
-    
-    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
-    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/humans-of-medicine.css">
-    
+    <link rel="stylesheet" href="/stylesheets/news.css">
+    <link rel="stylesheet" href="/stylesheets/humans-of-medicine.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 
@@ -127,6 +125,10 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
+						
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/humans-of-medicine/3/index.html">FR</a></li>
+						
+					
 				</ul>
 			</div>
 		</div>
@@ -141,14 +143,77 @@
     document.querySelector( "#human-of-medicine" ).classList.toggle("active");
 </script>
 
+
 <div class="content">
+    <div id="title">
+        <h2 class="editable">Humans of Medicine</h2>
+        <h1 class="editable">Latest Stories | 3 of 4</h1>
+    </div>
+    <br />
+    <br />
     
-    <div id="layoutTitle"></div>
-    <info datetime="2017-12-30">
-    </info>
-    <div id="date">December 30, 2017</div>
-    <div id="contentBody">
-        <p><img src="images/humans-of-medicine/12th-post.jpeg" alt="" /></p>
+    <!-- This loops through the paginated posts -->
+    <div id="list">
+        
+        
+            <div class="postContentContainer post-1">
+            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/4th-post.html">
+            <p><img src="/images/execs/2017-2018/Henry Annan.jpg" alt="" /></p>
+
+<p>“My greatest inspiration is my grandmother, who died suddenly about a year ago. She was compassion and altruism personified. She was always willing to help out family, friends and strangers alike in their time of need regardless of how little money she had or how busy she was. She was also my biggest cheerleader and greatest teacher—teaching me about the importance of being principled, respecting the viewpoints of others and never being too proud to say please, thank you and sorry. I remember the day I was elected CFMS president, April 29, 2017. That was the same day she would have celebrated her 84th birthday—the first birthday I had missed. It was an emotional day to say the least.”</p>
+
+<ul>
+  <li>Henry Annan, CFMS President (Dalhousie University)</li>
+</ul>
+
+
+            </a>
+            </div>
+        
+            <div class="postContentContainer post-2">
+            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/3rd-post.html">
+            <p><img src="/images/execs/2017-2018/Kaylynn Purdy.jpg" alt="" /></p>
+
+<p>“I started watching Grey’s Anatomy when I was twelve years old (my parents probably shouldn’t have let me). I always thought that if I ever needed cardiac surgery, I would want my surgeon to be like Dr. Yang. She is fierce, smart, doesn’t need a man to be happy and successful, and is a loyal friend. She is a really great role model as far as TV characters go for young women. She broke down gender barriers and stereotypes, and is remembered for her intelligence, her skill in medicine, and her intensity, not her beauty or who she married. My favourite Christina Yang line is: “Oh screw beautiful. I’m brilliant. If you want to appease me, compliment my brain.” I may have borrowed this line a few times in my life…”</p>
+
+<ul>
+  <li>Kaylynn Purdy, CFMS VP Education (Northern Ontario School of Medicine)</li>
+</ul>
+
+            </a>
+            </div>
+        
+            <div class="postContentContainer post-3">
+            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/2nd-post.html">
+            <p><img src="/images/execs/2017-2018/Victoria Januszkiewicz.jpg" alt="" /></p>
+
+<p>“Is Everyone Hanging Out Without Me” is one of my favourite non-medical books. Mindy Kaling never fails to be the female role model I need. Feminine, fantastic, confident, and funny. I was given her book by one of my close friends during the time I was applying for medical school. Kaling writes about becoming successful at a young age and how the hard work is always worth it, but that you have to adjust your lifestyle to be successful in the areas that you want - this resonated with me then and now, and holds true. Two quotes from Kaling are some of my favourite words to try and live by: “Someday you will have the power to make a difference in the world, so use it well” &amp; “Sometimes you just have to put on lipgloss and pretend to be psyched”.</p>
+
+<ul>
+  <li>Victoria Januszkiewicz, CFMS Atlantic Representative (Memorial University of Newfoundland)</li>
+</ul>
+
+            </a>
+            </div>
+        
+            <div class="postContentContainer post-4">
+            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/1st-post.html">
+            <p><img src="/images/execs/2017-2018/Christopher Briggs.jpg" alt="" /></p>
+
+<p>“I had a lot of trouble early on in my education reconciling the medical profession with the life I led outside of school. I didn’t know any doctors who I thought were “like me.” Sometimes I still feel that way, but it doesn’t scare me anymore. A close friend once told me “Queer success IS resistance.” And that’s what drives me toward my dreams and to live openly and proudly as a queer person. Each new opportunity I encounter is another chance for a connection with someone who may not see themselves represented in medicine.</p>
+
+<p>I think that’s what so amazing about the Global Health program. So many medical students are at this intersection between medical education and lived experience within marginalized, disenfranchised, and underrepresented populations. Everyone is so energized and passionate, I’ve never felt so inspired.”</p>
+
+<ul>
+  <li>Chris Briggs, CFMS VP Global Health (University of Manitoba)</li>
+</ul>
+
+            </a>
+            </div>
+        
+            <div class="postContentContainer post-5">
+            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/15th-post.html">
+            <p><img src="images/humans-of-medicine/12th-post.jpeg" alt="" /></p>
 
 <p>“I’m the first in my family to go into medicine. My parents, both farmers, are my role models and my biggest inspiration. They’re two of the hardest working people I know, and have worked extraordinarily hard not only to build our farm, but to give my siblings and I every opportunity they possibly could. Without their constant encouragement and support, I would not be where I am today. No matter where I go or where my career takes me, I’m following their example. And I know they’ll be proud of me, no matter what.”</p>
 
@@ -156,9 +221,66 @@
   <li>Medical Student, University of Manitoba</li>
 </ul>
 
-    </div>
-</div>
+            </a>
+            </div>
+        
+            <div class="postContentContainer post-6">
+            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/14th-post.html">
+            <p><img src="images/humans-of-medicine/12th-post.jpeg" alt="" /></p>
 
+<p>“I’m the first in my family to go into medicine. My parents, both farmers, are my role models and my biggest inspiration. They’re two of the hardest working people I know, and have worked extraordinarily hard not only to build our farm, but to give my siblings and I every opportunity they possibly could. Without their constant encouragement and support, I would not be where I am today. No matter where I go or where my career takes me, I’m following their example. And I know they’ll be proud of me, no matter what.”</p>
+
+<ul>
+  <li>Medical Student, University of Manitoba</li>
+</ul>
+
+            </a>
+            </div>
+        
+    </div>
+    
+    <br />
+    <br />
+
+    
+    <div id="pagination">
+
+        <!-- Previous Page -->
+        
+        
+        <div id="prev-button" class="button"><a href="/humans-of-medicine/2/index.html">Previous Stories</a></div>
+        
+        
+
+        <!-- Page Listing -->
+        <div id="page-listing">
+            
+            
+            <a class="page-link" href="/humans-of-medicine/">1</a>
+            
+            
+            
+            <a class="page-link" href="/humans-of-medicine/2/">2</a>
+            
+            
+            
+            <em id="current-page" class="page-link">3</em>
+            
+            
+            
+            <a class="page-link" href="/humans-of-medicine/4/">4</a>
+            
+            
+        </div>
+
+        <!-- Next Page -->
+        
+        <div id="next-button" class="button"><a href="/humans-of-medicine/4/index.html">More Stories</a></div>
+        
+    </div>
+    
+    <br /> <br />
+</div>
 <script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -346,5 +468,5 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
 
 </body>
-</html>
 
+</html>

@@ -74,10 +74,8 @@
 
 
     <!--Page Specific Stylesheet-->
-    
-    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
-    <link rel="stylesheet" href="https://www.cfms.org/stylesheets/humans-of-medicine.css">
-    
+    <link rel="stylesheet" href="/stylesheets/news.css">
+    <link rel="stylesheet" href="/stylesheets/humans-of-medicine.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 
@@ -127,6 +125,10 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
+						
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/humans-of-medicine/4/index.html">FR</a></li>
+						
+					
 				</ul>
 			</div>
 		</div>
@@ -141,14 +143,22 @@
     document.querySelector( "#human-of-medicine" ).classList.toggle("active");
 </script>
 
+
 <div class="content">
+    <div id="title">
+        <h2 class="editable">Humans of Medicine</h2>
+        <h1 class="editable">Latest Stories | 4 of 4</h1>
+    </div>
+    <br />
+    <br />
     
-    <div id="layoutTitle"></div>
-    <info datetime="2017-12-30">
-    </info>
-    <div id="date">December 30, 2017</div>
-    <div id="contentBody">
-        <p><img src="images/humans-of-medicine/12th-post.jpeg" alt="" /></p>
+    <!-- This loops through the paginated posts -->
+    <div id="list">
+        
+        
+            <div class="postContentContainer post-1">
+            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/13th-post.html">
+            <p><img src="images/humans-of-medicine/12th-post.jpeg" alt="" /></p>
 
 <p>“I’m the first in my family to go into medicine. My parents, both farmers, are my role models and my biggest inspiration. They’re two of the hardest working people I know, and have worked extraordinarily hard not only to build our farm, but to give my siblings and I every opportunity they possibly could. Without their constant encouragement and support, I would not be where I am today. No matter where I go or where my career takes me, I’m following their example. And I know they’ll be proud of me, no matter what.”</p>
 
@@ -156,9 +166,92 @@
   <li>Medical Student, University of Manitoba</li>
 </ul>
 
-    </div>
-</div>
+            </a>
+            </div>
+        
+            <div class="postContentContainer post-2">
+            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/12th-post.html">
+            <p><img src="images/humans-of-medicine/12th-post.jpeg" alt="" /></p>
 
+<p>“I’m the first in my family to go into medicine. My parents, both farmers, are my role models and my biggest inspiration. They’re two of the hardest working people I know, and have worked extraordinarily hard not only to build our farm, but to give my siblings and I every opportunity they possibly could. Without their constant encouragement and support, I would not be where I am today. No matter where I go or where my career takes me, I’m following their example. And I know they’ll be proud of me, no matter what.”</p>
+
+<ul>
+  <li>Medical Student, University of Manitoba</li>
+</ul>
+
+            </a>
+            </div>
+        
+            <div class="postContentContainer post-3">
+            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/11th-post.html">
+            <p><img src="images/humans-of-medicine/11th-post.jpeg" alt="" /></p>
+
+<p>“Wherever the art of medicine is loved, there is also a love of humanity.” (Hippocrates)</p>
+
+<ul>
+  <li>Medical Student, McMaster University</li>
+</ul>
+
+            </a>
+            </div>
+        
+            <div class="postContentContainer post-4">
+            <a class="noHighLight postContent" href="/humans-of-medicine/2017/12/30/10th-post.html">
+            <p><img src="images/humans-of-medicine/10th-post.jpeg" alt="" /></p>
+
+<p>“My personal goal for my medical career is to be an advocate for the disadvantaged. I want to help shape a more accessible healthcare system so that all populations have access to the services they require in a culturally sensitive way.”</p>
+
+<ul>
+  <li>Medical Student, University of Saskatchewan</li>
+</ul>
+
+            </a>
+            </div>
+        
+    </div>
+    
+    <br />
+    <br />
+
+    
+    <div id="pagination">
+
+        <!-- Previous Page -->
+        
+        
+        <div id="prev-button" class="button"><a href="/humans-of-medicine/3/index.html">Previous Stories</a></div>
+        
+        
+
+        <!-- Page Listing -->
+        <div id="page-listing">
+            
+            
+            <a class="page-link" href="/humans-of-medicine/">1</a>
+            
+            
+            
+            <a class="page-link" href="/humans-of-medicine/2/">2</a>
+            
+            
+            
+            <a class="page-link" href="/humans-of-medicine/3/">3</a>
+            
+            
+            
+            <em id="current-page" class="page-link">4</em>
+            
+            
+        </div>
+
+        <!-- Next Page -->
+        
+        <div id="next-button" class="button inactive"><a href="#">More Stories</a></div>
+        
+    </div>
+    
+    <br /> <br />
+</div>
 <script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -346,5 +439,5 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
 
 </body>
-</html>
 
+</html>
