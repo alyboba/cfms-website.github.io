@@ -241,13 +241,7 @@ travel-discounts:
       </ul>
 disability-discounts:
   - lang: en
-    discount-title:
-    discount-sub-title:
-    discount-img:
-    discount-need-reverification:
-    discount-description: >-
-      <p>Coming Soon!</p>
-    discount-promotion:
+    discount-description: <p>Coming Soon!</p>
   - lang: fr
     discount-title:
     discount-sub-title:
