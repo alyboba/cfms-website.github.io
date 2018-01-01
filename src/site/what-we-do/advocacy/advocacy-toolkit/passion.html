@@ -1,0 +1,66 @@
+---
+title: Passion
+sitemap:
+  priority: 0.4
+  changefreq: monthly
+  role: VP Government Affairs
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-advocacy.html %}
+
+    <div id="side-content" class="editable">
+        <h1 id="page-title">PASSION:</h1>
+        <h2>Generating Interest and Raising Awareness</h2>
+
+        <p> An important first step to advocacy is identifying an area of unmet need. Many students find it helpful to review their clinical and life experiences and identify issues of inequity, injustice, or inefficiency.
+            Gathering collateral information from colleagues to learn if they have similar concerns can provide early support and credibility.</p>
+
+        <br />
+
+        <p>After you have identified an area of unmet need, it is important to engage your colleagues. Statistics and personal anecdotes can be used
+            to illustrate how your issue impacts your colleagues and their patients.</p>
+
+        <br />
+        <p>There are a variety of resources that can be used to become familiar with current Canadian health policy and advocacy issues:</p>
+        <ul>
+            <li>Media outlets (National Post, Global and Mail, CBC)</li>
+            <li><a href="http://umanitoba.ca/outreach/evidencenetwork/">Evidence Network</a></li>
+            <li><a href="http://healthydebate.ca/">Healthy Debate</a></li>
+            <li>National medical organizations (<a href="https://www.cma.ca/en/Pages/cma_default.aspx">Canadian Medical Association</a>)</li>
+        </ul>
+
+        <div>
+            <a class="floatLeft" href=".">Back</a>
+            <a class="floatRight" href="knowledge.html">Forward</a>
+
+        </div>
+
+
+
+    </div>
+</div>
+{% include footer.html %}
+</body>
+</html>

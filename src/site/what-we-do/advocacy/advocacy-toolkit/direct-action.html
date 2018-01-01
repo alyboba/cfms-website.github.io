@@ -1,0 +1,67 @@
+---
+title: Direct Action
+sitemap:
+  priority: 0.4
+  changefreq: monthly
+  role: VP Government Affairs
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-advocacy.html %}
+
+    <div id="side-content" class="editable">
+        <h1 id="page-title">Direct Action</h1>
+
+        <p>What is it?<br>Direct action is when a group of people takes action to highlight an existing problem and a possible solution. Examples include protests, sit-ins, strikes, workplace occupations, and hacktivism. A historical example is&nbsp;<a href="http://www.actupny.org/">ACT-UP</a>, a group in New York City who took action to change the Food and Drug Administration (FDA) policy on drug approval to address HIV/AIDs epidemic in the late 1980s. Another example is the&nbsp;<a href="http://www.cbc.ca/news2/interactives/montreal-protest/">Quebec student protests in 2012</a>&nbsp;regarding a proposed increase in tuition.</p>
+
+        <p>Direct action is often used to draw attention to an injustice, educate others on a specific issue, remind others that an ongoing issue has not be resolved, or encourage decision-makers through escalation to address the issue.</p>
+        <p><br>This type of action brings people together and often draws media attention, making it an effective means to increase awareness and generate discussion. However, direct action can be seen as hostile and detracts from discussion on the issue itself.</p>
+        <p><br>How to do it?<br>To plan a direct action event:</p>
+        <ol>
+            <li>Form a group who will plan, organize, and lead the event.</li>
+            <li>Pick the target audience. Who do you want to hear your message? Politicians, the general public or a specific company / organization?</li>
+            <li>Set the context. This means considering whether the action you take will be understood. Furthermore, consider the timing of the action, e.g. just before holidays or just following/during a related event or conference.</li>
+            <li>Determine your action and location:<ol style="list-style-type: lower-alpha;">
+                <li>Check with the law or seek legal counsel to ensure any sit-in or protest is legal and lawful. This may require applying for permits, depending on the size of the event you are planning. Establish which media you want to inform of the event and determine how you wish to engage with them.</li>
+                <li>Promote the event, but maintain close control over how many people are expected to attend and how they will contribute to the event.</li>
+            </ol></li>
+            <li>Considerations during the direct action:<ol style="list-style-type: lower-alpha;">
+                <li>Sometimes direct action events result in unexpected outcomes. To prevent this, make sure attendees' expectations and roles are clearly outlined in advance. Consider deciding which people will speak with the media and who will lead the event in advance.</li>
+            </ol></li>
+            <li>Plan when the event will end, with a defined time. This will help make facilitating the event easier and keep the planners in control.</li>
+            <li>Consider following the event up by debriefing the event, allowing for participants to share their experiences and reflect upon them.</li>
+        </ol>
+
+        <p>References<br><a href="http://rabble.ca/toolkit/guide/direct-action">http://rabble.ca/toolkit/guide/direct-action</a></p>
+        <p><a href="http://ruckus.org/downloads/RuckusActionPlanningManual.pdf">http://ruckus.org/downloads/RuckusActionPlanningManual.pdf</a></p>
+
+        <div>
+            <a class="floatLeft" href=".">Back</a>
+            <a class="floatRight" href="community-forum-public-meeting.html">Forward</a>
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>
+</html>

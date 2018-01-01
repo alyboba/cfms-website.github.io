@@ -1,0 +1,60 @@
+---
+title: Communication
+sitemap:
+  priority: 0.4
+  changefreq: monthly
+  role: VP Government Affairs
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-advocacy.html %}
+
+    <div id="side-content" class="editable">
+        <h1 id="page-title">Communication</h1>
+
+        <ol>
+            <li><a href="letters-to-editor.html" target="_blank">Letters to the Editor</a></li>
+            <li><a href="letter-writing-campaign.html" target="_blank">Letter-Writing Campaigns</a></li>
+            <li><a href="direct-action.html" target="_blank">Direct Action</a></li>
+            <li><a href="community-forum-public-meeting.html" target="_blank">Community Forums and Public Meetings</a></li>
+            <li><a href="social-media.html" target="_blank">Social Media</a></li>
+            <li><a href="guide-to-effective-meeting-with-policy-makers.html" target="_blank">Guide to Effective Meetings with Policy-Makers<br><br></a></li>
+        </ol>
+
+        <div>
+            <a class="floatLeft" href=".">Back</a>
+            <a class="floatRight" href="letters-to-editor.html">Forward</a>
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>
+{% include footer.html %}
+</body>
+</html>
