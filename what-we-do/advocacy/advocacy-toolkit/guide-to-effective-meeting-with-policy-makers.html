@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]>
+<html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"> <![endif]-->
+<head>
+    <!--Metadata-->
+<meta charset="utf-8">
+<title>Canadian Federation of Medical Students</title>
+<meta name="description" content="Canadian Federation of Medical Students">
+<meta name="keywords" content="CFMS, Medicine, Canada, Advocacy, Medical School, Association">
+<meta name="author" content="Kevan Lu">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+<!--Stylesheets-->
+
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/base.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/header.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/footer.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/loading.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!--DataTables-->
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+
+<!--FormValidator-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+
+<!--Firebase Code-->
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCRaJStQDuZ0nrn0b59kzYphlAkJ62flo8",
+    authDomain: "amber-heat-9132.firebaseapp.com",
+    databaseURL: "https://amber-heat-9132.firebaseio.com",
+    storageBucket: "amber-heat-9132.appspot.com",
+    messagingSenderId: "466232039218"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<!--Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77140171-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--Scroll Reveal-->
+<script src="/js/scrollreveal.min.js"></script>
+<script>
+      window.sr = ScrollReveal();
+</script> 
+<style>
+    /* Ensure elements load hidden before ScrollReveal runs */
+    .animate { visibility: hidden; }
+</style> 
+
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css">
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+
+	
+		<div id="top-padding"></div>
+		<div id="top-bar" class="invert en">
+			<div id="top-icon" class="animate">
+				<div id="logo-group" class="en">
+					<img id="logo-invert" src="/images/cfms-logo-invert.svg">
+					<img id="logo" src="/images/cfms-logo.svg">
+					<a href="/">CFMS</a>
+				</div>
+				<span id="logo-desc"><a class="en" href="/">Canadian Federation of<br>Medical Students</a></span>
+			</div>
+			<div id="top-hamburger" class="animate">
+				<a onclick="return false;" id="hamburger-toggle" href=""><span></span></a>
+			</div>
+			<div id="top-nav" class="animate">
+				<ul class="en">
+					<li id="who-we-are"><a class="top-level" href="/who-we-are/">Who we are</a></li>
+					<li id="what-we-do"><a class="top-level" href="/what-we-do/">What we do</a>
+						<div id="sub-menu">
+						    <ul>
+						    	<li><a href="/what-we-do/advocacy/">Advocacy</a></li>
+						    	<li><a href="/what-we-do/education/">Education</a></li>
+						    	<li><a href="/what-we-do/global-health/">Global Health</a></li>
+						    	<li><a href="/what-we-do/student-affairs/">Student Affairs</a></li>
+								<li><a href="/what-we-do/communications/">Communications</a></li>
+						    </ul>
+						</div>
+					</li>
+					<li id="resources"><a class="top-level" href="/resources/">Resources</a></li>
+					<li id="meetings"><a class="top-level" href="/meetings/">Meetings</a>
+						<div id="sub-menu">
+						    <ul>
+ 						    	<li><a href="/meetings/sgm-2018-halifax.html">SGM 2018 &ndash; Halifax, NS</a></li>
+						        <li><a href="/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
+						        <li><a href="/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>
+						        <li><a href="/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>
+						    </ul>
+						</div>
+					</li>
+					<li id="members"><a class="top-level" href="/members/">Members</a></li>
+					<li id="news"><a class="top-level" href="/news/">News</a></li>
+					<li id="human-of-medicine"><a class="top-level" href="/humans-of-medicine/"></a></li>
+					
+						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
+					
+					
+						
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/what-we-do/advocacy/advocacy-toolkit/guide-to-effective-meeting-with-policy-makers.html">FR</a></li>
+						
+					
+				</ul>
+			</div>
+		</div>
+	
+
+	
+
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector("#logo-invert").classList.toggle("hidden");
+    document.querySelector("#what-we-do").classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    <div id="sidebar">
+	<div id="scroll">
+		
+		
+		<span id="sidebar-title">Advocacy</span>
+		<ul>
+			<li><a id="overview" href=".">Overview</a></li>
+			<li><a id="our-team" href="our-team.html">Our Team</a></li>
+		</ul>
+		<span id="sidebar-title">Resources</span>
+		<ul>
+			<li><a id="lobby-day" href="day-of-action.html">Day of Action</a></li>
+			<li><a id="research-committee" href="research-committee.html">Research Committee</a></li>
+			<li><a id="position-papers" href="position-papers.html">Position Papers</a></li>
+			<li><a id="advocacy-tracker" href="advocacy-tracker.html">Advocacy Tracker</a></li>
+			<li><a id="task-forces" href="task-forces.html">Task Forces</a></li>
+
+			
+				<li><a id="advocacy-toolkit" href="/what-we-do/advocacy/advocacy-toolkit/">Advocacy Toolkit</a></li>
+			
+		</ul>
+		
+		
+		
+		
+	</div>
+</div>
+
+
+
+    <div id="side-content" class="editable">
+        <h1 id="page-title">Meetings with Policy-Makers</h1>
+        <p>As a future physician, you are a respected and trusted member of your community, which well positions you to
+            influence health and health policy. By fostering relationships with your local politicians, you can affect
+            the political process both now and in the future. Approach interacting with politicians as a mutually
+            beneficial process. There will be times that politicians will have initiatives that students, physicians and
+            their organizations may support&nbsp;<sup>2</sup>. Other times, you will need to call upon the politician to
+            support your initiative or issue. By building long-term relationships with politicians, you are building a
+            political action network that can be helpful for you in your future endeavors!&nbsp;<sup>2,4</sup></p>
+        <p>This guide is targeted to the federal or national level of political influence. However, the approach is
+            transferrable and we encourage you to take the lessons learned in this guide and apply it to collaborations
+            with other levels of government and policy makers. Where appropriate, a multi-pronged approach with a
+            variety of collaborators may amplify your message!</p>
+        <p>Meeting With Policy-Makers</p>
+        <ol>
+            <li>Identify the most appropriate Policy Maker
+                <ul>
+                    <li>Members of Parliament (MP) are most likely to respond to constituents in their
+                        ridings&nbsp;<sup>1,3,8</sup>. As they are your political representatives they are responsible
+                        for understanding your positions and being responsive to them<sup>&nbsp;3</sup>. If you want to
+                        contact a MP that is not your representative, collaborate with a colleague in that particular
+                        riding and have him or her correspond with the politician’s staff&nbsp;<sup>8</sup>.
+                    </li>
+                    <li>However, there may be occasions when it is appropriate to contact another policy-maker. For
+                        example, if you are contacting a Minister or the Chair of a Parliamentary Committee looking for
+                        expert or broad public opinion<sup>3</sup>.
+                    </li>
+                    <li>To locate contact information for Members of Parliament:
+                        <ul>
+                            <li>Blue pages of your telephone book (CPA)</li>
+                            <li>Call Information Services at 1-866-599-4999 for any information about Parliament</li>
+                            <li>Look up your local MP by postal code:&nbsp;<a
+                                    href="http://www.parl.gc.ca/Parlinfo/Compilations/HouseOfCommons/MemberByPostalCode.aspx?Menu=HOC">http://www.parl.gc.ca/Parlinfo/Compilations/HouseOfCommons/MemberByPostalCode.aspx?Menu=HOC</a>
+                            </li>
+                            <li>For a list of Ministers view online at&nbsp;<a
+                                    href="http://www.parl.gc.ca/MembersOfParliament/MainCabinetCompleteList.aspx?TimePeriod=Current&amp;Language=E">http://www.parl.gc.ca/MembersOfParliament/MainCabinetCompleteList.aspx?TimePeriod=Current&amp;Language=E</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Setting up a meeting&nbsp;<sup>3,5</sup>
+                <ul>
+                    <li>When contacting the MP's appointment secretary, identify who you are, your affiliations, and the
+                        topic that you would like to discuss. A reasonable time frame for the meeting is 15-20 minutes.
+                        Notify the appointment secretary of the number of individuals that will be in attendance.
+                    </li>
+                    <li>At times the MP may not be able to meet with you. However, if you are able to meet with the
+                        aid/assistant in charge your area of interest, take the opportunity! Be flexible; politicians
+                        have demanding schedules and aids/assistants are typically experts in their areas who are relied
+                        upon to research issues and survey constituent opinions. Aids/assistants are in the unique
+                        position to inform you of the politicians position on the topic, what further information/action
+                        might be required from you and what the politician may be able to do in relation to your issue.
+                    </li>
+                    <li>Confirm the meeting a few days prior.</li>
+                </ul>
+            </li>
+            <li>Addressing Policy Makers
+                <ul>
+                    <li>Address Ministers using their title and last name, e.g. Minister Smith</li>
+                    <li>Address MP/MPP by conventional title/honorific, e.g. Mr., Ms., Mrs., Dr. Smith</li>
+                    <li>If you are introducing the Policy Maker to a third party:
+                        <ul>
+                            <li>Minister: The Honourable Ms. Smith, Minister of ______</li>
+                            <li>MP/MPP: Member of (Provincial) Parliament Ms. Smith</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Prepare for Your Meeting:
+                <ul>
+                    <li>Research the MP and his or her riding.
+                        <ul>
+                            <li>Read biographies, personal websites and social media contributions5,8.</li>
+                            <li>Research affiliations, previous work, voting history in the House, and personal matters
+                                of importance.
+                            </li>
+                            <li>Use your research to frame your message in a manner that both highlights MP interests
+                                and align with your present agenda 2,4,5,8. This will help bolster support for your
+                                issue because it is relevant and meaningful to the policymaker.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Know Your Issue:
+                        <ul>
+                            <li>Research your issue and the position of your associations (e.g. CFMS, CMA, provincial
+                                body).
+                            </li>
+                            <li>Gather any local examples that may add a personal touch to your discussion 2,4. This
+                                also illustrates how the issue directly impacts your community and the politician’s
+                                constituency 3. Politicians, like many people, often respond to moving stories and
+                                anecdotes.
+                            </li>
+                            <li>Research any media coverage of the topic and bring examples if it is favourable 3.</li>
+                            <li>Part of knowing the issue is understanding the opposition’s arguments and being prepared
+                                by formulating responses to them 3. This ensures you are not caught off-guard!
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Your message: Ensure that your argument is organized, concise and easily&nbsp;understood 3.</li>
+                    <li>Identify what you would like the politician to do with the information you provided. This may
+                        take the form of voting for or against a particular policy or it may be a request for support.
+                        Support may entail raising and advocating for the issue at caucus, with other ministers, the
+                        Prime Minister or a particular committee 2,5.
+                    </li>
+                    <li>Prepare and bring written materials. This may be in the form of a brief provided by your
+                        association (e.g. CFMS, CMA). You may also choose to prepare some documents including a one-page
+                        summary of key points and your contact information. Ensure you bring enough copies for every
+                        member or your group, the MP and their aids/assistants 2.
+                    </li>
+                    <li>If multiple people are attending the meeting, identify:
+                        <ul>
+                            <li>A note taker. He or she will record what was said, what remains to be followed up on,
+                                and what the politician has agreed to do 2.
+                            </li>
+                            <li>A leader for the discussion. At the beginning the leader should confirm the timeframe
+                                and ensure that the meeting ends in a timely manner 8.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Day of Your Meeting
+                <ul>
+                    <li>Dress appropriately.</li>
+                    <li>Arrive early. The Policy Maker may be available earlier. If not, this may be an opportunity to
+                        discuss the issue with the policy maker’s aid/assistants who are knowledgeable on many topics
+                        and are relied upon heavily by policy makers in the decision-making process 2.
+                    </li>
+                    <li>Parliament Buildings require moving through a security check much like at the airport. Be sure
+                        to budget time for this if you are meeting in Ottawa.
+                    </li>
+                    <li>Ensure to introduce yourself to all the staff you meet, as they may be helpful in the future.
+                    </li>
+                    <li>Spend a few minutes with small talk. Ask the policy maker about themselves, their interests,
+                        present work, etc. You may discuss with them where you live and your involvement in the
+                        community 2.
+                    </li>
+                    <li>Describe the issue you would like to discuss. Use local examples from your
+                        experience/practice2.
+                    </li>
+                    <li>Come prepared with solutions that are feasible and practical 2.</li>
+                    <li>If you are getting the impression that the policy maker is in opposition to your position, stick
+                        to the key points / messages. Do not become discouraged or flustered; simply request that he or
+                        she give some thought to your position 2.
+                    </li>
+                    <li>Tone of the meeting: Be passionate, but not too emotional. Ensure that you remain respectful and
+                        do not become angry or belligerent 3.
+                    </li>
+                    <li>At times you will be faced with a question from the policy maker where you don’t feel confident
+                        you know the answer. Don’t worry! While you should be educated about the issue, you are not
+                        required to know all the answers. Simply state you are unsure and that you will follow up with
+                        them at a later time 2,3.
+                    </li>
+                    <li>Don’t be afraid to know what you want from the politician and make the request 3. Confirm
+                        commitment8.
+                    </li>
+                    <li>Conclude the meeting by reiterating what the MP has agreed to do, ask if the MP has any further
+                        questions and thank the MP and assistants for their time 2, 8. Tell the MP and staff that you
+                        will follow up in 3-4 weeks if appropriate 8.
+                    </li>
+                </ul>
+            </li>
+            <li>After the Meeting
+                <ul>
+                    <li>Follow up with a personalized thank-you letter. This gives you an opportunity to summarize key
+                        points and highlight agreed outcomes 3, 5.
+                    </li>
+                    <li>Ensure that you have followed up on any outstanding issues that arose from the meeting in a
+                        prompt manner.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <p>Meeting With Parliamentary Committees</p>
+        <p>&nbsp; &nbsp; &nbsp;Cabinet establishes legislative agenda for government, and committees are established to
+            oversee their areas of jurisdiction 2. The committees study proposed legislation, expenditures and conduct
+            studies in their jurisdictions 6,7. The committees are responsible for completing a report with its findings
+            6,7. During their studies, committees are able to explore an issue in depth, and one of the strategies
+            utilized is questioning individuals and/or groups on their views 6,7. There are two types of committees. The
+            first is a standing committees that lasts for the length of a parliamentary session 9. The second is
+            special/select committees that are created to explore a particular bill or issue 9. Presenting to a
+            committee as a witness provides an additional opportunity to influence the political process. Please find
+            below some guidelines outlined on the Parliament of Canada website regarding submitting evidence to a
+            committee 6,7.</p>
+        <ul>
+            <li>Committees invite witnesses from a variety of backgrounds. Members of the public, experts,
+                organizations, Ministers, public servants all may be called to provide evidence relating to the topic
+                under study. Individuals who present at a committee typically submit a brief, which is followed up by
+                questioning by members of the committee.
+            </li>
+            <li>You must contact the committee clerk if you would like to request to be a witness. Factors that
+                influence witness selection are the time available to the committee and the type of study being
+                conducted as well as the expertise and interest of the witness. An individual chosen as a witness will
+                be contacted by the clerk
+            </li>
+            <li>To obtain committee and clerk contact information follow the links below:
+                <ul>
+                    <li>For a list of Committees in the House of Commons and their clerks:&nbsp;<a
+                            href="http://www.parl.gc.ca/CommitteeBusiness/CommitteeContact.aspx?Language=E&amp;Mode=1&amp;Parl=41&amp;Ses=2">http://www.parl.gc.ca/CommitteeBusiness/CommitteeContact.aspx?Language=E&amp;Mode=1&amp;Parl=41&amp;Ses=2</a>
+                    </li>
+                    <li>
+                        <a href="http://www.parl.gc.ca/CommitteeBusiness/CommitteeContact.aspx?Language=E&amp;Mode=1&amp;Parl=41&amp;Ses=2"></a>For
+                        a list of Senate committees:&nbsp;<a
+                            href="http://www.parl.gc.ca/SenCommitteeBusiness/default.aspx?parl=41&amp;ses=2&amp;Language=E">http://www.parl.gc.ca/SenCommitteeBusiness/default.aspx?parl=41&amp;ses=2&amp;Language=E</a>&nbsp;to
+                        obtain the clerk’s information, go to the committee of interest and click on contact.
+                    </li>
+                </ul>
+            </li>
+            <li>Clerks will organize a date, time and place for the meeting. They will require a confirmation from you
+                and a confirmation of the individuals that will be coming as witnesses before the committee. Note that
+                the clerk is non-partisan and holds an administrative and procedural role.
+            </li>
+            <li>If called as a witness:
+                <ul>
+                    <li>You will begin by making an opening statement. Upon request you can have equipment arranged for
+                        the presentation (e.g. PowerPoint). Requests can be made to the clerk, but ensure you give them
+                        sufficient notice that equipment is needed.
+                    </li>
+                    <li>It is recommended that you submit a written brief that may include opinions, observations and
+                        recommendations.
+                    </li>
+                </ul>
+            </li>
+            <li>You must submit all notes, even handwritten speaking notes, to the clerk. They will require 5 copies to
+                be submitted.
+            </li>
+            <li>As a witness you will have approximately 5-10 minutes to make an opening statement that is often used to
+                elaborate on brief. The opening statement will be followed by questions from the committee members. Note
+                that when you address the committee, do so through the chair. For example, “Mr. Chair, thank you for the
+                opportunity to respond to the committee’s question relating to….”. The Chair is responsible for the
+                order and process of the committee.
+            </li>
+            <li>Speak using a pace conducive to translation and transcription.</li>
+            <li>You may be sworn in.</li>
+            <li>Be aware that the meetings are recorded and some are televised.</li>
+        </ul>
+        <p>Given the constraints of the committee, you may not have the opportunity to act as a witness 6,7. However,
+            anyone is able to submit a brief 6,7. Below are some guidelines from the Parliament of Canada website
+            guiding the submission 6,7. Please note however, that each committee may outline what they consider an
+            acceptable brief 6,7. Thus, contact the committee clerk for special recommendations 6,7.</p>
+        <p>Brief submission 6,7:</p>
+        <ul>
+            <li>Can be in English or in French. Generally the document is not circulated until it has been translated.
+                Thus, information needs to be submitted to the clerk at least 1 week prior to the committee
+                presentation. All written material is made available to the public.
+            </li>
+            <li>Author's name and organization provided on the cover page. Include the names, addresses and contact
+                information of persons or organizations submitting the brief in a separate letter accompanying the
+                brief. A brief description of organizations should be included at the end of the brief as well.
+            </li>
+            <li>When writing a brief, be concise and support arguments with factual evidence. The submission should
+                generally not exceed 10 pages.
+            </li>
+            <li>Make recommendations as concrete and specific as possible - particularly when outlining bill or
+                legislation changes.
+            </li>
+            <li>Summarize key points, including the recommendations at the end of the brief.</li>
+            <li>All documents/photos should be printed in black and white.</li>
+            <li>Include all references.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <p>References<br>1. Bascaramurty, D. (2010, January 31). Four Ways to Get a Politician to Pay Attention. The
+            Globe and Mail. Retrieved online at&nbsp;<a
+                    href="http://www.theglobeandmail.com/life/four-ways-to-get-a-politician-to-pay-attention/article4303978/">http://www.theglobeandmail.com/life/four-ways-to-get-a-politician-to-pay-attention/article4303978/</a><br>2.
+            Canadian Medical Association. Guide to Political Skills. Retrieved from&nbsp;<a
+                    href="http://www.cma.ca/multimedia/CMA/Content_Images/Inside_cma/MD_MP/MD-MP-SkillsGuidebook_en.pdf">http://www.cma.ca/multimedia/CMA/Content_Images/Inside_cma/MD_MP/MD-MP-SkillsGuidebook_en.pdf</a><br>3.
+            Canadian Psychological Association. How to Communicate Effectively with Members of Parliament. Retrieved
+            from:&nbsp;<a
+                    href="http://www.cpa.ca/documents/advocacy_p5.htm">http://www.cpa.ca/documents/advocacy_p5.htm</a><br>4.
+            OMA. Asked and answered.&nbsp;<a href="https://www.oma.org/Member/Resources/Documents/PAN_faq2013.pdf">https://www.oma.org/Member/Resources/Documents/PAN_faq2013.pdf</a><br>5.
+            Oxfam. Meet with your MP about International Development. Retrieved from&nbsp;<a
+                    href="http://www.oxfam.ca/get-involved/volunteer/meet-with-your-mp">http://www.oxfam.ca/get-involved/volunteer/meet-with-your-mp</a><br>6.
+            Parliament of Canada. Guide for Witnesses Appearing Before House of Commons Committees. Retrieved from&nbsp;<a
+                    href="http://www.parl.gc.ca/About/House/WitnessesGuides/witness-e.htm">http://www.parl.gc.ca/About/House/WitnessesGuides/witness-e.htm</a><br>7.
+            Parliament of Canada. Senate Committees. For Witnesses. Retrieved from&nbsp;<a
+                    href="http://www.parl.gc.ca/sencommitteebusiness/InfoWitnesses.aspx">http://www.parl.gc.ca/sencommitteebusiness/InfoWitnesses.aspx</a><br>8.
+            Results Canada Webpage:&nbsp;<a href="http://www.results-resultats.ca/Tools/HowTos/MeetingWithMP_eng.asp">http://www.results-resultats.ca/Tools/HowTos/MeetingWithMP_eng.asp</a>&nbsp;Advocacy
+            How Tos: Making Friends and Influencing Policymakers: Tips for Meeting with your MP.<br>9.
+            Wikipedia.&nbsp;<a
+                    href="http://en.wikipedia.org/wiki/Committee">http://en.wikipedia.org/wiki/Committee</a><a
+                    href="http://en.wikipedia.org/wiki/Committee"></a></p>
+        <p>&nbsp;</p>
+
+        <div>
+            <a class="floatLeft" href=".">Back</a>
+            <a class="floatRight" href="resources-supporting-advocacy.html">Forward</a>
+        </div>
+
+
+    </div>
+</div>
+<script type="text/javascript">
+	function getEmail(username){
+		var hostname = "cfms.org";
+		var linktext = username + "@" + hostname;
+		document.write("<a class='email' href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+	}
+</script>
+<div id="footer">
+	<div class="column">
+		<h1>
+			<div id="twitter-title">
+				
+					Latest tweets
+				
+				<span style="opacity:0.3">:</span></div>
+			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
+		</h1>
+		<div class="icon"><i class="fa fa-twitter"></i></div>
+		<div id="latest-tweets">
+		</div>
+	</div>
+
+	
+		
+			<div class="column">
+				<h1>Contact us <span style="opacity:0.3">:</span></h1>
+				<div class="icon"><i class="fa fa-map-marker"></i></div>
+				<li>
+					Canadian Federation of Medical Students<br>
+					267 O'Connor Street, Suite 401<br>
+					Ottawa, ON K2P 1V3
+				</li>
+				<div class="icon"><i class="fa fa-phone"></i></div>
+				<li>
+					<b>Phone</b>: 613&ndash;565&ndash;7740<br>
+					<b>Fax</b>: 613&ndash;565&ndash;7742
+				</li>
+				<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
+				<div id="emails">
+					<li><b>General Inquiries</b>: Rosemary Conliffe<br>
+					    <script>getEmail("office")</script>
+					</li>
+					<li><b>Media</b>: Christina Schweitzer<br>
+						<script>getEmail("vpcommunications")</script>
+					</li>
+					<li><b>Information Technology</b>: Pavel Yarmak<br>
+						<script>getEmail("it")</script>
+					</li>
+				</div>
+			</div>
+		
+	
+		
+	
+	
+		
+			<div class="column">
+				<h1>
+					Find us on <span style="opacity:0.3">:</span>
+					<div id="social-media">
+						<a class="social-icon" href="https://www.facebook.com/CFMSFEMC"><i class="fa fa-facebook"></i></a>
+						/
+						<a class="social-icon" href="https://twitter.com/cfmsfemc"><i class="fa fa-twitter"></i></a>
+						/
+						<a class="social-icon" href="https://www.linkedin.com/company/canadian-federation-of-medical-students-cfms-"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</h1>
+				<div class="icon"><i class="fa fa-sitemap"></i></div>
+				<li>
+					
+						<b>Site map:</b> <a href="/sitemap.html">cfms.org/sitemap.html</a>
+					
+				</li>
+				<div class="icon"><i class="fa fa-question-circle"></i></div>
+				<li>
+					<b>Issue Tracker: </b><a href="/uploads/issue-tracker-guide.pdf">How To Guide</a>
+				</li>
+				<div class="icon"><i class="fa fa-github"></i></div>
+				<li>
+					<b>Issue Tracker: </b><a href="https://github.com/cfms-website/cfms-website.github.io/issues">Submit a Ticket </a>
+				</li>
+				<div class="icon"><i class="fa fa-copyright"></i></div>
+				<li>
+					<script>document.write((new Date()).getFullYear())</script>
+					CFMS. All Rights Reserved.<br>Developed by <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
+				</li>		
+			</div>
+		
+	
+		
+	
+</div>
+<script src="/js/twitterFetcher_min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	window.sr = ScrollReveal();
+	sr.reveal('.animate', { duration: 500, distance: '5px', scale: 1 } );
+
+	document.querySelector( "#hamburger-toggle" ).addEventListener( "click", function() {
+		this.classList.toggle( "active" );
+		document.querySelector("#top-nav").classList.toggle("active");
+		sr.reveal('#top-nav', {distance: '0px'});
+	});
+
+	//Gets latest tweets
+	var tweetConfig = {
+	  "id": '616581601191833602',
+	  "domId": 'latest-tweets',
+	  "maxTweets": 3,
+	  "enableLinks": true,
+	  "showPermalinks": false,
+	  "showUser": false,
+	  "showInteraction": false,
+	  "dateFunction": dateFormatter
+	};
+
+	//Formats the tweet dates
+	function dateFormatter(date) {
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var hour = date.getHours();
+
+		//0:00 = 12 AM
+		if (hour == 0)
+			var time = "12:" + date.getMinutes();
+		else 
+			time = (hour%12) + ":" + date.getMinutes();
+		if (hour > 0 && hour < 12)
+			time += " AM";
+		else 
+			time += " PM";
+
+		var month = months[date.getMonth()];
+		var day = date.getDate();
+		var year = date.getFullYear();
+		return time + " &ndash; " + month + " " + day + ", " + year;
+	}
+	twitterFetcher.fetch(tweetConfig);
+</script>
+
+<script src="/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if($(window).width() >= 960){
+	    $('#scroll').scrollToFixed({ 
+	    	minWidth: 960,
+	    	marginTop: 20, 
+	    	limit: function() {
+		        var limit = $('#footer').offset().top - $('#scroll').height() - 40;
+		        return limit;
+		    }
+	    });
+	}
+});
+</script>
+
+<!-- Modal Dialogs -->
+<script src="/js/vex.combined.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-default';</script>
+
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex.css" />
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex-theme-default.css" />
+
+<script>
+$('.redirect-modal').click(function(){
+    vex.dialog.confirm({
+        message: '<h3><strong>Oh no!</strong></h3><p>Unfortunately, this feature or resource is not yet available on the new CFMS website. To access it, please visit the old CFMS website.</p>',
+        buttons: [
+                $.extend({}, vex.dialog.buttons.YES, { text: 'Go to old website' }),
+                $.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })
+            ],
+        callback: function(value) {
+            if (value) {window.location.href = "http://www.old.cfms.org";}
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+	window.config = {
+		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","communications":"Communications","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","communications":"Communications","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","login":"Se connecter","logout":"Se déconnecter"}]`),
+		lang: `en`,
+		leadership_award_year: `2017-2018`,
+		env: `production`
+	}
+</script>
+
+<script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
+
+</body>
+</html>
