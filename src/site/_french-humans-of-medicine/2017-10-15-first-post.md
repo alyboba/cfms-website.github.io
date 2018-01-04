@@ -1,7 +1,7 @@
 ---
 excerpt_separator: '[](Excerpt)'
 lang: "fr"
-title: "This is the first post"
+title: "This is the first post!"
 date: 2017-10-15
 description: "Please fill in description here"
 ---
