@@ -46,13 +46,17 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		});
 		
 		if (this.auth.user) {
+            this.createAddButton();
 			//Initially populate our lists with the schools and list from data pulled in.
 			this.createList(this.schools, 'schools-list', 'School');
 			this.createList(this.specialties, 'specialties-list', 'Specialty');
 			this.table = $('#interviewsDatabase').DataTable({
 				"columnDefs": [
 					{className: "details-control", "targets": [0]}
-				]
+				],
+                "language": {
+                    "emptyTable": "No Interviews Available for this School/Specialty. Be the first to Write one!"
+                }
 			}); //Initializing dataTables.
 			
 			//Handle when user changes schools list
@@ -62,7 +66,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 				if (value == "notSelected") {
 					this.createList(this.specialties, 'specialties-list', 'Specialty');
 					this.schoolRefPath = null;
-					document.getElementById('addButton').innerHTML = "";
+					//document.getElementById('addButton').innerHTML = "";
 					this.table.clear().draw();
 				}
 				else {
@@ -81,7 +85,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 				if(value == "notSelected"){
 					this.createList(this.schools, 'schools-list', 'School');
 					this.specialtyRefPath = null;
-					document.getElementById('addButton').innerHTML = "";
+					//document.getElementById('addButton').innerHTML = "";
 					this.table.clear().draw();
 				}
 				else {
@@ -103,7 +107,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 	populateTable(){
 		if(this.specialtyRefPath && this.schoolRefPath){ //Make sure user has selected both options.
 			this.table.clear().draw();
-			this.createAddButton();
+
 			let refPath = this.refPath + this.specialtyRefPath + '/' + this.schoolRefPath;
 			this.dbRef = this.firebase.database().ref(this.refPath).child(`${this.specialtyRefPath}/${this.schoolRefPath}`);
 			this.dbRef.on('value', (snapshot) => {
@@ -371,11 +375,11 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		evt.preventDefault();
 		this.closeForm();
 	}
-	
 	closeForm(){
 		let form = this.form;
 		this.form.removeClass('fadeInDown');
 		this.form.addClass('fadeOutUp');
+		$('#addEntryButton').show();
 		setTimeout(function(){
 			form.addClass('hidden');
 		}, 750);
@@ -400,6 +404,7 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		$("#generalImpression, #qualityEducational, #qualityHospital, #interviewFriendliness, #easeInterview, #locationCultural").barrating('clear');
 		$('#editSubmitButton').hide();
 		$('#addSubmitButton').show();
+		$('#addEntryButton').hide();
 		this.displayForm();
 	}
 	
@@ -425,12 +430,14 @@ export default class CarmsInterviewController extends FirebaseConnection {
 		}, '<option selected value="notSelected"> -- Select a ' + name + ' -- </option>');
 		listEditing.innerHTML = list;
 	}
-	
+
+
 	createAddButton() {
 		document.getElementById('addButton').innerHTML = '';
 		let temp = document.createElement('div');
-		let addButton = this.utils.createButton((this.refPath + this.specialtyRefPath + '/' + this.schoolRefPath), "Add Entry", "addEntry");
-		temp.innerHTML = addButton;
+		let buttonHTML = '<button id="addEntryButton" class="addEntry">Add Entry </button>';
+		//let addButton = this.utils.createButton((this.refPath + this.specialtyRefPath + '/' + this.schoolRefPath), "Add Entry", "addEntry");
+		temp.innerHTML = buttonHTML;
 		document.getElementById('addButton').appendChild(temp);
 		let button = document.getElementsByClassName('addEntry');
 		button[0].addEventListener('click', this.clickAddEntryButton.bind(this), false);
