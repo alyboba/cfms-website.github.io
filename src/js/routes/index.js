@@ -31,7 +31,7 @@ export default class Router extends Middleware {
         route('/fr/members', Members);
         route('/resources/lasik-membership-card.html', Members);
         route('/fr/resources/lasik-membership-card.html', Members);
-        route('/resources/md-leadership-awards-application.html', LeadershipAwardUser);
+        route('/resources/md-leadership-awards-application.html', Members, LeadershipAwardUser);
         route('/resources/md-leadership-awards-view-applications.html', LeadershipAwardAdmin);
         route('/new-account.html', Registration);
         route('/meetings/:meeting', MeetingRegistrations);
