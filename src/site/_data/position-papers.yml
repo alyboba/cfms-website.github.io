@@ -375,6 +375,45 @@ position-papers:
   - tag: "IP"
     tag-name: "En cours"
   paper-collection:
+  - section: "Adopté à l’AG 2017 - Ottawa, ON"
+    papers:
+    - paper-name: "Curricular Advocacy"
+      paper-publish-date: "2017"
+      paper-link: "/files/position-papers/curricular-advocacy-paper.pdf"
+      paper-summary: "Description à venir."
+      paper-status: "Description à venir."
+      paper-tags:
+      - tag: "pp"
+    - paper-name: "Support pour les Étudiants en Médecine du Canada Non Jumelés à des Postes de Résidence"
+      paper-publish-date: "2017"
+      paper-link: "/files/position-papers/agm_2017_support_unmatched_fr.pdf"
+      paper-summary: "Description à venir."
+      paper-status: "Description à venir."
+      paper-tags:
+      - tag: "pp"
+    - paper-name: "Support of Medical Student Parents in Undergraduate Medical Education"
+      paper-publish-date: "2017"
+      paper-link: "/files/position-papers/agm_2017_support_of_parents.pdf"
+      paper-summary: "Description à venir."
+      paper-status: "Description à venir."
+      paper-tags:
+      - tag: "PP"
+    - paper-name: "Personal Day Policies at Canadian Medical Schools"
+      paper-publish-date: "2017"
+      paper-link: "/files/position-papers/agm_2017_personnal_days.pdf"
+      paper-summary: "Description à venir."
+      paper-status: "Description à venir."
+      paper-tags:
+      - tag: "PS"
+  - section: "Adopté à la rencontre générale 2017 - Winnipeg, MB"
+    papers:
+    - paper-name: "Mental Health & Suicide in Indigenous Communities "
+      paper-publish-date: "2017"
+      paper-link: "/files/position-papers/sgm_2017_indigenous_mental_health.pdf"
+      paper-summary: "Description à venir."
+      paper-status: "Description à venir."
+      paper-tags:
+      - tag: "pp"
   - section: "Adopté à l’AG 2016 - Edmonton, AB"
     papers:
     - paper-name: "CFMS Professionalism"
