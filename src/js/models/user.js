@@ -1,10 +1,9 @@
 import Model from './model';
-import _ from 'lodash';
 
 export default class UserModel extends Model {
     constructor(profile) {
         super();
-        Object.assign(this, _.snakeCase(JSON.parse(profile)));
+        Object.assign(this, JSON.parse(profile));
     }
 
     static fromRow(row) {
