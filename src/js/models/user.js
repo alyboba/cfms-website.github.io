@@ -1,9 +1,10 @@
 import Model from './model';
+import converter from "json-style-converter/es5";
 
 export default class UserModel extends Model {
     constructor(profile) {
         super();
-        Object.assign(this, JSON.parse(profile));
+        Object.assign(this, converter.camelToSnakeCase(JSON.parse(profile)));
     }
 
     static fromRow(row) {

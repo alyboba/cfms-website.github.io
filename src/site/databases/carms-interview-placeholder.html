@@ -1,0 +1,60 @@
+---
+title: "Carms Interview Database"
+sitemap:
+priority: 0.7
+changefreq: weekly
+role: National IT Officer
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]>
+<html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/animate.css">
+    <link rel="stylesheet" href="/stylesheets/members.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/fontawesome-stars.css">
+    <link rel="stylesheet" href="/stylesheets/forms.css">
+
+    {% include firepad.html %}
+</head>
+<body>
+{% include nav.html %}
+
+<div class="content">
+    {% include sidebar-databases.html %}
+    <script type="text/javascript">
+        document.querySelector("#carms-interview-database").classList.toggle("sidebar-active");
+    </script>
+
+    <!--Page Specific Formatting-->
+    <script type="text/javascript">
+        document.querySelector("#logo-invert").classList.toggle("hidden");
+        document.querySelector("#resources").classList.toggle("active");
+    </script>
+
+    <div id="side-content" class="editable">
+        <h1 id="page-title">{{ page.title }}</h1>
+        <div class="members-only">
+            {% include members-only-editor.html %}
+        </div>
+        <div class="non-members">
+            <blockquote><h3><strong>Please login to see this page</strong></h3>
+                <ul>
+                    <li>>Please login to the CFMS website in order to view the content on this page.
+                    </li>
+                </ul>
+            </blockquote>
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>
+</html>
