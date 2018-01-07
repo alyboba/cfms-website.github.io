@@ -144,18 +144,18 @@ export default class CarmsInterviewController extends FirebaseConnection {
 						if(displayVote){
 							if(acceptVote){
 								upVoteLink = '<span data-key="'+listing.key+'" class="jrBtn upVote"><span data-key="'+listing.key+'" class="buttonText" style="color:green;">' +
-									upVotes.numChildren()+'</span><span data-key="'+listing.key+'" class="icon iconThumbUp"></span></span>';
+									upVotes.numChildren()+'</span><span data-key="'+listing.key+'" class="iconCollection iconThumbUp"></span></span>';
 								
 								downVoteLink = '<span data-key="'+listing.key+'" class="jrBtn downVote"><span data-key="'+listing.key+'" class="buttonText" style="color:red;">' +
-									downVotes.numChildren()+'</span><span data-key="'+listing.key+'" class="icon iconThumbDown"></span></span>';
+									downVotes.numChildren()+'</span><span data-key="'+listing.key+'" class="iconCollection iconThumbDown"></span></span>';
 								
 							}
 							else{
 								upVoteLink = '<div class="rejectVote up"><span class="jrBtn"><span class="buttonText" style="color:green;">' +
-									upVotes.numChildren()+'</span><span class="icon iconThumbUp"></span></span></div>';
+									upVotes.numChildren()+'</span><span class="iconCollection iconThumbUp"></span></span></div>';
 								
 								downVoteLink = '<div class="rejectVote down"><span class="jrBtn"><span class="buttonText" style="color:red;">' +
-									downVotes.numChildren()+'</span><span class="icon iconThumbDown"></span></span></div>';
+									downVotes.numChildren()+'</span><span class="iconCollection iconThumbDown"></span></span></div>';
 								
 							}
 						}
