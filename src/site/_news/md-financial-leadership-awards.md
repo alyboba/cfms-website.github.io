@@ -25,6 +25,6 @@ In recognition of their achievements, one student from each of the 15 member sch
 
 <div><div><blockquote><p>The generosity from MD Financial Management has made a profound impact on my life, and I am truly grateful to be the recipient of the 2017 CFMS-MD Financial Management Leadership Award. The scholarship went directly toward completion of executive leadership coaching. The executive leadership coaching training involved a core values inventory and one-on-one executive coaching sessions. We worked on several transferable skills: communication (personal analysis questionnaire), emotional intelligence (emotional quotient inventory), resilience, leadership (positive motivation, giving constructive feedback, facilitating conflict), and organizational awareness. I have the utmost confidence that this grant not only prepared me financially, but also provided me with the opportunity to create a solid leadership foundation to contribute significantly to leadership endeavors in Canada and beyond.&nbsp;</p></blockquote></div></div>
 
-*-Kristen Barton, Cumming School of Medicine (Class of 2019), 2017 CFMS-MD Financial Management Leadership Award Recipient*
+*-Kristen Barton, Cumming School of Medicine (Class of 2019)*
 
 To apply for a 2018 CFMS–MD Financial ManagementLeadership Award, submit an application **[here](https://www.cfms.org/resources/md-leadership-awards.html) by January 22nd 2018.**
