@@ -14,15 +14,11 @@ If you have any questions, please don’t hesitate to contact Nomination Committ
 
 **Deadline: January 26th, 2018 (23:59 EST)**
 
-&nbsp;
-
 **CACMS (Committee on Accreditation of Canadian Medical Schools) Rep Jr. Application**
 
 Form link: [https://goo.gl/forms/9NXwdDWv1j3D0f3k2](https://goo.gl/forms/9NXwdDWv1j3D0f3k2)
 
 Description link: [https://drive.google.com/open?id=1LbeXWvBLY7-Vg6XCErQyeGyQPPPnOtFI](https://drive.google.com/open?id=1LbeXWvBLY7-Vg6XCErQyeGyQPPPnOtFI)
-
-&nbsp;
 
 **CAME (Canadian Association Medical Education) Rep Application**
 
@@ -30,21 +26,17 @@ Form link: [https://goo.gl/forms/QTkzAQ9eTqdLDNI02](https://goo.gl/forms/QTkzAQ9
 
 Description link: [https://drive.google.com/open?id=1ZCvBcKrEcvNX5FkM–ZDSOi2GVTM67G9](https://drive.google.com/open?id=1ZCvBcKrEcvNX5FkM--ZDSOi2GVTM67G9)
 
-&nbsp;
-
 **Residency Matchbook Graphic Designer Application**
 
 Form link: [https://goo.gl/forms/PrN73q35jYqAp8tb2](https://goo.gl/forms/PrN73q35jYqAp8tb2)
 
-&nbsp;
+Matchbook information: [https://www.cfms.org/what-we-do/education/cfms-matchbook.html](https://www.cfms.org/what-we-do/education/cfms-matchbook.html)
 
 **&Eacute;diteur du blogue JAMC - Fran&ccedil;ais (CMAJ Blog - French Editor) Application**
 
 Form link: [https://goo.gl/forms/HWn0p2PWFzjXOxal2](https://goo.gl/forms/HWn0p2PWFzjXOxal2)
 
 Description link: [https://drive.google.com/open?id=1aMGVP92fe3c5ISQ37NQhrR6wODAQ1wvI](https://drive.google.com/open?id=1aMGVP92fe3c5ISQ37NQhrR6wODAQ1wvI)
-
-&nbsp;
 
 **Interviews and National Electives Databases Team**
 
