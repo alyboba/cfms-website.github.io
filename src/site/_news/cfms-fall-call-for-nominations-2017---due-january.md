@@ -1,9 +1,9 @@
 ---
-title: 'CFMS Winter Call for Nominations 2018 (Due January 26th, 2018)'
+title: 'CFMS Winter Call for Nominations (Due January 26th, 2018)'
 date: 2018-01-16 00:00:00
 description: >-
   The CFMS is looking for members to help us out with several positions and
-  teams.
+  teams. Apply now!
 lang: en
 ---
 
