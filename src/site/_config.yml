@@ -30,6 +30,10 @@ collections:
     output: true
   cfms-in-the-news:
     output: true
+  press-releases:
+    output: true
+  archived-press-releases:
+    output: true
       
 
 #Set the default layout and language for collections

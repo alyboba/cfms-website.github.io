@@ -6,6 +6,8 @@ changefreq: monthly
 role: VP Government Affairs
 ---
 
+{% assign sorted = (site.press-releases | sort: 'date') | reverse %}
+
 <!DOCTYPE html>
 
 
@@ -82,8 +84,8 @@ role: VP Government Affairs
                             <table>
                                 <thead>
                                 <tr class="row100 head">
-                                    <th class="cell100 column1">Class name</th>
-                                    <th class="cell100 column2">Type</th>
+                                    <th class="cell100 column1">Title</th>
+                                    <th class="cell100 column2">Date</th>
                                 </tr>
                                 </thead>
                             </table>
@@ -92,15 +94,25 @@ role: VP Government Affairs
                         <div class="table100-body js-pscroll">
                             <table>
                                 <tbody>
+                                {% for post in sorted %}
                                 <tr class="row100 body">
-                                    <td class="cell100 column1">Like a butterfly</td>
-                                    <td class="cell100 column2">Boxing</td>
+                                    <td class="cell100 column1"><a href="{{post.link}}">{{post.title}}</a></td>
+                                    <td class="cell100 column2">{{post.month}}, {{post.day}} {{post.year}}</td>
                                 </tr>
+                                
+                                {% endfor %}
+                                
+                                
+                                <!---->
+                                <!--<tr class="row100 body">-->
+                                    <!--<td class="cell100 column1">Like a butterfly</td>-->
+                                    <!--<td class="cell100 column2">Boxing</td>-->
+                                <!--</tr>-->
 
-                                <tr class="row100 body">
-                                    <td class="cell100 column1">Mind & Body</td>
-                                    <td class="cell100 column2">Yoga</td>
-                                </tr>
+                                <!--<tr class="row100 body">-->
+                                    <!--<td class="cell100 column1">Mind & Body</td>-->
+                                    <!--<td class="cell100 column2">Yoga</td>-->
+                                <!--</tr>-->
                                 </tbody>
                             </table>
                         </div>
