@@ -32,7 +32,11 @@ collections:
     output: true
   press-releases:
     output: true
+  french-press-releases:
+    output: true
   archived-press-releases:
+    output: true
+  archived-french-press-releases:
     output: true
       
 

@@ -35,12 +35,11 @@ sitemap:
 <div class="content">
     <!-- Displays the sidebar and emphasizes the active page -->
     {% include sidebar-communications.html %}
-    <script type="text/javascript">
-			document.querySelector("#press-releases").classList.toggle("sidebar-active");
-    </script>
+    <!--<script type="text/javascript">-->
+			<!--document.querySelector("#press-releases").classList.toggle("sidebar-active");-->
+    <!--</script>-->
     <div id="side-content" class="editable">
         <h1 id="page-title">Archived Press Releases</h1>
-        
         <div class="limiter">
             <div class="container-table100">
                 <div class="wrap-table100">
@@ -62,7 +61,7 @@ sitemap:
                                 {% for post in sorted %}
                                 <tr class="row100 body">
                                     <td class="cell100 column1"><a href="{{post.link}}">{{post.title}}</a></td>
-                                    <td class="cell100 column2">{{post.month}}, {{post.day}} {{post.year}}</td>
+                                    <td class="cell100 column2">{{post.month}} {{post.day}}, {{post.year}}</td>
                                 </tr>
                                 {% endfor %}
                                 </tbody>

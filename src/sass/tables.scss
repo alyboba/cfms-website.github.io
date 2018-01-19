@@ -7,31 +7,16 @@ td{
 /*//////////////////////////////////////////////////////////////////
 [ Table ]*/
 
-.m-b-110 {margin-bottom: 110px;}
-
-.limiter {
-  width: 1366px;
-  margin: 0 auto;
-}
 
 .container-table100 {
   width: 80%;
-  min-height: 100vh;
   background: #fff;
 
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-
-  flex-wrap: wrap;
   padding: 33px 5px;
 }
 
 .wrap-table100 {
-  width: 1170px;
+  width: 100%;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -51,8 +36,8 @@ th, td {
 }
 
 .column1 {
-  width: 33%;
-  padding-left: 40px;
+  width: 10%;
+  padding-left: 2rem;
 }
 
 .column2 {
@@ -148,5 +133,10 @@ th, td {
 
 .table100.ver1 .ps__rail-y .ps__thumb-y::before {
   background-color: #cccccc;
+}
+
+
+body{
+  overflow-x:hidden !important;
 }
 
