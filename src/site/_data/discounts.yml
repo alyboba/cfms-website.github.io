@@ -118,7 +118,7 @@ travel-discounts:
     discount-title: CFMS Travel Discounts with Local Hospitality
     discount-sub-title:
     discount-img: local-hospitality.png
-    discount-need-reverification: 'true'
+    discount-need-reverification:
     discount-description: >-
       <p>The CFMS is pleased to offer an exclusive worldwide travel discount
       service to our members, in partnership with Local Hospitality.
@@ -212,7 +212,7 @@ travel-discounts:
     discount-title: CFMS Travel Discounts with Local Hospitality
     discount-sub-title:
     discount-img: local-hospitality.png
-    discount-need-reverification: 'true'
+    discount-need-reverification:
     discount-description: >-
       <p>The CFMS is pleased to offer an exclusive worldwide travel discount
       service to our members, in partnership with Local Hospitality.

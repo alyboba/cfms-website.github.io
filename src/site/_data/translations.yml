@@ -50,7 +50,7 @@ financial_resources:
     testimonials: Testimonials
     student_finances: Student Finances
     student_finances_url: student-finances.html
-    md_leadership_awards: MD Leadership Awards
+    md_leadership_awards: CFMS-MD Financial Leadership Awards
     md_leadership_awards_url: /resources/md-leadership-awards.html
     md_leadership_awards_instructions: How to Apply
     md_leadership_awards_instructions_url: /resources/md-leadership-awards-instructions.html
@@ -78,11 +78,11 @@ financial_resources:
     testimonials: Témoignages
     student_finances: Les finances des étudiants
     student_finances_url: student-finances.html
-    md_leadership_awards: Prix de leadership MD
+    md_leadership_awards: Prix de leadership FEMC-MD
     md_leadership_awards_url: /fr/resources/md-leadership-awards.html
-    md_leadership_awards_instructions: How to Apply
+    md_leadership_awards_instructions: Comment appliquer
     md_leadership_awards_instructions_url: /fr/resources/md-leadership-awards-instructions.html
-    md_leadership_awards_apply: Submit Application
+    md_leadership_awards_apply: Soumettre l'application
     md_leadership_awards_apply_url: /fr/resources/md-leadership-awards-application.html
     md_leadership_awards_prev_winners: Previous Recipients
     md_leadership_awards_prev_winners_url: /fr/resources/md-leadership-awards-prev-winners.html
