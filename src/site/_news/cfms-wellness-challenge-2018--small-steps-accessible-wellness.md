@@ -25,11 +25,7 @@ The CFMS Wellness Challenge is a month-long challenge divided into four week-lon
 
 The theme and focus for the CFMS Wellness Challenge for 2018 were chosen based on feedback received from past participants, school representatives, and other CFMS members. CFMS recognizes that medical students are often busy, not necessarily in full control of their schedules, and may be struggling with health challenges of their own. The Wellness Challenge is not meant to introduce stress or anxiety, or be detrimental to any individual’s health, and this year’s Challenge and its components have been designed in an intentional way that is informed by this knowledge.
 
-&nbsp;
-
 The “Small Steps” component of the theme is meant to reinforce that all changes in a healthier direction are positive, and that it’s better to take any step closer to better wellness than it is to stay put, regardless of how small that step may be.
-
-&nbsp;
 
 The “Accessible Wellness” component of the theme refers first to making the Challenge more accessible by focusing on “small steps” (i.e. low-barrier; single time point) challenge components, but refers further to multiple aspects of accessibility:
 
@@ -37,9 +33,9 @@ The “Accessible Wellness” component of the theme refers first to making the 
 2. Accessibility with respect to **time**.
 3. Accessibility with respect to **participant ability/health**.
 
-&nbsp;
-
 For additional explanation of our attempts to address these aspects of accessibility, please see the Additional Information/Notes section below.
+
+&nbsp;
 
 **Why should I participate?**
 
@@ -58,8 +54,6 @@ In order to participate in the CFMS Wellness Challenge 2018, participants must d
 1. Self-register at the following link: [www.goo.gl/forms/HnXMeT7CiWoL9b3D2](http://www.goo.gl/forms/HnXMeT7CiWoL9b3D2).
 2. Complete a minimum of one challenge over the course of the four weeks. Each completed challenge provides you with another chance to win a participation incentive prize.
 3. Self-report your challenge completions when emailed the weekly report-in survey.
-
-&nbsp;
 
 &nbsp;
 
@@ -120,21 +114,15 @@ Le D&eacute;fi bien-&ecirc;tre de la FEMC est un d&eacute;fi d'une dur&eacute;e 
 
 **Quelle est la raison d'&ecirc;tre du th&egrave;me et de la cause d&eacute;fendue cette ann&eacute;e?**
 
-Le th&egrave;me et l'objectif du D&eacute;fi bien-&ecirc;tre de la FEMC en 2018 ont &eacute;t&eacute; choisis en fonction des commentaires re&ccedil;us des anciens participants, des repr&eacute;sentants d’&eacute;cole et d’autres membres de la FEMC. La FEMC reconna&icirc;t que les &eacute;tudiants en m&eacute;decine sont occup&eacute;s et rarement ma&icirc;tres de leur horaire, en plus d’&ecirc;tre eux-m&ecirc;mes parfois confront&eacute;s &agrave; des probl&egrave;mes de sant&eacute;. Le D&eacute;fi bien-&ecirc;tre n'a pas pour but d'induire du stress ou de l’anxi&eacute;t&eacute;, ni d'&ecirc;tre nuisible &agrave; la sant&eacute; de quiconque. Le d&eacute;fi de cette ann&eacute;e et ses composantes ont donc &eacute;t&eacute; con&ccedil;us m&eacute;ticuleusement, et tiennent compte de ces contraintes. &nbsp;
-
-&nbsp;
+Le th&egrave;me et l'objectif du D&eacute;fi bien-&ecirc;tre de la FEMC en 2018 ont &eacute;t&eacute; choisis en fonction des commentaires re&ccedil;us des anciens participants, des repr&eacute;sentants d’&eacute;cole et d’autres membres de la FEMC. La FEMC reconna&icirc;t que les &eacute;tudiants en m&eacute;decine sont occup&eacute;s et rarement ma&icirc;tres de leur horaire, en plus d’&ecirc;tre eux-m&ecirc;mes parfois confront&eacute;s &agrave; des probl&egrave;mes de sant&eacute;. Le D&eacute;fi bien-&ecirc;tre n'a pas pour but d'induire du stress ou de l’anxi&eacute;t&eacute;, ni d'&ecirc;tre nuisible &agrave; la sant&eacute; de quiconque. Le d&eacute;fi de cette ann&eacute;e et ses composantes ont donc &eacute;t&eacute; con&ccedil;us m&eacute;ticuleusement, et tiennent compte de ces contraintes.&nbsp;
 
 Le volet &laquo; &Agrave; petits pas &raquo; du th&egrave;me vise &agrave; souligner que tout changement vers une sant&eacute; meilleure est un changement positif. En effet, il est pr&eacute;f&eacute;rable de se rapprocher, de quelconque mani&egrave;re, d'un meilleur bien-&ecirc;tre que de ne rien faire, et ce, peu importe l’ampleur du pas effectu&eacute;.
 
-&nbsp;
-
 Le volet &laquo; le bien-&ecirc;tre accessible &raquo; du th&egrave;me a pour but de rendre le d&eacute;fi &agrave; la port&eacute;e de tous en incluant des d&eacute;fis qui se font &laquo; &agrave; petits pas &raquo;. Par exemple, un d&eacute;fi qui requiert des efforts minimaux et d’une courte dur&eacute;e. Il se r&eacute;f&egrave;re &agrave; tous ces aspects de l’accessibilit&eacute; :
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1) Acc&egrave;s par rapport &agrave; l’endroit
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2) Acc&egrave;s par rapport au temps
-
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3) Acc&egrave;s par rapport aux habilet&eacute;s physiques et &agrave; la sant&eacute; des participant(e)s
+1. Acc&egrave;s par rapport &agrave; l’endroit
+2. Acc&egrave;s par rapport au temps
+3. Acc&egrave;s par rapport aux habilet&eacute;s physiques et &agrave; la sant&eacute; des participant(e)s
 
 &nbsp;
 
@@ -148,8 +136,6 @@ Participer signifie :
 
 &nbsp;
 
-&nbsp;
-
 **Comment puis-je participer?**
 
 Afin de participer au d&eacute;fi bien-&ecirc;tre 2018 de la FEMC, les participants doivent suivre les &eacute;tapes suivantes :
@@ -157,8 +143,6 @@ Afin de participer au d&eacute;fi bien-&ecirc;tre 2018 de la FEMC, les participa
 1. S’inscrire au lien suivant : [bit.ly/CFMSchallenge18](http://www.bit.ly/CFMSchallenge18)
 2. Compl&eacute;ter au moins un d&eacute;fi au courant des quatre semaines du d&eacute;fi. Chaque d&eacute;fi compl&eacute;t&eacute; &eacute;quivaut &agrave; une chance additionnelle de gagner un prix d’encouragement.
 3. Rapporter les d&eacute;fis compl&eacute;t&eacute;s lors de la r&eacute;ception de l’email de rapport d’activit&eacute; de la semaine.
-
-&nbsp;
 
 &nbsp;
 
