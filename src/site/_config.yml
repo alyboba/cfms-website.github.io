@@ -80,6 +80,22 @@ defaults:
   -
     scope:
       path: ""
+      type: "student-spotlight"
+    values:
+      layout: "student-spotlight"
+      lang: "en"
+      permalink: '/news/student-spotlight/:title.html'
+  -
+      scope:
+        path: ""
+        type: "french-student-spotlight"
+      values:
+        layout: "student-spotlight"
+        lang: "fr"
+        permalink: '/fr/news/student-spotlight/:title.html'
+  -
+    scope:
+      path: ""
     values:
       lang: "en"
   - 
