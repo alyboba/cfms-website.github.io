@@ -303,6 +303,7 @@ sidebar-discounts:
     disability-insurance: Disability Insurance
     textbooks: Textbooks
     online-resources: Online Resources
+    wellness-discounts: Wellness Discounts
     lasik: LASIK MD Vision Correction
   - lang: fr
     sidebar-title_1: Réductions
@@ -311,6 +312,7 @@ sidebar-discounts:
     textbooks: Réductions sur les Manuels
     online-resources: Rabais sur les ressources électroniques Médicales
     lasik: Correction de la vision LASIK MD
+    wellness-discounts: Wellness Discounts
 sidebar-databases:
   - lang: en
     sidebar-title_1: Databases

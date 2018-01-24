@@ -3,6 +3,7 @@ online-id: online-discounts
 textbook-id: textbook-discounts
 disability-id: disability-discounts
 travel-id: travel-discounts
+wellness-id: wellness-discounts
 travel-discounts:
   - lang: en
     discount-title: 'WestJet Discount: January 12, 2018 – April 10, 2018'
@@ -1007,3 +1008,4 @@ online-discounts:
       <ul><li>Abonnez-vous gratuitement dès aujourd’hui! Pour de plus amples
       informations, visitez <a href="http://www.mdbriefcase.com/">
       www.mdbriefcase.com </a></li></ul>
+wellness-discounts: 
