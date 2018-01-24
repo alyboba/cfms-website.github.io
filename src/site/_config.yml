@@ -30,7 +30,10 @@ collections:
     output: true
   cfms-in-the-news:
     output: true
-      
+  student-spotlight:
+    output: true
+  french-student-spotlight:
+    output: true
 
 #Set the default layout and language for collections
 defaults:

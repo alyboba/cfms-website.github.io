@@ -186,6 +186,7 @@ sidebar-who-we-are:
     history: History
     organizational-timeline: Organizational Timeline
     photo-gallery: Photo Gallery
+    student-spotlight: Student Spotlight
   - lang: fr
     sidebar-title_1: Qui sommes-nous?
     executives-officers: Conseil exécutif et directeurs
@@ -203,6 +204,7 @@ sidebar-who-we-are:
     history: Histoire
     organizational-timeline: Chronologie Organisationnelle
     photo-gallery: Galerie de photos
+    student-spotlight: Projecteur étudiant
 sidebar-education:
   - lang: en
     sidebar-title_1: Education
