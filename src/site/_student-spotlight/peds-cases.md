@@ -2,6 +2,7 @@
 post_excerpt: "PedsCases is an innovative source of pediatric knowledge dissemination which began in 2008 as a grassroots project by several medical students with faculty support at the University of Alberta."
 title: "PedsCases"
 img-path: '/images/page-images/student-spotlight/peds-cases.jpg'
+school: 'University of Alberta'
 lang: "en"
 priority: 13
 displayRightImage: true

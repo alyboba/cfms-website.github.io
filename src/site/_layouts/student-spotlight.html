@@ -2,7 +2,6 @@
 ---
 
 <!DOCTYPE html>
-{% assign hideLangToggle = true %}
 
 <!--[if IE 8 ]>
 <html class="ie8"> <![endif]-->
@@ -15,7 +14,7 @@
     <link rel="stylesheet" href="/stylesheets/news.css"/>
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-{% include nav.html %}
+{% include nav.html hideLangToggle = true %}
 
 <!--Page Specific Formatting-->
 <script type="text/javascript">
@@ -26,7 +25,7 @@
     <h1 id="page-title">{{page.title}}</h1>
 
     {% if page.displayRightImage == true %}
-        <img class="right" src="/images/page-images/student-spotlight/mental-health-coffee-night.png">
+        <img class="right" src="{{page.img-path}}">
     {% endif %}
     
     {{ content }}

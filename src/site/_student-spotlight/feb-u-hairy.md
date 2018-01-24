@@ -1,8 +1,9 @@
 ---
-post_excerpt: "Kathleen Callanan and Angelique Myles, both medical students at Memorial University are dubbing February as "Feb-U-Hairy" and challenging women and men to grow leg hair from Feb. 1 - Feb. 29."
+post_excerpt: 'Kathleen Callanan and Angelique Myles, both medical students at Memorial University are dubbing February as "Feb-U-Hairy" and challenging women and men to grow leg hair from Feb. 1 - Feb. 29.'
 title: "Feb-U-Hairy"
 img-path: '/images/page-images/student-spotlight/feb-u-hairy.jpg'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 1
 displayRightImage: false
 ---

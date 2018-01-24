@@ -3,6 +3,7 @@ post_excerpt: "Vitals is a student run initiative to promote wellness in all yea
 title: "Vitals"
 img-path: '/images/page-images/student-spotlight/vitals.jpg'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 7
 displayRightImage: false
 ---

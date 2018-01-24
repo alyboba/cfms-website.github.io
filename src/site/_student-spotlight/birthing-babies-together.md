@@ -3,6 +3,7 @@ post_excerpt: "Danielle Lewis, Katie Stringer and Bailey Adams, have produced a 
 title: "Birthing Babies Together"
 img-path: '/images/page-images/student-spotlight/birthing-babies-together.png'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 4
 displayRightImage: false
 ---

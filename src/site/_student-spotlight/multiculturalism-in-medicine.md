@@ -2,6 +2,7 @@
 post_excerpt: "Learn how students at the University of Toronto developed a lecture series on multicultural issues in medicine."
 title: "Multiculturalism in Medicine"
 img-path: '/images/page-images/student-spotlight/multiculturalism-in-medicine.png'
+school: 'University of Toronto'
 lang: "en"
 priority: 14
 displayRightImage: true

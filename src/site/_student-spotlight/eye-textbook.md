@@ -3,6 +3,7 @@ post_excerpt: "Eye textbook will evolve into an evidence based educational tool 
 title: "Eye Textbook"
 img-path: '/images/page-images/student-spotlight/eye-textbook.jpg'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 2
 displayRightImage: false
 ---

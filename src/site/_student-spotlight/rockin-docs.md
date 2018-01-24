@@ -3,6 +3,7 @@ post_excerpt: "The Rockin' Docs summer camp is a week-long summer day camp for y
 title: "Rockin' Docs"
 img-path: '/images/page-images/student-spotlight/rockin-docs.jpg'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 6
 displayRightImage: false
 ---

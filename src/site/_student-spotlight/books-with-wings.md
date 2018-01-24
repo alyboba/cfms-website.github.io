@@ -3,6 +3,7 @@ post_excerpt: "Books With Wings (BWW) is a collaborative project between Canadia
 title: "Books with Wings"
 img-path: '/images/page-images/student-spotlight/books-with-wings.png'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 3
 displayRightImage: false
 ---

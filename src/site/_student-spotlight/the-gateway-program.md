@@ -3,6 +3,7 @@ post_excerpt: "The Gateway Program at The Faculty of Medicine of Memorial Univer
 title: "The Gateway Program"
 img-path: '/images/page-images/student-spotlight/the-gateway-program.jpg'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 10
 displayRightImage: false
 ---

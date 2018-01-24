@@ -3,6 +3,7 @@ post_excerpt: "With the support of a CFMS Student Initiative Grant, and in colla
 title: "Surgical Exploration and Discovery (SEAD) Program"
 img-path: '/images/page-images/student-spotlight/sead.jpg'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 9
 displayRightImage: false
 ---

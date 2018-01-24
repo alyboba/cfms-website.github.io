@@ -3,6 +3,7 @@ post_excerpt: "To date, the Lindsay Leigh Kimmett Memorial Foundation has raised
 title: "Lindsay Leigh Kimmett Memorial Foundation"
 img-path: '/images/page-images/student-spotlight/lindsay-leigh-kimmett-memorial-foundation.png'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 5
 displayRightImage: false
 ---

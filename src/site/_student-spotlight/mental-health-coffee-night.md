@@ -2,6 +2,7 @@
 post_excerpt: "Learn how students at the University of Saskatchewan are addressing mental health issues by creating an open forum for discussing the struggles that many of us experience."
 title: "Mental Health Coffee Night"
 img-path: '/images/page-images/student-spotlight/mental-health-coffee-night.png'
+school: 'University of Saskatchewan'
 lang: "en"
 priority: 15
 displayRightImage: true

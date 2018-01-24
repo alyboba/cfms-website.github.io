@@ -3,6 +3,7 @@ post_excerpt: "The UBC Stem Cell Club is a student initiative founded in 2011 to
 title: "Stem Cell Club"
 img-path: '/images/page-images/student-spotlight/stem-cell-night.jpg'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 12
 displayRightImage: false
 ---

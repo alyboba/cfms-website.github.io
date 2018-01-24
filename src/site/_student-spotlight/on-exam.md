@@ -3,6 +3,7 @@ post_excerpt: "Students at the Northern Ontario School of Medicine have written 
 title: "OnExam"
 img-path: '/images/page-images/student-spotlight/on-exam.jpg'
 lang: "en"
+school: "Please put the school which student is from here Ex: University of Alberta"
 priority: 11
 displayRightImage: false
 ---
