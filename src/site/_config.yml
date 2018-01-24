@@ -119,6 +119,7 @@ pagination:
 
 #paths for the two blogs. If the html files move, this will need updating!
 news-blog-paginate-path: "news/archives/:num/"
+student-spotlight-path: "news/student-spotlight/:num"
 humans-of-medicine-paginate-path: "humans-of-medicine/:num/"
 
 rdiscount:

@@ -1,15 +1,18 @@
 ---
+lang: "fr"
 title: "Medical Student Spotlight"
 sitemap:
   priority: 0.5
   changefreq: monthly
   role: VP Communications
+pagination:
+  enabled: true
+  collection: french-student-spotlight
+  per_page: 3
+  sort_field: 'priority'
+  sort_reverse: true
 ---
-{% assign sorted = (site.french-student-spotlight | sort: 'priority') | reverse %}
-
 <!DOCTYPE html>
-
-
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
@@ -19,50 +22,89 @@ sitemap:
 	<link rel="stylesheet" href="/stylesheets/news.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-	{% include nav.html %}
-	
-	<!--Page Specific Formatting-->
-	<script type="text/javascript">
-		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#news" ).classList.toggle("active");
-	</script>
+{% include nav.html %}
 
-	<div id="spotlight-content" class="content">
-		<h1 class="editable" id="page-title">Medical Student Spotlight</h1>
-		<div class="editable" id="spotlight-columns">
-			<div id="spotlight-left">
-				<p>Each year, medical students across Canada engage in projects that make a difference within their schools and communities. Many of these initiatives are truly incredible &ndash; and can serve as inspiration for the rest of us. They demonstrate the vital role that we play, and what we can (and do) offer to society.</p>
-				<p>In order to recognize and publicize these initiatives the Medical Student Spotlight section on the CFMS website was created. Here, we feature some of the ideas that medical students are working on, and how they’re fostering our common goals. We want to make sure that students from across the country know what their colleagues are doing, so that they can be encouraged to do amazing things, too.</p>
-				<h1 style="padding-top:15px;"><strong>Student Initiatives</strong></h1>
-				<hr>
-				{% for post in sorted %}
-				<a class="spotlight" href="{{post.url}}">
-					<div class="spotlight-info">
-						<div class="spotlight-name">{{post.title}}</div>
-						<div class="spotlight-desc">{{post.post_excerpt}}</div>
-					</div>
-					<div class="spotlight-pic" style="background: url({{post.img-path}}) no-repeat center center; background-size:cover"></div>
-				</a>
-				{% endfor %}
-			</div>
-			<div id="spotlight-right">
-				<div id="scroll">
-					<blockquote>
-						<h3><strong>Feature your own initiative!</strong></h3>
-						<p>If you have a current or past project that you’d like to have recognized and publicized by the CFMS, please contact the Vice-President Communications at <a href="mailto:vpcommunications@cfms.org">vpcommunications@cfms.org</a>.</p>
-						<p>Some questions that you may want to think about when submitting your initiative are:</p>
-						<ol>
-							<li><strong>What is your initiative?</strong> Can you provide a brief description for our readers?</li>
-							<li><strong>What motivated you to start this initiative?</strong> What local/global need were you seeking to address? Does this need hold special significance for you?</li>
-							<li><strong>How did you start up the initiative?</strong> What resources or supports were you able to rely upon? What were some of the obstacles you faced, and how did you overcome them?</li>
-							<li><strong>How did things go/how are things going?</strong> What’s next for this project?</li>
-							<li><strong>What advice or guidance would you give to others seeking to start a similar inititative?</strong> (<em>Optional:</em> Would you be willing to provide contact info, for posting to the CFMS website?)</li>
-						</ol>
-					</blockquote>
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+	document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+	document.querySelector( "#news" ).classList.toggle("active");
+</script>
+
+<div id="spotlight-content" class="content">
+	<h1 class="editable" id="page-title">Medical Student Spotlight</h1>
+	<div class="editable" id="spotlight-columns">
+		<div id="spotlight-left">
+
+			{% if paginator.page == 1 %}
+			<p>Each year, medical students across Canada engage in projects that make a difference within their schools and communities. Many of these initiatives are truly incredible &ndash; and can serve as inspiration for the rest of us. They demonstrate the vital role that we play, and what we can (and do) offer to society.</p>
+			<p>In order to recognize and publicize these initiatives the Medical Student Spotlight section on the CFMS website was created. Here, we feature some of the ideas that medical students are working on, and how they’re fostering our common goals. We want to make sure that students from across the country know what their colleagues are doing, so that they can be encouraged to do amazing things, too.</p>
+			{% endif %}
+			<h1 style="padding-top:15px;"><strong>Student Initiatives</strong></h1>
+			<hr>
+			{% for post in paginator.posts %}
+			<a class="spotlight" href="{{post.url}}">
+				<div class="spotlight-info">
+					<div class="spotlight-name">{{post.title}}</div>
+					<div class="spotlight-desc">{{post.post_excerpt}}</div>
 				</div>
+				<div class="spotlight-pic" style="background: url({{post.img-path}}) no-repeat center center; background-size:cover"></div>
+			</a>
+			{% endfor %}
+
+			{% if paginator.total_pages > 1 %}
+			<div id="pagination">
+
+				<!-- Previous Page -->
+				{% if paginator.previous_page %}
+				{% if paginator.previous_page == 1 %}
+				<div id="prev-button" class="button"><a href="{{ paginator.previous_page_path }}">Previous Page</a></div>
+				{% else %}
+				<div id="prev-button" class="button"><a href="{{ paginator.previous_page_path }}">Previous Page</a></div>
+				{% endif %}
+				{% else %}
+				<div id="prev-button" class="button inactive"><a href="#">Previous Page</a></div>
+				{% endif %}
+
+				<!-- Page Listing -->
+				<div id="page-listing">
+					{% for page in (1..paginator.total_pages) %}
+					{% if page == paginator.page %}
+					<em id="current-page" class="page-link">{{ page }}</em>
+					{% elsif page == 1 %}
+					<a class="page-link" href="/fr/news/student-spotlight/">{{ page }}</a>
+					{% else %}
+					<a class="page-link" href="/fr/{{ site.student-spotlight-path | replace: ':num', page }}">{{ page }}</a>
+					{% endif %}
+					{% endfor %}
+				</div>
+
+				<!-- Next Page -->
+				{% if paginator.next_page %}
+				<div id="next-button" class="button"><a href="{{ paginator.next_page_path }}">Next Page</a></div>
+				{% else %}
+				<div id="next-button" class="button inactive"><a href="#">Next Page</a></div>
+				{% endif %}
+			</div>
+			{% endif %}
+		</div>
+		<div id="spotlight-right">
+			<div id="scroll">
+				<blockquote>
+					<h3><strong>Feature your own initiative!</strong></h3>
+					<p>If you have a current or past project that you’d like to have recognized and publicized by the CFMS, please contact the Vice-President Communications at <a href="mailto:vpcommunications@cfms.org">vpcommunications@cfms.org</a>.</p>
+					<p>Some questions that you may want to think about when submitting your initiative are:</p>
+					<ol>
+						<li><strong>What is your initiative?</strong> Can you provide a brief description for our readers?</li>
+						<li><strong>What motivated you to start this initiative?</strong> What local/global need were you seeking to address? Does this need hold special significance for you?</li>
+						<li><strong>How did you start up the initiative?</strong> What resources or supports were you able to rely upon? What were some of the obstacles you faced, and how did you overcome them?</li>
+						<li><strong>How did things go/how are things going?</strong> What’s next for this project?</li>
+						<li><strong>What advice or guidance would you give to others seeking to start a similar inititative?</strong> (<em>Optional:</em> Would you be willing to provide contact info, for posting to the CFMS website?)</li>
+					</ol>
+				</blockquote>
 			</div>
 		</div>
 	</div>
-	<div>{% include footer.html %}</div>
+</div>
+<div>{% include footer.html %}</div>
 </body>
 </html>
