@@ -4,6 +4,7 @@ title: "Feb-U-Hairy"
 img-path: '/images/page-images/student-spotlight/feb-u-hairy.jpg'
 lang: "en"
 priority: 1
+displayRightImage: false
 ---
 #### **Feb-U-Hairy - Memorial University**
 

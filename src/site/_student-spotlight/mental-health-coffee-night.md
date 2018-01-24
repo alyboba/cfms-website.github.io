@@ -4,6 +4,7 @@ title: "Mental Health Coffee Night"
 img-path: '/images/page-images/student-spotlight/mental-health-coffee-night.png'
 lang: "en"
 priority: 15
+displayRightImage: true
 ---
 #### **What is your initiative? Can you provide a brief description for our readers?**
 

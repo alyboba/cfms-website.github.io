@@ -4,6 +4,7 @@ title: "Multiculturalism in Medicine"
 img-path: '/images/page-images/student-spotlight/multiculturalism-in-medicine.png'
 lang: "en"
 priority: 14
+displayRightImage: true
 ---
 #### **What is your initiative? Can you provide a brief description for our readers?**
 

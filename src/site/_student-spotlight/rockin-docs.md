@@ -4,6 +4,7 @@ title: "Rockin' Docs"
 img-path: '/images/page-images/student-spotlight/rockin-docs.jpg'
 lang: "en"
 priority: 6
+displayRightImage: false
 ---
 #### **Rockin' Docs - University of Alberta**
 

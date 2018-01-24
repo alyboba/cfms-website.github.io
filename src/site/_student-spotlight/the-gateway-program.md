@@ -4,6 +4,7 @@ title: "The Gateway Program"
 img-path: '/images/page-images/student-spotlight/the-gateway-program.jpg'
 lang: "en"
 priority: 10
+displayRightImage: false
 ---
 #### **The Gateway Project - Memorial University**
 

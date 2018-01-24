@@ -4,6 +4,7 @@ title: "Eye Textbook"
 img-path: '/images/page-images/student-spotlight/eye-textbook.jpg'
 lang: "en"
 priority: 2
+displayRightImage: false
 ---
 #### **Eye Textbook - McMaster University**
 

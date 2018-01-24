@@ -4,6 +4,7 @@ title: "Books with Wings"
 img-path: '/images/page-images/student-spotlight/books-with-wings.png'
 lang: "en"
 priority: 3
+displayRightImage: false
 ---
 #### **Books with Wings - University of Manitoba**
 

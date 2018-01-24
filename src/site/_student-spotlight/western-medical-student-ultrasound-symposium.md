@@ -4,6 +4,7 @@ title: "Western Medical Student Ultrasound Symposium"
 img-path: '/images/page-images/student-spotlight/western-medical-student-ultrasound-symposium.jpg'
 lang: "en"
 priority: 8
+displayRightImage: false
 ---
 #### **Western Medical Student Ultrasound Symposium - Western University**
 

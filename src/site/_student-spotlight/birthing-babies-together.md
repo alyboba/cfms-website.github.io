@@ -4,6 +4,7 @@ title: "Birthing Babies Together"
 img-path: '/images/page-images/student-spotlight/birthing-babies-together.png'
 lang: "en"
 priority: 4
+displayRightImage: false
 ---
 #### **Birthing Babies Together - University of Alberta**
 

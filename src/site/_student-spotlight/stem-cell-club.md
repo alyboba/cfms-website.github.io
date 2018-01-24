@@ -4,6 +4,7 @@ title: "Stem Cell Club"
 img-path: '/images/page-images/student-spotlight/stem-cell-night.jpg'
 lang: "en"
 priority: 12
+displayRightImage: false
 ---
 #### **The Stem Cell Club: Strengthening Canada’s Stem Cell Donor Database**
 

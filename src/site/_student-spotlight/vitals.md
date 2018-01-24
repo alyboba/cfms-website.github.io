@@ -4,6 +4,7 @@ title: "Vitals"
 img-path: '/images/page-images/student-spotlight/vitals.jpg'
 lang: "en"
 priority: 7
+displayRightImage: false
 ---
 #### **Vitals - Western University**
 

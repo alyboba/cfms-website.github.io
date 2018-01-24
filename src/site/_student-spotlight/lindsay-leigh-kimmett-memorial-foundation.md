@@ -4,6 +4,7 @@ title: "Lindsay Leigh Kimmett Memorial Foundation"
 img-path: '/images/page-images/student-spotlight/lindsay-leigh-kimmett-memorial-foundation.png'
 lang: "en"
 priority: 5
+displayRightImage: false
 ---
 #### **Lindsay Leigh Kimmett Memorial Foundation**
 

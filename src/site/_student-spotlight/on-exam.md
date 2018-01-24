@@ -4,6 +4,7 @@ title: "OnExam"
 img-path: '/images/page-images/student-spotlight/on-exam.jpg'
 lang: "en"
 priority: 11
+displayRightImage: false
 ---
 #### **What is OnExam?**
 

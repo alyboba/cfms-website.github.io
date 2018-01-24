@@ -4,6 +4,7 @@ title: "Surgical Exploration and Discovery (SEAD) Program"
 img-path: '/images/page-images/student-spotlight/sead.jpg'
 lang: "en"
 priority: 9
+displayRightImage: false
 ---
 #### **Surgical Exploration and Discovery (SEAD) Program - University of Ottawa**
 
