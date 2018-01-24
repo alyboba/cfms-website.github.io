@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-
-
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
@@ -73,11 +70,17 @@
 </style> 
 
 
-	
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="/stylesheets/resources.css">
+	<!-- CodeMirror -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
+
+	<!-- Firepad -->
+	<link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+	<script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
 </head>
-<body ng-app="authApp" ng-controller="AuthController">
+<body>
 	
 	
 		<div id="top-padding"></div>
@@ -126,7 +129,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/resources/discounts.html">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/resources/discounts-wellness.html">FR</a></li>
 						
 					
 				</ul>
@@ -144,6 +147,7 @@
 	</script>
 
 	<div class="discounts content">
+		<!-- Displays the sidebar and emphasizes the active page -->
 		<div id="sidebar">
 	<div id="scroll">
 		
@@ -165,17 +169,41 @@
 		
 	</div>
 </div>
+		<script type="text/javascript">
+			document.querySelector( "#wellness-discounts" ).classList.toggle("sidebar-active");
+		</script>
 		<div class="student-discounts-content" class="editable">
-			<h1 id="page-title">Medical Student Discounts</h1>
-			<p>The CFMS offers a wide variety of discounts to our members. Please log on and view the discount tabs on the left to see what we have to offer.</p>
-			<p>Some of our current discounts include:</p>
-			<ul>
-				<li>UpToDate</li>
-				<li>Wolters-Kluwer Lipincott Textbooks</li>
-				<li>WestJet flights for CaRMS</li>
-				<li>Accommodations discounts</li>
-				<li>Also checkout <a href="https://dealhack.com/blog/student-discounts-guide">this student discount guide</a></li>
-			</ul>
+			<h1 id="page-title">Wellness Discounts</h1>
+			<h1><strong>Running Room Discount</strong></h1>
+			<hr>
+			<img class="pic-right" src="/images/discount-images/running-room.jpg">
+			<p>The CFMS Wellness Challenge is happy to offer all CFMS students a 10% discount at the Running Room, until March 31st, 2018.<br></br>Please print the discount coupon, or show the retail clerk the discount on your phone and present your student ID to receive the discount.</p>
+
+			<blockquote>
+				<h3><strong>Discount Details</strong></h3>
+				<div class="non-members">
+				<ul>
+					<li>Please login in order to access this discount.</li>
+				</ul>
+				</div>
+				<div class="members-only">
+					<p>Sale terms and conditions: 10% off regular priced products* at Running Room</p>
+				    <p><sup>*Excludes electronics and nutrition.</p></sup>
+				    <p><sup>*Applicable at Canadian Running Room locations.</p></sup>
+				    <p><sup>*Excludes electronics and nutrition. Excludes Proform and Elliptigo.</p></sup>
+				    <p><sup>*Excludes Brooks footwear, select Nike styles and Saucony <p><sup>footwear.</p></sup>  
+				    <p><sup>*Cannot be used for previously purchased product.</p></sup>   
+				    <p><sup>*Cannot be combined with any other promotional offer, coupon or discount.</p></sup>  
+				    <p><sup>*Cannot be used on gift cards, training programs or event registration.</p></sup>   
+				    <p><sup>*Only one coupon per customer.</p></sup>   
+				    <p><sup>*Must present coupon to receive in-store discount.</p></sup>   
+				    <p><sup>*Subject to on-hand inventory availability.</p></sup>  
+				    <p><sup>*Offer(s) may not be redeemed for cash, sold, altered, duplicated or copied and will not be replaced if lost, stolen or corrupted. 
+				    <p><sup>*Use of offer(s)/promotional code(s) is acceptance of these terms.</p></sup>  
+				    <p><sup>*Running Room reserves the right to cancel or modify offer(s) at any time.</p></sup>  
+				    <p><sup>*Sale ends March 31, 2018.</p></sup> 
+				</div>
+			</blockquote>
 		</div>
 	</div>
 	<div><script type="text/javascript">
