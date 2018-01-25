@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-
-
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
-    <!--Metadata-->
+	<!--Metadata-->
 <meta charset="utf-8">
 <title>Canadian Federation of Medical Students</title>
 <meta name="description" content="Canadian Federation of Medical Students">
@@ -73,15 +71,11 @@
 </style> 
 
 
-    <!--Page Specific Stylesheet-->
-    <link rel="stylesheet" href="/stylesheets/who-we-are.css">
-    <link rel="stylesheet" href="/stylesheets/cards.css">
-    <link rel="stylesheet" href="/stylesheets/photo-swipe.css">
-    <link rel="stylesheet" href="/stylesheets/flickrStyles.css">
-    <link rel="stylesheet" href="/stylesheets/listJs-styles.css">
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/news.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-
+	
 	
 		<div id="top-padding"></div>
 		<div id="top-bar" class="invert en">
@@ -129,7 +123,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/who-we-are/photo-gallery.html">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/news/student-spotlight/2/index.html">FR</a></li>
 						
 					
 				</ul>
@@ -139,112 +133,108 @@
 
 	
 
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#news" ).classList.toggle("active");
+	</script>
 
-<!--Page Specific Formatting-->
-<script type="text/javascript">
-    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-    document.querySelector( "#who-we-are" ).classList.toggle("active");
-</script>
+	<div id="spotlight-content" class="content">
+		<h1 class="editable" id="page-title">Medical Student Spotlight</h1>
+		<div class="editable" id="spotlight-columns">
+			<div id="spotlight-left">
+				
+				
+				<h1 style="padding-top:15px;"><strong>Student Initiatives</strong></h1>
+				<hr>
+				
+				<a class="spotlight" href="/news/student-spotlight/stem-cell-club.html">
+					<div class="spotlight-info">
+						<div class="spotlight-name">Stem Cell Club</div>
+						<div class="spotlight-desc">The UBC Stem Cell Club is a student initiative founded in 2011 to strengthen the quantity and quality of membership on the Canadian stem cell donor database. They are the first student-run group worldwide that has been accredited to independently run stem-cell drives.</div>
+					</div>
+					<div class="spotlight-pic" style="background: url(/images/page-images/student-spotlight/stem-cell-night.jpg) no-repeat center center; background-size:cover"></div>
+				</a>
+				
+				<a class="spotlight" href="/news/student-spotlight/on-exam.html">
+					<div class="spotlight-info">
+						<div class="spotlight-name">OnExam</div>
+						<div class="spotlight-desc">Students at the Northern Ontario School of Medicine have written and released a new clinical skills app called OnExam.</div>
+					</div>
+					<div class="spotlight-pic" style="background: url(/images/page-images/student-spotlight/on-exam.jpg) no-repeat center center; background-size:cover"></div>
+				</a>
+				
+				<a class="spotlight" href="/news/student-spotlight/the-gateway-program.html">
+					<div class="spotlight-info">
+						<div class="spotlight-name">The Gateway Program</div>
+						<div class="spotlight-desc">The Gateway Program at The Faculty of Medicine of Memorial University is a student initiative designed to connect newly arrived refugees in St. John’s with family doctors and other healthcare professionals.</div>
+					</div>
+					<div class="spotlight-pic" style="background: url(/images/page-images/student-spotlight/the-gateway-program.jpg) no-repeat center center; background-size:cover"></div>
+				</a>
+				
 
-<div class="content">
-    <!-- Displays the sidebar and emphasizes the active page -->
-    <div id="sidebar">
-	<div id="scroll">
-	    
-		
-		<span id="sidebar-title">Who We Are</span>
-		<ul>
-			<li><a id="executives-officers" href=".">Executives &amp; Officers</a></li>
-			<li><a id="member-schools" href="member-schools.html">Member Schools</a></li>
-			<li><a id="cfms-representatives" href="cfms-representatives.html">CFMS Representatives</a></li>
-			<li><a id="cfms-at-your-school" href="cfms-at-your-school.html">CFMS at your School</a></li>
-			<li><a id="partner-organizations" href="partner-organizations.html">Partner Organizations</a></li>
-			<li><a id="alumni" href="alumni.html">Alumni</a></li>
-			<li><a id="about-us" href="about-us.html">About Us</a></li>
-		</ul>
-		<span id="sidebar-title">Our Organization</span>
-		<ul>
-			<li><a id="governance-structure" href="governance-structure.html">Governance Structure</a></li>
-			<li><a id="internal-policy-bylaws" href="bylaws-internal-policy.html">Bylaws &amp; Internal Policy</a></li>
-		</ul>
-		<span id="sidebar-title">More Information</span>
-		<ul>
-			<li><a id="student-spotlight" href="/news/student-spotlight/">Student Spotlight</a></li>
-			<li><a id="history" href="history.html">History</a></li>
-			<li><a id="organizational-timeline" href="organizational-timeline.html">Organizational Timeline</a></li>
-			<li><a id="external-committees" href="external-committees.html">External Commmittees</a></li>
-			<li><a id="photo-gallery" href="photo-gallery.html">Photo Gallery</a></li>
-		</ul>
-		
-		
-		
-		
+				
+				<div id="pagination">
+
+					<!-- Previous Page -->
+					
+					
+					<div id="prev-button" class="button"><a href="/news/student-spotlight/">Previous Page</a></div>
+					
+					
+
+					<!-- Page Listing -->
+					<div id="page-listing">
+						
+						
+						<a class="page-link" href="/news/student-spotlight/">1</a>
+						
+						
+						
+						<em id="current-page" class="page-link">2</em>
+						
+						
+						
+						<a class="page-link" href="/news/student-spotlight/3">3</a>
+						
+						
+						
+						<a class="page-link" href="/news/student-spotlight/4">4</a>
+						
+						
+						
+						<a class="page-link" href="/news/student-spotlight/5">5</a>
+						
+						
+					</div>
+
+					<!-- Next Page -->
+					
+					<div id="next-button" class="button"><a href="/news/student-spotlight/3/">Next Page</a></div>
+					
+				</div>
+				
+			</div>
+			<div id="spotlight-right">
+				<div id="scroll">
+					<blockquote>
+						<h3><strong>Feature your own initiative!</strong></h3>
+						<p>If you have a current or past project that you’d like to have recognized and publicized by the CFMS, please contact the Vice-President Communications at <a href="mailto:vpcommunications@cfms.org">vpcommunications@cfms.org</a>.</p>
+						<p>Some questions that you may want to think about when submitting your initiative are:</p>
+						<ol>
+							<li><strong>What is your initiative?</strong> Can you provide a brief description for our readers?</li>
+							<li><strong>What motivated you to start this initiative?</strong> What local/global need were you seeking to address? Does this need hold special significance for you?</li>
+							<li><strong>How did you start up the initiative?</strong> What resources or supports were you able to rely upon? What were some of the obstacles you faced, and how did you overcome them?</li>
+							<li><strong>How did things go/how are things going?</strong> What’s next for this project?</li>
+							<li><strong>What advice or guidance would you give to others seeking to start a similar inititative?</strong> (<em>Optional:</em> Would you be willing to provide contact info, for posting to the CFMS website?)</li>
+						</ol>
+					</blockquote>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-    <script type="text/javascript">
-        document.querySelector( "#photo-gallery" ).classList.toggle("sidebar-active");
-    </script>
-    <div class="root" id="member-schools-content">
-        <h1 id="page-title">Photo Gallery</h1>
-        <div id="closeButton" style="display:none; width:3.2em; height:3.5em">
-            <a href="#"><h1 style="font-size:4.0em;">&larr;</h1></a>
-        </div>
-        <br />
-        <div id="albumContainer">
-            <div>
-                <input type="text" class="search editable" placeholder="Search Albums" />
-                <select id="filter-tags">
-                    <option value="Select Year" class="editable">Select Year</option>
-                </select>
-                
-                
-            </div>
-            <br />
-            <ul class="sort-by">
-                <li class="sort btn" data-sort="albumTitle"><span class="editable">Sort by Name</span></li>
-                <li class="sort btn" data-sort="albumSchool"><span class="editable">Sort by School</span></li>
-                <li class="sort btn" data-sort="albumEvent"><span class="editable">Sort by Event</span></li>
-            </ul>
-            <br />
-            <br />
-            <br />
-            <br />
-            <ul class="pagination"></ul>
-            
-            <ul id="list" class="list">
-            </ul>
-            <div class="loader"></div>
-        </div>
-        
-        <div id="errorMessage" style="display:none;"></div>
-        
-        <div id="blueimp-image-carousel" class="blueimp-gallery blueimp-gallery-carousel">
-            <div class="slides"></div>
-            <h3 class="title"></h3>
-            <a class="prev">‹</a>
-            <a class="next">›</a>
-            <a class="play-pause"></a>
-        </div>
-        
-        <!-- The container for the list of example images -->
-        <div id="links" class="links"></div>
-        
-    </div>
-</div>
-
-<!--This has to be child of the body to work-->
-<div id="blueimp-gallery" class="blueimp-gallery">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-</div>
-
-
-<script type="text/javascript">
+	<div><script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;
@@ -429,6 +419,6 @@ $('.redirect-modal').click(function(){
 </script>
 
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
-
+</div>
 </body>
 </html>
