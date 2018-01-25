@@ -1,12 +1,12 @@
 ---
-title: Communiqués de presse
+title: Archived Press Releases
 sitemap:
-  priority: 0.6
-  changefreq: monthly
+  priority: 0.2
+  changefreq: yearly
   role: VP Government Affairs
 ---
 
-{% assign sorted = (site.french-press-releases | sort: 'date') | reverse %}
+{% assign sorted = (site.archived-press-releases | sort: 'date') | reverse %}
 
 <!DOCTYPE html>
 
@@ -21,6 +21,7 @@ sitemap:
     <!--Page Specific Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/what-we-do.css"/>
     <link rel="stylesheet" href="/stylesheets/tables.css"/>
+
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 {% include nav.html %}
@@ -34,49 +35,11 @@ sitemap:
 <div class="content">
     <!-- Displays the sidebar and emphasizes the active page -->
     {% include sidebar-communications.html %}
-    <script type="text/javascript">
-			document.querySelector("#overview").classList.toggle("sidebar-active");
-    </script>
+    <!--<script type="text/javascript">-->
+			<!--document.querySelector("#press-releases").classList.toggle("sidebar-active");-->
+    <!--</script>-->
     <div id="side-content" class="editable">
-        <h1 id="page-title">Communiqués de presse</h1>
-
-
-        <p>Media Relations for the Canadian Federation of Medical Students is handled by the VP Communications and the
-            President, along with other pertinent executive members. Requests for interviews and comments are answered
-            promptly within 24 hours or less. The CFMS is the voice of medical students in Canada and represent medical
-            students in matters of medical education, medical student wellness and other issues of importance.</p>
-        <p>Past articles with content from the CFMS have been published at www.cmaj.ca, the Globe and Mail, Macleans and
-            many more publications. If you would like to contact the Canadian Federation of Medical Students with your
-            media request please email
-            <script type="text/javascript">
-					    <!--
-					    var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
-					    var path = 'hr' + 'ef' + '=';
-					    var addy69847 = 'vpc&#111;mm&#117;n&#105;c&#97;t&#105;&#111;ns' + '&#64;';
-					    addy69847 = addy69847 + 'cfms' + '&#46;' + '&#111;rg';
-					    document.write('<a ' + path + '\'' + prefix + ':' + addy69847 + '\'>');
-					    document.write(addy69847);
-					    document.write('<\/a>');
-					    //-->
-					    \n </script>
-            <a href="mailto:vpcommunications@cfms.org">vpcommunications@cfms.org</a>
-            <script type="text/javascript">
-					    <!--
-					    document.write('<span style=\'display: none;\'>');
-					    //-->
-            </script>
-            <span style="display: none;">This email address is being protected from spambots. You need JavaScript enabled to view it.
- <script type="text/javascript">
- <!--
- document.write('</');
- document.write('span>');
- //-->
- </script></span>.
-        </p>
-
-        <p>To See our Archived Press Releases Please visit <a href="archived-press-releases.html">Here</a></p>
-        <h2>Latest Press Releases</h2>
-
+        <h1 id="page-title">Archived Press Releases</h1>
         <div class="limiter">
             <div class="container-table100">
                 <div class="wrap-table100">
