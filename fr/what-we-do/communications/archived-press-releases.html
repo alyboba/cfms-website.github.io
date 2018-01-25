@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 
@@ -77,6 +79,8 @@
 
     <!--Page Specific Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/what-we-do.css"/>
+    <link rel="stylesheet" href="/stylesheets/tables.css"/>
+
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 
@@ -129,7 +133,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" href='/what-we-do/'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+							<li id="lang-toggle"><a id="en" href='/what-we-do/communications/archived-press-releases.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
 						
 					
 				</ul>
@@ -140,44 +144,87 @@
 
 <!--Page Specific Formatting-->
 <script type="text/javascript">
-    document.querySelector("#logo-invert").classList.toggle("hidden");
-    document.querySelector("#what-we-do").classList.toggle("active");
+	document.querySelector("#logo-invert").classList.toggle("hidden");
+	document.querySelector("#what-we-do").classList.toggle("active");
 </script>
 
-<!-- Newest Article -->
-<div id="what-we-do-home">
-    <h1 class="editable">What do we do?</h1>
-    <div class="editable"><p>The CFMS is actively involved in a number of projects that aim to better serve our members.
-        Visit our <a href="advocacy/">Advocacy</a>, <a href="education/">Education</a>, <a href="global-health/">Global
-            Health</a>, <a href="student-affairs/">Student Affairs</a>, and <a href="communications/">Communications</a> pages to learn more about the exciting
-        initiatives that the CFMS is pursuing. Some of these include:</p>
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    <div id="sidebar">
+    <div id="scroll">
+        
+        
+        
+        
+        <span id="sidebar-title">Communications</span>
         <ul>
-            <li><a href="global-health/international-exchanges.html">International Exchanges</a>
-                <p>Canada participates in a bilateral international exchange program where medical students can
-                    undertake clinical electives or research projects in a foreign country for a period of four weeks.
-                    You can apply via the CFMS.</p> <span id="global-health"><a href="global-health/">Global Health</a></span>
-            </li>
-            <li><a href="education/cfms-matchbook.html">Residency Matchbook</a>
-                <p>The CFMS prepares an annual review of the CaRMS match, to help educate medical students about the
-                    Match and assist with career planning.</p> <span id="education"><a
-                        href="education/">Education</a></span></li>
-            <li><a href="advocacy/lobby-day.html">Lobby Day</a>
-                <p>Lobby Day is one of the CFMS's signature annual events during which medical students from across the
-                    nation come to Parliament Hill in Ottawa to speak with policy makers on an issue of importance.</p>
-                <span id="advocacy"><a href="advocacy/">Advocacy</a></span></li>
-            <li><a href="student-affairs/wellness.html">CFMS Wellness</a>
-                <p>CFMS recognizes that student wellness is a priority. Visit here for information regarding wellness at your schools!</p>
-                <span id="student-affairs"><a href="student-affairs/">Student Affairs</a></span>
-            </li>
-            <li><a href="communications/press-releases.html">Press Releases</a>
-                <p>Media Relations for the Canadian Federation of Medical Students</p>
-                <span id="communications"><a href="communications/">Communications</a></span>
-            </li>
-            
+            <li><a id="overview" href=".">Aperçu</a></li>
+            <li><a id="our-team" href="our-team.html">Notre Conseil</a></li>
         </ul>
+        <span id="sidebar-title">Ressources</span>
+        <ul>
+            <li><a id="press-releases" href="press-releases.html">Communiqués de Presse</a></li>
+            <li><a id="cfms-in-the-news" href="/fr/news/cfms-in-the-news.html">FEMC dans les Nouvelles</a></li>
+            <li><a id="communiques" href="communiques.html">Communiques</a></li>
+            <li><a id="graphics" href="graphics.html">Graphique</a></li>
+        </ul>
+        
+        
     </div>
 </div>
-<div class="dark-footer"><script type="text/javascript">
+    <!--<script type="text/javascript">-->
+    <!--document.querySelector("#press-releases").classList.toggle("sidebar-active");-->
+    <!--</script>-->
+    <div id="side-content" class="editable">
+        <h1 id="page-title">Archived Press Releases</h1>
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100 ver1 m-b-110">
+                        <div class="table100-head">
+                            <table>
+                                <thead>
+                                <tr class="row100 head">
+                                    <th class="cell100 column1">Title</th>
+                                    <th class="cell100 column2">Date</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="table100-body js-pscroll">
+                            <table>
+                                <tbody>
+                                
+                                <tr class="row100 body">
+                                    <td class="cell100 column1"><a href="/files/press-releases/archived/Press Release - National Day of Action Fr.pdf">Les étudiants en médecine du Canada dénoncent les coupres dans le programme de soins de santé des réfugiés</a></td>
+                                    <td class="cell100 column2">June 17, 2013</td>
+                                </tr>
+                                
+                                <tr class="row100 body">
+                                    <td class="cell100 column1"><a href="/files/press-releases/archived/CFMS Press Release - Lobby Day 2013 FR.pdf">Les futurs médecins demandent au gouvernement du Canada d’améliorer l’accès aux ressources humaines en santé</a></td>
+                                    <td class="cell100 column2">Feb 4, 2013</td>
+                                </tr>
+                                
+                                <tr class="row100 body">
+                                    <td class="cell100 column1"><a href="/files/press-releases/archived/Press Alert - Lobby Day 2013 FR.pdf">Press Alert - Lobby Day 2013 FR</a></td>
+                                    <td class="cell100 column2">Jan 30, 2013</td>
+                                </tr>
+                                
+                                <tr class="row100 body">
+                                    <td class="cell100 column1"><a href="/files/press-releases/archived/Press Release - Lobby Day FR.pdf">	Les futurs médecins demandent au gouvernement du Canada d'éliminer les obstacles à la pratique rurale</a></td>
+                                    <td class="cell100 column2">Feb 6, 2012</td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;
@@ -362,5 +409,5 @@ $('.redirect-modal').click(function(){
 </script>
 
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
-</div>
+
 </body>
