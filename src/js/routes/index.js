@@ -63,8 +63,8 @@ export default class Router extends Middleware {
         route('/databases/accommodations.html', Accommodations);
 	      route('/fr/databases/accommodations.html', Accommodations);
 	      
-	      route('/database/electives.html', Electives);
-	      route('/fr/database/electives.html', Electives);
+	      route('/databases/electives.html', Electives);
+	      route('/fr/databases/electives.html', Electives);
         
         route('/resources/rep-resources.html', RepResources);
         route('/fr/resources/rep-resources.html', RepResources);
