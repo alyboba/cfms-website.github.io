@@ -15,7 +15,13 @@ role: National IT Officer
     {% include head.html %}
 
     <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/animate.css">
     <link rel="stylesheet" href="/stylesheets/members.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/fontawesome-stars.css">
+    <link rel="stylesheet" href="/stylesheets/forms.css">
+
+    <script src="/js/jquery.barrating.min.js"></script>
 </head>
 <body>
 {% include nav.html %}
@@ -36,7 +42,179 @@ role: National IT Officer
         <h1 class="editable" id="page-title">{{ page.title }}</h1>
 
         <div class="members-only">
-            <h2> You are a member and can see this</h2>
+            <h1 class="editable">Reviews</h1>
+            <p class="editable">Don't see your elective listed? contact the <a href='mailto:it@cfms.org'>National It Officer</a> to have an elective added!</p>
+            <div id="addButton">
+            </div>
+            <form class="animated hidden" id="dataForm">
+                <fieldset>
+                    <div>
+                        <legend>Ratings (the higher the better)</legend>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td>General Impression of the Program (Required)</td>
+                                <td><select id="generalImpression" name="generalImpression">
+                                    <option selected="selected" value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Quality of Hospitals and Facilities</td>
+                                <td><select id="qualityHospital" name="qualityHospital">
+                                    <option selected="selected" value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Quality of Educational Program</td>
+                                <td><select id="qualityEducational" name="qualityEducational">
+                                    <option selected="selected" value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Interviewer Friendliness</td>
+                                <td><select id="interviewFriendliness" name="interviewFriendliness">
+                                    <option selected="selected" value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Ease of Interview</td>
+                                <td><select id="easeInterview" name="easeInterview">
+                                    <option selected="selected" value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Location and Cultural Life</td>
+                                <td><select id="locationCultural" name="locationCultural">
+                                    <option selected="selected" value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div>
+                        <legend>Interview Review</legend>
+                        <label for="anonymous">Anonymous Review?</label>
+                        <input id="anonymous" type="radio" name="anonymous" value="yes"> Yes
+                        <input type="radio" name="anonymous" value="no"> No
+                    </div>
+
+                    <div>
+                        <label for="interviewSetting">Interview Setting</label>
+                        <input type="text" id="interviewSetting" name="interviewSetting" value="" />
+                    </div>
+
+                    <div>
+                        <label for="prepare">How Did you Prepare for the Interview?</label>
+                        <textarea class="styled-textarea" id="prepare" name="prepare"></textarea>
+                    </div>
+                    <div>
+                        <label for="generalComments">General Comments About the Interview</label>
+                        <textarea class="styled-textarea" id="generalComments" name="generalComments"></textarea>
+                    </div>
+                    <div>
+                        <label for="mostInterestingQuestion">Most Interesting or Difficult Question</label>
+                        <textarea class="styled-textarea" id="mostInterestingQuestion" name="mostInterestingQuestion"></textarea>
+                    </div>
+                    <div>
+                        <label for="positiveAspects">Positive Aspects of the Interview</label>
+                        <textarea class="styled-textarea" id="positiveAspects" name="positiveAspects"></textarea>
+                    </div>
+                    <div>
+                        <label for="negativeAspects">Negative Aspects of the Interview</label>
+                        <textarea class="styled-textarea" id="negativeAspects" name="negativeAspects"></textarea>
+                    </div>
+                    <div>
+                        <label for="lessonsLearned">Lessons Learned/Advice for Future Applicants</label>
+                        <textarea class="styled-textarea" id="lessonsLearned" name="lessonsLearned"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit" id="addSubmitButton">Add</button>
+                        <button type="submit" id="editSubmitButton">Edit</button>
+                        <button id="cancelButton">Cancel</button>
+
+                    </div>
+                </fieldset>
+            </form>
+            <div>
+                <div class="floatLeft fixedWidthMd">
+                    <label for="schools-list">Schools:</label>
+                    <select name="schools" id="schools-list">
+                        <option disabled selected value> -- Select a School -- </option>
+                    </select>
+                </div>
+
+                <div class="floatRight fixedWidthMd">
+                    <label for="specialties-list">Specialties:</label>
+                    <select id="specialties-list">
+                        <option disabled selected value> -- Select a Specialty -- </option>
+                    </select>
+                </div>
+            </div>
+
+            <table class="display" id="interviewsDatabase">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Reviewed By</th>
+                    <!--This data-th details is used atm for when screen size is super small...-->
+                    <th>Date Reviewed</th>
+                    <th>Overall Rating</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Reviewed By</th>
+                    <!--This data-th details is used atm for when screen size is super small...-->
+                    <th>Date Reviewed</th>
+                    <th>Overall Rating</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </tfoot>
+
+                <!--Data from Db will be populated here, appended after the headers...-->
+            </table>
 
         </div>
         <div class="non-members">
