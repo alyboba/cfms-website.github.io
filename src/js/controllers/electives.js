@@ -29,6 +29,10 @@ export default class ElectivesController extends FirebaseConnection {
 	
 	process(){
 		$(document).ready(() =>{
+			$( function() {
+				$( "#datepicker" ).datepicker();
+			} );
+			
 			$('#generalImpression').barrating({
 				theme: 'fontawesome-stars'
 			});
@@ -255,9 +259,9 @@ export default class ElectivesController extends FirebaseConnection {
 			$('#electiveTitle').val(snapshot.val().electiveTitle);
 			$('#hospitalClinic').val(snapshot.val().hospitalClinic);
 			$('#supervisor').val(snapshot.val().supervisor);
-			$('#dateElective').val(snapshot.val().dateElective);
+			$('#datepicker').val(snapshot.val().dateElective);
 			$('#electiveReview').val(snapshot.val().electiveReview);
-			$('#recommendElective').val(snapshot.val().recommendElective);
+			//$('#recommendElective').val(snapshot.val().recommendElective);
 			$('#requireImprovement').val(snapshot.val().requireImprovement);
 			$('#generalImpression').val(snapshot.val().generalImpression);
 			$('#qualityHospital').val(snapshot.val().qualityHospital);
@@ -312,6 +316,19 @@ export default class ElectivesController extends FirebaseConnection {
 			dateReviewed = format(new Date(), 'MMMM Do, YYYY @ hh:mmA (Z)'),
 			anonymousReview = $('#anonymous:checked').val() == 'yes' ? true : false;
 		
+		let recommendElective,
+		recomemendElectiveRadio = document.getElementsByName('recommendElective');
+		
+		for(let i=0; i<recomemendElectiveRadio.length; i++){
+			console.log(recomemendElectiveRadio);
+			if (recomemendElectiveRadio[i].checked){
+				console.log(recomemendElectiveRadio[i].value);
+				recommendElective = recomemendElectiveRadio[i].value;
+				break;
+			}
+		}
+		
+		
 		overallImpression = overallImpression.toFixed(2);
 		if(!anonymousReview){
 			if(this.auth.user.given_name) {
@@ -333,9 +350,9 @@ export default class ElectivesController extends FirebaseConnection {
 			electiveTitle: $('#electiveTitle').val(),
 			hospitalClinic: $('#hospitalClinic').val(),
 			supervisor: $('#supervisor').val(),
-			dateElective: $('#dateElective').val(),
+			dateElective: $('#datepicker').val(),
 			electiveReview: $('#electiveReview').val(),
-			recommendElective: $('#recommendElective').val(),
+			recommendElective: recommendElective,
 			requireImprovement: $('#requireImprovement').val(),
 			uid: uid
 		};
@@ -344,6 +361,9 @@ export default class ElectivesController extends FirebaseConnection {
 				obj[prop] = this.utils.sanatizeInput(obj[prop]);
 		}
 		return obj;
+		
+		
+		
 	}
 	
 	deleteDatabaseEntryEvent(evt) {
