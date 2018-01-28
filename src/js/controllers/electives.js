@@ -1,5 +1,6 @@
 import {FirebaseConnection} from '../repositories/firebase/utils';
 import {schools, specialties, schoolData, specialtyData} from './dependencies/databases/electives-school-specialties';
+import {format} from 'date-fns';
 import Utils from '../utils';
 
 export default class ElectivesController extends FirebaseConnection {
@@ -31,7 +32,7 @@ export default class ElectivesController extends FirebaseConnection {
 			$('#generalImpression').barrating({
 				theme: 'fontawesome-stars'
 			});
-			$("#qualityEducational, #qualityHospital, #interviewFriendliness, #easeInterview, #locationCultural").barrating({
+			$("#qualityEducational, #qualityHospital, #interviewFriendliness, #easeInterview").barrating({
 				theme: 'fontawesome-stars',
 				allowEmpty: true
 			});
@@ -48,7 +49,7 @@ export default class ElectivesController extends FirebaseConnection {
 					{className: "details-control", "targets": [0]}
 				],
 				"language": {
-					"emptyTable": "No Interviews Available for this School/Specialty. Be the first to Write one!"
+					"emptyTable": "Nobody has commented on this Elective yet! Be the first to Write one!"
 				}
 			}); //Initializing dataTables.
 			
@@ -171,13 +172,13 @@ export default class ElectivesController extends FirebaseConnection {
 							downVoteLink
 						];
 						let data = [
-							listing.val().interviewSetting ? listing.val().interviewSetting : '',
-							listing.val().howDidPrepare ? listing.val().howDidPrepare : '',
-							listing.val().generalComments ? listing.val().generalComments : '',
-							listing.val().mostInterestingDifficultQuestion ? listing.val().mostInterestingDifficultQuestion : '',
-							listing.val().positiveAspects ? listing.val().positiveAspects : '',
-							listing.val().negativeAspects ? listing.val().negativeAspects : '',
-							listing.val().lessonsLearned ? listing.val().lessonsLearned : ''
+							listing.val().electiveTitle ? listing.val().electiveTitle : '',
+							listing.val().hospitalClinic ? listing.val().hospitalClinic : '',
+							listing.val().supervisor ? listing.val().supervisor : '',
+							listing.val().dateElective ? listing.val().dateElective : '',
+							listing.val().electiveReview ? listing.val().electiveReview : '',
+							listing.val().recommendElective ? listing.val().recommendElective : '',
+							listing.val().requireImprovement ? listing.val().requireImprovement : ''
 						];
 						this.table.row.add(row).child(this.formatExpand(data)).draw(false); //Create row and a child underneath it.
 					});
@@ -251,19 +252,18 @@ export default class ElectivesController extends FirebaseConnection {
 		let key = evt.target.getAttribute('id');
 		this.editKey = key;
 		this.dbRef.child(key).once('value', (snapshot) => {
-			$('#interviewSetting').val(snapshot.val().interviewSetting);
-			$('#prepare').val(snapshot.val().howDidPrepare);
-			$('#generalComments').val(snapshot.val().generalComments);
-			$('#mostInterestingQuestion').val(snapshot.val().mostInterestingDifficultQuestion);
-			$('#positiveAspects').val(snapshot.val().positiveAspects);
-			$('#negativeAspects').val(snapshot.val().negativeAspects);
-			$('#lessonsLearned').val(snapshot.val().lessonsLearned);
+			$('#electiveTitle').val(snapshot.val().electiveTitle);
+			$('#hospitalClinic').val(snapshot.val().hospitalClinic);
+			$('#supervisor').val(snapshot.val().supervisor);
+			$('#dateElective').val(snapshot.val().dateElective);
+			$('#electiveReview').val(snapshot.val().electiveReview);
+			$('#recommendElective').val(snapshot.val().recommendElective);
+			$('#requireImprovement').val(snapshot.val().requireImprovement);
 			$('#generalImpression').val(snapshot.val().generalImpression);
 			$('#qualityHospital').val(snapshot.val().qualityHospital);
 			$('#qualityEducational').val(snapshot.val().qualityEducation);
 			$('#interviewFriendliness').val(snapshot.val().interviewFriendliness);
 			$('#easeInterview').val(snapshot.val().easeInterview);
-			$('#locationCultural').val(snapshot.val().locationCultural);
 		});
 	}
 	
@@ -287,7 +287,7 @@ export default class ElectivesController extends FirebaseConnection {
 	
 	addInterview(evt){
 		evt.preventDefault();
-		if(this.specialtyRefPath && this.schoolRefPath) {
+		if(this.specialtyRefPath && this.schoolRefPath) { // making sure paths are selected
 			let addObj = this.createFormObject();
 			this.dbRef.push(addObj)
 				.then(() => {
@@ -307,15 +307,16 @@ export default class ElectivesController extends FirebaseConnection {
 			starRatings = starInfo.starRatings,
 			totalStars = starInfo.totalStars,
 			overallImpression = totalStars/starRatings,
-			username,
+			username = 'Anonymous Reviewer',
 			uid = this.auth.user.identities[0].user_id,
 			dateReviewed = format(new Date(), 'MMMM Do, YYYY @ hh:mmA (Z)'),
 			anonymousReview = $('#anonymous:checked').val() == 'yes' ? true : false;
 		
 		overallImpression = overallImpression.toFixed(2);
-		
 		if(!anonymousReview){
-			username = this.auth.user.given_name; // + ' ' + this.auth.user.family_name; //Should this just be first name or first/last?
+			if(this.auth.user.given_name) {
+				username = this.auth.user.given_name; // + ' ' + this.auth.user.family_name; //Should this just be first name or first/last?
+			}
 		}
 		else{
 			username = 'Anonymous Reviewer';
@@ -326,22 +327,21 @@ export default class ElectivesController extends FirebaseConnection {
 			qualityEducation: $('#qualityEducational').val(),
 			interviewFriendliness: $('#interviewFriendliness').val(),
 			easeInterview: $('#easeInterview').val(),
-			locationCultural: $('#locationCultural').val(),
 			reviewedBy: username,
 			dateReviewed: dateReviewed,
 			overallRating: overallImpression,
-			interviewSetting: $('#interviewSetting').val(),
-			howDidPrepare: $('#prepare').val(),
-			generalComments: $('#generalComments').val(),
-			mostInterestingDifficultQuestion: $('#mostInterestingQuestion').val(),
-			positiveAspects: $('#positiveAspects').val(),
-			negativeAspects: $('#negativeAspects').val(),
-			lessonsLearned: $('#lessonsLearned').val(),
+			electiveTitle: $('#electiveTitle').val(),
+			hospitalClinic: $('#hospitalClinic').val(),
+			supervisor: $('#supervisor').val(),
+			dateElective: $('#dateElective').val(),
+			electiveReview: $('#electiveReview').val(),
+			recommendElective: $('#recommendElective').val(),
+			requireImprovement: $('#requireImprovement').val(),
 			uid: uid
 		};
 		//Sanatize the data to remove malicious injected code.
 		for(const prop in obj){
-			obj[prop] = this.utils.sanatizeInput(obj[prop]);
+				obj[prop] = this.utils.sanatizeInput(obj[prop]);
 		}
 		return obj;
 	}
@@ -394,7 +394,7 @@ export default class ElectivesController extends FirebaseConnection {
 	clickAddEntryButton(evt){
 		evt.preventDefault();
 		document.getElementById('dataForm').reset();
-		$("#generalImpression, #qualityEducational, #qualityHospital, #interviewFriendliness, #easeInterview, #locationCultural").barrating('clear');
+		$("#generalImpression, #qualityEducational, #qualityHospital, #interviewFriendliness, #easeInterview").barrating('clear');
 		$('#editSubmitButton').hide();
 		$('#addSubmitButton').show();
 		$('#addEntryButton').hide();
@@ -430,8 +430,6 @@ export default class ElectivesController extends FirebaseConnection {
 		}, '<option selected value="notSelected"> -- Select a ' + name + ' -- </option>');
 		listEditing.innerHTML = list;
 	}
-	
-	
 	createAddButton() {
 		document.getElementById('addButton').innerHTML = '';
 		let temp = document.createElement('div');
@@ -446,37 +444,37 @@ export default class ElectivesController extends FirebaseConnection {
 	formatExpand(infoArray) {
 		let str = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
 		str += infoArray[0] == '' ? '' : '<tr>' +
-			'<td><strong>Interview Setting</strong></td>' +
+			'<td><strong>Elective Title:</strong></td>' +
 			'<td>' + infoArray[0] + '</td>' +
 			'</tr>';
 		
 		str += infoArray[1] == '' ? '' : '<tr>' +
-			'<td><strong>How Did you Prepare for the Interview?:</strong></td>' +
+			'<td><strong>Hospital/Clinic:</strong></td>' +
 			'<td>' + infoArray[1] + '</td>' +
 			'</tr>';
 		
 		str += infoArray[2] == '' ? '' : '<tr>' +
-			'<td><strong>General Comments About the Interview:</strong></td>' +
+			'<td><strong>Supervisor:</strong></td>' +
 			'<td>' + infoArray[2] + '</td>' +
 			'</tr>';
 		
 		str += infoArray[3] == '' ? '' : '<tr>' +
-			'<td><strong>Most Interesting or Difficult Question:</strong></td>' +
+			'<td><strong>Date of Elective:</strong></td>' +
 			'<td>' + infoArray[3] + '</td>' +
 			'</tr>';
 		
 		str += infoArray[4] == '' ? '' : '<tr>' +
-			'<td><strong>Positive Aspects of the Interview:</strong></td>' +
+			'<td><strong>Elective Review:</strong></td>' +
 			'<td>' + infoArray[4] + '</td>' +
 			'</tr>';
 		
 		str += infoArray[5] == '' ? '' : '<tr>' +
-			'<td><strong>Negative Aspects of the Interview:</strong></td>' +
+			'<td><strong>Would you Recommend this elective to another student?:</strong></td>' +
 			'<td>' + infoArray[5] + '</td>' +
 			'</tr>';
 		
 		str += infoArray[6] == '' ? '' : '<tr>' +
-			'<td><strong>Lessons Learned/Advice for Future Applicants:</strong></td>' +
+			'<td><strong>Aspects requiring improvement:</strong></td>' +
 			'<td>' + infoArray[6] + '</td>' +
 			'</tr>';
 		str += '</table>';
@@ -501,10 +499,6 @@ export default class ElectivesController extends FirebaseConnection {
 		
 		if($('#easeInterview').val()){
 			totalStars += Math.floor($('#easeInterview').val());
-			starRatings++;
-		}
-		if($('#locationCultural').val()){
-			totalStars += Math.floor($('#locationCultural').val());
 			starRatings++;
 		}
 		

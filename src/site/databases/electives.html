@@ -49,11 +49,11 @@ role: National IT Officer
             <form class="animated hidden" id="dataForm">
                 <fieldset>
                     <div>
-                        <legend>Ratings (the higher the better)</legend>
+                        <legend>User Review</legend>
                         <table border="0" cellpadding="0" cellspacing="0">
                             <tbody>
                             <tr>
-                                <td>General Impression of the Program (Required)</td>
+                                <td>Overall rating</td>
                                 <td><select id="generalImpression" name="generalImpression">
                                     <option selected="selected" value="1">1</option>
                                     <option value="2">2</option>
@@ -63,7 +63,7 @@ role: National IT Officer
                                 </select></td>
                             </tr>
                             <tr>
-                                <td>Quality of Hospitals and Facilities</td>
+                                <td>Clinical Exposure & Participation</td>
                                 <td><select id="qualityHospital" name="qualityHospital">
                                     <option selected="selected" value=""></option>
                                     <option value="1">1</option>
@@ -74,7 +74,7 @@ role: National IT Officer
                                 </select></td>
                             </tr>
                             <tr>
-                                <td>Quality of Educational Program</td>
+                                <td>Quality of Formal Teaching</td>
                                 <td><select id="qualityEducational" name="qualityEducational">
                                     <option selected="selected" value=""></option>
                                     <option value="1">1</option>
@@ -85,7 +85,7 @@ role: National IT Officer
                                 </select></td>
                             </tr>
                             <tr>
-                                <td>Interviewer Friendliness</td>
+                                <td>Quality of Supervisor/Preceptor</td>
                                 <td><select id="interviewFriendliness" name="interviewFriendliness">
                                     <option selected="selected" value=""></option>
                                     <option value="1">1</option>
@@ -96,19 +96,8 @@ role: National IT Officer
                                 </select></td>
                             </tr>
                             <tr>
-                                <td>Ease of Interview</td>
+                                <td>Final Impression of Elective</td>
                                 <td><select id="easeInterview" name="easeInterview">
-                                    <option selected="selected" value=""></option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select></td>
-                            </tr>
-                            <tr>
-                                <td>Location and Cultural Life</td>
-                                <td><select id="locationCultural" name="locationCultural">
                                     <option selected="selected" value=""></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -124,42 +113,50 @@ role: National IT Officer
 
                 <fieldset>
                     <div>
-                        <legend>Interview Review</legend>
+                        <legend>Elective Review</legend>
                         <label for="anonymous">Anonymous Review?</label>
-                        <input id="anonymous" type="radio" name="anonymous" value="yes"> Yes
+                        <input id="anonymous" type="radio" name="anonymous" value="yes" checked="checked"> Yes
                         <input type="radio" name="anonymous" value="no"> No
                     </div>
 
                     <div>
-                        <label for="interviewSetting">Interview Setting</label>
-                        <input type="text" id="interviewSetting" name="interviewSetting" value="" />
+                        <label for="recommendElective">Would you Recommend This Elective to Another Student</label>
+                        <input class="recommendElective" checked="checked" id="recommendElective" type="radio" name="recommendElective" value="yes"> Yes
+                        <input class="recommendElective" type="radio" name="recommendElective" value="no"> No
                     </div>
 
                     <div>
-                        <label for="prepare">How Did you Prepare for the Interview?</label>
-                        <textarea class="styled-textarea" id="prepare" name="prepare"></textarea>
-                    </div>
-                    <div>
-                        <label for="generalComments">General Comments About the Interview</label>
-                        <textarea class="styled-textarea" id="generalComments" name="generalComments"></textarea>
-                    </div>
-                    <div>
-                        <label for="mostInterestingQuestion">Most Interesting or Difficult Question</label>
-                        <textarea class="styled-textarea" id="mostInterestingQuestion" name="mostInterestingQuestion"></textarea>
-                    </div>
-                    <div>
-                        <label for="positiveAspects">Positive Aspects of the Interview</label>
-                        <textarea class="styled-textarea" id="positiveAspects" name="positiveAspects"></textarea>
-                    </div>
-                    <div>
-                        <label for="negativeAspects">Negative Aspects of the Interview</label>
-                        <textarea class="styled-textarea" id="negativeAspects" name="negativeAspects"></textarea>
-                    </div>
-                    <div>
-                        <label for="lessonsLearned">Lessons Learned/Advice for Future Applicants</label>
-                        <textarea class="styled-textarea" id="lessonsLearned" name="lessonsLearned"></textarea>
+                        <label for="electiveTitle">Elective Title</label>
+                        <input type="text" id="electiveTitle" name="electiveTitle" value="" />
                     </div>
 
+
+                    <div>
+                        <label for="hospitalClinic">Hospital/Clinic</label>
+                        <input type="text" id="hospitalClinic" name="hospitalClinic" value="" />
+                    </div>
+
+                    <div>
+                        <label for="supervisor">Supervisor(Optional)</label>
+                        <input type="text" id="supervisor" name="supervisor" value="" />
+                    </div>
+
+                    <div>
+                        <label for="dateElective">Date of Elective(Approximately)</label>
+                        <input type="text" id="dateElective" name="dateElective" value="" />
+                    </div>
+                    
+                    <div>
+                        <label for="electiveReview">Elective Review</label>
+                        <textarea class="styled-textarea" id="electiveReview" name="electiveReview"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="requireImprovement">Aspects Requiring Improvement</label>
+                        <input type="text" id="requireImprovement" name="requireImprovement" value="" />
+                    </div>
+                    
+                    
                     <div>
                         <button type="submit" id="addSubmitButton">Add</button>
                         <button type="submit" id="editSubmitButton">Edit</button>
