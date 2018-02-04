@@ -33,6 +33,8 @@ Through extensive consultation with Indigenous community leaders and as future p
 2. Undertake a comprehensive review of the current distribution of funding through the National Aboriginal Youth Suicide Prevention Strategy (NAYSPS) in collaboration with Indigenous communities, in order to ensure that every Indigenous community receives funding that is both sustainable and provided in accordance with need.
 3. Direct Health Canada and Indigenous Services Canada to re-evaluate what programs and services are funded under the Non-Insured Health Benefits Program (NIHB), and increase funding for preventative and land-based mental wellness programs that create opportunities within the community. Support and expand the list of approved service providers to include Indigenous traditional knowledge keepers.
 
+**For more information about Day of Action and CFMS Advocacy, visit our [webpage](https://www.cfms.org/what-we-do/advocacy/day-of-action.html).**
+
 > #### For More Information:
 >
 > **Yipeng Ge**, Vice President Government Affairs<br>Canadian Federation of Medical Students<br>[vpgovtaffairs@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,103,111,118,116,97,102,102,97,105,114,115,64,99,102,109,115,46,111,114,103)))
