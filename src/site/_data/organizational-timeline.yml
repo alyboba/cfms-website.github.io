@@ -885,13 +885,13 @@ organizational-timeline:
       - executive-committee-member: "Atlantic Regional Representative: Will Stymiest (Dal)"
     - president-years: "2012/13"
       president-name: "Robin Clouston"
-      president-location: ""
+      president-location: "(MUN)"
       cfms-executive-committee:
       - executive-committee-member: "VP Education: Ian Brasg"
       - executive-committee-member: "VP Finance: Shemer Ratner"
       - executive-committee-member: "VP Services: Michael Cecchini"
       - executive-committee-member: "VP Communications: Mimi Lermer"
-      - executive-committee-member: "VP Advocacy: Tom McLaughlin"
+      - executive-committee-member: "VP Government Affairs: Tom McLaughlin"
       - executive-committee-member: "VP Global Health: Kimberly Williams"
       - executive-committee-member: "Western Regional Representatives: Terry Colbourne & Anthony Lott"
       - executive-committee-member: "Ontario Regional Representatives: Jesse Kancir & Jessica Jackson"
@@ -899,18 +899,41 @@ organizational-timeline:
       - executive-committee-member: "Atlantic Regional Representative: Peter Bettle"
     - president-years: "2013/14"
       president-name: "Jesse Kancir"
-      president-location: ""
+      president-location: "(U of T)"
       cfms-executive-committee:
       - executive-committee-member: "VP Education: Ian Brasg"
       - executive-committee-member: "VP Finance: Ben Frid"
       - executive-committee-member: "VP Services: Brandon Maser"
       - executive-committee-member: "VP Communications: Mimi Lermer"
-      - executive-committee-member: "VP Advocacy: Melanie Bechard"
+      - executive-committee-member: "VP Government Affairs: Melanie Bechard"
       - executive-committee-member: "VP Global Health: Andrew Bresnahan"
       - executive-committee-member: "Western Regional Representatives: Irfan Kherani & Kimberly Williams"
       - executive-committee-member: "Ontario Regional Representatives: David Linton & Anthea Girdwood"
       - executive-committee-member: "Quebec Regional Representative: Bryce Durafourt"
       - executive-committee-member: "Atlantic Regional Representative: Laura Butler"
+    - president-years: "2014/15"
+      president-name: "Bryce Durafourt"
+      president-location: "(U of T)"
+      cfms-executive-committee:
+      - executive-committee-member: "VP Education: Irfan Kherani"
+      - executive-committee-member: "VP Finance: Franco Rizutti"
+      - executive-committee-member: "VP Services: Brandon Maser"
+      - executive-committee-member: "VP Communications: Anthea Girdwood"
+      - executive-committee-member: "VP Government Affairs: Melanie Bechard"
+      - executive-committee-member: "VP Global Health: Chris Charles"
+      - executive-committee-member: "Western Regional Representatives: John Schulte & Taneille Johnson"
+      - executive-committee-member: "Ontario Regional Representatives: Kendra Komsa & Ali Damji"
+      - executive-committee-member: "Quebec Regional Representative: Carl White Ulysse"
+      - executive-committee-member: "Atlantic Regional Representative: Leanne Murphy"
+
+
+
+
+
+
+
+
+
 
 
 
