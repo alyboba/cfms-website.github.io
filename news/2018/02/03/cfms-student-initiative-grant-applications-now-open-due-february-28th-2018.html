@@ -1,11 +1,6 @@
-
-
-
-
-
-
-
 <!DOCTYPE html>
+
+
 
 
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
@@ -81,10 +76,12 @@
 
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/news.css">
+	
+		<link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
+	
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-	
+
 	
 		<div id="top-padding"></div>
 		<div id="top-bar" class="invert en">
@@ -131,10 +128,6 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
-						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/news/">FR</a></li>
-						
-					
 				</ul>
 			</div>
 		</div>
@@ -149,211 +142,96 @@
 		document.querySelector( "#news" ).classList.toggle("active");
 	</script>
 
-	<!-- Newest Article -->
-	<div id="newest-article">
-		
-			<div id="newest-byline">Latest Article</div>
-			<div id="newest-title"><a href="/news/2018/02/03/cfms-student-initiative-grant-applications-now-open-due-february-28th-2018.html">CFMS Student Initiative Grant Applications Now Open (Due February 28th)</a></div>
-			<div id="newest-description">
-				<span id="newest-date">February 03, 2018</span>
-				Please fill in description here.
-			</div>
-			<div class="button"><a href="/news/2018/02/03/cfms-student-initiative-grant-applications-now-open-due-february-28th-2018.html">Read More</a></div>
-		
+	<div class="content">
+
+		<!-- News Article -->
+   		<div id="aside">
+			
+				<h6>About the CFMS</h6>
+				The CFMS is an organization representing over 8,000 medical students from 14 Canadian medical student societies from coast to coast. We represent medical students to the public, to the federal government, and to national and international medical organizations.
+			
+		</div>
+        <div id="title">CFMS Student Initiative Grant Applications Now Open (Due February 28th)</div>
+        <info datetime="2018-02-03">
+        </info>
+    	<div id="date">February 03, 2018</div>
+        <div id="body">
+	        <p>-<em>Le français suit-</em></p>
+
+<p>The CFMS Student Initiative Grants Program was established in 2007 to provide support and funding to medical student initiatives. The fund was established in response to the increasing number of medical student-run initiatives and the need for official and financial support from our national student organization.</p>
+
+<p>For more information about the grants and how your application will be scored, please see the Student Initiative Grants <a href="https://www.cfms.org/what-we-do/student-affairs/student-initiative-grants.html">page</a>.</p>
+
+<p>Many successful projects have benefitted from direct CFMS funding including charitable, educational, and social events all organized by medical students. The goal is to assist students in realizing events or initiatives that promote interactions between CFMS students and member schools.</p>
+
+<p><strong>Brief Project Guidelines:</strong></p>
+
+<p>Student Initiative Grant funding is intended to help local and provincial start-up projects with initial funding to contribute to their long-term sustainability.</p>
+
+<p>Projects will NOT be considered if they have been recipients of CFMS Student Initiative Grants in the last 5 years.</p>
+
+<p>Projects will receive a maximum funding amount of $3000.</p>
+
+<p><em>Please do not increase your budget to ask for this maximum, as we wish to fund as many projects as possible; however, for projects with a larger budget, please be aware that you are expected to seek funding from other sources, such that the project may be completed with only partial funding from the CFMS.</em></p>
+
+<p><em>The Student Initiative Grants Program is NOT meant to fund academic research or travel funding to conferences for individual medical students.</em></p>
+
+<blockquote>
+  <p><strong>Projects that have received funding in the past include:</strong></p>
+
+  <ul>
+    <li>Manitoba Perinatal Loss Education Project</li>
+    <li>The Calgary Guide to Understanding Disease</li>
+    <li>NOSM’s HumerUS! Magazine</li>
+    <li>Memorial University’s Rural Medicine Interest Group</li>
+    <li>Le groupe d’intérêt en médecine rural de l’Université Memorial</li>
+    <li>Student Wellness Initiative Towards Community Health (SWITCH), a student-run clinic in Saskatoon, SK</li>
+    <li>Dalhousie’s Student Led Clinic in Saint John, NB</li>
+  </ul>
+</blockquote>
+
+<p>The deadline to be considered for funding through the 2017-2018 CFMS Student Initiative Grants Program is <strong>February 28, 2018</strong>. Applications must be submitted to <a href="javascript:void(location.href='mailto:'+String.fromCharCode(115,105,103,115,46,99,102,109,115,64,103,109,97,105,108,46,99,111,109))">sigs.cfms@gmail.com</a>. You may also email <a href="javascript:void(location.href='mailto:'+String.fromCharCode(115,105,103,115,46,99,102,109,115,64,103,109,97,105,108,46,99,111,109))">sigs.cfms@gmail.com</a> if you have any questions or concerns.</p>
+
+<hr />
+
+<h1> </h1>
+
+        </div>
 	</div>
-	<div id="news-home-columns">
-		<div id="older-news" class="column">
-			<h1>Older Articles<i id="archive-icon" class="fa fa-folder-open-o"></i></h1>
-			<div class="news-home-list">
+	    <!-- Other News -->
+        <div id="other-news">
+			<h1>Other News</h1>
+			<div id="other-news-list">
+				
 				
 					<div class="news-date">Feb 03</div>
 					<li>
 						<div class="news-link"><a href="/news/2018/02/03/cfms-student-initiative-grant-applications-now-open-due-february-28th-2018.html">CFMS Student Initiative Grant Applications Now Open (Due February 28th)</a></div>
-						<div class="news-desc">Please fill in description here.</div>
 					</li>
 				
 					<div class="news-date">Jan 22</div>
 					<li>
 						<div class="news-link"><a href="/news/2018/01/22/cfms-wellness-challenge-2018-small-steps-accessible-wellness.html">CFMS Wellness Challenge 2018 – Small Steps: Accessible Wellness (January  22 - February 18)</a></div>
-						<div class="news-desc">The CFMS Wellness Challenge is a month-long challenge divided into four week-long focus areas (Nutritional Wellness, Mental Wellness, Physical Wellness, Social/Relationship Wellness). The aim of the Challenge is to support and improve medical student wellness through encouraging members to try new health-supporting behaviours and build health habits.</div>
 					</li>
 				
 					<div class="news-date">Jan 22</div>
 					<li>
 						<div class="news-link"><a href="/news/2018/01/22/cfms-launches-the-national-wellness-initiative.html">CFMS Launches the National Wellness Initiative</a></div>
-						<div class="news-desc">The CFMS is excited to launch the National Wellness Initiative (NWI), a three-fold component of our efforts to improve medical student wellbeing!</div>
 					</li>
 				
 					<div class="news-date">Jan 16</div>
 					<li>
 						<div class="news-link"><a href="/news/2018/01/16/cfms-fall-call-for-nominations-2017-due-january.html">CFMS Winter Call for Nominations (Applications due January 26th, 2018)</a></div>
-						<div class="news-desc">The CFMS is looking for members to help us out with several positions and teams. Apply now!</div>
 					</li>
 				
 					<div class="news-date">Jan 07</div>
 					<li>
 						<div class="news-link"><a href="/news/2018/01/07/the-cfms-is-proud-to-sponsor-the-37th-annual-medgames-held-january-4-7-2018-at-laval-university.html">The CFMS is proud to sponsor the 37th annual MedGames, held January 4-7 2018 at Laval University</a></div>
-						<div class="news-desc">MedGames is an annual event bringing together medical students from medical schools across Canada.</div>
 					</li>
 				
-				<div class="button"><a href="archives/">See All Articles</a></div>
+				
 			</div>
 		</div>
-		<div id="cfms-in-the-news" class="column">
-			<h1>CFMS in the News<i id="news-icon" class="fa fa-newspaper-o"></i></h1>
-			<div class="news-home-list">
-				
-
-				
-					
-						<div class="news-year"><span>2015</span></div>
-					
-					
-						
-							<div class="news-date">Mar 12</div>
-							<li>
-								<div class="news-link"><a href="http://parlvu.parl.gc.ca/parlvu/ContentEntityDetailView.aspx?contententityid=12695&amp;date=20150312&amp;lang=en">CFMS at Standing Committee on Health</a>
-									<div class="news-publication">HESA</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Jan 29</div>
-							<li>
-								<div class="news-link"><a href="http://liberalsenateforum.ca/your-question-period/universal-pharmacare/">Senate Question Period: Universal Pharmacare</a>
-									<div class="news-publication">Senate QP</div>
-								</div>
-							</li>
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-				
-					
-						<div class="news-year"><span>2014</span></div>
-					
-					
-						
-					
-						
-					
-						
-							<div class="news-date">Dec 11</div>
-							<li>
-								<div class="news-link"><a href="http://www.thestar.com/opinion/commentary/2014/12/11/its_time_for_a_universal_pharmacare_system.html">It's time for a universal pharmacare system</a>
-									<div class="news-publication">Toronto Star</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Nov 24</div>
-							<li>
-								<div class="news-link"><a href="http://www.cpac.ca/en/digital-archives/?search=November+24%2C+2014">Pharmacare TV Interview for CFMS Lobby Day</a>
-									<div class="news-publication">CPAC</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Aug 26</div>
-							<li>
-								<div class="news-link"><a href="http://www.alaskahighwaynews.ca/news/local-news/how-other-communities-solve-health-care-problems-1.1329213">How other communities solve health care problems</a>
-									<div class="news-publication">Alaska Highway News</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Mar 3</div>
-							<li>
-								<div class="news-link"><a href="http://healthydebate.ca/opinions/loan-deferral-during-residency-a-win-win-solution">Loan deferral during residency: a win-win solution</a>
-									<div class="news-publication">Healthy Debate</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Feb 2</div>
-							<li>
-								<div class="news-link"><a href="http://cupwire.ca/2014/02/02/med-students-head-ottawa-lobby-relief-student-loans-affordable-housing/">Med students head to Ottawa, lobby for relief of student loans and affordable housing</a>
-									<div class="news-publication">Canadian University Press</div>
-								</div>
-							</li>
-						
-					
-						
-					
-				
-					
-						<div class="news-year"><span>2013</span></div>
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-							<div class="news-date">Aug 09</div>
-							<li>
-								<div class="news-link"><a href="http://www.montrealgazette.com/news/changing+face+McGill+medical+students/8770876/story.html">The changing face of McGill medical students</a>
-									<div class="news-publication">The Montreal Gazette</div>
-								</div>
-							</li>
-						
-					
-				
-				<div class="button"><a href="cfms-in-the-news.html">See all Mentions</a></div>
-			</div>
-		</div>
-	</div>
-	<div id="student-spotlight" class="editable">
-		<div id="spotlight-title">Student Spotlight</div>
-		<div id="spotlight-description">Each year, medical students across Canada engage in projects that make a difference within their schools and communities. Here, we feature some of the ideas that medical students are working on, and how they’re fostering our common goals.</div>
-		<div class="flex-wrapper">
-			
-			<a href="/news/student-spotlight/mental-health-coffee-night.html">
-				<div class="featured-link" style="background: url(/images/page-images/student-spotlight/mental-health-coffee-night.png) no-repeat center center; background-size:cover">
-				</div>
-				<div class="featured-link-text">Mental Health Coffee Night<br><span class="featured-school">University of Saskatchewan</span></div>
-			</a>
-			
-			<a href="/news/student-spotlight/multiculturalism-in-medicine.html">
-				<div class="featured-link" style="background: url(/images/page-images/student-spotlight/multiculturalism-in-medicine.png) no-repeat center center; background-size:cover">
-				</div>
-				<div class="featured-link-text">Multiculturalism in Medicine<br><span class="featured-school">University of Toronto</span></div>
-			</a>
-			
-			<a href="/news/student-spotlight/peds-cases.html">
-				<div class="featured-link" style="background: url(/images/page-images/student-spotlight/peds-cases.jpg) no-repeat center center; background-size:cover">
-				</div>
-				<div class="featured-link-text">PedsCases<br><span class="featured-school">University of Alberta</span></div>
-			</a>
-			
-		</div>
-		<div class="button"><a href="student-spotlight/">See all projects</a></div>
-	</div>
 	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -542,3 +420,4 @@ $('.redirect-modal').click(function(){
 
 </body>
 </html>
+
