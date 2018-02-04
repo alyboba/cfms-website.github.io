@@ -913,7 +913,7 @@ organizational-timeline:
       - executive-committee-member: "Atlantic Regional Representative: Laura Butler"
     - president-years: "2014/15"
       president-name: "Bryce Durafourt"
-      president-location: "(U of T)"
+      president-location: "(McGill)"
       cfms-executive-committee:
       - executive-committee-member: "VP Education: Irfan Kherani"
       - executive-committee-member: "VP Finance: Franco Rizutti"
@@ -925,15 +925,34 @@ organizational-timeline:
       - executive-committee-member: "Ontario Regional Representatives: Kendra Komsa & Ali Damji"
       - executive-committee-member: "Quebec Regional Representative: Carl White Ulysse"
       - executive-committee-member: "Atlantic Regional Representative: Leanne Murphy"
-
-
-
-
-
-
-
-
-
+    - president-years: "2015/16"
+      president-name: "Anthea Girdwood"
+      president-location: "(U of O)"
+      cfms-executive-committee:
+      - executive-committee-member: "VP Education: Nebras Warsi"
+      - executive-committee-member: "VP Finance: Franco Rizutti"
+      - executive-committee-member: "VP Student Affairs: Marie-Pier Bastrash"
+      - executive-committee-member: "VP Communications: Carl White Ulysse"
+      - executive-committee-member: "VP Government Affairs: Jessica Harris"
+      - executive-committee-member: "VP Global Health: Golden Gao"
+      - executive-committee-member: "Western Regional Representatives: Emily Macphail & Fatemeh Ramazani"
+      - executive-committee-member: "Ontario Regional Representatives: Yousif Atiwan & Han Yan"
+      - executive-committee-member: "Quebec Regional Representative: Emily Hodgson"
+      - executive-committee-member: "Atlantic Regional Representative: Anthony Maher"
+    - president-years: "2016/17"
+      president-name: "Franco Rizutti"
+      president-location: "(U of C)"
+      cfms-executive-committee:
+      - executive-committee-member: "VP Education: Tavis Apramian"
+      - executive-committee-member: "VP Finance: Daniel Peretz"
+      - executive-committee-member: "VP Student Affairs: Han Yan"
+      - executive-committee-member: "VP Communications: Emily Hodgson"
+      - executive-committee-member: "VP Government Affairs: Sarah Silverberg"
+      - executive-committee-member: "VP Global Health: Jessica Bryce"
+      - executive-committee-member: "Western Regional Representatives: Laura Kim & Gurmeet Sohi Kaur"
+      - executive-committee-member: "Ontario Regional Representatives: Shreya Jalali & Kaylynn Purdy"
+      - executive-committee-member: "Quebec Regional Representative: Lucy Luo"
+      - executive-committee-member: "Atlantic Regional Representative: Alexandra Taylor"
 
 
 
