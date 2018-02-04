@@ -1,5 +1,5 @@
 ---
-title: 'CFMS Student Initiative Grant: Call for Applications (Due February 28th)'
+title: 'CFMS Student Initiative Grants: Call for Applications (Due February 28th)'
 date: 2018-02-03 00:00:00
 description: >-
   Student Initiative Grant funding is intended to help local and provincial
@@ -9,7 +9,7 @@ lang: en
 ---
 
 
--*Le fran&ccedil;ais suit-*
+-*Le français suit-*
 
 The CFMS Student Initiative Grants Program was established in 2007 to provide support and funding to medical student initiatives. The fund was established in response to the increasing number of medical student-run initiatives and the need for official and financial support from our national student organization.
 
@@ -33,7 +33,7 @@ Many successful projects have benefitted from direct CFMS funding including char
 > * The Calgary Guide to Understanding Disease
 > * NOSM's HumerUS! Magazine
 > * Memorial University's Rural Medicine Interest Group
-> * Le groupe d’int&eacute;r&ecirc;t en m&eacute;decine rural de l’Universit&eacute; Memorial
+> * Le groupe d’intérêt en médecine rural de l’Université Memorial
 > * Student Wellness Initiative Towards Community Health (SWITCH), a student-run clinic in Saskatoon, SK
 > * Dalhousie’s Student Led Clinic in Saint John, NB
 
@@ -41,26 +41,26 @@ The deadline to be considered for funding through the 2017-2018 CFMS Student Ini
 
 ---
 
-## Programme de Subventions pour Initiatives &Eacute;tudiantes de la FEMC - Appel des applications (date limite 28 f&eacute;vrier)
+## Programme de Subventions pour Initiatives Étudiantes de la FEMC - Appel des applications (date limite 28 février)
 
-Le programme de Subventions pour Initiatives &Eacute;tudiantes de la FEMC fut &eacute;tabli en 2007 afin de soutenir et de financer les initiatives des &eacute;tudiants en m&eacute;decine. &nbsp;Le fond fut &eacute;tablie afin de r&eacute;pondre au nombre croissant d’initiatives dirig&eacute; par les &eacute;tudiants en m&eacute;decine ainsi que le besoin de support officiel et financier de la part de notre organisation nationale &eacute;tudiante.
+Le programme de Subventions pour Initiatives Étudiantes de la FEMC fut établi en 2007 afin de soutenir et de financer les initiatives des étudiants en médecine.  Le fond fut établie afin de répondre au nombre croissant d’initiatives dirigé par les étudiants en médecine ainsi que le besoin de support officiel et financier de la part de notre organisation nationale étudiante.
 
-Pour plus d’informations au sujet des bourses et pour savoir comment sera &eacute;valu&eacute;e votre application, veuillez-vous r&eacute;f&eacute;rer &agrave; la [page web](https://www.cfms.org/what-we-do/student-affairs/student-initiative-grants.html) des Subventions pour Initiatives &Eacute;tudiantes.
+Pour plus d’informations au sujet des bourses et pour savoir comment sera évaluée votre application, veuillez-vous référer à la [page web](https://www.cfms.org/what-we-do/student-affairs/student-initiative-grants.html) des Subventions pour Initiatives Étudiantes.
 
-Plusieurs projets ayant connu du succ&egrave;s ont b&eacute;n&eacute;fici&eacute; de l’aide financi&egrave;re de la FEMC incluant des projets caritatifs, &eacute;ducationnels et des &eacute;v&eacute;nements sociaux, tous organis&eacute;s par des &eacute;tudiants en m&eacute;decine. &nbsp;Le but est de venir en aide aux &eacute;tudiants afin de r&eacute;aliser des &eacute;v&eacute;nements ou des initiatives promouvant les interactions entre les &eacute;tudiants de la FEMC et des &eacute;coles membres.
+Plusieurs projets ayant connu du succès ont bénéficié de l’aide financière de la FEMC incluant des projets caritatifs, éducationnels et des événements sociaux, tous organisés par des étudiants en médecine.  Le but est de venir en aide aux étudiants afin de réaliser des événements ou des initiatives promouvant les interactions entre les étudiants de la FEMC et des écoles membres.
 
-**Br&egrave;ves directives:**
+**Brèves directives:**
 
-* Le financement de la Subvention pour Initiatives &Eacute;tudiantes vise &agrave; aider les projets de d&eacute;marrage locaux et provinciaux avec un financement initial pour contribuer &agrave; leur viabilit&eacute; &agrave; long terme
-* Les projets ne seront pas consid&eacute;r&eacute; s’il ont re&ccedil;u du financement &agrave; travers le programme de Subventions pour Initiatives &Eacute;tudiantes durant les 5 derni&egrave;res ann&eacute;es
+* Le financement de la Subvention pour Initiatives Étudiantes vise à aider les projets de démarrage locaux et provinciaux avec un financement initial pour contribuer à leur viabilité à long terme
+* Les projets ne seront pas considéré s’il ont reçu du financement à travers le programme de Subventions pour Initiatives Étudiantes durant les 5 dernières années
 
-* Un maximum de 3000$ pourra &ecirc;tre attribu&eacute; par projet
+* Un maximum de 3000$ pourra être attribué par projet
 
-  * *Puisque nous souhaitons &ecirc;tre capable de financer le plus de projet possible, veuillez s’il-vous-pla&icirc;t ne pas augmenter votre budget afin de demander le fond maximum accessible. &nbsp;Pour les projets avec un budget plus important, prenez note que nous nous attendions &agrave; ce que vous trouviez des fonds &agrave; partir de d’autres sources afin que le projet puisse &ecirc;tre compl&eacute;t&eacute; seulement avec une partie du fond allou&eacute; par la FEMC.*
+  * *Puisque nous souhaitons être capable de financer le plus de projet possible, veuillez s’il-vous-plaît ne pas augmenter votre budget afin de demander le fond maximum accessible.  Pour les projets avec un budget plus important, prenez note que nous nous attendions à ce que vous trouviez des fonds à partir de d’autres sources afin que le projet puisse être complété seulement avec une partie du fond alloué par la FEMC.*
 
-  * Le programme de Subventions pour Initiatives &Eacute;tudiantes n’a pas &eacute;t&eacute; mis en place pour financer les recherches acad&eacute;miques ou le d&eacute;placement individuel d’&eacute;tudiant en m&eacute;decine &agrave; des conf&eacute;rences.
+  * Le programme de Subventions pour Initiatives Étudiantes n’a pas été mis en place pour financer les recherches académiques ou le déplacement individuel d’étudiant en médecine à des conférences.
 
-> **Les projets ayant re&ccedil;us du financement dans le pass&eacute; incluent:**
+> **Les projets ayant reçus du financement dans le passé incluent:**
 >
 >
 >
@@ -68,12 +68,12 @@ Plusieurs projets ayant connu du succ&egrave;s ont b&eacute;n&eacute;fici&eacute
 > * The Calgary Guide to Understanding Disease
 > * NOSM's HumerUS! Magazine
 > * Memorial University's Rural Medicine Interest Group
-> * Le groupe d’int&eacute;r&ecirc;t en m&eacute;decine rural de l’Universit&eacute; Memorial
+> * Le groupe d’intérêt en médecine rural de l’Université Memorial
 > * Student Wellness Initiative Towards Community Health (SWITCH), a student-run clinic in Saskatoon, SK
 > * Dalhousie’s Student Led Clinic in Saint John, NB
 
-La date limite pour soumettre votre application afin d’&ecirc;tre &eacute;ligible au fond par l’entremise des Subventions pour Initiatives &Eacute;tudiantes 2017-2018 est le **28 f&eacute;vrier 2018**. &nbsp;Les applications doivent &ecirc;tre soumises &agrave; l’adresse courriel suivante: [sigs.cfms@gmail.com](javascript:void(location.href='mailto:'+String.fromCharCode(115,105,103,115,46,99,102,109,115,64,103,109,97,105,108,46,99,111,109))). Vous pouvez aussi envoyer un courriel &agrave; cette m&ecirc;me adresse courriel pour toutes questions concernant le pr&eacute;sent programme.
+La date limite pour soumettre votre application afin d’être éligible au fond par l’entremise des Subventions pour Initiatives Étudiantes 2017-2018 est le **28 février 2018**.  Les applications doivent être soumises à l’adresse courriel suivante: [sigs.cfms@gmail.com](javascript:void(location.href='mailto:'+String.fromCharCode(115,105,103,115,46,99,102,109,115,64,103,109,97,105,108,46,99,111,109))). Vous pouvez aussi envoyer un courriel à cette même adresse courriel pour toutes questions concernant le présent programme.
 
 ---
 
-# &nbsp;
+#
