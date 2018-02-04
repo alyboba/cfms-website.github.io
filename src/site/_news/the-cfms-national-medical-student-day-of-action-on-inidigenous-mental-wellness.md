@@ -1,7 +1,7 @@
 ---
 title: >-
-  Announcing the 2018 CFMS Day of Action on Indigenous Mental Wellness: February
-  12th on Parliament Hill
+  2018 CFMS Day of Action on Indigenous Mental Wellness: February 12th on
+  Parliament Hill
 date: 2018-02-03 00:00:00
 description: >-
   Medical students from across Canada will be meeting with Parliamentarians in
