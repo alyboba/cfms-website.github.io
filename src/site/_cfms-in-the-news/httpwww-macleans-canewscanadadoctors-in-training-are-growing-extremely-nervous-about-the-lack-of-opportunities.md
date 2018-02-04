@@ -1,11 +1,15 @@
 ---
 title: >-
-  http://www.macleans.ca/news/canada/doctors-in-training-are-growing-extremely-nervous-about-the-lack-of-opportunities/
-year: 2017
+  Doctors-in-training are growing extremely nervous about the lack of
+  opportunities
+year: 2018
 month: Jan
-day: 1
-date: 2018-06-01 00:00:00
-href: The link this document points to
+day: 18
+date: 2018-02-03 00:00:00
+href: >-
+  http://www.macleans.ca/news/canada/doctors-in-training-are-growing-extremely-nervous-about-the-lack-of-opportunities/
 lang: en
-news-publication: 'Example, ''HESA'''
+news-publication: Macleans
 ---
+
+
