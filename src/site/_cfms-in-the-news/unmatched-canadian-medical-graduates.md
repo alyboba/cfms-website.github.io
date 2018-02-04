@@ -1,10 +1,12 @@
 ---
 title: Unmatched Canadian medical graduates
-year: 2017
+year: 2018
 month: Jan
-day: 1
+day: 29
 date: 2018-06-01 00:00:00
-href: The link this document points to
+href: 'http://www.cmaj.ca/content/190/4/E118'
 lang: en
-news-publication: 'Example, ''HESA'''
+news-publication: CMAJ
 ---
+
+
