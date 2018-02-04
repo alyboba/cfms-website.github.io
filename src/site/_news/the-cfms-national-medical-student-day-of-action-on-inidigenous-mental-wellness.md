@@ -10,6 +10,8 @@ lang: en
 ---
 
 
+![](/uploads/versions/day-of-action-rectangle-2---x----1921-1081x---.png)
+
 > **To show your support for Indigenous Mental Wellness, join our Thunderclap campaign** at: [https://www.thunderclap.it/projects/67319-2018-cfms-day-of-action](https://www.thunderclap.it/projects/67319-2018-cfms-day-of-action)<br><br>It only takes a few seconds to sign up, and will post a message on your social media accounts in support of Indigenous Mental Wellness on Day of Action, February 12th.
 >
 >
