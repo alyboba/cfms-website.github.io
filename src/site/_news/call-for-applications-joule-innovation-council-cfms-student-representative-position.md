@@ -1,7 +1,5 @@
 ---
-title: >-
-  Call for Applications: Joule Innovation Council CFMS Student Representative
-  Position
+title: 'Call for Applications: Joule Innovation Council CFMS Student Representative'
 date: 2018-02-04 00:00:00
 description: >-
   The CFMS is looking for one student representative to be a part of the Joule
@@ -44,16 +42,12 @@ Joule is looking for one student representative to be a part of the JIC. The stu
 
 A short-listed group of candidates will be provided to Joule who may choose to contact the applicant prior to appointing to the JIC.
 
-Position Description:&nbsp;[https://drive.google.com/file/d/1aWtOAy9oiAAUXkD4Iamhrk4PMR1j4je0/view?usp=sharing](https://drive.google.com/file/d/1aWtOAy9oiAAUXkD4Iamhrk4PMR1j4je0/view?usp=sharing)
+Position Description: [https://drive.google.com/file/d/1aWtOAy9oiAAUXkD4Iamhrk4PMR1j4je0/view?usp=sharing](https://drive.google.com/file/d/1aWtOAy9oiAAUXkD4Iamhrk4PMR1j4je0/view?usp=sharing)
 
-&nbsp;
-
-**Application :**&nbsp;[https://goo.gl/forms/4o7XXRmN7UZdQBvG2](https://goo.gl/forms/4o7XXRmN7UZdQBvG2)
+**Application :** [https://goo.gl/forms/4o7XXRmN7UZdQBvG2](https://goo.gl/forms/4o7XXRmN7UZdQBvG2)
 
 **Deadline: February 15th, 2018, 23:59 EST**
 
-&nbsp;
-
 If you have any questions, please don’t hesitate to contact Nomination Committee Chairs Maylynn Ding and Cory Lefebvre ([ontario@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(111,110,116,97,114,105,111,64,99,102,109,115,46,111,114,103))))
 
-> &nbsp;
+>
