@@ -273,7 +273,9 @@ lasik-discounts:
       </blockquote>
     discount-promotion: >-
       <p>Visit <a href='lasik-membership-card.html' target='_blank'>Here</a> To
-      Print off your lasik membership card.</p>
+      Print off your lasik membership card.
+
+      Visit <a href="http://www.lasikmd.com/corporate/cfms">Lasik MD's website</a> for more information about this offer.</p>
   - lang: fr
     discount-title: >-
       Rabais sur la correction de la vue au laser à LASIK MD pour les membres de
@@ -313,8 +315,10 @@ lasik-discounts:
       toute responsabilité quant aux produits et services offerts par ses
       partenaires commerciaux et autres organismes.</span></p> </blockquote>
     discount-promotion: >-
-      <p>Visitez <a href='lasik-membership-card.html' target='_blank'>ici</a>
-      pour imprimer votre carte de membre Lasik.</p>
+      <p>Visit <a href='lasik-membership-card.html' target='_blank'>Here</a> To Print off your lasik membership card.
+
+      Visit <a href="http://www.lasikmd.com/corporate/cfms">Lasik MD's website</a> for more information about this offer.</p>
+
 textbook-discounts:
   - lang: en
     discount-title: Wolters Kluwer/Lippincott Resources
