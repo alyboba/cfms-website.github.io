@@ -25,6 +25,16 @@ news_text_fr: >-
   href='http://www.old.cfms.org'>www.old.cfms.org</a>!
 news_text_url:
 featured_links:
+  - url: https://www.cfms.org/news/2018/01/22/cfms-wellness-challenge-2018-small-steps-accessible-wellness.html
+    image_url_en: images/home-link-thumbs/wellness-challenge.jpg
+    image_url_fr: images/home-link-thumbs/wellness-challenge.jpg
+    text_en: "CFMS Wellness Challenge 2018 – Small Steps: Accessible Wellness"
+    text_fr: "CFMS Wellness Challenge 2018 – Small Steps: Accessible Wellness"
+  - url: https://www.cfms.org/news/2018/02/03/the-cfms-national-medical-student-day-of-action-on-inidigenous-mental-wellness.html
+    image_url_en: images/home-link-thumbs/day-of-action.jpg
+    image_url_fr: images/home-link-thumbs/day-of-action.jpg
+    text_en: "CFMS National Medical Student Day of Action on Indigenous Mental Wellness: February 12th 2018 on Parliament Hill"
+    text_fr: "CFMS National Medical Student Day of Action on Indigenous Mental Wellness: February 12th 2018 on Parliament Hill"
   - url: meetings/agm-2017-ottawa.html
     image_url_en: images/home-link-thumbs/40th-celebration.png
     image_url_fr: images/home-link-thumbs/40th-celebration.png
@@ -35,9 +45,3 @@ featured_links:
     image_url_fr: images/home-link-thumbs/cfms-co-brand-logo_f.jpg
     text_en: Student Financial Advice from MD Financial Management
     text_fr: Conseils financiers pour étudiants en médecine par Gestion financière MD
-
-  - url: https://www.cfms.org/news/2018/02/03/the-cfms-national-medical-student-day-of-action-on-inidigenous-mental-wellness.html
-    image_url_en: images/home-link-thumbs/day-of-action.jpg
-    image_url_fr: images/home-link-thumbs/day-of-action.jpg
-    text_en: "CFMS National Medical Student Day of Action on Indigenous Mental Wellness: February 12th 2018 on Parliament Hill"
-    text_fr: "CFMS National Medical Student Day of Action on Indigenous Mental Wellness: February 12th 2018 on Parliament Hill"
