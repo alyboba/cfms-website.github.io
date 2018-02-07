@@ -186,6 +186,7 @@ sidebar-who-we-are:
     history: History
     organizational-timeline: Organizational Timeline
     photo-gallery: Photo Gallery
+    student-spotlight: Student Spotlight
   - lang: fr
     sidebar-title_1: Qui sommes-nous?
     executives-officers: Conseil exécutif et directeurs
@@ -203,6 +204,7 @@ sidebar-who-we-are:
     history: Histoire
     organizational-timeline: Chronologie Organisationnelle
     photo-gallery: Galerie de photos
+    student-spotlight: Projecteur étudiant
 sidebar-education:
   - lang: en
     sidebar-title_1: Education
@@ -240,6 +242,7 @@ sidebar-student-affairs:
     wellness: Wellness
     discounts: Student Discounts
     resident-profiles: Resident Profiles
+    national-wellness-initiative: National Wellness Initiative
   - lang: fr
     sidebar-title_1: Affaires étudiantes
     overview: Aperçu
@@ -250,6 +253,7 @@ sidebar-student-affairs:
     sidebar-title_2: Ressources
     wellness: Bien-être
     discounts: Rabais étudiants
+    national-wellness-initiative: National Wellness Initiative
 sidebar-communications:
   - lang: en
     sidebar-title_1: Communications
@@ -300,15 +304,17 @@ sidebar-discounts:
     travel-and-accommodations: Travel and Accommodations
     disability-insurance: Disability Insurance
     textbooks: Textbooks
-    online-resources: Online Resources
+    online-resources: UptoDate
+    wellness-discounts: Wellness Discounts
     lasik: LASIK MD Vision Correction
   - lang: fr
     sidebar-title_1: Réductions
     travel-and-accommodations: Réductions sur les Voyages
     disability-insurance: Assurance Invalidité
     textbooks: Réductions sur les Manuels
-    online-resources: Rabais sur les ressources électroniques Médicales
+    online-resources: UptoDate
     lasik: Correction de la vision LASIK MD
+    wellness-discounts: Wellness Discounts
 sidebar-databases:
   - lang: en
     sidebar-title_1: Databases
