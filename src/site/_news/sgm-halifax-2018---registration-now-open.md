@@ -1,7 +1,7 @@
 ---
 title: SGM Halifax 2018 - Registration NOW OPEN
-date:
-description: Please fill in description here.
+date: 2018-02-11 00:00:00
+description:
 lang: en
 ---
 
