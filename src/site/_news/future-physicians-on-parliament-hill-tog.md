@@ -43,16 +43,31 @@ The CFMS looks forward to working with the Government of Canada towards building
 
 "As a M&eacute;tis medical student, I could not be more proud of the steps that Canadian medical students and the CFMS are taking to better understand Indigenous health and knowledge systems. This is the first year medical students will address an Indigenous health issue on their annual Day of Action, but I am certain it will not be the last. I look forward to sharing the vision and goals put forward by Indigenous organizations and community leaders for fostering mental wellness, alongside other passionate Indigenous and non-Indigenous medical student allies."<br>*- Amanda Sauv&eacute;, CFMS National Officer of Indigenous Health (2016-17)*
 
-**ABOUT THE CFMS:**
-
-The Canadian Federation of Medical Students (CFMS) is the national organization representing over 8,000 medical students at 15 medical schools across Canada. Tomorrow's physicians leading for health today.
-
-[www.cfms.org](www.cfms.org)
-
-Follow us on [Twitter](https://twitter.com/CFMSFEMC), [Facebook](https://www.facebook.com/CFMSFEMC/) and [Instagram](https://www.instagram.com/cfmsfemc/): @CFMSFEMC
-
-[#IndigenousMentalWellness](https://twitter.com/search?q=%23IndigenousMentalWellness&amp;src=tyah) / [#Bien&ecirc;treMentalAutochtone](https://twitter.com/search?src=typd&amp;q=%23Bien%C3%AAtreMentalAutochtone)
-
-SOURCE Canadian Federation of Medical Students (CFMS)
-
-For further information: Christina Schweitzer, Vice-President Communications, Canadian Federation of Medical Students, Email: [vpcommunications@cfms.org](vpcommunications@cfms.org), Cell: 1-587-225-8165
+> **ABOUT THE CFMS:**
+>
+>
+> The Canadian Federation of Medical Students (CFMS) is the national organization representing over 8,000 medical students at 15 medical schools across Canada. Tomorrow's physicians leading for health today.
+>
+>
+> [www.cfms.org](www.cfms.org)
+>
+>
+> Follow us on [Twitter](https://twitter.com/CFMSFEMC), [Facebook](https://www.facebook.com/CFMSFEMC/) and [Instagram](https://www.instagram.com/cfmsfemc/): @CFMSFEMC
+>
+>
+> [#IndigenousMentalWellness](https://twitter.com/search?q=%23IndigenousMentalWellness&amp;src=tyah) / [#Bien&ecirc;treMentalAutochtone](https://twitter.com/search?src=typd&amp;q=%23Bien%C3%AAtreMentalAutochtone)
+>
+>
+> SOURCE Canadian Federation of Medical Students (CFMS)
+>
+>
+> For further information: Christina Schweitzer, Vice-President Communications, Canadian Federation of Medical Students, Email: [vpcommunications@cfms.org](vpcommunications@cfms.org), Cell: 1-587-225-8165
+>
+>
+> &nbsp;
+>
+>
+> Link to Newswire Press Release: [https://www.newswire.ca/news-releases/canadian-medical-students-urge-the-government-of-canada-to-strengthen-response-to-indigenous-mental-health-and-suicide-crisis-673773613.html](https://www.newswire.ca/news-releases/canadian-medical-students-urge-the-government-of-canada-to-strengthen-response-to-indigenous-mental-health-and-suicide-crisis-673773613.html)
+>
+>
+> PDF: [CFMS Day of Action on Indigenous Mental Wellness](/Press Release - CFMS Day of Action 2018 - EN.pdf)
