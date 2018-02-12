@@ -1,9 +1,6 @@
-
-
-
-
-
 <!DOCTYPE html>
+
+
 
 
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
@@ -79,10 +76,12 @@
 
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/news.css">
+	
+		<link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
+	
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-	
+
 	
 
 	
@@ -131,10 +130,6 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Se connecter</a></li>
 					
 					
-						
-							<li id="lang-toggle"><a id="en" href='/news/'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
-						
-					
 				</ul>
 			</div>
 		</div>
@@ -147,219 +142,91 @@
 		document.querySelector( "#news" ).classList.toggle("active");
 	</script>
 
-	<!-- Newest Article -->
-	<div id="newest-article">
-		
-			<div id="newest-byline">Latest Article</div>
-			<div id="newest-title"><a href="/fr/news/2018/02/03/journ%C3%A9-daction-sur-le-bien-%C3%AAtre-mental-autochtone.html">Journée d'action sur le bien-être mental autochtone</a></div>
-			<div id="newest-description">
-				<span id="newest-date">February 03, 2018</span>
-				Des étudiants en médecine d'à travers le Canada vont rencontrer des députés, sénateurs et conseillers politiques sur la Colline du Parlement pour demander au gouvernement de raffermir sa réponse a la crise de santémentale et de suicide chez les autochtones.
-			</div>
-			<div class="button"><a href="/fr/news/2018/02/03/journ%C3%A9-daction-sur-le-bien-%C3%AAtre-mental-autochtone.html">Read More</a></div>
-		
-	</div>
-	<div id="news-home-columns">
-		<div id="older-news" class="column">
-			<h1>Older Articles<i id="archive-icon" class="fa fa-folder-open-o"></i></h1>
-			<div class="news-home-list">
-				
-					<div class="news-date">Feb 03</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/02/03/journ%C3%A9-daction-sur-le-bien-%C3%AAtre-mental-autochtone.html">Journée d'action sur le bien-être mental autochtone</a></div>
-						<div class="news-desc">Des étudiants en médecine d'à travers le Canada vont rencontrer des députés, sénateurs et conseillers politiques sur la Colline du Parlement pour demander au gouvernement de raffermir sa réponse a la crise de santémentale et de suicide chez les autochtones.</div>
-					</li>
-				
-					<div class="news-date">Feb 03</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/02/03/cfms-student-initiative-grants.html">Programme de Subventions pour Initiatives Étudiantes de la FEMC - Appel des applications (date limite 28 février)</a></div>
-						<div class="news-desc">Le financement de la Subvention pour Initiatives Étudiantes vise à aider les projets de démarrage locaux et provinciaux avec un financement initial pour contribuer à leur viabilité à long terme</div>
-					</li>
-				
-					<div class="news-date">Jan 07</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/01/07/la-femc-est-un-fier-partenaire-de-la-37e-%C3%A9dition-des-medgames-qui-eurent-lieu-du-4-au-7-janvier-dernier-%C3%A0-luniversit%C3%A9-laval.html">La FEMC est un fier partenaire de la 37e édition des MedGames qui eurent lieu du 4 au 7 janvier dernier à l’Université Laval</a></div>
-						<div class="news-desc">Les MedGames sont un évènement annuel rassemblant les étudiants en médecine des facultés à travers le Canada.</div>
-					</li>
-				
-					<div class="news-date">Jan 07</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/01/07/appel-de-contributions-et-illustrations-de-couverture-revue-annuelle-de-la-femc-2018-date-limite-le-15-janvier.html">Appel de contributions et illustrations de couverture : Revue annuelle de la FEMC 2018 (date limite le 15 Janvier)</a></div>
-						<div class="news-desc">La Revue annuelle de la FEMC, une revue annuelle présentant des initiatives, recherche, projets, et talent créatif des étudiants en médecine partout au Canada, fait un appel de contributions à toutes les étudiantes et tous les étudiants en médecine.</div>
-					</li>
-				
-				<div class="button"><a href="archives/">See All Articles</a></div>
-			</div>
-		</div>
-		<div id="cfms-in-the-news" class="column">
-			<h1>CFMS in the News<i id="news-icon" class="fa fa-newspaper-o"></i></h1>
-			<div class="news-home-list">
-				
+	<div class="content">
 
+		<!-- News Article -->
+   		<div id="aside">
+			
+				<h6>À Propos du FEMC</h6>
+				La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre.
+			
+		</div>
+        <div id="title">Journée d'action sur le bien-être mental autochtone</div>
+        <info datetime="2018-02-03">
+        </info>
+    	<div id="date">February 03, 2018</div>
+        <div id="body">
+	        <p><img src="/uploads/versions/french-cover-photo-fr-1---x----1921-1081x---.png" alt="" /></p>
+
+<blockquote>
+  <p>Faites partie de la conversation <a href="https://twitter.com/search?q=%23Bien%C3%AAtreMentalAutochtone&amp;src=typd">#BienêtreMentalAutochtone</a>: Suivez @CFMSFEMC sur <a href="https://twitter.com/CFMSFEMC">Twitter</a>, <a href="https://www.facebook.com/CFMSFEMC/">Facebook</a> et <a href="https://www.instagram.com/cfmsfemc/">Instagram</a> pour rester au courant!</p>
+</blockquote>
+
+<p>Chaque année, des étudiants en médecine de partout au Canada se rendent à Ottawa pour rencontrer des parlementaires et proposer un changement positif au notre système de santé. En prévision des réunions, cet événement comprend une formation poussée sur le plaidoyer. C’est une excellente occasion pour les étudiants en médecine qui s’intéressent à la promotion de la santé nationale. La Journée d’action ne serait pas possible sans notre équipe dévouée d’étudiants au Comité de recherche de la Journée d’action qui réunit le document de demande, le document d’information et coordonne le processus de consultation.</p>
+
+<h4 id="journée-daction-2018-le-bien-être-mental-autochtone">Journée d’action 2018: le bien-être mental autochtone</h4>
+
+<p>Le bien-être mental est un problème immense pour les communautés autochtones au Canada. La prévalence des maladies mental et le suicide est plus énorme parmi les autochtones que le population générale au Canada. Deux ans après la publication du rapport de la Commission de vérité et de réconciliation en 2015, la question demeure en grande partie non résolue, l’accès à des soins de santé mentale de haute qualité et culturellement adaptés demeurant limité parmi les communautés autochtones.</p>
+
+<p>Le FEMC reconnaît que les besoins de soins de santé essentiels parmi les populations autochtones au Canada demeurent largement insatisfaits, en particulier dans le domaine de la santé mentale et du bien-être. En tant que tel, nous croyons que les futurs professionnels de la santé, nous avons l’obligation de plaider en faveur de la santé et le bien-être des peuples autochtones.</p>
+
+<p>Suivant des consultations extensives auprès des communautés autochtones, et en tant que futurs médecins et dirigeants de la santé ayant la responsabilité de défendre la santé de tous les Canadiens, la Fédération des étudiants et étudiantes en médecine du Canada (FEMC) demande au gouvernement du Canada de:</p>
+
+<ol>
+  <li>Adopter les méthodes et stratégies proposées par les communautés et peoples autochtones du Canada pour guider la réponse fédérale à la crise suicidaire autochtone:
+    <ol>
+      <li>Adopter le Cadre du continuum du mieux-être mental des Premières Nations comme cadre pour aborder la santé mentale et le suicide des peuples autochtones</li>
+      <li>Adopter la Stratégie nationale de prévention du suicide chez les Inuits pour aborder la santé mentale et le suicide chez des Inuits</li>
+    </ol>
+  </li>
+  <li>Entreprendre un examen complet de la répartition actuelle du financement dans le cadre de la Stratégie Nationale de Prévention du suicide chez les Jeunes Autochtones (SNPSJA), en collaboration avec les communautés autochtones, afin de s’assurer que chaque communauté autochtone reçoit un financement durable et selon les besoins</li>
+  <li>Demander à Santé Canada et à Services aux Autochtones Canada de réévaluer les programmes et services financés dans le cadre du Programme des services de santé non assurés (SSNA), et:
+    <ol>
+      <li>D’augmenter le financement des programmes de bien-être mental préventifs et centrés sur la terre qui créent des opportunités dans les communautés</li>
+      <li>Soutenir et élargir la liste des fournisseurs de services approuvés pour inclure les détenteurs de savoirs traditionnels autochtones</li>
+    </ol>
+  </li>
+</ol>
+
+<blockquote>
+  <h4 id="pour-plus-dinformation-contacter">Pour plus d’information, contacter:</h4>
+
+  <p><strong>Yipeng Ge</strong>, Vice-President aux affairs gouvernementales<br />Federation des étudiants et des étudiantes en médecine du Canada<br /><a href="javascript:void(location.href='mailto:'+String.fromCharCode(118,112,103,111,118,116,97,102,102,97,105,114,115,64,99,102,109,115,46,111,114,103))">vpgovtaffairs@cfms.org</a></p>
+
+  <p><strong>Christina Schweitzer</strong>, Vice-Présidente aux communications<br />Federation des étudiants et des étudiantes en médecine du Canada<br /><a href="javascript:void(location.href='mailto:'+String.fromCharCode(118,112,99,111,109,109,117,110,105,99,97,116,105,111,110,115,64,99,102,109,115,46,111,114,103))">vpcommunications@cfms.org</a></p>
+</blockquote>
+
+        </div>
+	</div>
+	    <!-- Other News -->
+        <div id="other-news">
+			<h1>Other News</h1>
+			<div id="other-news-list">
 				
 					
-						<div class="news-year"><span>2018</span></div>
+						<div class="news-date">Feb 03</div>
+						<li>
+							<div class="news-link"><a href="/fr/news/2018/02/03/journ%C3%A9-daction-sur-le-bien-%C3%AAtre-mental-autochtone.html">Journée d'action sur le bien-être mental autochtone</a></div>
+						</li>
 					
+						<div class="news-date">Feb 03</div>
+						<li>
+							<div class="news-link"><a href="/fr/news/2018/02/03/cfms-student-initiative-grants.html">Programme de Subventions pour Initiatives Étudiantes de la FEMC - Appel des applications (date limite 28 février)</a></div>
+						</li>
 					
-						
-							<div class="news-date">Jan 25</div>
-							<li>
-								<div class="news-link"><a href="https://cmajnews.com/2018/01/25/more-supports-for-unmatched-medical-students-coming-soon-cmaj-109-5559/?utm_content=bufferfff50&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">More supports for unmatched medical students coming soon</a>
-									<div class="news-publication">CMAJ News</div>
-								</div>
-							</li>
-						
+						<div class="news-date">Jan 07</div>
+						<li>
+							<div class="news-link"><a href="/fr/news/2018/01/07/la-femc-est-un-fier-partenaire-de-la-37e-%C3%A9dition-des-medgames-qui-eurent-lieu-du-4-au-7-janvier-dernier-%C3%A0-luniversit%C3%A9-laval.html">La FEMC est un fier partenaire de la 37e édition des MedGames qui eurent lieu du 4 au 7 janvier dernier à l’Université Laval</a></div>
+						</li>
 					
-						
-					
-						
-							<div class="news-date">Jan 18</div>
-							<li>
-								<div class="news-link"><a href="http://www.macleans.ca/news/canada/doctors-in-training-are-growing-extremely-nervous-about-the-lack-of-opportunities/">Doctors-in-training are growing extremely nervous about the lack of opportunities</a>
-									<div class="news-publication">Macleans</div>
-								</div>
-							</li>
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
+						<div class="news-date">Jan 07</div>
+						<li>
+							<div class="news-link"><a href="/fr/news/2018/01/07/appel-de-contributions-et-illustrations-de-couverture-revue-annuelle-de-la-femc-2018-date-limite-le-15-janvier.html">Appel de contributions et illustrations de couverture : Revue annuelle de la FEMC 2018 (date limite le 15 Janvier)</a></div>
+						</li>
 					
 				
-					
-						<div class="news-year"><span>2017</span></div>
-					
-					
-						
-					
-						
-							<div class="news-date">Nov 28</div>
-							<li>
-								<div class="news-link"><a href="https://cmajnews.com/2017/11/28/medical-schools-addressing-student-anxiety-burnout-and-depression-109-5516/?utm_content=buffer4c855&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">Medical schools addressing student anxiety, burnout and depression</a>
-									<div class="news-publication">CMAJ News</div>
-								</div>
-							</li>
-						
-					
-						
-					
-						
-							<div class="news-date">Dec 12</div>
-							<li>
-								<div class="news-link"><a href="https://cmajnews.com/2017/12/12/are-medical-associations-relevant-to-young-doctors-cmaj-109-5537/">Are medical associations relevant to young doctors?</a>
-									<div class="news-publication">CMAJ News</div>
-								</div>
-							</li>
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-				
-					
-						<div class="news-year"><span>2015</span></div>
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-							<div class="news-date">Mar 12</div>
-							<li>
-								<div class="news-link"><a href="http://parlvu.parl.gc.ca/parlvu/ContentEntityDetailView.aspx?contententityid=12695&amp;date=20150312&amp;lang=en">CFMS at Standing Committee on Health</a>
-									<div class="news-publication">HESA</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Jan 29</div>
-							<li>
-								<div class="news-link"><a href="http://liberalsenateforum.ca/your-question-period/universal-pharmacare/">Senate Question Period: Universal Pharmacare</a>
-									<div class="news-publication">Senate QP</div>
-								</div>
-							</li>
-						
-					
-						
-					
-						
-					
-				
-					
-						<div class="news-year"><span>2014</span></div>
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-							<div class="news-date">Dec 11</div>
-							<li>
-								<div class="news-link"><a href="http://www.thestar.com/opinion/commentary/2014/12/11/its_time_for_a_universal_pharmacare_system.html">It's time for a universal pharmacare system</a>
-									<div class="news-publication">Toronto Star</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Nov 24</div>
-							<li>
-								<div class="news-link"><a href="http://www.cpac.ca/en/digital-archives/?search=November+24%2C+2014">Pharmacare TV Interview for CFMS Lobby Day</a>
-									<div class="news-publication">CPAC</div>
-								</div>
-							</li>
-						
-					
-				
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-								
-				<div class="button"><a href="cfms-in-the-news.html">See all Mentions</a></div>
 			</div>
 		</div>
-	</div>
 	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -548,3 +415,4 @@ $('.redirect-modal').click(function(){
 
 </body>
 </html>
+
