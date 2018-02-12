@@ -1,6 +1,19 @@
 ---
 title: 'Call for Applications: Travel Awards to SGM 2018'
-date:
+date: 2018-02-12 00:00:00
 description: Please fill in description here.
 lang: en
 ---
+
+
+**Call for Applicants – CFMS-MD Financial Management Travel Awards to SGM**
+
+The CFMS and MD Financial Management have set aside funds for the 2017-2018 academic year to provide &nbsp;travel awards to CFMS member medical students interested in attending our Spring General Meeting, held April 27-28, 2018 in Halifax, NS.
+
+Additional information on the travel awards can be found [here](https://www.cfms.org/resources/md-travel-awards.html).
+
+&nbsp;
+
+Deadline to apply is March 2, 2018.
+
+Applications and questions should be emailed to Victoria Januszkiewicz, Atlantic Regional Representative, at [atlantic@cfms.org](mailto:atlantic@cfms.org).
