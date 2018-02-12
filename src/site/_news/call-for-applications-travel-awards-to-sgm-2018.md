@@ -1,6 +1,6 @@
 ---
 title: 'Call for Applications: Travel Awards to SGM 2018'
-date: 2018-02-13 00:00:00
+date: 2018-02-12 00:00:00
 description: Please fill in description here.
 lang: en
 ---
@@ -14,4 +14,4 @@ Additional information on the travel awards can be found [here](https://www.cfms
 
 Deadline to apply is **March 2, 2018, 11:59PM EST**.
 
-Applications and questions should be emailed to Victoria Januszkiewicz, Atlantic Regional Representative, at [atlantic@cfms.org](mailto:atlantic@cfms.org). Applications are available in [English](/uploads/SGM2018 Application form_ENG.doc) and [French](/uploads/SGM2018 Application form_FRA.docx).&nbsp;
+Applications and questions should be emailed to Victoria Januszkiewicz, Atlantic Regional Representative, at [atlantic@cfms.org](mailto:atlantic@cfms.org). Applications are available in [English](/uploads/SGM2018 Application form_ENG.doc) and [French](/uploads/SGM2018 Application form_FRA.docx).&nbsp;![](/uploads/versions/md-financial-graphic---x----720-440x---.png)
