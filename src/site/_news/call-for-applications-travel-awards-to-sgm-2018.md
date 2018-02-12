@@ -12,8 +12,6 @@ The CFMS and MD Financial Management have set aside funds for the 2017-2018 acad
 
 Additional information on the travel awards can be found [here](https://www.cfms.org/resources/md-travel-awards.html).
 
-&nbsp;
+Deadline to apply is **March 2, 2018, 11:59PM EST**.
 
-Deadline to apply is March 2, 2018.
-
-Applications and questions should be emailed to Victoria Januszkiewicz, Atlantic Regional Representative, at [atlantic@cfms.org](mailto:atlantic@cfms.org).
+Applications and questions should be emailed to Victoria Januszkiewicz, Atlantic Regional Representative, at [atlantic@cfms.org](mailto:atlantic@cfms.org). Applications are available in [English](/uploads/SGM2018 Application form_ENG.doc) and [French](/uploads/SGM2018 Application form_FRA.docx).&nbsp;
