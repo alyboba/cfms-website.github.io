@@ -11,7 +11,7 @@ lang: fr
 
 ![](/uploads/versions/french-cover-photo-fr-1---x----1921-1081x---.png)
 
-> Faites partie de la conversation [#Bien&ecirc;treMentalAutochtone](https://twitter.com/search?q=%23Bien%C3%AAtreMentalAutochtone&amp;src=typd): Suivez @CFMSFEMC sur [Twitter](https://twitter.com/CFMSFEMC), [Facebook](https://www.facebook.com/CFMSFEMC/) et [Instagram](https://www.instagram.com/cfmsfemc/) pour rester au courant!
+> **Faites partie de la conversation [#Bien&ecirc;treMentalAutochtone](https://twitter.com/search?q=%23Bien%C3%AAtreMentalAutochtone&amp;src=typd): Suivez @CFMSFEMC sur [Twitter](https://twitter.com/CFMSFEMC), [Facebook](https://www.facebook.com/CFMSFEMC/) et [Instagram](https://www.instagram.com/cfmsfemc/) pour rester au courant!**
 
 Chaque ann&eacute;e, des &eacute;tudiants en m&eacute;decine de partout au Canada se rendent &agrave; Ottawa pour rencontrer des parlementaires et proposer un changement positif au notre syst&egrave;me de sant&eacute;. En pr&eacute;vision des r&eacute;unions, cet &eacute;v&eacute;nement comprend une formation pouss&eacute;e sur le plaidoyer. C'est une excellente occasion pour les &eacute;tudiants en m&eacute;decine qui s'int&eacute;ressent &agrave; la promotion de la sant&eacute; nationale. La Journ&eacute;e d'action ne serait pas possible sans notre &eacute;quipe d&eacute;vou&eacute;e d'&eacute;tudiants au Comit&eacute; de recherche de la Journ&eacute;e d'action qui r&eacute;unit le document de demande, le document d'information et coordonne le processus de consultation.
 
