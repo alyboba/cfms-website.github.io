@@ -31,14 +31,10 @@ Suivant des consultations extensives aupr&egrave;s des communaut&eacute;s autoch
    1. D’augmenter le financement des programmes de bien-&ecirc;tre mental pr&eacute;ventifs et centr&eacute;s sur la terre qui cr&eacute;ent des opportunit&eacute;s dans les communaut&eacute;s
    2. Soutenir et &eacute;largir la liste des fournisseurs de services approuv&eacute;s pour inclure les d&eacute;tenteurs de savoirs traditionnels autochtones
 
-**&Agrave; PROPOS DE LA FEMC**
-
-La F&eacute;d&eacute;ration des &eacute;tudiants et des &eacute;tudiantes en m&eacute;decine du Canada (FEMC) est l'organisation nationale qui repr&eacute;sente plus de 8 000 &eacute;tudiants en m&eacute;decine de 15 facult&eacute;s de m&eacute;decine &agrave; travers le Canada. Nous repr&eacute;sentons les &eacute;tudiants aupr&egrave;s du grand public, du gouvernement f&eacute;d&eacute;ral et des organisations m&eacute;dicales nationales et internationales.&nbsp;
-
-[https://www.cfms.org/fr/](https://www.cfms.org/fr/)
-
-Suivez nous sur [Twitter](https://twitter.com/CFMSFEMC), [Facebook](https://www.facebook.com/CFMSFEMC/) et [Instagram](https://www.instagram.com/cfmsfemc/) : @CFMSFEMC<br>[#Bien&ecirc;treMentalAutochtone](https://twitter.com/search?src=typd&amp;q=%23Bien%C3%AAtreMentalAutochtone) / [#IndigenousMentalWellness](https://twitter.com/search?src=typd&amp;q=%23IndigenousMentalWellness)
-
-SOURCE F&eacute;d&eacute;ration des &eacute;tudiants et des &eacute;tudiantes en m&eacute;decine du Canada (FEMC)
-
-Renseignements : Christina Schweitzer, Vice-Pr&eacute;sidente aux Communications, F&eacute;d&eacute;ration des &eacute;tudiants et des &eacute;tudiantes en m&eacute;decine du Canada, Email : [vpcommunications@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,99,111,109,109,117,110,105,99,97,116,105,111,110,115,64,99,102,109,115,46,111,114,103))), Cellulaire : 1-587-225-8165
+> **Pour plus d’information, contacter:**
+>
+>
+> **Yipeng Ge**, Vice-President aux affairs gouvernementales<br>Federation des &eacute;tudiants et des &eacute;tudiantes en m&eacute;decine du Canada<br>[vpgovtaffairs@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,103,111,118,116,97,102,102,97,105,114,115,64,99,102,109,115,46,111,114,103)))
+>
+>
+> **Christina Schweitzer**, Vice-Pr&eacute;sidente aux communications<br>Federation des &eacute;tudiants et des &eacute;tudiantes en m&eacute;decine du Canada<br>[vpcommunications@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,99,111,109,109,117,110,105,99,97,116,105,111,110,115,64,99,102,109,115,46,111,114,103)))
