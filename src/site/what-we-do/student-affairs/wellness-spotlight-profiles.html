@@ -1,0 +1,64 @@
+---
+title: "Wellness Spotlight profiles"
+sitemap:
+  priority: 0.6
+  changefreq: monthly
+  role: VP Student Affairs
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-student-affairs.html %}
+    <script type="text/javascript">
+        document.querySelector( "#wellness-spotlight-profiles" ).classList.toggle("sidebar-active");
+    </script>
+    
+    <div id="side-content">
+        <h1 id="page-title">Introducing: Student Wellness Spotlights</h1>
+        <div class="editable">
+            <h2><strong>Purpose</strong></h2>
+            <p>The purpose of the student spotlight profiles is to foster positive dialogue about medical student wellness in Canada, as part of the Longitudinal Wellness Initiative (LWI). The LWI seeks to create a continuum of resources and dialogue regarding medical student wellness throughout the calendar year, as an adjunct to the National Wellness Challenge. This encourages students to both consider, create, and maintain healthy habits that contribute to their long-term wellness on a more continuous, sustainable basis.</p>
+            <h2><strong>Outline</strong></h2>
+            <p>Students may submit a personal story that encompasses one or more of the following topics:</p>
+                <ol>
+                    <li>Nutrition</li>
+                    <li>Mental wellness</li>
+                    <li>Physical wellness</li>
+                    <li>Social/relationship wellness</li>
+                </ol>
+            <p>Submissions should be written in a narrative format, similarly to the “Humans in Medicine” project. They may focus on one theme in particular, or tell a story that encompasses many wellness themes. The above themes serve as general suggestions for student submissions, but certainly do not encompass all aspects of wellness. Students should feel free to submit any personal story that they feel relates to wellness at large. Submissions should reflect the student’s own personal journey with wellness, and not the experiences of other students. Creative liberty in the writing of submissions is encouraged.</p>
+            <h2><strong>Word Limit</strong></h2>
+            <p>500 words maximum.</p>
+            <p>Please submit your wellness story <a href="https://docs.google.com/forms/d/e/1FAIpQLScsmP5w7cjWdkkuJQbTHkzXYNtEfovdp_FVyQZhHZiszxE3GQ/viewform">here</a></p>
+            <blockquote>
+                <h4><strong>For More Information:</strong></h4>
+                <p><strong>Michelle Moody</strong>, Student Wellness Spotlight Lead<br>
+                Memorial University<br>
+                <a href="mailto:mam524@mun.ca">mam524@mun.ca</a></p>
+            </blockquote>
+
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>

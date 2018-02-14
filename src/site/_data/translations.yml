@@ -243,6 +243,8 @@ sidebar-student-affairs:
     discounts: Student Discounts
     resident-profiles: Resident Profiles
     national-wellness-initiative: National Wellness Initiative
+    longitudinal-wellness-initiative: Longitudinal Wellness Initiative
+    wellness-spotlight-profiles: Wellness Spotlight profiles
   - lang: fr
     sidebar-title_1: Affaires étudiantes
     overview: Aperçu
@@ -254,6 +256,9 @@ sidebar-student-affairs:
     wellness: Bien-être
     discounts: Rabais étudiants
     national-wellness-initiative: National Wellness Initiative
+    longitudinal-wellness-initiative: Longitudinal Wellness Initiative
+    wellness-spotlight-profiles: Wellness Spotlight profiles
+
 sidebar-communications:
   - lang: en
     sidebar-title_1: Communications
