@@ -70,4 +70,4 @@ The CFMS looks forward to working with the Government of Canada towards building
 > Link to Newswire Press Release: [https://www.newswire.ca/news-releases/canadian-medical-students-urge-the-government-of-canada-to-strengthen-response-to-indigenous-mental-health-and-suicide-crisis-673773613.html](https://www.newswire.ca/news-releases/canadian-medical-students-urge-the-government-of-canada-to-strengthen-response-to-indigenous-mental-health-and-suicide-crisis-673773613.html)
 >
 >
-> PDF: [CFMS Day of Action on Indigenous Mental Wellness](/Press Release - CFMS Day of Action 2018 - EN.pdf)
+> Press Release PDF: [CFMS Day of Action on Indigenous Mental Wellness](/Press Release - CFMS Day of Action 2018 - EN.pdf)
