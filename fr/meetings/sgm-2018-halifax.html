@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 
 
@@ -79,7 +74,7 @@
 
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/news.css">
+	<link rel="stylesheet" href="/stylesheets/meetings.css" />
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 	
@@ -132,7 +127,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" href='/news/'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+							<li id="lang-toggle"><a id="en" href='/meetings/sgm-2018-halifax.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
 						
 					
 				</ul>
@@ -144,226 +139,100 @@
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
 		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#news" ).classList.toggle("active");
+		document.querySelector( "#meetings" ).classList.toggle("active");
 	</script>
 
-	<!-- Newest Article -->
-	<div id="newest-article">
-		
-			<div id="newest-byline">Latest Article</div>
-			<div id="newest-title"><a href="/fr/news/2018/02/22/call-for-sgm.html"></a></div>
-			<div id="newest-description">
-				<span id="newest-date">February 22, 2018</span>
-				
-			</div>
-			<div class="button"><a href="/fr/news/2018/02/22/call-for-sgm.html">Read More</a></div>
-		
-	</div>
-	<div id="news-home-columns">
-		<div id="older-news" class="column">
-			<h1>Older Articles<i id="archive-icon" class="fa fa-folder-open-o"></i></h1>
-			<div class="news-home-list">
-				
-					<div class="news-date">Feb 22</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/02/22/call-for-sgm.html"></a></div>
-						<div class="news-desc"></div>
-					</li>
-				
-					<div class="news-date">Feb 11</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/02/11/SGM2018_Registration.html">AGP Halifax 2018 - Période d'inscription MAINTENANT OUVERTE</a></div>
-						<div class="news-desc">Appel de candidatures - Bourses de voyage à l'AGP offertes par la FEMC-Gestion financière MD</div>
-					</li>
-				
-					<div class="news-date">Feb 03</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/02/03/journ%C3%A9-daction-sur-le-bien-%C3%AAtre-mental-autochtone.html">Journée d'action sur le bien-être mental autochtone</a></div>
-						<div class="news-desc">Des étudiants en médecine d'à travers le Canada vont rencontrer des députés, sénateurs et conseillers politiques sur la Colline du Parlement pour demander au gouvernement de raffermir sa réponse a la crise de santémentale et de suicide chez les autochtones.</div>
-					</li>
-				
-					<div class="news-date">Feb 03</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/02/03/cfms-student-initiative-grants.html">Programme de Subventions pour Initiatives Étudiantes de la FEMC - Appel des applications (date limite 28 février)</a></div>
-						<div class="news-desc">Le financement de la Subvention pour Initiatives Étudiantes vise à aider les projets de démarrage locaux et provinciaux avec un financement initial pour contribuer à leur viabilité à long terme</div>
-					</li>
-				
-					<div class="news-date">Jan 07</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/01/07/la-femc-est-un-fier-partenaire-de-la-37e-%C3%A9dition-des-medgames-qui-eurent-lieu-du-4-au-7-janvier-dernier-%C3%A0-luniversit%C3%A9-laval.html">La FEMC est un fier partenaire de la 37e édition des MedGames qui eurent lieu du 4 au 7 janvier dernier à l’Université Laval</a></div>
-						<div class="news-desc">Les MedGames sont un évènement annuel rassemblant les étudiants en médecine des facultés à travers le Canada.</div>
-					</li>
-				
-				<div class="button"><a href="archives/">See All Articles</a></div>
+	<!-- Header -->
+	<div id="top-meeting" style="background: url(../images/meeting-images/halifax_2018.jpg) no-repeat center 40%; background-size:cover">
+		<div id="top-group">
+			<div class="content">
+				<div class="editable" id="top-meeting-name">Assemblée générale de printemps 2018 de la FEMC</div>
+				<div class="editable" id="top-meeting-info">HALIFAX, NOUVELLE-ÉCOSSE/ 27-28 AVRIL 2018</div>
 			</div>
 		</div>
-		<div id="cfms-in-the-news" class="column">
-			<h1>CFMS in the News<i id="news-icon" class="fa fa-newspaper-o"></i></h1>
-			<div class="news-home-list">
-				
-
-				
-					
-						<div class="news-year"><span>2018</span></div>
-					
-					
-						
-							<div class="news-date">Jan 25</div>
-							<li>
-								<div class="news-link"><a href="https://cmajnews.com/2018/01/25/more-supports-for-unmatched-medical-students-coming-soon-cmaj-109-5559/?utm_content=bufferfff50&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">More supports for unmatched medical students coming soon</a>
-									<div class="news-publication">CMAJ News</div>
-								</div>
-							</li>
-						
-					
-						
-					
-						
-							<div class="news-date">Jan 18</div>
-							<li>
-								<div class="news-link"><a href="http://www.macleans.ca/news/canada/doctors-in-training-are-growing-extremely-nervous-about-the-lack-of-opportunities/">Doctors-in-training are growing extremely nervous about the lack of opportunities</a>
-									<div class="news-publication">Macleans</div>
-								</div>
-							</li>
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-				
-					
-						<div class="news-year"><span>2017</span></div>
-					
-					
-						
-					
-						
-							<div class="news-date">Nov 28</div>
-							<li>
-								<div class="news-link"><a href="https://cmajnews.com/2017/11/28/medical-schools-addressing-student-anxiety-burnout-and-depression-109-5516/?utm_content=buffer4c855&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">Medical schools addressing student anxiety, burnout and depression</a>
-									<div class="news-publication">CMAJ News</div>
-								</div>
-							</li>
-						
-					
-						
-					
-						
-							<div class="news-date">Dec 12</div>
-							<li>
-								<div class="news-link"><a href="https://cmajnews.com/2017/12/12/are-medical-associations-relevant-to-young-doctors-cmaj-109-5537/">Are medical associations relevant to young doctors?</a>
-									<div class="news-publication">CMAJ News</div>
-								</div>
-							</li>
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-				
-					
-						<div class="news-year"><span>2015</span></div>
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-							<div class="news-date">Mar 12</div>
-							<li>
-								<div class="news-link"><a href="http://parlvu.parl.gc.ca/parlvu/ContentEntityDetailView.aspx?contententityid=12695&amp;date=20150312&amp;lang=en">CFMS at Standing Committee on Health</a>
-									<div class="news-publication">HESA</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Jan 29</div>
-							<li>
-								<div class="news-link"><a href="http://liberalsenateforum.ca/your-question-period/universal-pharmacare/">Senate Question Period: Universal Pharmacare</a>
-									<div class="news-publication">Senate QP</div>
-								</div>
-							</li>
-						
-					
-						
-					
-						
-					
-				
-					
-						<div class="news-year"><span>2014</span></div>
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-							<div class="news-date">Dec 11</div>
-							<li>
-								<div class="news-link"><a href="http://www.thestar.com/opinion/commentary/2014/12/11/its_time_for_a_universal_pharmacare_system.html">It's time for a universal pharmacare system</a>
-									<div class="news-publication">Toronto Star</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Nov 24</div>
-							<li>
-								<div class="news-link"><a href="http://www.cpac.ca/en/digital-archives/?search=November+24%2C+2014">Pharmacare TV Interview for CFMS Lobby Day</a>
-									<div class="news-publication">CPAC</div>
-								</div>
-							</li>
-						
-					
-				
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-								
-				<div class="button"><a href="cfms-in-the-news.html">See all Mentions</a></div>
+	</div>
+	<div id="meeting-details" class="content">
+		<div class="editable" id="meeting-aside">
+			<h2 id="aside-title"><strong>Détails de l'événement<i class="fa fa-star-o"></i></strong></h2>
+			<div class="icon">
+				<i class="fa fa-map-marker"></i>
 			</div>
+			<ul>
+				<li><b>EMPLACEMENT</b><br>
+				Halifax Convention Centre</li>
+			</ul>
+			<div class="icon">
+				<i class="fa fa-clock-o"></i>
+			</div>
+			<ul>
+				<li><b>DATE</b><br>
+				27-28 avril 2018</li>
+			</ul>
+			<div class="icon">
+				<i class="fa fa-briefcase what-to-bring"></i>
+			</div>
+			<ul>
+				<li><b>QUOI APPORTER</b><br>
+				Code vestimentaire : tenue professionnelle pour les réunions, tenue chic décontractée pour les événements sociaux</li>
+			</ul>
+			<div class="icon">
+				<i class="fa fa-envelope-o mail"></i>
+			</div>
+			<div id="emails">
+				<ul>
+					<li>
+						<b>QUESTIONS?</b><br>
+						Contactez-nous à <a href="mailto:office@cfms.org" style="border-bottom:1px solid #EAEAEA">office@cfms.org</a>
+					</li>
+				</ul>
+			</div>
+			<div id="shortcut-links">
+				<div id="scroll">
+					<h2>SAUTER À:<span style="opacity:0.5">:</span></h2>
+					<ul>
+						<li>
+							<a href="#introduction">Introduction</a>
+						</li>
+						<li>
+							<a href="#registration-info">Information d'inscription</a>
+						</li>
+						<li>
+							<a href="#travel-funding">Financement de voyage</a>
+						</li><!--<li><a href="#important-documents">Important Documents</a></li>
+		                        <li><a href="#executive-officer-reports">Executive &amp; Officer Reports</a></li>
+		                        <li><a href="#resolutions">Resolutions</a></li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="meeting-body">
+			<h2 class="editable" id="introduction"><strong>Qu'est-ce que l'Assemblée générale du printemps ?</strong></h2>
+			<p class="editable">L'Assemblée générale du printemps (AGP) est une occasion pour les étudiants et étudiantes en médecine du Canada de se rassembler pour discuter de sujets importants concernant l'éducation médicale, la défense des intérêts, la santé mondiale, le bien-être et plus. Joignez-vous à la conversation, impliquez-vous - nous voulons vous entendre!</p>
+
+			<h2 class="editable" id="registration-info"><strong>Information d'inscription</strong></h2>
+			<blockquote class="editable"><h4><strong>Comment puis-je m'inscrire?</strong></h4><ul><li>La période d'inscription est <b>MAINTENANT OUVERTE</b>. Inscrivez-vous <a href="https://www.surveymonkey.com/r/CFMSSGM2018">ici</a>.</li><li>Veuillez contacter <a href="mailto:office@cfms.org">office@cfms.org</a> pour toute question concernant l'inscription..</li></ul>
+			<h5><strong>Payez vos frais en ligne</strong></h5>
+				<div class="members-only">
+				    <form id="payment-form" payment-id="SGM2018" action="/#" method="POST">
+				        <script src="https://payform.beanstream.com/payform/beanstream_payform.js" data-image="https://cfms.org/images/cfms-logo.svg" data-name="CFMS" data-description="Assemblée générale de printemps 2018 de la FEMC - Registration" data-amount="125" data-currency="cad" data-billingaddress="false" data-submitform="false" data-primarycolor="#BB0A21">
+				        </script>
+				    </form>
+				    <p>En cliquant sur ce bouton, vous agrééez à nos <strong><a href="/payment-policies.html" target="_blank">politiques de paiement</a></strong>.
+				    </p>
+				</div>
+				<div class="non-members">
+				    <p>L'inscription est ouverte aux membres de la FEMC uniquement. Veuillez vous connecter à votre compte afin de procéder. </p>
+				</div>
+			</blockquote>
+
+			<h2 class="editable" id="travel-funding"><strong>Financement de voyage</strong></h2>
+			<p class="editable">Vous n'avez jamais assisté à une rencontre FEMC ? Vous voulez vous impliquer ? Faites demande à notre <strong>programme de financement de voyage</strong> et vous pourriez bénéficier de couverture de vos frais d'inscription et de voyage par la FEMC. Chaque année, la FEMC et Gestion financière MD allouent des fonds pour amener des étudiants en médecine à nos assemblées annuelles. C'est une excellente occasion d'en apprendre plus sur la FEMC, de s'impliquer et de rencontrer d'autres étudiants en médecine de l'ensemble du pays.</p>
+			<blockquote class="editable">
+				<h4><strong>Faites demande pour le financement de voyage</strong></h4>
+				<ul>
+					<li>La période d'application pour le financement de voyage est <a href="https://www.cfms.org/resources/md-travel-awards.html"><strong>MAINTENANT OUVERTE</strong></a>.</li>
+				</ul>
+			</blockquote>
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -553,4 +422,3 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
 
 </body>
-</html>
