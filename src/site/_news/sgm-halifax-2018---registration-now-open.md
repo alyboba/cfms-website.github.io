@@ -5,11 +5,8 @@ description:
 lang: en
 ---
 
-
-Join us in Halifax, NS for the CFMS Spring General Meeting, in conjunction with the Canadian Conference on Medical Education, April 27-28, 2018!&nbsp;<br><br>The Spring General Meeting is an opportunity for medical students in Canada to get together and discuss important medical education, advocacy, global health, wellness issues, and more. Join the conversation and get involved; we want to hear from you!&nbsp;<br><br>[Registration for SGM 2018 is now open](https://www.surveymonkey.com/r/CFMSSGM2018). &nbsp;Please direct any registration inquiries to office@cfms.org. Deadline for registration is&nbsp;**April 4, 2018, 11:59PM EST**.&nbsp;<br>&nbsp;
-
-The [Lord Nelson Hotel](https://lordnelsonhotel.ca/) in Halifax is offering a rate of $159 + tax/night based on double occupancy for attendees of the CFMS SGM. The code to reserve your booking at this rate is : ID 39535.
+Join us in Halifax, NS for the CFMS Spring General Meeting, in conjunction with the Canadian Conference on Medical Education, April 27-28, 2018!&nbsp;<br><br>The Spring General Meeting is an opportunity for medical students in Canada to get together and discuss important medical education, advocacy, global health, wellness issues, and more. Join the conversation and get involved; we want to hear from you!&nbsp;<br><br>[Registration for SGM 2018 is now open](https://www.surveymonkey.com/r/CFMSSGM2018). &nbsp;Please direct any registration inquiries to office@cfms.org. Deadline for registration is&nbsp;**April 4, 2018, 11:59PM EST**.&nbsp;
 
 This will be a busy weekend in Halifax so booking accommodations ASAP is recommended.
 
-&nbsp;<br>REGISTRATION FEES: Registration fee is $125 per delegate, payable by cash, by cheque to CFMS at the meeting or through our online payment system. This DOES NOT include hotel accommodations. Students must arrange for their own hotels (excluding CFMS-funded delegates).&nbsp;<br><br>NOTE: All SGM 2018 attendees MUST&nbsp;[register for CCME&nbsp;](https://events.myconferencesuite.com/CCME_Delegate_Registration/reg/landing)and will be required to pay a $50 student fee.
+<br>REGISTRATION FEES: Registration fee is $125 per delegate, payable by cash, by cheque to CFMS at the meeting or through our online payment system. This DOES NOT include hotel accommodations. Students must arrange for their own hotels (excluding CFMS-funded delegates).&nbsp;<br><br>NOTE: All SGM 2018 attendees MUST&nbsp;[register for CCME&nbsp;](https://events.myconferencesuite.com/CCME_Delegate_Registration/reg/landing)and will be required to pay a $50 student fee.
