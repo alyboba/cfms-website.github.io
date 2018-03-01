@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
 
-
-
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
@@ -76,12 +74,10 @@
 
 
 	<!--Page Specific Stylesheet-->
-	
-		<link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
-	
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
 </head>
-<body ng-app="authApp" ng-controller="AuthController">
-
+<body>
+	
 	
 
 	
@@ -130,79 +126,60 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Se connecter</a></li>
 					
 					
+						
+							<li id="lang-toggle"><a id="en" href='/what-we-do/education/residency-match.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+						
+					
 				</ul>
 			</div>
 		</div>
 	
 
 	
-	<!--Page Specific Formatting-->
-	<script type="text/javascript">
-		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#news" ).classList.toggle("active");
-	</script>
-
 	<div class="content">
-
-		<!-- News Article -->
-   		<div id="aside">
-			
-				<h6>À Propos du FEMC</h6>
-				La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre.
-			
-		</div>
-        <div id="title"></div>
-        <info datetime="2018-02-25">
-        </info>
-    	<div id="date">February 25, 2018</div>
-        <div id="body">
-	        <p><strong>Appel de candidatures : Bourses de voyage à l’AGP 2018</strong></p>
-
-<p>La FEMC et Gestion financière MD ont réservé des fonds pour l’année scolaire 2017-2018 afin d’offrir des bourses de voyage aux étudiants en médecine membres de la FEMC qui sont intéressés à participer à notre Assemblée générale du printemps, qui aura lieu le 27-29 avril 2018 à Halifax, N.-É.</p>
-
-<p>Pour plus d’information sur les bourses de voyage, <a href="https://www.cfms.org/news/2018/02/12/call-for-applications-travel-awards-to-sgm-2018.html">cliquez ici</a>.</p>
-
-<p>La date limite d’application est le <strong>2 mars 2018, 11:59PM EST</strong>.</p>
-
-<p>Veuillez envoyer vos applications et vos questions à Victoria Januszkiewicz, représentante régionale de l’Atlantique, à <a href="mailto:atlantic@cfms.org">atlantic@cfms.org</a>. Les applications sont disponibles en <a href="/uploads/SGM2018 Application form_ENG (1).doc">anglais</a> et en <a href="/uploads/SGM2018 Application form_FRA.docx">français</a>. <img src="/uploads/versions/md-financial-graphic---x----720-440x---.png" alt="" /></p>
-
-
-        </div>
+		<!-- Displays the sidebar and emphasizes the active page -->
+		<div id="sidebar">
+	<div id="scroll">
+		
+		
+		
+		
+		<span id="sidebar-title">Éducation</span>
+		<ul>
+			<li><a id="overview" href=".">Aperçu</a></li>
+			<li><a id="our-team" href="our-team.html">Notre conseil</a></li>
+			<li><a id="educational-advocacy" href="educational-advocacy.html">Plaidoirie scolaire</a></li>
+			<li><a id="national-research-chair" href="national_research_chair.html">Président national de recherche</a></li>
+						
+		</ul>
+		<span id="sidebar-title">Ressources</span>
+		<ul>
+			<li><a id="residency-match" href="residency-match.html">Jumelage en résidence</a></li>
+			<li><a id="matchbook" href="cfms-matchbook.html">Guide pour le jumelage en résidence</a></li>
+			<li><a id="accreditation-toolkit" href="accreditation.html">Accreditation Toolkit</a></li>
+			<li><a id="reports" href="reports.html">Rapports</a></li>
+			<!--<li><a id="elective-status-board" href="elective-status-board.html">Elective Status Board</a></li>-->
+			<li><a id="student-run-clinics" href="src-toolkit.html">Trousse-à-outils pour cliniques dirigées par étudiants</a></li>
+			<li><a id="lmcc-preparation" href="http://mcc.ca/examinations/mccqe-part-i/exam-preparation-resources/"><i class="fa fa-external-link"></i></a></li>
+		</ul>
+		
+		
 	</div>
-	    <!-- Other News -->
-        <div id="other-news">
-			<h1>Other News</h1>
-			<div id="other-news-list">
-				
-					
-						<div class="news-date">Feb 25</div>
-						<li>
-							<div class="news-link"><a href="/fr/news/2018/02/25/call-for-sgm.html"></a></div>
-						</li>
-					
-						<div class="news-date">Feb 11</div>
-						<li>
-							<div class="news-link"><a href="/fr/news/2018/02/11/SGM2018_Registration.html">AGP Halifax 2018 - Période d'inscription MAINTENANT OUVERTE</a></div>
-						</li>
-					
-						<div class="news-date">Feb 03</div>
-						<li>
-							<div class="news-link"><a href="/fr/news/2018/02/03/journ%C3%A9-daction-sur-le-bien-%C3%AAtre-mental-autochtone.html">Journée d'action sur le bien-être mental autochtone</a></div>
-						</li>
-					
-						<div class="news-date">Feb 03</div>
-						<li>
-							<div class="news-link"><a href="/fr/news/2018/02/03/cfms-student-initiative-grants.html">Programme de Subventions pour Initiatives Étudiantes de la FEMC - Appel des applications (date limite 28 février)</a></div>
-						</li>
-					
-						<div class="news-date">Jan 07</div>
-						<li>
-							<div class="news-link"><a href="/fr/news/2018/01/07/la-femc-est-un-fier-partenaire-de-la-37e-%C3%A9dition-des-medgames-qui-eurent-lieu-du-4-au-7-janvier-dernier-%C3%A0-luniversit%C3%A9-laval.html">La FEMC est un fier partenaire de la 37e édition des MedGames qui eurent lieu du 4 au 7 janvier dernier à l’Université Laval</a></div>
-						</li>
-					
-				
-			</div>
+</div>
+		<script type="text/javascript">
+			document.querySelector( "#residency-match" ).classList.toggle("sidebar-active");
+		</script>
+		<!--Page Specific Formatting-->
+		<script type="text/javascript">
+			document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+			document.querySelector( "#what-we-do" ).classList.toggle("active");
+		</script>
+
+		<div id="side-content" class="editable">
+			<h1 id="page-title">Residency Match</h1>
+			<p class="editable">Coming soon...</p>
 		</div>
+	</div>
 	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -391,4 +368,3 @@ $('.redirect-modal').click(function(){
 
 </body>
 </html>
-

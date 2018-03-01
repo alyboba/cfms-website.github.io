@@ -74,9 +74,9 @@
 
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
 </head>
-<body ng-app="authApp" ng-controller="AuthController">
+<body>
 	
 	
 		<div id="top-padding"></div>
@@ -125,7 +125,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/what-we-do/education/src-toolkit.html">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/what-we-do/education/residency-match.html">FR</a></li>
 						
 					
 				</ul>
@@ -136,15 +136,9 @@
 	
 
 	
-	<!--Page Specific Formatting-->
-	<script type="text/javascript">
-		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#what-we-do" ).classList.toggle("active");
-	</script>
-
-<div class="content">
-	<!-- Displays the sidebar and emphasizes the active page -->
-	<div id="sidebar">
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		<div id="sidebar">
 	<div id="scroll">
 		
 		
@@ -172,27 +166,20 @@
 		
 	</div>
 </div>
-	<script type="text/javascript">
-		document.querySelector("#student-run-clinics").classList.toggle("sidebar-active");
-	</script>
-	<div id="side-content" class="editable">
-		<h1 id="page-title">Student Run Clinics Toolkit</h1>
-		<p><img class="right" src="/images/page-images/CFMS_OMSA.png" /></p>
-		<p>Over the 2016-2017 academic year, the <a href="http://www.omsa.ca">Ontario Medical Student Association</a> (OMSA) and the
-			<a href="http://www.cfms.org">Canadian Federation of Medical Students</a> (CFMS) have worked together to create a toolkit
-			for students wishing to develop student led clinics at their schools.</p>
-		<p>Led by <em>Kaylynn Purdy</em> (NOSM) &amp; <em>Noam Berlin</em> (Toronto), the toolkit introduces evidence for the utility
-			of student run clinics in terms of effectiveness of learning and patient care. Thirteen authors from across the country
-			provide information on how to leverage funds, perform a needs assessment, and deal with wary administrations.</p>
-		<p>For more information on the guide or to contribute to future iterations please contact <a href="mailto:vpeducation@cfms.org">vpeducation@cfms.org</a> or <a href="mailto:education@omsa.ca">education@omsa.ca</a>.</p>
-		<blockquote>
-			<h4><strong>Student Run Clinics Toolkit</strong></h4>
-			<ul>
-				<li><span class="file-format">PDF</span><a href="/files/updates/SRC_ToolKit_v2-3.docx">Student Run Clinics Toolkit</a></li>
-			</ul>
-		</blockquote>
+		<script type="text/javascript">
+			document.querySelector( "#residency-match" ).classList.toggle("sidebar-active");
+		</script>
+		<!--Page Specific Formatting-->
+		<script type="text/javascript">
+			document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+			document.querySelector( "#what-we-do" ).classList.toggle("active");
+		</script>
+
+		<div id="side-content" class="editable">
+			<h1 id="page-title">Residency Match</h1>
+			<p class="editable">Coming soon...</p>
+		</div>
 	</div>
-</div>
 	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -380,3 +367,4 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
 
 </body>
+</html>
