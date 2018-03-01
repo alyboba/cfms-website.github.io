@@ -610,3 +610,9 @@ added helper classes
 .noListStyle{
 	list-style: none;
 }
+
+.full-width img {
+	width: auto;
+	height: auto;
+	max-width: 800px;
+}
