@@ -247,6 +247,8 @@ sidebar-student-affairs:
     national-wellness-initiative: National Wellness Initiative
     longitudinal-wellness-initiative: Longitudinal Wellness Initiative
     wellness-spotlight-profiles: Wellness Spotlight profiles
+    nutrition-wellness: Nutrition Wellness
+    nutrition-wellness-spotlight: Nutrition Wellness 
   - lang: fr
     sidebar-title_1: Affaires étudiantes
     overview: Aperçu
@@ -260,6 +262,8 @@ sidebar-student-affairs:
     national-wellness-initiative: National Wellness Initiative
     longitudinal-wellness-initiative: Longitudinal Wellness Initiative
     wellness-spotlight-profiles: Wellness Spotlight profiles
+    nutrition-wellness: Nutrition Wellness
+    nutrition-wellness-spotlight: Nutrition Wellness 
 
 sidebar-communications:
   - lang: en
