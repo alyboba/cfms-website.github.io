@@ -7,6 +7,9 @@ description: >-
 lang: en
 ---
 
+![](/images/lwi-images/national-wellness-initiative.png)
+
+To find out more about the National Wellness Initiative and receive a monthly newsletter update please sign-up [here](https://goo.gl/forms/ZOe3W1rlchZ6yjiO2)
 
 The CFMS is excited to launch the National Wellness Initiative (NWI), a three-fold component of our efforts to improve medical student wellbeing! The NWI includes:
 
