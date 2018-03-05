@@ -472,62 +472,6 @@ textbook-discounts:
       href="http://www.mheducation.ca/professional/microsite/cfms2017/">here</a></li>
       <li>Use the coupon code CFMSPARTNER2017 for the 25&#37; discount.</li>
       </ul>
-  - lang: en
-    discount-title: Elsevier Book Discounts
-    discount-sub-title: 'CFMS members receive 10&#37; off ALL Elsevier medical titles!'
-    discount-img:
-    discount-need-reverification:
-    discount-description: >-
-      <h3><strong>Fundamental Clinical Situations, 4th Ed.</strong></h3>
-      <p>Written by med students, for med students, Fundamental Clinical
-      Situations is a handbook designed as a comprehensive prep review for the
-      OSCE's. Designed to be used by teams, it includes over 68 scenarios,
-      complete with evaluation checklists and questions and answers. The
-      scenarios range from common to  special procedures. The book also provides
-      the reader with criteria to enable them to self-assess interpersonal
-      skills with patients.</p><h3><strong>OSCE and Clinical Skills Handbook,
-      2nd Ed.</strong></h3> <p>Developed to be a unique study guide for medical
-      students preparing for their OSCE examinations. It summarizes important
-      history and physical examination skills and is a practical review for all
-      level of medical students. The book is organized by major body systems, 
-      and is designed to facilitate both individual and group study. It also
-      includes samples OSCE scenarios and checklists</p> <blockquote> <ul>
-      <li>Emphasis on basic clinical skills facilitates learning by junior
-      medical students.</li> <li>Question and answer format suitable to a
-      variety of learning levels facilitates the learning of basic skills for
-      junior medical students and helps senior medical students develop an
-      approach to clinical symptomatology.</li> <li>Important points are
-      presented in an easy-to-read bulleted list format.</li> <li>Sample OSCE
-      Scenarios and Sample Checklists provide accurate and realistic simulations
-      of the OSCE exam format for students.</li> <li>The OSCE Checklist Template
-      enables students to construct their own sample checklists using cases from
-      the book and helps them develop an approach to a variety of clinical
-      scenarios.</li> <li>A sample in-depth OSCE case provides an opportunity
-      for practice.</li> <li>The body systems approach and tabbing system
-      provide fast and easy access to the content.</li></ul>
-      </blockquote><h3><strong>Textbook of Medical Physiology, 11th
-      Ed.</strong></h3> <p>Physiology's classic text continues to uphold its
-      rich tradition—presenting key physiology concepts in a remarkably clear
-      and engaging manner. Guyton & Hall's Textbook of Medical Physiology covers
-      all of the major systems in the human body, while emphasizing system
-      interaction, homeostasis, and pathophysiology. This very readable,
-      easy-to-follow, and thoroughly updated, 11th Edition features a new
-      full-color layout, short chapters, clinical vignettes, and shaded summary
-      tables that allow for easy comprehension of the material.</p> <blockquote>
-      <ul> <li>Presents short, easy-to-read chapters in keeping with the Guyton
-      and Hall tradition.</li> <li>Provides shaded summary tables for easy
-      reference.</li> <li>Includes clinical vignettes, which allow readers to
-      see core concepts applied to real-life situations.</li> <li>Offers
-      specific discussions of pathophysiology in most clinical areas of
-      medicine.</li> <li>Ensures a strong grasp of physiology concepts through
-      well-illustrated discussions of the most essential principles.</li> </ul>
-      </blockquote>
-    discount-promotion: >-
-      <ul> <li>Follow <a href="http://www.elsevier.ca/Medicine">this link</a> to
-      search Elsevier's medical titles.</li> <li> Use the promotional code
-      <strong><em>CFM</em></strong> for the 10% discount. PLEASE NOTE: The
-      discount will not be applied until checking out through the third party
-      distributor.</li> </ul>
   - lang: fr
     discount-title: Wolters Kluwer/Lippincott Resources
     discount-sub-title: Receive a 30% Discount on Wolters Kluwer/Lippincott Resources
@@ -639,21 +583,6 @@ textbook-discounts:
       href="http://www.mheducation.ca/professional/microsite/cfms2017/">ici.</a></li>
       <li>Utilisez le code coupon CFMSPARTNER2017 pour la réduction de
       25&#37;.</li> </ul>
-  - lang: fr
-    discount-title: Réduction sur les livres Elsevier
-    discount-sub-title:
-    discount-img:
-    discount-need-reverification:
-    discount-description: >-
-      <p>Les membres de la FEMC bénéficient d’une réduction de 10 &#37; sur TOUS
-      les titres médicaux d’Elsevier!</p>
-    discount-promotion: >-
-      <ul> <li>Suivez <a href="http://www.elsevier.ca/Medicine">ce lien </a>
-      pour effectuer une recherche dans les titres médicaux d’Elsevier.</li>
-      <li> Utilisez le code de réduction <strong><em>CFM</em></strong> pour
-      profiter de la réduction de 10 %. PRIÈRE DE NOTER : La réduction sera
-      appliquée seulement lorsque vous passerez à la caisse du distributeur
-      tiers.</li> </ul>
 online-discounts:
   - lang: en
     discount-title: UpToDate
