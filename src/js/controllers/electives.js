@@ -395,6 +395,7 @@ export default class ElectivesController extends FirebaseConnection {
 		$('#addEntryButton').show();
 		setTimeout(function(){
 			form.addClass('hidden');
+			document.body.scrollTop = document.documentElement.scrollTop = 0; //Scroll to top of page dynamically
 		}, 750);
 	}
 	
