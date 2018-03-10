@@ -22,7 +22,7 @@ nav:
     meetings: Meetings
     members: Members
     news: News
-    # human-of-medicine: Humans of Medicine
+    human-of-medicine: Humans of Medicine
     login: Login
     logout: Logout
   - lang: fr
@@ -40,7 +40,7 @@ nav:
     meetings: Réunions
     members: Membres
     news: Nouvelles
-    # human-of-medicine: Humains de la Médecine
+    human-of-medicine: Humains de la Médecine
     login: Se connecter
     logout: Se déconnecter
 financial_resources:
@@ -213,6 +213,7 @@ sidebar-education:
     educational-advocacy: Educational Advocacy
     national-research-chair: National Research Chair
     sidebar-title_2: Resources
+    residency-match: Residency Match
     residency-matchbook: Residency Matchbook
     accreditation-toolkit: Accreditation Toolkit
     student-run-clinics-toolkit: Student Run Clinics Toolkit
@@ -225,6 +226,7 @@ sidebar-education:
     educational-advocacy: Plaidoirie scolaire
     national-research-chair: Président national de recherche
     sidebar-title_2: Ressources
+    residency-match: Jumelage en résidence
     residency-matchbook: Guide pour le jumelage en résidence
     accreditation-toolkit: Accreditation Toolkit
     student-run-clinics-toolkit: Trousse-à-outils pour cliniques dirigées par étudiants
@@ -243,6 +245,10 @@ sidebar-student-affairs:
     discounts: Student Discounts
     resident-profiles: Resident Profiles
     national-wellness-initiative: National Wellness Initiative
+    longitudinal-wellness-initiative: Longitudinal Wellness Initiative
+    wellness-spotlight-profiles: Wellness Spotlight profiles
+    nutrition-wellness: Nutrition Wellness
+    nutrition-wellness-spotlight: Nutrition Wellness 
   - lang: fr
     sidebar-title_1: Affaires étudiantes
     overview: Aperçu
@@ -254,6 +260,11 @@ sidebar-student-affairs:
     wellness: Bien-être
     discounts: Rabais étudiants
     national-wellness-initiative: National Wellness Initiative
+    longitudinal-wellness-initiative: Longitudinal Wellness Initiative
+    wellness-spotlight-profiles: Wellness Spotlight profiles
+    nutrition-wellness: Nutrition Wellness
+    nutrition-wellness-spotlight: Nutrition Wellness 
+
 sidebar-communications:
   - lang: en
     sidebar-title_1: Communications
@@ -304,7 +315,7 @@ sidebar-discounts:
     travel-and-accommodations: Travel and Accommodations
     disability-insurance: Disability Insurance
     textbooks: Textbooks
-    online-resources: Online Resources
+    online-resources: UptoDate
     wellness-discounts: Wellness Discounts
     lasik: LASIK MD Vision Correction
   - lang: fr
@@ -312,7 +323,7 @@ sidebar-discounts:
     travel-and-accommodations: Réductions sur les Voyages
     disability-insurance: Assurance Invalidité
     textbooks: Réductions sur les Manuels
-    online-resources: Rabais sur les ressources électroniques Médicales
+    online-resources: UptoDate
     lasik: Correction de la vision LASIK MD
     wellness-discounts: Wellness Discounts
 sidebar-databases:

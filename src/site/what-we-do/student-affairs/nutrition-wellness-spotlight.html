@@ -1,0 +1,55 @@
+---
+title: "Nutrition Wellness Spotlight"
+sitemap:
+  priority: 0.6
+  changefreq: monthly
+  role: VP Student Affairs
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-student-affairs.html %}
+    <script type="text/javascript">
+        document.querySelector( "#nutrition-wellness-spotlight" ).classList.toggle("sidebar-active");
+    </script>
+    
+    <div id="side-content">
+        <h1 id="page-title">{{ page.title }}</h1>
+        <div class="editable">
+            <div class="executive">
+                <div class="exec-pic"><img height="400" src="/images/lwi-images/wellness-spotlight/ricarda-konder.png" width="300"></div>
+                <div class="exec-info">
+                    <ul>
+                        <li class="exec-name"><span>Ricarda Konder</span></li>
+                        <li class="exec-desc">
+                            <span class="editable">“The traditional way of meal prepping (at least as far as I have been taught) is to set aside one night a week to prepare your meals for the entire upcoming week. I have tried this approach, and usually found it far too daunting, since I would easily spend 3-5 hours trying to make enough food to get me through the week. On top of all the things I have to get done, this quickly seemed like too much of a time investment for me, and I fell back into old habits (eating out, eating ready-made meals, etc.). A simple modification that has worked well for me is to meal prep on two different days every week in order to “cut down” the time I have to invest per day (I know this is purely psychological, but hey, we all have to find ways to trick ourselves). To me, it’s much more manageable to spend 1-2 hours on two separate days than to invest 4-5 hours in one day, especially when I combine the time I spend cooking with other chores. This way, I feel more productive and don’t feel like I’m “wasting” time meal prepping that I could spend doing other things. Sometimes, I also try to time my meal prepping in such a way that it serves either as a study break or my wind-down time in the evening; that way, I feel less guilty about leaving my desk, especially during crunch time.<br><br>I guess I’ll finish with the main thing I used to struggle with, which was thinking that I had to go all in right away. The nice thing about nutrition is that it’s not all-or-nothing, and with most of us being perfectionists, we tend to lose sight of that sometimes (at least I sure did). If you’re someone who seriously struggles with nutrition, try making small changes over time and rocking those small changes guilt-free rather than trying to overhaul your whole life at once.” <br><br>Ricarda Konder<br>Dalhousie University<br>Class of 2020</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>
+
