@@ -25,12 +25,6 @@ news_text_fr: >-
   href='http://www.old.cfms.org'>www.old.cfms.org</a>!
 news_text_url:
 featured_links:
-  - url: /resources/student-finances.html
-    image_url_en: images/home-link-thumbs/cfms-co-brand-logo.jpg
-    image_url_fr: images/home-link-thumbs/cfms-co-brand-logo.jpg
-    text_en: Student Financial Advice from MD Financial Management
-    text_fr: Conseils financiers pour étudiants en médecine par Gestion financière MD
-
   - url: /news/2018/01/22/cfms-launches-the-national-wellness-initiative.html
     image_url_en: images/home-link-thumbs/nwi.png
     image_url_fr: images/home-link-thumbs/nwi.png
@@ -42,3 +36,9 @@ featured_links:
     image_url_fr: /images/meeting-images/halifax_2018.jpg
     text_en: 2018 CFMS Spring General Meeting
     text_fr: 2018 CFMS Spring General Meeting
+
+  - url: /resources/student-finances.html
+    image_url_en: images/home-link-thumbs/cfms-co-brand-logo.jpg
+    image_url_fr: images/home-link-thumbs/cfms-co-brand-logo.jpg
+    text_en: Student Financial Advice from MD Financial Management
+    text_fr: Conseils financiers pour étudiants en médecine par Gestion financière MD
