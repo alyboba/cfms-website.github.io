@@ -13,4 +13,4 @@ lang: fr
 
 []()
 
-&Agrave; titre d’&eacute;tudiants en m&eacute;decine et de futurs m&eacute;decins, vous &ecirc;tes invit&eacute;s &agrave; vous servir de votre exp&eacute;rience analytique et de votre c&ocirc;t&eacute; cr&eacute;atif pour nous soumettre vos id&eacute;es concernant les m&eacute;faits potentiels de la consommation de cannabis ainsi que les mises en garde que vous souhaiteriez faire &agrave; ce sujet. [Des prix en esp&egrave;ces seront remis pour les meilleures id&eacute;es!]() [Pour en savoir plus, consultez la page]()[amc.ca/concourscannabis](amc.ca/concourscannabis).
+&Agrave; titre d’&eacute;tudiants en m&eacute;decine et de futurs m&eacute;decins, vous &ecirc;tes invit&eacute;s &agrave; vous servir de votre exp&eacute;rience analytique et de votre c&ocirc;t&eacute; cr&eacute;atif pour nous soumettre vos id&eacute;es concernant les m&eacute;faits potentiels de la consommation de cannabis ainsi que les mises en garde que vous souhaiteriez faire &agrave; ce sujet. [Des prix en esp&egrave;ces seront remis pour les meilleures id&eacute;es!]() [Pour en savoir plus, consultez la page]()https://www.cma.ca/Fr/Pages/cannabis-contest.aspx []()
