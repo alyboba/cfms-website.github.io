@@ -10,9 +10,11 @@ lang: en
 
 *-Le fran&ccedil;ais suit-*
 
-![](/uploads/versions/cma-cannabis---x----1894-1460x---.png)The Canadian Medical Association (CMA) needs your help, as medical students, to develop a national public health awareness campaign on the health impacts of cannabis use, geared towards teens and young adults!
+![](/uploads/versions/cma-cannabis-1---x----1892-1455x---.png)
 
-As medical students and future physicians, we urge you to use your analytical background as well as your creative side, to submit your thoughts, and the cautions you’d offer, about the potential harms of cannabis use. Cash prizes are to be won for top submissions! For more information, please visit: [https://www.cma.ca/En/Pages/cannabis-contest.aspx](https://www.cma.ca/En/Pages/cannabis-contest.aspx)
+The Canadian Medical Association (CMA) needs your help, as medical students, to develop a national public health awareness campaign on the health impacts of cannabis use, geared towards teens and young adults!
+
+As medical students and future physicians, we urge you to use your analytical background as well as your creative side, to submit your thoughts, and the cautions you’d offer, about the potential harms of cannabis use. Cash prizes are to be won for top submissions! For more information, please visit: [cma.ca/cannabiscontest](cma.ca/cannabiscontest)
 
 ---
 
