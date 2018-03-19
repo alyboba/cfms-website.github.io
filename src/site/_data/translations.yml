@@ -275,6 +275,7 @@ sidebar-communications:
     cfms-in-the-news: CFMS in the News
     communiques: Communiques
     graphics: Graphics
+    quarter-reports: Quarter Reports
   - lang: fr
     sidebar-title_1: Communications
     overview: Aperçu
@@ -284,6 +285,7 @@ sidebar-communications:
     cfms-in-the-news: FEMC dans les Nouvelles
     communiques: Communiques
     graphics: Graphique
+    quarter-reports: Quarter Reports
 sidebar-advocacy:
   - lang: en
     sidebar-title_1: Advocacy
