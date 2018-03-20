@@ -1,6 +1,6 @@
 ---
-title: Appel de candidatures : Bourses de voyage à l'AGP 2018
-date: 2018-02-11 00:00:00
+title: "Appel de candidatures : Bourses de voyage à l'AGP 2018"
+date: 2018-02-11
 description: Appel de candidatures - Bourses de voyage à l'AGP offertes par la FEMC-Gestion financière MD 
 lang: fr
 ---

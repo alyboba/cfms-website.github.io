@@ -1,6 +1,6 @@
 ---
 title: Concours les effets du cannabis sur la santé
-date:
+date: 2018-02-11
 description: Please fill in description here.
 lang: fr
 ---
