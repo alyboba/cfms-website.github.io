@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 
 
-<!--[if IE 8 ]>
-<html class="ie8"> <![endif]-->
-<!--[if IE 9 ]>
-<html class="ie9"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
     <!--Metadata-->
 <meta charset="utf-8">
@@ -76,20 +74,15 @@
 
 
     <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/stylesheets/animate.css">
     <link rel="stylesheet" href="/stylesheets/members.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link rel="stylesheet" href="/stylesheets/fontawesome-stars.css">
     <link rel="stylesheet" href="/stylesheets/forms.css">
 
-    <!-- CodeMirror -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
-
-<!-- Firepad -->
-<link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
-<script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
-
+    <script src="/js/jquery.barrating.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 
@@ -140,7 +133,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/databases/carms-interview-placeholder.html">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/databases/electives.html">FR</a></li>
 						
 					
 				</ul>
@@ -169,27 +162,196 @@
     </div>
 </div>
     <script type="text/javascript">
-        document.querySelector("#carms-interview-database").classList.toggle("sidebar-active");
+			document.querySelector( "#electives-database" ).classList.toggle("sidebar-active");
     </script>
 
     <!--Page Specific Formatting-->
-    <script type="text/javascript">
-        document.querySelector("#logo-invert").classList.toggle("hidden");
-        document.querySelector("#resources").classList.toggle("active");
-    </script>
+    <!--<script type="text/javascript">-->
+    <!--document.querySelector( "#logo-invert" ).classList.toggle("hidden");-->
+    <!--document.querySelector( "#members" ).classList.toggle("active");-->
+    <!--</script>-->
 
-    <div id="side-content" class="editable">
-        <h1 id="page-title">Residency Interview Database</h1>
+    <div id="side-content">
+        <h1 class="editable" id="page-title">Electives Database</h1>
+
         <div class="members-only">
-            <div id="edit-members-only">
-    <div id="preview"></div>
-</div>
+            <h1 class="editable">Reviews</h1>
+            <p class="editable">Don't see your elective listed? contact the <a href='mailto:it@cfms.org'>National It Officer</a> to have an elective added!</p>
+            <div id="addButton">
+            </div>
+            <form class="animated hidden" id="dataForm">
+                <fieldset>
+                    <div>
+                        <legend>User Review</legend>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td>Overall rating</td>
+                                <td><select id="generalImpression" name="generalImpression">
+                                    <option selected="selected" value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Clinical Exposure & Participation</td>
+                                <td><select id="qualityHospital" name="qualityHospital">
+                                    <option selected="selected" value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Quality of Formal Teaching</td>
+                                <td><select id="qualityEducational" name="qualityEducational">
+                                    <option selected="selected" value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Quality of Supervisor/Preceptor</td>
+                                <td><select id="interviewFriendliness" name="interviewFriendliness">
+                                    <option selected="selected" value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>Final Impression of Elective</td>
+                                <td><select id="easeInterview" name="easeInterview">
+                                    <option selected="selected" value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div>
+                        <legend>Elective Review</legend>
+                        <label for="anonymous">Anonymous Review?</label>
+                        <input id="anonymous" type="radio" name="anonymous" value="yes" checked="checked"> Yes
+                        <input type="radio" name="anonymous" value="no"> No
+                    </div>
+
+                    <div>
+                        <label for="recommendElective">Would you Recommend This Elective to Another Student</label>
+                        <input class="recommendElective" checked="checked" id="recommendElective" type="radio" name="recommendElective" value="yes"> Yes
+                        <input class="recommendElective" type="radio" name="recommendElective" value="no"> No
+                    </div>
+
+                    <div>
+                        <label for="electiveTitle">Elective Title</label>
+                        <input type="text" id="electiveTitle" name="electiveTitle" value="" />
+                    </div>
+
+
+                    <div>
+                        <label for="hospitalClinic">Hospital/Clinic</label>
+                        <input type="text" id="hospitalClinic" name="hospitalClinic" value="" />
+                    </div>
+
+                    <div>
+                        <label for="supervisor">Supervisor(Optional)</label>
+                        <input type="text" id="supervisor" name="supervisor" value="" />
+                    </div>
+
+                    <div>
+                        <label for="datepicker">Date of Elective(Approximately)</label>
+                        <input type="text" id="datepicker" name="datepicker" value="" />
+                    </div>
+                    
+                    <div>
+                        <label for="electiveReview">Elective Review</label>
+                        <textarea class="styled-textarea" id="electiveReview" name="electiveReview"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="requireImprovement">Aspects Requiring Improvement</label>
+                        <input type="text" id="requireImprovement" name="requireImprovement" value="" />
+                    </div>
+                    
+                    
+                    <div>
+                        <button type="submit" id="addSubmitButton">Add</button>
+                        <button type="submit" id="editSubmitButton">Edit</button>
+                        <button id="cancelButton">Cancel</button>
+
+                    </div>
+                </fieldset>
+            </form>
+            <div>
+                <div class="floatLeft fixedWidthMd">
+                    <label for="schools-list">Schools:</label>
+                    <select name="schools" id="schools-list">
+                        <option disabled selected value> -- Select a School -- </option>
+                    </select>
+                </div>
+
+                <div class="floatRight fixedWidthMd">
+                    <label for="specialties-list">Specialties:</label>
+                    <select id="specialties-list">
+                        <option disabled selected value> -- Select a Specialty -- </option>
+                    </select>
+                </div>
+            </div>
+
+            <table class="display" id="interviewsDatabase">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Reviewed By</th>
+                    <!--This data-th details is used atm for when screen size is super small...-->
+                    <th>Date Reviewed</th>
+                    <th>Overall Rating</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Reviewed By</th>
+                    <!--This data-th details is used atm for when screen size is super small...-->
+                    <th>Date Reviewed</th>
+                    <th>Overall Rating</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </tfoot>
+
+                <!--Data from Db will be populated here, appended after the headers...-->
+            </table>
+
         </div>
         <div class="non-members">
-            <blockquote><h3><strong>Please login to see this page</strong></h3>
+            <blockquote>
+                <h3><strong>Please login to see this page</strong></h3>
                 <ul>
-                    <li>>Please login to the CFMS website in order to view the content on this page.
-                    </li>
+                    <li><a class="login-modal" href="" onclick="return false;">Login</a> to the CFMS website in order to view the content on this page.</li>
                 </ul>
             </blockquote>
         </div>
