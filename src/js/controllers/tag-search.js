@@ -52,6 +52,7 @@ export default class TagSearchConroller {
 			function that contains logic performed when user types into the search bar.
 			 */
 			function applySearchFieldFilter(searchBarFilter){
+			    resetView();
 				//iterate through all paper titles, compare the search entry to the passed in parameter
 				$(".paper-title").each(function () {
 					var nameSearched = $(this).text().toLowerCase();
@@ -68,11 +69,17 @@ export default class TagSearchConroller {
 					}
 				});
 			}
+			function resetView() {
+                $(".filtered-content").removeClass("filtered-content-active");
+                $(".arrow-down").addClass("active");
+				$(".paper-details").hide();
+			}
 
 			/*
 			Function to hold logic for applying filtering to papers using Tagging system.
 			 */
 			function applyTagFilter() {
+				resetView();
 				$(".filtered-content").hide();
 				var activeFilters = getActiveFilters();
 				$(".filtered-content").each(function () {
