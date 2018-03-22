@@ -66,7 +66,7 @@ financial_resources:
     paying_med_school_url: 'https://mdm.ca/physician-life-stages/students/paying-for-medical-school/'
     preparing_residency: Preparing for Residency
     preparing_residency_url: 'https://mdm.ca/physician-life-stages/students/preparing-for-residency/'
-    studying_abroad: Studying Abroad
+    # studying_abroad: Studying Abroad
     studying_abroad_url: >-
       https://mdm.ca/physician-life-stages/students/resources-for-studying-abroad/
     client_testimonials: Client Testimonials
@@ -97,7 +97,7 @@ financial_resources:
     preparing_residency: Vous préparer à la résidence
     preparing_residency_url: >-
       https://mdm.ca/fr/%c3%a9tapes-de-carri%c3%a8re/etudiants-en-medecine/vous-preparer-a-la-residence
-    studying_abroad: Étudier à l’étranger
+    # studying_abroad: Étudier à l’étranger
     studying_abroad_url: >-
       https://mdm.ca/fr/%C3%A9tapes-de-carri%C3%A8re/etudiants-en-medecine/des-ressources-pour-etudier-a-l-etranger
     client_testimonials: Témoignages de vos collègues
