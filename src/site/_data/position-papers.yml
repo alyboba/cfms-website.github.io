@@ -19,6 +19,14 @@ position-papers:
       paper-status: "Status coming soon"
       paper-tags:
       - tag: "pp"
+      paper-contacts:
+      - contact:
+        name: "TBD"
+        email: "nohp@cfms.org"
+      paper-nohps:
+      - nohp:
+        name: "NOHP"
+        email: "nohp@cfms.org"
     - paper-name: "Support for Unmatched Canadian Medical Students"
       paper-publish-date: "2017"
       paper-link: "/files/position-papers/agm_2017_support_unmatched.pdf"

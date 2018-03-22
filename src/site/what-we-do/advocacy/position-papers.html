@@ -146,7 +146,7 @@ sitemap:
                             Here is where we populate each section with the papers available to that section
                         {% endcomment %}
                        <li id="paper_{{index}}" class="filtered-content" data-filters="[{{myArray}}]" data-index="{{index}}">
-                           <div class="arrow-down" id="arrow-down_{{index}}"></div>
+                           <div class="arrow-down active" id="arrow-down_{{index}}"></div>
                            {% for tags in papers.paper-tags %}
                            {% if tags.tag != "null" and tags.tag != "" %}
                            <span class="{{tags.tag | downcase}}">{{tags.tag | upcase}}</span>
@@ -168,7 +168,20 @@ sitemap:
                                     <p>{{papers.paper-status}}</p>
                                 </div>
                                 <div class="right">
-                                    <a href="{{papers.paper-link}}">Download</a>
+                                    <h2>Contact Person(s)</h2>
+                                    <ul class="paper-contacts">
+                                        {% for contact in papers.paper-contacts %}
+                                        <li>{{contact.name}} - <a href="mailto:{{contact.email}}">{{contact.email}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                    <h2>NOHP(s)</h2>
+                                    <ul class="paper-cohps">
+                                        {% for nohp in papers.paper-nohps %}
+                                        <li>{{nohp.name}} - <a href="mailto:{{nohp.email}}">{{nohp.email}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                    <p></p>
+                                    <div class="button" style="margin-top:10px;"><a href="{{papers.paper-link}}" style="cursor:pointer"> <strong>Download</strong> </a></div>
                                 </div>
                             </div>
                         </li>

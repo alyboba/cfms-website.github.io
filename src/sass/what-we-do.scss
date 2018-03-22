@@ -462,8 +462,16 @@ $number-margin-mobile:40px;
 
 .paper-details {
   display: none;
+  ul {
+    list-style: none;
+  }
+  .button {
+    margin: 0;
+    padding: 0;
+  }
   .paper-detail-container {
     display: flex;
+    width: 100%;
     .left {
       display: inline-block;
       float: left;
@@ -483,14 +491,14 @@ $number-margin-mobile:40px;
 .arrow-down {
 	width: 25px;
 	height: 25px;
-	background: $primary-color-bright;
+	background: $primary-color;
 	position: relative;
 	display: inline-block;
   	top: 6px;
 }
 
 .arrow-down.active {
-	background: $primary-color;
+	background: $primary-color-bright;
 }
 
 .arrow-down:before, .arrow-down:after {
