@@ -5,7 +5,6 @@ export default class TagSearchConroller {
 	
 	bindListeners(){
 		$(document).ready(function () {
-			console.log("Here i am!");
 			$("#filters").css({"display" : "block"}); //Set the search form visible if the user has javascript enabled...
 			$("#noJavaScriptMessage").css({"display" : "none"}); //If user has javascript, hide this element. If they have no JS, User friendly message will display to them.
 			//var searchBar = $('<legend>Search by Title:</legend><input style ="display:none;"id="searchFilter" type="text" name="search" placeholder="Search Paper Name with Filters">');
@@ -36,6 +35,18 @@ export default class TagSearchConroller {
 				selectedSection = textBoxChange();
 				checkSectionAfterFilter();
 			});
+
+			$(".filtered-content")
+                .click(function() {
+                    $(`#details_${$(this).attr("data-index")}`).toggle();
+                    $(this).toggleClass("filtered-content-active");
+                    $(`#arrow-down_${$(this).attr("data-index")}`).toggleClass("active");
+                })
+                .hover(function() {
+                    $(this).toggleClass("filtered-content-hover");
+                }, function() {
+                    $(this).toggleClass("filtered-content-hover");
+                });
 			
 			/*
 			function that contains logic performed when user types into the search bar.
@@ -57,7 +68,7 @@ export default class TagSearchConroller {
 					}
 				});
 			}
-			
+
 			/*
 			Function to hold logic for applying filtering to papers using Tagging system.
 			 */
