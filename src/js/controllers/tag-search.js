@@ -25,6 +25,8 @@ export default class TagSearchConroller {
 			
 			$("#searchFilter").on("keyup", function () {
 				currentSearchField = $(this).val().toLowerCase(); //Grab the new substring entered
+				console.log(currentSearchField);
+				
 				applySearchFieldFilter(currentSearchField); //pass the input to the function
 				selectedSection = textBoxChange();
 				checkSectionAfterFilter();
@@ -52,11 +54,12 @@ export default class TagSearchConroller {
 			function that contains logic performed when user types into the search bar.
 			 */
 			function applySearchFieldFilter(searchBarFilter){
-			    resetView();
+			    resetView(); //Reset Close view
+				
 				//iterate through all paper titles, compare the search entry to the passed in parameter
 				$(".paper-title").each(function () {
 					var nameSearched = $(this).text().toLowerCase();
-					var $filteredElement = $(this).parent().parent();
+					var $filteredElement = $(this).parent();
 					var activeFilters = getActiveFilters();
 					var paperFilters = $filteredElement.data("filters");
 					if (nameSearched.indexOf(searchBarFilter) != -1 && lessonQualified(activeFilters, paperFilters) ) {
@@ -69,6 +72,7 @@ export default class TagSearchConroller {
 					}
 				});
 			}
+			
 			function resetView() {
                 $(".filtered-content").removeClass("filtered-content-active");
                 $(".arrow-down").addClass("active");
