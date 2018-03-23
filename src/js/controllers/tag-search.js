@@ -25,8 +25,6 @@ export default class TagSearchConroller {
 			
 			$("#searchFilter").on("keyup", function () {
 				currentSearchField = $(this).val().toLowerCase(); //Grab the new substring entered
-				console.log(currentSearchField);
-				
 				applySearchFieldFilter(currentSearchField); //pass the input to the function
 				selectedSection = textBoxChange();
 				checkSectionAfterFilter();
