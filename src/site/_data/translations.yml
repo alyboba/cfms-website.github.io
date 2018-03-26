@@ -249,6 +249,7 @@ sidebar-student-affairs:
     wellness-spotlight-profiles: Wellness Spotlight profiles
     nutrition-wellness: Nutrition Wellness
     nutrition-wellness-spotlight: Nutrition Wellness 
+    quick-tips: Quick Tips
   - lang: fr
     sidebar-title_1: Affaires étudiantes
     overview: Aperçu
@@ -264,6 +265,7 @@ sidebar-student-affairs:
     wellness-spotlight-profiles: Wellness Spotlight profiles
     nutrition-wellness: Nutrition Wellness
     nutrition-wellness-spotlight: Nutrition Wellness 
+    quick-tips: Quick Tips
 
 sidebar-communications:
   - lang: en
