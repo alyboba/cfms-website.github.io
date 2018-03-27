@@ -58,14 +58,14 @@ position-papers:
       paper-status: "Status coming soon"
       paper-tags:
       - tag: "PS"
-  - section: "SGM 2017 - Winnipeg, MB"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "SGM 2017 - Winnipeg, MB"
+    papers:
     - paper-name: "Mental Health & Suicide in Indigenous Communities "
       paper-publish-date: "2017"
       paper-link: "/files/position-papers/sgm_2017_indigenous_mental_health.pdf"
@@ -73,14 +73,14 @@ position-papers:
       paper-status: ""
       paper-tags:
       - tag: "pp"
-  - section: "AGM 2016 - Edmonton, AB"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "AGM 2016 - Edmonton, AB"
+    papers:
     - paper-name: "CFMS Professionalism"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_agm_professionalism.pdf"
@@ -114,14 +114,14 @@ position-papers:
       paper-status: "Last updated AGM September 2016"
       paper-tags:
       - tag: "PS"
-  - section: "SGM 2016 - Montreal, QC"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "SGM 2016 - Montreal, QC"
+    papers:
     - paper-name: "Advocacy and Leadership in Canadian Medical Student Curricula"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_advocacy and leadership.pdf"
@@ -220,14 +220,14 @@ position-papers:
       paper-status: "As of Spring 2016: (1) The Clinician Investigator Trainee Association of Canada (CITAC), in collaboration with UBC and the Canadian Society for Clinical Investigation (CSCI), is currently in the process of collecting data that could help inform decision-making regarding the administration of clinician-scientist training programs. (2) Several organizations and programs across Canada are calling for the CIHR to either re-establish funding for the MD/PhD programs or create an alternative funding program."
       paper-tags:
       - tag: "null"
-  - section: "Medical Student Affairs"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Medical Student Affairs"
+    papers:
     - paper-name: "Medical Student Health and Wellbeing"
       paper-publish-date: "2014"
       paper-link: "/files/position-papers/2014_Wellness Position Paper_Aug19.pdf"
@@ -261,14 +261,14 @@ position-papers:
       paper-status: "N/A"
       paper-tags:
       - tag: "PP"
-  - section: "Accessibility to Healthcare"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Accessibility to Healthcare"
+    papers:
     - paper-name: "Pharmacare: Promoting Equitable Access to Medications"
       paper-publish-date: "2015"
       paper-link: "/files/position-papers/2015%20CFMS%20Pharmacare%20Policy%20Document.pdf"
@@ -307,27 +307,27 @@ position-papers:
       paper-link: "/files/position-papers/National%20Pharmaceutical%20Drug%20Shortages%20Sept%202014.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Access to Medical Education"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Access to Medical Education"
+    papers:
     - paper-name: "Position Area Summary Statement: Access to Medical Education"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_pass_access to medical education.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Medical Education"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Medical Education"
+    papers:
     - paper-name: "Representation"
       paper-publish-date: "2010"
       paper-link: "/files/position-papers/representation_paper.pdf"
@@ -377,27 +377,27 @@ position-papers:
       paper-link: "/files/position-papers/career_decision.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Public Health"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Public Health"
+    papers:
     - paper-name: "Criminalization of HIV"
       paper-publish-date: "2014"
       paper-link: "/files/position-papers/Criminalization%20of%20HIV%20Sept%202014.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Professional Ethics"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Professional Ethics"
+    papers:
     - paper-name: "CFMS Guide to Social Media Professionalism"
       paper-publish-date: "2013"
       paper-link: "/files/position-papers/2013 CFMS Guide to Social Media Professionalism.pdf"
@@ -414,14 +414,14 @@ position-papers:
       paper-link: "/files/position-papers/cfms_industry_funding_working_group_paper.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Health Equity"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Health Equity"
+    papers:
     - paper-name: "Blood Donation Deferrals"
       paper-publish-date: "2015"
       paper-link: "/files/position-papers/2015%20CFMS%20Blood%20Donation%20Deferral.pdf"
@@ -548,14 +548,14 @@ position-papers:
       paper-link: "/files/position-papers/cfms_aboriginal_health_policy_statement_-_final.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Competencies for UGME"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Competencies for UGME"
+    papers:
     - paper-name: "Antimicrobial Stewardship"
       paper-publish-date: "2015"
       paper-link: "/files/position-papers/2015%20CFMS%20Antimicrobial%20Resistance%20and%20Stewardship.pdf"
@@ -616,14 +616,14 @@ position-papers:
       paper-link: "/files/position-papers/2015 Global Health Core Competencies.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Health & Human Resources"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Health & Human Resources"
+    papers:
     - paper-name: "Physician Recruitment and Retention Strategies"
       paper-publish-date: "2013"
       paper-link: "/files/position-papers/CFMS%20Position%20Paper%20Physician%20Recruitment%20and%20Retention%20Strategies.pdf"
@@ -719,12 +719,6 @@ position-papers:
   paper-collection:
   - section: "Adopté à l’AG 2017 - Ottawa, ON"
     papers:
-      paper-contacts:
-      - name: "TBD"
-        email: "nohp@cfms.org"
-      paper-nohps:
-      - name: "NOHP"
-        email: "nohp@cfms.org"
     - paper-name: "Curricular Advocacy"
       paper-publish-date: "2017"
       paper-link: "/files/position-papers/curricular-advocacy-paper.pdf"
@@ -771,14 +765,14 @@ position-papers:
       paper-status: "Description à venir."
       paper-tags:
       - tag: "PS"
-  - section: "Adopté à la rencontre générale 2017 - Winnipeg, MB"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Adopté à la rencontre générale 2017 - Winnipeg, MB"
+    papers:
     - paper-name: "Mental Health & Suicide in Indigenous Communities "
       paper-publish-date: "2017"
       paper-link: "/files/position-papers/sgm_2017_indigenous_mental_health.pdf"
@@ -786,14 +780,14 @@ position-papers:
       paper-status: "Description à venir."
       paper-tags:
       - tag: "pp"
-  - section: "Adopté à l’AG 2016 - Edmonton, AB"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Adopté à l’AG 2016 - Edmonton, AB"
+    papers:
     - paper-name: "CFMS Professionalism"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_agm_professionalism.pdf"
@@ -827,14 +821,14 @@ position-papers:
       paper-status: "Last updated AGM September 2016"
       paper-tags:
       - tag: "PS"
-  - section: "Adopté à la rencontre générale 2016 - Montréal, QC"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Adopté à la rencontre générale 2016 - Montréal, QC"
+    papers:
     - paper-name: "Advocacy and Leadership in Canadian Medical Student Curricula"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_advocacy and leadership.pdf"
@@ -933,14 +927,14 @@ position-papers:
       paper-status: "As of Spring 2016: (1) The Clinician Investigator Trainee Association of Canada (CITAC), in collaboration with UBC and the Canadian Society for Clinical Investigation (CSCI), is currently in the process of collecting data that could help inform decision-making regarding the administration of clinician-scientist training programs. (2) Several organizations and programs across Canada are calling for the CIHR to either re-establish funding for the MD/PhD programs or create an alternative funding program."
       paper-tags:
       - tag: "null"
-  - section: "Medical Student Affairs"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Medical Student Affairs"
+    papers:
     - paper-name: "Medical Student Health and Wellbeing"
       paper-publish-date: "2014"
       paper-link: "/files/position-papers/2014_Wellness Position Paper_Aug19.pdf"
@@ -974,14 +968,14 @@ position-papers:
       paper-status: "N/A"
       paper-tags:
       - tag: "PP"
-  - section: "Accessibility to Healthcare"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Accessibility to Healthcare"
+    papers:
     - paper-name: "Pharmacare: Promoting Equitable Access to Medications"
       paper-publish-date: "2015"
       paper-link: "/files/position-papers/2015%20CFMS%20Pharmacare%20Policy%20Document.pdf"
@@ -1020,27 +1014,27 @@ position-papers:
       paper-link: "/files/position-papers/National%20Pharmaceutical%20Drug%20Shortages%20Sept%202014.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Access to Medical Education"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Access to Medical Education"
+    papers:
     - paper-name: "Position Area Summary Statement: Access to Medical Education"
       paper-publish-date: "2016"
       paper-link: "/files/position-papers/2016_pass_access to medical education.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Medical Education"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Medical Education"
+    papers:
     - paper-name: "Representation"
       paper-publish-date: "2010"
       paper-link: "/files/position-papers/representation_paper.pdf"
@@ -1090,27 +1084,27 @@ position-papers:
       paper-link: "/files/position-papers/career_decision.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Public Health"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Public Health"
+    papers:
     - paper-name: "Criminalization of HIV"
       paper-publish-date: "2014"
       paper-link: "/files/position-papers/Criminalization%20of%20HIV%20Sept%202014.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Professional Ethics"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Professional Ethics"
+    papers:
     - paper-name: "CFMS Guide to Social Media Professionalism"
       paper-publish-date: "2013"
       paper-link: "/files/position-papers/2013 CFMS Guide to Social Media Professionalism.pdf"
@@ -1127,14 +1121,14 @@ position-papers:
       paper-link: "/files/position-papers/cfms_industry_funding_working_group_paper.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Health Equity"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Health Equity"
+    papers:
     - paper-name: "Blood Donation Deferrals"
       paper-publish-date: "2015"
       paper-link: "/files/position-papers/2015%20CFMS%20Blood%20Donation%20Deferral.pdf"
@@ -1261,14 +1255,14 @@ position-papers:
       paper-link: "/files/position-papers/cfms_aboriginal_health_policy_statement_-_final.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Competencies for UGME"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Competencies for UGME"
+    papers:
     - paper-name: "Antimicrobial Stewardship"
       paper-publish-date: "2015"
       paper-link: "/files/position-papers/2015%20CFMS%20Antimicrobial%20Resistance%20and%20Stewardship.pdf"
@@ -1329,14 +1323,14 @@ position-papers:
       paper-link: "/files/position-papers/2015 Global Health Core Competencies.pdf"
       paper-tags:
       - tag: "PP"
-  - section: "Health & Human Resources"
-    papers:
       paper-contacts:
       - name: "TBD"
         email: "nohp@cfms.org"
       paper-nohps:
       - name: "NOHP"
         email: "nohp@cfms.org"
+  - section: "Health & Human Resources"
+    papers:
     - paper-name: "Physician Recruitment and Retention Strategies"
       paper-publish-date: "2013"
       paper-link: "/files/position-papers/CFMS%20Position%20Paper%20Physician%20Recruitment%20and%20Retention%20Strategies.pdf"
