@@ -7,7 +7,7 @@ description: >-
 lang: en
 ---
 
-&nbsp;
+![](/uploads/call-for-president-elect.png)
 
 *CFMS Spring General Meeting*
 
@@ -17,7 +17,9 @@ Dear Medical Students,
 
 It is my pleasure to announce that nominations are now open for the position of President-Elect of the Canadian Federation of Medical Students (CFMS).
 
-<u><strong>Nominations Process:</strong></u><br>Interested individuals must complete this online form by <u><strong>Friday April 27th at 2pm Atlantic Time</strong></u>. Nominations will close strictly at this time.
+<u><strong>Nominations Process:</strong></u>
+
+<br>Interested individuals must complete this online form by <u><strong>Friday April 27th at 2pm Atlantic Time</strong></u>. Nominations will close strictly at this time.
 
 Any student member of the CFMS at any school may run. While previous experience with the workings of the CFMS is strongly encouraged, it is not required. We encourage all interested to contact Henry Annan, CFMS President at [president@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(112,114,101,115,105,100,101,110,116,64,99,102,109,115,46,111,114,103))) to inquire more about the position.
 
@@ -50,3 +52,5 @@ The President is also heavily involved in all activities of the executive and wo
 The position of President is a one-year post, elected by the board at the Spring General Meeting. Following the end of their term, the president assumes the official role of past- president.
 
 The 2017-2018 President is Mr. Henry Annan, Dalhousie University, who may be reached at [president@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(112,114,101,115,105,100,101,110,116,64,99,102,109,115,46,111,114,103))).
+
+> [PDF: Call for Nominations for President-Elect.pdf](/uploads/cfms-sgm-call-for-president-elect.pdf)
