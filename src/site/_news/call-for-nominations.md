@@ -19,7 +19,7 @@ It is my pleasure to announce that nominations are now open for the position of 
 
 <u><strong>Nominations Process:</strong></u>
 
-<br>Interested individuals must complete this online form by <u><strong>Friday April 27th at 2pm Atlantic Time</strong></u>. Nominations will close strictly at this time.
+<br>Interested individuals must complete this [online form](https://form.jotform.co/farizzuti/cfms-2018-board-nomination-form) by <u><strong>Friday April 27th at 2pm Atlantic Time</strong></u>. Nominations will close strictly at this time.
 
 Any student member of the CFMS at any school may run. While previous experience with the workings of the CFMS is strongly encouraged, it is not required. We encourage all interested to contact Henry Annan, CFMS President at [president@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(112,114,101,115,105,100,101,110,116,64,99,102,109,115,46,111,114,103))) to inquire more about the position.
 
@@ -27,7 +27,7 @@ Note the form requires an interested individual submit their name, email address
 
 **<u>Election Process:</u>**
 
-The election will take place at the CFMS Spring General Meeting (SGM) on Saturday April 28, 2018 in Halifax, NS. Votes will be cast by medical student society representatives and members of the Federation’s executive, as detailed in the organization’s bylaws.
+The election will take place at the CFMS Spring General Meeting (SGM) on Saturday April 28, 2018 in Halifax, NS. Votes will be cast by medical student society representatives and members of the Federation’s executive, as detailed in the [organization’s bylaws](https://www.cfms.org/files/internal-policy-bylaws/cfms-bylaws.pdf).
 
 Immediately upon the close of nominations, the General Assembly will have access to the nominees’ letter of intent (and CV if it was so provided).
 
