@@ -322,6 +322,7 @@ sidebar-discounts:
     online-resources: UptoDate
     wellness-discounts: Wellness Discounts
     lasik: LASIK MD Vision Correction
+    discounts-tax: Tax Services 
   - lang: fr
     sidebar-title_1: Réductions
     travel-and-accommodations: Réductions sur les Voyages
@@ -330,6 +331,8 @@ sidebar-discounts:
     online-resources: UptoDate
     lasik: Correction de la vision LASIK MD
     wellness-discounts: Wellness Discounts
+    discounts-tax: Tax Services 
+
 sidebar-databases:
   - lang: en
     sidebar-title_1: Databases
