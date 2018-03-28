@@ -7,6 +7,8 @@ description: >-
 lang: en
 ---
 
+&nbsp;
+
 *CFMS Spring General Meeting*
 
 **CALL FOR NOMINATIONS April 27-28, 2018 – Halifax NS**
@@ -23,7 +25,7 @@ Note the form requires an interested individual submit their name, email address
 
 **<u>Election Process:</u>**
 
-The election will take place at the CFMS Spring General Meeting (SGM) on Saturday April 28, 2018 in Halifax, NS. Votes will be cast by medical student society representatives and members of the Federation's executive, as detailed in the organization's bylaws.
+The election will take place at the CFMS Spring General Meeting (SGM) on Saturday April 28, 2018 in Halifax, NS. Votes will be cast by medical student society representatives and members of the Federation’s executive, as detailed in the organization’s bylaws.
 
 Immediately upon the close of nominations, the General Assembly will have access to the nominees’ letter of intent (and CV if it was so provided).
 
@@ -37,7 +39,7 @@ Sincerely,
 
 Franco Rizzuti, BSc MD<br>Past-President & Board Chair, Canadian Federation of Medical Students
 
-------
+---
 
 **President Description**
 
