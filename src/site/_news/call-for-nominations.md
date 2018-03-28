@@ -33,7 +33,7 @@ Immediately upon the close of nominations, the General Assembly will have access
 
 Candidates will be expected to deliver a short speech of no more than 5 minutes to the voters, either in person or by proxy. Please note that video or webcast speeches are not permitted. A 10-minute question period will follow, if a candidate is not present at the meeting, they will be voice-called into the meeting to field questions. Designated time constraints must be respected.
 
-You must notify [pastpresident@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(112,97,115,116,112,114,101,115,105,100,101,110,116,64,99,102,109,115,46,111,114,103))) one week prior to the meeting if you wish to deliver a speech by proxy.
+You must notify [pastpresident@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(112,97,115,116,112,114,101,115,105,100,101,110,116,64,99,102,109,115,46,111,114,103))) one week prior (April 20th at 2 pm Atlantic Time) to the meeting if you wish to deliver a speech by proxy.
 
 **If you should have any questions, please do not hesitate to contact Dr. Franco Rizzuti, Past-President & Board Chair, at [pastpresident@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(112,97,115,116,112,114,101,115,105,100,101,110,116,64,99,102,109,115,46,111,114,103))) and please refer to cfms.org for further position details.**
 
