@@ -9,9 +9,13 @@ description: >-
 lang: en
 ---
 
-**<u><span style="font-family:&quot;DengXian Light&quot;">Instructions </span></u>**<u><span style="font-family:&quot;DengXian Light&quot;"></span></u>
+*\*Preliminary instructions - please check back later for finalized instructions\**
 
-Medical societies and meeting delegates are invited to put forward resolutions for discussion and debate at the *CFMS Spring General Meeting*during the Members Resolutions Session (tentatively scheduled for Saturday, April 28<sup>th</sup>, 2018). Resolutions should reflect an understanding of ongoing and past work, and resolutions must pertain to new work of the Federation. Members are encouraged to review resolutions submitted at the previous meeting, available on the CFMS website under the SGM 2018 meeting documents section ([https://www.cfms.org/meetings/sgm-2018-halifax.html](https://www.cfms.org/meetings/sgm-2018-halifax.html)).
+### ![](/uploads/sgm-call-for-resolutions.png)
+
+### Instructions :
+
+Medical societies and meeting delegates are invited to put forward resolutions for discussion and debate at the [CFMS Spring General Meeting](https://www.cfms.org/meetings/sgm-2018-halifax.html)during the Members Resolutions Session (tentatively scheduled for Saturday, April 28<sup>th</sup>, 2018). Resolutions should reflect an understanding of ongoing and past work, and resolutions must pertain to new work of the Federation. Members are encouraged to review resolutions submitted at the previous meeting, available on the CFMS website under the [SGM 2018](https://www.cfms.org/meetings/sgm-2018-halifax.html) meeting documents section.
 
 Resolutions that include significant spending should be discussed with the CFMS VP Finance prior to submission ([vpfinance@cfms.org](mailto:vpfinance@cfms.org)). Resolutions can be submitted with or without an accompanying position paper, policy statement, or discussion paper.
 
@@ -31,9 +35,9 @@ Motions such as these can be supported by a 1-2-page explanatory document; these
 
 <u><span style="font-family:&quot;DengXian Light&quot;"></span></u>
 
-**<u><span style="font-family:&quot;DengXian Light&quot;">Deadlines</span></u>**<u><span style="font-family:&quot;DengXian Light&quot;"></span></u>
+### Deadlines:
 
-Resolutions must be received by Jessica Bryce, CFMS SGM Chair, by e- mail at[resolutions@cfms.org](mailto:resolutions@cfms.org) on or before **Friday, April 13<sup>th</sup>, 2018 at 19:00 ADT**to be pre-circulated**to SGM delegates via our website. Additional written resolutions may be tabled if emailed to the SGM Chair by **Friday, April 27<sup>th</sup>, 2018 at 12:00 noon ADT**.
+Resolutions must be received by Jessica Bryce, CFMS SGM Chair, by e-mail at [resolutions@cfms.org](mailto:resolutions@cfms.org) on or before **Friday, April 13<sup>th</sup>, 2018 at 19:00 ADT**to be pre-circulated to SGM delegates via our website. Additional written resolutions may be tabled if emailed to the SGM Chair by** Friday, April 27<sup>th</sup>, 2018 at 12:00 noon ADT**.
 
 Based on the total number of resolutions received, there is no guarantee that resolutions will be given agenda time at the SGM but every reasonable effort will be made to do so. Business will end promptly as scheduled in the agenda, and remaining resolutions will be referred to the Executive for consideration.
 
@@ -41,37 +45,37 @@ Please note that, as determined by the General Assembly at SGM 2014, any propose
 
 **<u><span style="font-family:&quot;DengXian Light&quot;"></span></u>**
 
-**<u><span style="font-family:&quot;DengXian Light&quot;">Resolution Guide</span></u>**
+### Resolution Guide:
 
-Each resolution submitted should contain **5 elements**and clearly tabled using the following headings:
+Each resolution submitted should contain **6 elements** and clearly tabled using the following headings:
 
-1. **Whereas . . .**
+**&nbsp;&nbsp; 1. Whereas . . .**
 
 This section discusses the substantive rationale for the resolution. The reader should gain a clear understanding of why the CFMS should act.
 
-1. **Be it resolved that the CFMS....**
+**&nbsp;&nbsp; 2. Be it resolved that the CFMS….**
 
 The resolution should reflect a policy-level decision and not overly operationalize its implementation.
 
-1. **Financial cost (estimate)**
+**&nbsp;&nbsp; 3. Financial cost (estimate)**
 
 This is essential. The mover should sufficiently have considered the financial considerations of the resolution. Please consult with the CFMS President and VP Finance if you have any questions. The VP Finance can be reached at[vpfinance@cfms.org](mailto:vpfinance@cfms.org).
 
-1. **Source of funding/Line item**
+**&nbsp; 4. Source of funding/Line item**
 
 Please consult with the VP Finance if you have any questions.
 
-1. **Level of effort of volunteers/staff**
+**&nbsp;&nbsp; 5. Level of effort of volunteers/staff**
 
 Please feel free to discuss this with the President, members of the Executive, or Officers related to the resolution. A clear statement(s) of level of effort and time should be provided.
 
-1. **Moved and Seconded by**
+**&nbsp;&nbsp; 6. Moved and Seconded by**
 
 Provide the names of the voting delegates of the CFMS who are willing to move and second the motion. These delegates should be present at the SGM.
 
 <u><span style="font-family:&quot;DengXian Light&quot;"></span></u>
 
-**<u><span style="font-family:&quot;DengXian Light&quot;">New and Revised Protocol for CFMS Guiding Documents</span></u>**
+### New and Revised Protocol for CFMS Guiding Documents:
 
 The CFMS updated its guiding document submission process in 2018 to encourage feedback between authors and the relevant CFMS committees. Though not mandatory, this dialogue will strengthen papers, thus increasing support for their adoption. This new and revised protocol and accompanying documentation and resources will be launched officially at SGM 2018. For additional information please contact Shanza Hashmi, National Officer of Health Policy ([nohp@cfms.org](mailto:nohp@cfms.org)) or Yipeng Ge, VP Government Affairs ([vpgovtaffairs@cfms.org](mailto:vpgovtaffairs@cfms.org)).
 
@@ -79,14 +83,4 @@ For more information, please do not hesitate to contact the SGM Chair.
 
 Sincerely,
 
-**Jessica Bryce**
-
-Chair, Spring General Meeting 2018
-
-Canadian Federation of Medical Students
-
-267 O'Connor Street, Suite 401, Ottawa, ON K2P 1V3
-
-Office: 613.565.7740 / Fax: 613.288.0524
-
-resolutions@cfms.org
+**Jessica Bryce**<br>Chair, Spring General Meeting 2018<br>Canadian Federation of Medical Students<br>267 O'Connor Street, Suite 401, Ottawa, ON K2P 1V3<br>Office: 613.565.7740 / Fax: 613.288.0524<br>[resolutions@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(114,101,115,111,108,117,116,105,111,110,115,64,99,102,109,115,46,111,114,103)))
