@@ -9,7 +9,7 @@ lang: en
 
 **MD will continue to be the exclusive financial services partner for the CFMS**
 
-[MD Financial Management Inc.](https://mdm.ca/) (MD) and the [Canadian Federation of Medical Students](http://www.cfms.org/) (CFMS) recently confirmed the renewal of their collaborative partnership that makes MD the exclusive financial services partner of the CFMS. MD is a financial management organization, owned by the Canadian Medical Association.
+[MD Financial Management Inc.](https://mdm.ca/) (MD) and the [Canadian Federation of Medical Students](http://www.cfms.org/) (CFMS) recently [confirmed the renewal of their collaborative partnership](https://mdm.ca/about-md/news-and-events/md-news/md-financial-management-and-canadian-federation-of-medical-students-renew-partnership) that makes MD the exclusive financial services partner of the CFMS. MD is a financial management organization, owned by the Canadian Medical Association.
 
 “We are very pleased to renew our partnership with the CFMS,” said Allison Seymour, MD’s Executive Vice President of Member and Community Engagement. “MD has close to 50 years’ experience working with medical students. This, plus our close collaboration with the CFMS, is enabling us to develop even more opportunities and services tailored to Canada’s future healthcare leaders.”
 
@@ -33,9 +33,7 @@ MD has more than $45 billion in assets under administration and is dedicated to 
 
 ### <br>About the Canadian Federation of Medical Students
 
-The [CFMS](http://www.cfms.org/ "")&nbsp;represents over 8,000 medical students from 15 Canadian medical student societies throughout Canada. The CFMS represents medical students to the public, the federal government, and national and international medical organizations. As the national voice of Canadian medical students, the CFMS connects, supports and represents its membership as they learn to serve patients and society.
-
-&nbsp;
+The [CFMS](https://www.cfms.org/) represents over 8,000 medical students from 15 Canadian medical student societies throughout Canada. The CFMS represents medical students to the public, the federal government, and national and international medical organizations. As the national voice of Canadian medical students, the CFMS connects, supports and represents its membership as they learn to serve patients and society.
 
 ### <br>Media Contact
 
