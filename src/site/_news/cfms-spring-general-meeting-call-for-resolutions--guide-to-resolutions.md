@@ -1,5 +1,5 @@
 ---
-title: 'Call for Resolutions: CFMS Spring General Meeting'
+title: 'Call for Resolutions: CFMS Spring General Meeting 2018'
 date: 2018-03-28 00:00:00
 description: >-
   Medical societies and meeting delegates are invited to put forward resolutions
@@ -15,7 +15,7 @@ lang: en
 
 ### Instructions :
 
-Medical societies and meeting delegates are invited to put forward resolutions for discussion and debate at the [CFMS Spring General Meeting](https://www.cfms.org/meetings/sgm-2018-halifax.html)during the Members Resolutions Session (tentatively scheduled for Saturday, April 28<sup>th</sup>, 2018). Resolutions should reflect an understanding of ongoing and past work, and resolutions must pertain to new work of the Federation. Members are encouraged to review resolutions submitted at the previous meeting, available on the CFMS website under the [SGM 2018](https://www.cfms.org/meetings/sgm-2018-halifax.html) meeting documents section.
+Medical societies and meeting delegates are invited to put forward resolutions for discussion and debate at the [CFMS Spring General Meeting](https://www.cfms.org/meetings/sgm-2018-halifax.html) during the Members Resolutions Session (tentatively scheduled for Saturday, April 28<sup>th</sup>, 2018). Resolutions should reflect an understanding of ongoing and past work, and resolutions must pertain to new work of the Federation. Members are encouraged to review resolutions submitted at the previous meeting, available on the CFMS website under the [SGM 2018](https://www.cfms.org/meetings/sgm-2018-halifax.html) meeting documents section.
 
 Resolutions that include significant spending should be discussed with the CFMS VP Finance prior to submission ([vpfinance@cfms.org](mailto:vpfinance@cfms.org)). Resolutions can be submitted with or without an accompanying position paper, policy statement, or discussion paper.
 
@@ -37,7 +37,7 @@ Motions such as these can be supported by a 1-2-page explanatory document; these
 
 ### Deadlines:
 
-Resolutions must be received by Jessica Bryce, CFMS SGM Chair, by e-mail at [resolutions@cfms.org](mailto:resolutions@cfms.org) on or before **Friday, April 13<sup>th</sup>, 2018 at 19:00 ADT**to be pre-circulated to SGM delegates via our website. Additional written resolutions may be tabled if emailed to the SGM Chair by** Friday, April 27<sup>th</sup>, 2018 at 12:00 noon ADT**.
+Resolutions must be received by Jessica Bryce, CFMS SGM Chair, by e-mail at [resolutions@cfms.org](mailto:resolutions@cfms.org) on or before **Friday, April 13<sup>th</sup>, 2018 at 19:00 ADT**to be pre-circulated to SGM delegates via our website. Additional written resolutions may be tabled if emailed to the SGM Chair by\*\* Friday, April 27<sup>th</sup>, 2018 at 12:00 noon ADT\*\*.
 
 Based on the total number of resolutions received, there is no guarantee that resolutions will be given agenda time at the SGM but every reasonable effort will be made to do so. Business will end promptly as scheduled in the agenda, and remaining resolutions will be referred to the Executive for consideration.
 
