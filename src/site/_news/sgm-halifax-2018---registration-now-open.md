@@ -5,7 +5,7 @@ description:
 lang: en
 ---
 
-Join us in Halifax, NS for the CFMS Spring General Meeting, in conjunction with the Canadian Conference on Medical Education, April 27-28, 2018!&nbsp;<br><br>The Spring General Meeting is an opportunity for medical students in Canada to get together and discuss important medical education, advocacy, global health, wellness issues, and more. Join the conversation and get involved; we want to hear from you!&nbsp;<br><br>[Registration for SGM 2018 is now open](https://www.surveymonkey.com/r/CFMSSGM2018). &nbsp;Please direct any registration inquiries to office@cfms.org. Deadline for registration is&nbsp;**April 4, 2018, 11:59PM EST**.&nbsp;
+Join us in Halifax, NS for the CFMS Spring General Meeting, in conjunction with the Canadian Conference on Medical Education, April 27-28, 2018!&nbsp;<br><br>The Spring General Meeting is an opportunity for medical students in Canada to get together and discuss important medical education, advocacy, global health, wellness issues, and more. Join the conversation and get involved; we want to hear from you!&nbsp;<br><br>[Registration for SGM 2018 is now open](https://www.surveymonkey.com/r/CFMSSGM2018). &nbsp;Please direct any registration inquiries to office@cfms.org. Deadline for registration is&nbsp;**April 6th, 2018, 11:59PM EST**.&nbsp;
 
 This will be a busy weekend in Halifax so booking accommodations ASAP is recommended.
 
