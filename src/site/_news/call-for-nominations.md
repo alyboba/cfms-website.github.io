@@ -101,6 +101,6 @@ Le pr&eacute;sident est aussi fortement impliqu&eacute; dans toutes activit&eacu
 
 La position de pr&eacute;sident est &eacute;lue par le conseil &agrave; l’Assembl&eacute;e G&eacute;n&eacute;rale du printemps pour un mandat d’un. &Agrave; la fin du mandat, le pr&eacute;sident doit prendre le r&ocirc;le d’ancien pr&eacute;sident.
 
-Le pr&eacute;sident de l’ann&eacute;e 2017-2018 est Mr Henry Annan, de l’universit&eacute; Dalhousie, et il peut &ecirc;tre contact&eacute; &agrave; l’adresse suivante : [president@cfms.org](mailto:president@cfms.org).
+Le pr&eacute;sident de l’ann&eacute;e 2017-2018 est M. Henry Annan, de l’universit&eacute; Dalhousie, et il peut &ecirc;tre contact&eacute; &agrave; l’adresse suivante : [president@cfms.org](mailto:president@cfms.org).
 
 > [PDF: Appel aux nominations pour pr&eacute;sident-&eacute;lu](/FEMC-Assemblée-Générale-du-printemps.pdf)
