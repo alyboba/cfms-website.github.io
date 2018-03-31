@@ -93,7 +93,7 @@ Franco Rizzuti, BSc MD<br>Ancien pr&eacute;sident et pr&eacute;sident du conseil
 
 ---
 
-**Description de la position de pr&eacute;sident:**
+**Description de la position de pr&eacute;sident :**
 
 Le pr&eacute;sident est responsable d’organiser et de conduire la direction strat&eacute;gique de la FEMC. La plupart des pr&eacute;sidents ont eu de l’exp&eacute;rience avec l’administration de la FEMC et doivent avoir une compr&eacute;hension d&eacute;taill&eacute;e des politiques et activit&eacute;s conduites par l’organisation. En plus d’&eacute;tablir les priorit&eacute;s de l’organisation, le pr&eacute;sident est le premier contact en termes d’enjeux importants pour les &eacute;tudiants et les organisations externes. Le pr&eacute;sident doit se pr&eacute;senter &agrave; diverses rencontres externes en tant que repr&eacute;sentant des &eacute;tudiants en m&eacute;decine canadiens et se d&eacute;placera en moyenne deux fins de semaine par mois durant son mandat d’un an. Le pr&eacute;sident doit notamment s’engager en tant que directeur du conseil de l’association m&eacute;dicale canadienne (AMC), directeur du conseil du forum m&eacute;dical canadien (FMC), ainsi que dans plusieurs groupes de travail et sous-comit&eacute;s. Le pr&eacute;sident sera convoqu&eacute; &agrave; une multitude de r&eacute;unions et communiquera avec les m&eacute;dias concernant les enjeux qui affectent les &eacute;tudiants en m&eacute;decine.
 
