@@ -65,7 +65,7 @@ The 2017-2018 President is Mr. Henry Annan, Dalhousie University, who may be rea
 
 Chers &eacute;tudiants en m&eacute;decine,
 
-J’ai le plaisir de vous annoncer que les nominations sont maintenant ouvertes pour la position de pr&eacute;sident &eacute;lu de la F&eacute;d&eacute;ration des &eacute;tudiants et &eacute;tudiantes en m&eacute;decine du Canada (FEMC).
+J’ai le plaisir de vous annoncer que les nominations sont maintenant ouvertes pour la position de pr&eacute;sident-&eacute;lu de la F&eacute;d&eacute;ration des &eacute;tudiants et &eacute;tudiantes en m&eacute;decine du Canada (FEMC).
 
 **<u>Proc&eacute;dure de Nomination :</u>**
 
