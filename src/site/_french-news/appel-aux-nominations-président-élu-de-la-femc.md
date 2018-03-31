@@ -1,7 +1,10 @@
 ---
 title: 'Appel aux Nominations: Président-élu de la FEMC'
-date:
-description: Please fill in description here.
+date: 2018-03-31 00:00:00
+description: >-
+  Les nominations sont maintenant ouvertes pour la position de président-élu de
+  la Fédération des étudiants et étudiantes en médecine du Canada (FEMC). La
+  date limite d'application est le 27 avril 2018.
 lang: fr
 ---
 
