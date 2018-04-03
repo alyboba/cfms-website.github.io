@@ -83,7 +83,8 @@ travel-discounts:
       <p><strong><em>Travel from:</em></strong> <strong>September 14 – 30, 2018</strong></p>
       <p><em>Coupon code:</em> <strong>M7ASOWL</strong></p>
       <p><em>Promo code:</em> <strong>WNR82</strong></p>
-<p><em>Coupon Code:</em> <strong>AY5QJAG</strong></p>  - lang: en
+      <p><em>Coupon Code:</em> <strong>AY5QJAG</strong></p>
+  - lang: en
     discount-title: CFMS Choice Hotels Discount
     discount-sub-title: Save up to 20% off regular room rates with Choice Hotels!
     discount-img: choice-hotels.png
