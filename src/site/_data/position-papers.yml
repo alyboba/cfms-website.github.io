@@ -2,13 +2,15 @@ position-papers:
   - lang: en
     filter-tags:
       - tag: PP
-        tag-name: Policy Papers
+        tag-name: Position Papers
       - tag:
-        tag-name: Position Statements
+        tag-name: Policy Statements
       - tag:
         tag-name: No Tag
       - tag:
         tag-name: In Progress
+      - tag:
+        tag-name: Discussion Paper
     paper-collection:
       - section: 'Recently Passed at AGM 2017 - Ottawa, ON'
         papers:
