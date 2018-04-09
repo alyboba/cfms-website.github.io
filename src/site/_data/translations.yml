@@ -252,6 +252,8 @@ sidebar-student-affairs:
     nutrition-wellness: Nutrition Wellness
     nutrition-wellness-spotlight: Nutrition Wellness 
     quick-tips: Quick Tips
+    safe-space: Safe Space
+    national-contests: National Contests
   - lang: fr
     sidebar-title_1: Affaires étudiantes
     overview: Aperçu
@@ -268,7 +270,8 @@ sidebar-student-affairs:
     nutrition-wellness: Nutrition Wellness
     nutrition-wellness-spotlight: Nutrition Wellness 
     quick-tips: Quick Tips
-
+    safe-space: Safe Space
+    national-contests: National Contests
 sidebar-communications:
   - lang: en
     sidebar-title_1: Communications
