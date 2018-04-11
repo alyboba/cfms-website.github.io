@@ -74,9 +74,9 @@
 
 
 	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css" />
 </head>
-<body>
+<body ng-app="authApp" ng-controller="AuthController">
 	
 	
 		<div id="top-padding"></div>
@@ -125,7 +125,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/what-we-do/education/cfms-matchbook.html">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/what-we-do/education/motp.html">FR</a></li>
 						
 					
 				</ul>
@@ -136,6 +136,12 @@
 	
 
 	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
+	</script>
+
 	<div class="content">
 		<!-- Displays the sidebar and emphasizes the active page -->
 		<div id="sidebar">
@@ -168,48 +174,65 @@
 	</div>
 </div>
 		<script type="text/javascript">
-			document.querySelector( "#matchbook" ).classList.toggle("sidebar-active");
-		</script>
-		<!--Page Specific Formatting-->
-		<script type="text/javascript">
-			document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-			document.querySelector( "#what-we-do" ).classList.toggle("active");
+			document.querySelector( "#educational-advocacy" ).classList.toggle("sidebar-active");
 		</script>
 
-		<div id="side-content" class="editable">
-			<h1 id="page-title">The Matchbook</h1>
-			<div id="matchbook-right">
-				<blockquote id="latest-issue">
-					<h3><strong>Latest Version:</strong></h3>					
-					<div id="latest-issue-pic"><img src="/files/matchbook/matchbook2017-2018.jpg"></div>
-					<h5><strong>Matchbook 2017-2018</strong></h5>
-					<div class="button members-only">
-						<a href="/files/matchbook/matchbook2017-2018.pdf">
-							<strong>Download</strong>
-						</a>
-					</div>
-					<div class="non-members">
-						<ul ng-hide="authData">
-							<li>To access these files, please log in.</li>
+		<div class="editable" id="side-content">
+			<h1 id="page-title">Medical Officer Training Program for Unmatched Students</h1>
+			<p>The CFMS in collaboration with the Canadian Armed Forces has worked to create supernumerary Family Medicine positions through the Medical Officer Training Program (MOTP). This initiative is called MOTP Surge 2018. If you are interested in exploring the option of becoming a Medical Officer and starting residency in July, please follow the steps below.</p>
+			<p>In order to apply you must:</p>
+			<ul>
+				<li>be a Canadian Citizen; and</li>
+				<li>be between 17 and 47 years old.</li>
+			</ul>
+			<h3>Unmatched Medical Students</h3>
+			<p><strong>Regardless of previous interest in the military, any medical student who finds out they are unmatched after the second match iteration on April 11 is encouraged to:</strong></p>
+			<ol>
+				<li>Send an email with “MOTP Surge 2018” in the subject to: <a href="mailto:HealthSvcsRecruiting-RecrutementSvcsdesante@forces.gc.ca">HealthSvcsRecruiting-RecrutementSvcsdesante@forces.gc.ca</a>. This will get them put on an emailing list through which we will communicate any and all updates regarding the military application process and/or PGME application process.</li>
+				<div class="sub-bullet">
+					<ul>
+						<li>The initial email must include:</li>
+						<div class="sub-bullet">
+							<li>“MOTP Surge 2018” in the subject line</li>
+							<li>Full Legal Name</li>
+							<li>Best contact information (email and phone number)</li>
+							<li>Date of Birth</li>
+							<li>Current mailing address</li>
+							<li>Present Undergraduate Medical School (if applicable)</li>
+						</div>
+					</ul>
+				</div>
+				<li>Consider visiting:</li>
+					<ul>
+						<li><a href="https://www.facebook.com/ForcesJobs.ForcesEmplois.CA/">Facebook site</a></li>
+						<li><a href="https://www.canada.ca/en/department-national-defence/services/caf-jobs/career-options/fields-work/health-care/medical-officer.html">https://www.canada.ca/en/department-national-defence/services/caf-jobs/career-options/fields-work/health-care/medical-officer.html</a></li>
+						<li>Consider tuning in for Question and Answer 11 Apr 18 8:00 to 9:30 PM EST <a href="https://www.facebook.com/ForcesJobs.ForcesEmplois.CA/">here</a></li>
+					</ul>
+				</ol>
+				<p>More information will continue to become available as it develops.</p>
+				<p><strong>For those who become interested in applying to these return of service PGME Family Medicine Residency Seats:</strong></p>
+				<ol>
+					<li>Subscribe to the MOTP Surge 2018 mailing list (see instructions above)</li>
+					<li>Start “Military side” of application <a href="https://www.canada.ca/en/department-national-defence/services/caf-jobs/apply-now.html">here</a></li>
+					<div class="sub-bullet">
+						<ul>
+							<li>During application process, ensure you select:</li>
+							<div class="sub-bullet">
+								<ul>
+									<li>“Regular Force - Full Time”</li>
+									<li>Choose Army or Navy or Airforce (this will not affect your application nor your employment and we can change it later in application process should you choose)</li>
+									<li>“Officer”</li>
+									<li>Entry plan “Medical Officer Training Plan”</li>
+									<li>Military Occupation “Medical"</li>
+								</ul>
+							</div>
+							<li>Be prepared to attend a one day recruiting process (details to be determined)</li>
 						</ul>
 					</div>
-				</blockquote>
+					<li>Be prepared to Start “PGME side” of application. The timelines will be quick as we are <strong>targeting 1 July 2018 on-cycle start.</strong></li>
+					<li>Questions can be directed to: <a href="mailto:HealthSvcsRecruiting-RecrutementSvcsdesante@forces.gc.ca">HealthSvcsRecruiting-RecrutementSvcsdesante@forces.gc.ca</a>. Ensure the subject line includes “MOTP Surge 2018”</li>
+				</ol>
 			</div>
-			<p>The Match Book is a joint initiative of the CFMS and CaRMS designed to educate medical students about the Match and assist with career planning. For complete information on the CaRMS Match, visit the <a href="https://www.carms.ca/en/">CaRMS website</a>.</p>
-			<h2><strong>What's in the Matchbook?</strong></h2>
-			<p>The Match Book, created in 2008 and currently at its 8th edition, intends to (1) provide an introduction to the Canadian residency match process, (2) present an overview of the major steps involved, and (3) aid Canadian medical students' at various stages of training in planning their strategy for matching in their preferred programs.</p>
-			<h2><strong>Old Matchbooks</strong></h2>
-			<ul class='members-only'>
-				<li><a href="/files/matchbook/matchbook2016-2017.pdf">CFMS Match Book 2016-2017</a></li>
-				<li><a href="/files/matchbook/matchbook2015-2016.pdf">CFMS Match Book 2015-2016</a></li>
-				<li><a href="/files/matchbook/matchbook2014-2015.pdf">CFMS Match Book 2014-2015</a></li>
-				<li><a href="/files/matchbook/matchbook2013-2014.pdf">CFMS Match Book 2013-2014</a></li>
-			</ul>
-			<ul class='non-members'>
-				<li>To access these files, please log in.</li>
-			</ul>
-			<h2><strong>Specialty profiles</strong></h2>
-			<p>Having trouble deciding on a post-graduate specialty? The Canadian Medical Association has compiled useful information on each specialty, which is available on the <a href="https://www.cma.ca/En/Pages/specialty-profiles.aspx">student section of their website</a>.</p>
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -399,4 +422,11 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
 
 </body>
-</html>
+
+
+
+
+
+
+
+
