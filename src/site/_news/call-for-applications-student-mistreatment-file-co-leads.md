@@ -21,7 +21,7 @@ Interested applicants are asked to send a maximum two page focused CV and 300 wo
 
 ---
 
-## Appel pour applications: Co-Directeur de la Maltraitance des &Eacute;tudiants
+## Appel de candidatures: Co-Directeur de la Maltraitance des &Eacute;tudiants
 
 Les co-directeurs de la Maltraitance des &Eacute;tudiants seront responsables de diriger le d&eacute;veloppement d’une strat&eacute;gie autour de la maltraitance des apprenants. Cette strat&eacute;gie se concentrera sur la d&eacute;fense, l’&eacute;ducation des &eacute;tudiants, la collaboration avec les d&eacute;partements des affaires &eacute;tudiantes et l’AFMC au niveau national. Ils d&eacute;velopperont un expos&eacute; de position officiel de la FEMC ainsi que d’autres contributions. Un aspect important de cette position sera de devenir familier avec les politiques et proc&eacute;dures de maltraitance &agrave; travers le Canada.
 
