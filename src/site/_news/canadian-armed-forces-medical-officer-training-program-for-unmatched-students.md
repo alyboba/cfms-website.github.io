@@ -18,7 +18,7 @@ In order to apply you must:
 
 ### Unmatched Medical Students
 
-**Regardless of previous interest in the military, any medical student who finds out they are unmatched after the second match iteration on April 11 is advised to:**
+**Regardless of previous interest in the military, any medical student who finds out they are unmatched after the second match iteration on April 11 is encouraged to:**
 
 1. Send an email with “MOTP Surge 2018” in the subject to: [HealthSvcsRecruiting-RecrutementSvcsdesante@forces.gc.ca](javascript:void(location.href='mailto:'+String.fromCharCode(72,101,97,108,116,104,83,118,99,115,82,101,99,114,117,105,116,105,110,103,45,82,101,99,114,117,116,101,109,101,110,116,83,118,99,115,100,101,115,97,110,116,101,64,102,111,114,99,101,115,46,103,99,46,99,97))). This will get them put on an **emailing list** through which we will communicate any and all updates regarding the military application process and/or PGME application process.
    * The initial email must include:
@@ -49,9 +49,7 @@ More information will continue to become available as it develops.
      * Entry plan “Medical Officer Training Plan”
 
      * Military Occupation “Medical”
-
    * Be prepared to attend a one day recruiting process (details to be determined)
-
 3. Be prepared to Start “PGME side” of application.&nbsp; The timelines will be quick as we are **targeting 1 July 2018 on-cycle start**.
 4. Questions can be directed to:
 
