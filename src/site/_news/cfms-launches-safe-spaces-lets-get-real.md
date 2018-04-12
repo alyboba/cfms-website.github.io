@@ -1,5 +1,5 @@
 ---
-title: 'CFMS Launches ''Safe Spaces: Let''s Get Real'' Learner Wellness Conversations'
+title: 'CFMS Launches "Safe Spaces: Let''s Get Real" Learner Wellness Conversations'
 date: 2018-04-12 00:00:00
 description: >-
   Safe Space: Let’s Get Real is an opportunity for medical students across the
@@ -27,7 +27,7 @@ All students are invited to join the facilitated discussion. We hope to help sti
 
 Details: **Sunday April 15th at 5-6PM EST**
 
-To participate, please **register [here](https://docs.google.com/forms/d/e/1FAIpQLSe4fpKkHl3IqIYy199UZaHZREY4h5bIkzfWY_CoWblSNPxCBQ/viewform)** to obtain the teleconference number for the session. If possible please register by Saturday April 14th at 11:59 pm ET to guarantee receipt of teleconference details ahead of the event, however late registration will be accepted. &nbsp;
+To participate, please **register [here](https://docs.google.com/forms/d/e/1FAIpQLSe4fpKkHl3IqIYy199UZaHZREY4h5bIkzfWY_CoWblSNPxCBQ/viewform)** to obtain the teleconference number for the session. If possible please register by Saturday April 14th at 11:59 pm ET to guarantee receipt of teleconference details ahead of the event, however late registration will be accepted.
 
 > For questions, please contact:
 >
