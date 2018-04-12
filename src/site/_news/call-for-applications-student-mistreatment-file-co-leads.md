@@ -11,7 +11,7 @@ lang: en
 
 *~Le fran&ccedil;ais suit~*
 
-![](blob:https://app.cloudcannon.com/a5def921-3b8d-3540-9bf9-2a697552f197)
+![](/uploads/mistreatment.png)
 
 The Student Mistreatment File Co-Leads will be responsible for leading the development of a strategy around learner mistreatment which will focus on advocacy, student education, working with student affairs offices and the AFMC (Association of Faculties of Medicine of Canada) nationally and development of an official CFMS position paper among other contributions. Key to the Co-Leads' work will be becoming familiar with mistreatment policies and procedures across Canada.
 
