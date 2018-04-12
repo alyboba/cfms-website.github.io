@@ -12,7 +12,7 @@ lang: en
 
 ### #EnviroMed Earth Week Challenge
 
-Did you know Earth Day is coming up on April 22? CFMS’ Health and Environmental Adaptive Response Task force (HEART) is planning the #EnviroMed Earth Week Challenge!
+Did you know Earth Day is coming up on April 22? CFMS’ Health and Environmental Adaptive Response Task force ([HEART](https://www.cfms.org/what-we-do/global-health/heart.html)) is planning the #EnviroMed Earth Week Challenge!
 
 **When: April 16-22, 2018**<br>What: take as many environmentally conscious actions as possible in the week leading up to Earth Day - the student/school with the highest participation will win **prizes** and be announced at the CFMS SGM, April 27-28 2018.<br>Why: raise awareness among Canadian medical students of the inter-connection between the health of people and our environment, and promote tangible actions to reduce our ecological footprint.<br>**How:** **take a picture or screenshot of yourself taking an environmentally-conscious action and tag it #EnviroMed and @CFMSFEMC on Facebook, Twitter, or Instagram.**
 
