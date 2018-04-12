@@ -12,7 +12,7 @@ lang: en
 
 > Sign up for ***Safe Spaces: Let's Get Real***[here](https://docs.google.com/forms/d/e/1FAIpQLSe4fpKkHl3IqIYy199UZaHZREY4h5bIkzfWY_CoWblSNPxCBQ/viewform)
 
-![](blob:https://app.cloudcannon.com/d5a4bec6-547b-5b4e-8d18-b29fbaff9fd2)
+&nbsp;![](blob:https://app.cloudcannon.com/d5a4bec6-547b-5b4e-8d18-b29fbaff9fd2)
 
 The CFMS is hosting our first [***Safe Spaces: Let's Get Real***](https://www.cfms.org/what-we-do/student-affairs/safe-space.html) learner wellness conversations as part of the National Wellness Program.
 
