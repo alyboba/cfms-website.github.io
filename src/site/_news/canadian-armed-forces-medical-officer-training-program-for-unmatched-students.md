@@ -9,7 +9,7 @@ description: >-
 lang: en
 ---
 
-The CFMS in collaboration with the Canadian Armed Forces has worked to create supernumerary Family Medicine positions through the Medical Officer Training Program (MOTP). This initiative is called MOTP Surge 2018. If you are interested in exploring the option of becoming a Medical Officer and starting residency in July, please follow the steps below.
+The CFMS in collaboration with the Canadian Armed Forces has worked to create supernumerary Family Medicine positions through the Medical Officer Training Program (MOTP). This initiative is called **MOTP Surge 2018**. If you are interested in exploring the option of becoming a Medical Officer and starting residency in July, please follow the steps below.
 
 In order to apply you must:
 
@@ -54,3 +54,10 @@ More information will continue to become available as it develops.
 4. Questions can be directed to:
 
    [HealthSvcsRecruiting-RecrutementSvcsdesante@forces.gc.ca](javascript:void(location.href='mailto:'+String.fromCharCode(72,101,97,108,116,104,83,118,99,115,82,101,99,114,117,105,116,105,110,103,45,82,101,99,114,117,116,101,109,101,110,116,83,118,99,115,100,101,115,97,110,116,101,64,102,111,114,99,101,115,46,103,99,46,99,97))). Ensure the subject line includes “MOTP Surge 2018”
+
+**Family Medicine Programs Accepting MOTP Surge 2018 Applications:**
+
+1. **Queens:&nbsp;**https://familymedicine.queensu.ca/education/queen\_s-dnd&nbsp;
+2. More coming soon
+
+&nbsp;
