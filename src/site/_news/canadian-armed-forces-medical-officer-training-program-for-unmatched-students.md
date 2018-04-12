@@ -111,7 +111,7 @@ Comme la situation est en &eacute;volution, nous vous enverrons plus d’informa
    * [HealthSvcsRecruiting-RecrutementSvcsdesante@forces.gc.ca](javascript:void(location.href='mailto:'+String.fromCharCode(72,101,97,108,116,104,83,118,99,115,82,101,99,114,117,105,116,105,110,103,45,82,101,99,114,117,116,101,109,101,110,116,83,118,99,115,100,101,115,97,110,116,101,64,102,111,114,99,101,115,46,103,99,46,99,97)))
    * Assurez-vous d’inclure le sujet dans la ligne d’objet “PIMM Surge 2018”.
 
-**Family Medicine Programs Accepting MOTP Surge 2018 Applications:**
+**Programmes de r&eacute;sidence en m&eacute;decine de famille acceptant les applicants du PIMM Surge 2018:**
 
 1. **Queens:&nbsp;**[https://familymedicine.queensu.ca/education/queen\_s-dnd](https://familymedicine.queensu.ca/education/queen_s-dnd)&nbsp;
-2. More coming soon
+2. Plus d’informations &agrave; suivre
