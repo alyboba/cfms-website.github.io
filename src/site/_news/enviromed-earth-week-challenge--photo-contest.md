@@ -14,7 +14,7 @@ lang: en
 
 Did you know Earth Day is coming up on April 22? CFMS’ Health and Environmental Adaptive Response Task force (HEART) is planning the #EnviroMed Earth Week Challenge!
 
-**When: April 16-22, 2018**<br>What: take as many environmentally conscious actions as possible in the week leading up to Earth Day - the student/school with the highest participation will win **prizes**and be announced at the CFMS SGM, April 27-28 2018.<br>Why: raise awareness among Canadian medical students of the inter-connection between the health of people and our environment, and promote tangible actions to reduce our ecological footprint.<br>**How:** **take a picture or screenshot of yourself taking an environmentally-conscious action and tag it #EnviroMed and @CFMSFEMC on Facebook, Twitter, or Instagram.**
+**When: April 16-22, 2018**<br>What: take as many environmentally conscious actions as possible in the week leading up to Earth Day - the student/school with the highest participation will win **prizes** and be announced at the CFMS SGM, April 27-28 2018.<br>Why: raise awareness among Canadian medical students of the inter-connection between the health of people and our environment, and promote tangible actions to reduce our ecological footprint.<br>**How:** **take a picture or screenshot of yourself taking an environmentally-conscious action and tag it #EnviroMed and @CFMSFEMC on Facebook, Twitter, or Instagram.**
 
 Action ideas:
 
@@ -48,4 +48,5 @@ Photos may be submitted to Finola Hackett ([finola@ualberta.ca](javascript:void(
 > "For me, environmental health involves exploring and embracing the world around me. It means taking every opportunity to be outside, to take in the beauty of this crazy blue planet, and to see our influence upon it (both good and bad). It also entails doing my utmost to have a positive impact on the health of our world - from recycling, to finding ways to offset my carbon footprint, to resource stewardship."
 >
 >
-> - Kayla Sliskovic, University of Toronto
+>
+> * Kayla Sliskovic, University of Toronto
