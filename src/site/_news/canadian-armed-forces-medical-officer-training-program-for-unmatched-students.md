@@ -41,7 +41,7 @@ More information will continue to become available as it develops.
 1. Subscribe to the MOTP Surge 2018 mailing list (see instructions above)
 2. Start “Military side” of application at: [https://www.canada.ca/en/department-national-defence/services/caf-jobs/apply-now.html](https://www.canada.ca/en/department-national-defence/services/caf-jobs/apply-now.html)
    * During application process, ensure you select:
-     * "Regular Force - Full Time"
+     * “Regular Force - Full Time”
      * Choose Army or Navy or Airforce (this will not affect your application nor your employment and we can change it later in application process should you choose)
 
      * “Officer”
@@ -57,7 +57,7 @@ More information will continue to become available as it develops.
 
 **Family Medicine Programs Accepting MOTP Surge 2018 Applications:**
 
-1. **Queens:&nbsp;**https://familymedicine.queensu.ca/education/queen\_s-dnd&nbsp;
+1. **Queens:&nbsp;**[https://familymedicine.queensu.ca/education/queen\_s-dnd](https://familymedicine.queensu.ca/education/queen_s-dnd)&nbsp;
 2. More coming soon
 
 &nbsp;
