@@ -64,11 +64,11 @@ More information will continue to become available as it develops.
 1. **Queens:&nbsp;**[https://familymedicine.queensu.ca/education/queen\_s-dnd](https://familymedicine.queensu.ca/education/queen_s-dnd)&nbsp;
 2. More coming soon
 
-## ---
+## —
 
 ## Programme de formation des m&eacute;decins des forces arm&eacute;es canadiennes pour les &eacute;tudiants non-jumel&eacute;s
 
-La FEMC, en collaboration avec les forces arm&eacute;es canadiennes, a travaill&eacute; pour cr&eacute;er un nombre &eacute;lev&eacute; de postes en m&eacute;decine familiale via le programme d'instruction de m&eacute;decine militaire (PIMM). Cette initiative se nomme **PIMM Surge 2018.** Si vous &ecirc;tes int&eacute;ress&eacute;s &agrave; explorer l’option de devenir un officier m&eacute;dical et de d&eacute;buter la r&eacute;sidence en juillet, veuillez suivre ces &eacute;tapes :
+La FEMC, en collaboration avec les forces arm&eacute;es canadiennes, a travaill&eacute; pour cr&eacute;er un nombre &eacute;lev&eacute; de postes en m&eacute;decine familiale via le programme d’instruction de m&eacute;decine militaire (PIMM). Cette initiative se nomme **PIMM Surge 2018.** Si vous &ecirc;tes int&eacute;ress&eacute;s &agrave; explorer l’option de devenir un officier m&eacute;dical et de d&eacute;buter la r&eacute;sidence en juillet, veuillez suivre ces &eacute;tapes :
 
 Afin d’appliquer, vous devez :
 
@@ -114,4 +114,5 @@ Comme la situation est en &eacute;volution, nous vous enverrons plus d’informa
 **Programmes de r&eacute;sidence en m&eacute;decine de famille acceptant les applicants du PIMM Surge 2018:**
 
 1. **Queens:&nbsp;**[https://familymedicine.queensu.ca/education/queen\_s-dnd](https://familymedicine.queensu.ca/education/queen_s-dnd)&nbsp;
-2. Plus d’informations &agrave; suivre
+2. **Ottawa:** [http://med.uottawa.ca/postgraduate/news/uottawa-pgme-dnd-sponsored-training-2018-only](http://med.uottawa.ca/postgraduate/news/uottawa-pgme-dnd-sponsored-training-2018-only)
+3. Plus d’informations &agrave; suivre
