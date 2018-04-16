@@ -62,7 +62,8 @@ More information will continue to become available as it develops.
 **Family Medicine Programs Accepting MOTP Surge 2018 Applications:**
 
 1. **Queens:&nbsp;**[https://familymedicine.queensu.ca/education/queen\_s-dnd](https://familymedicine.queensu.ca/education/queen_s-dnd)&nbsp;
-2. More coming soon
+2. **Ottawa:** [http://med.uottawa.ca/postgraduate/news/uottawa-pgme-dnd-sponsored-training-2018-only](http://med.uottawa.ca/postgraduate/news/uottawa-pgme-dnd-sponsored-training-2018-only)
+3. More coming soon
 
 ## —
 
