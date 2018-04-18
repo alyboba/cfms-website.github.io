@@ -39,14 +39,12 @@ Quotations from the CFMS Board of Directors:
 “The number of unmatched Canadian medical graduates this year remains a significant concern to the CFMS. With over 100 of this year’s medical school graduates unable to start residency in July, it is clear that there is still much to be done. The CFMS will continue to stand behind our unmatched students and will advocate for long-term solutions to the uCMG crisis. We will work to create opportunities for unmatched students to allow them to find paths to success.”
 {: .present-before-paste}
 
-- *Henry Annan, CFMS President*
-{: .present-before-paste}
+*- Henry Annan, CFMS President*
 
 “The growing number of unmatched Canadian medical graduates is an issue that impacts all Canadians. We are pleased by the support of the Canadian Armed Forces to match currently unmatched graduates into family medicine residency positions, and that the Ontario Ministry of Health and Long Term Care has committed to implementing a program for unmatched Ontario students. These are positive steps forward in solving this crisis. It is our hope that all governments step up to ensure that all qualified Canadian medical graduates have the opportunity to continue their training, and become fully qualified physicians ready to meet the healthcare needs of Canadians.”
 {: .present-before-paste}
 
-- *Kaylynn Purdy, CFMS Vice-President Education*
-{: .present-before-paste}
+*- Kaylynn Purdy, CFMS Vice-President Education*
 
 Footnotes:
 {: .present-before-paste}
