@@ -15,7 +15,7 @@ lang: en
 **FOR IMMEDIATE RELEASE**
 {: .present-before-paste}
 
-**OTTAWA, APRIL 18TH, 2018** – &nbsp;The Canadian Federation of Medical Students (CFMS) continues to be deeply concerned about the large number of unmatched Canadian Medical Graduates (CMGs). &nbsp;Snapshot data from the Canadian Residency Matching Service (CaRMS) released April 17, 2018 indicated that 69 current year CMGs were unmatched in the 2018 CaRMS R-1 Match after applying in the second iteration.1 The CFMS has closely monitored the multi-year exponential trend of unmatched Canadian Medical Graduates (CMGs), increasing from 11 (0.5%) in 2009 to 69 (2.4%) in 2018.
+**OTTAWA, APRIL 18TH, 2018** – &nbsp;The Canadian Federation of Medical Students (CFMS) continues to be deeply concerned about the large number of unmatched Canadian Medical Graduates (CMGs). &nbsp;Snapshot data from the Canadian Residency Matching Service (CaRMS) released April 17, 2018 indicated that 69 current year CMGs were unmatched in the 2018 CaRMS R-1 Match after applying in the second iteration. The CFMS has closely monitored the multi-year exponential trend of unmatched Canadian Medical Graduates (CMGs), increasing from 11 (0.5%) in 2009 to 69 (2.4%) in 2018.
 {: .present-before-paste}
 
 While the official number of unmatched CMGs this year is 69, this does not take into account students who did not participate in the second round of the CaRMS match or those unmatched from previous years who have gone unmatched again. Thus, the number of students still seeking residency positions is far higher, with over 100 current year graduates not moving on to residency on July 1.
@@ -49,32 +49,32 @@ Quotations from the CFMS Board of Directors:
 Footnotes:
 {: .present-before-paste}
 
-1 https://www.carms.ca/en/news/r-1-match-data-snapshot/
+1 - https://www.carms.ca/en/news/r-1-match-data-snapshot/
 {: .present-before-paste}
 
-About the CFMS
-{: .present-before-paste}
-
-The Canadian Federation of Medical Students (CFMS) represents over 8,000 medical students at 15 medical schools across Canada. The CFMS represents medical students to the public, the federal government, and national and international medical organizations. As the national voice of Canadian medical students, the CFMS connects, supports, and represents its membership as they learn to serve patients and society.
-{: .present-before-paste}
-
-www.cfms.org
-{: .present-before-paste}
-
-Follow us on Twitter, Facebook and Instagram: @CFMSFEMC
-{: .present-before-paste}
-
-For more information:
-{: .present-before-paste}
-
-Christina Schweitzer, Vice-President Communications
-{: .present-before-paste}
-
-Canadian Federation of Medical Students
-{: .present-before-paste}
-
-Email: vpcommunications@cfms.org
-{: .present-before-paste}
-
-Cell: 1-587-225-8165
-{: .present-before-paste}
+> **ABOUT THE CFMS**
+> {: .present-before-paste}
+>
+> The Canadian Federation of Medical Students (CFMS) represents over 8,000 medical students at 15 medical schools across Canada. The CFMS represents medical students to the public, the federal government, and national and international medical organizations. As the national voice of Canadian medical students, the CFMS connects, supports, and represents its membership as they learn to serve patients and society.
+> {: .present-before-paste}
+>
+> www.cfms.org
+> {: .present-before-paste}
+>
+> Follow us on Twitter, Facebook and Instagram: @CFMSFEMC
+> {: .present-before-paste}
+>
+> **FOR MORE INFORMATION**:
+> {: .present-before-paste}
+>
+> Christina Schweitzer, Vice-President Communications
+> {: .present-before-paste}
+>
+> Canadian Federation of Medical Students
+> {: .present-before-paste}
+>
+> Email: vpcommunications@cfms.org
+> {: .present-before-paste}
+>
+> Cell: 1-587-225-8165
+> {: .present-before-paste}
