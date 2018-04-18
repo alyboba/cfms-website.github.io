@@ -9,11 +9,7 @@ description: >-
 lang: en
 ---
 
-*~Le fran&ccedil;ais suit~*
-
-![](/uploads/mistreatment---extended-1.png)
-
-The Student Mistreatment File Co-Leads will be responsible for leading the development of a strategy around learner mistreatment which will focus on advocacy, student education, working with student affairs offices and the AFMC (Association of Faculties of Medicine of Canada) nationally and development of an official CFMS position paper among other contributions. Key to the Co-Leads' work will be becoming familiar with mistreatment policies and procedures across Canada.
+*~Le fran&ccedil;ais suit~*![](/uploads/mistreatment---extended-2.png)The Student Mistreatment File Co-Leads will be responsible for leading the development of a strategy around learner mistreatment which will focus on advocacy, student education, working with student affairs offices and the AFMC (Association of Faculties of Medicine of Canada) nationally and development of an official CFMS position paper among other contributions. Key to the Co-Leads' work will be becoming familiar with mistreatment policies and procedures across Canada.
 
 The Co-Leads will work within the CFMS' national wellness program framework, specifically advancing the *advocacy* arm of our work. Successful candidates will work directly with the National Wellness Program Lead and the VP Student Affairs.
 
