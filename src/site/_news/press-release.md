@@ -58,7 +58,7 @@ Footnotes:
 > The Canadian Federation of Medical Students (CFMS) represents over 8,000 medical students at 15 medical schools across Canada. The CFMS represents medical students to the public, the federal government, and national and international medical organizations. As the national voice of Canadian medical students, the CFMS connects, supports, and represents its membership as they learn to serve patients and society.
 > {: .present-before-paste}
 >
-> www.cfms.org
+> [www.cfms.org](www.cfms.org)
 > {: .present-before-paste}
 >
 > Follow us on Twitter, Facebook and Instagram: @CFMSFEMC
@@ -73,8 +73,11 @@ Footnotes:
 > Canadian Federation of Medical Students
 > {: .present-before-paste}
 >
-> Email: vpcommunications@cfms.org
+> Email: [vpcommunications@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,99,111,109,109,117,110,105,99,97,116,105,111,110,115,64,99,102,109,115,46,111,114,103)))
 > {: .present-before-paste}
 >
 > Cell: 1-587-225-8165
+> {: .present-before-paste}
+>
+> Press Release PDF: [PRESS RELEASE: CFMS Response to the Release of the Results from the 2018 CaRMS R-1 Main Residency Match](/PRESS RELEASE CFMS Response to the Release of the Results from the 2018 CaRMS R-1 Main Residency Match.pdf)
 > {: .present-before-paste}
