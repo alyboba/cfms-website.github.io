@@ -49,6 +49,8 @@ We are hopeful that the upcoming year will be a period where real solutions to a
 
 *- Kaylynn Purdy, CFMS Vice-President Education*
 
+&nbsp;
+
 **Footnotes**:
 {: .present-before-paste}
 
