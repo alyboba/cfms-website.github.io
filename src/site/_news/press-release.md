@@ -33,7 +33,10 @@ The CFMS will continue to work with Canadian medical faculties to ensure that un
 We are hopeful that the upcoming year will be a period where real solutions to address the unmatched Canadian medical graduate crisis will be realized. We look forward to working with all parties on this very important issue.
 {: .present-before-paste}
 
-Quotations from the CFMS Board of Directors:
+&nbsp;
+{: .present-before-paste}
+
+**Quotations from the CFMS Board of Directors**:
 {: .present-before-paste}
 
 “The number of unmatched Canadian medical graduates this year remains a significant concern to the CFMS. With over 100 of this year’s medical school graduates unable to start residency in July, it is clear that there is still much to be done. The CFMS will continue to stand behind our unmatched students and will advocate for long-term solutions to the uCMG crisis. We will work to create opportunities for unmatched students to allow them to find paths to success.”
@@ -46,7 +49,7 @@ Quotations from the CFMS Board of Directors:
 
 *- Kaylynn Purdy, CFMS Vice-President Education*
 
-Footnotes:
+**Footnotes**:
 {: .present-before-paste}
 
 1 - [CaRMS 2018 R-1 Match Data Snapshot](https://www.carms.ca/en/news/r-1-match-data-snapshot/)&nbsp;
