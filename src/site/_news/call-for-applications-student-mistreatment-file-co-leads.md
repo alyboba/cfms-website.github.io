@@ -2,16 +2,16 @@
 title: 'Call for Applications: Student Mistreatment File Co-Leads'
 date: 2018-04-02 00:00:00
 description: >-
-  The Student Mistreatment File Co-Leads will lead the development of a strategy
-  around learner mistreatment which will focus on advocacy, student education,
-  working with student affairs offices and the AFMC nationally, and development
-  of an official CFMS position paper. Applications due Friday April 16th.
+  DEADLINE EXTENDED TO APRIL 23: The Student Mistreatment File Co-Leads will
+  lead the development of a strategy around learner mistreatment which will
+  focus on advocacy, student education, working with student affairs offices and
+  the AFMC nationally, and development of an official CFMS position paper.
 lang: en
 ---
 
 *~Le fran&ccedil;ais suit~*
 
-![](blob:https://app.cloudcannon.com/1dcf8dbf-d3c4-a24d-a44d-55d89487f9b2)
+![](/uploads/mistreatment---extended-1.png)
 
 The Student Mistreatment File Co-Leads will be responsible for leading the development of a strategy around learner mistreatment which will focus on advocacy, student education, working with student affairs offices and the AFMC (Association of Faculties of Medicine of Canada) nationally and development of an official CFMS position paper among other contributions. Key to the Co-Leads' work will be becoming familiar with mistreatment policies and procedures across Canada.
 
