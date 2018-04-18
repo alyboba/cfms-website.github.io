@@ -49,7 +49,7 @@ Quotations from the CFMS Board of Directors:
 Footnotes:
 {: .present-before-paste}
 
-1 - https://www.carms.ca/en/news/r-1-match-data-snapshot/
+1 - [CaRMS 2018 R-1 Match Data Snapshot](https://www.carms.ca/en/news/r-1-match-data-snapshot/)&nbsp;
 {: .present-before-paste}
 
 > **ABOUT THE CFMS**
