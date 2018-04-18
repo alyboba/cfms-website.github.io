@@ -2,8 +2,8 @@
 title: 'Call for Applications: CFMS Task Force on National Seniors Strategy'
 date: 2018-04-11 00:00:00
 description: >-
-  DEADLINE EXTENDED: Applications to join the CFMS Commitee of Health Policy's
-  Task Force on National Seniors Strategy are due May 1st.
+  DEADLINE EXTENDED TO MAY 1st: Applications to join the CFMS Commitee of Health
+  Policy's Task Force on National Seniors Strategy.
 lang: en
 ---
 
