@@ -63,7 +63,7 @@ More information will continue to become available as it develops.
 
 1. **Queens University:[&nbsp;](https://familymedicine.queensu.ca/education/queens-dnd)**[https://familymedicine.queensu.ca/education/queens-dnd](https://familymedicine.queensu.ca/education/queens-dnd)
 2. **University of Ottawa:** [http://med.uottawa.ca/postgraduate/news/uottawa-pgme-dnd-sponsored-training-2018-only](http://med.uottawa.ca/postgraduate/news/uottawa-pgme-dnd-sponsored-training-2018-only)
-3. **University of Calgary:&nbsp;**more information coming soon
+3. **University of Calgary:&nbsp;**[https://www.calgaryfamilymedicine.ca/residency/index.php/perspective-residents/application-interviews](https://www.calgaryfamilymedicine.ca/residency/index.php/perspective-residents/application-interviews)
 4. **University of Alberta:**&nbsp;**&nbsp;**more information coming soon
 5. **University of Toronto:****&nbsp;**more information coming soon
 6. More coming soon
@@ -119,7 +119,7 @@ Comme la situation est en &eacute;volution, nous vous enverrons plus d’informa
 
 1. **Queens University:&nbsp;**[https://familymedicine.queensu.ca/education/queens-dnd](https://familymedicine.queensu.ca/education/queens-dnd)
 2. **University of Ottawa:** [http://med.uottawa.ca/postgraduate/news/uottawa-pgme-dnd-sponsored-training-2018-only](http://med.uottawa.ca/postgraduate/news/uottawa-pgme-dnd-sponsored-training-2018-only)
-3. **University of Calgary:**&nbsp;plus d’informations &agrave; suivre
+3. **University of Calgary:**&nbsp;[https://www.calgaryfamilymedicine.ca/residency/index.php/perspective-residents/application-interviews](https://www.calgaryfamilymedicine.ca/residency/index.php/perspective-residents/application-interviews)
 4. **University of Alberta:&nbsp;**plus d’informations &agrave; suivre
 5. **University of Toronto:&nbsp;**plus d’informations &agrave; suivre
 6. Plus d’informations &agrave; suivre
