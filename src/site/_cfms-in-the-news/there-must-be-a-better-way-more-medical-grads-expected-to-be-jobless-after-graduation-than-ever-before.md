@@ -8,6 +8,6 @@ day: 12
 date: 2018-06-01 00:00:00
 href: 'https://www.thestar.com/vancouver/2018/04/12/doctors-without-jobs.html'
 lang: en
-news-publication: Vancouver Star
+news-publication: The Star Vancouver
 ---
 
