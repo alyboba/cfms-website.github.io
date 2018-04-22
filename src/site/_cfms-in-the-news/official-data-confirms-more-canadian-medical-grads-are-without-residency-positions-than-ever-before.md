@@ -5,7 +5,7 @@ title: >-
 year: 2018
 month: Apr
 day: 17
-date: 2018-06-01 00:00:00
+date: 2018-04-22 00:00:00
 href: >-
   https://www.thestar.com/vancouver/2018/04/17/official-data-confirms-more-canadian-medical-grads-are-without-residency-positions-than-ever-before.html
 lang: en
