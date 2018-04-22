@@ -1,10 +1,12 @@
 ---
 title: Canada’s medical residency system is leaving some graduates in limbo
-year: 2017
-month: Jan
-day: 1
+year: 2018
+month: Apr
+day: 4
 date: 2018-06-01 00:00:00
-href: The link this document points to
+href: >-
+  https://www.universityaffairs.ca/features/feature-article/canadas-medical-residency-system-leaving-graduates-limbo/
 lang: en
-news-publication: 'Example, ''HESA'''
+news-publication: University Affairs
 ---
+
