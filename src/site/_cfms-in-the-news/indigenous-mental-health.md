@@ -1,10 +1,11 @@
 ---
 title: Indigenous Mental Health
-year: 2017
-month: Jan
-day: 1
+year: 2018
+month: Feb
+day: 12
 date: 2018-06-01 00:00:00
-href: The link this document points to
+href: 'http://www.cbc.ca/listen/shows/all-in-a-day/segment/15520355'
 lang: en
-news-publication: 'Example, ''HESA'''
+news-publication: CBC Radio - All in a Day Ottawa
 ---
+
