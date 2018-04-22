@@ -3,7 +3,7 @@ title: 'New Brunswick need doctors, medical students need residency matches'
 year: 2018
 month: Apr
 day: 19
-date: 2018-06-01 00:00:00
+date: 2018-04-22 00:00:00
 href: 'http://www.cbc.ca/listen/shows/information-morning-saint-john/segment/15538702'
 lang: en
 news-publication: 'CBC Radio: Information Morning St John'
