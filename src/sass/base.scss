@@ -349,7 +349,7 @@ label {
 	font-family:$sans-serif-font-stack;
 
 }
-.ps, .pp, .nt, .ip {
+.ps, .pp, .dp, .nt, .ip {
 	@extend .file-format;
 }
 .ps {
@@ -357,6 +357,9 @@ label {
 }
 .pp {
 	background-color: $vp-gov-affairs-color;
+}
+.dp {
+	background-color: #AE73F2;
 }
 .nt {
 	background-color: $darker

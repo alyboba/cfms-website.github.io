@@ -307,7 +307,7 @@ sidebar-advocacy:
     day-of-action: Day of Action
     task-forces: Task Forces
     research-committee: Research Committee
-    advocacy-tracker: Advocacy Tracker
+    # advocacy-tracker: Advocacy Tracker
   - lang: fr
     sidebar-title_1: Plaidoirie
     overview: Aperçu
@@ -319,7 +319,7 @@ sidebar-advocacy:
     day-of-action: Journée d'action
     task-forces: Task Forces
     research-committee: Comité de recherche
-    advocacy-tracker: Advocacy Tracker
+    # advocacy-tracker: Advocacy Tracker
 sidebar-discounts:
   - lang: en
     sidebar-title_1: Discounts
