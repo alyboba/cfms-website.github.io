@@ -6,6 +6,6 @@ day: 20
 date: 2018-06-01 00:00:00
 href: 'http://www.cbc.ca/listen/shows/metro-morning/segment/15538935'
 lang: en
-news-publication: CBC Radio - Metro Morning
+news-publication: CBC Radio - Metro Morning Toronto
 ---
 
