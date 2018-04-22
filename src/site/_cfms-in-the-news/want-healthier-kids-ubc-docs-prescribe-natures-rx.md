@@ -1,10 +1,12 @@
 ---
 title: Want healthier kids? UBC docs prescribe nature's Rx
 year: 2017
-month: Jan
-day: 1
+month: Oct
+day: 24
 date: 2018-06-01 00:00:00
-href: The link this document points to
+href: >-
+  http://www.metronews.ca/news/vancouver/2017/10/19/want-healthier-kids-ubc-docs-prescribe-nature-s-rx.html
 lang: en
-news-publication: 'Example, ''HESA'''
+news-publication: Vancouver Metro News
 ---
+
