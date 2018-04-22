@@ -2,11 +2,13 @@
 title: >-
   Official data confirms more Canadian medical grads are without residency
   positions than ever before
-year: 2017
-month: Jan
-day: 1
+year: 2018
+month: Apr
+day: 17
 date: 2018-06-01 00:00:00
-href: The link this document points to
+href: >-
+  https://www.thestar.com/vancouver/2018/04/17/official-data-confirms-more-canadian-medical-grads-are-without-residency-positions-than-ever-before.html
 lang: en
-news-publication: 'Example, ''HESA'''
+news-publication: The Star Vancouver
 ---
+
