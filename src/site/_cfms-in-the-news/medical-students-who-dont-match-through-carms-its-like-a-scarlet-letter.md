@@ -1,10 +1,11 @@
 ---
 title: 'Medical students who don’t match through CaRMS: “It’s like a scarlet letter”'
-year: 2017
-month: Jan
-day: 1
+year: 2018
+month: Mar
+day: 22
 date: 2018-06-01 00:00:00
-href: The link this document points to
+href: 'http://healthydebate.ca/2018/03/topic/medical-students-carms'
 lang: en
-news-publication: 'Example, ''HESA'''
+news-publication: HealthyDebate
 ---
+
