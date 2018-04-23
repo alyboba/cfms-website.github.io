@@ -285,6 +285,7 @@ sidebar-communications:
     communiques: Communiques
     graphics: Graphics
     quarter-reports: Quarter Reports
+    bilingualism-committee: Bilingualism Committee
   - lang: fr
     sidebar-title_1: Communications
     overview: Aperçu
@@ -295,6 +296,7 @@ sidebar-communications:
     communiques: Communiques
     graphics: Graphique
     quarter-reports: Quarter Reports
+    bilingualism-committee: Bilingualism Committee
 sidebar-advocacy:
   - lang: en
     sidebar-title_1: Advocacy
