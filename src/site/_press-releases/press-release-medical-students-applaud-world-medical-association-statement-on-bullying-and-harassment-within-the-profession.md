@@ -5,7 +5,7 @@ title: >-
 link: >-
   https://www.cfms.org/news/2017/10/31/medical-students-applaud-world-medical-association-statement-on-bullying-and-harassment-within-the-profession.html
 month: October
-year: 2018
+year: 2017
 lang: en
 ---
 
