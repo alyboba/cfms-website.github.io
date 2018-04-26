@@ -25,17 +25,17 @@ news_text_fr: >-
   href='http://www.old.cfms.org'>www.old.cfms.org</a>!
 news_text_url:
 featured_links:
-  - url: /news/2018/01/22/cfms-launches-the-national-wellness-initiative.html
-    image_url_en: images/home-link-thumbs/nwi.png
-    image_url_fr: images/home-link-thumbs/nwi.png
-    text_en: CFMS Launches the National Wellness Initiative
-    text_fr: CFMS Launches the National Wellness Initiative
-
   - url: /meetings/sgm-2018-halifax.html
-    image_url_en: images/meeting-images/halifax_2018.jpg
-    image_url_fr: images/meeting-images/halifax_2018.jpg
+    image_url_en: images/home-link-thumbs/cfms_sgm_halifax.jpg
+    image_url_fr: images/home-link-thumbs/cfms_sgm_halifax.jpg
     text_en: 2018 CFMS Spring General Meeting
     text_fr: 2018 CFMS Spring General Meeting
+
+  - url: /news/2018/04/18/press-release.html
+    image_url_en: images/home-link-thumbs/april-18-press-release.png
+    image_url_fr: images/home-link-thumbs/april-18-press-release.png
+    text_en: April 18th Press Release
+    text_fr: April 18th Press Release
 
   - url: /resources/student-finances.html
     image_url_en: images/home-link-thumbs/cfms-co-brand-logo.jpg
