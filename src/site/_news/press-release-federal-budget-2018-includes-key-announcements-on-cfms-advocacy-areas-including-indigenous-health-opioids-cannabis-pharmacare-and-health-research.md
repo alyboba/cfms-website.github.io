@@ -78,3 +78,5 @@ The CFMS, the national voice of Canada’s medical students, will continue to st
 >
 >
 > Christina Schweitzer, Vice-President Communications<br>Canadian Federation of Medical Students<br>Email: [vpcommunications@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,99,111,109,109,117,110,105,99,97,116,105,111,110,115,64,99,102,109,115,46,111,114,103)))<br>Cell: 1-587-225-8165
+
+> [PDF of PRESS RELEASE: Federal Budget 2018 includes key announcements on CFMS advocacy areas, including Indigenous health, opioids, cannabis, Pharmacare, and health research](/CFMS Press Release_Federal Budget 2018.pdf)
