@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	<!--Metadata-->
+<meta charset="utf-8">
+<title>Canadian Federation of Medical Students</title>
+<meta name="description" content="Canadian Federation of Medical Students">
+<meta name="keywords" content="CFMS, Medicine, Canada, Advocacy, Medical School, Association">
+<meta name="author" content="Kevan Lu">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+<!--Stylesheets-->
+
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/base.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/header.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/footer.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/loading.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!--DataTables-->
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+
+<!--FormValidator-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+
+<!--Firebase Code-->
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCRaJStQDuZ0nrn0b59kzYphlAkJ62flo8",
+    authDomain: "amber-heat-9132.firebaseapp.com",
+    databaseURL: "https://amber-heat-9132.firebaseio.com",
+    storageBucket: "amber-heat-9132.appspot.com",
+    messagingSenderId: "466232039218"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<!--Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77140171-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--Scroll Reveal-->
+<script src="/js/scrollreveal.min.js"></script>
+<script>
+      window.sr = ScrollReveal();
+</script> 
+<style>
+    /* Ensure elements load hidden before ScrollReveal runs */
+    .animate { visibility: hidden; }
+</style> 
+
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	
+	
+
+	
+		<div id="top-padding"></div>
+		<div id="top-bar" class="invert fr">
+			<div id="top-icon" class="animate">
+				<div id="logo-group" class="fr">
+					<img id="logo-invert" src="/images/cfms-logo-invert.svg">
+					<img id="logo" src="/images/cfms-logo.svg">
+					<a href="/fr/">FEMC</a>
+				</div>
+				<span id="logo-desc"><a class="fr" href="/fr/">Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada</a></span>
+			</div>
+			<div id="top-hamburger" class="animate">
+				<a onclick="return false;" id="hamburger-toggle" href=""><span></span></a>
+			</div>
+			<div id="top-nav" class="animate">
+				<ul class="fr">
+					<li id="who-we-are"><a class="top-level" href="/fr/who-we-are/">Qui sommes-nous?</a></li>
+					<li id="what-we-do"><a class="top-level" href="/fr/what-we-do/">Que faisons-nous?</a>
+						<div id="sub-menu">
+						    <ul>
+						    	<li><a href="/fr/what-we-do/advocacy/">Représentation</a></li>
+						    	<li><a href="/fr/what-we-do/education/">Éducation</a></li>
+						    	<li><a href="/fr/what-we-do/global-health/">Santé mondiale</a></li>
+						    	<li><a href="/fr/what-we-do/student-affairs/">Affaires étudiantes</a></li>
+								<li><a href="/fr/what-we-do/communications/">Communications</a></li>
+						    </ul>
+						</div>
+					</li>
+					<li id="resources"><a class="top-level" href="/fr/resources/">Ressources</a></li>
+					<li id="meetings"><a class="top-level" href="/fr/meetings/">Réunions</a>
+						<div id="sub-menu">
+						    <ul>
+ 						    	<li><a href="/fr/meetings/sgm-2018-halifax.html">SGM 2018 &ndash; Halifax, NS</a></li>
+						        <li><a href="/fr/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
+						        <li><a href="/fr/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>
+						        <li><a href="/fr/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>
+						    </ul>
+						</div>
+					</li>
+					<li id="members"><a class="top-level" href="/fr/members/">Membres</a></li>
+					<li id="news"><a class="top-level" href="/fr/news/">Nouvelles</a></li>
+					<li id="human-of-medicine"><a class="top-level" href="/fr/humans-of-medicine/">Humains de la Médecine</a></li>
+					
+						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Se connecter</a></li>
+					
+					
+						
+							<li id="lang-toggle"><a id="en" href='/what-we-do/advocacy/day-of-action.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+						
+					
+				</ul>
+			</div>
+		</div>
+	
+
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		<div id="sidebar">
+	<div id="scroll">
+		
+		
+		
+		
+		<span id="sidebar-title">Plaidoirie</span>
+		<ul>
+			<li><a id="overview" href=".">Aperçu</a></li>
+			<li><a id="our-team" href="our-team.html">Notre conseil</a></li>
+		</ul>
+		<span id="sidebar-title">Ressources</span>
+		<ul>
+			<li><a id="lobby-day" href="day-of-action.html">Journée d'action</a></li>
+			<li><a id="research-committee" href="research-committee.html">Comité de recherche</a></li>
+			<li><a id="position-papers" href="position-papers.html">Exposés de position</a></li>
+			<li><a id="advocacy-tracker" href="advocacy-tracker.html"></a></li>
+			<li><a id="task-forces" href="task-forces.html">Task Forces</a></li>
+
+			
+				<li><a id="advocacy-toolkit" href="fr/what-we-do/advocacy/advocacy-toolkit/">Trousse-à-outils pour plaidoirie</a></li>
+			
+		</ul>
+		
+		
+	</div>
+</div>
+
+
+		<script type="text/javascript">
+			document.querySelector( "#lobby-day" ).classList.toggle("sidebar-active");
+		</script>
+		<div id="side-content" class="editable">
+			<h1 id="page-title">Day of Action on Indigenous Mental Wellness</h1>
+
+			<p><img alt="" src="/images/infographics/day-of-action-infographic.png" /></p> 
+
+			<blockquote>
+				<p><strong>You can view the 2018 Day of Action summary report <a href="/files/day-of-action/2018-day-of-action-report.pdf">here</a></strong></p>
+			</blockquote>
+			<blockquote>
+				<p><strong>Faites partie de la conversation <a href="https://twitter.com/search?src=typd&amp;q=%23Bien%C3%AAtreMentalAutochtone">#Bien&ecirc;treMentalAutochtone</a>: Suivez @CFMSFEMC sur <a href="https://twitter.com/CFMSFEMC">Twitter</a>, <a href="https://www.facebook.com/CFMSFEMC/">Facebook</a> et <a href="https://www.instagram.com/cfmsfemc/">Instagram</a> pour rester au courant!</strong></p>
+			</blockquote>
+			<p>Chaque ann&eacute;e, des &eacute;tudiants en m&eacute;decine de partout au Canada se rendent &agrave; Ottawa pour rencontrer des parlementaires et proposer un changement positif au notre syst&egrave;me de sant&eacute;. En pr&eacute;vision des r&eacute;unions, cet &eacute;v&eacute;nement comprend une formation pouss&eacute;e sur le plaidoyer. C'est une excellente occasion pour les &eacute;tudiants en m&eacute;decine qui s'int&eacute;ressent &agrave; la promotion de la sant&eacute; nationale. La Journ&eacute;e d'action ne serait pas possible sans notre &eacute;quipe d&eacute;vou&eacute;e d'&eacute;tudiants au Comit&eacute; de recherche de la Journ&eacute;e d'action qui r&eacute;unit le document de demande, le document d'information et coordonne le processus de consultation.</p>
+			<h4>Journ&eacute;e d&rsquo;action 2018: le bien-&ecirc;tre mental autochtone</h4>
+			<p>Le bien-&ecirc;tre mental est un probl&egrave;me immense pour les communaut&eacute;s autochtones au Canada. La pr&eacute;valence des maladies mental et le suicide est plus &eacute;norme parmi les autochtones que le population g&eacute;n&eacute;rale au Canada. Deux ans apr&egrave;s la publication du rapport de la Commission de v&eacute;rit&eacute; et de r&eacute;conciliation en 2015, la question demeure en grande partie non r&eacute;solue, l'acc&egrave;s &agrave; des soins de sant&eacute; mentale de haute qualit&eacute; et culturellement adapt&eacute;s demeurant limit&eacute; parmi les communaut&eacute;s autochtones.</p>
+			<p>Le FEMC reconna&icirc;t que les besoins de soins de sant&eacute; essentiels parmi les populations autochtones au Canada demeurent largement insatisfaits, en particulier dans le domaine de la sant&eacute; mentale et du bien-&ecirc;tre. En tant que tel, nous croyons que les futurs professionnels de la sant&eacute;, nous avons l'obligation de plaider en faveur de la sant&eacute; et le bien-&ecirc;tre des peuples autochtones.</p>
+			<p>Suivant des consultations extensives aupr&egrave;s des communaut&eacute;s autochtones, et en tant que futurs m&eacute;decins et dirigeants de la sant&eacute; ayant la responsabilit&eacute; de d&eacute;fendre la sant&eacute; de tous les Canadiens, la F&eacute;d&eacute;ration des &eacute;tudiants et &eacute;tudiantes en m&eacute;decine du Canada (FEMC) demande au gouvernement du Canada de:</p>
+			<ol>
+				<li>Adopter les m&eacute;thodes et strat&eacute;gies propos&eacute;es par les communaut&eacute;s et peoples autochtones du Canada pour guider la r&eacute;ponse f&eacute;d&eacute;rale &agrave; la crise suicidaire autochtone:
+					<ol>
+						<li>Adopter le Cadre du continuum du mieux-&ecirc;tre mental des Premi&egrave;res Nations comme cadre pour aborder la sant&eacute; mentale et le suicide des peuples autochtones</li>
+						<li>Adopter la Strat&eacute;gie nationale de pr&eacute;vention du suicide chez les Inuits pour aborder la sant&eacute; mentale et le suicide chez des Inuits</li>
+					</ol>
+				</li>
+				<li>Entreprendre un examen complet de la r&eacute;partition actuelle du financement dans le cadre de la Strat&eacute;gie Nationale de Pr&eacute;vention du suicide chez les Jeunes Autochtones (SNPSJA), en collaboration avec les communaut&eacute;s autochtones, afin de s'assurer que chaque communaut&eacute; autochtone re&ccedil;oit un financement durable et selon les besoins</li>
+				<li>Demander &agrave; Sant&eacute; Canada et &agrave; Services aux Autochtones Canada de r&eacute;&eacute;valuer les programmes et services financ&eacute;s dans le cadre du Programme des services de sant&eacute; non assur&eacute;s (SSNA), et:
+					<ol>
+						<li>D&rsquo;augmenter le financement des programmes de bien-&ecirc;tre mental pr&eacute;ventifs et centr&eacute;s sur la terre qui cr&eacute;ent des opportunit&eacute;s dans les communaut&eacute;s</li>
+						<li>Soutenir et &eacute;largir la liste des fournisseurs de services approuv&eacute;s pour inclure les d&eacute;tenteurs de savoirs traditionnels autochtones</li>
+					</ol>
+				</li>
+			</ol>
+			<p><strong>Pour plus d'information, contacter:</strong></p>
+			<blockquote>
+				<p><strong>Yipeng Ge</strong>, Vice-President aux affairs gouvernementales<br />Federation des &eacute;tudiants et des &eacute;tudiantes en m&eacute;decine du Canada<br /><a href="javascript:void(location.href='mailto:'+String.fromCharCode(118,112,103,111,118,116,97,102,102,97,105,114,115,64,99,102,109,115,46,111,114,103))">vpgovtaffairs@cfms.org</a></p>
+				<p><strong>Christina Schweitzer</strong>, Vice-Pr&eacute;sidente aux communications<br />Federation des &eacute;tudiants et des &eacute;tudiantes en m&eacute;decine du Canada<br /><a href="javascript:void(location.href='mailto:'+String.fromCharCode(118,112,99,111,109,109,117,110,105,99,97,116,105,111,110,115,64,99,102,109,115,46,111,114,103))">vpcommunications@cfms.org</a></p>
+			</blockquote>
+
+			<p><img alt="" src="/uploads/versions/day-of-action-rectangle-1---x----1921-1081x---.png" /></p>
+		</div>
+	</div>
+	<script type="text/javascript">
+	function getEmail(username){
+		var hostname = "cfms.org";
+		var linktext = username + "@" + hostname;
+		document.write("<a class='email' href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+	}
+</script>
+<div id="footer">
+	<div class="column">
+		<h1>
+			<div id="twitter-title">
+				
+					Derniers tweets
+				
+				<span style="opacity:0.3">:</span></div>
+			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
+		</h1>
+		<div class="icon"><i class="fa fa-twitter"></i></div>
+		<div id="latest-tweets">
+		</div>
+	</div>
+
+	
+		
+	
+		
+			<div class="column">
+				<h1>Pour nous joindre <span style="opacity:0.3">:</span></h1>
+				<div class="icon"><i class="fa fa-map-marker"></i></div>
+				<li>
+					Fédération des étudiants et des étudiantes en médecine du Canada<br>
+					267 O'Connor Street, Suite 401<br>
+					Ottawa, ON K2P 1V3
+				</li>
+				<div class="icon"><i class="fa fa-phone"></i></div>
+				<li>
+					<b>Téléphone</b>: 613&ndash;565&ndash;7740<br>
+					<b>Télécopieur</b>: 613&ndash;565&ndash;7742
+				</li>
+				<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
+				<div id="emails">
+					<li><b>Questions diverses</b>: Rosemary Conliffe<br>
+					    <script>getEmail("office")</script>
+					</li>
+					<li><b>Médias</b>: Christina Schweitzer<br>
+						<script>getEmail("vpcommunications")</script>
+					</li>
+					<li><b>Technologies de l'information</b>: Pavel Yarmak<br>
+						<script>getEmail("it")</script>
+					</li>
+				</div>
+			</div>
+		
+	
+	
+		
+	
+		
+			<div class="column">
+				<h1>
+					Trouvez nous sur <span style="opacity:0.3">:</span>
+					<div id="social-media">
+						<a class="social-icon" href="https://www.facebook.com/CFMSFEMC"><i class="fa fa-facebook"></i></a>
+						/
+						<a class="social-icon" href="https://twitter.com/cfmsfemc"><i class="fa fa-twitter"></i></a>
+						/
+						<a class="social-icon" href="https://www.linkedin.com/company/canadian-federation-of-medical-students-cfms-"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</h1>
+				<div class="icon"><i class="fa fa-sitemap"></i></div>
+				<li>
+					
+						<b>Plan du site:</b> <a href="/fr/sitemap.html">cfms.org/sitemap.html</a>
+					
+				</li>
+				<div class="icon"><i class="fa fa-question-circle"></i></div>
+				<li>
+					<b>Issue Tracker: </b><a href="/uploads/issue-tracker-guide.pdf">How To Guide</a>
+				</li>
+				<div class="icon"><i class="fa fa-github"></i></div>
+				<li>
+					<b>Issue Tracker: </b><a href="https://github.com/cfms-website/cfms-website.github.io/issues">Submit a Ticket </a>
+				</li>
+				<div class="icon"><i class="fa fa-copyright"></i></div>
+				<li>
+					<script>document.write((new Date()).getFullYear())</script>
+					FEMC. Tous droits réservés.<br>Développé par <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
+				</li>		
+			</div>
+		
+	
+</div>
+<script src="/js/twitterFetcher_min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	window.sr = ScrollReveal();
+	sr.reveal('.animate', { duration: 500, distance: '5px', scale: 1 } );
+
+	document.querySelector( "#hamburger-toggle" ).addEventListener( "click", function() {
+		this.classList.toggle( "active" );
+		document.querySelector("#top-nav").classList.toggle("active");
+		sr.reveal('#top-nav', {distance: '0px'});
+	});
+
+	//Gets latest tweets
+	var tweetConfig = {
+	  "id": '616581601191833602',
+	  "domId": 'latest-tweets',
+	  "maxTweets": 3,
+	  "enableLinks": true,
+	  "showPermalinks": false,
+	  "showUser": false,
+	  "showInteraction": false,
+	  "dateFunction": dateFormatter
+	};
+
+	//Formats the tweet dates
+	function dateFormatter(date) {
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var hour = date.getHours();
+
+		//0:00 = 12 AM
+		if (hour == 0)
+			var time = "12:" + date.getMinutes();
+		else 
+			time = (hour%12) + ":" + date.getMinutes();
+		if (hour > 0 && hour < 12)
+			time += " AM";
+		else 
+			time += " PM";
+
+		var month = months[date.getMonth()];
+		var day = date.getDate();
+		var year = date.getFullYear();
+		return time + " &ndash; " + month + " " + day + ", " + year;
+	}
+	twitterFetcher.fetch(tweetConfig);
+</script>
+
+<script src="/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if($(window).width() >= 960){
+	    $('#scroll').scrollToFixed({ 
+	    	minWidth: 960,
+	    	marginTop: 20, 
+	    	limit: function() {
+		        var limit = $('#footer').offset().top - $('#scroll').height() - 40;
+		        return limit;
+		    }
+	    });
+	}
+});
+</script>
+
+<!-- Modal Dialogs -->
+<script src="/js/vex.combined.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-default';</script>
+
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex.css" />
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex-theme-default.css" />
+
+<script>
+$('.redirect-modal').click(function(){
+    vex.dialog.confirm({
+        message: '<h3><strong>Oh no!</strong></h3><p>Unfortunately, this feature or resource is not yet available on the new CFMS website. To access it, please visit the old CFMS website.</p>',
+        buttons: [
+                $.extend({}, vex.dialog.buttons.YES, { text: 'Go to old website' }),
+                $.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })
+            ],
+        callback: function(value) {
+            if (value) {window.location.href = "http://www.old.cfms.org";}
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+	window.config = {
+		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","communications":"Communications","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","human-of-medicine":"Humans of Medicine","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","communications":"Communications","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","human-of-medicine":"Humains de la Médecine","login":"Se connecter","logout":"Se déconnecter"}]`),
+		lang: `fr`,
+		leadership_award_year: `2017-2018`,
+		env: `production`
+	}
+</script>
+
+<script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
+
+</body>
