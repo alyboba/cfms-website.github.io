@@ -1,6 +1,6 @@
 ---
 title: CFMS launches the National Wellness Program
-date: 2018-01-22 00:00:00
+date: 2018-04-27 00:00:00
 description: >-
 lang: en
 ---
@@ -24,4 +24,5 @@ The CFMS is committed to supporting our members and working with MedSocs to ensu
 We look forward to working with medical education and health professional stakeholders to chart a better course for medical trainees in the future.
 
 Victor Do, National Wellness Program File Lead
+
 Stephanie Smith, Vice President Student Affairs
