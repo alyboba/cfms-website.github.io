@@ -23,7 +23,7 @@ nav:
     meetings: Meetings
     members: Members
     news: News
-    human-of-medicine: Humans of Medicine
+    # human-of-medicine: Humans of Medicine
     login: Login
     logout: Logout
   - lang: fr
@@ -42,7 +42,7 @@ nav:
     meetings: Réunions
     members: Membres
     news: Nouvelles
-    human-of-medicine: Humains de la Médecine
+    # human-of-medicine: Humains de la Médecine
     login: Se connecter
     logout: Se déconnecter
 financial_resources:
@@ -191,6 +191,11 @@ sidebar-who-we-are:
     organizational-timeline: Organizational Timeline
     photo-gallery: Photo Gallery
     student-spotlight: Student Spotlight
+    yipeng-ge: Yipeng Ge
+    stephanie-smith: Stephanie Smith
+    overview: Overview
+    sidebar-title_1: Election
+    sidebar-title_2: Nominees
   - lang: fr
     sidebar-title_1: Qui sommes-nous?
     executives-officers: Conseil exécutif et directeurs
@@ -209,6 +214,8 @@ sidebar-who-we-are:
     organizational-timeline: Chronologie Organisationnelle
     photo-gallery: Galerie de photos
     student-spotlight: Projecteur étudiant
+
+
 sidebar-education:
   - lang: en
     sidebar-title_1: Education

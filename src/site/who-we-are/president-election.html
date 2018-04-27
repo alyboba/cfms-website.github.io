@@ -1,5 +1,5 @@
 ---
-title: Presidential Elections
+title: Governance Structure
 sitemap:
   priority: 0.6
   changefreq: monthly
@@ -9,34 +9,31 @@ sitemap:
 <!DOCTYPE html>
 
 
-<!--[if IE 8 ]>
-<html class="ie8"> <![endif]-->
-<!--[if IE 9 ]>
-<html class="ie9"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
-    {% include head.html %}
+	{% include head.html %}
 
-    <!--Page Specific Stylesheet-->
-    <link rel="stylesheet" href="/stylesheets/who-we-are.css"/>
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/who-we-are.css" />
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-{% include nav.html %}
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#who-we-are" ).classList.toggle("active");
+	</script>
 
-<!--Page Specific Formatting-->
-<script type="text/javascript">
-    document.querySelector("#logo-invert").classList.toggle("hidden");
-    document.querySelector("#who-we-are").classList.toggle("active");
-</script>
-
-<div class="content">
-    <!-- Displays the sidebar and emphasizes the active page -->
-    {% include sidebar-who-we-are.html %}
-    <script type="text/javascript">
-        document.querySelector("#about-us").classList.toggle("sidebar-active");
-    </script>
-
-		<div id="president-election-content">
-			<h1 id="page-title" class="editable">CFMS 2018 Presidential Elections</h1>
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-who-we-are.html %}
+		<script type="text/javascript">
+			document.querySelector( "#overview-election" ).classList.toggle("sidebar-active");
+		</script>
+		<div id="governance-structure-content">
+			<h1 id="page-title" class="editable">President Elections</h1>
 			<div class="editable">
 				<h2><strong>Election Process</strong></h2>
 				<hr>
@@ -52,9 +49,9 @@ sitemap:
 				<p>The President is also heavily involved in all activities of the executive and works with other executive members to ensure that the priorities of the organization are met. Time on email (internal and external) can exceed 2 hours per day during busy periods. Agendas and planning for executive meetings and teleconferences as well as the three meetings of the CFMS board also fall under this position. Presidential responsibilities also include liaising with the office staff person on a daily basis and ensuring that the infrastructure of the organization is in good order.</p>
 				<p>The position of President is a one-year post, elected by the board at the Spring General Meeting. Following the end of their term, the president assumes the official role of past- president.</p>
 				<p>The 2017-2018 President is Mr. Henry Annan, Dalhousie University, who may be reached at <a href="mailto:president@cfms.org">president@cfms.org</a>.</p>
+
 			</div>
 		</div>
 	</div>
 	{% include footer.html %}
 </body>
-</html>
