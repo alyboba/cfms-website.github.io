@@ -1,0 +1,79 @@
+---
+title: "Quick Tips"
+sitemap:
+  priority: 0.6
+  changefreq: monthly
+  role: VP Student Affairs
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-student-affairs.html %}
+    <script type="text/javascript">
+        document.querySelector( "#quick-tips" ).classList.toggle("sidebar-active");
+    </script>
+    
+    <div id="side-content" id="meeting-body">
+        <h1 id="page-title">{{ page.title }}</h1>
+        <h2><strong>Nutrition</strong></h2>
+
+        <ol>
+            <li>Remember to stay hydrated throughout the day and especially when on call. Use a hydration reminder app or create  your own routine with some water breaks.</li>
+                <div class="flex-wrapper">
+                    <div>
+                        <img src="/images/lwi-images/wellness-spotlight/water.png">
+                    </div>
+                </div>
+            <li>Keep some nuts, protein bars or multigrain crackers in your bag or pockets while on clinical rotations.</li>
+                <div class="flex-wrapper">
+                    <div>
+                        <img src="/images/lwi-images/wellness-spotlight/lunch.png">
+                    </div>
+                </div>
+            <li>To make a fun salad even healthier sprinkle some hemp hearts to add some omega 3 fatty acids to your meal!</li>
+                <div class="flex-wrapper">
+                    <div>
+                        <img src="/images/lwi-images/wellness-spotlight/salad.png" style="
+                            width: 700px;
+                        ">
+                    </div>
+                </div>
+            <li>No time to make a salad in the morning? Grab some baby carrots and sliced green apples instead.</li>
+                <div>
+                    <img src="/images/lwi-images/wellness-spotlight/tip-4.png" style="
+                        width: 700px;
+                    ">
+                </div>
+            <li>Try to avoid sugary snacks offered in the hospital stores while on clinical rotations. Buy healthy snacks in bulk and have some on you every day so you are not stuck with what's available in those stores.</li>
+                <div>
+                    <img src="/images/lwi-images/wellness-spotlight/tip-5.png" style="
+                        width: 700px;
+                    ">
+                </div>
+            <li>Try meal planning! Make a few big dishes and mix them up for your lunches over the week.</li>
+
+        </ol>
+    </div>
+</div>
+{% include footer.html %}
+</body>

@@ -30,7 +30,18 @@ collections:
     output: true
   cfms-in-the-news:
     output: true
-      
+  student-spotlight:
+    output: true
+  french-student-spotlight:
+    output: true
+  press-releases:
+    output: true
+  french-press-releases:
+    output: true
+  archived-press-releases:
+    output: true
+  archived-french-press-releases:
+    output: true
 
 #Set the default layout and language for collections
 defaults:
@@ -77,6 +88,22 @@ defaults:
   -
     scope:
       path: ""
+      type: "student-spotlight"
+    values:
+      layout: "student-spotlight"
+      lang: "en"
+      permalink: '/news/student-spotlight/:title.html'
+  -
+      scope:
+        path: ""
+        type: "french-student-spotlight"
+      values:
+        layout: "student-spotlight"
+        lang: "fr"
+        permalink: '/fr/news/student-spotlight/:title.html'
+  -
+    scope:
+      path: ""
     values:
       lang: "en"
   - 
@@ -100,6 +127,7 @@ pagination:
 
 #paths for the two blogs. If the html files move, this will need updating!
 news-blog-paginate-path: "news/archives/:num/"
+student-spotlight-path: "news/student-spotlight/:num"
 humans-of-medicine-paginate-path: "humans-of-medicine/:num/"
 
 rdiscount:

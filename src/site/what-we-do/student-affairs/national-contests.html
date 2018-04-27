@@ -1,0 +1,52 @@
+---
+title: "LWI National Contests"
+sitemap:
+  priority: 0.6
+  changefreq: monthly
+  role: VP Student Affairs
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-student-affairs.html %}
+    <script type="text/javascript">
+        document.querySelector( "#national-contests" ).classList.toggle("sidebar-active");
+    </script>
+    
+    <div id="side-content" id="meeting-body">
+        <h1 id="page-title">{{ page.title }}</h1>
+        <p>The CFMS is excited to announce the nutrition LWI national contests.</p>
+        <p>Complete these challenges and sign-up for our national wellness program monthly newsletter for a chance to win some of our national prizes including $50 Amazon gift cards.</p>
+        <p>Complete the nutrition LWI challenges between April 11th and April 25th, enter <a href="https://goo.gl/forms/UgFsNgRiwxtjErGC3">here</a>.</p>
+                <div class="flex-wrapper">
+                    <div>
+                        <img src="/images/lwi-images/national-contests/nutritional-challenges.png" style="
+                            width: 700px;
+                        ">
+                    </div>
+                </div>
+
+    </div>
+</div>
+{% include footer.html %}
+</body>

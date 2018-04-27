@@ -1,0 +1,124 @@
+---
+title: Assemblée générale de printemps 2018 de la FEMC 
+cost: 125
+id: SGM2018
+sitemap:
+  priority: 0.4
+  changefreq: never
+  role: VP Communications
+---
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/meetings.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#meetings" ).classList.toggle("active");
+	</script>
+
+	<!-- Header -->
+	<div id="top-meeting" style="background: url(/images/meeting-images/halifax_2018.jpg) no-repeat center 75%; background-size:cover">
+		<div id="top-group">
+			<div class="content">
+				<div class="editable" id="top-meeting-name">{{ page.title }}</div>
+				<div class="editable" id="top-meeting-info">HALIFAX, NOUVELLE-ÉCOSSE/ 27-28 AVRIL 2018</div>
+			</div>
+		</div>
+	</div>
+	<div id="meeting-details" class="content">
+		<div class="editable" id="meeting-aside">
+			<h2 id="aside-title"><strong>Détails de l'événement<i class="fa fa-star-o"></i></strong></h2>
+			<div class="icon">
+				<i class="fa fa-map-marker"></i>
+			</div>
+			<ul>
+				<li><b>EMPLACEMENT</b><br>
+				Halifax Convention Centre</li>
+			</ul>
+			<div class="icon">
+				<i class="fa fa-clock-o"></i>
+			</div>
+			<ul>
+				<li><b>DATE</b><br>
+				27-28 avril 2018</li>
+			</ul>
+			<div class="icon">
+				<i class="fa fa-briefcase what-to-bring"></i>
+			</div>
+			<ul>
+				<li><b>QUOI APPORTER</b><br>
+				Code vestimentaire : tenue professionnelle pour les réunions, tenue chic décontractée pour les événements sociaux</li>
+			</ul>
+			<div class="icon">
+				<i class="fa fa-envelope-o mail"></i>
+			</div>
+			<div id="emails">
+				<ul>
+					<li>
+						<b>QUESTIONS?</b><br>
+						Contactez-nous à <a href="mailto:office@cfms.org" style="border-bottom:1px solid #EAEAEA">office@cfms.org</a>
+					</li>
+				</ul>
+			</div>
+			<div id="shortcut-links">
+				<div id="scroll">
+					<h2>SAUTER À:<span style="opacity:0.5">:</span></h2>
+					<ul>
+						<li>
+							<a href="#introduction">Introduction</a>
+						</li>
+						<li>
+							<a href="#registration-info">Information d'inscription</a>
+						</li>
+						<li>
+							<a href="#travel-funding">Financement de voyage</a>
+						</li><!--<li><a href="#important-documents">Important Documents</a></li>
+		                        <li><a href="#executive-officer-reports">Executive &amp; Officer Reports</a></li>
+		                        <li><a href="#resolutions">Resolutions</a></li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="meeting-body">
+			<h2 class="editable" id="introduction"><strong>Qu'est-ce que l'Assemblée générale du printemps ?</strong></h2>
+			<p class="editable">L'Assemblée générale du printemps (AGP) est une occasion pour les étudiants et étudiantes en médecine du Canada de se rassembler pour discuter de sujets importants concernant l'éducation médicale, la défense des intérêts, la santé mondiale, le bien-être et plus. Joignez-vous à la conversation, impliquez-vous - nous voulons vous entendre!</p>
+
+			<h2 class="editable" id="registration-info"><strong>Information d'inscription</strong></h2>
+			<blockquote class="editable"><h4><strong>Comment puis-je m'inscrire?</strong></h4><ul><li>La période d'inscription est <b>FERMÉE</b>.</li></ul>
+			<h5><strong>Payez vos frais en ligne</strong></h5>
+				<div class="members-only">
+				    <form id="payment-form" payment-id="{{ page.id }}" action="/#" method="POST">
+				        <script src="https://payform.beanstream.com/payform/beanstream_payform.js" data-image="https://cfms.org/images/cfms-logo.svg" data-name="CFMS" data-description="{{ page.title }} - Registration" data-amount="{{ page.cost }}" data-currency="cad" data-billingaddress="false" data-submitform="false" data-primarycolor="#BB0A21">
+				        </script>
+				    </form>
+				    <p>En cliquant sur ce bouton, vous agrééez à nos <strong><a href="/payment-policies.html" target="_blank">politiques de paiement</a></strong>.
+				    </p>
+				</div>
+				<div class="non-members">
+				    <p>L'inscription est ouverte aux membres de la FEMC uniquement. Veuillez vous connecter à votre compte afin de procéder. </p>
+				</div>
+			</blockquote>
+
+			<h2 class="editable" id="travel-funding"><strong>Financement de voyage</strong></h2>
+			<p class="editable">Vous n'avez jamais assisté à une rencontre FEMC ? Vous voulez vous impliquer ? Faites demande à notre <strong>programme de financement de voyage</strong> et vous pourriez bénéficier de couverture de vos frais d'inscription et de voyage par la FEMC. Chaque année, la FEMC et Gestion financière MD allouent des fonds pour amener des étudiants en médecine à nos assemblées annuelles. C'est une excellente occasion d'en apprendre plus sur la FEMC, de s'impliquer et de rencontrer d'autres étudiants en médecine de l'ensemble du pays.</p>
+			<blockquote class="editable">
+				<h4><strong>Faites demande pour le financement de voyage</strong></h4>
+				<ul>
+					<li>La période d'application pour le financement de voyage est <strong>FERMÉE</strong>.</li>
+				</ul>
+			</blockquote>
+		</div>
+	</div>
+	{% include footer.html %}
+</body>

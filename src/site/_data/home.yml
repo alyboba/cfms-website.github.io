@@ -25,13 +25,20 @@ news_text_fr: >-
   href='http://www.old.cfms.org'>www.old.cfms.org</a>!
 news_text_url:
 featured_links:
-  - url: meetings/agm-2017-ottawa.html
-    image_url_en: images/home-link-thumbs/40th-celebration.png
-    image_url_fr: images/home-link-thumbs/40th-celebration.png
-    text_en: Celebrating our 40<sup>th</sup> Anniversary!<br>Details to come
-    text_fr: Celebrating our 40<sup>th</sup> Anniversary!<br>Details to come
-  - url: resources/student-finances.html
+  - url: /meetings/sgm-2018-halifax.html
+    image_url_en: images/home-link-thumbs/cfms_sgm_halifax.jpg
+    image_url_fr: images/home-link-thumbs/cfms_sgm_halifax.jpg
+    text_en: 2018 CFMS Spring General Meeting
+    text_fr: 2018 CFMS Spring General Meeting
+
+  - url: /news/2018/04/18/press-release.html
+    image_url_en: images/home-link-thumbs/april-18-press-release.png
+    image_url_fr: images/home-link-thumbs/april-18-press-release.png
+    text_en: April 18th Press Release
+    text_fr: April 18th Press Release
+
+  - url: /resources/student-finances.html
     image_url_en: images/home-link-thumbs/cfms-co-brand-logo.jpg
-    image_url_fr: images/home-link-thumbs/cfms-co-brand-logo_f.jpg
+    image_url_fr: images/home-link-thumbs/cfms-co-brand-logo.jpg
     text_en: Student Financial Advice from MD Financial Management
     text_fr: Conseils financiers pour étudiants en médecine par Gestion financière MD

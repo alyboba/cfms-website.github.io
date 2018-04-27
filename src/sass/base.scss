@@ -349,7 +349,7 @@ label {
 	font-family:$sans-serif-font-stack;
 
 }
-.ps, .pp, .nt, .ip {
+.ps, .pp, .dp, .nt, .ip {
 	@extend .file-format;
 }
 .ps {
@@ -357,6 +357,9 @@ label {
 }
 .pp {
 	background-color: $vp-gov-affairs-color;
+}
+.dp {
+	background-color: #AE73F2;
 }
 .nt {
 	background-color: $darker
@@ -395,6 +398,7 @@ label {
 	p {margin-bottom:15px;}
 }
 .pub-date {
+	line-height: 40px;
 	float:right;
 	color:$bright;
 	padding-left:15px;
@@ -609,4 +613,10 @@ added helper classes
 
 .noListStyle{
 	list-style: none;
+}
+
+.full-width img {
+	width: auto;
+	height: auto;
+	max-width: 800px;
 }

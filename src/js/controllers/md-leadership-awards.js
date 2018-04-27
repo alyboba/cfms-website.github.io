@@ -154,20 +154,35 @@ class LeadershipAwardUserController extends FirebaseConnection {
   	var controller = this;
 		var storageRef = controller.firebase.storage().ref();
 		//Loads user-associated data
-		var refPath = '/users/' + this.auth.userId;
-		controller.firebase.database().ref(refPath).once('value').then(function(snapshot) {
-			var firstName = snapshot.val().firstName;
-			var lastName = snapshot.val().lastName;
-			document.getElementById('submitted-name').textContent = firstName + ' ' + lastName;
-			document.getElementById('submitted-school').textContent = snapshot.val().medicalSchool;
-			document.getElementById('submitted-grad-year').textContent = snapshot.val().graduationYear;
-		});
+        if (this.auth.user) {
+            let profile = this.auth.user;
+            var firstName = profile.given_name;
+            var lastName = profile.family_name;
+            document.getElementById('submitted-name').textContent = firstName + ' ' + lastName;
+            document.getElementById('submitted-school').textContent = profile.user_metadata.medical_school;
+            document.getElementById('submitted-grad-year').textContent = profile.user_metadata.graduation_year;
+        }
+        else {
+            document.getElementById('submitted-name').textContent = '';
+            document.getElementById('submitted-school').textContent = '';
+            document.getElementById('submitted-grad-year').textContent = '';
+        }
+        document.getElementById('submitted-name').textContent = firstName + ' ' + lastName;
+        document.getElementById('submitted-school').textContent = snapshot.val().medicalSchool;
+        document.getElementById('submitted-grad-year').textContent = snapshot.val().graduationYear;
 		//Loads other submitted data
 		refPath = 'leadership-award/' + window.config.leadership_award_year + '/' + this.auth.userId;
 		controller.firebase.database().ref(refPath).once('value').then(function(snapshot) {
 			if (!snapshot.child('submitted').exists())
 				return;
-			document.getElementById('submitted-email').textContent = snapshot.val().emailAddress;
+			let submittedEmail = document.getElementById('submitted-email');
+			let accountEmail;
+			if (this.auth.user)
+				accountEmail = (snapshot.val().emailAddress) ? snapshot.val().emailAddress : this.auth.user.email;
+			else
+				accountEmail = snapshot.val().emailAddress;
+			submittedEmail.textContent = snapshot.val().emailAddress = accountEmail;
+			submittedEmail.href = 'mailto:' + accountEmail;
 			document.getElementById('submitted-cma-id').textContent = snapshot.val().cmaMembershipID;
 			var twitterHandle = snapshot.val().twitterHandle;
 			if (twitterHandle === '')
