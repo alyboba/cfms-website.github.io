@@ -9,6 +9,7 @@ sponsored_by_fr: Financé par
 nav:
   - lang: en
     acronym: CFMS
+    president-election: Presidential Election
     title: Canadian Federation of<br>Medical Students
     lang_path:
     who_we_are: Who we are
@@ -22,10 +23,11 @@ nav:
     meetings: Meetings
     members: Members
     news: News
-    human-of-medicine: Humans of Medicine
+    # human-of-medicine: Humans of Medicine
     login: Login
     logout: Logout
   - lang: fr
+    president-election: Presidential Election
     acronym: FEMC
     title: Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada
     lang_path: /fr
@@ -40,7 +42,7 @@ nav:
     meetings: Réunions
     members: Membres
     news: Nouvelles
-    human-of-medicine: Humains de la Médecine
+    # human-of-medicine: Humains de la Médecine
     login: Se connecter
     logout: Se déconnecter
 financial_resources:
@@ -189,6 +191,11 @@ sidebar-who-we-are:
     organizational-timeline: Organizational Timeline
     photo-gallery: Photo Gallery
     student-spotlight: Student Spotlight
+    yipeng-ge: Yipeng Ge
+    stephanie-smith: Stephanie Smith
+    overview: Overview
+    sidebar-title_1: Election
+    sidebar-title_2: Nominees
   - lang: fr
     sidebar-title_1: Qui sommes-nous?
     executives-officers: Conseil exécutif et directeurs
@@ -207,6 +214,8 @@ sidebar-who-we-are:
     organizational-timeline: Chronologie Organisationnelle
     photo-gallery: Galerie de photos
     student-spotlight: Projecteur étudiant
+
+
 sidebar-education:
   - lang: en
     sidebar-title_1: Education
@@ -341,7 +350,6 @@ sidebar-discounts:
     lasik: Correction de la vision LASIK MD
     wellness-discounts: Wellness Discounts
     discounts-tax: Tax Services 
-
 sidebar-databases:
   - lang: en
     sidebar-title_1: Databases
@@ -353,3 +361,10 @@ sidebar-databases:
     accommodations: Hébergement
     interviews: Entrevue de Carmes
     electives: Electives Database
+sidebar-president-election:
+    yipeng-ge: Yipeng Ge
+    stephanie-smith: Stephanie Smith
+    overview: Overview
+    sidebar-title_1: Election
+    sidebar-title_2: Nominees
+
