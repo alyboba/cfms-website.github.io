@@ -68,9 +68,9 @@ sitemap:
 					    {% if page == paginator.page %}
 						    <em id="current-page" class="page-link">{{ page }}</em>
 					    {% elsif page == 1 %}
-						    <a class="page-link" href="/news/archives/">{{ page }}</a>
+						    <a class="page-link" href="/fr/news/archives/">{{ page }}</a>
 					    {% else %}
-						    <a class="page-link" href="/{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
+						    <a class="page-link" href="/fr/{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
 					    {% endif %}
 					{% endfor %}
 				</div>

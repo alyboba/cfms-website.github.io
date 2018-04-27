@@ -79,9 +79,9 @@ sitemap:
             {% if page == paginator.page %}
             <em id="current-page" class="page-link">{{ page }}</em>
             {% elsif page == 1 %}
-            <a class="page-link" href="/humans-of-medicine/">{{ page }}</a>
+            <a class="page-link" href="/fr/humans-of-medicine/">{{ page }}</a>
             {% else %}
-            <a class="page-link" href="/{{ site.humans-of-medicine-paginate-path | replace: ':num', page }}">{{ page }}</a>
+            <a class="page-link" href="/fr/{{ site.humans-of-medicine-paginate-path | replace: ':num', page }}">{{ page }}</a>
             {% endif %}
             {% endfor %}
         </div>

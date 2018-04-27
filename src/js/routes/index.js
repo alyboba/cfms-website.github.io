@@ -17,6 +17,7 @@ import Communiques from './communiques';
 import ArchivedCommuniques from './communiques-archived';
 import Accommodations from './accommodations';
 import CarmsInterview from './carms-interview';
+import Electives from './electives';
 import SiteMap from './sitemap';
 
 export default class Router extends Middleware {
@@ -61,6 +62,9 @@ export default class Router extends Middleware {
       
         route('/databases/accommodations.html', Accommodations);
 	      route('/fr/databases/accommodations.html', Accommodations);
+	      
+	      route('/databases/electives.html', Electives);
+	      route('/fr/databases/electives.html', Electives);
         
         route('/resources/rep-resources.html', RepResources);
         route('/fr/resources/rep-resources.html', RepResources);

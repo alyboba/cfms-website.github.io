@@ -5,7 +5,6 @@ export default class TagSearchConroller {
 	
 	bindListeners(){
 		$(document).ready(function () {
-			console.log("Here i am!");
 			$("#filters").css({"display" : "block"}); //Set the search form visible if the user has javascript enabled...
 			$("#noJavaScriptMessage").css({"display" : "none"}); //If user has javascript, hide this element. If they have no JS, User friendly message will display to them.
 			//var searchBar = $('<legend>Search by Title:</legend><input style ="display:none;"id="searchFilter" type="text" name="search" placeholder="Search Paper Name with Filters">');
@@ -36,15 +35,29 @@ export default class TagSearchConroller {
 				selectedSection = textBoxChange();
 				checkSectionAfterFilter();
 			});
+
+			$(".filtered-content")
+                .click(function() {
+                    $(`#details_${$(this).attr("data-index")}`).toggle();
+                    $(this).toggleClass("filtered-content-active");
+                    $(`#arrow-down_${$(this).attr("data-index")}`).toggleClass("active");
+                })
+                .hover(function() {
+                    $(this).toggleClass("filtered-content-hover");
+                }, function() {
+                    $(this).toggleClass("filtered-content-hover");
+                });
 			
 			/*
 			function that contains logic performed when user types into the search bar.
 			 */
 			function applySearchFieldFilter(searchBarFilter){
+			    resetView(); //Reset Close view
+				
 				//iterate through all paper titles, compare the search entry to the passed in parameter
 				$(".paper-title").each(function () {
 					var nameSearched = $(this).text().toLowerCase();
-					var $filteredElement = $(this).parent().parent();
+					var $filteredElement = $(this).parent();
 					var activeFilters = getActiveFilters();
 					var paperFilters = $filteredElement.data("filters");
 					if (nameSearched.indexOf(searchBarFilter) != -1 && lessonQualified(activeFilters, paperFilters) ) {
@@ -58,10 +71,17 @@ export default class TagSearchConroller {
 				});
 			}
 			
+			function resetView() {
+                $(".filtered-content").removeClass("filtered-content-active");
+                $(".arrow-down").addClass("active");
+				$(".paper-details").hide();
+			}
+
 			/*
 			Function to hold logic for applying filtering to papers using Tagging system.
 			 */
 			function applyTagFilter() {
+				resetView();
 				$(".filtered-content").hide();
 				var activeFilters = getActiveFilters();
 				$(".filtered-content").each(function () {

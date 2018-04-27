@@ -1,0 +1,76 @@
+---
+title: Archived Press Releases
+sitemap:
+  priority: 0.2
+  changefreq: yearly
+  role: VP Government Affairs
+---
+
+{% assign sorted = (site.archived-press-releases | sort: 'date') | reverse %}
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]>
+<html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css"/>
+    <link rel="stylesheet" href="/stylesheets/tables.css"/>
+
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+	document.querySelector("#logo-invert").classList.toggle("hidden");
+	document.querySelector("#what-we-do").classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-communications.html %}
+    <!--<script type="text/javascript">-->
+			<!--document.querySelector("#press-releases").classList.toggle("sidebar-active");-->
+    <!--</script>-->
+    <div id="side-content" class="editable">
+        <h1 id="page-title">Archived Press Releases</h1>
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100 ver1 m-b-110">
+                        <div class="table100-head">
+                            <table>
+                                <thead>
+                                <tr class="row100 head">
+                                    <th class="cell100 column1">Title</th>
+                                    <th class="cell100 column2">Date</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="table100-body js-pscroll">
+                            <table>
+                                <tbody>
+                                {% for post in sorted %}
+                                <tr class="row100 body">
+                                    <td class="cell100 column1"><a href="{{post.link}}">{{post.title}}</a></td>
+                                    <td class="cell100 column2">{{post.month}} {{post.day}}, {{post.year}}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            {% include footer.html %}
+</body>

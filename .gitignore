@@ -10,3 +10,8 @@ coverage/
 serve/
 .idea/
 package-lock\.json
+Gemfile.lock
+src/site/images/resource-logos/Thumbs\.db
+.snyk
+
+src/site/images/meeting-images/Thumbs\.db

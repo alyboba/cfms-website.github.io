@@ -1,0 +1,12 @@
+---
+post_excerpt: "PedsCases is an innovative source of pediatric knowledge dissemination which began in 2008 as a grassroots project by several medical students with faculty support at the University of Alberta."
+title: "PedsCases"
+img-path: '/images/page-images/student-spotlight/peds-cases.jpg'
+school: 'University of Alberta'
+lang: "en"
+priority: 13
+displayRightImage: true
+---
+**PedsCases** ([www.pedscases.com](http://www.pedscases.com)) is an innovative source of pediatric knowledge dissemination which began in 2008 as a grassroots project by several medical students with faculty support at the University of Alberta to supplement the undergraduate curriculum. Pediatric curriculum is often not presented in an integrated or cohesive manner and students have found it challenging to obtain a comprehensive foundation in pediatric medicine prior to entering clerkship. PedsCases was developed to fill this gap and consists of interactive cases, podcasts, videos and links to supplement undergraduate learning. PedsCases allows students to experience core virtual cases not seen in their clerkship experience. The goal is that PedsCases will deliberately generate content in a variety of formats including virtual patients, to ensure core pediatric knowledge is translated to undergraduate learners in a comprehensive manner.
+
+Over the past six years, PedsCases has fostered an innovative computer-based learning environment for teaching and evaluation of clinical reasoning. It thus far has over **55,000 unique visitors** from over **150 countries** and over **825,000 podcast downloads**. The PedsCases team has grown to include over a dozen students and Faculty across Canada and developed a guide on how to create high quality learning content. A culture of innovation and quality improvement is embedded in PedsCases, and we continue to evaluate content and learning modalities, and refine them where appropriate. PedsCases is transitioning to align with CanUC-Paeds, the National Undergraduate Curriculum in Pediatrics which was developed through the Pediatric Undergraduate Program Directors of Canada (PUPDOC). The University of Alberta was the first to unroll the curriculum and PedsCases is well positioned to be a key educational tool to compliment the National Curriculum.
