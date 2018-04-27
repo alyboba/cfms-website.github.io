@@ -9,6 +9,7 @@ sponsored_by_fr: Financé par
 nav:
   - lang: en
     acronym: CFMS
+    president-election: Presidential Election
     title: Canadian Federation of<br>Medical Students
     lang_path:
     who_we_are: Who we are
@@ -26,6 +27,7 @@ nav:
     login: Login
     logout: Logout
   - lang: fr
+    president-election: Presidential Election
     acronym: FEMC
     title: Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada
     lang_path: /fr
@@ -341,7 +343,6 @@ sidebar-discounts:
     lasik: Correction de la vision LASIK MD
     wellness-discounts: Wellness Discounts
     discounts-tax: Tax Services 
-
 sidebar-databases:
   - lang: en
     sidebar-title_1: Databases
@@ -353,3 +354,10 @@ sidebar-databases:
     accommodations: Hébergement
     interviews: Entrevue de Carmes
     electives: Electives Database
+sidebar-president-election:
+    yipeng-ge: Yipeng Ge
+    stephanie-smith: Stephanie Smith
+    overview: Overview
+    sidebar-title_1: Election
+    sidebar-title_2: Nominees
+
