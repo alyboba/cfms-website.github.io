@@ -291,7 +291,7 @@ sidebar-communications:
     sidebar-title_2: Resources
     press-releases: Press Releases
     cfms-in-the-news: CFMS in the News
-    communiques: Communiques
+    # communiques: Communiques
     # graphics: Graphics
     quarter-reports: Board Reports
     bilingualism-committee: Bilingualism Committee
@@ -302,7 +302,7 @@ sidebar-communications:
     sidebar-title_2: Ressources
     press-releases: Communiqués de Presse
     cfms-in-the-news: FEMC dans les Nouvelles
-    communiques: Communiques
+    # communiques: Communiques
     # graphics: Graphique
     quarter-reports: Board Reports
     bilingualism-committee: Bilingualism Committee
