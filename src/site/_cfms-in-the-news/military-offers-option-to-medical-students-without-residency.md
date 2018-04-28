@@ -1,10 +1,12 @@
 ---
 title: Military offers option to medical students without residency
-year: 2017
-month: Jan
-day: 1
-date: 2018-06-01 00:00:00
-href: The link this document points to
+year: 2018
+month: April
+day: 27
+date: 2018-04-27 00:00:00
+href: >-
+  https://atlantic.ctvnews.ca/military-offers-option-to-medical-students-without-residency-1.3906089
 lang: en
-news-publication: 'Example, ''HESA'''
+news-publication: CTV News
 ---
+
