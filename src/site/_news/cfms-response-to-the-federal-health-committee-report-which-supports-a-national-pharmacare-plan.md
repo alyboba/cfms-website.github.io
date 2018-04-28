@@ -1,7 +1,7 @@
 ---
 title: >-
-  CFMS Response to the Federal Health Committee Report which supports a National
-  Pharmacare Plan
+  PRESS RELEASE: CFMS Response to the Federal Health Committee Report which
+  supports a National Pharmacare Plan
 date: 2018-04-28 00:00:00
 description: >-
   After two years of consultations, the federal Standing Committee on Health
@@ -32,9 +32,9 @@ Read more about the CFMS Pharmacare Asks [here ](https://drive.google.com/file/d
 
 CFMS Position Papers on Pharmacare include:
 
-- &nbsp;[Preserving Medicine and Optimizing the Canadian Health Care System (September 2015)](https://www.cfms.org/news/2018/04/18/press-release.html)
+* [Preserving Medicine and Optimizing the Canadian Health Care System (September 2015)](https://www.cfms.org/news/2018/04/18/press-release.html)
 
-- &nbsp;[Pharmacare: Promotion Equitable Access to Medications (April 2015)](http://www.old.cfms.org/attachments/article/163/2015%20CFMS%20Pharmacare%20Policy%20Document.pdf)
+* [Pharmacare: Promotion Equitable Access to Medications (April 2015)](http://www.old.cfms.org/attachments/article/163/2015%20CFMS%20Pharmacare%20Policy%20Document.pdf)
 
 **QUOTATIONS FROM THE CFMS:**
 
@@ -52,7 +52,7 @@ CFMS Position Papers on Pharmacare include:
 > The Canadian Federation of Medical Students (CFMS) is the national organization representing over 8,000 medical students at 15 medical schools across Canada. Tomorrow’s physicians leading for health today.<br><br>[www.cfms.org](www.cfms.org)<br><br>Follow us on [Twitter](https://twitter.com/CFMSFEMC), [Facebook](https://www.facebook.com/CFMSFEMC/) and [Instagram](https://www.instagram.com/cfmsfemc/): @CFMSFEMC
 >
 >
-> &nbsp;
+>  
 >
 >
 > **FOR MORE INFORMATION:**
