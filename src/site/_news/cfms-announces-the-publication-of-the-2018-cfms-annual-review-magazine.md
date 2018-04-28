@@ -1,7 +1,10 @@
 ---
 title: CFMS Announces the Publication of the 2018 CFMS Annual Review Magazine
 date: 2018-04-28 00:00:00
-description: Please fill in description here.
+description: >-
+  The CFMS Annual Review is a publication that includes summaries of CFMS
+  projects and activities of the past year, as well as contributions of stories,
+  poetry, art and photography from the general membership.
 lang: en
 ---
 
