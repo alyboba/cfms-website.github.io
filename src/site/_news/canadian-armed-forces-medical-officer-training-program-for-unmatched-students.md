@@ -19,7 +19,7 @@ lang: en
 
 &nbsp;
 
-###### &nbsp;
+### **This news item will not be updated, please refer to website above.&nbsp;**
 
 ###### The CFMS in collaboration with the Canadian Armed Forces has worked to create supernumerary Family Medicine positions through the Medical Officer Training Program (MOTP). This initiative is called **MOTP Surge 2018**. If you are interested in exploring the option of becoming a Medical Officer and starting residency in July, please follow the steps below.
 
