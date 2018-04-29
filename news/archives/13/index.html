@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 
-
-
-
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
@@ -76,12 +73,10 @@
 
 
 	<!--Page Specific Stylesheet-->
-	
-		<link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
-	
+	<link rel="stylesheet" href="/stylesheets/news.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-
+	
 	
 		<div id="top-padding"></div>
 		<div id="top-bar" class="invert en">
@@ -131,6 +126,10 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
+						
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/news/archives/13/index.html">FR</a></li>
+						
+					
 				</ul>
 			</div>
 		</div>
@@ -145,92 +144,97 @@
 		document.querySelector( "#news" ).classList.toggle("active");
 	</script>
 
-	<div class="content">
-
-		<!-- News Article -->
-   		<div id="aside">
-			
-				<h6>About the CFMS</h6>
-				The CFMS is an organization representing over 8,000 medical students from 14 Canadian medical student societies from coast to coast. We represent medical students to the public, to the federal government, and to national and international medical organizations.
-			
+	<div id="archives" class="content">
+		<div class="editable" id="archives-title">All Articles | 13 of 13</div>
+    	<div id="aside">
+			<h6>About the CFMS</h6>
+			The CFMS is an organization representing over 8,000 medical students from 14 Canadian medical student societies from coast to coast. We represent medical students to the public, to the federal government, and to national and international medical organizations.
 		</div>
-        <div id="title">DEADLINE EXTENDED (May 15) Employment Opportunity: CMA Medical Student Intern</div>
-        <info datetime="2015-05-10">
-        </info>
-    	<div id="date">May 10, 2015</div>
-        <div id="body">
-	        <p><strong>Interested in professionalism in medicine?  Looking for an engaging way to spend the summer?  Consider the NEW CMA Medical Student Internship!</strong></p>
 
-<p>In addition to engaging with leaders at the CMA and learning more about the organization, the successful student will:</p>
+		<!-- This loops through the paginated posts -->
+		<ul>
+			
+				<li>
+					<h1><a href="/news/2015/03/19/cfms-med-hall-fame-create-partnership.html">CFMS and the Canadian Medical Hall of Fame Create Partnership</a></h1>
+			    	<span class="date">March 19, 2015</span>
+			    </li>
+			
+		</ul>
 
-<ul>
-  <li>Be assigned a major project, aligned with the CMA’s strategic priorities, for completion during the internship which could include such activities as:
-    <ul>
-      <li>Conducting literature reviews on professional issues and summarizing key findings</li>
-      <li>Writing summaries, articles, letters intended for internal and external audiences</li>
-      <li>Developing issues and options paper for policy consideration</li>
-      <li>Participate in and present at internal and external meetings</li>
-      <li>Make formal presentations at the end of the term outlining a summary of their internship experience</li>
-    </ul>
-  </li>
-  <li>Help staff develop an educational curriculum to support Canadian physicians who elect to participate in assisted dying activities.</li>
-</ul>
+		
+			<div id="pagination">
 
-<h2 id="education"><strong>Education</strong></h2>
-
-<p>Must be currently a 1st or 2nd year medical student in Canada and a member in good standing of CFMS.</p>
-
-<h2 id="application-process"><strong>Application Process</strong></h2>
-
-<p>Please submit a résumé and a brief description (max 500 words) indicating why you are interested in this opportunity, and indicate your level of proficiency in French.  Applications are to be submitted by <strong>May 15th, 2015.</strong></p>
-
-<p>Apply in confidence to: <a href="mailto:jobapp@cma.ca">jobapp@cma.ca</a></p>
-
-<p>Learn more at <a href="http://www.cma.ca">www.cma.ca</a>.</p>
-
-<blockquote>
-  <h4 id="attachments"><strong>Attachments:</strong></h4>
-  <ul>
-    <li><a href="/files/updates/Medical%20Student%20Intern%20-%20CFMS.docx">Medical Student Intern - CFMS.docx</a></li>
-  </ul>
-</blockquote>
-
-        </div>
-	</div>
-	    <!-- Other News -->
-        <div id="other-news">
-			<h1>Other News</h1>
-			<div id="other-news-list">
+				<!-- Previous Page -->
 				
+					
+						<div id="prev-button" class="button"><a href="/news/archives/12/">Previous Page</a></div>
+					
 				
-					<div class="news-date">Apr 29</div>
-					<li>
-						<div class="news-link"><a href="/news/2018/04/29/press-release-to-accompany-afmc-board-meeting-on-physician-wellness-and-burnout.html">Press Release to accompany AFMC Board Meeting on Physician Wellness and Burnout</a></div>
-					</li>
+
+				<!-- Page Listing -->
+				<div id="page-listing">
+					
+					
+					<a class="page-link" href="/news/archives/">1</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/2/">2</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/3/">3</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/4/">4</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/5/">5</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/6/">6</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/7/">7</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/8/">8</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/9/">9</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/10/">10</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/11/">11</a>
+					
+					
+					
+					<a class="page-link" href="/news/archives/12/">12</a>
+					
+					
+					
+					<em id="current-page" class="page-link">13</em>
+					
+					
+				</div>
+
+				<!-- Next Page -->
 				
-					<div class="news-date">Apr 28</div>
-					<li>
-						<div class="news-link"><a href="/news/2018/04/28/cfms-response-to-the-federal-health-committee-report-which-supports-a-national-pharmacare-plan.html">PRESS RELEASE: CFMS Response to the Federal Health Committee Report which supports a National Pharmacare Plan</a></div>
-					</li>
-				
-					<div class="news-date">Apr 28</div>
-					<li>
-						<div class="news-link"><a href="/news/2018/04/28/cfms-announces-the-publication-of-the-2018-cfms-annual-review-magazine.html">CFMS Announces the Publication of the 2018 CFMS Annual Review Magazine</a></div>
-					</li>
-				
-					<div class="news-date">Apr 28</div>
-					<li>
-						<div class="news-link"><a href="/news/2018/04/28/canadian-armed-forces-medical-officer-training-program-for-unmatched-students.html">ANNOUNCEMENT: Canadian Armed Forces Medical Officer Training Program for Unmatched Students</a></div>
-					</li>
-				
-					<div class="news-date">Apr 27</div>
-					<li>
-						<div class="news-link"><a href="/news/2018/04/27/cfms.html">CFMS Publishes National Medical Student Day of Action on Indigenous Mental Wellness Summary Report</a></div>
-					</li>
-				
+				    <div id="next-button" class="button inactive"><a href="#">Next Page</a></div>
 				
 			</div>
-		</div>
+		
+	</div>
 	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -419,4 +423,3 @@ $('.redirect-modal').click(function(){
 
 </body>
 </html>
-
