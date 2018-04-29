@@ -25,11 +25,11 @@ The CFMS representatives who attended the meeting highlighted the importance of 
 
 “The CFMS is steadfast in our commitment to learner wellness. In developing health-promoting learning environments we all need to work towards positive, inclusive culture change.”
 
-* *Henry Annan, CFMS President*
+*- Henry Annan, CFMS President*
 
 “By prioritizing medical professional health and wellness we will improve learning outcomes and ultimately patient care. We all have the opportunity to make a lasting, positive impact on our profession and the healthcare system.”
 
-* *Stephanie Smith, CFMS President-Elect and Vice-President Student Affairs*
+*- Stephanie Smith, CFMS President-Elect and Vice-President Student Affairs*
 
 “A comprehensive approach to improving medical learner wellness that considers not only personal development but ensures we have a health-promoting learner environment is a top priority for the CFMS. Our national wellness program aims to make significant, lasting impacts by working with our members and education stakeholders through positive dialogue and collaborative advocacy.”
 
@@ -57,3 +57,8 @@ The Canadian Federation of Medical Students (CFMS) represents over 8,000 medical
 >
 >
 > Cell: 1-587-225-8165
+>
+>
+> *PDF Version: [Press Release to accompany AFMC Board Meeting on Physician Wellness and Burnout](/PRESS RELEASE - AFMC Board meeting Physician Wellness and Burnout.pdf)*
+
+&nbsp;
