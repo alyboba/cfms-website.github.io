@@ -3,7 +3,11 @@ title: >-
   Press Release to accompany AFMC Board Meeting on Physician Wellness and
   Burnout
 date: 2018-04-29 00:00:00
-description: Please fill in description here.
+description: >-
+  The CFMS is proud to have launched our National Wellness Program this weekend.
+  This is our comprehensive approach to supporting student wellness and working
+  with programs to ensure learner wellness is a core value we hold across all of
+  the work that we do.
 lang: en
 ---
 
@@ -41,7 +45,7 @@ The Canadian Federation of Medical Students (CFMS) represents over 8,000 medical
 
 [www.cfms.org](https://www.cfms.org/)
 
-> Follow us on Twitter, Facebook and Instagram: @CFMSFEMC
+> Follow us on [Twitter](https://twitter.com/CFMSFEMC), [Facebook ](https://www.facebook.com/CFMSFEMC/)and [Instagram](https://www.instagram.com/cfmsfemc/): @CFMSFEMC
 >
 >
 > For more information:
