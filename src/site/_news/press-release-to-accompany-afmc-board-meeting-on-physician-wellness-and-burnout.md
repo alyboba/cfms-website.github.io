@@ -13,7 +13,7 @@ lang: en
 
 **OTTAWA, APRIL 28th, 2018** - The CFMS is proud to have launched our National Wellness Program this weekend. This is our comprehensive approach to supporting student wellness and working with programs to ensure learner wellness is a core value we hold across all of the work that we do.
 
-The national wellness program has 4 major threads: Advocacy, Programming, Awareness and Resiliency and Personal Development. There are a number of new threads that we have launched as part of this including our Longitudinal Wellness Initiative, which focuses on developing student wellness in the areas of nutrition, mental, financial, physical and social/relationship wellness. We have also created two new files focused on student mistreatment and students with disabilities to ensure we address systemic issues related to the learner environment.
+The national wellness program has 4 major threads: **Advocacy, Programming, Awareness and Resiliency and Personal Development**. There are a number of new threads that we have launched as part of this including our Longitudinal Wellness Initiative, which focuses on developing student wellness in the areas of nutrition, mental, financial, physical and social/relationship wellness. We have also created two new files focused on student mistreatment and students with disabilities to ensure we address systemic issues related to the learner environment.
 
 The CFMS also joined the AFMC, Resident Doctors of Canada and our faculties of medicine for an engaging discussion on physician/learner wellness and burnout. The session involved a thought-provoking presentation from Dr. Gautam who highlighted data on physician burnout and factors that drive the current crises. &nbsp;The core work happened in small group discussion where we set a direction for the future and considered priorities for charting a new course on physician wellness and burnout.
 
@@ -25,11 +25,11 @@ The CFMS representatives who attended the meeting highlighted the importance of 
 
 “The CFMS is steadfast in our commitment to learner wellness. In developing health-promoting learning environments we all need to work towards positive, inclusive culture change.”
 
-- *Henry Annan, CFMS President*
+* *Henry Annan, CFMS President*
 
 “By prioritizing medical professional health and wellness we will improve learning outcomes and ultimately patient care. We all have the opportunity to make a lasting, positive impact on our profession and the healthcare system.”
 
-- *Stephanie Smith, CFMS President-Elect and Vice-President Student Affairs*
+* *Stephanie Smith, CFMS President-Elect and Vice-President Student Affairs*
 
 “A comprehensive approach to improving medical learner wellness that considers not only personal development but ensures we have a health-promoting learner environment is a top priority for the CFMS. Our national wellness program aims to make significant, lasting impacts by working with our members and education stakeholders through positive dialogue and collaborative advocacy.”
 
