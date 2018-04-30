@@ -3,17 +3,22 @@ title: >-
   Call for Applications: Joule Innovation Grants, including two new $5,000
   student grants
 date: 2018-04-30 00:00:00
-description: Please fill in description here.
+description: >-
+  The Joule, a CMA Company, Innovation Grant program is now accepting
+  applications for over $200,000 in grants. New this year are two $5,000 grants
+  specifically for medical students. Apply by June 1st - it takes 5 minutes!
 lang: en
 ---
 
 The Joule, a CMA Company, Innovation Grant program is now accepting applications for over $200,000 in grants.
 
-**New this year are two $5,000 grants specifically for medical students. **
+**\*\*New this year are two $5,000 grants specifically for medical students. \*\***
 
 > All medical students who do not receive an early-stage, late-stage or social innovation grant will be automatically assessed and the top applicants will be awarded one of two $5,000 grants.
 
 **Applying takes 5 minutes!** For more information and to apply, visit [Joule's website](https://joule.cma.ca/en/innovate/grants.html).
+
+**Applications are due by June 1st. **
 
 Other grant categories that medical students can apply for include:
 
