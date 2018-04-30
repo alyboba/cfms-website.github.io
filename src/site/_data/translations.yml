@@ -9,7 +9,7 @@ sponsored_by_fr: Financé par
 nav:
   - lang: en
     acronym: CFMS
-    president-election: Presidential Election
+    # president-election: Presidential Election
     title: Canadian Federation of<br>Medical Students
     lang_path:
     who_we_are: Who we are
@@ -27,7 +27,7 @@ nav:
     login: Login
     logout: Logout
   - lang: fr
-    president-election: Presidential Election
+    # president-election: Presidential Election
     acronym: FEMC
     title: Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada
     lang_path: /fr
