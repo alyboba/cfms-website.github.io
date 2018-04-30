@@ -2,19 +2,6 @@
 	<div id="scroll">
 	    {% for sideObject in site.data.translations.sidebar-who-we-are %}
 		{% if sideObject.lang == page.lang %}
-
-		<span id="sidebar-title">President Election</span>
-		<ul>
-			<li><a id="overview-election" href="president-election.html">Overview</a></li>
-		</ul>
-
-		<span id="sidebar-title">Presidential Nominees</span>
-		<ul>
-			<li><a id="yipeng-ge" href="yipeng-ge.html">Yipeng Ge</a></li>
-			<li><a id="stephanie-smith" href="stephanie-smith.html">Stephanie Smith</a></li>
-			<li><a id="christina" href="christina.html">Christina Schweitzer</a></li>
-		</ul>
-
 		<span id="sidebar-title">{{sideObject.sidebar-title_1}}</span>
 		<ul>
 			<li><a id="executives-officers" href=".">{{sideObject.executives-officers}}</a></li>
