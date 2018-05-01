@@ -1,7 +1,7 @@
 ---
 title: Military offers option to medical students without residency
 year: 2018
-month: April
+month: Apr
 day: 27
 date: 2018-04-27 00:00:00
 href: >-
