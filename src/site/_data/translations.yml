@@ -319,6 +319,7 @@ sidebar-advocacy:
     task-forces: Task Forces
     research-committee: Research Committee
     # advocacy-tracker: Advocacy Tracker
+    ga-press-releases: Press Releases
   - lang: fr
     sidebar-title_1: Plaidoirie
     overview: Aperçu
@@ -331,6 +332,7 @@ sidebar-advocacy:
     task-forces: Task Forces
     research-committee: Comité de recherche
     # advocacy-tracker: Advocacy Tracker
+    ga-press-releases: Press Releases
 sidebar-discounts:
   - lang: en
     sidebar-title_1: Discounts
