@@ -18,7 +18,7 @@ The Joule, a CMA Company, Innovation Grant program is now accepting applications
 
 **Applying takes 5 minutes!** For more information and to apply, visit [Joule's website](https://joule.cma.ca/en/innovate/grants.html).
 
-**Applications are due by June 1st. **
+**Applications are due by June 1st.**
 
 Other grant categories that medical students can apply for include:
 
