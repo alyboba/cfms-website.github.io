@@ -12,7 +12,7 @@ lang: en
 
 FOR IMMEDIATE RELEASE
 
-**HA******LIFA**X, May 2, 2018 –** The Canadian Federation of Medical Students (CFMS) is proud to have launched our **National Wellness Program** this weekend at the CFMS Spring General Meeting, held concurrently with the Canadian Conference on Medical Education (CCME) in Halifax, Nova Scotia. This is our comprehensive approach to supporting medical student wellness and working with medical education programs to ensure learner wellness is a core value.
+**HA****\*\*LIFA**X, May 2, 2018 –\*\* The Canadian Federation of Medical Students (CFMS) is proud to have launched our **National Wellness Program** this weekend at the CFMS Spring General Meeting, held concurrently with the Canadian Conference on Medical Education (CCME) in Halifax, Nova Scotia. This is our comprehensive approach to supporting medical student wellness and working with medical education programs to ensure learner wellness is a core value.
 
 The National Wellness Program has four major threads: **Advocacy, Programming, Awareness & Resiliency****, and Personal Development.** Some of our new initiatives include the Longitudinal Wellness Initiative, which focuses on developing student wellness in the areas of nutrition, mental, financial, physical, and social & relationship wellness. We have also created two new files focused on student mistreatment and students with disabilities, to ensure we address systemic issues related to the learner environment.
 
@@ -34,14 +34,22 @@ At this meeting, the CFMS highlighted the importance of a coordinated effort bet
 
 *- Victor Do, CFMS Western Regional Representative and National Wellness Program Lead*
 
-**ABOUT THE CFMS:**
-
-The Canadian Federation of Medical Students (CFMS) is the national organization representing over 8,000 medical students at 15 medical schools across Canada. Tomorrow’s physicians leading for health today.
-
-[www.cfms.org](www.cfms.org)
-
-Follow us on [Twitter](https://twitter.com/CFMSFEMC), [Facebook](https://www.facebook.com/CFMSFEMC/) and [Instagram](https://www.instagram.com/cfmsfemc/): @CFMSFEMC
-
-**FOR MORE INFORMATION:**
-
-Christina Schweitzer<br>Vice-President Communications<br>Canadian Federation of Medical Students<br>Email: [vpcommunications@cfms.org](mailto:vpcommunications@cfms.org)<br>Cell: 1-587-225-8165
+> **ABOUT THE CFMS:**
+>
+>
+> The Canadian Federation of Medical Students (CFMS) is the national organization representing over 8,000 medical students at 15 medical schools across Canada. Tomorrow’s physicians leading for health today.
+>
+>
+> [www.cfms.org](www.cfms.org)
+>
+>
+> Follow us on [Twitter](https://twitter.com/CFMSFEMC), [Facebook](https://www.facebook.com/CFMSFEMC/) and [Instagram](https://www.instagram.com/cfmsfemc/): @CFMSFEMC
+>
+>
+> **<br>FOR MORE INFORMATION:**
+>
+>
+> Christina Schweitzer<br>Vice-President Communications<br>Canadian Federation of Medical Students<br>Email: [vpcommunications@cfms.org](mailto:vpcommunications@cfms.org)<br>Cell: 1-587-225-8165
+>
+>
+> [PDF of PRESS RELEASE: CFMS Launches the National Wellness Program and commits to working with the AFMC to create health-promoting learning environments](/CFMS NWP Press Release SGM.pdf)
