@@ -12,7 +12,7 @@ lang: en
 
 FOR IMMEDIATE RELEASE
 
-**HA****\*\*LIFA**X, May 2, 2018 –\*\* The Canadian Federation of Medical Students (CFMS) is proud to have launched our **National Wellness Program** this weekend at the CFMS Spring General Meeting, held concurrently with the Canadian Conference on Medical Education (CCME) in Halifax, Nova Scotia. This is our comprehensive approach to supporting medical student wellness and working with medical education programs to ensure learner wellness is a core value.
+**HA****LIFA****X, MAY 2, 2018 –** The Canadian Federation of Medical Students (CFMS) is proud to have launched our **National Wellness Program** this weekend at the CFMS Spring General Meeting, held concurrently with the Canadian Conference on Medical Education (CCME) in Halifax, Nova Scotia. This is our comprehensive approach to supporting medical student wellness and working with medical education programs to ensure learner wellness is a core value.
 
 The National Wellness Program has four major threads: **Advocacy, Programming, Awareness & Resiliency****, and Personal Development.** Some of our new initiatives include the Longitudinal Wellness Initiative, which focuses on developing student wellness in the areas of nutrition, mental, financial, physical, and social & relationship wellness. We have also created two new files focused on student mistreatment and students with disabilities, to ensure we address systemic issues related to the learner environment.
 
