@@ -1,6 +1,6 @@
 ---
 title: CFMS launches the National Wellness Program
-date: 2018-04-27 00:00:00
+date: 2018-01-22 00:00:00
 description: >-
   The CFMS is excited to launch the National Wellness Program; our comprehensive
   approach to supporting student wellness and working with programs to promote
