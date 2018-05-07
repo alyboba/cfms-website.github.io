@@ -267,6 +267,7 @@ sidebar-student-affairs:
     quick-tips: Quick Tips
     safe-space: Safe Space
     national-contests: National Contests
+    mental-wellness: Mental Wellness
   - lang: fr
     sidebar-title_1: Affaires étudiantes
     overview: Aperçu
@@ -285,6 +286,8 @@ sidebar-student-affairs:
     quick-tips: Quick Tips
     safe-space: Safe Space
     national-contests: National Contests
+    mental-wellness: Mental Wellness
+
 sidebar-communications:
   - lang: en
     sidebar-title_1: Communications

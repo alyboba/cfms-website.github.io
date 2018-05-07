@@ -1,0 +1,90 @@
+---
+title: "Nutrition Wellness"
+sitemap:
+  priority: 0.6
+  changefreq: monthly
+  role: VP Student Affairs
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    {% include head.html %}
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+    <link rel="stylesheet" href="/stylesheets/who-we-are.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+{% include nav.html %}
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    {% include sidebar-student-affairs.html %}
+    <script type="text/javascript">
+        document.querySelector( "#mental-wellness" ).classList.toggle("sidebar-active");
+    </script>
+    
+    <div id="side-content" id="meeting-body">
+        <h1 id="page-title">{{ page.title }}</h1>
+        <h2><strong>Theme 2: National Wellness Program <span>&#124;</span> <strong>March-April</strong> </strong></h2>
+        <hr />
+        <div class="editable">
+
+
+            <h3 id=""><strong>Michelle & Hailey’s Top Five Mental Health Apps & Podcasts </strong></h3>
+            <p>
+                <strong>1. Headspace</strong><br>
+                An app focussed on making meditation simple. By providing guidance mindfulness and meditation sessions, the Headspace app provides you with some life changing skills that will help you cope with stress, improve sleep and focus on the tasks at hand. 
+                <img src="/images/lwi-images/mental-wellness/week1/headspace.png">
+            </p>
+
+            <p>
+                <strong>2. Calm</strong><br>
+                The Calm app provides you with a variety of different meditation topics, ranging from foundations and beginner sessions, to sessions aimed at relieving anxiety and how to manage your emotions. They also have a wide range of soothing sleep stories to help you drift off into sleep.
+                <img src="/images/lwi-images/mental-wellness/week1/calm.png">
+            </p>
+
+            <p>
+                <strong>3. Aura</strong><br>
+                <img src="/images/lwi-images/mental-wellness/week1/aura.png" class="paragraph-picture" style="
+                    width: 100px;
+                    height: auto;
+                ">
+                Aura provides you with personalized 3-minute meditation sessions each day, with no repeats. The app initially assesses your optimism, stress level and interest in mindfulness and selects your daily meditation each day based on your daily mood.
+            </p>
+
+            <p>
+                <strong>4. 10% Happier - Meditation for Fidgety Skeptics</strong><br>
+                <img src="/images/lwi-images/mental-wellness/week1/meditation.png" class="paragraph-picture" style="
+                    width: 100px;
+                    height: auto;
+                ">
+                An easy to use app aimed at providing users with a clear and simple approach to meditation. Best selling author, Dan Harris, introduces us to several different respected and world renowned meditation teachers from across the world. 
+            </p>
+
+
+            <p>
+                <strong>5. Happify: for Stress & Worry</strong><br>
+                <img src="/images/lwi-images/mental-wellness/week1/happify.png" class="paragraph-picture" style="
+                    width: 100px;
+                    height: auto;
+                ">
+                Happify focuses on providing its users with effective tools in the form of fun games, personal activities and goal setting, amongst others, focussed on helping you to take control over your emotional wellbeing. These tools are based on evidence-based interventions studied in positive psychology, mindfulness and behavioural therapy. 
+            </p>
+
+
+        </div>
+    </div>
+</div>
+{% include footer.html %}
+</body>
