@@ -259,7 +259,7 @@ sidebar-student-affairs:
     wellness: Wellness
     discounts: Student Discounts
     resident-profiles: Resident Profiles
-    # national-wellness-initiative: National Wellness Initiative
+    national-wellness-initiative: National Wellness Program
     longitudinal-wellness-initiative: Longitudinal Wellness Program
     wellness-spotlight-profiles: Wellness Spotlight profiles
     nutrition-wellness: Nutrition Wellness
@@ -278,7 +278,7 @@ sidebar-student-affairs:
     sidebar-title_2: Ressources
     wellness: Bien-être
     discounts: Rabais étudiants
-    # national-wellness-initiative: National Wellness Initiative
+    national-wellness-initiative: National Wellness Program
     longitudinal-wellness-initiative: Longitudinal Wellness Program
     wellness-spotlight-profiles: Wellness Spotlight profiles
     nutrition-wellness: Nutrition Wellness
@@ -287,7 +287,6 @@ sidebar-student-affairs:
     safe-space: Safe Space
     national-contests: National Contests
     mental-wellness: Mental Wellness
-
 sidebar-communications:
   - lang: en
     sidebar-title_1: Communications
