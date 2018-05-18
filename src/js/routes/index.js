@@ -19,6 +19,7 @@ import Accommodations from './accommodations';
 import CarmsInterview from './carms-interview';
 import Electives from './electives';
 import SiteMap from './sitemap';
+import Snapvocacy from './snapvocacy';
 
 export default class Router extends Middleware {
     constructor() {
@@ -70,6 +71,8 @@ export default class Router extends Middleware {
         route('/fr/resources/rep-resources.html', RepResources);
         
         route('/sitemap.html', SiteMap);
+
+        route('/what-we-do/global-health/snapvocacy.html', Snapvocacy);
     }
 
     refresh() {
