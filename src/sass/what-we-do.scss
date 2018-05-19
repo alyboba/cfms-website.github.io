@@ -532,6 +532,15 @@ $number-margin-mobile:40px;
 	transform: rotate(45deg);
 }
 
+.collapsible-header .arrow-down {
+	top: 0;
+	margin-right: 1em;
+}
+
+.collapsible-header:focus {
+	outline: none;
+}
+
 /* Longitudinal Wellness Initiative
 ––––––––––––––––––––––––––––––––––––––––*/
 
