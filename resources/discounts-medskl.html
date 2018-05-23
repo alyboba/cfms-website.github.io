@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-
-
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
@@ -75,66 +72,73 @@
 
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="/stylesheets/resources.css">
-</head>
-<body ng-app="authApp" ng-controller="AuthController">
-	
-	
+	<!-- CodeMirror -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
 
+	<!-- Firepad -->
+	<link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+	<script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
+</head>
+<body>
+	
 	
 		<div id="top-padding"></div>
-		<div id="top-bar" class="invert fr">
+		<div id="top-bar" class="invert en">
 			<div id="top-icon" class="animate">
-				<div id="logo-group" class="fr">
+				<div id="logo-group" class="en">
 					<img id="logo-invert" src="/images/cfms-logo-invert.svg">
 					<img id="logo" src="/images/cfms-logo.svg">
-					<a href="/fr/">FEMC</a>
+					<a href="/">CFMS</a>
 				</div>
-				<span id="logo-desc"><a class="fr" href="/fr/">Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada</a></span>
+				<span id="logo-desc"><a class="en" href="/">Canadian Federation of<br>Medical Students</a></span>
 			</div>
 			<div id="top-hamburger" class="animate">
 				<a onclick="return false;" id="hamburger-toggle" href=""><span></span></a>
 			</div>
 			<div id="top-nav" class="animate">
-				<ul class="fr">
-					<li id="who-we-are"><a class="top-level" href="/fr/who-we-are/">Qui sommes-nous?</a></li>
-					<li id="what-we-do"><a class="top-level" href="/fr/what-we-do/">Que faisons-nous?</a>
+				<ul class="en">
+					<li id="who-we-are"><a class="top-level" href="/who-we-are/">Who we are</a></li>
+					<li id="what-we-do"><a class="top-level" href="/what-we-do/">What we do</a>
 						<div id="sub-menu">
 						    <ul>
-						    	<li><a href="/fr/what-we-do/advocacy/">Représentation</a></li>
-						    	<li><a href="/fr/what-we-do/education/">Éducation</a></li>
-						    	<li><a href="/fr/what-we-do/global-health/">Santé mondiale</a></li>
-						    	<li><a href="/fr/what-we-do/student-affairs/">Affaires étudiantes</a></li>
-								<li><a href="/fr/what-we-do/communications/">Communications</a></li>
+						    	<li><a href="/what-we-do/advocacy/">Advocacy</a></li>
+						    	<li><a href="/what-we-do/education/">Education</a></li>
+						    	<li><a href="/what-we-do/global-health/">Global Health</a></li>
+						    	<li><a href="/what-we-do/student-affairs/">Student Affairs</a></li>
+								<li><a href="/what-we-do/communications/">Communications</a></li>
 						    </ul>
 						</div>
 					</li>
-					<li id="resources"><a class="top-level" href="/fr/resources/">Ressources</a></li>
-					<li id="meetings"><a class="top-level" href="/fr/meetings/">Réunions</a>
+					<li id="resources"><a class="top-level" href="/resources/">Resources</a></li>
+					<li id="meetings"><a class="top-level" href="/meetings/">Meetings</a>
 						<div id="sub-menu">
 						    <ul>
-						    	<li><a href="/fr/meetings/sgm-2019-niagara-falls.html">SGM 2019 &ndash; Niagara Falls, ON</a></li>
-						    	<li><a href="/fr/meetings/agm-2018-montreal.html">AGM 2018 &ndash; Montreal, Qc</a></li>
- 						    	<li><a href="/fr/meetings/sgm-2018-halifax.html">SGM 2018 &ndash; Halifax, NS</a></li>
-						        <li><a href="/fr/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
-						        <!--<li><a href="/fr/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>-->
-						        <!--li><a href="/fr/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>-->
+						    	<li><a href="/meetings/sgm-2019-niagara-falls.html">SGM 2019 &ndash; Niagara Falls, ON</a></li>
+						    	<li><a href="/meetings/agm-2018-montreal.html">AGM 2018 &ndash; Montreal, Qc</a></li>
+ 						    	<li><a href="/meetings/sgm-2018-halifax.html">SGM 2018 &ndash; Halifax, NS</a></li>
+						        <li><a href="/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
+						        <!--<li><a href="/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>-->
+						        <!--li><a href="/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>-->
 						    </ul>
 						</div>
 					</li>
-					<li id="members"><a class="top-level" href="/fr/members/">Membres</a></li>
-					<li id="news"><a class="top-level" href="/fr/news/">Nouvelles</a></li>
-					<li id="human-of-medicine"><a class="top-level" href="/fr/humans-of-medicine/"></a></li>
+					<li id="members"><a class="top-level" href="/members/">Members</a></li>
+					<li id="news"><a class="top-level" href="/news/">News</a></li>
+					<li id="human-of-medicine"><a class="top-level" href="/humans-of-medicine/"></a></li>
 					
-						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Se connecter</a></li>
+						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
 						
-							<li id="lang-toggle"><a id="en" href='/resources/discounts.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/resources/discounts-medskl.html">FR</a></li>
 						
 					
 				</ul>
 			</div>
 		</div>
+	
+
 	
 
 	
@@ -145,36 +149,88 @@
 	</script>
 
 	<div class="discounts content">
+		<!-- Displays the sidebar and emphasizes the active page -->
 		<div id="sidebar">
 	<div id="scroll">
 		
 		
-		
-		
-		<span id="sidebar-title">Réductions</span>
+		<span id="sidebar-title">Discounts</span>
 		<ul>
-			<li><a id="travel-discounts" href="discounts-travel.html">Réductions sur les Voyages</a></li>
-			<!--<li><a id="disability-discounts" href="discounts-disability.html">Assurance Invalidité</a></li>-->
-			<li><a id="textbook-discounts" href="discounts-textbooks.html">Réductions sur les Manuels</a></li>
+			<li><a id="travel-discounts" href="discounts-travel.html">Travel and Accommodations</a></li>
+			<!--<li><a id="disability-discounts" href="discounts-disability.html">Disability Insurance</a></li>-->
+			<li><a id="textbook-discounts" href="discounts-textbooks.html">Textbooks</a></li>
 			<li><a id="online-discounts" href="discounts-online.html">UptoDate</a></li>
 			<li><a id="wellness-discounts" href="discounts-wellness.html">Wellness Discounts</a></li>
-			<li><a id="lasik-discount" href="discounts-lasik.html">Correction de la vision LASIK MD</a></li>
+			<li><a id="lasik-discount" href="discounts-lasik.html">LASIK MD Vision Correction</a></li>
 			<li><a id="" href="discounts-tax.html">Tax Services</a></li>
 			<li><a id="" href="discounts-medskl.html">MEDSKL QBank Access</a></li>
 		</ul>
 		
 		
+		
+		
 	</div>
 </div>
+		<script type="text/javascript">
+			document.querySelector( "#medskl" ).classList.toggle("sidebar-active");
+		</script>
 		<div class="student-discounts-content" class="editable">
-			<h1 id="page-title">Medical Student Discounts</h1>
-			<p>At CFMS, we have an exclusive partnership with <a href="https://mdm.ca/">MD Financial Management</a> to provide medical students with comprehensive financial planning, financial education and a wide range of support for events and services, including the leadership and travel awards.</p>
-			<p>Owned by the Canadian Medical Association, MD has a single mandate: to help physicians achieve financial well-being.</p>
-			<p>MD has a team of MD Advisors and Early Career Specialists called <a href="https://mdm.ca/contact-us/meded.asp">MD MedEd Counsel<sup>TM</sup></a> dedicated to supporting medical students and residents, whether it’s budgeting, cash flow management, finding the right credit solution or other strategies.</p>
-			<blockquote><p>To find out how MD can help, <a href="https://mdm.ca/contact-us/md-meded-counsel"><strong>contact an MD Advisor or Early Career Specialist</strong></a> at your school.</p></blockquote>
-			<h2>Financial Checklist for Medical Students</h2>
-			<p>With the high cost of tuition and living expenses, medical school can be challenging from a financial perspective. In fact, nine of every 10 medical students will incur debt by the end of their medical education.</p>
-			<p>Here are <strong>six steps</strong> you can take to ensure you come out ahead:</p>
+			<h1 id="page-title">medskl.com Offer</h1>
+			<h1><strong>Free Question Bank Access!</strong></h1>
+			<hr>
+			<img class="pic-right" src="/images/discount-images/medskl-logo.png">
+			<p>medskl.com has been designed for medical school students and practicing physicians to learn and review the fundamentals of clinical medicine. medskl.com’s library of content comes from over 200 of the best medical school professors from around the world, and they undergo an editorial peer-review process. Their brief but in-depth video modules cover the spectrum of clinical presentations.</p>
+			<p>medskl.com’s mission is to make medical education more effective and accessible whether you are studying for exams or earning CME credits. The core educational modules at medskl.com are always free. However, accessing the practice questions associated with their modules requires a paid subscription.</p>
+			<p><strong>CFMS is excited to be collaborating with medskl.com to provide the CFMS member students with free access to their practice question bank!</strong></p>
+
+			<div class="non-members">
+			<blockquote>
+				<h3><strong>Discount Details</strong></h3>
+					<ul>
+						<li>Please login in order to access this discount.</li>
+					</ul>
+			</blockquote>
+			</div>
+
+			<div class="members-only">
+				<h1><strong>Free Access Information</strong></h1>
+				<p><strong>Important Notes:</strong></p>
+				<ol>
+					<li>You have to register for the medskl.com account using your medical school email address to gain the free access to the question bank</li>
+					<li>The free access to the question bank available through the link below only works if you click on the link from this page.</li>
+				</ol>
+
+				<p><strong>Option 1:</strong> If you <strong>already have</strong> a medskl.com account with your medical school email address</p>
+				<ol>
+					<li><a href="https://medskl.com/group/join/cfms2018" target="_blank">Click here</a> to go to the CFMS Program free access offer page</li>
+					<li>Enter your medical school email address and click on “Join”</li>
+					<li>Check your email for the verification email from “service@medskl.com”</li>
+					<li>Click on the “Complete your signup” link in the email</li>
+					<li>Fill in the information requested and click on “Continue”</li>
+					<li>You will see a confirmation page stating that you have joined the CFMS Program</li>
+				</ol>
+
+				<p><strong>Option 2:</strong> If you <strong>do not have</strong> a medskl.com account with your medical school email address</p>
+				<ol>
+					<li>Log into your medskl.com account (“Login” button is at the top-right corner of the <a href="https://medskl.com/" target="_blank">Home Page</a>)</li>
+					<li><a href="https://medskl.com/group/join/cfms2018" target="_blank">Click here</a> to go to the CFMS Program free access offer page</li>
+					<li>You will see a confirmation page stating that you have joined the CFMS Program </li>
+				</ol>
+
+				<p><strong>Accessing the Question Bank:</strong></p>
+				<ol>
+					<li>Log into your medskl.com account with which you have joined the CFMS Program</li>
+					<li>Go to the module that you want to take the practice quiz on (all modules listed on <a href="https://medskl.com/course" target="_blank">Courses Page)</a></li>
+					<li>If you have successfully joined the CFMS Program, you will see the “Quiz” tab circled below</li>
+					<li>Click on “Start Quiz” to access the Question Bank specific to the module</li>
+					<li>You can see a summary of the viewed module and quizzes on your <a href="https://medskl.com/member" target="_blank">Account Dashboard</a></li>
+				</ol>
+				<p><img src="/images/discount-images/medskl-anemia.png"></p>
+			</div>
+
+
+
+
 		</div>
 	</div>
 	<div><script type="text/javascript">
@@ -189,7 +245,7 @@
 		<h1>
 			<div id="twitter-title">
 				
-					Derniers tweets
+					Latest tweets
 				
 				<span style="opacity:0.3">:</span></div>
 			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
@@ -201,43 +257,41 @@
 
 	
 		
-	
-		
 			<div class="column">
-				<h1>Pour nous joindre <span style="opacity:0.3">:</span></h1>
+				<h1>Contact us <span style="opacity:0.3">:</span></h1>
 				<div class="icon"><i class="fa fa-map-marker"></i></div>
 				<li>
-					Fédération des étudiants et des étudiantes en médecine du Canada<br>
+					Canadian Federation of Medical Students<br>
 					267 O'Connor Street, Suite 401<br>
 					Ottawa, ON K2P 1V3
 				</li>
 				<div class="icon"><i class="fa fa-phone"></i></div>
 				<li>
-					<b>Téléphone</b>: 613&ndash;565&ndash;7740<br>
-					<b>Télécopieur</b>: 613&ndash;565&ndash;7742
+					<b>Phone</b>: 613&ndash;565&ndash;7740<br>
+					<b>Fax</b>: 613&ndash;565&ndash;7742
 				</li>
 				<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
 				<div id="emails">
-					<li><b>Questions diverses</b>: Rosemary Conliffe<br>
+					<li><b>General Inquiries</b>: Rosemary Conliffe<br>
 					    <script>getEmail("office")</script>
 					</li>
-					<li><b>Médias</b>: Christina Schweitzer<br>
+					<li><b>Media</b>: Christina Schweitzer<br>
 						<script>getEmail("vpcommunications")</script>
 					</li>
-					<li><b>Technologies de l'information</b>: Pavel Yarmak<br>
+					<li><b>Information Technology</b>: Pavel Yarmak<br>
 						<script>getEmail("it")</script>
 					</li>
 				</div>
 			</div>
 		
 	
-	
 		
+	
 	
 		
 			<div class="column">
 				<h1>
-					Trouvez nous sur <span style="opacity:0.3">:</span>
+					Find us on <span style="opacity:0.3">:</span>
 					<div id="social-media">
 						<a class="social-icon" href="https://www.facebook.com/CFMSFEMC"><i class="fa fa-facebook"></i></a>
 						/
@@ -249,7 +303,7 @@
 				<div class="icon"><i class="fa fa-sitemap"></i></div>
 				<li>
 					
-						<b>Plan du site:</b> <a href="/fr/sitemap.html">cfms.org/sitemap.html</a>
+						<b>Site map:</b> <a href="/sitemap.html">cfms.org/sitemap.html</a>
 					
 				</li>
 				<div class="icon"><i class="fa fa-question-circle"></i></div>
@@ -263,9 +317,11 @@
 				<div class="icon"><i class="fa fa-copyright"></i></div>
 				<li>
 					<script>document.write((new Date()).getFullYear())</script>
-					FEMC. Tous droits réservés.<br>Développé par <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
+					CFMS. All Rights Reserved.<br>Developed by <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
 				</li>		
 			</div>
+		
+	
 		
 	
 </div>
@@ -355,7 +411,7 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript">
 	window.config = {
 		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","communications":"Communications","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","communications":"Communications","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","login":"Se connecter","logout":"Se déconnecter"}]`),
-		lang: `fr`,
+		lang: `en`,
 		leadership_award_year: `2017-2018`,
 		env: `production`
 	}
@@ -365,3 +421,14 @@ $('.redirect-modal').click(function(){
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
