@@ -58,7 +58,7 @@
     "jquery-bar-rating": "^1.2.2",
     "js-cookie": "^2.2.0",
     "json-style-converter": "^1.0.3",
-    "jsonwebtoken": "^8.2.0",
+    "jsonwebtoken": "^8.0.0",
     "page": "^1.7.1",
     "request-promise": "^4.2.2",
     "vex-dialog": "^1.0.6",
