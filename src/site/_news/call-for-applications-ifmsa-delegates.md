@@ -22,7 +22,7 @@ When: August 2-8th, 2018
 
 Application Deadline: June 10, 2018, by 23:59 EST
 
-Application Form: https://goo.gl/forms/DMz8pNo9x6dLOHF92
+[Application Form](https://goo.gl/forms/DMz8pNo9x6dLOHF92){: target="_blank"}
 
 Partial funding to attend the meeting is available. Applicants are encouraged to seek out other sources of conference funding. Funding will only be available to candidates who can attend the full duration of the meeting.
 
