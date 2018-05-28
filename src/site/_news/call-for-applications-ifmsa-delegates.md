@@ -8,7 +8,7 @@ description: >-
 lang: en
 ---
 
-May 27TH, 2018
+May 27th, 2018
 
 The International Federation of Medical Students’ Associations (IFMSA) connects and engages with a network of 1.3 million medical students from 124 national member organizations in 116 countries around the globe.
 
