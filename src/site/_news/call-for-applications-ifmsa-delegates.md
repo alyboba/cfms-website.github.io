@@ -1,6 +1,6 @@
 ---
-title: 'Call for Applications: IFMSA Delegates'
-date: 2018-05-28 03:30:00
+title: 'Call for Applications: IFMSA General Assembly in Montreal'
+date: 2018-05-27 03:30:00
 description: >-
   If you are interested in attending the next IFMSA general assembly as a CFMS
   delegate, please see the complete application details and instructions
