@@ -1,6 +1,6 @@
 ---
 title: 'Call for Applications: IFMSA Delegates'
-date: 2018-05-27 00:00:00
+date: 2018-05-26 00:00:00
 description: >-
   If you are interested in attending the next IFMSA general assembly as a CFMS
   delegate, submit an application package to globalhealth@cfms.org. Please see
