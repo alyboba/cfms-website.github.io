@@ -5,11 +5,11 @@ title: >-
   Position
 date: 2018-05-29 01:09:00
 description: >-
-  The Canadian Federation of Medical Students (CFMS) remains deeply concerned
-  about the increasing numbers of medical graduates unable to secure a residency
-  training position. Representatives of the CFMS will be meeting with Members of
-  Parliament today to continue to advocate on behalf of medical trainees on this
-  issue that impacts the health human resources for the care of Canadians.
+  The CFMS remains deeply concerned about the increasing numbers of medical
+  graduates unable to secure a residency training position. Representatives of
+  the CFMS will be meeting with Members of Parliament today to continue to
+  advocate on behalf of medical trainees on this issue that impacts the health
+  human resources for the care of Canadians.
 lang: en
 ---
 
@@ -55,7 +55,7 @@ The rise in unmatched medical graduates diminishes the number of medical personn
 > Follow us on Twitter, Facebook and Instagram: @CFMSFEMC
 >
 >
->  
+> &nbsp;
 >
 >
 > **FOR MORE INFORMATION**:
@@ -73,4 +73,4 @@ The rise in unmatched medical graduates diminishes the number of medical personn
 > Cell: 1-587-225-8165
 >
 >
-> PDF Press Release: [CFMS Strongly Urges Government of Canada to Provide Sustainable Solutions to Canadian Medical Graduates Unable to Secure a Residency Training Position](/Press Release_ Unmatched Canadian Medical Graduate.pdf)
+> PDF Press Release: [CFMS Strongly Urges Government of Canada to Provide Sustainable Solutions to Canadian Medical Graduates Unable to Secure a Residency Training Position](/CFMS Press Release_ Unmatched Canadian Medical Graduate_290518.pdf)
