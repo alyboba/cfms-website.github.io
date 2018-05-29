@@ -7,6 +7,8 @@ description: >-
 lang: en
 ---
 
+![](/uploads/task-force-for-homelessness.png)
+
 Applications are now open for the CFMS Task Force on Homelessness. This is a great opportunity to contribute to a nationwide medical student effort to improve healthcare access and delivery in homeless populations.
 
 The CFMS Task Force on Homelessness was established by a [resolution](https://docs.google.com/document/d/1hdyUaSQeOFCVKMp2TpARFWwFX621ZdagidoPlM5hIoI/edit?usp=sharing) passed at the 2018 Spring General Meeting, and is now recruiting members.
