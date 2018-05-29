@@ -3,7 +3,7 @@ title: >-
   PRESS RELEASE: CFMS Strongly urges Government of Canada to Provide Sustainable
   Solutions to Canadian Medical Graduates Unable to Secure a Residency Training
   Position
-date: 2018-05-29 13:05:00
+date: 2018-05-29 13:09:00
 description: >-
   The Canadian Federation of Medical Students (CFMS) remains deeply concerned
   about the increasing numbers of medical graduates unable to secure a residency
@@ -37,11 +37,11 @@ The rise in unmatched medical graduates diminishes the number of medical personn
 
 "We look forward to working with the federal government as well as the provincial and territorial health ministers to create pan-Canadian solutions to the current physician resource planning concerns in the country - specifically the unmatched Canadian Medical Graduate crisis."
 
-- *Henry Annan, CFMS President*
+* *Henry Annan, CFMS President*
 
 “We respect and appreciate the efforts of the Association of Faculties of Medicine of Canada (AFMC), Canadian Medical Association (CMA), Canadian Resident Matching Service (CaRMS), and others that have continued to bring light to this issue for a multifaceted approach to solutions. We are appreciative of the support of the Canadian Armed Forces to provide additional residency training spots, and the Ontario Ministry of Health and Long-Term Care to provide residency training spots to this year’s Ontario unmatched students. These patchwork solutions are important however, longer term solutions need to be fulfilled by our federal and provincial and territorial governments to ensure a sustainable approach to ensuring all qualified Canadian medical graduates can provide care to Canadians that need it."
 
-- *Yipeng Ge, CFMS VP Government Affairs*
+* *Yipeng Ge, CFMS VP Government Affairs*
 
 > **ABOUT THE CFMS**:
 >
@@ -53,7 +53,11 @@ The rise in unmatched medical graduates diminishes the number of medical personn
 >
 >
 > Follow us on Twitter, Facebook and Instagram: @CFMSFEMC
-
+>
+>
+> &nbsp;
+>
+>
 > **FOR MORE INFORMATION**:
 >
 >
@@ -67,3 +71,6 @@ The rise in unmatched medical graduates diminishes the number of medical personn
 >
 >
 > Cell: 1-587-225-8165
+>
+>
+> PDF Press Release: [CFMS Strongly Urges Government of Canada to Provide Sustainable Solutions to Canadian Medical Graduates Unable to Secure a Residency Training Position](/Press Release_ Unmatched Canadian Medical Graduate.pdf)
