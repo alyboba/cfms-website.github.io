@@ -1,7 +1,9 @@
 ---
 title: 'Call for Applications: CFMS Task Force on Homelessness'
 date: 2018-05-29 00:00:00
-description: Please fill in description here.
+description: >-
+  Contribute to a nationwide medical student effort to improve healthcare access
+  and delivery in homeless populations. Applications due June 4th.
 lang: en
 ---
 
@@ -17,7 +19,7 @@ The purpose of this group is to:
 
 **Applications are due Monday, June 4th, 2018 at 5 PM EST.**
 
-Application form
+[Application form](https://docs.google.com/forms/d/e/1FAIpQLSecxqe1-bQzzc45HcTPqJbIgbq2NrJiD57Q9H_WKMP0WLK7Vg/viewform)
 
 Questions can be directed to:
 
