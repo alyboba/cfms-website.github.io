@@ -3,7 +3,7 @@ title: >-
   PRESS RELEASE: CFMS Strongly urges Government of Canada to Provide Sustainable
   Solutions to Canadian Medical Graduates Unable to Secure a Residency Training
   Position
-date: 2018-05-29 13:09:00
+date: 2018-05-29 01:09:00
 description: >-
   The Canadian Federation of Medical Students (CFMS) remains deeply concerned
   about the increasing numbers of medical graduates unable to secure a residency
@@ -25,21 +25,21 @@ Residency positions are provincially funded, hosted by universities and delivere
 
 The Canadian Federation of Medical Students (CFMS) calls on the federal and provincial and territorial governments to:
 
-1. &nbsp; &nbsp; &nbsp;Work with the provinces and territories to create and fund residency positions to achieve a ratio of 120 Canadian residency seats for every 100 Canadian medical graduates.
+1. Work with the provinces and territories to create and fund residency positions to achieve a ratio of 120 Canadian residency seats for every 100 Canadian medical graduates.
 
-2. &nbsp; &nbsp; &nbsp;Commit to a Pan-Canadian strategy for effective and socially-responsible physician and health workforce resource planning that is evidence-based and transparent to both medical trainees and the public.
+2. Commit to a Pan-Canadian strategy for effective and socially-responsible physician and health workforce resource planning that is evidence-based and transparent to both medical trainees and the public.
 
-3. &nbsp; &nbsp; &nbsp;Discuss the issue of unmatched Canadian medical graduates and proper physician resource planning at a federal provincial-territorial health ministers meeting.
+3. Discuss the issue of unmatched Canadian medical graduates and proper physician resource planning at a federal provincial-territorial health ministers meeting.
 
 The rise in unmatched medical graduates diminishes the number of medical personnel available to serve patients across the country. As a complex, inter-provincial system, tackling this issue requires collective action on the part of our parliamentarians, ministries and medical faculties. There is a strong need for coordinated action and health human resource planning to solve this crisis; without provincial coordination, such issues will only continue to grow.
 
 **QUOTATIONS FROM CFMS**:
 
-"We look forward to working with the federal government as well as the provincial and territorial health ministers to create pan-Canadian solutions to the current physician resource planning concerns in the country - specifically the unmatched Canadian Medical Graduate crisis."
+“We look forward to working with the federal government as well as the provincial and territorial health ministers to create pan-Canadian solutions to the current physician resource planning concerns in the country - specifically the unmatched Canadian Medical Graduate crisis.”
 
 * *Henry Annan, CFMS President*
 
-“We respect and appreciate the efforts of the Association of Faculties of Medicine of Canada (AFMC), Canadian Medical Association (CMA), Canadian Resident Matching Service (CaRMS), and others that have continued to bring light to this issue for a multifaceted approach to solutions. We are appreciative of the support of the Canadian Armed Forces to provide additional residency training spots, and the Ontario Ministry of Health and Long-Term Care to provide residency training spots to this year’s Ontario unmatched students. These patchwork solutions are important however, longer term solutions need to be fulfilled by our federal and provincial and territorial governments to ensure a sustainable approach to ensuring all qualified Canadian medical graduates can provide care to Canadians that need it."
+“We respect and appreciate the efforts of the Association of Faculties of Medicine of Canada (AFMC), Canadian Medical Association (CMA), Canadian Resident Matching Service (CaRMS), and others that have continued to bring light to this issue for a multifaceted approach to solutions. We are appreciative of the support of the Canadian Armed Forces to provide additional residency training spots, and the Ontario Ministry of Health and Long-Term Care to provide residency training spots to this year’s Ontario unmatched students. These patchwork solutions are important however, longer term solutions need to be fulfilled by our federal and provincial and territorial governments to ensure a sustainable approach to ensuring all qualified Canadian medical graduates can provide care to Canadians that need it.”
 
 * *Yipeng Ge, CFMS VP Government Affairs*
 
@@ -55,7 +55,7 @@ The rise in unmatched medical graduates diminishes the number of medical personn
 > Follow us on Twitter, Facebook and Instagram: @CFMSFEMC
 >
 >
-> &nbsp;
+>  
 >
 >
 > **FOR MORE INFORMATION**:
