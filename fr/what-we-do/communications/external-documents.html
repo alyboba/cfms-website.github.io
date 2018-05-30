@@ -77,6 +77,8 @@
 
     <!--Page Specific Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/what-we-do.css"/>
+    <link rel="stylesheet" href="/stylesheets/cards.css" />
+
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 
@@ -131,7 +133,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" href='/what-we-do/communications/'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+							<li id="lang-toggle"><a id="en" href='/what-we-do/communications/external-documents.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
 						
 					
 				</ul>
@@ -142,8 +144,8 @@
 
 <!--Page Specific Formatting-->
 <script type="text/javascript">
-	document.querySelector("#logo-invert").classList.toggle("hidden");
-	document.querySelector("#what-we-do").classList.toggle("active");
+  document.querySelector("#logo-invert").classList.toggle("hidden");
+  document.querySelector("#what-we-do").classList.toggle("active");
 </script>
 
 <div class="content">
@@ -178,12 +180,20 @@
     </div>
 </div>
     <script type="text/javascript">
-			document.querySelector("#overview").classList.toggle("sidebar-active");
+      document.querySelector("#external-documents").classList.toggle("sidebar-active");
     </script>
     <div id="side-content" class="editable">
-        <h1 id="page-title">Communications</h1>
-        <p>Aperçu, Actuellement en construction, à venir!</p>
-        
+        <h1 id="page-title">Documents Extenres</h1>
+        <!--<p></p>-->
+
+      <ul class="cards">
+        <li class="cards__item">
+          <div class="card"><a href="/files/external-documents/FMC-Evolution du role du medecin-Mai 2018_FRE.pdf"><img class="card__image" src="/images/page-images/external-documents/FMC-Evolution du role du medecin-Mai 2018_FRE.jpeg" style = "height:413px;" /> </a></div>
+        </li>
+      </ul>
+
+
+
     </div>
 </div>
 <script type="text/javascript">
