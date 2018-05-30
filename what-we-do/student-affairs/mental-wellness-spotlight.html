@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+    <!--Metadata-->
+<meta charset="utf-8">
+<title>Canadian Federation of Medical Students</title>
+<meta name="description" content="Canadian Federation of Medical Students">
+<meta name="keywords" content="CFMS, Medicine, Canada, Advocacy, Medical School, Association">
+<meta name="author" content="Kevan Lu">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+<!--Stylesheets-->
+
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/base.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/header.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/footer.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/loading.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!--DataTables-->
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+
+<!--FormValidator-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+
+<!--Firebase Code-->
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCRaJStQDuZ0nrn0b59kzYphlAkJ62flo8",
+    authDomain: "amber-heat-9132.firebaseapp.com",
+    databaseURL: "https://amber-heat-9132.firebaseio.com",
+    storageBucket: "amber-heat-9132.appspot.com",
+    messagingSenderId: "466232039218"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<!--Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77140171-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--Scroll Reveal-->
+<script src="/js/scrollreveal.min.js"></script>
+<script>
+      window.sr = ScrollReveal();
+</script> 
+<style>
+    /* Ensure elements load hidden before ScrollReveal runs */
+    .animate { visibility: hidden; }
+</style> 
+
+
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+
+	
+		<div id="top-padding"></div>
+		<div id="top-bar" class="invert en">
+			<div id="top-icon" class="animate">
+				<div id="logo-group" class="en">
+					<img id="logo-invert" src="/images/cfms-logo-invert.svg">
+					<img id="logo" src="/images/cfms-logo.svg">
+					<a href="/">CFMS</a>
+				</div>
+				<span id="logo-desc"><a class="en" href="/">Canadian Federation of<br>Medical Students</a></span>
+			</div>
+			<div id="top-hamburger" class="animate">
+				<a onclick="return false;" id="hamburger-toggle" href=""><span></span></a>
+			</div>
+			<div id="top-nav" class="animate">
+				<ul class="en">
+					<li id="who-we-are"><a class="top-level" href="/who-we-are/">Who we are</a></li>
+					<li id="what-we-do"><a class="top-level" href="/what-we-do/">What we do</a>
+						<div id="sub-menu">
+						    <ul>
+						    	<li><a href="/what-we-do/advocacy/">Advocacy</a></li>
+						    	<li><a href="/what-we-do/education/">Education</a></li>
+						    	<li><a href="/what-we-do/global-health/">Global Health</a></li>
+						    	<li><a href="/what-we-do/student-affairs/">Student Affairs</a></li>
+								<li><a href="/what-we-do/communications/">Communications</a></li>
+						    </ul>
+						</div>
+					</li>
+					<li id="resources"><a class="top-level" href="/resources/">Resources</a></li>
+					<li id="meetings"><a class="top-level" href="/meetings/">Meetings</a>
+						<div id="sub-menu">
+						    <ul>
+						    	<li><a href="/meetings/sgm-2019-niagara-falls.html">SGM 2019 &ndash; Niagara Falls, ON</a></li>
+						    	<li><a href="/meetings/agm-2018-montreal.html">AGM 2018 &ndash; Montreal, Qc</a></li>
+ 						    	<li><a href="/meetings/sgm-2018-halifax.html">SGM 2018 &ndash; Halifax, NS</a></li>
+						        <li><a href="/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
+						        <!--<li><a href="/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>-->
+						        <!--li><a href="/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>-->
+						    </ul>
+						</div>
+					</li>
+					<li id="members"><a class="top-level" href="/members/">Members</a></li>
+					<li id="news"><a class="top-level" href="/news/">News</a></li>
+					<li id="human-of-medicine"><a class="top-level" href="/humans-of-medicine/"></a></li>
+					
+						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
+					
+					
+						
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/what-we-do/student-affairs/mental-wellness-spotlight.html">FR</a></li>
+						
+					
+				</ul>
+			</div>
+		</div>
+	
+
+	
+
+
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    <div id="sidebar">
+	<div id="scroll">
+		
+		
+		<span id="sidebar-title">Student Affairs</span>
+		<ul>
+			<li><a id="overview" href=".">Overview</a></li>
+			<li><a id="our-team" href="our-team.html">Our Team</a></li>
+			<li><a id="student-initiative-grants" href="student-initiative-grants.html">Student Initiative Grants</a></li>
+			<li><a id="medical-students-with-disabilities" href="medical-students-with-disabilities.html">Medical Students with Disabilities</a></li>
+			<li><a id="national-wellness-initiative" href="../../news/2018/04/27/cfms-launches-the-national-wellness-initiative.html">National Wellness Program</a></li>
+			<li><a id="longitudinal-wellness-initiative" href="longitudinal-wellness-initiative.html">Longitudinal Wellness Program</a></li>
+			<div>
+				<li><a id="nutrition-wellness" style="padding-left:15px;" href="nutrition-wellness.html">Nutrition Wellness</a></li>
+			</div>
+			<div>
+				<li><a id="mental-wellness" style="padding-left:15px;" href="mental-wellness.html">Mental Wellness</a></li>
+			</div>
+			<div>
+				<li><a id="quick-tips" style="padding-left:15px;" href="quick-tips.html">Quick Tips</a></li>
+			</div>
+			<div>
+				<li><a id="national-contests" style="padding-left:15px;" href="national-contests.html">National Contests</a></li>
+			</div>
+			<li><a id="wellness-spotlight-profiles" href="wellness-spotlight-profiles.html">Wellness Spotlight profiles</a></li>
+			<div>
+				<li><a id="nutrition-wellness-spotlight" style="padding-left:15px;" href="nutrition-wellness-spotlight.html">Nutrition Wellness</a></li>
+			</div>
+			<li><a id="blood-drive" href="blood-drive.html"></a></li>
+			<li><a id="safe-space" href="safe-space.html">Safe Space</a></li>
+
+
+		</ul>
+		<span id="sidebar-title">Resources</span>
+		<ul>
+			<li><a id="wellness" href="wellness.html">Wellness</a></li>
+			<li><a id="discounts" href="../../resources/discounts.html">Student Discounts</a></li>
+
+		</ul>
+		
+		
+		
+		
+	</div>
+</div>
+
+
+    <script type="text/javascript">
+        document.querySelector( "#nutrition-wellness-spotlight" ).classList.toggle("sidebar-active");
+    </script>
+    
+    <div id="side-content">
+        <h1 id="page-title">Nutrition Wellness Spotlight</h1>
+
+        <div class="editable">
+            <div class="executive">
+                <div class="exec-pic"><img height="400" src="/images/lwi-images/mental-wellness-spotlight/jennifer-jeans.png" width="300"></div>
+                <div class="exec-info">
+                    <ul>
+                        <li class="exec-name"><span>Jennifer Jeans</span></li>
+                        <li class="exec-desc">
+                            <span class="editable">“Wellness. It’s the new buzzword in medicine. The hot topic. We’re all talking about the “well-rounded physician” and the importance of “work-life balance”. What does it even mean?<br><br>They keep telling us that wellness is about sleeping enough, and eating the right foods, and exercising so many hours a week. It’s about being “mindful” and enjoying life while still being an astute student of medicine and a contributing member of society. It’s the ideal. It’s the person we’re all striving to be, and the person that none of us feel capable of being. We all feel like imposters. We all envy each other’s seemingly perfect lives while simultaneously working our butts off to maintain the appearance that we have it together.<br><br>Through it all, “wellness” has just become another benchmark that we can’t achieve. It is almost like a bonus, reserved for the elite who have their lives together, and can afford to set aside some extra time for self-care. Wellness has become a few extra items on the to-do list: 1) meal prep 2) go to spin class 3) don’t eat an entire pizza today…<br><br>And what gives me the credentials to talk about wellness? I’m just another struggling medical student, trying to figure out how to balance it all. I certainly don’t have any answers. If anything, I only have more questions. But I have learned a lot through trial and error.<br><br>I have come to realize that the “ideal” of wellness doesn’t really exist. It’s not some lifestyle that you can just try out. You can’t just wake up one day and decide to eat salads and join the gym. It won’t work. It doesn’t work. I’ve tried it (and failed) so many times. And heartbreakingly, yoga just isn’t for everyone.<br><br>My advice would be: Stop striving for the ideal. Stop counting calories and counting steps. Zoom out, and try to figure out what wellness is for you. Make it a priority. Pay attention to the things that make you happy. Here’s the important part - I don’t mean the fleeting happiness that you get from binge-watching Buffy the Vampire Slayer, or drinking a bottle of wine. That hollow happiness can quickly devolve into guilt and shame and regret. It’s illusory. I’m talking about a more complex happiness; the kind of happiness that is steadily cultivated from accomplishment and personal growth. Follow your passions, and DO NOT let medical school overshadow the things that bring you joy. Revolt. Refuse. Rebel. Prioritize your happiness above all else. And if it starts to fade (when it starts to fade)…. when you start to become overwhelmed – you need to stop. And reassess. Because wellness is a choice, and a chore.<br><br>You have to figure out what wellness is for you.<br>And it might be the hardest thing you ever do.”<br><br>Jennifer Jeans<br>Memorial University<br>Class of 2029</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+<script type="text/javascript">
+	function getEmail(username){
+		var hostname = "cfms.org";
+		var linktext = username + "@" + hostname;
+		document.write("<a class='email' href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+	}
+</script>
+<div id="footer">
+	<div class="column">
+		<h1>
+			<div id="twitter-title">
+				
+					Latest tweets
+				
+				<span style="opacity:0.3">:</span></div>
+			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
+		</h1>
+		<div class="icon"><i class="fa fa-twitter"></i></div>
+		<div id="latest-tweets">
+		</div>
+	</div>
+
+	
+		
+			<div class="column">
+				<h1>Contact us <span style="opacity:0.3">:</span></h1>
+				<div class="icon"><i class="fa fa-map-marker"></i></div>
+				<li>
+					Canadian Federation of Medical Students<br>
+					267 O'Connor Street, Suite 401<br>
+					Ottawa, ON K2P 1V3
+				</li>
+				<div class="icon"><i class="fa fa-phone"></i></div>
+				<li>
+					<b>Phone</b>: 613&ndash;565&ndash;7740<br>
+					<b>Fax</b>: 613&ndash;565&ndash;7742
+				</li>
+				<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
+				<div id="emails">
+					<li><b>General Inquiries</b>: Rosemary Conliffe<br>
+					    <script>getEmail("office")</script>
+					</li>
+					<li><b>Media</b>: Christina Schweitzer<br>
+						<script>getEmail("vpcommunications")</script>
+					</li>
+					<li><b>Information Technology</b>: Pavel Yarmak<br>
+						<script>getEmail("it")</script>
+					</li>
+				</div>
+			</div>
+		
+	
+		
+	
+	
+		
+			<div class="column">
+				<h1>
+					Find us on <span style="opacity:0.3">:</span>
+					<div id="social-media">
+						<a class="social-icon" href="https://www.facebook.com/CFMSFEMC"><i class="fa fa-facebook"></i></a>
+						/
+						<a class="social-icon" href="https://twitter.com/cfmsfemc"><i class="fa fa-twitter"></i></a>
+						/
+						<a class="social-icon" href="https://www.linkedin.com/company/canadian-federation-of-medical-students-cfms-"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</h1>
+				<div class="icon"><i class="fa fa-sitemap"></i></div>
+				<li>
+					
+						<b>Site map:</b> <a href="/sitemap.html">cfms.org/sitemap.html</a>
+					
+				</li>
+				<div class="icon"><i class="fa fa-question-circle"></i></div>
+				<li>
+					<b>Issue Tracker: </b><a href="/uploads/issue-tracker-guide.pdf">How To Guide</a>
+				</li>
+				<div class="icon"><i class="fa fa-github"></i></div>
+				<li>
+					<b>Issue Tracker: </b><a href="https://github.com/cfms-website/cfms-website.github.io/issues">Submit a Ticket </a>
+				</li>
+				<div class="icon"><i class="fa fa-copyright"></i></div>
+				<li>
+					<script>document.write((new Date()).getFullYear())</script>
+					CFMS. All Rights Reserved.<br>Developed by <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
+				</li>		
+			</div>
+		
+	
+		
+	
+</div>
+<script src="/js/twitterFetcher_min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	window.sr = ScrollReveal();
+	sr.reveal('.animate', { duration: 500, distance: '5px', scale: 1 } );
+
+	document.querySelector( "#hamburger-toggle" ).addEventListener( "click", function() {
+		this.classList.toggle( "active" );
+		document.querySelector("#top-nav").classList.toggle("active");
+		sr.reveal('#top-nav', {distance: '0px'});
+	});
+
+	//Gets latest tweets
+	var tweetConfig = {
+	  "id": '616581601191833602',
+	  "domId": 'latest-tweets',
+	  "maxTweets": 3,
+	  "enableLinks": true,
+	  "showPermalinks": false,
+	  "showUser": false,
+	  "showInteraction": false,
+	  "dateFunction": dateFormatter
+	};
+
+	//Formats the tweet dates
+	function dateFormatter(date) {
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var hour = date.getHours();
+
+		//0:00 = 12 AM
+		if (hour == 0)
+			var time = "12:" + date.getMinutes();
+		else 
+			time = (hour%12) + ":" + date.getMinutes();
+		if (hour > 0 && hour < 12)
+			time += " AM";
+		else 
+			time += " PM";
+
+		var month = months[date.getMonth()];
+		var day = date.getDate();
+		var year = date.getFullYear();
+		return time + " &ndash; " + month + " " + day + ", " + year;
+	}
+	twitterFetcher.fetch(tweetConfig);
+</script>
+
+<script src="/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if($(window).width() >= 960){
+	    $('#scroll').scrollToFixed({ 
+	    	minWidth: 960,
+	    	marginTop: 20, 
+	    	limit: function() {
+		        var limit = $('#footer').offset().top - $('#scroll').height() - 40;
+		        return limit;
+		    }
+	    });
+	}
+});
+</script>
+
+<!-- Modal Dialogs -->
+<script src="/js/vex.combined.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-default';</script>
+
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex.css" />
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex-theme-default.css" />
+
+<script>
+$('.redirect-modal').click(function(){
+    vex.dialog.confirm({
+        message: '<h3><strong>Oh no!</strong></h3><p>Unfortunately, this feature or resource is not yet available on the new CFMS website. To access it, please visit the old CFMS website.</p>',
+        buttons: [
+                $.extend({}, vex.dialog.buttons.YES, { text: 'Go to old website' }),
+                $.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })
+            ],
+        callback: function(value) {
+            if (value) {window.location.href = "http://www.old.cfms.org";}
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+	window.config = {
+		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","communications":"Communications","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","communications":"Communications","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","login":"Se connecter","logout":"Se déconnecter"}]`),
+		lang: `en`,
+		leadership_award_year: `2017-2018`,
+		env: `production`
+	}
+</script>
+
+<script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
+
+</body>
+
