@@ -299,6 +299,7 @@ sidebar-communications:
     # graphics: Graphics
     quarter-reports: Board Reports
     bilingualism-committee: Bilingualism Committee
+    external-documents: External Documents
   - lang: fr
     sidebar-title_1: Communications
     overview: Aperçu
@@ -310,6 +311,7 @@ sidebar-communications:
     # graphics: Graphique
     quarter-reports: Board Reports
     bilingualism-committee: Bilingualism Committee
+    external-documents: External Documents
 sidebar-advocacy:
   - lang: en
     sidebar-title_1: Advocacy
