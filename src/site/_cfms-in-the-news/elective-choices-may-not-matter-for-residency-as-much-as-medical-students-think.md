@@ -5,7 +5,7 @@ title: >-
 year: 2018
 month: May
 day: 22
-date: 2018-06-01 00:00:00
+date: 2018-05-22 00:00:00
 href: >-
   https://cmajnews.com/2018/05/22/elective-choices-may-not-matter-for-residency-as-much-as-medical-students-think-cmaj-109-5609/
 lang: en
