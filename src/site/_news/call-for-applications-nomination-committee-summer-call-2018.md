@@ -1,7 +1,10 @@
 ---
 title: 'Call for Applications: Nomination Committee Summer Call 2018'
-date:
-description: Please fill in description here.
+date: 2018-05-31 01:00:00
+description: >-
+  The CFMS is looking for talented and interested students to apply for the
+  national officer and other positions outlined below. Links to application
+  forms and descriptions are provided below.
 lang: en
 ---
 
