@@ -20,7 +20,7 @@ If you are interested in attending the next IFMSA General Assembly as a CFMS del
 
 **Application Deadline: June 10, 2018, by 23:59 EST**
 
-**Application Form**
+[**Application Form**](https://goo.gl/forms/J3y7ZwSE2NJ3GiQm2)
 
 Partial funding to attend the meeting is available. Applicants are encouraged to seek out other sources of conference funding. Funding will only be available to candidates who can attend the full duration of the meeting.
 
