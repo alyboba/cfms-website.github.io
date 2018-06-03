@@ -14,7 +14,7 @@ The [International Federation of Medical Students’ Associations (IFMSA)](https
 
 The IFMSA General Assemblies are among the biggest youth-led events around the world, attended by over 800 medical students. These meetings hope to inspire the next generation of future physicians to become leaders and advocates through exchange of ideas, networking, and learning from the various programming sessions.
 
-If you are interested in attending the next IFMSA General Assembly as a CFMS delegate, submit an application package to [globalhealth@cfms.org](mailto:globalhealth@cfms.org). Please see the complete application details and instructions attached (see below).
+If you are interested in attending the [next IFMSA General Assembly in Montreal](https://am2018montreal.com/am2018/) as a CFMS delegate, submit an application package to [globalhealth@cfms.org](mailto:globalhealth@cfms.org). Please see the complete application details and instructions attached (see below).
 
 **Where: Montreal, Quebec**
 
