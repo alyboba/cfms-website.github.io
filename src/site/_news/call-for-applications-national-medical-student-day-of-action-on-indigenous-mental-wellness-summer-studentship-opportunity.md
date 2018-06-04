@@ -20,7 +20,7 @@ $4,000 to be paid to a medical student for a minimum of 8 weeks of research work
 
 **Project details:**
 
- Assistance with the evaluation of a project based on First Nations, Inuit, Metis wellness that integrates physical and mental health through CAMH (Centre for Addiction and Mental Health) in Toronto with outreach across the province. The project is supervised by Dr. Lisa Richardson (Co-Lead Indigenous Health Education at the Faculty of Medicine at the University of Toronto), and will be based out of Toronto, ON. Previous cultural safety training and knowledge of protocols for working with Indigenous communities are a major asset. Other required skills include: writing, interviewing and project coordination.
+Assistance with the evaluation of a project based on First Nations, Inuit, Metis wellness that integrates physical and mental health through CAMH (Centre for Addiction and Mental Health) in Toronto with outreach across the province. The project is supervised by Dr. Lisa Richardson (Co-Lead Indigenous Health Education at the Faculty of Medicine at the University of Toronto), and will be based out of Toronto, ON. Previous cultural safety training and knowledge of protocols for working with Indigenous communities are a major asset. Other required skills include: writing, interviewing and project coordination.
 
 **Application requirements: **
 
