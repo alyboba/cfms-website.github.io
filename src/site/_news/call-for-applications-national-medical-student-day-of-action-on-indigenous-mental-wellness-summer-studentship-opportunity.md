@@ -3,8 +3,8 @@ title: 'Call for Applications:  Indigenous Mental Wellness Summer Studentship'
 date: 2018-06-03 00:00:00
 description: >-
   This opportunity follows the 2018 CFMS National Medical Student Day of Action
-  on Indigenous Mental Wellness, and is an opportunity to follow up on this
-  longitudinal advocacy effort. Apply by June 8th.
+  on Indigenous Mental Wellness, and continues this longitudinal advocacy
+  effort. Apply by June 8th.
 lang: en
 ---
 
