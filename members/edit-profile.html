@@ -75,6 +75,7 @@
 
 	<!--Page Specific Stylesheet-->
 	<link rel="stylesheet" href="/stylesheets/members.css">
+	<script src="/js/auth0-editprofile-widget.js" type="text/javascript"></script>
 </head>
 <body>
 	
@@ -127,7 +128,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/members/">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/members/edit-profile.html">FR</a></li>
 						
 					
 				</ul>
@@ -173,7 +174,7 @@
 		</script>
 
 		<div id="side-content" class="editable">
-			<h1 id="page-title">CFMS Members</h1>
+			<h1 id="page-title">Edit Profile</h1>
 
 			<div id="account-details" class="members-only">
 				<blockquote id="account-info">
@@ -182,12 +183,12 @@
 					<b>School</b>: <span id="account-school"></span><br>
 					<b>Graduating Year</b>: <span id="account-grad-year"></span><br>
 					<b>Email Address</b>: <a id="account-email" href=""></a>
-					<br>
-                    <a href="edit-profile.html"><strong>Edit Profile...</strong></a>
 				</blockquote>
 			</div>
 			<div class="members-only">
-				<p>Welcome to the members section of the CFMS Website. As a CFMS Member, you have access to a variety of resources, discounts, and exclusive awards. Click on some of the links to the left to access some of the exclusive resources available online.</p>
+                <blockquote>
+                    <div id="editProfileContainer"></div>
+                </blockquote>
 				<!--<h2><strong>What's new?</strong></h2>-->
 				<!--<ul>-->
 					<!--<li>Receive a 30% Discount on Wolters Kluwer Lippincott resources with <strong>free shipping</strong>! See our <a href="/resources/discounts-textbooks.html">discounts page</a> for more details.</li>-->
