@@ -36,8 +36,6 @@ National Officer of Global Health Education (NOGHE)<br>National Officer of Human
 
 &nbsp;
 
-&nbsp;
-
 National Officer Political Action&nbsp;**DUE Sunday June 30th (11:59PM EST)**
 
 [Application link](https://goo.gl/forms/NuiFDcLDnaxBYjm82){: target="_blank"}
