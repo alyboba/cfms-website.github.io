@@ -24,7 +24,7 @@ National Officer of Global Health Education (NOGHE)<br>National Officer of Human
 
 &nbsp;
 
-[National Wellness Officer](https://goo.gl/oy87ct){: target="_blank"}&nbsp;**DUE Sunday June 30th (11:59PM EST)**
+[National Wellness Officer](https://goo.gl/hSiuUc){: target="_blank"}&nbsp;**DUE Sunday June 30th (11:59PM EST)**
 
 [Application link](https://goo.gl/forms/RcKTDlFK3NL0i0Ki2){: target="_blank"}
 
