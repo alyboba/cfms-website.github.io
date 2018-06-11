@@ -8,7 +8,7 @@ description: >-
 lang: en
 ---
 
-![](/uploads/ifmsa-callfordelegates.png)
+![](/uploads/ifmsa-callfordelegates-1.png)
 
 The [International Federation of Medical Students’ Associations (IFMSA)](https://ifmsa.org/) connects and engages with a network of 1.3 million medical students from 124 national member organizations in 116 countries around the globe.
 
@@ -20,7 +20,7 @@ If you are interested in attending the [next IFMSA General Assembly in Montreal]
 
 **When: August 2-8th, 2018**
 
-**Application Deadline: June 10, 2018, by 23:59 EST**
+**Application Deadline [Extended]: June 17, 2018, by 23:59 EST**
 
 [**Application Form**](https://goo.gl/forms/J3y7ZwSE2NJ3GiQm2)
 
