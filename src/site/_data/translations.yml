@@ -233,6 +233,7 @@ sidebar-education:
     lmcc-prep-link: LMCC Preparation Resources
     reports: Reports
     motp: MOTP Surge 2018
+    research-ethics: Research Ethics
   - lang: fr
     sidebar-title_1: Éducation
     overview: Aperçu
@@ -247,6 +248,7 @@ sidebar-education:
     lmcc-prep-link: Ressources préparatoires pour LCMC
     reports: Rapports
     motp: MOTP Surge 2018
+    research-ethics: Research Ethics
 sidebar-student-affairs:
   - lang: en
     sidebar-title_1: Student Affairs
