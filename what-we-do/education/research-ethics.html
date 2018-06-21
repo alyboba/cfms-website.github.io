@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 
 
-<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
-<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"> <![endif]-->
 <head>
-	<!--Metadata-->
+    <!--Metadata-->
 <meta charset="utf-8">
 <title>Canadian Federation of Medical Students</title>
 <meta name="description" content="Canadian Federation of Medical Students">
@@ -73,63 +75,62 @@
 </style> 
 
 
-	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/what-we-do.css">
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css">
+    <link rel="stylesheet" href="/stylesheets/cards.css"/>
 </head>
-<body ng-app="authApp" ng-controller="AuthController">
-	
-	
+<body>
 
 	
 		<div id="top-padding"></div>
-		<div id="top-bar" class="invert fr">
+		<div id="top-bar" class="invert en">
 			<div id="top-icon" class="animate">
-				<div id="logo-group" class="fr">
+				<div id="logo-group" class="en">
 					<img id="logo-invert" src="/images/cfms-logo-invert.svg">
 					<img id="logo" src="/images/cfms-logo.svg">
-					<a href="/fr/">FEMC</a>
+					<a href="/">CFMS</a>
 				</div>
-				<span id="logo-desc"><a class="fr" href="/fr/">Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada</a></span>
+				<span id="logo-desc"><a class="en" href="/">Canadian Federation of<br>Medical Students</a></span>
 			</div>
 			<div id="top-hamburger" class="animate">
 				<a onclick="return false;" id="hamburger-toggle" href=""><span></span></a>
 			</div>
 			<div id="top-nav" class="animate">
-				<ul class="fr">
-					<li id="who-we-are"><a class="top-level" href="/fr/who-we-are/">Qui sommes-nous?</a></li>
-					<li id="what-we-do"><a class="top-level" href="/fr/what-we-do/">Que faisons-nous?</a>
+				<ul class="en">
+					<li id="who-we-are"><a class="top-level" href="/who-we-are/">Who we are</a></li>
+					<li id="what-we-do"><a class="top-level" href="/what-we-do/">What we do</a>
 						<div id="sub-menu">
 						    <ul>
-						    	<li><a href="/fr/what-we-do/advocacy/">Représentation</a></li>
-						    	<li><a href="/fr/what-we-do/education/">Éducation</a></li>
-						    	<li><a href="/fr/what-we-do/global-health/">Santé mondiale</a></li>
-						    	<li><a href="/fr/what-we-do/student-affairs/">Affaires étudiantes</a></li>
-								<li><a href="/fr/what-we-do/communications/">Communications</a></li>
+						    	<li><a href="/what-we-do/advocacy/">Advocacy</a></li>
+						    	<li><a href="/what-we-do/education/">Education</a></li>
+						    	<li><a href="/what-we-do/global-health/">Global Health</a></li>
+						    	<li><a href="/what-we-do/student-affairs/">Student Affairs</a></li>
+								<li><a href="/what-we-do/communications/">Communications</a></li>
 						    </ul>
 						</div>
 					</li>
-					<li id="resources"><a class="top-level" href="/fr/resources/">Ressources</a></li>
-					<li id="meetings"><a class="top-level" href="/fr/meetings/">Réunions</a>
+					<li id="resources"><a class="top-level" href="/resources/">Resources</a></li>
+					<li id="meetings"><a class="top-level" href="/meetings/">Meetings</a>
 						<div id="sub-menu">
 						    <ul>
-						    	<li><a href="/fr/meetings/sgm-2019-niagara-falls.html">SGM 2019 &ndash; Niagara Falls, ON</a></li>
-						    	<li><a href="/fr/meetings/agm-2018-montreal.html">AGM 2018 &ndash; Montreal, Qc</a></li>
- 						    	<li><a href="/fr/meetings/sgm-2018-halifax.html">SGM 2018 &ndash; Halifax, NS</a></li>
-						        <li><a href="/fr/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
-						        <!--<li><a href="/fr/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>-->
-						        <!--li><a href="/fr/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>-->
+						    	<li><a href="/meetings/sgm-2019-niagara-falls.html">SGM 2019 &ndash; Niagara Falls, ON</a></li>
+						    	<li><a href="/meetings/agm-2018-montreal.html">AGM 2018 &ndash; Montreal, Qc</a></li>
+ 						    	<li><a href="/meetings/sgm-2018-halifax.html">SGM 2018 &ndash; Halifax, NS</a></li>
+						        <li><a href="/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
+						        <!--<li><a href="/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>-->
+						        <!--li><a href="/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>-->
 						    </ul>
 						</div>
 					</li>
-					<li id="members"><a class="top-level" href="/fr/members/">Membres</a></li>
-					<li id="news"><a class="top-level" href="/fr/news/">Nouvelles</a></li>
-					<li id="human-of-medicine"><a class="top-level" href="/fr/humans-of-medicine/"></a></li>
+					<li id="members"><a class="top-level" href="/members/">Members</a></li>
+					<li id="news"><a class="top-level" href="/news/">News</a></li>
+					<li id="human-of-medicine"><a class="top-level" href="/humans-of-medicine/"></a></li>
 					
-						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Se connecter</a></li>
+						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
 						
-							<li id="lang-toggle"><a id="en" href='/what-we-do/education/elective-status-board.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/what-we-do/education/research-ethics.html">FR</a></li>
 						
 					
 				</ul>
@@ -138,54 +139,77 @@
 	
 
 	
-	<!--Page Specific Formatting-->
-	<script type="text/javascript">
-		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#what-we-do" ).classList.toggle("active");
-	</script>
 
-	<div class="content">
-		<!-- Displays the sidebar and emphasizes the active page -->
-		<div id="sidebar">
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    <div id="sidebar">
 	<div id="scroll">
 		
 		
-		
-		
-		<span id="sidebar-title">Éducation</span>
+		<span id="sidebar-title">Education</span>
 		<ul>
-			<li><a id="overview" href=".">Aperçu</a></li>
-			<li><a id="our-team" href="our-team.html">Notre conseil</a></li>
-			<li><a id="educational-advocacy" href="educational-advocacy.html">Plaidoirie scolaire</a></li>
-			<li><a id="national-research-chair" href="national_research_chair.html">Président national de recherche</a></li>
+			<li><a id="overview" href=".">Overview</a></li>
+			<li><a id="our-team" href="our-team.html">Our Team</a></li>
+			<li><a id="educational-advocacy" href="educational-advocacy.html">Educational Advocacy</a></li>
+			<li><a id="national-research-chair" href="national_research_chair.html">National Research Chair</a></li>
 						
 		</ul>
-		<span id="sidebar-title">Ressources</span>
+		<span id="sidebar-title">Resources</span>
 		<ul>
 			<li><a id="research-ethics" href="research-ethics.html">Research Ethics</a></li>
 			<li><a id="motp" href="motp.html">MOTP Surge 2018</a></li>
-			<li><a id="residency-match" href="residency-match.html">Jumelage en résidence</a></li>
-			<li><a id="matchbook" href="cfms-matchbook.html">Guide pour le jumelage en résidence</a></li>
+			<li><a id="residency-match" href="residency-match.html">Residency Match</a></li>
+			<li><a id="matchbook" href="cfms-matchbook.html">Residency Matchbook</a></li>
 			<li><a id="accreditation-toolkit" href="accreditation.html">Accreditation Toolkit</a></li>
-			<li><a id="reports" href="reports.html">Rapports</a></li>
+			<li><a id="reports" href="reports.html">Reports</a></li>
 			<!--<li><a id="elective-status-board" href="elective-status-board.html">Elective Status Board</a></li>-->
-			<li><a id="student-run-clinics" href="src-toolkit.html">Trousse-à-outils pour cliniques dirigées par étudiants</a></li>
+			<li><a id="student-run-clinics" href="src-toolkit.html">Student Run Clinics Toolkit</a></li>
 			<li><a id="lmcc-preparation" href="http://mcc.ca/examinations/mccqe-part-i/exam-preparation-resources/"><i class="fa fa-external-link"></i></a></li>
 		</ul>
 		
 		
+		
+		
 	</div>
 </div>
-		<script type="text/javascript">
-			document.querySelector( "#elective-status-board" ).classList.toggle("sidebar-active");
-		</script>
+    <script type="text/javascript">
+        document.querySelector("#research-ethics").classList.toggle("sidebar-active");
+    </script>
+    <!--Page Specific Formatting-->
+    <script type="text/javascript">
+        document.querySelector("#logo-invert").classList.toggle("hidden");
+        document.querySelector("#what-we-do").classList.toggle("active");
+    </script>
 
-		<div id="side-content" class="editable">
-			<h1 id="page-title">Elective Status Board</h1>
+    <div id="side-content" class="editable">
+        <h1 id="page-title">Research Ethics</h1>
 
-		</div>
-	</div>
-	<script type="text/javascript">
+        <blockquote>
+            <h2>Research Ethics in Canada</h2>
+            <p>The CFMS Research Portfolio has complied a template pertaining to the research ethics review process.
+                While not comprehensive, this template provides students with an overview of the typical elements
+                examined in a review of ethical considerations for research involving humans. Further, students who wish
+                to conduct a research project in affiliation with the CFMS are asked to complete this form and submit it
+                to the CFMS Board as part of their request.</p>
+            <p>
+                <a href="/files/education-infographics/CFMS Research Approval Form.docx"><strong>Download Template Form</strong></a>.
+            </p>
+            <ul class="cards">
+                <li class="cards__item full-card">
+                    <div class="card">
+                        <a download="/files/education-infographics/CFMS Research Ethics InfoGraphic.pdf" title="accreditation"
+                           href="/files/education-infographics/CFMS Research Ethics InfoGraphic.pdf"><img
+                                alt="Download Research Ethics Infographic"
+                                src="/files/education-infographics/CFMS Research Ethics InfoGraphic.png"/>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </blockquote>
+    </div>
+</div>
+<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;
@@ -197,7 +221,7 @@
 		<h1>
 			<div id="twitter-title">
 				
-					Derniers tweets
+					Latest tweets
 				
 				<span style="opacity:0.3">:</span></div>
 			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
@@ -209,43 +233,41 @@
 
 	
 		
-	
-		
 			<div class="column">
-				<h1>Pour nous joindre <span style="opacity:0.3">:</span></h1>
+				<h1>Contact us <span style="opacity:0.3">:</span></h1>
 				<div class="icon"><i class="fa fa-map-marker"></i></div>
 				<li>
-					Fédération des étudiants et des étudiantes en médecine du Canada<br>
+					Canadian Federation of Medical Students<br>
 					267 O'Connor Street, Suite 401<br>
 					Ottawa, ON K2P 1V3
 				</li>
 				<div class="icon"><i class="fa fa-phone"></i></div>
 				<li>
-					<b>Téléphone</b>: 613&ndash;565&ndash;7740<br>
-					<b>Télécopieur</b>: 613&ndash;565&ndash;7742
+					<b>Phone</b>: 613&ndash;565&ndash;7740<br>
+					<b>Fax</b>: 613&ndash;565&ndash;7742
 				</li>
 				<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
 				<div id="emails">
-					<li><b>Questions diverses</b>: Rosemary Conliffe<br>
+					<li><b>General Inquiries</b>: Rosemary Conliffe<br>
 					    <script>getEmail("office")</script>
 					</li>
-					<li><b>Médias</b>: Christina Schweitzer<br>
+					<li><b>Media</b>: Christina Schweitzer<br>
 						<script>getEmail("vpcommunications")</script>
 					</li>
-					<li><b>Technologies de l'information</b>: Pavel Yarmak<br>
+					<li><b>Information Technology</b>: Pavel Yarmak<br>
 						<script>getEmail("it")</script>
 					</li>
 				</div>
 			</div>
 		
 	
-	
 		
+	
 	
 		
 			<div class="column">
 				<h1>
-					Trouvez nous sur <span style="opacity:0.3">:</span>
+					Find us on <span style="opacity:0.3">:</span>
 					<div id="social-media">
 						<a class="social-icon" href="https://www.facebook.com/CFMSFEMC"><i class="fa fa-facebook"></i></a>
 						/
@@ -257,7 +279,7 @@
 				<div class="icon"><i class="fa fa-sitemap"></i></div>
 				<li>
 					
-						<b>Plan du site:</b> <a href="/fr/sitemap.html">cfms.org/sitemap.html</a>
+						<b>Site map:</b> <a href="/sitemap.html">cfms.org/sitemap.html</a>
 					
 				</li>
 				<div class="icon"><i class="fa fa-question-circle"></i></div>
@@ -271,9 +293,11 @@
 				<div class="icon"><i class="fa fa-copyright"></i></div>
 				<li>
 					<script>document.write((new Date()).getFullYear())</script>
-					FEMC. Tous droits réservés.<br>Développé par <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
+					CFMS. All Rights Reserved.<br>Developed by <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
 				</li>		
 			</div>
+		
+	
 		
 	
 </div>
@@ -363,7 +387,7 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript">
 	window.config = {
 		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","communications":"Communications","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","communications":"Communications","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","login":"Se connecter","logout":"Se déconnecter"}]`),
-		lang: `fr`,
+		lang: `en`,
 		leadership_award_year: `2017-2018`,
 		env: `production`
 	}
