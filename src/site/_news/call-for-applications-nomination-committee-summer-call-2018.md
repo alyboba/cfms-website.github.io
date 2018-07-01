@@ -36,13 +36,17 @@ National Officer of Global Health Education (NOGHE)<br>National Officer of Human
 
 &nbsp;
 
-National Officer Political Action&nbsp;**DUE Sunday June 30th (11:59PM EST)**
+National Officer Political Action&nbsp;*DUE Sunday June 30th (11:59PM EST)*
+
+**Extended to July 8th (11:59PM EST)**
 
 [Application link](https://goo.gl/forms/NuiFDcLDnaxBYjm82){: target="_blank"}
 
 &nbsp;
 
-Day of Action 2019 Topic Selection Committee&nbsp;**DUE Sunday June 30th (11:59PM EST)**
+Day of Action 2019 Topic Selection Committee&nbsp;*DUE Sunday June 30th (11:59PM EST)*
+
+**Extended to July 8th (11:59PM EST)**
 
 [Application link](https://goo.gl/forms/Gozp4k0SatARu4MI2){: target="_blank"}
 
