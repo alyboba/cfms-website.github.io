@@ -16,21 +16,21 @@ If needed, interviews (teleconference calls) will be conducted in the months of 
 
 Questions can be directed to &lt;ontario@cfms.org&gt;.
 
-[Global Health National Officers](https://goo.gl/UoG3sK){: target="_blank"}&nbsp;**DUE Sunday June 17th (11:59PM EST)**
+[Global Health National Officers](https://goo.gl/UoG3sK)&nbsp;**DUE Sunday June 17th (11:59PM EST)**
 
 National Officer of Global Health Education (NOGHE)<br>National Officer of Human Rights and Peace (NORP)<br>National Officer of Partnerships (NOP)<br>National Officer of Reproductive and Sexual Health (NORSH)<br>National Officer of Indigenous Health (NOIH)<br>National Exchange Officer - Outgoing Exchanges
 
-[Application link](https://goo.gl/forms/qRcQJ2iIALVyyw8z1){: target="_blank"}
+[Application link](https://goo.gl/forms/qRcQJ2iIALVyyw8z1)
 
 &nbsp;
 
-[National Wellness Officer](https://goo.gl/hSiuUc){: target="_blank"}&nbsp;**DUE Sunday June 30th (11:59PM EST)**
+[National Wellness Officer](https://goo.gl/hSiuUc)&nbsp;**DUE Sunday June 30th (11:59PM EST)**
 
-[Application link](https://goo.gl/forms/RcKTDlFK3NL0i0Ki2){: target="_blank"}
+[Application link](https://goo.gl/forms/RcKTDlFK3NL0i0Ki2)
 
 &nbsp;
 
-[National Officer Health Policy](https://goo.gl/ByWKPb){: target="_blank"}&nbsp;**DUE Sunday June 30th (11:59PM EST)**
+[National Officer Health Policy](https://goo.gl/ByWKPb)&nbsp;**DUE Sunday June 30th (11:59PM EST)**
 
 [Application link](https://goo.gl/forms/IN6IMeN6SgDB9NxC2)
 
@@ -40,7 +40,7 @@ National Officer Political Action&nbsp;*DUE Sunday June 30th (11:59PM EST)*
 
 **Extended to July 8th (11:59PM EST)**
 
-[Application link](https://goo.gl/forms/NuiFDcLDnaxBYjm82){: target="_blank"}
+[Application link](https://goo.gl/forms/NuiFDcLDnaxBYjm82)
 
 &nbsp;
 
@@ -48,7 +48,7 @@ Day of Action 2019 Topic Selection Committee&nbsp;*DUE Sunday June 30th (11:59PM
 
 **Extended to July 8th (11:59PM EST)**
 
-[Application link](https://goo.gl/forms/Gozp4k0SatARu4MI2){: target="_blank"}
+[Application link](https://goo.gl/forms/Gozp4k0SatARu4MI2)
 
 &nbsp;
 
