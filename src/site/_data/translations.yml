@@ -368,11 +368,11 @@ sidebar-discounts:
 sidebar-databases:
   - lang: en
     sidebar-title_1: Databases
-    accommodations: Accommodations
+    # accommodations: Accommodations
     interviews: Residency Interview Database
     electives: Electives Database
   - lang: fr
     sidebar-title_1: Base de données
-    accommodations: Hébergement
+    # accommodations: Hébergement
     interviews: Entrevue de Carmes
     electives: Electives Database
