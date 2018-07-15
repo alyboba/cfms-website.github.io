@@ -271,6 +271,7 @@ sidebar-student-affairs:
     national-contests: National Contests
     mental-wellness: Mental Wellness
     mental-wellness-spotlight: Mental Wellness
+    financial-wellness: Financial Wellness
   - lang: fr
     sidebar-title_1: Affaires étudiantes
     overview: Aperçu
@@ -291,6 +292,7 @@ sidebar-student-affairs:
     national-contests: National Contests
     mental-wellness: Mental Wellness
     mental-wellness-spotlight: Mental Wellness
+    financial-wellness: Financial Wellness
 sidebar-communications:
   - lang: en
     sidebar-title_1: Communications
