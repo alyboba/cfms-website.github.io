@@ -1,6 +1,6 @@
 ---
 title: 'Call for Resolutions: CFMS Annual General Meeting 2018'
-date: 2018-07-25 00:00:00
+date: 2018-07-24 00:00:00
 description: >-
   Medical societies and meeting delegates are invited to put forward resolutions
   for discussion and debate at the CFMS Annual General Meeting during the
