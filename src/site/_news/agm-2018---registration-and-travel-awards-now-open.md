@@ -15,4 +15,6 @@ Registration for the 2018 CFMS AGM in Montreal, QC is NOW OPEN. More information
 
 Looking for funding to the AGM?? The applications for our CFMS-MD Financial Travel Awards are NOW OPEN. More information and links to the application available [HERE](https://www.cfms.org/resources/md-travel-awards.html).
 
+![](/images/MDFM_CFMS.jpg)
+
 &nbsp;
