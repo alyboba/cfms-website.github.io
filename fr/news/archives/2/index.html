@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 
 
@@ -134,7 +129,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" href='/news/'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
+							<li id="lang-toggle"><a id="en" href='/news/archives/2/index.html'>EN</a> / <a id="fr" class="current-lang" href="#">FR</a></li>
 						
 					
 				</ul>
@@ -149,219 +144,58 @@
 		document.querySelector( "#news" ).classList.toggle("active");
 	</script>
 
-	<!-- Newest Article -->
-	<div id="newest-article">
-		
-			<div id="newest-byline">Latest Article</div>
-			<div id="newest-title"><a href="/fr/news/2018/08/06/fr-agm-call-for-resolutions-and-guide-to-resolution.html">Appel de motions et Guide pour l’élaboration des motions</a></div>
-			<div id="newest-description">
-				<span id="newest-date">August 06, 2018</span>
-				Medical societies and meeting delegates are invited to put forward resolutions for discussion and debate at the CFMS Annual General Meeting during the Members Resolutions Session. Resolutions must be submitted by September 21st.
-			</div>
-			<div class="button"><a href="/fr/news/2018/08/06/fr-agm-call-for-resolutions-and-guide-to-resolution.html">Read More</a></div>
-		
-	</div>
-	<div id="news-home-columns">
-		<div id="older-news" class="column">
-			<h1>Older Articles<i id="archive-icon" class="fa fa-folder-open-o"></i></h1>
-			<div class="news-home-list">
-				
-					<div class="news-date">Aug 06</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/08/06/fr-agm-call-for-resolutions-and-guide-to-resolution.html">Appel de motions et Guide pour l’élaboration des motions</a></div>
-						<div class="news-desc">Medical societies and meeting delegates are invited to put forward resolutions for discussion and debate at the CFMS Annual General Meeting during the Members Resolutions Session. Resolutions must be submitted by September 21st.</div>
-					</li>
-				
-					<div class="news-date">Apr 12</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/04/12/forces-armes.html">Programme de formation des médecins des forces armées canadiennes pour les étudiants non-jumelés</a></div>
-						<div class="news-desc">La FEMC, en collaboration avec les forces armées canadiennes, a travaillé pour créer un nombre élevé de postes en médecine familiale via le programme d’instruction de médecine militaire (PIMM). Les postes de résidence débuteraient en juillet 2018.</div>
-					</li>
-				
-					<div class="news-date">Apr 11</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/04/11/appel-de-candidatures-co-directeur-de-la-maltraitance-des-%C3%A9tudiants.html">Appel de candidatures: Co-Directeur de la maltraitance des étudiants</a></div>
-						<div class="news-desc">Les co-directeurs de la Maltraitance des Étudiants seront responsables de diriger le développement d’une stratégie autour de la maltraitance des apprenants. La date limite d'application est le 16 avril 2018.</div>
-					</li>
-				
-					<div class="news-date">Mar 31</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/03/31/appel-aux-nominations-pr%C3%A9sident-%C3%A9lu-de-la-femc.html">Appel aux Nominations: Président-élu de la FEMC</a></div>
-						<div class="news-desc">Les nominations sont maintenant ouvertes pour la position de président-élu de la Fédération des étudiants et étudiantes en médecine du Canada (FEMC). La date limite d'application est le 27 avril 2018.</div>
-					</li>
-				
-					<div class="news-date">Feb 11</div>
-					<li>
-						<div class="news-link"><a href="/fr/news/2018/02/11/concours-les-effets-du-cannabis-sur-la-sant%C3%A9.html">Concours les effets du cannabis sur la santé</a></div>
-						<div class="news-desc">Please fill in description here.</div>
-					</li>
-				
-				<div class="button"><a href="archives/">See All Articles</a></div>
-			</div>
+	<div id="archives" class="content">
+		<div class="editable" id="archives-title">Tous les articles | 2 of 2</div>
+    	<div id="aside">
+			<h6 class="editable">À Propos du FEMC</h6>
+			La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre.
 		</div>
-		<div id="cfms-in-the-news" class="column">
-			<h1>CFMS in the News<i id="news-icon" class="fa fa-newspaper-o"></i></h1>
-			<div class="news-home-list">
+
+		<!-- This loops through the paginated posts -->
+		<ul>
+			
+				<li>
+					<h1><a href="/fr/news/2018/01/07/appel-de-contributions-et-illustrations-de-couverture-revue-annuelle-de-la-femc-2018-date-limite-le-15-janvier.html">Appel de contributions et illustrations de couverture : Revue annuelle de la FEMC 2018 (date limite le 15 Janvier)</a></h1>
+			    	<span class="date">January 07, 2018</span>
+			    </li>
+			
+		</ul>
+
+		
+			<div id="pagination">
+
+				<!-- Previous Page -->
+				
+					
+						<div id="prev-button" class="button"><a href="/fr/news/archives/">Previous Page</a></div>
+					
 				
 
+				<!-- Page Listing -->
+				<div id="page-listing">
+					
+					    
+						    <a class="page-link" href="/fr/news/archives/">1</a>
+					    
+					
+					    
+						    <em id="current-page" class="page-link">2</em>
+					    
+					
+				</div>
+
+				<!-- Next Page -->
 				
-					
-						<div class="news-year"><span>2018</span></div>
-					
-					
-						
-							<div class="news-date">May 26</div>
-							<li>
-								<div class="news-link"><a href="https://www.theglobeandmail.com/business/careers/business-education/article-medical-school-graduates-face-growing-problems-obtaining-required/">Medical school graduates face growing problems obtaining required residency positions</a>
-									<div class="news-publication">The Globe and Mail</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">May 22</div>
-							<li>
-								<div class="news-link"><a href="https://cmajnews.com/2018/05/22/elective-choices-may-not-matter-for-residency-as-much-as-medical-students-think-cmaj-109-5609/">Elective choices may not matter for residency as much as medical students think</a>
-									<div class="news-publication">CMAJ News</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">May 16</div>
-							<li>
-								<div class="news-link"><a href="https://cmajnews.com/2018/05/16/how-millennials-are-disrupting-medicine-cmaj-109-5605/">How millennials are disrupting medicine</a>
-									<div class="news-publication">CMAJ News</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">May 14</div>
-							<li>
-								<div class="news-link"><a href="http://www.cbc.ca/news/health/canadian-medical-school-grads-unable-to-get-a-residency-may-get-a-spot-under-new-program-funded-by-military-1.4661962">Canadian medical school grads unable to get a residency may get a spot under new program funded by military</a>
-									<div class="news-publication">CBC News</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">May 3</div>
-							<li>
-								<div class="news-link"><a href="https://cmajnews.com/2018/05/03/major-gaps-in-supports-for-medical-trainees-with-disabilities-cmaj-109-5592/">Major gaps in supports for medical trainees with disabilities</a>
-									<div class="news-publication">CMAJ News</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Apr 27</div>
-							<li>
-								<div class="news-link"><a href="https://atlantic.ctvnews.ca/military-offers-option-to-medical-students-without-residency-1.3906089">Military offers option to medical students without residency</a>
-									<div class="news-publication">CTV News</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Apr 25</div>
-							<li>
-								<div class="news-link"><a href="https://cmajnews.com/2018/04/25/making-the-best-of-canadas-worsening-residency-mismatch-cmaj-109-5598/">Making the best of Canada’s worsening residency mismatch</a>
-									<div class="news-publication">CMAJ News</div>
-								</div>
-							</li>
-						
-					
-						
-							<div class="news-date">Apr 20</div>
-							<li>
-								<div class="news-link"><a href="http://www.cbc.ca/listen/shows/metro-morning/segment/15538935">New funding will help unmatched med school grads</a>
-									<div class="news-publication">CBC Radio - Metro Morning Toronto</div>
-								</div>
-							</li>
-						
-					
+				    <div id="next-button" class="button inactive"><a href="#">Next Page</a></div>
 				
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-				
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-				
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-				
-					
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-						
-					
-								
-				<div class="button"><a href="cfms-in-the-news.html">See all Mentions</a></div>
 			</div>
-		</div>
+		
 	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
