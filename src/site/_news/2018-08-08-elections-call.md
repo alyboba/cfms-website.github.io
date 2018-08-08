@@ -12,12 +12,12 @@ lang: en
 
 For forty years the Canadian Federation of Medical Students (CFMS) has been the national voice that represents over 8,300 medical students at fifteen schools across Canada.  
 
-Our three-fold mandate seeks: 
+Our three-fold mandate seeks:<br>
 &nbsp;&nbsp; 1. To support medical students by representing their voices among the national organizations that direct or influence the policy environment or delivery of medical education in Canada. It also represents medical students in organizations with broad health care mandates.  
 
-&nbsp;&nbsp; 1. To provide services that support the needs of member medical students.  
+&nbsp;&nbsp; 2. To provide services that support the needs of member medical students.  
 
-&nbsp;&nbsp; 1. To communicate national medical education issues of importance to medical students and facilitate communication and interaction of medical students among member schools.  
+&nbsp;&nbsp; 3. To communicate national medical education issues of importance to medical students and facilitate communication and interaction of medical students among member schools.  
 
 The following board positions are available for election for the 2018-2019 academic year: 
 * Director of Education  
@@ -37,7 +37,7 @@ Interested individuals **must** complete this [online form](https://form.jotform
 
 Note the form requires an interested individual submit their name, email address, a photo, as well as brief bio/letter of intent (no more than 250 words). If a nominee so chooses they may also append a condensed CV (no more than 2 pages).
 
-### Nomination Process
+### Election Process
 
 The elections will take place at the CFMS Annual General Meeting (AGM) in Montreal, QC, which runs from September 21st-23rd, 2018. Elections will be held on the afternoon of Saturday, September 22nd. Votes will be cast by medical student society representatives and members of the Federation's Board of Directors, as detailed in the [organization's bylaws](https://www.cfms.org/files/internal-policy-bylaws/cfms-bylaws.pdf). 
 
@@ -47,12 +47,12 @@ Candidates will be expected to deliver a short speech of no more than three (3) 
 
 You must notify [pastpresident@cfms.org](mailto:pastpresident@cfms.org) one week prior to the meeting if you wish to deliver a speech by proxy.
 
-### Nomination Process
+### Term Details
 
 Newly elected board directors will commence their roles at the conclusion of AGM 2018.
 Each position is for a one-year term. Please note as per [the resolution passed at SGM 2018](https://www.cfms.org/files/meetings/sgm-2018/resolutions/GC-SGM-Motion1-Elections-Timeline.pdf), the 2 vice-presidents, as well as non-regional directors will have –elect successors elected at SGM 2019. 
 
-All newly-elected members of the board are strongly encouraged to attend a breakfast handover meeting on Sunday September 23, 2018.
+All newly-elected members of the board are strongly encouraged to attend a breakfast handover meeting on Sunday September 23, 2018.<br>
 All newly-elected members of the board are expected to attend the first in-person board meeting which will be held from October 26-28th, 2018 in Ottawa. 
 
 Any student member of the CFMS at any school may run. While previous experience with the workings of the CFMS is strongly encouraged, it is not required. 
@@ -63,5 +63,4 @@ Please consult the attached document for descriptions of the available positions
 
 Yours sincerely, 
 
-Dr.  Franco Rizzuti, BSc MD
-Past-President & Board Chair, Canadian Federation of Medical Students
+**Dr.  Franco Rizzuti, BSc MD**<br>Past-President & Board Chair, Canadian Federation of Medical Students
