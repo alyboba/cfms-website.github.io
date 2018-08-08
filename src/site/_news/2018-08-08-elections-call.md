@@ -65,7 +65,7 @@ Yours sincerely,
 
 **Dr.  Franco Rizzuti, BSc MD**<br>Past-President & Board Chair, Canadian Federation of Medical Students
 
-**Available positions**
+### Available positions
 
 **Director Education (One-year term; -elect joining SGM 2019)**
 
