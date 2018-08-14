@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	<!--Metadata-->
+<meta charset="utf-8">
+<title>Canadian Federation of Medical Students</title>
+<meta name="description" content="Canadian Federation of Medical Students">
+<meta name="keywords" content="CFMS, Medicine, Canada, Advocacy, Medical School, Association">
+<meta name="author" content="Kevan Lu">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+
+<!--Favicon-->
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+<!--Stylesheets-->
+
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/base.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/header.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/footer.css">
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/loading.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<!--DataTables-->
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+
+<!--FormValidator-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+
+<!--Firebase Code-->
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCRaJStQDuZ0nrn0b59kzYphlAkJ62flo8",
+    authDomain: "amber-heat-9132.firebaseapp.com",
+    databaseURL: "https://amber-heat-9132.firebaseio.com",
+    storageBucket: "amber-heat-9132.appspot.com",
+    messagingSenderId: "466232039218"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<!--Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77140171-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--Scroll Reveal-->
+<script src="/js/scrollreveal.min.js"></script>
+<script>
+      window.sr = ScrollReveal();
+</script> 
+<style>
+    /* Ensure elements load hidden before ScrollReveal runs */
+    .animate { visibility: hidden; }
+</style> 
+
+
+	<!--Page Specific Stylesheet-->
+	
+		<link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
+	
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+
+	
+
+	
+		<div id="top-padding"></div>
+		<div id="top-bar" class="invert fr">
+			<div id="top-icon" class="animate">
+				<div id="logo-group" class="fr">
+					<img id="logo-invert" src="/images/cfms-logo-invert.svg">
+					<img id="logo" src="/images/cfms-logo.svg">
+					<a href="/fr/">FEMC</a>
+				</div>
+				<span id="logo-desc"><a class="fr" href="/fr/">Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada</a></span>
+			</div>
+			<div id="top-hamburger" class="animate">
+				<a onclick="return false;" id="hamburger-toggle" href=""><span></span></a>
+			</div>
+			<div id="top-nav" class="animate">
+				<ul class="fr">
+					<li id="who-we-are"><a class="top-level" href="/fr/who-we-are/">Qui sommes-nous?</a></li>
+					<li id="what-we-do"><a class="top-level" href="/fr/what-we-do/">Que faisons-nous?</a>
+						<div id="sub-menu">
+						    <ul>
+						    	<li><a href="/fr/what-we-do/advocacy/">Représentation</a></li>
+						    	<li><a href="/fr/what-we-do/education/">Éducation</a></li>
+						    	<li><a href="/fr/what-we-do/global-health/">Santé mondiale</a></li>
+						    	<li><a href="/fr/what-we-do/student-affairs/">Affaires étudiantes</a></li>
+								<li><a href="/fr/what-we-do/communications/">Communications</a></li>
+						    </ul>
+						</div>
+					</li>
+					<li id="resources"><a class="top-level" href="/fr/resources/">Ressources</a></li>
+					<li id="meetings"><a class="top-level" href="/fr/meetings/">Réunions</a>
+						<div id="sub-menu">
+						    <ul>
+						    	<li><a href="/fr/meetings/sgm-2019-niagara-falls.html">SGM 2019 &ndash; Niagara Falls, ON</a></li>
+						    	<li><a href="/fr/meetings/agm-2018-montreal.html">AGM 2018 &ndash; Montreal, Qc</a></li>
+ 						    	<li><a href="/fr/meetings/sgm-2018-halifax.html">SGM 2018 &ndash; Halifax, NS</a></li>
+						        <li><a href="/fr/meetings/agm-2017-ottawa.html">AGM 2017 &ndash; Ottawa, ON</a></li>
+						        <!--<li><a href="/fr/meetings/sgm-2017-winnipeg.html">SGM 2017 &ndash; Winnipeg, MB</a></li>-->
+						        <!--li><a href="/fr/meetings/agm-2016-edmonton.html">AGM 2016 &ndash; Edmonton, AB</a></li>-->
+						    </ul>
+						</div>
+					</li>
+					<li id="members"><a class="top-level" href="/fr/members/">Membres</a></li>
+					<li id="news"><a class="top-level" href="/fr/news/">Nouvelles</a></li>
+					<li id="human-of-medicine"><a class="top-level" href="/fr/humans-of-medicine/"></a></li>
+					
+						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Se connecter</a></li>
+					
+					
+				</ul>
+			</div>
+		</div>
+	
+
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#news" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+
+		<!-- News Article -->
+   		<div id="aside">
+			
+				<h6>À Propos du FEMC</h6>
+				La Fédération des étudiants et des étudiantes en médecine du Canada (FEMC) représente les étudiants et les étudiantes en médecine du Canada auprès du gouvernement fédéral, du grand public et des organisations médicales nationales. Nous représentons plus de 8 000 étudiants en médecine fréquentant 14 facultés de médecine canadiennes situées d’un océan à l’autre.
+			
+		</div>
+        <div id="title">Appel de Candidatures: Postes de Conseil Exécutif </div>
+        <info datetime="2018-08-13">
+        </info>
+    	<div id="date">August 13, 2018</div>
+        <div id="body">
+	        <p><strong><u><span style="font-family:&quot;DengXian Light&quot;"></span></u></strong></p>
+
+<h3 id="quest-ce-que-la-femc">Qu’est-ce que la FEMC?</h3>
+
+<p>Pendant quarante ans, la Fédération des Étudiants et Étudiantes en Médecine du Canada (FEMC) a été le porte-parole national qui représente plus de 8300 étudiants et étudiantes en médecine de quinze écoles partout au Canada.</p>
+
+<p>Notre triple-mandat vise :<br />
+   1. À soutenir les étudiants et étudiantes à faire entendre leurs voix parmi les organisations nationales qui dirigent ou influencent l’environnement politique ou le rendement de la formation médicale au Canada. La FEMC représente également les étudiants et étudiantes en médecine dans les organismes avec des mandats en santé.</p>
+
+<p>   2. À fournir de services qui répondent aux besoins des membres étudiants et étudiantes en médecine.</p>
+
+<p>   3. À communiquer aux étudiants et étudiantes les questions importantes en éducation médicale au niveau national et faciliter la communication et l’interaction des étudiants et étudiantes parmi les écoles membres.</p>
+
+<p>Les postes exécutifs suivants sont disponibles pour élection pour l’année académique 2018-2019 :</p>
+<ul>
+  <li>Directeur/Directrice pédagogique</li>
+  <li>Directeur/Directrice aux affaires étudiantes</li>
+  <li>Directeur/Directrice à la santé mondiale</li>
+  <li>Directeur/Directrice aux affaires gouvernementales</li>
+  <li>Vice-Président/Présidente aux communications</li>
+  <li>Vice-Président/Présidente aux finances</li>
+  <li>Représentant/Représentante régional(e) des Maritimes (1)</li>
+  <li>Représentant/Représentante régional(e) du Québec (1)</li>
+  <li>Représentant/Représentante régional(e) d’Ontario (2)</li>
+  <li>Représentant/Représentante régional(e) de l’Ouest</li>
+</ul>
+
+<h3 id="processus-de-nomination">Processus de nomination</h3>
+
+<p>Les personnes intéressées doivent remplir <a href="https://form.jotform.com/farizzuti/CFMSAGM2018-BoardNominations">ce formulaire en ligne</a> d’ici à <strong>vendredi, le 21 septembre à 17h (heure normale de l’Est)</strong>. La période des candidatures se terminera strictement à ce moment.</p>
+
+<p>Veuillez noter que le formulaire exige qu’un individu intéressé soumette son nom, courriel, photo, ainsi qu’une brève biographie ou lettre d’intention (pas plus de 250 mots). Si un candidat ou une candidate le désire, il ou elle pourrait aussi ajouter un CV condensé (pas plus de 2 pages).</p>
+
+<h3 id="processus-électoral">Processus électoral</h3>
+
+<p>Les élections se tiendront à l’Assemblée Générale Annuelle (AGA) de la FEMC à Montréal QC, qui se déroule du 21 au 23 septembre 2018. Les élections se tiendront l’après-midi du samedi 22 septembre. Les votes seront déposés par les représentants et représentantes des sociétés des étudiants et étudiantes en médecine et les membres du Conseil exécutif de la FEMC, précisé par les <a href="https://www.cfms.org/files/internal-policy-bylaws/cfms-bylaws.pdf">règlements administratifs de l’organisation</a>.</p>
+
+<p>Immédiatement après la fermeture des nominations, l’Assemblée générale aura accès aux lettres d’intentions des candidats (et leurs CVs s’ils étaient fournis).</p>
+
+<p>Les candidats seront appelés à faire un bref discours aux électeurs de trois (3) minutes au maximum, soit en personne ou par procuration. Veuillez noter que les discours par diffusion sur le web ou par vidéo ne sont pas permis. Une période de questions de trois (3) minutes suivra. Si un candidat/une candidate n’est pas présent(e) à la réunion, il ou elle sera contacté(e) par communication vocale pour répondre aux questions. Les contraintes de temps désignées doivent être respectées.</p>
+
+<p>Vous devez informer <a href="mailto:pastpresident@cfms.org">pastpresident@cfms.org</a> une semaine avant la réunion si vous voulez faire un discours par procuration.</p>
+
+<h3 id="details-du-terme">Details du terme</h3>
+
+<p>Directeurs et directrices du conseil nouvellement élus commenceront leurs rôles à la conclusion de l’AGA 2018. Chaque position est pour une durée d’un an. Veuillez noter que conformément à <a href="https://www.cfms.org/files/meetings/sgm-2018/resolutions/GC-SGM-Motion1-Elections-Timeline.pdf">la résolution adoptée à l’AGP 2018</a>, les deux vice-présidents ainsi que les directeurs/directrices non-régionaux auront des successeurs –élu qui seront élus à l’AGP 2019.</p>
+
+<p>Tous les membres nouvellement élus sont vivement encouragés d’assister à une réunion de passation de pouvoir qui se tiendra dimanche, le 23 septembre 2018, lors du petit-déjeuner.<br />
+Tous les membres nouvellement élus sont attendus à la première réunion de conseil en personne qui aura lieu du 26-28 Octobre, 2018 à Ottawa.</p>
+
+<p>Tout membre étudiant ou étudiante de la FEMC, quel que soit l’école, peut se présenter aux élections. Bien que l’expérience antérieure soit fortement encouragée, ce n’est pas requis.</p>
+
+<p>Veuillez consulter les rapports exécutifs et les règlements administratifs pour en savoir plus sur chaque position. Une courte description de chaque position se trouve ci-dessous. Si vous avez des questions, communiquez avec le Président-Sortant de la FEMC et le Directeur Général du Scrutin, Dr. Franco Rizzuti à <a href="mailto:pastpresident@cfms.org">pastpresident@cfms.org</a>.</p>
+
+<p>Veuillez consulter le document annexe pour les descriptions des positions disponibles. Je vous encourage vivement à considérer de poser votre candidature. C’est une excellente occasion de participer, de faire une différence et de former une partie intégrale d’une organisation étudiante efficace et réputée.</p>
+
+<p>Cordialement,</p>
+
+<p><strong>Dr.  Franco Rizzuti, BSc MD</strong><br />Président-Sortant du Conseil Exécutif, Fédération des étudiants et étudiantes en médecine du Canada</p>
+
+<h3 id="positions-disponibles">Positions disponibles</h3>
+
+<p><strong>Vice-Président aux Affaires Pédagogiques (Mandat d’un an; -élu se joint à l’AGP 2019)</strong></p>
+
+<p>Le rôle du Vice-président aux Affaires Pédagogiques (VP-AP) a considérablement évolué depuis l’adoption du Plan stratégique de la FEMC 2014-2017. Ses rôles peuvent être divisés en 3 responsabilités interdépendants, tous centrés sur l’avancement des intérêts des étudiants et des patients dans le domaine de la formation médicale.</p>
+
+<p>Représenter: Le VP-AP représente toutes et tous étudiants en médecine canadiens à diverses organismes médicaux au niveau national, incluant plusieurs commissions de l’Association des Facultés de Médecine du Canada (AFMC), le service canadien de jumelage des résidents (CaRMS), le Conseil Médical du Canada (CMC), et le Collège Royal des Médecins et Chirurgiens du Canada (CRMCC). Le VP-AP peut aussi représenter les étudiants au sein de divers groupes de travail et équipes spéciales établies à l’interne par la FEMC ou établies à l’extérieure par nos partenaires pour des projets à court terme sur la formation médicale.</p>
+
+<p>Relier: Le VP-AP relie les dirigeants locaux de la formation médicale (généralement le VP aux affaires pédagogiques de la société des étudiants et étudiantes en médecine) à travers une communauté virtuelle qui s’appelle Education List FEMC (EdList). Cette communauté en développement est chargée de partager les bonnes pratiques et d’informer nos écoles membres sur les sujets relatifs à la formation médicale.</p>
+
+<p>Soutenir: Le VP-AP, à travers la direction du comité d’éducation de la FEMC (EdCom), organise une série de projets destinée à soutenir nos étudiants en médecine. Projets en cours incluent le Portail des étudiants AFMC, la vérification du dossier de rendement de l’étudiant en médecine, participation dans l’agrément des facultés de médecine du Canada, les activités de plaidoyer dans le domaine de la formation médicale, l’éducation interprofessionnelle, l’éducation de santé mondiale, et le Matchbook/Guide à la transition à résidence de la FEMC.</p>
+
+<p>Pour plus d’information, veuillez contacter Kaylynn Purdy à <a href="mailto:vpeducation@cfms.org">vpeducation@cfms.org</a>.</p>
+
+<p><strong>Vice-Président aux Affaires Étudiantes (Mandat d’un an; -élu se joint à l’AGP 2019)</strong></p>
+
+<p>Le Vice-président aux affaires étudiantes (VP-AE) assume la responsabilité de la supervision du portefeuille du bien-être des élèves et la responsabilité de la coordination des avantages et services des membres de la FEMC. La position exige beaucoup d’organisation et de communication avec le Directeur du Bien-Être national, les représentants du bien-être, représentants locaux et avec divers partenaires extérieurs. Le VP-AE aide à superviser les projets du Directeur de Bien-Être national et du Comité du Bien-Être, prend part aux réunions du Comité du Bien-Être et sert de coordinateur et représentant pour d’autres projets et activités de bien-être de la FEMC. Le VP-AE représente aussi la FEMC sur le comité des affaires étudiantes de l’AFMC et sur le groupe de travail sur la résilience des Médecins Résidents du Canada.</p>
+
+<p>Autres responsabilités majeures du rôle incluent le développement et entretien de partenariats qui fournira des avantages et services aux membres étudiants, l’administration et surveillance des services pour les membres créés en interne, la promotion des avantages des membres, et travailler avec le VP aux finances sur les relations et avantages des commanditaires, incluant la supervision des Prix de leadership de la FEMC. Le VP-AE devra jouer un rôle central dans le développement et entretien des services en ligne.</p>
+
+<p>Pour plus d’information, veuillez contacter Stephanie Smith à <a href="mailto:vpstudentaffairs@cfms.org">vpstudentaffairs@cfms.org</a>.</p>
+
+<p><strong>Directeur à la Santé Mondiale (Mandat d’un an; -élu se joint à l’AGP 2019)</strong></p>
+
+<p>Le Directeur de la Santé Mondiale (Dir. SM) est responsable de coordonner le Programme de la Santé Mondiale de la FEMC. Le Dir. SM prend est à la tête de la formation et l’entretien de partenariats avec des organizations canadiennes et internationales par rapport à la santé mondiale, le développement international et la santé publique. Le Dir. SM travaille en collaboration avec le programme international de la a Fédération médicale étudiante du Québec FMÉQ, soit IFMSA-Quebec, pour réaliser des projets qui intersectent avec le mandat du Programme de la Santé Mondiale de la FEMC et les initiatives et direction stratégique de la Fédération internationale des associations d’étudiants en médecine (IFMSA). Le Dir. SM sert comme Président de la délégation canadienne de la IFMSA et assiste au moins deux rencontres internationales par année (lieu à déterminer) dans cette capacité. Le Dir. SM supervise directement sept Officiers Nationaux avec des portefeuilles diverse comme la santé autochtone, la santé sexuelle et reproductive, partenariats, droits humanitaires et paix, ainsi que la formation en santé mondiale.</p>
+
+<p>Pour plus d’information, veuillez contacter Chris Briggs à <a href="mailto:vpgloblhealth@cfms.org">vpgloblhealth@cfms.org</a>.</p>
+
+<p><strong>Directeur aux Affaires Gouvernementales (Mandat d’un an; -élu se joint à l’AGP 2019)</strong></p>
+
+<p>Le Directeur aux Affaires Gouvernementales (Dir. AG) a une variété de fonctions relatif à diriger et coordonner les efforts locaux, provinciaux et nationaux de la FEMC. Plus spécifiquement, le Dir. AG agit à titre de Président du Comité aux Affaires Gouvernementales et de Lobbyisme national de la FEMC et dirige l’organisation de la Journée Annuelle de Lobbying de la FEMC à Ottawa. En conjonction avec l’Officier National en Politique de la Santé, le Dir. AG dirige le Comité en Politique de la Santé dans la révision des exposés de position existants et la rédactions de nouveaux documents.</p>
+
+<p>Le Dir. AG est responsable d’encourager et de faciliter les efforts de lobbyisme aux écoles membres de la FEMC. De temps en temps, le Dir. AG représentera aussi la FEMC à divers comités externes et autres organizations, lorsque cela est jugé nécessaire par le président et le comité exécutif.</p>
+
+<p>Pour plus d’information, veuillez contacter Yipeng Ge à <a href="mailto:vpgovtaffairs@cfms.org">vpgovtaffairs@cfms.org</a>.</p>
+
+<p><strong>VP aux Communications (Mandat d’un an; -élu se joint à l’AGP 2019)</strong></p>
+
+<p>Le our la Vice-Président(e) aux Communications est responsable pour les communications internes et externes, incluant la politique et stratégie, le site web et les publications de la FEMC. Le VP aux Communications modère activement les listserv électroniques des représentants et autres serveurs. Il ou elle est responsable de maintenir des contacts réguliers avec les représentants individuels de la FEMC et les présidents des sociétés médicales aux écoles membres.</p>
+
+<p>Le VP aux Communications se charge de certaines communications avec des organismes extérieurs et devrait être familier avec l’exercice de l’écriture d’un communiqué de presse et circuler de l’information aux médias. Le VP aux Communications travaille avec l’Éditeur de la Revue Annuelle pour produire la Revue Annuelle de la FEMC.</p>
+
+<p>Le poste implique une étroite collaboration avec l’Officier National de la Technologie de l’Information et l’hôte du site web. Le VP aux Communications a la responsabilité générale pour la présence en ligne de la FEMC, notamment en veillant à ce que tout le contenu sur le site web est à jour et à l’image de l’ensemble de la stratégie de communication de la FEMC.</p>
+
+<p>Pour plus d’information, veuillez contacter Christina Schweitzer à <a href="vpcommunications@cfms.org">vpcommunications@cfms.org</a>.</p>
+
+<p><strong>VP aux Finances (Mandat d’un an; -élu se joint à l’AGP 2019)</strong></p>
+
+<p>Le ou la Vice-Président(e) a la responsabilité de la gestion financière globale de la FEMC et doit avoir une bonne compréhension de l’étendue des activités de la FEMC afin de conseiller le Conseil d’Administration et l’Assemblée Générale sur l’établissement du budget et de planification du travail. Il ou elle est responsable de la gestion des comptes bancaires de la FEMC, des investissements, des dépenses, du revenu et de la paie. Le VP aux Finances doit entretenir contact avec le Directeur Général et Président au moins une fois par semaine.</p>
+
+<p>Le VP Finance est responsable de la planification stratégique à long terme avec le Président. Ils travaillent activement à élargir la base de ressources financières de la FEMC en cherchant d’autres sources de revenus par des subventions, la publicité, dons et commandites. Ils sont responsables de l’élaboration de politiques relatives aux finances. Le VP aux Finances devrait avoir une compréhension détaillée des principes de comptabilité et la documentation. Ils devraient être à l’aise à utiliser des chiffriers et des logiciels électroniques de gestion.</p>
+
+<p>Pour plus d’information, veuillez contacter Lauren Griggs à <a href="vpfinance@cfms.org">vpfinance@cfms.org</a>.</p>
+
+<p><strong>Représentants Régionaux (Mandat d’un an)</strong></p>
+
+<p>Six postes sont actuellement détenus pour la représentation régionale du Conseil Exécutif de la FEMC. Les représentants régionaux sont des membres votants du conseil et s’assure que le Conseil est mis à jour sur les développements à l’ensemble des écoles membres. Les représentants régionaux s’occupent de la liaison entre le Conseil Exécutif et les présidents et représentants des sociétés médicales. Ils travaillent étroitement avec tous les Directeurs, selon le modèle Dyad, sous la direction du Président pour assurer la communication entre le Conseil Exécutif et les sociétés médicales.</p>
+
+<p>Les représentants régionaux sont exigés de reporter sur les affaires des écoles de médecine membres faisant partie de leur région ainsi que de communiquer les affaires du Conseil Exécutif au sein de leur région.</p>
+
+<ul>
+  <li>Pour plus d’information sur le poste de Représentant Régional des Maritimes, veuillez contacter Victoria Januszkiewicz à <a href="atlantic@cfms.org">atlantic@cfms.org</a>.</li>
+  <li>Pour plus d’information sur le poste de Représentant Régional du Québec, veuillez contacter Sarah Zahabi à <a href="quebec@cfms.org">quebec@cfms.org</a>.</li>
+  <li>Pour plus d’information sur le poste de Représentant Régional de l’Ontario, veuillez contacter Maylynn Ding à <a href="ontario@cfms.org">ontario@cfms.org</a>.</li>
+  <li>Pour plus d’information sur le poste de Représentant Régional de l’Ouest, veuillez contacter Odell Tan et Victor Do à <a href="western@cfms.org">western@cfms.org</a>.</li>
+</ul>
+
+<p><strong>Note sur le ou la Président(e) de la FEMC:</strong></p>
+
+<p>Le ou la Président(e) est chargé(e) d’établir la direction stratégique de la FEMC. La plupart des présidents ont eu l’expérience sur le Conseil Exécutif de la FEMC et doit avoir des connaissances détaillées de toutes les politiques et activités de l’organisation. En plus d’établir les priorités de l’organisation, le président agit comme premier contact sur des questions importantes pour les étudiants et les organismes externes. Le Président participe à de nombreuses réunions externes en tant que représentant des étudiants en médecine canadiens et se déplace en moyenne deux fins de semaine par mois pour la durée entière du mandat d’un an. Les engagements principaux incluent le conseil exécutif du Forum Médical Canadien (FMC), être le représentant de la FEMC au Comité Consultatif sur la Planification des Ressources Médicales (CCPRM), liaison avec le groupe sur jumelage des résident et sur la protection de la vie privée des apprenants faisant partie de l’Association des Facultés de Médecine (AFMC), liaison avec l’Association Médicale Canadienne (AMC) ainsi qu’une multitude de groupes de travail et sous-comités. Le Président sera souvent demandé de présenter à différentes réunions et de parler avec les médias à propos de sujets qui touchent les étudiants en médecine.</p>
+
+<p>Le Président est aussi fortement impliqué dans toutes les activités du Conseil Exécutif et travaille avec d’autres membres de l’Exécutif pour s’assurer que les priorités de l’organisation sont satisfaites. Temps sur courriel (internes et externes) peut dépasser 2 heures par jour pendant les périodes de grande activité. Les ordres du jour et la planification de réunions et de téléconférences, ainsi que les trois réunions du conseil de la FEMC entrent aussi dans cette position. Les responsabilités du président comprennent également la liaison avec le personnel du bureau de la FEMC tous les jours et de s’assurer que l’infrastructure de l’organisation est en bon ordre.</p>
+
+<p>Le poste de Président est d’un an, élu par le Conseil à L’Assemblée Générale du Printemps (AGP). Suite à la fin de son mandat, le Président assume le rôle officiel de Président-Sortant.</p>
+
+<p>La Présidente pour 2018-2019 est Capt. Stephanie Smith, Université de Calgary, qui peut être contactée à <a href="presidentelect@cfms.org">presidentelect@cfms.org</a>.</p>
+
+
+        </div>
+	</div>
+	    <!-- Other News -->
+        <div id="other-news">
+			<h1>Other News</h1>
+			<div id="other-news-list">
+				
+					
+						<div class="news-date">Aug 13</div>
+						<li>
+							<div class="news-link"><a href="/fr/news/2018/08/13/elections-call.html">Appel de Candidatures: Postes de Conseil Exécutif </a></div>
+						</li>
+					
+						<div class="news-date">Aug 06</div>
+						<li>
+							<div class="news-link"><a href="/fr/news/2018/08/06/fr-agm-call-for-resolutions-and-guide-to-resolution.html">Appel de motions et Guide pour l’élaboration des motions</a></div>
+						</li>
+					
+						<div class="news-date">Apr 12</div>
+						<li>
+							<div class="news-link"><a href="/fr/news/2018/04/12/forces-armes.html">Programme de formation des médecins des forces armées canadiennes pour les étudiants non-jumelés</a></div>
+						</li>
+					
+						<div class="news-date">Apr 11</div>
+						<li>
+							<div class="news-link"><a href="/fr/news/2018/04/11/appel-de-candidatures-co-directeur-de-la-maltraitance-des-%C3%A9tudiants.html">Appel de candidatures: Co-Directeur de la maltraitance des étudiants</a></div>
+						</li>
+					
+						<div class="news-date">Mar 31</div>
+						<li>
+							<div class="news-link"><a href="/fr/news/2018/03/31/appel-aux-nominations-pr%C3%A9sident-%C3%A9lu-de-la-femc.html">Appel aux Nominations: Président-élu de la FEMC</a></div>
+						</li>
+					
+				
+			</div>
+		</div>
+	<script type="text/javascript">
+	function getEmail(username){
+		var hostname = "cfms.org";
+		var linktext = username + "@" + hostname;
+		document.write("<a class='email' href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+	}
+</script>
+<div id="footer">
+	<div class="column">
+		<h1>
+			<div id="twitter-title">
+				
+					Derniers tweets
+				
+				<span style="opacity:0.3">:</span></div>
+			<div id="twitter-handle"><a href="https://twitter.com/cfmsfemc">@CFMSFEMC</a></div>
+		</h1>
+		<div class="icon"><i class="fa fa-twitter"></i></div>
+		<div id="latest-tweets">
+		</div>
+	</div>
+
+	
+		
+	
+		
+			<div class="column">
+				<h1>Pour nous joindre <span style="opacity:0.3">:</span></h1>
+				<div class="icon"><i class="fa fa-map-marker"></i></div>
+				<li>
+					Fédération des étudiants et des étudiantes en médecine du Canada<br>
+					267 O'Connor Street, Suite 401<br>
+					Ottawa, ON K2P 1V3
+				</li>
+				<div class="icon"><i class="fa fa-phone"></i></div>
+				<li>
+					<b>Téléphone</b>: 613&ndash;565&ndash;7740<br>
+					<b>Télécopieur</b>: 613&ndash;565&ndash;7742
+				</li>
+				<div class="icon"><i class="fa fa-envelope-o mail"></i></div>
+				<div id="emails">
+					<li><b>Questions diverses</b>: Rosemary Conliffe<br>
+					    <script>getEmail("office")</script>
+					</li>
+					<li><b>Médias</b>: Christina Schweitzer<br>
+						<script>getEmail("vpcommunications")</script>
+					</li>
+					<li><b>Technologies de l'information</b>: Pavel Yarmak<br>
+						<script>getEmail("it")</script>
+					</li>
+				</div>
+			</div>
+		
+	
+	
+		
+	
+		
+			<div class="column">
+				<h1>
+					Trouvez nous sur <span style="opacity:0.3">:</span>
+					<div id="social-media">
+						<a class="social-icon" href="https://www.facebook.com/CFMSFEMC"><i class="fa fa-facebook"></i></a>
+						/
+						<a class="social-icon" href="https://twitter.com/cfmsfemc"><i class="fa fa-twitter"></i></a>
+						/
+						<a class="social-icon" href="https://www.linkedin.com/company/canadian-federation-of-medical-students-cfms-"><i class="fa fa-linkedin"></i></a>
+					</div>
+				</h1>
+				<div class="icon"><i class="fa fa-sitemap"></i></div>
+				<li>
+					
+						<b>Plan du site:</b> <a href="/fr/sitemap.html">cfms.org/sitemap.html</a>
+					
+				</li>
+				<div class="icon"><i class="fa fa-question-circle"></i></div>
+				<li>
+					<b>Issue Tracker: </b><a href="/uploads/issue-tracker-guide.pdf">How To Guide</a>
+				</li>
+				<div class="icon"><i class="fa fa-github"></i></div>
+				<li>
+					<b>Issue Tracker: </b><a href="https://github.com/cfms-website/cfms-website.github.io/issues">Submit a Ticket </a>
+				</li>
+				<div class="icon"><i class="fa fa-copyright"></i></div>
+				<li>
+					<script>document.write((new Date()).getFullYear())</script>
+					FEMC. Tous droits réservés.<br>Développé par <a href="http://www.kevan.lu">Kevan Lu</a> & <a href="http://pavel.yarmak.me/">Pavel Yarmak</a>
+				</li>		
+			</div>
+		
+	
+</div>
+<script src="/js/twitterFetcher_min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	window.sr = ScrollReveal();
+	sr.reveal('.animate', { duration: 500, distance: '5px', scale: 1 } );
+
+	document.querySelector( "#hamburger-toggle" ).addEventListener( "click", function() {
+		this.classList.toggle( "active" );
+		document.querySelector("#top-nav").classList.toggle("active");
+		sr.reveal('#top-nav', {distance: '0px'});
+	});
+
+	//Gets latest tweets
+	var tweetConfig = {
+	  "id": '616581601191833602',
+	  "domId": 'latest-tweets',
+	  "maxTweets": 3,
+	  "enableLinks": true,
+	  "showPermalinks": false,
+	  "showUser": false,
+	  "showInteraction": false,
+	  "dateFunction": dateFormatter
+	};
+
+	//Formats the tweet dates
+	function dateFormatter(date) {
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var hour = date.getHours();
+
+		//0:00 = 12 AM
+		if (hour == 0)
+			var time = "12:" + date.getMinutes();
+		else 
+			time = (hour%12) + ":" + date.getMinutes();
+		if (hour > 0 && hour < 12)
+			time += " AM";
+		else 
+			time += " PM";
+
+		var month = months[date.getMonth()];
+		var day = date.getDate();
+		var year = date.getFullYear();
+		return time + " &ndash; " + month + " " + day + ", " + year;
+	}
+	twitterFetcher.fetch(tweetConfig);
+</script>
+
+<script src="/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if($(window).width() >= 960){
+	    $('#scroll').scrollToFixed({ 
+	    	minWidth: 960,
+	    	marginTop: 20, 
+	    	limit: function() {
+		        var limit = $('#footer').offset().top - $('#scroll').height() - 40;
+		        return limit;
+		    }
+	    });
+	}
+});
+</script>
+
+<!-- Modal Dialogs -->
+<script src="/js/vex.combined.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-default';</script>
+
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex.css" />
+<link rel="stylesheet" href="https://www.cfms.org/stylesheets/vex-theme-default.css" />
+
+<script>
+$('.redirect-modal').click(function(){
+    vex.dialog.confirm({
+        message: '<h3><strong>Oh no!</strong></h3><p>Unfortunately, this feature or resource is not yet available on the new CFMS website. To access it, please visit the old CFMS website.</p>',
+        buttons: [
+                $.extend({}, vex.dialog.buttons.YES, { text: 'Go to old website' }),
+                $.extend({}, vex.dialog.buttons.NO, { text: 'Cancel' })
+            ],
+        callback: function(value) {
+            if (value) {window.location.href = "http://www.old.cfms.org";}
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+	window.config = {
+		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","communications":"Communications","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","communications":"Communications","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","login":"Se connecter","logout":"Se déconnecter"}]`),
+		lang: `fr`,
+		leadership_award_year: `2017-2018`,
+		env: `production`
+	}
+</script>
+
+<script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
+
+</body>
+</html>
+
