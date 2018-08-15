@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 
 
-
-
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
-	<!--Metadata-->
+    <!--Metadata-->
 <meta charset="utf-8">
 <title>Canadian Federation of Medical Students</title>
 <meta name="description" content="Canadian Federation of Medical Students">
@@ -75,13 +73,15 @@
 </style> 
 
 
-	<!--Page Specific Stylesheet-->
-	
-		<link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
-	
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+    <link rel="stylesheet" href="/stylesheets/who-we-are.css" />
+
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-
+	
 	
 		<div id="top-padding"></div>
 		<div id="top-bar" class="invert en">
@@ -130,6 +130,10 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
+						
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/what-we-do/global-health/heart-competencies.html">FR</a></li>
+						
+					
 				</ul>
 			</div>
 		</div>
@@ -141,65 +145,65 @@
 	<!--Page Specific Formatting-->
 	<script type="text/javascript">
 		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#news" ).classList.toggle("active");
+		document.querySelector( "#what-we-do" ).classList.toggle("active");
 	</script>
 
 	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		<div id="sidebar">
+	<div id="scroll">
+	    
+		
+		<span id="sidebar-title">Global Health</span>
+		<ul>
 
-		<!-- News Article -->
-   		<div id="aside">
-			
-				<h6>About the CFMS</h6>
-				The CFMS is an organization representing over 8,000 medical students from 14 Canadian medical student societies from coast to coast. We represent medical students to the public, to the federal government, and to national and international medical organizations.
-			
-		</div>
-        <div id="title">SGM 2017 Winnipeg - Call for Resolutions</div>
-        <info datetime="2017-03-07">
-        </info>
-    	<div id="date">March 07, 2017</div>
-        <div id="body">
-	        <p>Medical societies, meeting delegates and member medical students are invited to put forward resolutions for discussion and debate at the CFMS Spring General Meeting during the Members Resolutions Session. Resolutions should reflect an understanding of ongoing and past work, and resolutions must pertain to new work of the Federation. Members are encouraged to review resolutions submitted at the previous meeting, available on the CFMS website under the <a href="http://www.cfms.org/meetings/agm-2016-edmonton.html">AGM 2016 meeting</a> section.</p>
+			<li><a id="overview" href=".">Overview</a></li>
+			<li><a id="our-team" href="our-team.html">Our Team</a></li>
+			<li><a id="reports-and-documents" href="reports-and-documents.html">Reports and Documents</a></li>
 
-<p>Resolutions must be received by Dr Carl White Ulysse, CFMS SGM Chair, by e-mail at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#114;&#101;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;&#064;&#099;&#102;&#109;&#115;&#046;&#111;&#114;&#103;">resolutions@cfms.org</a>.</p>
+		</ul>
+		
+		<span id="sidebar-title">Resources</span>
+		<ul>
+			<li><a id="snapvocacy" href="snapvocacy.html">Snapvocacy</a></li>
+			<li><a id="heart" href="heart.html">HEART</a></li>
+			<div>
+				<li><a id="heart-competencies" style="padding-left:15px;" href="heart-competencies.html">HEART Competencies</a></li>
 
-<p><a href="/uploads/news-documents/Call for Resolutions - Detailed Document.pdf">Submission details, including associated guidelines, can be found here.</a></p>
-
-        </div>
-	</div>
-	    <!-- Other News -->
-        <div id="other-news">
-			<h1>Other News</h1>
-			<div id="other-news-list">
-				
-				
-					<div class="news-date">Aug 15</div>
-					<li>
-						<div class="news-link"><a href="/news/2018/08/15/strategic-initiative-fund.html">CFMS Strategic Initiatives Fund </a></div>
-					</li>
-				
-					<div class="news-date">Aug 08</div>
-					<li>
-						<div class="news-link"><a href="/news/2018/08/08/elections-call.html">CALL FOR NOMINATIONS: EXECUTIVE BOARD POSITIONS </a></div>
-					</li>
-				
-					<div class="news-date">Jul 25</div>
-					<li>
-						<div class="news-link"><a href="/news/2018/07/25/agm-2018-registration-and-travel-awards-now-open.html">AGM 2018 - Registration and Travel Awards NOW OPEN</a></div>
-					</li>
-				
-					<div class="news-date">Jul 24</div>
-					<li>
-						<div class="news-link"><a href="/news/2018/07/24/agm-call-for-resolutions-and-guide-to-resolution.html">Call for Resolutions: CFMS Annual General Meeting 2018</a></div>
-					</li>
-				
-					<div class="news-date">Jul 12</div>
-					<li>
-						<div class="news-link"><a href="/news/2018/07/12/joule-is-taking-two-students-to-tedmed-in-palm-springs-all-expenses-paid.html">Joule is taking two students to TEDMED in Palm Springs, all expenses paid</a></div>
-					</li>
-				
-				
+			<li><a id="international-exchanges" href="international-exchanges.html">International Exchanges</a></li>
+			<li><a id="global-health-education" href="global-health-education.html">Global Health Education</a></li>
+			<li><a id="partnerships" href="links-and-partnerships.html">Links And Partnerships</a></li>
+			<li><a id="reproductive-sexual-health" href="reproductive-sexual-health.html">Reproductive &amp; Sexual Health</a></li>
+			<li><a id="human-rights-peace" href="human-rights-peace.html">Human Rights &amp; Peace</a></li>
+			<div>
+				<li><a id="human-rights-peace-pocket-cards" style="padding-left:15px;" href="human-rights-peace-pocket-cards.html">Pocket Card Series</a></li>
+				<li><a id="climate-change-and-health" style="padding-left:15px;" href="climate-change-and-health.html">Climate Change &amp; Health</a></li>
+				<li><a id="advocacy-toolkit" style="padding-left:15px;" href="advocacy-toolkit.html">Advocacy Toolkit</a></li>
 			</div>
+			<li><a id="indigenous-health" href="indigenous-health.html">Indigenous Health</a></li>
+		</ul>
+		
+		
+		
+		
+	</div>
+</div>
+		<script type="text/javascript">
+			document.querySelector( "#heart-competencies" ).classList.toggle("sidebar-active");
+		</script>
+		<div class="editable" id="side-content" id="meeting-body">
+			<h1 id="page-title">Climate Change and Environmental Health Competencies</h1>
+			<p>Below is the list of curricular competencies HEART has developed, along with interactive activities and curricular adaptations to give examples of learning sessions for each competency.</p>
+			<p><img src="/images/page-images/heart/heart2.png"></p>
+			<p>We have received feedback from environmental health and medical education experts regarding these competencies, and updates are being continuously made to ensure adequacy for curricular implementation. Experts who have given feedback so far are:</p>
+			<ul>
+				<li>Dr. Courtney Howard, CAPE: Board President, Canadian Association of Physicians for the Environment</li>
+				<li>Dr. Laura Muldoon, University of Ottawa: Public Health, Prevention and Population Health</li>
+				<li>Dr. Jim Talbot, University of Alberta: School of Public Health and Faculty of Medicine</li>
+				<li>Dr. Atanu Sarkar, Memorial University: Community Health and Humanities</li>
+			</ul>
 		</div>
+	</div>
 	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -387,5 +391,3 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
 
 </body>
-</html>
-
