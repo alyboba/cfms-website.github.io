@@ -157,6 +157,7 @@ sidebar-global-health:
     indigenous-health: Indigenous Health
     heart: HEART
     snapvocacy: Snapvocacy
+    heart-competencies: HEART Competencies
   - lang: fr
     sidebar-title_1: Santé globale
     overview: Aperçu
@@ -174,6 +175,7 @@ sidebar-global-health:
     indigenous-health: Santé autochtone
     heart: HEART
     snapvocacy: Snapvocacy
+    heart-competencies: HEART Competencies
 sidebar-who-we-are:
   - lang: en
     sidebar-title_1: Who We Are
@@ -216,8 +218,6 @@ sidebar-who-we-are:
     organizational-timeline: Chronologie Organisationnelle
     photo-gallery: Galerie de photos
     student-spotlight: Projecteur étudiant
-
-
 sidebar-education:
   - lang: en
     sidebar-title_1: Education
@@ -366,7 +366,6 @@ sidebar-discounts:
     wellness-discounts: Wellness Discounts
     discounts-tax: Tax Services 
     medskl: MEDSKL QBank Access
-
 sidebar-databases:
   - lang: en
     sidebar-title_1: Databases
