@@ -1,6 +1,6 @@
 ---
 title: CFMS Statement Regarding Saudi Arabia-Canada Trade Dispute
-date: 2018-08-16 18:45:00
+date: 2018-08-16 00:00:00
 description: >-
   The Canadian Federation of Medical Students expresses concern over the recent
   announcement by Saudi Arabia that it will be withdrawing its scholarship
@@ -12,7 +12,7 @@ lang: en
 
 ### **Statement regarding Saudi Arabia - Canada Trade Dispute**
 
-**OTTAWA, August 16th, 2018** - The Canadian Federation of Medical Students expresses concern over the recent announcement by Saudi Arabia that it will be withdrawing its scholarship students from Canada, including medical trainees (including a small number of medical students and over 1000 residents). Medical residents are a core component of Canadian healthcare delivery. They provide direct patient care, overnight hospital coverage. Furthermore, they are teachers, educators and mentors for patients and medical students. This action will undoubtedly have a negative impact on medical education and healthcare delivery in Canada and will have detrimental effects on the medical trainees personally affected by this action. We join other national medical organizations in calling for a swift resolution to this political impasse.<br><br>For medical students personally affected by the announcement, we encourage you to reach out to your local Student Affairs & Wellness office. The CFMS Wellness Team is also prepared to offer support and resources to any such member.<br><br>We will continue to monitor this rapidly evolving situation closely.<br>&nbsp;
+**OTTAWA, August 16th, 2018** - The Canadian Federation of Medical Students expresses concern over the recent announcement by Saudi Arabia that it will be withdrawing its scholarship students from Canada, including medical trainees (including a small number of medical students and over 1000 residents). Medical residents are a core component of Canadian healthcare delivery. They provide direct patient care, overnight hospital coverage. Furthermore, they are teachers, educators and mentors for patients and medical students. This action will undoubtedly have a negative impact on medical education and healthcare delivery in Canada and will have detrimental effects on the medical trainees personally affected by this action. We join other national medical organizations in calling for a swift resolution to this political impasse.<br><br>For medical students personally affected by the announcement, we encourage you to reach out to your local Student Affairs & Wellness office. The CFMS Wellness Team is also prepared to offer support and resources to any such member.<br><br>We will continue to monitor this rapidly evolving situation closely.<br> 
 
 > About the CFMS
 >
