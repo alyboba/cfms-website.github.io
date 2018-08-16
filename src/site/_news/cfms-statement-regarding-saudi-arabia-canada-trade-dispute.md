@@ -1,6 +1,6 @@
 ---
 title: CFMS Statement Regarding Saudi Arabia-Canada Trade Dispute
-date: 2018-08-16 00:00:00
+date: 2018-08-16 15:00:00
 description: >-
   The Canadian Federation of Medical Students expresses concern over the recent
   announcement by Saudi Arabia that it will be withdrawing its scholarship
