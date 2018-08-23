@@ -6,15 +6,14 @@ description: >-
 lang: en
 ---
 
-**<u><span style="font-family:&quot;DengXian Light&quot;"></span></u>**
 
-To submit a completed application, or if there are questions or concerns, please email the VP Finance at [vpfinance@cfms.org](vpfinance@cfms.org). Applications must be submitted by **September 3, 2018 at 11:59pm in PDF form**.
+###### To submit a completed application, or if there are questions or concerns, please email the VP Finance at [vpfinance@cfms.org](vpfinance@cfms.org). Applications must be submitted by **September 3, 2018 at 11:59pm in PDF form**.
 
-### What is it?
+### **What is it?**
 
-As a portion of its annual operating budget, the Canadian Federation of Medical Students (CFMS), allocates an amount to its Strategic Initiatives Fund (SIF).  This fund is meant to finance initiatives and projects that arise after the budget for any given year has been approved.  While CFMS’ Student Initiative Grants fund individual initiatives at individual schools, the SIF aims to fund larger scale initiatives or projects across multiple geographies and CFMS portfolios.  The primary objective of this fund is to finance initiatives and projects which are clearly aligned with the organization’s strategic objectives, mission, vision, and values. 
+###### As a portion of its annual operating budget, the Canadian Federation of Medical Students (CFMS), allocates an amount to its Strategic Initiatives Fund (SIF).  This fund is meant to finance initiatives and projects that arise after the budget for any given year has been approved.  While CFMS’ Student Initiative Grants fund individual initiatives at individual schools, the SIF aims to fund larger scale initiatives or projects across multiple geographies and CFMS portfolios.  The primary objective of this fund is to finance initiatives and projects which are clearly aligned with the organization’s strategic objectives, mission, vision, and values. 
 
-### Eligibility Criteria
+### **Eligibility Criteria**
 
 * ###### Projects and / or initiatives to be funded must
  * ###### Be proposed and led by CFMS members (including CFMS Executives and National Officers);
@@ -28,7 +27,7 @@ As a portion of its annual operating budget, the Canadian Federation of Medical 
  * ###### Require funding in the current academic year
  * ###### Target a large number of students across all academic years.
 
-### How will winners be selected?
+### **Eligibility Criteria**
 
 * ###### Eligible applications will be selected for funding on the basis of a grading system which takes into account the following:
  * ###### Quality of written submission, include project feasibility
