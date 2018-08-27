@@ -1,11 +1,14 @@
 ---
 title: 'CFMS Call for Applications: National Wellness Officer'
 date: 2018-08-26 00:00:00
-description: Please fill in description here.
+description: >-
+  The CFMS is looking for talented and interested students to apply for the
+  National Wellness Officer position outlined below. Links to application forms
+  and descriptions are provided.
 lang: en
 ---
 
-The CFMS is looking for talented and interested students to apply for the national wellness officer position outlined below. Links to application forms and descriptions are provided below.
+The CFMS is looking for talented and interested students to apply for the National Wellness Officer position outlined below. Links to application forms and descriptions are provided below.
 
 HOW TO APPLY: Please complete the forms in the links and email your CV to &lt;ontario@cfms.org&gt; by **Friday, September 14th at 11:59 PM ET.** Please ensure your responses and CV are BLINDED to name, school, and city. Applications that are not blinded will NOT be considered.
 
