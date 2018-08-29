@@ -25,11 +25,11 @@ news_text_fr: >-
   href='http://www.old.cfms.org'>www.old.cfms.org</a>!
 news_text_url:
 featured_links:
-  - url: /meetings/sgm-2018-halifax.html
-    image_url_en: images/home-link-thumbs/cfms_sgm_halifax.jpg
-    image_url_fr: images/home-link-thumbs/cfms_sgm_halifax.jpg
-    text_en: 2018 CFMS Spring General Meeting
-    text_fr: 2018 CFMS Spring General Meeting
+  - url: /meetings/agm-2018-montreal.html
+    image_url_en: images/home-link-thumbs/cfms-agm-montreal-2018.png
+    image_url_fr: images/home-link-thumbs/cfms-agm-montreal-2018.png
+    text_en: 2018 CFMS Annual General Meeting
+    text_fr: 2018 CFMS Annual General Meeting
 
   - url: /news/2018/05/29/press-release-cfms-strongly-urges.html
     image_url_en: images/home-link-thumbs/cfms-strongly-urges.png
