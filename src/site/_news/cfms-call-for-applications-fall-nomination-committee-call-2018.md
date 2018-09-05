@@ -1,7 +1,10 @@
 ---
 title: 'CFMS Call for Applications: Fall Nomination Committee Call 2018'
 date: 2018-09-05 00:00:00
-description: Please fill in description here.
+description: >-
+  The CFMS is looking for talented and interested students to apply for National
+  Officer, Committee, and External Representative positions. Links to
+  application forms and descriptions are provided.
 lang: en
 ---
 
@@ -13,78 +16,78 @@ National Officer IT Jr. (Application [here](https://goo.gl/forms/dccCJbbBJYZUHbV
 
 National Officer Education (Application [here](https://goo.gl/forms/raIJFFs02syv87QC2){: target="_blank"})
 
-National Officer Research Jr. (Application [here](https://goo.gl/forms/oVOsDZfrr8p5a9Ff1){: target="_blank"}) &nbsp;
+National Officer Research Jr. (Application [here](https://goo.gl/forms/oVOsDZfrr8p5a9Ff1){: target="_blank"})  
 
 National Officer Services (Application [here](https://goo.gl/forms/lksioFUxmdCDDvt62){: target="_blank"})
 
-&nbsp;
+ 
 
-Please see Committee and External Representative descriptions [here](https://tinyurl.com/ybetjatr){: target="_blank"}&nbsp;and the list of available positions below
+Please see Committee and External Representative descriptions [here](https://tinyurl.com/ybetjatr){: target="_blank"} and the list of available positions below
 
-Committee and External Representative (Application [here](https://goo.gl/forms/7WQ0WmLpy9Id3Diw1){: target="_blank"})&nbsp;
+Committee and External Representative (Application [here](https://goo.gl/forms/7WQ0WmLpy9Id3Diw1){: target="_blank"}) 
 
 Applications are due **September 30th, 2018** at **11:59pm EST**
 
-&nbsp;
+ 
 
 Positions Available:
 
 Committee Positions (number of available positions)
 
-- Governance Committee (2)
+* Governance Committee (2)
 
-- Communications Committee
+* Communications Committee
 
-&nbsp; &nbsp; &nbsp; - Communiqu&eacute; Editor (2)
+      - Communiqué Editor (2)
 
-&nbsp; &nbsp; &nbsp; - Social Media (2)
+      - Social Media (2)
 
-&nbsp; &nbsp; &nbsp; - Website Editor/IT (2)
+      - Website Editor/IT (2)
 
-&nbsp; &nbsp; &nbsp; - Media Engagement (variable)
+      - Media Engagement (variable)
 
-&nbsp; &nbsp; &nbsp; - CFMS Annual Review Editor (1)
+      - CFMS Annual Review Editor (1)
 
-- Education Committee
+* Education Committee
 
-&nbsp; &nbsp; &nbsp; - Health Human Resources (1)
+      - Health Human Resources (1)
 
-&nbsp; &nbsp; &nbsp; - Publications (2)
+      - Publications (2)
 
-&nbsp; &nbsp; &nbsp; - Accreditation (1)
+      - Accreditation (1)
 
-&nbsp; &nbsp; &nbsp; - Policy Liaison (1)
+      - Policy Liaison (1)
 
-&nbsp; &nbsp; &nbsp; - Inter-professional Education (1)
+      - Inter-professional Education (1)
 
-&nbsp; &nbsp; &nbsp; - Portal Liaison (1)
+      - Portal Liaison (1)
 
-&nbsp; &nbsp; &nbsp; - CITAC (Clinician Investigator Trainee Association of Canada) Rep (1)
+      - CITAC (Clinician Investigator Trainee Association of Canada) Rep (1)
 
-&nbsp; &nbsp; &nbsp; - Choosing Wisely Rep (1)
+      - Choosing Wisely Rep (1)
 
-- Finance Committee (variable)
+* Finance Committee (variable)
 
-- Strategic Initiatives Fund Committee (variable)
+* Strategic Initiatives Fund Committee (variable)
 
-- Committee on Health Policy (variable)
+* Committee on Health Policy (variable)
 
-- Rapid Response Team
+* Rapid Response Team
 
-&nbsp; &nbsp; &nbsp; - Team Lead (2)
+      - Team Lead (2)
 
-&nbsp; &nbsp; &nbsp; - Team Member (variable)
+      - Team Member (variable)
 
-- Day of Action 2019 Topic Research Committee (variable)
+* Day of Action 2019 Topic Research Committee (variable)
 
-- Wellness Committee (4)
+* Wellness Committee (4)
 
 External Representative Positions (number of available positions)
 
-- CMAJ Blog Editor - English (1)
+* CMAJ Blog Editor - English (1)
 
-- CFMS Rep to AFMC Student Portal Steering Committee (1)
+* CFMS Rep to AFMC Student Portal Steering Committee (1)
 
-- CFMS Rep to AFMC eHealth Subcomittee (1)
+* CFMS Rep to AFMC eHealth Subcomittee (1)
 
-<br>&nbsp;
+<br>
