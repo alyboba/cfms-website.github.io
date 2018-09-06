@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 
+
+
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
@@ -72,22 +74,14 @@
     .animate { visibility: hidden; }
 </style> 
 
-	
-		
-			<meta name="description" content="We are an organization representing over 8,000 medical students from 15 Canadian medical student societies from coast to coast. We represent medical students to the public, to the federal government, and to national and international medical organizations.">
-		
-	
-		
-	
 
 	<!--Page Specific Stylesheet-->
 	
-		<link rel="stylesheet" href="https://www.cfms.org/stylesheets/home.css">
+		<link rel="stylesheet" href="https://www.cfms.org/stylesheets/news.css">
 	
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-	<div id="home-header">
-		
+
 	
 		<div id="top-padding"></div>
 		<div id="top-bar" class="invert en">
@@ -136,10 +130,6 @@
 						<li id="login-button-wrapper"><a href='' onclick='return false' id="login-button" class="login-modal">Login</a></li>
 					
 					
-						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/">FR</a></li>
-						
-					
 				</ul>
 			</div>
 		</div>
@@ -147,149 +137,71 @@
 
 	
 
-
-		<!--Hide the non-inverted logo and invert the top bar colours-->
-		<script type="text/javascript">
-			document.querySelector( "#top-bar" ).classList.toggle("invert");
-			document.querySelector( "#logo" ).classList.toggle("hidden");
-		</script>
-
-		
-			
-				<div id="home-title">Canadian Federation of Medical&nbsp;Students</div>
-				<div id="home-subtitle">
-					We are an organization representing over 8,000 medical students from 15 Canadian medical student societies from coast to coast. We represent medical students to the public, to the federal government, and to national and international medical organizations.
-					<div class="button">
-						<a href="who-we-are/about-us.html">
-							
-								Learn more
-							
-						</a>
-					</div>
-				</div>
-			
-		
-			
-		
-	</div>
-
-	<!-- Option News Strip -->
 	
-		<div id="news-strip">
-			
-				<a href="">
-			
-					<i class="fa fa-exclamation-circle" style="padding-right:5px;"></i>
-					
-						Found something wrong with the website? Please see our <a href='https://github.com/cfms-website/cfms-website.github.io/issues'>guide on submitting a ticket</a>.
-					
-				</a>
-		</div>
-	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#news" ).classList.toggle("active");
+	</script>
 
-	<div id="featured-links">
-		<h1>
+	<div class="content">
+
+		<!-- News Article -->
+   		<div id="aside">
 			
-				What's new?
-			
-		</h1>
-		<div class="flex-wrapper">
-			
-				<a href="/meetings/agm-2018-montreal.html">
-					
-						<div class="featured-link" style="background: url(/images/home-link-thumbs/cfms-agm-montreal-2018.png) no-repeat center center; background-size:cover">
-						</div>
-						<div class="featured-link-text">2018 CFMS Annual General Meeting</div>
-					
-				</a>
-			
-				<a href="/news/2018/05/29/press-release-cfms-strongly-urges.html">
-					
-						<div class="featured-link" style="background: url(/images/home-link-thumbs/cfms-strongly-urges.png) no-repeat center center; background-size:cover">
-						</div>
-						<div class="featured-link-text">May 29th Press Release</div>
-					
-				</a>
-			
-				<a href="/resources/student-finances.html">
-					
-						<div class="featured-link" style="background: url(/images/home-link-thumbs/cfms-co-brand-logo.jpg) no-repeat center center; background-size:cover">
-						</div>
-						<div class="featured-link-text">Student Financial Advice from MD Financial Management</div>
-					
-				</a>
+				<h6>About the CFMS</h6>
+				The CFMS is an organization representing over 8,000 medical students from 14 Canadian medical student societies from coast to coast. We represent medical students to the public, to the federal government, and to national and international medical organizations.
 			
 		</div>
-	</div>
+        <div id="title">Residency Match Book 2018-2019: Now Available</div>
+        <info datetime="2018-09-05">
+        </info>
+    	<div id="date">September 05, 2018</div>
+        <div id="body">
+	        <p>The CFMS is proud to announce the publication of the 2018-2019 Match Book, a guide to prepare you for the Canadian Residency Match.</p>
 
-	<!-- Displays the homepage banner -->
-	
-	<div id="home-columns">
-		<div id="recent-news">
-			<h1>
-				
-					Recent news
-				
-				<span id="more-news-button" class="button"><a href="news/archives/">See All Articles</a></span>
-			</h1>
-			<div id="recent-news-list">
-				
-				
+<p>The Match Book is a joint initiative of the CFMS and CaRMS designed to educate medical students about the Match and assist with career planning.<br /><br />Access the 2018-2019 Match Book here.</p>
+
+<p>We are proud to announce that this year, the Match Book will also be available in French. Stay tuned for the French edition, which will be posted in the next few days.</p>
+
+<p><img src="blob:https://app.cloudcannon.com/de738833-eb11-1b49-9d53-49a981e0e449" alt="" /></p>
+
+        </div>
+	</div>
+	    <!-- Other News -->
+        <div id="other-news">
+			<h1>Other News</h1>
+			<div id="other-news-list">
 				
 				
 					<div class="news-date">Sep 05</div>
 					<li>
 						<div class="news-link"><a href="/news/2018/09/05/cfms-announces-the-publication-of-the-2018-2019-match-book.html">Residency Match Book 2018-2019: Now Available</a></div>
-						<div class="news-desc">The CFMS is proud to announce the publication of the 2018-2019 Match Book, a guide to prepare you for the Canadian Residency Match.</div>
 					</li>
-				
-				
 				
 					<div class="news-date">Aug 26</div>
 					<li>
 						<div class="news-link"><a href="/news/2018/08/26/cfms-call-for-nominations-summer-call-2018.html">CFMS Call for Applications: National Wellness Officer</a></div>
-						<div class="news-desc">The CFMS is looking for talented and interested students to apply for the National Wellness Officer position outlined below. Links to application forms and descriptions are provided.</div>
 					</li>
-				
-				
 				
 					<div class="news-date">Aug 16</div>
 					<li>
 						<div class="news-link"><a href="/news/2018/08/16/cfms-statement-regarding-saudi-arabia-canada-trade-dispute.html">CFMS Statement Regarding Saudi Arabia-Canada Trade Dispute</a></div>
-						<div class="news-desc">The Canadian Federation of Medical Students expresses concern over the recent announcement by Saudi Arabia that it will be withdrawing its scholarship students from Canada, including medical trainees.</div>
 					</li>
-				
-				
 				
 					<div class="news-date">Aug 15</div>
 					<li>
 						<div class="news-link"><a href="/news/2018/08/15/strategic-initiative-fund.html">CFMS Strategic Initiatives Fund </a></div>
-						<div class="news-desc">Strategic Initiatives Fund application cycle now open. Applications are due September 3 at 11:59pm to vpfinance@cfms.org. Review the attached document to find out more information. Any questions, please send to vpfinance@cfms.org.</div>
 					</li>
-				
-				
 				
 					<div class="news-date">Aug 08</div>
 					<li>
 						<div class="news-link"><a href="/news/2018/08/08/elections-call.html">CALL FOR NOMINATIONS: EXECUTIVE BOARD POSITIONS </a></div>
-						<div class="news-desc">Interested individuals must complete this online form by Friday September 21st at 5pm Eastern Time. Nominations will close strictly at this time.</div>
 					</li>
 				
 				
 			</div>
 		</div>
-		<div id="sponsors">
-			<h1>				
-				
-					Sponsored by
-				
-				<span style="opacity:0.5">:</span>
-			</h1>
-			<div id="sponsor-logo">
-				<a href="https://mdm.ca/"><img src="/images/mdfm_en_fr.jpg"></img></a>
-			</div>
-		</div>
-	</div>
 	<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
@@ -478,3 +390,4 @@ $('.redirect-modal').click(function(){
 
 </body>
 </html>
+
