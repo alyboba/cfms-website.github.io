@@ -18,4 +18,4 @@ Questions can be directed to &lt;ontario@cfms.org&gt;.
 
 [National Wellness Officer](https://docs.google.com/document/d/1_2cOCGXo-bEFe6T4Rjz-m1wOkI3A-VPW97eR-C4GI7o/edit?usp=sharing){: target="_blank"} DUE **Friday September 14th (11:59PM EST)**
 
-[Application link](https://goo.gl/forms/8c0jobri315HX4Ij1){: target="_blank"}
+[Application link](https://goo.gl/forms/ZiXgMxpgp61zy4g83){: target="_blank"}
