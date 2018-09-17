@@ -1,0 +1,66 @@
+---
+title: Governance Structure
+sitemap:
+  priority: 0.6
+  changefreq: monthly
+  role: VP Communications
+---
+
+<!DOCTYPE html>
+
+
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<head>
+	{% include head.html %}
+
+	<!--Page Specific Stylesheet-->
+	<link rel="stylesheet" href="/stylesheets/who-we-are.css" />
+	<link rel="stylesheet" href="/stylesheets/litetooltip.css" />
+
+	<link href="../../uploads/pocket-cards/environmental-health.pdf" rel="stylesheet" />
+
+</head>
+<body ng-app="authApp" ng-controller="AuthController">
+	{% include nav.html %}
+	
+	<!--Page Specific Formatting-->
+	<script type="text/javascript">
+		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+		document.querySelector( "#who-we-are" ).classList.toggle("active");
+	</script>
+
+	<div class="content">
+		<!-- Displays the sidebar and emphasizes the active page -->
+		{% include sidebar-who-we-are.html %}
+		<script type="text/javascript">
+			document.querySelector( "#governance-structure" ).classList.toggle("sidebar-active");
+		</script>
+		<div id="governance-structure-content">
+			<h1 id="page-title" class="editable">Governance Structure</h1>
+			<div class="editable">
+				<h2><strong>This is a Test</strong></h2>
+				<div class="litetooltip-hotspot-wrapper" style="max-width: 1200px">
+					<div class="litetooltip-hotspot-container" style="padding-bottom: 61.16666666666667%">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/San_Francisco%2C_California._June_2017_cropped.jpg/1200px-San_Francisco%2C_California._June_2017_cropped.jpg" data-width="1200" data-height="734" />
+						<div class="hotspot blink" style="top: 36.23978201634878%; left: 28.416666666666668%; width: 37.833333333333336%; height: 28.065395095367844%; background: #cc0000; border: 1px solid #cc0000; border-radius: 20px; opacity: 0.8" id="hotspot_1537208985378" data-location="top" data-template="" data-templatename="" data-opacity="0.8" data-backcolor="#000000" data-textcolor="#ffffff" data-textalign="center" data-margin="5" data-padding="10" data-width="0" data-delay="0" data-trigger="hover" data-issticky="true" data-hotspot-x="28.416666666666668" data-hotspot-y="36.23978201634878" data-hotspot-blink="true" data-hotspot-bgcolor="#cc0000" data-hotspot-bordercolor="#cc0000" data-hotspot-borderradius="20">
+							<div class="data-container">Hello
+								This is a test</div>
+						</div>
+
+					</div>
+				</div>
+
+
+			</div>
+				</div>
+			</div>
+		
+	
+	{% include footer.html %}
+	<script type="text/javascript" src="js/LiteTooltip.js">
+        $('.litetooltip-hotspot-wrapper .hotspot').each(function () {
+            $(this).LiteTooltip({ title: $(this).find('.data-container').html() });
+        });
+	</script>
+</body>
