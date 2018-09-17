@@ -77,8 +77,9 @@
 	<link rel="stylesheet" href="/stylesheets/who-we-are.css" />
 	<link rel="stylesheet" href="/stylesheets/litetooltip.css" />
 
-	<link href="../../js/litetooltip.js" rel="stylesheet" />
-	<link href="../../js/jquery-3.3.1.min.js" rel="stylesheet" />
+	<script type="text/javascript" src="../../js/litetooltip.js"></script>
+	<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+
 
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
@@ -183,30 +184,27 @@
 		
 		
 	</div>
-</div>
+</div> 
 		<script type="text/javascript">
-			document.querySelector( "#governance-structure" ).classList.toggle("sidebar-active");
+		           document.querySelector( "#governance-structure" ).classList.toggle("sidebar-active");
 		</script>
 		<div id="governance-structure-content">
-			<h1 id="page-title" class="editable">Governance Structure</h1>
+			<h1 class="editable" id="page-title">Governance Structure</h1>
 			<div class="editable">
 				<h2><strong>This is a Test</strong></h2>
 				<div class="litetooltip-hotspot-wrapper" style="max-width: 1200px">
 					<div class="litetooltip-hotspot-container" style="padding-bottom: 61.16666666666667%">
-						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/San_Francisco%2C_California._June_2017_cropped.jpg/1200px-San_Francisco%2C_California._June_2017_cropped.jpg" data-width="1200" data-height="734" />
-						<div class="hotspot blink" style="top: 36.23978201634878%; left: 28.416666666666668%; width: 37.833333333333336%; height: 28.065395095367844%; background: #cc0000; border: 1px solid #cc0000; border-radius: 20px; opacity: 0.8" id="hotspot_1537208985378" data-location="top" data-template="" data-templatename="" data-opacity="0.8" data-backcolor="#000000" data-textcolor="#ffffff" data-textalign="center" data-margin="5" data-padding="10" data-width="0" data-delay="0" data-trigger="hover" data-issticky="true" data-hotspot-x="28.416666666666668" data-hotspot-y="36.23978201634878" data-hotspot-blink="true" data-hotspot-bgcolor="#cc0000" data-hotspot-bordercolor="#cc0000" data-hotspot-borderradius="20">
-							<div class="data-container">Hello
-								This is a test</div>
+						<img data-height="734" data-width="1200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/San_Francisco%2C_California._June_2017_cropped.jpg/1200px-San_Francisco%2C_California._June_2017_cropped.jpg">
+						<div class="hotspot blink" data-backcolor="#000000" data-delay="0" data-hotspot-bgcolor="#cc0000" data-hotspot-blink="true" data-hotspot-bordercolor="#cc0000" data-hotspot-borderradius="20" data-hotspot-x="28.416666666666668" data-hotspot-y="36.23978201634878" data-issticky="true" data-location="top" data-margin="5" data-opacity="0.8" data-padding="10" data-template="" data-templatename="" data-textalign="center" data-textcolor="#ffffff" data-trigger="hover" data-width="0" id="hotspot_1537208985378" style="top: 36.23978201634878%; left: 28.416666666666668%; width: 37.833333333333336%; height: 28.065395095367844%; background: #cc0000; border: 1px solid #cc0000; border-radius: 20px; opacity: 0.8">
+							<div class="data-container">
+								Hello This is a test
+							</div>
 						</div>
-
 					</div>
 				</div>
-
-
 			</div>
-				</div>
-			</div>
-		
+		</div>
+	</div>		
 	
 	<script type="text/javascript">
 	function getEmail(username){
