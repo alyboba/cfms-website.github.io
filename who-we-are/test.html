@@ -77,13 +77,8 @@
 	<link rel="stylesheet" href="/stylesheets/who-we-are.css" />
 	<link rel="stylesheet" href="/stylesheets/litetooltip.css" />
 
-	<script type="text/javascript" src="../../js/litetooltip.js"></script>
-	<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="../../js/litetooltip.js">
-        $('.litetooltip-hotspot-wrapper .hotspot').each(function () {
-            $(this).LiteTooltip({ title: $(this).find('.data-container').html() });
-        });
-	</script>
+	<script type="text/javascript" src="../js/litetooltip.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
@@ -397,4 +392,10 @@ $('.redirect-modal').click(function(){
 <script type="text/javascript" src="https://www.cfms.org/js/bundle.js"></script>
 
 	
+	<script type="text/javascript" src="../js/litetooltip.js">
+        $('.litetooltip-hotspot-wrapper .hotspot').each(function () {
+            $(this).LiteTooltip({ title: $(this).find('.data-container').html() });
+        });
+	</script>
+
 </body>
