@@ -20,7 +20,11 @@ sitemap:
 
 	<script type="text/javascript" src="../../js/litetooltip.js"></script>
 	<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
-
+	<script type="text/javascript" src="../../js/litetooltip.js">
+        $('.litetooltip-hotspot-wrapper .hotspot').each(function () {
+            $(this).LiteTooltip({ title: $(this).find('.data-container').html() });
+        });
+	</script>
 
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
@@ -57,9 +61,5 @@ sitemap:
 	</div>		
 	
 	{% include footer.html %}
-	<script type="text/javascript" src="../../js/litetooltip.js">
-        $('.litetooltip-hotspot-wrapper .hotspot').each(function () {
-            $(this).LiteTooltip({ title: $(this).find('.data-container').html() });
-        });
-	</script>
+	
 </body>
