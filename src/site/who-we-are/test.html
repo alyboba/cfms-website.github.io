@@ -20,7 +20,7 @@ sitemap:
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
 	<script type="text/javascript" src="../js/litetooltip.js"></script>
-	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.9.0.min.js"></script>
 	{% include nav.html %}
 	
 	<!--Page Specific Formatting-->
@@ -61,9 +61,9 @@ sitemap:
 	{% include footer.html %}
 	
 	<script type="text/javascript" src="../js/litetooltip.js">
-        $('.litetooltip-hotspot-wrapper .hotspot').each(function () {
-            $(this).LiteTooltip({ title: $(this).find('.data-container').html() });
-        });
+		$('.litetooltip-hotspot-wrapper .hotspot').each(function () { 
+		    $(this).LiteTooltip({ title: $(this).find('.data-container').html() });
+		 });
 	</script>
 
 </body>
