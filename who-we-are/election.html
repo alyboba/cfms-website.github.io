@@ -4,7 +4,7 @@
 <!--[if IE 8 ]> <html class="ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
 <head>
-	<!--Metadata-->
+    <!--Metadata-->
 <meta charset="utf-8">
 <title>Canadian Federation of Medical Students</title>
 <meta name="description" content="Canadian Federation of Medical Students">
@@ -73,11 +73,15 @@
 </style> 
 
 
-	<!--Page Specific Stylesheet-->
-	<link rel="stylesheet" href="/stylesheets/who-we-are.css" />
+    <!--Page Specific Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/what-we-do.css" />
+    <link rel="stylesheet" href="/stylesheets/who-we-are.css" />
+
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 </head>
 <body ng-app="authApp" ng-controller="AuthController">
-	
+
 	
 		<div id="top-padding"></div>
 		<div id="top-bar" class="invert en">
@@ -127,7 +131,7 @@
 					
 					
 						
-							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/who-we-are/christina.html">FR</a></li>
+							<li id="lang-toggle"><a id="en" class="current-lang" href="#">EN</a> / <a id="fr" href="/fr/who-we-are/election.html">FR</a></li>
 						
 					
 				</ul>
@@ -137,41 +141,47 @@
 
 	
 
-	
-	<!--Page Specific Formatting-->
-	<script type="text/javascript">
-		document.querySelector( "#logo-invert" ).classList.toggle("hidden");
-		document.querySelector( "#who-we-are" ).classList.toggle("active");
-	</script>
 
-	<div class="content">
-		<!-- Displays the sidebar and emphasizes the active page -->
-		<div id="sidebar">
+<!--Page Specific Formatting-->
+<script type="text/javascript">
+    document.querySelector( "#logo-invert" ).classList.toggle("hidden");
+    document.querySelector( "#what-we-do" ).classList.toggle("active");
+</script>
+
+
+<div class="content">
+    <!-- Displays the sidebar and emphasizes the active page -->
+    <div id="sidebar">
 	<div id="scroll">
 	    
 		
-		<span id="sidebar-title">Election</span>
+		<span id="sidebar-title">Global Health</span>
 		<ul>
-			<li><a id="executives-officers" href=".">Executives &amp; Officers</a></li>
-			<li><a id="member-schools" href="member-schools.html">Member Schools</a></li>
-			<li><a id="cfms-representatives" href="cfms-representatives.html">CFMS Representatives</a></li>
-			<li><a id="cfms-at-your-school" href="cfms-at-your-school.html">CFMS at your School</a></li>
-			<li><a id="partner-organizations" href="partner-organizations.html">Partner Organizations</a></li>
-			<li><a id="alumni" href="alumni.html">Alumni</a></li>
-			<li><a id="about-us" href="about-us.html">About Us</a></li>
+
+			<li><a id="overview" href=".">Overview</a></li>
+			<li><a id="our-team" href="our-team.html">Our Team</a></li>
+			<li><a id="reports-and-documents" href="reports-and-documents.html">Reports and Documents</a></li>
+
 		</ul>
-		<span id="sidebar-title">Nominees</span>
+		
+		<span id="sidebar-title">Resources</span>
 		<ul>
-			<li><a id="governance-structure" href="governance-structure.html">Governance Structure</a></li>
-			<li><a id="internal-policy-bylaws" href="bylaws-internal-policy.html">Bylaws &amp; Internal Policy</a></li>
-		</ul>
-		<span id="sidebar-title">More Information</span>
-		<ul>
-			<li><a id="student-spotlight" href="/news/student-spotlight/">Student Spotlight</a></li>
-			<li><a id="history" href="history.html">History</a></li>
-			<li><a id="organizational-timeline" href="organizational-timeline.html">Organizational Timeline</a></li>
-			<li><a id="external-committees" href="external-committees.html">External Commmittees</a></li>
-			<li><a id="photo-gallery" href="photo-gallery.html">Photo Gallery</a></li>
+			<li><a id="snapvocacy" href="snapvocacy.html">Snapvocacy</a></li>
+			<li><a id="heart" href="heart.html">HEART</a></li>
+			<div>
+				<li><a id="heart-competencies" style="padding-left:15px;" href="heart-competencies.html">HEART Competencies</a></li>
+
+			<li><a id="international-exchanges" href="international-exchanges.html">International Exchanges</a></li>
+			<li><a id="global-health-education" href="global-health-education.html">Global Health Education</a></li>
+			<li><a id="partnerships" href="links-and-partnerships.html">Links And Partnerships</a></li>
+			<li><a id="reproductive-sexual-health" href="reproductive-sexual-health.html">Reproductive &amp; Sexual Health</a></li>
+			<li><a id="human-rights-peace" href="human-rights-peace.html">Human Rights &amp; Peace</a></li>
+			<div>
+				<li><a id="human-rights-peace-pocket-cards" style="padding-left:15px;" href="human-rights-peace-pocket-cards.html">Pocket Card Series</a></li>
+				<li><a id="climate-change-and-health" style="padding-left:15px;" href="climate-change-and-health.html">Climate Change &amp; Health</a></li>
+				<li><a id="advocacy-toolkit" style="padding-left:15px;" href="advocacy-toolkit.html">Advocacy Toolkit</a></li>
+			</div>
+			<li><a id="indigenous-health" href="indigenous-health.html">Indigenous Health</a></li>
 		</ul>
 		
 		
@@ -179,21 +189,29 @@
 		
 	</div>
 </div>
-		<script type="text/javascript">
-			document.querySelector( "#christina" ).classList.toggle("sidebar-active");
-		</script>
-		<div id="governance-structure-content">
-			<h1 id="page-title" class="editable">Christina Schweitzer</h1>
-			<div class="editable">
-				<p><strong>Click <a href="/files/sgm-2018-election/Schweitzer nomination.pdf">here</a> to download the PDF version of the electoral platform.</strong></p>
-				<p>
-					<img src="/files/sgm-2018-election/christina-1.png">
-					<img src="/files/sgm-2018-election/christina-2.png">
-					<img src="/files/sgm-2018-election/christina-3.png">
-				</p>	
-			</div>
-		</div>	</div>
-	<script type="text/javascript">
+    <script type="text/javascript">
+        document.querySelector( "#snapvocacy" ).classList.toggle("sidebar-active");
+    </script>
+    
+    <div id="side-content" id="meeting-body">
+        <h1 id="page-title">Snapvocacy: Stories from the Front Lines</h1>
+
+        <ul class="collapsible">
+            <li class="active">
+                <div class="collapsible-header editable"><span class="arrow-down active"></span>Week 8: Resiliency Part II</div>
+                <div class="collapsible-body editable">
+                    <p style="margin-bottom: 0px;"><img src="/images/snapvocacy/week-8/Week 8 - Photo 2.jpg"></a></p>
+                    <p>
+                        fdafasfas
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script type="text/javascript">
 	function getEmail(username){
 		var hostname = "cfms.org";
 		var linktext = username + "@" + hostname;
@@ -370,7 +388,7 @@ $('.redirect-modal').click(function(){
 </script>
 <script type="text/javascript">
 	window.config = {
-		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","communications":"Communications","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","login":"Login","logout":"Logout"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","communications":"Communications","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","login":"Se connecter","logout":"Se déconnecter"}]`),
+		nav: JSON.parse(`[{"lang":"en","acronym":"CFMS","title":"Canadian Federation of<br>Medical Students","lang_path":null,"who_we_are":"Who we are","what_we_do":"What we do","advocacy":"Advocacy","education":"Education","global_health":"Global Health","student_affairs":"Student Affairs","communications":"Communications","resources":"Resources","meetings":"Meetings","members":"Members","news":"News","login":"Login","logout":"Logout","elections":"Elections"},{"lang":"fr","acronym":"FEMC","title":"Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada","lang_path":"/fr","who_we_are":"Qui sommes-nous?","what_we_do":"Que faisons-nous?","advocacy":"Représentation","education":"Éducation","global_health":"Santé mondiale","student_affairs":"Affaires étudiantes","communications":"Communications","resources":"Ressources","meetings":"Réunions","members":"Membres","news":"Nouvelles","login":"Se connecter","logout":"Se déconnecter","elections":"Elections"}]`),
 		lang: `en`,
 		leadership_award_year: `2017-2018`,
 		env: `production`
