@@ -9,7 +9,6 @@ sponsored_by_fr: Financé par
 nav:
   - lang: en
     acronym: CFMS
-    # president-election: Presidential Election
     title: Canadian Federation of<br>Medical Students
     lang_path:
     who_we_are: Who we are
@@ -26,8 +25,8 @@ nav:
     # human-of-medicine: Humans of Medicine
     login: Login
     logout: Logout
+    elections: Elections
   - lang: fr
-    # president-election: Presidential Election
     acronym: FEMC
     title: Fédération des étudiants<br>et des étudiantes en<br>médecine du Canada
     lang_path: /fr
@@ -45,6 +44,7 @@ nav:
     # human-of-medicine: Humains de la Médecine
     login: Se connecter
     logout: Se déconnecter
+    elections: Elections
 financial_resources:
   - lang: en
     student_services: Services for Students
@@ -195,11 +195,8 @@ sidebar-who-we-are:
     organizational-timeline: Organizational Timeline
     photo-gallery: Photo Gallery
     student-spotlight: Student Spotlight
-    yipeng-ge: Yipeng Ge
-    stephanie-smith: Stephanie Smith
     overview: Overview
-    sidebar-title_1: Election
-    sidebar-title_2: Nominees
+    elections: Elections
   - lang: fr
     sidebar-title_1: Qui sommes-nous?
     executives-officers: Conseil exécutif et directeurs
@@ -218,6 +215,7 @@ sidebar-who-we-are:
     organizational-timeline: Chronologie Organisationnelle
     photo-gallery: Galerie de photos
     student-spotlight: Projecteur étudiant
+    elections: Elections
 sidebar-education:
   - lang: en
     sidebar-title_1: Education
