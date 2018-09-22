@@ -76,6 +76,8 @@ export default class Router extends Middleware {
         route('/sitemap.html', SiteMap);
 
         route('/what-we-do/global-health/snapvocacy.html', Snapvocacy);
+        route('/who-we-are/elections.html', Snapvocacy);
+
     }
 
     refresh() {
