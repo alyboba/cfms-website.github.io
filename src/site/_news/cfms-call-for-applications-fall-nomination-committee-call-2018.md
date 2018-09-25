@@ -1,6 +1,6 @@
 ---
 title: 'CFMS Call for Applications: Fall Nomination Committee Call 2018'
-date: 2018-09-26 00:00:00
+date: 2018-09-25 00:00:00
 description: >-
   The CFMS is looking for talented and interested students to apply for National
   Officer, Committee, and External Representative positions. Links to
