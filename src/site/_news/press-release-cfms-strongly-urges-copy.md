@@ -7,7 +7,7 @@ lang: en
 
 **FOR IMMEDIATE RELEASE**
 
-**Montreal, Qc &nbsp;September 23, 2018** - The Canadian Federation of Medical Students (CFMS) is proud to announcement the election of the 2018-19 Board of Directors by the membership at our 41stAnnual General Meeting (AGM).
+**Montreal, Qc &nbsp;September 23, 2018** - The Canadian Federation of Medical Students (CFMS) is proud to announcement the election of the 2018-19 Board of Directors by the membership at our 41st Annual General Meeting (AGM).
 
 CFMS congratulates all candidates who stood for nomination.&nbsp;
 
