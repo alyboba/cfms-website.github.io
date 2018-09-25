@@ -84,4 +84,4 @@ Rishi Sharma, McMaster University
 >
 > [PDF Of Press Release: Announcement of 2018-19 CFMS Board](/CFMS 2018-19 Board PR Announcement-1.pdf)
 
-&nbsp;
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUCB1jWLVq1X8ABv4C/lvjUcgAAAAASUVORK5CYII=){: .cms-image-placeholder}
