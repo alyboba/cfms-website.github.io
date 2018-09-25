@@ -16,78 +16,96 @@ National Officer IT Jr. (Application [here](https://goo.gl/forms/dccCJbbBJYZUHbV
 
 National Officer Education (Application [here](https://goo.gl/forms/raIJFFs02syv87QC2){: target="_blank"})
 
-National Officer Research Jr. (Application [here](https://goo.gl/forms/oVOsDZfrr8p5a9Ff1){: target="_blank"})  
+National Officer Research Jr. (Application [here](https://goo.gl/forms/oVOsDZfrr8p5a9Ff1){: target="_blank"}) &nbsp;
 
 National Officer Services (Application [here](https://goo.gl/forms/lksioFUxmdCDDvt62){: target="_blank"})
 
- 
+&nbsp;
 
-Please see Committee and External Representative descriptions [here](https://tinyurl.com/ybetjatr){: target="_blank"} and the list of available positions below
+Please see Committee and External Representative descriptions [here](https://tinyurl.com/ybetjatr){: target="_blank"}&nbsp;and the list of available positions below
 
-Committee and External Representative (Application [here](https://goo.gl/forms/7WQ0WmLpy9Id3Diw1){: target="_blank"}) 
+Committee and External Representative (Application [here](https://goo.gl/forms/7WQ0WmLpy9Id3Diw1){: target="_blank"})&nbsp;
 
-Applications are due **September 30th, 2018** at **11:59pm EST**
+Applications are due **October 21st, 2018** at **11:59pm EST**
 
- 
+&nbsp;
 
 Positions Available:
 
-Committee Positions (number of available positions)
+- Governance Committee (4)
 
-* Governance Committee (2)
+- Communications Committee
 
-* Communications Committee
+&nbsp; &nbsp; &nbsp; - Communiqu&eacute; Editor (2)
 
-      - Communiqué Editor (2)
+&nbsp; &nbsp; &nbsp; - Social Media (2)
 
-      - Social Media (2)
+&nbsp; &nbsp; &nbsp; - Website Editor/IT (2)
 
-      - Website Editor/IT (2)
+&nbsp; &nbsp; &nbsp; - Media Engagement (variable)
 
-      - Media Engagement (variable)
+&nbsp; &nbsp; &nbsp; - CFMS Annual Review Editor (1)
 
-      - CFMS Annual Review Editor (1)
+- Education Committee
 
-* Education Committee
+&nbsp; &nbsp; &nbsp; - Health Human Resources (1)
 
-      - Health Human Resources (1)
+&nbsp; &nbsp; &nbsp; - Matchbook(2)
 
-      - Publications (2)
+&nbsp; &nbsp; &nbsp; - Accreditation (1)
 
-      - Accreditation (1)
+&nbsp; &nbsp; &nbsp; - Policy Liaison (2)
 
-      - Policy Liaison (1)
+&nbsp; &nbsp; &nbsp; - Inter-professional Education (2)
 
-      - Inter-professional Education (1)
+&nbsp; &nbsp; &nbsp; - Portal Liaison (1)
 
-      - Portal Liaison (1)
+&nbsp; &nbsp; &nbsp; - Technology and Innovation (1)
 
-      - CITAC (Clinician Investigator Trainee Association of Canada) Rep (1)
+&nbsp; &nbsp; &nbsp; - Unmatched Canadian Medical Graduate (2)
 
-      - Choosing Wisely Rep (1)
+&nbsp; &nbsp; &nbsp; - Competency Based Medical Education (2)
 
-* Finance Committee (variable)
+&nbsp; &nbsp; &nbsp; - CITAC (Clinician Investigator Trainee Association of Canada) Rep (1)
 
-* Strategic Initiatives Fund Committee (variable)
+&nbsp; &nbsp; &nbsp; - Choosing Wisely Rep (1)
 
-* Committee on Health Policy (variable)
+- Finance Committee (variable)
 
-* Rapid Response Team
+- Committee on Health Policy (variable)
 
-      - Team Lead (2)
+- Rapid Response Team on Health Policy
 
-      - Team Member (variable)
+&nbsp; &nbsp; &nbsp; - Team Lead (2)
 
-* Day of Action 2019 Topic Research Committee (variable)
+&nbsp; &nbsp; &nbsp; - Team Member (variable)
 
-* Wellness Committee (4)
+- Day of Action 2019 Topic Research Committee (variable)
+
+- Wellness Committee (4)
+
+- Student Mistreatment Committee (2)
+
+- National Services and Interviews Database Committee (10)
+
+- Longitudinal Wellness Initiative Committee (5)
+
+- Research Committee (2)
+
+- HEART committee (variable)
+
+- Partnerships Committee (4-6)
+
+&nbsp; &nbsp; &nbsp; &nbsp;- IFMSA Human Rights and Peace Liaison
+
+&nbsp; &nbsp; &nbsp; &nbsp;- IFMSA Public Health Liaison
+
+&nbsp; &nbsp; &nbsp; &nbsp;- IFMSA Sexual and Reproductive Health Liaison
+
+&nbsp; &nbsp; &nbsp; &nbsp;- IFMSA Medical Education Liaison
+
+- National IFMSA Exchanges Contract Task Force (5-10)
 
 External Representative Positions (number of available positions)
 
-* CMAJ Blog Editor - English (1)
-
-* CFMS Rep to AFMC Student Portal Steering Committee (1)
-
-* CFMS Rep to AFMC eHealth Subcomittee (1)
-
-<br>
+- CMAJ Blog Editor - English (1)
