@@ -24,7 +24,7 @@ National Officer Services (Application [here](https://goo.gl/forms/lksioFUxmdCDD
 
 Please see Committee and External Representative descriptions [here](https://tinyurl.com/ybetjatr){: target="_blank"}&nbsp;and the list of available positions below
 
-Committee and External Representative (Application [here](https://goo.gl/forms/7WQ0WmLpy9Id3Diw1){: target="_blank"})&nbsp;
+Committee and External Representative (Application [here](https://goo.gl/forms/EXR4072GPSA6ZKYw1){: target="_blank"})&nbsp;
 
 Applications are due **October 21st, 2018** at **11:59pm EST**
 
@@ -32,9 +32,9 @@ Applications are due **October 21st, 2018** at **11:59pm EST**
 
 Positions Available:
 
-- Governance Committee (4)
+* Governance Committee (4)
 
-- Communications Committee
+* Communications Committee
 
 &nbsp; &nbsp; &nbsp; - Communiqu&eacute; Editor (2)
 
@@ -46,7 +46,7 @@ Positions Available:
 
 &nbsp; &nbsp; &nbsp; - CFMS Annual Review Editor (1)
 
-- Education Committee
+* Education Committee
 
 &nbsp; &nbsp; &nbsp; - Health Human Resources (1)
 
@@ -70,31 +70,31 @@ Positions Available:
 
 &nbsp; &nbsp; &nbsp; - Choosing Wisely Rep (1)
 
-- Finance Committee (variable)
+* Finance Committee (variable)
 
-- Committee on Health Policy (variable)
+* Committee on Health Policy (variable)
 
-- Rapid Response Team on Health Policy
+* Rapid Response Team on Health Policy
 
 &nbsp; &nbsp; &nbsp; - Team Lead (2)
 
 &nbsp; &nbsp; &nbsp; - Team Member (variable)
 
-- Day of Action 2019 Topic Research Committee (variable)
+* Day of Action 2019 Topic Research Committee (variable)
 
-- Wellness Committee (4)
+* Wellness Committee (4)
 
-- Student Mistreatment Committee (2)
+* Student Mistreatment Committee (2)
 
-- National Services and Interviews Database Committee (10)
+* National Services and Interviews Database Committee (10)
 
-- Longitudinal Wellness Initiative Committee (5)
+* Longitudinal Wellness Initiative Committee (5)
 
-- Research Committee (2)
+* Research Committee (2)
 
-- HEART committee (variable)
+* HEART committee (variable)
 
-- Partnerships Committee (4-6)
+* Partnerships Committee (4-6)
 
 &nbsp; &nbsp; &nbsp; &nbsp;- IFMSA Human Rights and Peace Liaison
 
@@ -104,8 +104,8 @@ Positions Available:
 
 &nbsp; &nbsp; &nbsp; &nbsp;- IFMSA Medical Education Liaison
 
-- National IFMSA Exchanges Contract Task Force (5-10)
+* National IFMSA Exchanges Contract Task Force (5-10)
 
 External Representative Positions (number of available positions)
 
-- CMAJ Blog Editor - English (1)
+* CMAJ Blog Editor - English (1)
