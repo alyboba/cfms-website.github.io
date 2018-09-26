@@ -55,6 +55,8 @@ Rishi Sharma, Michael G. DeGroote School of Medicine - McMaster University
 
 *Stephanie Smith, CFMS President*
 
+**Acknowledgement:** The 2018-19 Board Photos were done by Bethany Wilkes, a medical student at McGill University.
+
 > **ABOUT THE CFMS:**
 >
 >
@@ -82,8 +84,8 @@ Rishi Sharma, Michael G. DeGroote School of Medicine - McMaster University
 > Cell: 1-506-461-4683
 >
 >
-> [PDF Of Press Release: Announcement of 2018-19 CFMS Board](/CFMS 2018-19 Board Announcement Update.pdf)
+> [PDF Of Press Release: Announcement of 2018-19 CFMS Board](/CFMS 2018-19 Board PR Announcement Final.pdf)
 
-![](blob:https://app.cloudcannon.com/dd3dc3ce-6418-40f4-acd2-f4e26b2c8500)
+&nbsp;
 
-![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUCB1jWLVq1X8ABv4C/lvjUcgAAAAASUVORK5CYII=){: .cms-image-placeholder}
+![](/uploads/cfms-8227.jpg)
