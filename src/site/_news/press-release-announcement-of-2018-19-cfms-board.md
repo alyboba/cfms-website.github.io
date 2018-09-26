@@ -7,11 +7,11 @@ lang: en
 
 **FOR IMMEDIATE RELEASE**
 
-**Montreal, Qc &nbsp;September 23, 2018** - The Canadian Federation of Medical Students (CFMS) is proud to announcement the election of the 2018-19 Board of Directors by the membership at our 41st Annual General Meeting (AGM).
+**Montreal, Qc &nbsp;September 23, 2018** - The Canadian Federation of Medical Students (CFMS) is proud to announce the election of the 2018-19 Board of Directors by the membership at our 41st Annual General Meeting (AGM).
 
 CFMS congratulates all candidates who stood for nomination.&nbsp;
 
-The composition of the 2018-19 Executive Board is:
+The composition of the 2018-19 CFMS Board is:
 
 **Past-president & Board Chair:** Dr. Henry Annan, Dalhousie University
 
@@ -21,29 +21,29 @@ The composition of the 2018-19 Executive Board is:
 
 **Vice-President Finance:&nbsp;**Odell Tan, University of Saskatchewan
 
-**Director Education:** Maylynn Ding, McMaster University
+**Director of Education:** Maylynn Ding, Michael G. DeGroote School of Medicine - McMaster University
 
-**Director Global Health:** Michelle Quaye, Schulich School of Medicine - Western University
+**Director of Global Health:** Michelle Quaye, Schulich School of Medicine - Western University
 
-**Director Government Affairs:** Yipeng Ge, University of Ottawa
+**Director of Government Affairs:** Yipeng Ge, University of Ottawa
 
-**Director Student Affairs:** Victor Do, University of Alberta
+**Director of Student Affairs:** Victor Do, University of Alberta
 
 **Western Regional Directors: &nbsp;**
 
 Wendy Wang, Cumming School of Medicine - University of Calgary
 
-Fatemeh Bakhtiari, Univeristy of Manitoba
+Fatemeh Bakhtiari, Max Rady College of Medicine - University of Manitoba
 
 **Ontario Regional Directors:**
 
-Debbie Grace, McMaster University
+Debbie Grace, Michael G. DeGroote School of Medicine - McMaster University
 
-Rishi Sharma, McMaster University
+Rishi Sharma, Michael G. DeGroote School of Medicine - McMaster University
 
 **Quebec Regional Director:**&nbsp;Adel Arezki, McGill University
 
-**Atlantic Regional Director:&nbsp;**Dax Bourcier, le Centre de Formation Medicale du Nouveau- Brunswick&nbsp;
+**Atlantic Regional Director:&nbsp;**Dax Bourcier, le Centre de Formation Medicale du Nouveau-Brunswick&nbsp;
 
 **QUOTATIONS FROM THE CFMS BOARD OF DIRECTORS:**
 
