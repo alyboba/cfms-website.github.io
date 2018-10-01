@@ -2,7 +2,7 @@
 title: >-
   PRESS RELEASE: Medical students to celebrate National Seniors Day with
   #Snaps4Seniors and #SnapPourAînés
-date: 2018-10-01 00:00:00
+date: 2018-10-01 19:00:00
 description: '#Snaps4Seniors, #SnapPourAînés'
 lang: en
 ---
