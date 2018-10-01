@@ -2,16 +2,16 @@
 title: >-
   PRESS RELEASE: Medical students to celebrate National Seniors Day with
   #Snaps4Seniors and #SnapPourAînés
-date: 2018-10-01 05:00:00
+date: 2018-10-01 00:00:00
 description: The CFMS welcomes the new 2018-19 Board!
 lang: en
 ---
 
 **FOR IMMEDIATE RELEASE**
 
-**October 1, 2018&nbsp;**
+**October 1, 2018 **
 
-The CFMS National Seniors Strategy Task Force is excited to deliver a social media campaign with the intention of bringing additional awareness to seniors care in Canada through, education, advocacy, and knowledge translation.&nbsp;
+The CFMS National Seniors Strategy Task Force is excited to deliver a social media campaign with the intention of bringing additional awareness to seniors care in Canada through, education, advocacy, and knowledge translation. 
 
 Today, October 1st, 2018, is National Seniors Day! It is a day to celebrate and highlight older adults across Canada, acknowledging their lifelong contributions to their families, communities, and society. From Monday, October 1st to Friday, October 5th, the CFMS will be celebrating National Seniors Day and the week with various themes to highlight seniors care in Canada. The following themes for each day will help guide the day in reflections/posts/photos/videos shared on social media:
 
@@ -27,7 +27,7 @@ Today, October 1st, 2018, is National Seniors Day! It is a day to celebrate and 
 
 We encourage CFMS members to submit posts for this social media campaign. The posts can be on any of our social media platforms (Twitter, Facebook, and Instagram) and they can be anything from sharing a photo with a caption or a video outlining your knowledge of seniors care, what you learned from a patient/preceptor, or a special moment with an older loved one, or why you think seniors care and improved seniors care matters for Canadians.
 
-We are using the hashtag "#Snap4Seniors" and “#SnapPourA&icirc;n&eacute;s” to help build momentum and identify posts so that the CFMS can help amplify the message. We hope many medical students across the nation will participate and encourage their families, friends, colleagues, professors, and preceptors to do so as well!
+We are using the hashtag "#Snap4Seniors" and “#SnapPourAînés” to help build momentum and identify posts so that the CFMS can help amplify the message. We hope many medical students across the nation will participate and encourage their families, friends, colleagues, professors, and preceptors to do so as well!
 
 Please contact Taylor Woo and Shanza Hashmi, co-leads of the CFMS National Seniors Strategy Task Force at NationalSeniorsTF@gmail.com for more information!
 
@@ -48,7 +48,7 @@ Please contact Taylor Woo and Shanza Hashmi, co-leads of the CFMS National Senio
 > [www.cfms.org](www.cfms.org)
 >
 >
-> Follow us on Twitter, Facebook and Instagram: @CFMSFEMC&nbsp;
+> Follow us on Twitter, Facebook and Instagram: @CFMSFEMC 
 >
 >
 > FOR MORE INFORMATION:
@@ -66,8 +66,4 @@ Please contact Taylor Woo and Shanza Hashmi, co-leads of the CFMS National Senio
 > Cell: 1-506-461-4683
 >
 >
-> [PDF Of Press Release: Medical students to celebrate National Seniors Day with #Snaps4Seniors and #SnapPourA&icirc;n&eacute;s](/CFMS Senior Week Tasforce Press Release.pdf)
-
-&nbsp;
-
-&nbsp;
+> [PDF Of Press Release: Medical students to celebrate National Seniors Day with #Snaps4Seniors and #SnapPourAînés](/CFMS Senior Week Tasforce Press Release.pdf)
