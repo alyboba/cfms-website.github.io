@@ -1,88 +1,91 @@
 ---
-title: >-
-  PRESS RELEASE: CFMS Response to the Release of the Results from the 2018 CaRMS
-  R-1 Main Residency Match
-date: 2018-04-18 00:00:00
-description: >-
-  The Canadian Federation of Medical Students (CFMS) continues to be deeply
-  concerned about the large number of unmatched Canadian Medical Graduates
-  (CMGs).  Snapshot data from the Canadian Residency Matching Service (CaRMS)
-  released April 17, 2018 indicated that 69 current year CMGs were unmatched in
-  the 2018 CaRMS R-1 Match after applying in the second iteration.
+title: 'PRESS RELEASE: Announcement of the 2018-19 CFMS Board'
+date: 2018-09-24 05:00:00
+description: The CFMS welcomes the new 2018-19 Board!
 lang: en
 ---
 
 **FOR IMMEDIATE RELEASE**
-{: .present-before-paste}
 
-**OTTAWA, APRIL 18TH, 2018** – &nbsp;The Canadian Federation of Medical Students (CFMS) continues to be deeply concerned about the large number of unmatched Canadian Medical Graduates (CMGs). &nbsp;Snapshot data from the Canadian Residency Matching Service (CaRMS) released April 17, 2018 indicated that 69 current year CMGs were unmatched in the 2018 CaRMS R-1 Match after applying in the second iteration. The CFMS has closely monitored the multi-year exponential trend of unmatched Canadian Medical Graduates (CMGs), increasing from 11 (0.5%) in 2009 to 69 (2.4%) in 2018.
-{: .present-before-paste}
+**Montreal, QC&nbsp; September 24, 2018** - The Canadian Federation of Medical Students (CFMS) is proud to announce the election of the 2018-19 Board of Directors by the membership at our 41st Annual General Meeting (AGM).
 
-While the official number of unmatched CMGs this year is 69, this does not take into account students who did not participate in the second round of the CaRMS match or those unmatched from previous years who have gone unmatched again. Thus, the number of students still seeking residency positions is far higher, with over 100 current year graduates not moving on to residency on July 1.
-{: .present-before-paste}
+CFMS congratulates all candidates who stood for nomination.&nbsp;
 
-Our medical graduates remain committed to providing care to Canadians. With hundreds of thousands of taxpayer dollars invested in training each of these medical graduates, students are keen to complete their medical training through residency programs in order to serve their communities. Not only is residency the sole path to independent practice, but medical residents are a core facet of our healthcare system; without them, care at our major hospitals would slow to a crawl.
-{: .present-before-paste}
+The composition of the 2018-19 CFMS Board is:
 
-Over the past year, the CFMS has participated in discussions with key stakeholders within the medical education community as well as governments. We continue to call for a return of the national ratio of current-year Canadian Medical Graduates to post-graduate residency positions to 1:1.2. Last week, the CFMS was pleased to announce the Canadian Armed Forces Medical Officer Training Program Surge 2018, which creates supernumerary Family Medicine positions for currently unmatched students across the country. Yesterday, the Ontario government announced a commitment to create additional positions in Ontario, for unmatched Ontario medical school graduates, in needed fields with a commitment to provide a return of service to underserved communities. This announcement comes three years after the Ontario government cut residency positions in Ontario. The new program stands as a good first step towards developing longer-term solutions to the residency position shortage in Canada, which requires a national response. We hope to see long-term commitments by provincial and federal governments to support medical students and allow them to finish their training.
-{: .present-before-paste}
+**Past-president & Board Chair:** Dr. Henry Annan, Dalhousie University
 
-The CFMS will continue to work with Canadian medical faculties to ensure that unmatched students have access to necessary personal and mental health supports. This includes addressing the heightened levels of anxiety our unmatched colleagues inevitably feel having to bear the financial burden of paying for an additional year of an already expensive education.
-{: .present-before-paste}
+**President:** Captain Stephanie Smith, Cumming School of Medicine - University of Calgary
 
-We are hopeful that the upcoming year will be a period where real solutions to address the unmatched Canadian medical graduate crisis will be realized. We look forward to working with all parties on this very important issue.
-{: .present-before-paste}
+**Vice-President Communications:** Victoria Januszkiewicz, Memorial University Newfoundland
 
-&nbsp;
-{: .present-before-paste}
+**Vice-President Finance:&nbsp;**Odell Tan, University of Saskatchewan
 
-**Quotations from the CFMS Board of Directors**:
-{: .present-before-paste}
+**Director of Education:** Maylynn Ding, Michael G. DeGroote School of Medicine - McMaster University
 
-“The number of unmatched Canadian medical graduates this year remains a significant concern to the CFMS. With over 100 of this year’s medical school graduates unable to start residency in July, it is clear that there is still much to be done. The CFMS will continue to stand behind our unmatched students and will advocate for long-term solutions to the uCMG crisis. We will work to create opportunities for unmatched students to allow them to find paths to success.”
-{: .present-before-paste}
+**Director of Global Health:** Michelle Quaye, Schulich School of Medicine - Western University
 
-*- Henry Annan, CFMS President*
+**Director of Government Affairs:** Yipeng Ge, University of Ottawa
 
-“The growing number of unmatched Canadian medical graduates is an issue that impacts all Canadians. We are pleased by the support of the Canadian Armed Forces to match currently unmatched graduates into family medicine residency positions, and that the Ontario Ministry of Health and Long Term Care has committed to implementing a program for unmatched Ontario students. These are positive steps forward in solving this crisis. It is our hope that all governments step up to ensure that all qualified Canadian medical graduates have the opportunity to continue their training, and become fully qualified physicians ready to meet the healthcare needs of Canadians.”
-{: .present-before-paste}
+**Director of Student Affairs:** Victor Do, University of Alberta
 
-*- Kaylynn Purdy, CFMS Vice-President Education*
+**Western Regional Directors: &nbsp;**
 
-&nbsp;
+Wendy Wang, Cumming School of Medicine - University of Calgary
 
-**Footnotes**:
-{: .present-before-paste}
+Fatemeh Bakhtiari, Max Rady College of Medicine - University of Manitoba
 
-1 - [CaRMS 2018 R-1 Match Data Snapshot](https://www.carms.ca/en/news/r-1-match-data-snapshot/)&nbsp;
-{: .present-before-paste}
+**Ontario Regional Directors:**
 
-> **ABOUT THE CFMS**
-> {: .present-before-paste}
+Debbie Grace, Michael G. DeGroote School of Medicine - McMaster University
+
+Rishi Sharma, Michael G. DeGroote School of Medicine - McMaster University
+
+**Quebec Regional Director:**&nbsp;Adel Arezki, McGill University
+
+**Atlantic Regional Director:&nbsp;**Dax Bourcier, le Centre de Formation Medicale du Nouveau-Brunswick&nbsp;
+
+**QUOTATIONS FROM THE CFMS BOARD OF DIRECTORS:**
+
+“The CFMS 2018-19 is a diverse representative board comprised of directors from coast-to-coast. I’m looking forward to leading the board as we continue to advance the priorities of medical students and the objectives of our Strategic plan.”&nbsp;
+
+*Dr. Henry Annan, Past-president & Board Chair*
+
+“Congratulations to the new Board of the CFMS. I am excited about working with such a driven and passionate group of medical student leaders as we advance the CFMS in the areas of advocacy for student engagement, building collaborations & communications, and changing Canadian medical education culture.”
+
+*Stephanie Smith, CFMS President*
+
+**Acknowledgement:** The 2018-19 Board Photos were done by Bethany Wilkes, a medical student at McGill University.
+
+> **ABOUT THE CFMS:**
 >
-> The Canadian Federation of Medical Students (CFMS) represents over 8,000 medical students at 15 medical schools across Canada. The CFMS represents medical students to the public, the federal government, and national and international medical organizations. As the national voice of Canadian medical students, the CFMS connects, supports, and represents its membership as they learn to serve patients and society.
-> {: .present-before-paste}
 >
-> [www.cfms.org](https://www.cfms.org/)
-> {: .present-before-paste}
+> Founded in 1977 by Canadian medical students, today 41 years later the Canadian Federation of Medical Students (CFMS) represents over 8,400 medical students at 15 medical schools across Canada. Under our 2017-2022 Strategic Operations & Human Resources Plan, the CFMS represents medical students to the public, the federal government, and national and international medical organizations. As the national voice of Canadian medical students, the CFMS are tomorrow’s physicians leading for health today with the aim to connect, support, and represent its membership as they learn to serve patients and society.
 >
-> Follow us on Twitter, Facebook and Instagram: @CFMSFEMC
-> {: .present-before-paste}
 >
-> **FOR MORE INFORMATION**:
-> {: .present-before-paste}
+> [www.cfms.org](www.cfms.org)
 >
-> Christina Schweitzer, Vice-President Communications
-> {: .present-before-paste}
+>
+> Follow us on Twitter, Facebook and Instagram: @CFMSFEMC&nbsp;
+>
+>
+> FOR MORE INFORMATION:
+>
+>
+> Victoria Januszkiewicz, Vice-President Communications
+>
 >
 > Canadian Federation of Medical Students
-> {: .present-before-paste}
 >
-> Email: [vpcommunications@cfms.org](javascript:void(location.href='mailto:'+String.fromCharCode(118,112,99,111,109,109,117,110,105,99,97,116,105,111,110,115,64,99,102,109,115,46,111,114,103)))
-> {: .present-before-paste}
 >
-> Cell: 1-587-225-8165
-> {: .present-before-paste}
+> Email: [vpcommunications@cfms.org](mailto:vpcommunications@cfms.org)
 >
-> Press Release PDF: [PRESS RELEASE: CFMS Response to the Release of the Results from the 2018 CaRMS R-1 Main Residency Match](/PRESS RELEASE CFMS Response to the Release of the Results from the 2018 CaRMS R-1 Main Residency Match.pdf)
-> {: .present-before-paste}
+>
+> Cell: 1-506-461-4683
+>
+>
+> [PDF Of Press Release: Announcement of 2018-19 CFMS Board](/CFMS 2018-19 Board PR Announcement Final.pdf)
+
+&nbsp;
+
+![](/uploads/cfms-8227.jpg)
