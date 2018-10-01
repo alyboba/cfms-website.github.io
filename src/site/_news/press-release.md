@@ -1,61 +1,43 @@
 ---
-title: 'PRESS RELEASE: Announcement of the 2018-19 CFMS Board'
-date: 2018-09-24 05:00:00
+title: >-
+  PRESS RELEASE: Medical students to celebrate National Seniors Day with
+  #Snaps4Seniors and #SnapPourAînés
+date: 2018-10-01 05:00:00
 description: The CFMS welcomes the new 2018-19 Board!
 lang: en
 ---
 
 **FOR IMMEDIATE RELEASE**
 
-**Montreal, QC&nbsp; September 24, 2018** - The Canadian Federation of Medical Students (CFMS) is proud to announce the election of the 2018-19 Board of Directors by the membership at our 41st Annual General Meeting (AGM).
+**October 1, 2018 **
 
-CFMS congratulates all candidates who stood for nomination.&nbsp;
+The CFMS National Seniors Strategy Task Force is excited to deliver a social media campaign with the intention of bringing additional awareness to seniors care in Canada through, education, advocacy, and knowledge translation.&nbsp;
 
-The composition of the 2018-19 CFMS Board is:
+Today, October 1st, 2018, is National Seniors Day! It is a day to celebrate and highlight older adults across Canada, acknowledging their lifelong contributions to their families, communities, and society. From Monday, October 1st to Friday, October 5th, the CFMS will be celebrating National Seniors Day and the week with various themes to highlight seniors care in Canada. The following themes for each day will help guide the day in reflections/posts/photos/videos shared on social media:
 
-**Past-president & Board Chair:** Dr. Henry Annan, Dalhousie University
+**Healthy Aging**
 
-**President:** Captain Stephanie Smith, Cumming School of Medicine - University of Calgary
+**Choice in Care Settings**
 
-**Vice-President Communications:** Victoria Januszkiewicz, Memorial University Newfoundland
+**Advance Care Directives**
 
-**Vice-President Finance:&nbsp;**Odell Tan, University of Saskatchewan
+**Medical Education and Palliative Care**
 
-**Director of Education:** Maylynn Ding, Michael G. DeGroote School of Medicine - McMaster University
+**Community Health**
 
-**Director of Global Health:** Michelle Quaye, Schulich School of Medicine - Western University
+We encourage CFMS members to submit posts for this social media campaign. The posts can be on any of our social media platforms (Twitter, Facebook, and Instagram) and they can be anything from sharing a photo with a caption or a video outlining your knowledge of seniors care, what you learned from a patient/preceptor, or a special moment with an older loved one, or why you think seniors care and improved seniors care matters for Canadians.
 
-**Director of Government Affairs:** Yipeng Ge, University of Ottawa
+We are using the hashtag "#Snap4Seniors" and “#SnapPourA&icirc;n&eacute;s” to help build momentum and identify posts so that the CFMS can help amplify the message. We hope many medical students across the nation will participate and encourage their families, friends, colleagues, professors, and preceptors to do so as well!
 
-**Director of Student Affairs:** Victor Do, University of Alberta
-
-**Western Regional Directors: &nbsp;**
-
-Wendy Wang, Cumming School of Medicine - University of Calgary
-
-Fatemeh Bakhtiari, Max Rady College of Medicine - University of Manitoba
-
-**Ontario Regional Directors:**
-
-Debbie Grace, Michael G. DeGroote School of Medicine - McMaster University
-
-Rishi Sharma, Michael G. DeGroote School of Medicine - McMaster University
-
-**Quebec Regional Director:**&nbsp;Adel Arezki, McGill University
-
-**Atlantic Regional Director:&nbsp;**Dax Bourcier, le Centre de Formation Medicale du Nouveau-Brunswick&nbsp;
+Please contact Taylor Woo and Shanza Hashmi, co-leads of the CFMS National Seniors Strategy Task Force at NationalSeniorsTF@gmail.com for more information!
 
 **QUOTATIONS FROM THE CFMS BOARD OF DIRECTORS:**
 
-“The CFMS 2018-19 is a diverse representative board comprised of directors from coast-to-coast. I’m looking forward to leading the board as we continue to advance the priorities of medical students and the objectives of our Strategic plan.”&nbsp;
+“As medical students progress through their training and education, we are learning and practicing to become compassionate and competent physicians to provide care for our seniors and older adults in various healthcare settings. We wholeheartedly recognize the importance of ensuring that medical education and training reflects the realities and needs of seniors, and that appropriate and sufficient healthcare resources are made available for the benefit of all seniors in Canada.”
 
-*Dr. Henry Annan, Past-president & Board Chair*
+*Yipeng Ge, CFMS Director Government Affairs*
 
-“Congratulations to the new Board of the CFMS. I am excited about working with such a driven and passionate group of medical student leaders as we advance the CFMS in the areas of advocacy for student engagement, building collaborations & communications, and changing Canadian medical education culture.”
-
-*Stephanie Smith, CFMS President*
-
-**Acknowledgement:** The 2018-19 Board Photos were done by Bethany Wilkes, a medical student at McGill University.
+**Acknowledgement:** Thank you to the CFMS National Seniors Strategy Task Force for your incredible efforts
 
 > **ABOUT THE CFMS:**
 >
@@ -84,8 +66,8 @@ Rishi Sharma, Michael G. DeGroote School of Medicine - McMaster University
 > Cell: 1-506-461-4683
 >
 >
-> [PDF Of Press Release: Announcement of 2018-19 CFMS Board](/CFMS 2018-19 Board PR Announcement Final.pdf)
+> [PDF Of Press Release: Medical students to celebrate National Seniors Day with #Snaps4Seniors and #SnapPourA&icirc;n&eacute;s](/CFMS Senior Week Tasforce Press Release.pdf)
 
 &nbsp;
 
-![](/uploads/cfms-8227.jpg)
+&nbsp;
