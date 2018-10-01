@@ -3,7 +3,7 @@ title: >-
   PRESS RELEASE: Medical students to celebrate National Seniors Day with
   #Snaps4Seniors and #SnapPourAînés
 date: 2018-10-01 00:00:00
-description: The CFMS welcomes the new 2018-19 Board!
+description: '#Snaps4Seniors, #SnapPourAînés'
 lang: en
 ---
 
