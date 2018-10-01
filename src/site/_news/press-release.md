@@ -9,7 +9,7 @@ lang: en
 
 **FOR IMMEDIATE RELEASE**
 
-**October 1, 2018 **
+**October 1, 2018&nbsp;**
 
 The CFMS National Seniors Strategy Task Force is excited to deliver a social media campaign with the intention of bringing additional awareness to seniors care in Canada through, education, advocacy, and knowledge translation.&nbsp;
 
