@@ -30,7 +30,7 @@ National Officer Services (Application [here](https://goo.gl/forms/lksioFUxmdCDD
 
 *Over the past few years, there has been rising interest in the deals provided to students by CFMS and we are committed to ensuring all medical students can benefit from our many services and partnerships that offer a variety of discounts and offers from external organizations. The successful applicant will collaborate directly with the VP Student Affairs and they will ensure current relationships are strengthened and new opportunities developed.*
 
-**Please see Committee and External Representative descriptions [here](https://tinyurl.com/ybetjatr){: target="_blank"}&nbsp;and the list of available positions below.&nbsp;****Committee and External Representative (Application [here](https://goo.gl/forms/EXR4072GPSA6ZKYw1){: target="_blank"}).**
+**Please see Committee and External Representative descriptions [here](https://docs.google.com/spreadsheets/d/1zW6n6pynq4V-ZtFSE1z0acHLlCTyIFPO0jEtGKxObWA/edit?usp=sharing){: target="_blank"}&nbsp;and the list of available positions below.&nbsp;****Committee and External Representative (Application [here](https://goo.gl/forms/EXR4072GPSA6ZKYw1){: target="_blank"}).**
 
 Applications are due **October 21st, 2018** at **11:59pm EST**
 
